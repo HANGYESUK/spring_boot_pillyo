@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="com.pillyo.pill.dao.IMemberDAO">
+  
+  <resultMap  id="memResult" type="com.pillyo.pill.model.MemberVO">
+  	<result property="userId" column="userId" />
+  	<!-- ... 필요 시 이어서 작성 -->
+  </resultMap> 
+  
+  </mapper>
