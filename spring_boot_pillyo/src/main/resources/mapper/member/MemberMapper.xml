@@ -5,9 +5,19 @@
   
   <mapper namespace="com.pillyo.pill.dao.IMemberDAO">
   
-  <resultMap  id="memResult" type="com.pillyo.pill.model.MemberVO">
-  	<result property="userId" column="userId" />
-  	<!-- ... 필요 시 이어서 작성 -->
-  </resultMap> 
+	<resultMap  id="memResult" type="com.pillyo.pill.model.MemberVO">
+	  <result property="userId" column="userId" />
+	  <!-- ... 필요 시 이어서 작성 -->
+	</resultMap> 
+  
+	<!-- 로그인 확인 -->
+	<select id="loginCheck" resultMap="memResult" parameterType="hashmap">
+		SELECT * FROM user WHERE userId=#{id} AND userPw=#{pw}
+	</select>
+	
+	<!-- ID 중복 확인 -->
+	<select id="userIdCheck" resultType="string" parameterType="string">
+		SELECT userId FROM user WHERE userId =#{userId}
+	</select>
   
   </mapper>
