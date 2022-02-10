@@ -5,9 +5,37 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>Insert title here</title>
+		<title>로그인 페이지</title>
+		<script src="<c:url value='/js/jquery-3.6.0.min.js'/>"></script>
+		<script src="<c:url value='/js/login.js'/>"></script>
 	</head>
 	<body>
-			<p>강다영 테스트1</p>
+		<div id="wrap">
+			
+		<!-- TOP -->
+		<jsp:include page="/WEB-INF/views/layout/top.jsp" flush='true' />
+
+		<!--  로그인 폼  -->
+		<section>
+	        <h1 id="title">로그인</h1>
+	        <hr>
+	        <form id="loginForm" name="loginForm">
+	          <table>
+	            <tr><th>아이디</th><td><input type="text" id="id" name="id" ></td></tr>
+	            <tr><th>비밀번호</th><td><input type="password" id="pw" name="pw"></td></tr>
+	             <tr><th></th>
+	                <td align="center" id="button"> <br>
+	                    <input type="submit" id="login_btn"value="로그인">
+	                    <input type="reset" value="취소">
+	                </td>
+	            </tr>             
+	            </table>
+	        </form>	
+        </section>
+        
+		<!-- BOTTOM  -->
+		<jsp:include page="/WEB-INF/views/layout/bottom.jsp" flush='true' />
+		
+      </div> <!-- wrap -->
 	</body>
 </html>
