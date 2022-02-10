@@ -7,6 +7,8 @@
   
   <resultMap  id="memResult" type="com.pillyo.pill.model.MemberVO">
   	<result property="userId" column="userId" />
+	<result property="userPw" column="userPw" />
+  	
   	<!-- ... 필요 시 이어서 작성 -->
   </resultMap> 
   
