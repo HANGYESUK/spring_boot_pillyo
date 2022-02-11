@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="com.pillyo.pill.dao.IUserDAO">
+  
+  	<!-- 유져 DB 가져오기 -->
+	<resultMap  id="userResult" type="com.pillyo.pill.model.UserVO">
+	  <result property="userId" column="userId" />
+	  <result property="userPw" column="userPw" />
+	</resultMap> 
+  
+	<!-- 로그인 확인 -->
+	<select id="loginCheck" resultMap="userResult" parameterType="hashmap">
+		SELECT * FROM user WHERE userId=#{id} AND userPw=#{pw}
+	</select>
+	
+	<!-- ID 중복 확인 -->
+	<select id="userIdCheck" resultType="string" parameterType="string">
+		SELECT userId FROM user WHERE userId =#{userId}
+	</select>
+  
+  </mapper>
