@@ -43,4 +43,39 @@ public class UserController {
 		
 		return result;
 	}
+	
+	// 사용자 아이디 중복 확인
+		@ResponseBody
+		@RequestMapping("/userIdCheck")
+		public String userIdCheck(@RequestParam("userId") String userId) {
+			String userId_result = service.userIdCheck(userId);
+			
+			String result = "use";
+			if(userId_result != null)
+				result = "no_use";
+			
+			return result;
+		}
+		
+		// 사용자 이메일 중복 확인
+		@ResponseBody
+		@RequestMapping("/userEmailCheck")
+		public String userEmailCheck(@RequestParam("userEmailId") String userEmailId, @RequestParam("userEmail") String userEmail) {
+			String email = userEmailId + '@' + userEmail;
+			String userEmail_result = service.userEmailCheck(email);
+			
+			String result = "use";
+			if(userEmail_result != null)
+				result = "no_use";
+			
+			return result;
+		}
+		
+		// 회원가입
+		@RequestMapping("/userJoin")
+		public String userJoin(UserVO vo) {
+			service.userJoin(vo);
+			
+			return "redirect:/";
+		}
 }

@@ -9,4 +9,9 @@ public class MainController {
 	public String index() {
 		return "/index";
 	}
+	
+	@RequestMapping("/join")
+	public String join() {
+		return "/join";
+	}
 }

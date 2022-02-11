@@ -20,5 +20,16 @@
 	<select id="userIdCheck" resultType="string" parameterType="string">
 		SELECT userId FROM user WHERE userId =#{userId}
 	</select>
+	
+	<!-- Email 중복 확인 -->
+	<select id="userEmailCheck" resultType="string" parameterType="string">
+		SELECT userEmail FROM user WHERE userEmail = #{email}
+	</select>
+	
+	<!-- 회원가입 -->
+	<insert id="userJoin" parameterType="com.pillyo.pill.model.UserVO">
+		INSERT INTO user(userId, userPw, userName, userHp, userEmail, userAddress1, userAddress2, userZipcode, joinDate)
+		VALUES (#{userId}, #{userPw}, #{userName}, #{userHp}, #{userEmail}, #{userAddress1}, #{userAddress2},#{userZipcode}, default )
+	</insert>
   
   </mapper>

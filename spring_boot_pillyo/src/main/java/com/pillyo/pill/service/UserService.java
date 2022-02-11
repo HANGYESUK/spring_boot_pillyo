@@ -25,4 +25,14 @@ public class UserService implements IUserService {
 	public String userIdCheck(String userId) {
 		return dao.userIdCheck(userId);
 	}
+	
+	@Override
+	public String userEmailCheck(String email) {
+		return dao.userEmailCheck(email);
+	}
+	
+	@Override
+	public void userJoin(UserVO vo) {
+		dao.userJoin(vo);
+	}
 }
