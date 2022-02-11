@@ -6,18 +6,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
-import com.pillyo.pill.dao.IMemberDAO;
-import com.pillyo.pill.model.MemberVO;
+import com.pillyo.pill.dao.IUserDAO;
+import com.pillyo.pill.model.UserVO;
 
 
 @Service
-public class MemberService implements IMemberService {
+public class UserService implements IUserService {
 	@Autowired
-	@Qualifier("IMemberDAO")
-	IMemberDAO dao;
+	@Qualifier("IUserDAO")
+	IUserDAO dao;
 	
 	@Override
-	public MemberVO loginCheck(HashMap<String, Object> map) {		
+	public UserVO loginCheck(HashMap<String, Object> map) {		
 		return dao.loginCheck(map);
 	}
 	

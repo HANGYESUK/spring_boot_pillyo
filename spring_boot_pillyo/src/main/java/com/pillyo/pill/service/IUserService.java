@@ -2,10 +2,12 @@ package com.pillyo.pill.service;
 
 import java.util.HashMap;
 
-import com.pillyo.pill.model.MemberVO;
+import com.pillyo.pill.model.UserVO;
 
-public interface IMemberService {
+public interface IUserService {
 	// 추상메서드 작성 후 MemberService 파일 생성 (implements)
-	MemberVO loginCheck(HashMap<String, Object> map);
+
+	// 로그인
+	UserVO loginCheck(HashMap<String, Object> map);
 	String userIdCheck(String userId);
 }

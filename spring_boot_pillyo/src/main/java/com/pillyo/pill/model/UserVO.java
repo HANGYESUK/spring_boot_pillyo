@@ -1,26 +1,26 @@
 package com.pillyo.pill.model;
 
-public class MemberVO {
+public class UserVO {
 
 	// 로그인
 	private String userId;
 	private String userPw;
 	
-	public MemberVO() { }
+	public UserVO() { }
 
-	public String getMemId() {
+	public String getUserId() {
 		return userId;
 	}
 
-	public void setMemId(String userId) {
+	public void setUserId(String userId) {
 		this.userId = userId;
 	}
 
-	public String getMemPwd() {
+	public String getUserPwd() {
 		return userPw;
 	}
 
-	public void setMemPwd(String userPw) {
+	public void setUserPwd(String userPw) {
 		this.userPw = userPw;
 	}
 

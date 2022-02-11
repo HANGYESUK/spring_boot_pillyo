@@ -2,11 +2,11 @@ package com.pillyo.pill.dao;
 
 import java.util.HashMap;
 
-import com.pillyo.pill.model.MemberVO;
+import com.pillyo.pill.model.UserVO;
 
-public interface IMemberDAO {
+public interface IUserDAO {
 
 	// 로그인 체크
-	MemberVO loginCheck(HashMap<String, Object> map);
+	UserVO loginCheck(HashMap<String, Object> map);
 	String userIdCheck(String userId);
 }

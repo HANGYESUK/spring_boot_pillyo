@@ -3,15 +3,16 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
-  <mapper namespace="com.pillyo.pill.dao.IMemberDAO">
+  <mapper namespace="com.pillyo.pill.dao.IUserDAO">
   
-	<resultMap  id="memResult" type="com.pillyo.pill.model.MemberVO">
+  	<!-- 유져 DB 가져오기 -->
+	<resultMap  id="userResult" type="com.pillyo.pill.model.UserVO">
 	  <result property="userId" column="userId" />
-	  <!-- ... 필요 시 이어서 작성 -->
+	  <result property="userPw" column="userPw" />
 	</resultMap> 
   
 	<!-- 로그인 확인 -->
-	<select id="loginCheck" resultMap="memResult" parameterType="hashmap">
+	<select id="loginCheck" resultMap="userResult" parameterType="hashmap">
 		SELECT * FROM user WHERE userId=#{id} AND userPw=#{pw}
 	</select>
 	
