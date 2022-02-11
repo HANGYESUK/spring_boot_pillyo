@@ -34,9 +34,6 @@
 	        
 	        <input type="submit" id="join_btn" value="회원가입">
 	        <input type="submit" id="ID/PW_btn" value="ID/PW찾기">
-	        수정하는중...
-	        엥 왜 수정이 안됐지 다시하는중
-	        
         </section>
         
 		<!-- BOTTOM  -->
