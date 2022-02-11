@@ -9,5 +9,13 @@
 	</head>
 	<body>
 		index 페이지
+		
+		<!-- SECTION  -->
+		<section>
+			<form>
+				<a href="<c:url value = '/loginForm'/>">로그인</a>
+			</form>
+		</section>
+		
 	</body>
 </html>

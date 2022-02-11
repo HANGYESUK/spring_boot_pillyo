@@ -5,16 +5,15 @@
 <html>
 	<head>
 		<meta charset="EUC-KR">
-		<title>Insert title here</title>
+		<title>Pill-yo</title>
 	</head>
 	<body>
 		index 페이지
 		
 		<!-- SECTION  -->
 		<section>
-			<form>
-				<a href="<c:url value = '/loginForm'/>">로그인</a>
-			</form>
+			<a href="<c:url value = '/loginForm'/>">로그인</a>
+			<a href="<c:url value = '/famInsertForm'/>">가족 등록 폼</a>
 		</section>
 		
 	</body>
