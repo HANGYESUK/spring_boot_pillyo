@@ -10,4 +10,6 @@ public interface IUserService {
 	// 로그인
 	UserVO loginCheck(HashMap<String, Object> map);
 	String userIdCheck(String userId);
+	String userEmailCheck(String email); // 이메일 중복 확인
+	void userJoin(UserVO vo); // 회원가입
 }
