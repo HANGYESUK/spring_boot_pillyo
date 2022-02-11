@@ -33,7 +33,7 @@
 	        </form>	
 	        
 	        <input type="submit" id="join_btn" value="회원가입">
-	        <input type="submit" id="join_btn" value="ID/PW찾기">
+	        <input type="submit" id="ID/PW_btn" value="ID/PW찾기">
 	        
         </section>
         
