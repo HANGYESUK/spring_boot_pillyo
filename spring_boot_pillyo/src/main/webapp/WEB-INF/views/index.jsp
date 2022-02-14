@@ -1,19 +1,20 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charset="EUC-KR">
+		<meta charset="UTF-8">
 		<title>Pill-yo</title>
 	</head>
 	<body>
-		index ÆäÀÌÁö
+		index íŽ˜ì´ì§€
 		
 		<!-- SECTION  -->
 		<section>
-			<a href="<c:url value = '/loginForm'/>">·Î±×ÀÎ</a>
-			<a href="<c:url value = '/famInsertForm'/>">°¡Á· µî·Ï Æû</a>
+			<a href="<c:url value = '/loginForm'/>">ë¡œê·¸ì¸</a>
+			<a href="<c:url value = '/feelManageForm'/>">ê¸°ë¶„ê´€ë¦¬</a>	
+			<a href="<c:url value = '/famInsertForm'/>">ê°€ì¡± ë“±ë¡ í¼</a>
 		</section>
 		
 	</body>
