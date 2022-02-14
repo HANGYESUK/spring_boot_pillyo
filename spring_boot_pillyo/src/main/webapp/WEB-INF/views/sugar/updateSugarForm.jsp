@@ -18,7 +18,6 @@
 
 		<section>
 			<form id="updateSugarForm" method="post" action="<c:url value='/updateSugar'/>">
-			
 			혈당관리번호<input type="text" id="sugarNo" name="sugarNo" value="${sugar.sugarNo}"/><br>
 			상황<input type="text" id="situation" name="situation" value="${sugar.situation}"/><br>
 			투약<input type="text" id="sugarMedication" name="sugarMedication" value="${sugar.sugarMedication}"/><br>
@@ -30,6 +29,7 @@
 			메모<input type="text" id="acpcMemo" name="acpcMemo" value="${sugar.acpcMemo}"/><br>
 			기록날짜<input type="date" id="sugarRecordDate" name="sugarRecordDate" value="${sugar.sugarRecordDate}"/><br>
 			기록시간<input type="time" id="sugarRecordTime" name="sugarRecordTime" value="${sugar.sugarRecordTime}"/><br>
+			가족번호<input type="text" id="famNo" name="famNo" value="${sugar.famNo}"/><br>
 			
 			<input type="submit"  value="등록"/>
 				
