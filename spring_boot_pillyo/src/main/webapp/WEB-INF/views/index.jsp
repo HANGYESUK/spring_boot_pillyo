@@ -22,6 +22,11 @@
 			<a href="<c:url value = '/sugarForm'/>">혈당등록</a>
 			<a href="<c:url value = '/listAllSugar'/>">혈당리스트</a>
 			
+			<br><br><br><br><br><br><br><br><br><br><br><br>
+			혈압관리
+			<a href="<c:url value = '/pressureForm'/>">혈압등록</a>
+			<a href="<c:url value = '/listAllPressure'/>">혈압리스트</a>
+			
 			
 			<br><br>
 						<a href="<c:url value = '/join'/>">회원가입</a>

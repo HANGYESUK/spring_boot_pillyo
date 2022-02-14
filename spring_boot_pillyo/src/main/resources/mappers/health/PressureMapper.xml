@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="com.pillyo.pill.dao.IPressureDAO">
+  		<insert id="insertPressure" parameterType="com.pillyo.pill.model.PressureVO">
+  			insert into  pressureManage(
+							Situation,
+							SBP,
+							DBP,
+							bpm,
+							pressureMemo,
+							pressureRecordDate,
+							pressureRecordTime,
+							famNo
+  			) values(
+							#{situation},
+							#{SBP},
+							#{DBP},
+							#{bpm},
+							#{pressureMemo},
+							#{pressureRecordDate},
+							#{pressureRecordTime},
+							"001"
+  			)
+  			
+  		</insert>
+  		
+  		<select id="listAllPressure" resultType="com.pillyo.pill.model.PressureVO">
+  			select * from pressureManage
+  		</select>
+  </mapper>
