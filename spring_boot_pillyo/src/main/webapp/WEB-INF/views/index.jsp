@@ -27,9 +27,11 @@
 			<a href="<c:url value = '/pressureForm'/>">혈압등록</a>
 			<a href="<c:url value = '/listAllPressure'/>">혈압리스트</a>
 			
-			
 			<br><br>
-						<a href="<c:url value = '/join'/>">회원가입</a>
+			<a href="<c:url value = '/join'/>">회원가입</a>
+
+			<a href="<c:url value = '/bodyForm'/>">체형관리정보 등록 </a>
+			<a href="<c:url value = '/listAllBody'/>">체형 관리 정보 리스트</a>
 			
 		</section>
 		
