@@ -29,11 +29,11 @@
 				<tr><th>기분일기</th>	<td><input type = "text" id = "feelMemo"></td></tr>
 				<tr><th>기록날짜</th>	<td><input type = "datetime-local" id = "feel-datetime"></td></tr>
 				<tr><th>기록이</th>	<td><c:if test="${!empty family}" >
-											<select name = "famNo">
-											<option value="">선택</option>
 											<c:forEach var="family" items="${family}" varStatus="i">
+											<select name = "famNo">
+												<option value="">선택</option>
 												<option value="${family.famNo}">${family.famNo}</option>
-										</c:forEach></select></c:if></td></tr>
+										</select></c:forEach></c:if></td></tr>
 									<!-- family DB에 저장된 famNo 값을 셀렉트박스의 옵션으로 넣고싶음.
 										만약 famNo이 2개 있으면 옵션도 2개가 나와야하고 1개 추가되면 3개가 나와야함
 										db랑 연결되서 동적으로 옵션이 바뀌는 박스 만들어야하는데... 쉽지않네 -->
