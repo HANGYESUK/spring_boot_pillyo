@@ -31,7 +31,7 @@ public class SugarService implements ISugarService {
 	}
 
 	@Override
-	public void deleteSugar(String sugarNo) {
+	public void deleteSugar(int sugarNo) {
 		dao.deleteSugar(sugarNo);
 	}
 

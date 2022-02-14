@@ -1,20 +1,20 @@
 package com.pillyo.pill.model;
 
 public class SugarVO {
-	private String sugarNo;
+	private int sugarNo;
 	private String situation;
 	private String sugarMedication;
 	private String acpc;
-	private String sugarLevel;
+	private int sugarLevel;
 	private String acpcMemo;
 	private String sugarRecordDate;
 	private String sugarRecordTime;
-	private String famNo;
+	private int famNo;
 	
-	public String getSugarNo() {
+	public int getSugarNo() {
 		return sugarNo;
 	}
-	public void setSugarNo(String sugarNo) {
+	public void setSugarNo(int sugarNo) {
 		this.sugarNo = sugarNo;
 	}
 	public String getSituation() {
@@ -35,10 +35,10 @@ public class SugarVO {
 	public void setAcpc(String acpc) {
 		this.acpc = acpc;
 	}
-	public String getSugarLevel() {
+	public int getSugarLevel() {
 		return sugarLevel;
 	}
-	public void setSugarLevel(String sugarLevel) {
+	public void setSugarLevel(int sugarLevel) {
 		this.sugarLevel = sugarLevel;
 	}
 	public String getAcpcMemo() {
@@ -59,12 +59,12 @@ public class SugarVO {
 	public void setSugarRecordTime(String sugarRecordTime) {
 		this.sugarRecordTime = sugarRecordTime;
 	}
-	public String getFamNo() {
+	public int getFamNo() {
 		return famNo;
 	}
-	public void setFamNo(String famNo) {
+	public void setFamNo(int famNo) {
 		this.famNo = famNo;
 	}
 	
-		
+					
 }

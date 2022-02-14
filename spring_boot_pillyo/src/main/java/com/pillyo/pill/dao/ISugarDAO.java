@@ -8,5 +8,5 @@ public interface ISugarDAO {
 	ArrayList<SugarVO>listAllSugar();
 	void insertSugar(SugarVO vo);
 	void updateSugar(SugarVO vo);
-	void deleteSugar(String sugarNo);
+	void deleteSugar(int sugarNo);
 }
