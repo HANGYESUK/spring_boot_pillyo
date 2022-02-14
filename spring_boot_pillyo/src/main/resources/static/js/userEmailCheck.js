@@ -5,7 +5,9 @@
  $(document).ready(function(){
 	$('#emailCheck').on('click', function(){		
 		event.preventDefault();
-
+	
+		let email = $('#userEmailId').val() + $('#userEmail').val()
+	
 		$.ajax({
 			type:"post",
 			url:"userEmailCheck",

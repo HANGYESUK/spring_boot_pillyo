@@ -11,15 +11,16 @@ function formCheck(frm) {
 
 window.onload = function() {
 	// 이메일 select
-	$('input[name=userEmailId]').change(function() {
-				var mailId = $(this).val();
+	$('input[name=userEmailText]').change(function() {
+				var mailId = $('#userEmailId').val();
 				var text = $('#userEmailText').val();
-				$('#userEmail').val(userId + '@' + text);
+				$('#userEmail').val(mailId+ '@' + text);
+				//$('#userEmail').val(mailId + '@' + text);
 	});
 	
 	$('select[name=selectEmail]').change(function() {
 			if($(this).val()=="self"){
-				$('#userEmailText').val("");
+  				emailText.val("");
 				$("#userEmailText").attr("readonly", false);
 			} else {
 				$('#userEmailText').val($(this).val());
@@ -29,6 +30,10 @@ window.onload = function() {
 				$('#userEmail').val(mailId + '@' + text);
 			}
 	});
+	
+	$('input[name=userEmailText]').change(function() {
+		console.log($('#userEmailText').val())
+		});
 	
 	// 핸드폰 번호
 	$('input[name=userHp1]').change(function() {
