@@ -34,5 +34,5 @@ public class FamilyService implements IFamilyService {
 	public void deleteFamMember(FamilyVO famVo) {
 		//dao.deleteFamMember(famVo);
 	}
-
+	
 }
