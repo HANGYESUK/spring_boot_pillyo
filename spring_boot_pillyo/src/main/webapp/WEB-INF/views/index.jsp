@@ -15,11 +15,16 @@
 			<a href="<c:url value = '/loginForm'/>">로그인</a>
 			<a href="<c:url value = '/join'/>">회원가입</a>
 			<a href="<c:url value = '/famInsertForm'/>">가족 등록 폼</a>
+			<a href="<c:url value = '/feelManageForm'/>">기분관리</a>	
 			
 			<br><br><br><br><br><br><br><br><br><br><br><br>
 			혈당관리
 			<a href="<c:url value = '/sugarForm'/>">혈당등록</a>
 			<a href="<c:url value = '/listAllSugar'/>">혈당리스트</a>
+			
+			
+			<br><br>
+						<a href="<c:url value = '/join'/>">회원가입</a>
 			
 		</section>
 		
