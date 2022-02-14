@@ -34,5 +34,9 @@ public class SugarService implements ISugarService {
 	public void deleteSugar(int sugarNo) {
 		dao.deleteSugar(sugarNo);
 	}
-
+	
+	@Override
+	public SugarVO detailViewSugar(int SugarNo) {
+		return dao.detailViewSugar(SugarNo);
+	}
 }

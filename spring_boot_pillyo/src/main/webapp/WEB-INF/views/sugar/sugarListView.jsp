@@ -27,6 +27,8 @@
 		 		기록날짜 ${sugar.sugarRecordDate}
 		 		기록시간 ${sugar.sugarRecordTime}
 		 		가족번호 ${sugar.famNo}
+		 		
+		 		<a href="<c:url value='/updateSugarForm/${sugar.sugarNo}'/>">혈당 정보 수정</a>
 		 		<a href="javascript:deleteCheck();">혈당 정보 삭제</a><br><br>
 		 		
 		 		
