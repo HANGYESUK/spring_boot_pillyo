@@ -14,9 +14,11 @@
 		<jsp:include page="/WEB-INF/views/layout/top.jsp" flush='true' />
 
 		<section>
-			<h3>뷰페이지</h3>
+			<h3>혈당 뷰페이지</h3>
+		 
+				 
 		 <c:forEach items="${sugarList}" var="sugar">
-		 	 
+		 		번호 ${sugar.sugarNo}
 		 		상황 ${sugar.situation}
 		 		투약 ${sugar.sugarMedication}
 		 		식전/식후 ${sugar.acpc}
@@ -25,8 +27,22 @@
 		 		기록날짜 ${sugar.sugarRecordDate}
 		 		기록시간 ${sugar.sugarRecordTime}
 		 		가족번호 ${sugar.famNo}
+		 		<a href="javascript:deleteCheck();">혈당 정보 삭제</a><br><br>
+		 		
+		 		
+			<script type="text/javascript">
+				function deleteCheck(){
+					var answer = confirm("선택한 혈당 정보를 삭제하시겠습니까?");
+					if(answer == true){
+						location.href="<c:url value='/deleteSugar/${sugar.sugarNo}' />";
+					}
+				}
+			</script>
+		 		
 		 		<br>
 		 </c:forEach>
+		
+		</table>
 		
 		</section>
 

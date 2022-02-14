@@ -29,4 +29,20 @@
   		<select id="listAllSugar" resultType="com.pillyo.pill.model.SugarVO">
   			select * from sugarManage
   		</select>
+  		
+  		<update id="updateSugar" parameterType="com.pillyo.pill.model.SugarVO">
+  			update sugarManage set 
+  				situation =#{situation},
+				sugarMedication =#{sugarMedication},
+				acpc =#{acpc},
+				sugarLevel =#{sugarLevel},
+				acpcMemo =#{acpcMemo},
+				sugarRecordDate =#{sugarRecordDate},
+				sugarRecordTime =#{sugarRecordTime},
+  			where sugarNo = #{sugarNo}
+  		</update>
+  		
+  		<delete id="deleteSugar" parameterType="int">
+  			delete from sugarManage where sugarNo = #{sugarNo}
+  		</delete>
   </mapper>

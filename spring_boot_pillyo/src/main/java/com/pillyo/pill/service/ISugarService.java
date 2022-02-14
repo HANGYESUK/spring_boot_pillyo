@@ -10,7 +10,7 @@ public interface ISugarService {
 	ArrayList<SugarVO>listAllSugar();
 	void insertSugar(SugarVO vo);
 	void updateSugar(SugarVO vo);
-	void deleteSugar(String sugarNo);
+	void deleteSugar(int sugarNo);
 	
 	
 }
