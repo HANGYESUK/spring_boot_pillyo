@@ -29,4 +29,27 @@
   		<select id="listAllPressure" resultType="com.pillyo.pill.model.PressureVO">
   			select * from pressureManage
   		</select>
+  		
+  		<update id="updatePressure" parameterType="com.pillyo.pill.model.PressureVO">
+  			update pressureManage set 
+  				Situation =#{situation},
+				SBP =#{SBP},
+				DBP =#{DBP},
+				bpm =#{bpm},
+				pressureMemo =#{pressureMemo},
+				pressureRecordDate =#{pressureRecordDate},
+				pressureRecordTime =#{pressureRecordTime},
+				famNo = #{famNo}
+  			where pressureNo = #{pressureNo}
+  			
+  		</update>
+  		
+  		<delete id="deletePressure" parameterType="int">
+  			delete from pressureManage where pressureNo = #{pressureNo}
+  		</delete>
+  		
+  		<select id="detailViewPressure" parameterType="int" 
+  														  resultType="com.pillyo.pill.model.PressureVO">
+  			SELECT * FROM pressureManage WHERE pressureNo=#{pressureNo}  		
+  		</select>
   </mapper>

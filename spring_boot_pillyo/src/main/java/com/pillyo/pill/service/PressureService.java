@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.pillyo.pill.dao.IPressureDAO;
 import com.pillyo.pill.model.PressureVO;
+import com.pillyo.pill.model.SugarVO;
 
 @Service
 public class PressureService implements IPressureService {
@@ -31,8 +32,13 @@ public class PressureService implements IPressureService {
 	}
 
 	@Override
-	public void deletePressure(String pressureNo) {
+	public void deletePressure(int pressureNo) {
 		dao.deletePressure(pressureNo);
+	}
+	
+	@Override
+	public PressureVO detailViewPressure(int pressureNo) {
+		return dao.detailViewPressure(pressureNo);
 	}
 
 }
