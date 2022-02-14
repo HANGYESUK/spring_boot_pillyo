@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="com.pillyo.pill.dao.ISugarDAO">
+  		<insert id="insertSugar" parameterType="com.pillyo.pill.model.SugarVO">
+  			insert into  sugarManage(
+							situation,
+							sugarMedication,
+							acpc,
+							sugarLevel,
+							acpcMemo,
+							sugarRecordDate,
+							sugarRecordTime,
+							famNo
+  			) values(
+							#{situation},
+							#{sugarMedication},
+							#{acpc},
+							#{sugarLevel},
+							#{acpcMemo},
+							#{sugarRecordDate},
+							#{sugarRecordTime},
+							"001"
+  			)
+  			
+  		</insert>
+  		
+  		<select id="listAllSugar" resultType="com.pillyo.pill.model.SugarVO">
+  			select * from sugarManage
+  		</select>
+  </mapper>
