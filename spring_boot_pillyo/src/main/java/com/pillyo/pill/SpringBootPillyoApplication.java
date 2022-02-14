@@ -7,16 +7,20 @@ import org.springframework.context.annotation.ComponentScan;
 
 import com.pillyo.pill.controller.FamilyController;
 import com.pillyo.pill.controller.MainController;
+import com.pillyo.pill.controller.SugarManageController;
 import com.pillyo.pill.controller.UserController;
 import com.pillyo.pill.dao.IFamilyDAO;
+import com.pillyo.pill.dao.ISugarDAO;
 import com.pillyo.pill.dao.IUserDAO;
 
 @SpringBootApplication
 @ComponentScan(basePackageClasses = MainController.class)
 @ComponentScan(basePackageClasses = UserController.class)
 @ComponentScan(basePackageClasses = FamilyController.class)
+@ComponentScan(basePackageClasses = SugarManageController.class)
 @MapperScan(basePackageClasses = IUserDAO.class)
 @MapperScan(basePackageClasses = IFamilyDAO.class)
+@MapperScan(basePackageClasses = ISugarDAO.class)
 public class SpringBootPillyoApplication {
 
 	public static void main(String[] args) {
