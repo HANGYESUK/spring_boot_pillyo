@@ -21,7 +21,7 @@
 		        <form methond="post" action="<c:url value='/famInsert'/>">
 		          <table>
 		            <tr><th>이름</th><td><input type="text" id="famMember" name="famMember" ></td></tr>
-		            <tr><th>생년월일</th><td><input type="text" id="famBirth" name="famBirth" /></td>
+		            <tr><th>생년월일</th><td><input type="date" id="famBirth" name="famBirth" /></td>
 		            <tr>
 		            	<th>성별</th>
 		            	<td>
