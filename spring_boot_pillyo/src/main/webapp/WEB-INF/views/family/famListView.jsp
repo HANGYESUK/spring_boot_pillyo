@@ -15,7 +15,11 @@
 		<jsp:include page="/WEB-INF/views/layout/top.jsp" flush='true' />
 
 		<section>
-			famListView.jsp
+			가족번호 : ${famNo }<br>
+			아이디 : ${userId }<Br>
+			이름 : ${famMemName }<Br>
+			생년월일 : ${famBirth }<Br>
+			성별 : ${famGender }<Br>
         </section>
         
 		<!-- BOTTOM  -->

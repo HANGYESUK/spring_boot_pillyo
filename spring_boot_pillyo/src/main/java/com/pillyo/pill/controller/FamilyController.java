@@ -1,9 +1,11 @@
 package com.pillyo.pill.controller;
 
+import java.util.ArrayList;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.pillyo.pill.model.FamilyVO;
 import com.pillyo.pill.service.FamilyService;
@@ -23,6 +25,14 @@ public class FamilyController {
 	@RequestMapping("/famInsert")
 	public String famInsert(FamilyVO fam) {
 		service.famInsert(fam);
+		return "redirect:/famListView";
+	}
+	
+	// 가족 목록 조회
+	@RequestMapping("/famListView")
+	public String famListView(Model model) {
+		ArrayList<FamilyVO> famList = service.famListView();
+		model.addAttribute("famList", famList);		
 		return "/family/famListView";
 	}
 }

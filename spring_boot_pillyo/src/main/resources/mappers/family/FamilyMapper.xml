@@ -9,8 +9,8 @@
   		<!-- 가족번호 F001과 같은 형식으로 자동 증가되어 삽입 -->
   		<!-- userId = 로그인 한 사용자의 아이디 불러와 삽입 -->
   		<insert id="famInsert" parameterType="com.pillyo.pill.model.FamilyVO">
-  			INSERT INTO family (famNo, userId, famMemName, famBirth, famGender)
-  			VALUES ("F001", "hong123", #{famMemName}, #{famBirth}, #{famGender})
+  			INSERT INTO family (famNo, userId, famMember, famBirth, famGender)
+  			VALUES ("F003", "hong123", #{famMember}, #{famBirth}, #{famGender})
   		</insert>
   		<!-- INSERT INTO family (famNo, userId, famMemName, famBirth, famGender)
   			VALUES (SELECT CONCAT('F', (SELECT LPAD(COUNT(*)+1,3,'0') FROM family )),
