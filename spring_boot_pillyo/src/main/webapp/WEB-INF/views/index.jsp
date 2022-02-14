@@ -14,6 +14,7 @@
 		<section>
 			<a href="<c:url value = '/loginForm'/>">로그인</a>
 			<a href="<c:url value = '/famInsertForm'/>">가족 등록 폼</a>
+			<a href="<c:url value = '/feelManageForm'/>">기분관리</a>	
 			
 			<br><br><br><br><br><br><br><br><br><br><br><br>
 			혈당관리
