@@ -13,6 +13,7 @@
 		<!-- SECTION  -->
 		<section>
 			<a href="<c:url value = '/loginForm'/>">로그인</a>
+			<a href="<c:url value = '/join'/>">회원가입</a>
 			<a href="<c:url value = '/famInsertForm'/>">가족 등록 폼</a>
 		</section>
 		

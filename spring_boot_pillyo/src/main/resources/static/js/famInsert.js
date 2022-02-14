@@ -12,6 +12,7 @@
 			data:{"": $('#').val()},  /* 컨트롤러에서 받을 때 : ""로 받음*/
 			dataType:'text',
 			success:function(result){
+				alert("성공")
 				/*if(result == "success"){
 					alert("login ok");
 					location.href="/";
