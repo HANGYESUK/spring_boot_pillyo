@@ -20,6 +20,10 @@
 			<a href="<c:url value = '/sugarForm'/>">혈당등록</a>
 			<a href="<c:url value = '/listAllSugar'/>">혈당리스트</a>
 			
+			
+			<br><br>
+						<a href="<c:url value = '/join'/>">회원가입</a>
+			
 		</section>
 		
 	</body>
