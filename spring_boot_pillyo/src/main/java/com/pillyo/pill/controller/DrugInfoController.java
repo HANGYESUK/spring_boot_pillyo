@@ -15,7 +15,7 @@ public class DrugInfoController {
 	
 	@RequestMapping("/insertDrugList")
 	public String insertDrugList(String num) throws Exception{
-		for(int i=1;i<45;i++) {
+		for(int i=24;i<45;i++) {
 		
 		service.insertDrugList(i+"");
 		}

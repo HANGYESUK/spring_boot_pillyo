@@ -14,4 +14,9 @@ public class MainController {
 	public String join() {
 		return "/join";
 	}
+	
+	@RequestMapping("/dashboard")
+	public String dashboard() {
+		return "/Main/dashboard";
+	}
 }
