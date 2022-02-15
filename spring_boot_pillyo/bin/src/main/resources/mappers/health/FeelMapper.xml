@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="com.pillyo.pill.dao.IFeelDAO">
+	<!-- 기분 관리 : 관리번호, 기분척도, 메모, 기록날짜, 기록시간, 가족번호 -->
+  	<resultMap  id="feelResult" type="com.pillyo.pill.model.FeelVO">
+		<result property="feelNo" column="feelNo" />
+		<result property="feelScale" column="feelScale" />
+		<result property="feelMemo" column="feelMemo" />
+		<result property="feelRecordDate" column="feelRecordDate" />
+		<result property="feelRecordTime" column="feelRecordTime" />
+		<result property="famNo" column="famNo" />  
+	</resultMap>
+        
+    <!-- 기분 등록  -->
+	<insert id="insertFeel" parameterType="com.pillyo.pill.model.FeelVO">
+		INSERT INTO feelManage ( feelScale, feelMemo, feelRecordDate, feelRecordTime, famNo)
+		VALUES ( #{feelScale}, #{feelMemo}, #{feelRecordDate}, #{feelRecordTime},'001')
+	</insert>
+	
+    <!-- 기분 정보 수정 : 수정된 정보 DB에 저장 -->
+	<update id="updateFeel" parameterType="com.pillyo.pill.model.FeelVO">
+	   UPDATE feelManage SET feelNo=#{feelNo}, feelScale=#{feelScale}, feelMemo=#{feelMemo},
+	                         feelRecordDate=#{feelRecordDate}, feelRecordTime=#{feelRecordTime}, famNo='001' 
+	   WHERE feelNo=#{feelNo}
+	</update>
+	
+   <!-- 기분 정보 삭제 -->
+   <delete id="deleteFeel"  parameterType="int">
+      DELETE FROM feelManage WHERE feelNo=#{feelNo}
+   </delete>
+   
+	<!-- 기분 전체 기록 조회 -->
+	<select id="listAllFeelVO" parameterType="com.pillyo.pill.model.FeelVO">
+	   SELECT * FROM feelManage
+	</select>
+  </mapper>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="com.pillyo.pill.dao.IBodyDAO">
+  		<insert id="insertBody" parameterType="com.pillyo.pill.model.BodyVO">
+  			insert into bodyManage(
+							height,
+							weight,
+							bmi,
+							bodyRecordDate,
+							famNo
+  			) values(
+							#{height},
+							#{weight},
+							#{bmi},
+							#{bodyRecordDate},
+							"001"
+  			)	
+  		</insert>
+  		
+  		<select id="listAllBody" resultType="com.pillyo.pill.model.BodyVO">
+  			select * from bodyManage
+  		</select>
+  		
+  		<update id="updateBody" parameterType="com.pillyo.pill.model.BodyVO">
+  			update bodyManage set 
+  				height =#{height},
+				weight =#{weight},
+				bmi =#{bmi},
+				bodyRecordDate =#{bodyRecordDate},
+				famNo =#{famNo}
+  			where bodyNo = #{bodyNo}
+  		</update>
+		
+  		<delete id="deleteBody" parameterType="int">
+  			delete from bodyManage where bodyNo = #{bodyNo}
+  		</delete> 
+  		
+  		<select id="detailViewBody" parameterType="int" 
+			  	resultType="com.pillyo.pill.model.BodyVO">
+  			SELECT * FROM bodyManage WHERE bodyNo=#{bodyNo}  		
+  		</select>
+  </mapper>

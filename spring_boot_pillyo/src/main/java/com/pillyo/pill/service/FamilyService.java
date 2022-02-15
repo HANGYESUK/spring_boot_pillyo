@@ -16,8 +16,8 @@ public class FamilyService implements IFamilyService {
 	IFamilyDAO dao;
 	
 	@Override
-	public ArrayList<FamilyVO> selectFamList() {
-		return dao.selectFamList();
+	public ArrayList<FamilyVO> famListView() {
+		return dao.famListView();
 	}
 
 	@Override
@@ -26,13 +26,18 @@ public class FamilyService implements IFamilyService {
 	}
 
 	@Override
-	public void updateFamMember(FamilyVO famVo) {
-		//dao.updateFamMember(famVo);
+	public void famUpdate(FamilyVO famVo) {
+		dao.famUpdate(famVo);
 	}
 
 	@Override
-	public void deleteFamMember(FamilyVO famVo) {
-		//dao.deleteFamMember(famVo);
+	public void famDelete(String famNo) {
+		dao.famDelete(famNo);
+	}
+	
+	@Override
+	public FamilyVO famDetailView(String famNo) {
+		return dao.famDetailView(famNo);
 	}
 
 }
