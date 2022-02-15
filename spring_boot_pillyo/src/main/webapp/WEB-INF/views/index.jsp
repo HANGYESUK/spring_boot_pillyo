@@ -14,7 +14,6 @@
 		<section>
 			<a href="<c:url value = '/loginForm'/>">로그인</a><br>
 			<a href="<c:url value = '/famInsertForm'/>">가족 등록 폼</a><br>
-			<a href="<c:url value = '/famUpdateForm'/>">가족 수정 폼</a><br>
 		</section>
 		
 	</body>
