@@ -16,7 +16,7 @@
   
   		<!-- 가족 정보 등록  -->
   		<insert id="famInsert" parameterType="com.pillyo.pill.model.FamilyVO">
-  			INSERT INTO family_auto (userId, famMember, famBirth, famGender)
+  			INSERT INTO family (userId, famMember, famBirth, famGender)
   			VALUES ("hong123", #{famMember}, #{famBirth}, #{famGender})
   		</insert>
 		<!-- 가족번호 F001과 같은 형식으로 자동 증가되어 삽입 -->
@@ -44,11 +44,11 @@
   		
   		<!-- 가족 목록 조회 -->
   		<select id="famListView" resultMap="famResult">
-  			SELECT * FROM family_auto ORDER BY famNo
+  			SELECT * FROM family ORDER BY famNo
   		</select>
   		
   		<!-- 가족 정보 상세 조회 -->
   		<select id="famDetailView" parameterType="string" resultType="com.pillyo.pill.model.FamilyVO">
-  			SELECT * FROM family_auto WHERE famNo=#{famNo}  		
+  			SELECT * FROM family WHERE famNo=#{famNo}  		
   		</select>
   </mapper>
