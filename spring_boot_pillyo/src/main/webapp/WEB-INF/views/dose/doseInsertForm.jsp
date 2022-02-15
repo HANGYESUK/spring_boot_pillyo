@@ -35,17 +35,16 @@
 		            <tr><th>복용 종료 날짜</th><td><input type="date" id="ddEndDate" name="ddEndDate"></td></tr>
 		            <tr><th>복용 주기 (일 단위)</th><td><input type="number" min="1" id="ddCycle" name="ddCycle"></td></tr>
 		            <tr>
-		            	<th>복용 시간대 (여러 개 선택 가능)</th>
+		            	<th>복용 시간대 (여러 개 선택 가능)</th> <!-- 여러 개 선택 시 , 로 구분되어 문자열로 삽입됨 -->
 		            	<td>
-		            		우선 텍스트로 입력받게 <input type="text" id="ddTimeSlot" name="ddTimeSlot" >
-		            		<!-- <input type="checkbox" name="ddTimeSlot" value="기상 직후">기상 직후
-		            		<input type="checkbox" name="ddTimeSlot" value="아침 식전">아침 식전
-		            		<input type="checkbox" name="ddTimeSlot" value="아침 식후">아침 식후
-		            		<input type="checkbox" name="ddTimeSlot" value="점심 식전">점심 식전
-		            		<input type="checkbox" name="ddTimeSlot" value="점심 식후">점심 식후
-		            		<input type="checkbox" name="ddTimeSlot" value="저녁 식전">저녁 식전
-		            		<input type="checkbox" name="ddTimeSlot" value="저녁 식후">저녁 식후
-		            		<input type="checkbox" name="ddTimeSlot" value="취침 전">취침 전 -->
+		            		<input type="checkbox" name="ddTimeSlot" value="기상직후">기상직후
+		            		<input type="checkbox" name="ddTimeSlot" value="아침식전">아침식전
+		            		<input type="checkbox" name="ddTimeSlot" value="아침식후">아침식후
+		            		<input type="checkbox" name="ddTimeSlot" value="점심식전">점심식전
+		            		<input type="checkbox" name="ddTimeSlot" value="점심식후">점심식후
+		            		<input type="checkbox" name="ddTimeSlot" value="저녁식전">저녁식전
+		            		<input type="checkbox" name="ddTimeSlot" value="저녁식후">저녁식후
+		            		<input type="checkbox" name="ddTimeSlot" value="취침전">취침전
 		                </td>
 		            </tr>
 		            <tr><th>약 일회 복용 개수</th><td><input type="number" min="1" id="ddAmount" name="ddAmount"></td></tr>
