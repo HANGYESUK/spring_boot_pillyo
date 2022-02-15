@@ -6,10 +6,9 @@ body {
     margin-right: 10px;
 }
 
-.low {
+.flex {
     display: flex;
     flex-direction: row;
-    justify-content: center;
     align-items: center;
     color: white;
 }
@@ -162,6 +161,7 @@ select {
 
 .pill-Info {
     width: 570px;
+
     height: 50%;
     background-color: rgb(48, 48, 48);
     border-radius: 20px;
@@ -265,10 +265,10 @@ li {
 }
 
 #main-navigation {
-    border-top: 1px solid #7eb66d; /* navbar 위에 한줄 긋기 */
-    margin-bottom: 20px;
+    position: fixed;
+    width: 80%;
     height: 40px;
-    width: 90%;
+    margin-left: 10%;
 }
 .outer-menu {
     display: flex;
@@ -296,9 +296,10 @@ li {
 
 .outer-menu-btn:hover {
     background-color: rgb(94, 150, 255);
+    color: white;
 }
 
-.outer-menu-btn:hover a {
+.outer-menu-btn:hover h5{
     color: white;
 }
 
