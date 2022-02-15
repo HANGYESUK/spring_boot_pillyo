@@ -35,6 +35,9 @@
 			<a href="<c:url value = '/bodyForm'/>">체형관리정보 등록 </a>
 			<a href="<c:url value = '/listAllBody'/>">체형 관리 정보 리스트</a>
 			
+			<br><br><br><br><br><br><br><br>
+			<a href="<c:url value = '/insertDrugList'/>">API 약 정보 db 저장</a>
+			<br><br><br><br><br><br><br><br>
 		</section>
 		
 	</body>
