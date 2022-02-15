@@ -30,7 +30,10 @@
 			        복용 체크 우선 보류<br>
 		          <table>
 		            <tr><th>약 복용 타이틀</th><td><input type="text" id="ddTitle" name="ddTitle" ></td></tr>
-		            <tr><th>약 이름 입력받아서 -> 일치하는 약 선택 -> 해당 약 번호 넘기도록 (test용 -> 우선 약번호 입력)</th><td><input type="number" id="drugInfoNo" name="drugInfoNo" /></td>
+		            
+		            <tr><th>약 이름 입력받아서 -> 일치하는 약 선택 -> 해당 약 번호 넘기도록<br>약 이름 사용자 입력</th><td><input type="text" id="searchInput" name="searchInput" /></td>
+		            <tr><th>약 번호 (자동완성 결과)<br><br></th><td><input type="number" id="drugInfoNo" name="drugInfoNo"></td></tr>
+		            
 		            <tr><th>복용 시작 날짜</th><td><input type="date" id="ddStartDate" name="ddStartDate"></td></tr>
 		            <tr><th>복용 종료 날짜</th><td><input type="date" id="ddEndDate" name="ddEndDate"></td></tr>
 		            <tr><th>복용 주기 (일 단위)</th><td><input type="number" min="1" id="ddCycle" name="ddCycle"></td></tr>
@@ -55,8 +58,51 @@
 		                </td>
 		            </tr>          
 		           </table>
+		           
+		           <br><br><br><br><br><br>
+		           <div id='autoResult'></div> <!-- 자동완성 - 유사 데이터 표출 영역 -->
 		        </form>
 	        </section>
+	        
+	        <script>
+					var drugArr = [
+					    {key:1, name:'활명수'},
+					    {key:2, name:'신신티눈고(살리실산반창고)(수출명:SINSINCORNPLASTER)'},
+					    {key:3, name:'아네모정'},
+					    {key:4, name:'타치온정50밀리그램(글루타티온(환원형))'},
+					];
+					
+					var isComplete = false;  //autoResult 자식이 선택 되었는지 여부
+					$('#searchInput').keyup(function(){
+					    var txt = $(this).val();
+					    if(txt != ''){  //빈줄이 들어오면
+					        $('#autoResult').children().remove();
+
+					        drugArr.forEach(function(arg){
+					            if(arg.name.indexOf(txt) > -1 ){
+					                $('#autoResult').append(
+					                    $('<div>').text(arg.name).attr({'key':arg.key})
+					                );		
+					            }
+					        });
+					        $('#autoResult').children().each(function(){
+					            $(this).click(function(){
+					                $('#searchInput').val($(this).text());
+					                $('#drugInfoNo').val($(this).attr('key'));
+					                $('#autoResult').children().remove();	
+					                isComplete = true;
+					            });
+					        });			
+					    } else {
+					        $('#autoResult').children().remove();
+					    }  
+					});
+					$('#searchInput').keydown(function(event){
+					    if(isComplete) {  //autoMaker 자식이 선택 되었으면 초기화
+					        $('#drugInfoNo').val('')	
+					    }
+					})
+				</script>
 	        
 			<!-- BOTTOM  -->
 			<jsp:include page="/WEB-INF/views/layout/bottom.jsp" flush='true' />
