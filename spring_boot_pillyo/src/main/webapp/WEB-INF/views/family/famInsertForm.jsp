@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
@@ -7,7 +7,6 @@
 		<meta charset="UTF-8">
 		<title>가족 등록 폼</title>
 		<script src="<c:url value='/js/jquery-3.6.0.min.js'/>"></script>
-		<script src="<c:url value='/js/familyInsert.js'/>"></script>
 	</head>
 	<body>
 		<div id="wrap">
@@ -18,10 +17,10 @@
 			<!--  가족 등록 폼  -->
 			<section>
 		        <h1>가족 등록</h1>
-		        <hr>
-		        <form id="famInsertForm" name="famInsertForm">
+		        <hr><br>
+		        <form methond="post" action="<c:url value='/famInsert'/>">
 		          <table>
-		            <tr><th>이름</th><td><input type="text" id="famMemName" name="famMemName" ></td></tr>
+		            <tr><th>이름</th><td><input type="text" id="famMember" name="famMember" ></td></tr>
 		            <tr><th>생년월일</th><td><input type="date" id="famBirth" name="famBirth" /></td>
 		            <tr>
 		            	<th>성별</th>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="com.pillyo.pill.dao.IDrugDAO">
+  		
+  		<insert id="insertDrugList" parameterType="java.util.List">
+  			insert into drugInfo  (
+  				entpName,
+				itemName,
+				efcyQesitm,
+				useMethodQesitm,
+				atpnQesitm,
+				intrcQesitm,
+				seQesitm,
+				depositMethodQesitm,
+				itemImage
+  			)
+  			values
+  			<foreach collection="list" item="item" separator=",">
+  				(
+  				#{item.entpName},
+				#{item.itemName},
+				#{item.efcyQesitm},
+				#{item.useMethodQesitm},
+				#{item.atpnQesitm},
+				#{item.intrcQesitm},
+				#{item.seQesitm},
+				#{item.depositMethodQesitm},
+				#{item.itemImage}
+  				)
+  			</foreach>
+  		</insert>
+  		
+  </mapper>

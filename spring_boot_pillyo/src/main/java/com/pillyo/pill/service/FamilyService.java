@@ -9,15 +9,15 @@ import org.springframework.stereotype.Service;
 import com.pillyo.pill.dao.IFamilyDAO;
 import com.pillyo.pill.model.FamilyVO;
 
-@Service
+@Service 
 public class FamilyService implements IFamilyService {
 	@Autowired
 	@Qualifier("IFamilyDAO")
 	IFamilyDAO dao;
 	
 	@Override
-	public ArrayList<FamilyVO> selectFamList() {
-		return dao.selectFamList();
+	public ArrayList<FamilyVO> famListView() {
+		return dao.famListView();
 	}
 
 	@Override
@@ -26,13 +26,18 @@ public class FamilyService implements IFamilyService {
 	}
 
 	@Override
-	public void updateFamMember(FamilyVO famVo) {
-		//dao.updateFamMember(famVo);
+	public void famUpdate(FamilyVO famVo) {
+		dao.famUpdate(famVo);
 	}
 
 	@Override
-	public void deleteFamMember(FamilyVO famVo) {
-		//dao.deleteFamMember(famVo);
+	public void famDelete(String famNo) {
+		dao.famDelete(famNo);
+	}
+	
+	@Override
+	public FamilyVO famDetailView(String famNo) {
+		return dao.famDetailView(famNo);
 	}
 
 }

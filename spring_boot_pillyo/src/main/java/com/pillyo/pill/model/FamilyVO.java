@@ -2,9 +2,8 @@ package com.pillyo.pill.model;
 
 public class FamilyVO {
 	private String famNo; // 가족번호
-	private String userId; // 아이디
-	private String famMemName; // 이름
-	private String famRelation; // 관계
+	private String userId; // 아이디 
+	private String famMember; // 이름
 	private String famBirth; // 생년월일
 	private int famGender; // 성별
 	
@@ -26,20 +25,12 @@ public class FamilyVO {
 		this.userId = userId;
 	}
 
-	public String getFamMemName() {
-		return famMemName;
+	public String getFamMember() {
+		return famMember;
 	}
 
-	public void setFamMemName(String famMemName) {
-		this.famMemName = famMemName;
-	}
-
-	public String getFamRelation() {
-		return famRelation;
-	}
-
-	public void setFamRelation(String famRelation) {
-		this.famRelation = famRelation;
+	public void setFamMember(String famMember) {
+		this.famMember = famMember;
 	}
 
 	public String getFamBirth() {
