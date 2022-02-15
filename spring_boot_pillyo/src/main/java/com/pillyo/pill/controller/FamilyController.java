@@ -16,7 +16,7 @@ public class FamilyController {
 	@Autowired
 	FamilyService service;
 	
-	// 가족 등록 폼으로 이동
+	// 가족 등록 폼으로 이동 
 	@RequestMapping("/famInsertForm")
 	public String famInsertForm() {
 		return "/family/famInsertForm";

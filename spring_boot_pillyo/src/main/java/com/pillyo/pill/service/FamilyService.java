@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import com.pillyo.pill.dao.IFamilyDAO;
 import com.pillyo.pill.model.FamilyVO;
 
-@Service
+@Service 
 public class FamilyService implements IFamilyService {
 	@Autowired
 	@Qualifier("IFamilyDAO")

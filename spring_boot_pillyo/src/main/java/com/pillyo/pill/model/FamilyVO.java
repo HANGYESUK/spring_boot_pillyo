@@ -2,7 +2,7 @@ package com.pillyo.pill.model;
 
 public class FamilyVO {
 	private String famNo; // 가족번호
-	private String userId; // 아이디
+	private String userId; // 아이디 
 	private String famMember; // 이름
 	private String famBirth; // 생년월일
 	private int famGender; // 성별

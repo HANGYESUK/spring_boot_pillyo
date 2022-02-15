@@ -15,12 +15,12 @@
 	<!-- 조회 상세 등록 - auto -->
   
   		<!-- 가족 정보 등록  -->
-  		<!-- 가족번호 F001과 같은 형식으로 자동 증가되어 삽입 -->
-  		<!-- userId = 로그인 한 사용자의 아이디 불러와 삽입 -->
   		<insert id="famInsert" parameterType="com.pillyo.pill.model.FamilyVO">
   			INSERT INTO family_auto (userId, famMember, famBirth, famGender)
   			VALUES ("hong123", #{famMember}, #{famBirth}, #{famGender})
   		</insert>
+		<!-- 가족번호 F001과 같은 형식으로 자동 증가되어 삽입 -->
+  		<!-- userId = 로그인 한 사용자의 아이디 불러와 삽입 -->
   		<!-- 본인 테이블을 insert 구문의 데이터로 활용 불가 오류 발생 -->
   		<!-- INSERT INTO family (famNo, userId, famMember, famBirth, famGender)
   			VALUES ((SELECT CONCAT('F', (SELECT LPAD(COUNT(*)+1,3,'0') FROM family ))), "hong123", #{famMember}, #{famBirth}, #{famGender}) -->
