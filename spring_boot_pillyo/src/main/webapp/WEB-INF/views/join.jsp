@@ -9,6 +9,10 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Pill-Yo 회원가입</title>
 		<link href="<c:url value='/css/join.css'/>" rel="stylesheet" type="text/css">	
+		
+		<link rel="stylesheet" href="/css/dashboard/dashboardContent.css" />
+		<link rel="stylesheet" href="/css/dashboard/dashboard.css" />	
+		
 		<script src="<c:url value='/js/jquery-3.6.0.min.js'/>"></script>
 		<script src="<c:url value='/js/formCheck.js'/>"></script>
 		<script src="<c:url value='/js/userIdCheck.js'/>"></script>
@@ -20,8 +24,7 @@
 	<body>
 		<div id="wrap">
 			
-			<!-- TOP -->
-			<jsp:include page="/WEB-INF/views/layout/top.jsp" flush='true'/>
+
 			
 			<section id="section1">
 				<div id="joinBox">

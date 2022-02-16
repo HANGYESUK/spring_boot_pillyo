@@ -44,6 +44,17 @@ public class UserController {
 		return result;
 	}
 	
+	// 로그아웃
+	@RequestMapping("/logout")
+	public String logout(HttpSession session) {
+		
+		// DB에서 아이디 패승워드 확인
+
+		session.invalidate();
+
+		return "redirect:/";
+	}
+	
 	// 사용자 아이디 중복 확인
 		@ResponseBody
 		@RequestMapping("/userIdCheck")
