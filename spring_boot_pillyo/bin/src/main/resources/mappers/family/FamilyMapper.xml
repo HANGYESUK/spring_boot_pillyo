@@ -4,18 +4,51 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
   <mapper namespace="com.pillyo.pill.dao.IFamilyDAO">
+  	<resultMap  id="famResult" type="com.pillyo.pill.model.FamilyVO">
+ 		<result property="famNo" column="famNo" />
+ 		<result property="userId" column="userId" />
+ 		<result property="famMember" column="famMember" />
+ 		<result property="famBirth" column="famBirth" />
+ 		<result property="famGender" column="famGender" />
+	</resultMap>
+	
+	<!-- 조회 상세 등록 - auto -->
   
   		<!-- 가족 정보 등록  -->
-  		<!-- 가족번호 F001과 같은 형식으로 자동 증가되어 삽입 -->
-  		<!-- userId = 로그인 한 사용자의 아이디 불러와 삽입 -->
   		<insert id="famInsert" parameterType="com.pillyo.pill.model.FamilyVO">
-  			INSERT INTO family (famNo, userId, famMemName, famBirth, famGender)
-  			VALUES ("F001", "hong123", #{famMemName}, #{famBirth}, #{famGender})
+  			INSERT INTO family (userId, famMember, famBirth, famGender)
+  			VALUES ("hong123", #{famMember}, #{famBirth}, #{famGender})
   		</insert>
-  		<!-- INSERT INTO family (famNo, userId, famMemName, famBirth, famGender)
-  			VALUES (SELECT CONCAT('F', (SELECT LPAD(COUNT(*)+1,3,'0') FROM family )),
-  					#{userId}, #{famMemName}, #{famBirth}, #{famGender}) -->
+		<!-- 가족번호 F001과 같은 형식으로 자동 증가되어 삽입 -->
+  		<!-- userId = 로그인 한 사용자의 아이디 불러와 삽입 -->
+  		<!-- 본인 테이블을 insert 구문의 데이터로 활용 불가 오류 발생 -->
+  		<!-- INSERT INTO family (famNo, userId, famMember, famBirth, famGender)
+  			VALUES ((SELECT CONCAT('F', (SELECT LPAD(COUNT(*)+1,3,'0') FROM family ))), "hong123", #{famMember}, #{famBirth}, #{famGender}) -->
   					
-		<!-- INSERT INTO family (famNo, userId, famMemName, famBirth, famGender)
-  			VALUES (#{famNo}, #{userId}, #{famMemName}, #{famBirth}, #{famGender}) -->
+		<!-- INSERT INTO family (famNo, userId, famMember, famBirth, famGender)
+  			VALUES ("F032", "hong123", #{famMember}, #{famBirth}, #{famGender}) -->
+  			
+  		
+  		
+  		
+  		<!-- 가족 정보 수정 -->
+  		<update id="famUpdate" parameterType="com.pillyo.pill.model.FamilyVO">
+  			UPDATE family SET famMember=#{famMember}, famBirth=#{famBirth}, famGender=#{famGender} 
+  			WHERE famNo=#{famNo}
+  		</update>
+  		
+  		<!-- 가족 정보 삭제 -->
+  		<delete id="famDelete"  parameterType="string">
+  			DELETE FROM family WHERE famNo=#{famNo}
+  		</delete>
+  		
+  		<!-- 가족 목록 조회 -->
+  		<select id="famListView" resultMap="famResult">
+  			SELECT * FROM family ORDER BY famNo
+  		</select>
+  		
+  		<!-- 가족 정보 상세 조회 -->
+  		<select id="famDetailView" parameterType="string" resultType="com.pillyo.pill.model.FamilyVO">
+  			SELECT * FROM family WHERE famNo=#{famNo}  		
+  		</select>
   </mapper>

@@ -64,7 +64,5 @@ public class SugarVO {
 	}
 	public void setFamNo(int famNo) {
 		this.famNo = famNo;
-	}
-	
-					
+	}			
 }
