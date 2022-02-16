@@ -26,8 +26,12 @@
   			
   		</insert>
   		
-  		<select id="listAllSugar" resultType="com.pillyo.pill.model.SugarVO">
+  		<!-- <select id="listAllSugar" resultType="com.pillyo.pill.model.SugarVO">
   			select * from sugarManage
+  		</select> -->
+  		
+  		<select id="listAllSugar" parameterType="int" resultType="com.pillyo.pill.model.SugarVO">
+  			select * from sugarManage where famNo=#{famNo}
   		</select>
   		
   		<update id="updateSugar" parameterType="com.pillyo.pill.model.SugarVO">

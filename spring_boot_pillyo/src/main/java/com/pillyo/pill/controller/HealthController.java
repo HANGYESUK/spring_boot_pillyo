@@ -69,5 +69,32 @@ public class HealthController { // 건강관리 컨트롤러
 		model.addAttribute("sugar", sugar);
 		
 		return "Main/dashboard2"; // 대시보드 페이지로 포워딩
+	}	
+	
+	
+	@RequestMapping("/dashboard3/{famNo}") //페이지 다중 매핑 -> 하나만 하기
+	public String listAllHealth2(@PathVariable int famNo, Model model) {
+		// 가족번호를 전달하고, 각각의 관리 정보 받아오기
+//		int famNo=1; 
+		
+		ArrayList<BodyVO> bodyList = body_service.listAllBody(famNo);
+		model.addAttribute("bodyList", bodyList);
+//		
+		ArrayList<FeelVO> feelList = feel_service.listAllFeel(famNo);
+		model.addAttribute("feelList", feelList);
+//		FeelVO feel = feel_service.detailViewFeel(famNo);					// 기분관리
+//		model.addAttribute("feel", feel);
+//		
+		ArrayList<PressureVO> pressureList = pressure_service.listAllPressure(famNo);
+		model.addAttribute("pressureList", pressureList);
+//		PressureVO pressure = pressure_service.detailViewPressure(famNo);	// 혈압관리
+//		model.addAttribute("pressure", pressure);
+//		
+		ArrayList<SugarVO> sugarList = sugar_service.listAllSugar(famNo);
+		model.addAttribute("sugarList", sugarList);
+//		SugarVO sugar = sugar_service.detailViewSugar(famNo);				// 혈당관리
+//		model.addAttribute("sugar", sugar);
+		
+		return "Main/dashboard3"; // 대시보드 페이지로 포워딩
 	}
 }

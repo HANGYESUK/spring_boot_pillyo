@@ -19,8 +19,12 @@
   			)	
   		</insert>
   		
-  		<select id="listAllBody" resultType="com.pillyo.pill.model.BodyVO">
+  		<!-- <select id="listAllBody" resultType="com.pillyo.pill.model.BodyVO">
   			select * from bodyManage
+  		</select> -->
+  		
+  		<select id="listAllBody" parameterType="int" resultType="com.pillyo.pill.model.BodyVO">
+  			select * from bodyManage where famNo=#{famNo}
   		</select>
   		
   		<update id="updateBody" parameterType="com.pillyo.pill.model.BodyVO">
