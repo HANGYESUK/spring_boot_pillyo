@@ -25,7 +25,7 @@ public class DrugInfoService {
 	IDrugDAO dao;
 	
 		public void insertDrugList(String num) throws IOException{
-			ArrayList<DrugInfoVO> drugList = new ArrayList<DrugInfoVO>();  
+			ArrayList<DrugInfoVO> drugList = new ArrayList<DrugInfoVO>(1000);  
 			
 			 // String result = "";
 			

@@ -1,7 +1,5 @@
 package com.pillyo.pill.controller;
 
-import java.io.IOException;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,7 +13,7 @@ public class DrugInfoController {
 	
 	@RequestMapping("/insertDrugList")
 	public String insertDrugList(String num) throws Exception{
-		for(int i=24;i<45;i++) {
+		for(int i=1;i<45;i++) {
 		
 		service.insertDrugList(i+"");
 		}
