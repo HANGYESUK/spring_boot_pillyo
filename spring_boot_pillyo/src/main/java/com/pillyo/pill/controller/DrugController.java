@@ -25,6 +25,7 @@ public class DrugController {
 		
 		return "drug/drugSearchResultView";
 	}
+	
 	@ResponseBody
 	@RequestMapping("/drugAutoComplete")
 	public ArrayList<DrugInfoVO> drugAutoComplete(@RequestParam("keyWord") String keyWord) {

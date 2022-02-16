@@ -29,13 +29,11 @@
 				<div id="searchResult">
 				
 					<c:forEach items="${druglist}" var="drug" >
-						
-						<div class="drugBox">
-							<img src="${drug.itemImage}" width="200" height="100">
-							<a href="<c:url value='/drugDetailView/${drug.drugInfoNo}'/>">${drug.itemName}</a>
-							${drug.entpName}
-						</div>
-						
+							<div class="drugBox">
+								<img src="${drug.itemImage}" width="200" height="100">
+								<a href="<c:url value='/drugDetailView/${drug.drugInfoNo}'/>">${drug.itemName}</a>
+								${drug.entpName}
+							</div>
 					</c:forEach>
 					
 				</div>

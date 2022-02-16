@@ -40,6 +40,6 @@
    <!-- 기분 상세 뷰 -->
    <select id="detailViewFeel" parameterType="int" 
       resultType="com.pillyo.pill.model.FeelVO">
-      SELECT * FROM feelManage WHERE feelNo=#{feelNo} order by feelNo desc
+      SELECT * FROM feelManage WHERE famNo=#{famNo} 
    </select>
   </mapper>

@@ -1,5 +1,9 @@
 package com.pillyo.pill.controller;
 
+import java.util.ArrayList;
+
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -7,10 +11,12 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.pillyo.pill.model.BodyVO;
+import com.pillyo.pill.model.FamilyVO;
 import com.pillyo.pill.model.FeelVO;
 import com.pillyo.pill.model.PressureVO;
 import com.pillyo.pill.model.SugarVO;
 import com.pillyo.pill.service.BodyService;
+import com.pillyo.pill.service.FamilyService;
 import com.pillyo.pill.service.FeelService;
 import com.pillyo.pill.service.PressureService;
 import com.pillyo.pill.service.SugarService;
@@ -19,6 +25,9 @@ import com.pillyo.pill.service.SugarService;
 public class HealthController { // 건강관리 컨트롤러
 	
 	// 항목별 서비스 연결
+	@Autowired
+	FamilyService family_service;		// 가족
+	
 	@Autowired
 	BodyService body_service;			// 체형
 	
@@ -39,12 +48,15 @@ public class HealthController { // 건강관리 컨트롤러
 	
 	// 건강 관리 정보 리스트
 	@RequestMapping("/dashboard2/{famNo}") //페이지 다중 매핑 -> 하나만 하기
-	public String listAllHealth(@PathVariable int famNo, Model model) {
+	public String listAllHealth(@PathVariable int famNo, Model model, HttpSession session) {
 		// 가족번호를 전달하고, 각각의 관리 정보 받아오기
-//		int famNo=1; 
 		
+		String userId = (String)session.getAttribute("sid");
+		ArrayList<FamilyVO> famList = family_service.famListView(userId);
+		model.addAttribute("famList", famList);
+		
+		System.out.println(famNo);
 		BodyVO body = body_service.detailViewBody(famNo);					// 체형관리
-		System.out.println(body.getHeight());
 		model.addAttribute("body", body);
 		
 		FeelVO feel = feel_service.detailViewFeel(famNo);					// 기분관리
