@@ -45,12 +45,15 @@
 						</div>
 					</div>
 					<div class="profile-Family low">
-					
+						
 						  <c:forEach items="${famList }" var="fam">
-						   	<div class="profile-Family-Icon" style="text-align: center;" onclick="go()">
-						   		<h4>${ fam.famMember}</h4>
-						   		<input type="hidden" class="prInfo" value="☌">
-							</div>
+						   	<a href="/dashboard2/${fam.famNo}">
+							   	<div class="profile-Family-Icon" style="text-align: center;">
+							   		<h4>${ fam.famMember}</h4>
+							   		<input type="hidden" class="prInfo" value="☌">
+								</div>
+								<!-- test1 -->
+							</a>
 						  </c:forEach>
 
 					</div>

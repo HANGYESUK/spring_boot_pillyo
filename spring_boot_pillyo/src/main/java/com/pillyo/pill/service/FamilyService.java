@@ -31,12 +31,12 @@ public class FamilyService implements IFamilyService {
 	}
 
 	@Override
-	public void famDelete(String famNo) {
+	public void famDelete(int famNo) {
 		dao.famDelete(famNo);
 	}
 	
 	@Override
-	public FamilyVO famDetailView(String famNo) {
+	public FamilyVO famDetailView(int famNo) {
 		return dao.famDetailView(famNo);
 	}
 
