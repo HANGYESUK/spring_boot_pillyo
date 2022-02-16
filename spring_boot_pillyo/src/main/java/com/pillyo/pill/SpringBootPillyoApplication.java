@@ -6,7 +6,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
 import com.pillyo.pill.controller.BodyController;
+import com.pillyo.pill.controller.CalendarController;
 import com.pillyo.pill.controller.DoseController;
+import com.pillyo.pill.controller.DrugController;
 import com.pillyo.pill.controller.DrugInfoController;
 import com.pillyo.pill.controller.FamilyController;
 import com.pillyo.pill.controller.FeelController;
@@ -29,7 +31,9 @@ import com.pillyo.pill.dao.IUserDAO;
 @ComponentScan(basePackageClasses = BodyController.class)
 @ComponentScan(basePackageClasses = FeelController.class)
 @ComponentScan(basePackageClasses = DrugInfoController.class)
+@ComponentScan(basePackageClasses = DrugController.class)
 @ComponentScan(basePackageClasses = DoseController.class)
+@ComponentScan(basePackageClasses = CalendarController.class)
 @MapperScan(basePackageClasses = IUserDAO.class)
 @MapperScan(basePackageClasses = IFamilyDAO.class)
 @MapperScan(basePackageClasses = ISugarDAO.class)

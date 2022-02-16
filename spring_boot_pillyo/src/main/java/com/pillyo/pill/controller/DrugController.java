@@ -22,9 +22,10 @@ public class DrugController {
 	public String drugSearch(@RequestParam("keyWord") String keyWord, Model model) {
 		ArrayList<DrugInfoVO> drugList = service.drugSearch(keyWord);
 		model.addAttribute("druglist", drugList);
-		
+
 		return "drug/drugSearchResultView";
 	}
+	
 	@ResponseBody
 	@RequestMapping("/drugAutoComplete")
 	public ArrayList<DrugInfoVO> drugAutoComplete(@RequestParam("keyWord") String keyWord) {

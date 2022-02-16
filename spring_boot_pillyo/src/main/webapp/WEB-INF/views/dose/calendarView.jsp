@@ -20,14 +20,14 @@
 		<script>
 		      document.addEventListener('DOMContentLoaded', function() {
 		    	/* 복용 목록 data */
-		    	var arrTxt = [
-		        	  { title: '감기약', start: '2022-02-01' }, { title: '비타민', start: '2022-02-01' },
-		        	  { title: '오메가', start: '2022-02-01' }, { title: '활명수', start: '2022-02-01' },
-		        	  { title: '아연', start: '2022-02-01' }, { title: '비타민', start: '2022-02-02' },
-		        	  { title: '감기약', start: '2022-02-14' }, { title: '활명수', start: '2022-02-20' },
-		        	  { title: '비타민', start: '2022-02-12T09:30:00', end: '2022-02-12T16:30:00', url: 'http://google.com/'},
-		        	  { groupId:999, title:'Repeating Event', start:'2022-02-16' }, { groupId:999, title:'Repeating Event', start:'2022-02-09' }
-	        	  ];
+		    	var doseArr = new Array();
+		    	<c:forEach items="${doseList}" var="dose">
+		    		doseArr.push({
+		    			title:"${dose.ddTitle}",
+		    			start:"${dose.ddStartDate}",
+		    			end:"${dose.ddEndDate}"
+		    		});
+	    		</c:forEach>
 		    	
 		    	/* calender */
 		        var calendarEl = document.getElementById('calendar');
@@ -98,9 +98,7 @@
 		          // selectMirror: true, // 힌트?
         		  editable: true, // 수정 가능
 				  selectable: true, // 달력 일자 드래그 설정 가능
-				  
-				  
-				  events: arrTxt, // 복용 목록 추가 : DB 복용 목록 가져오기 위해서 -> json 형식으로 변환해 가져오기
+				  events: doseArr, // DB 복용 목록 추가
 				  
 				  
 		          eventAdd: function(obj) { // 이벤트가 추가되면 발생하는 이벤트
@@ -161,28 +159,28 @@
 		                <div class="modal-body">
 		                    <div class="form-group">
 		                    	<form methond="post" id="doseInsertForm" action="<c:url value='/doseInsert'/>">
-			                    	<label for="famNo" class="col-form-label">가족 번호 (외래키) - 데이터 등록 테스트 위해서 임의 값 고정 </label>
+			                    	<label for="famNo" class="col-form-label">가족 번호 (외래키) - 데이터 등록 테스트 위해서 임의 값 고정 </label><br>
 			                    	<input type="number" id="famNo" name="famNo" value="2" readonly><br>
 			                    	
 			                    	
-			                        <label for="ddTitle" class="col-form-label">복용 타이틀</label>
-			                        <input type="text" id="ddTitle" name="ddTitle" class="form-control">
+			                        <label for="ddTitle" class="col-form-label">복용 타이틀</label><br>
+			                        <input type="text" id="ddTitle" name="ddTitle" class="form-control"><br>
 			                        
-			                        <label for="searchInput" class="col-form-label">약 이름 입력받아서 -> 일치하는 약 선택 -> 해당 약 번호 넘기도록 : 약 이름 사용자 입력</label>
-			                        <input type="text" id="searchInput" name="searchInput" />
+			                        <label for="searchInput" class="col-form-label">약 이름 입력받아서 -> 일치하는 약 선택 -> 해당 약 번호 넘기도록 : 약 이름 사용자 입력</label><br>
+			                        <input type="text" id="searchInput" name="searchInput" /><br>
 			                        
-			                        <label for="drugInfoNo" class="col-form-label">약 번호 (자동완성 결과)</label>
-			                        <input type="number" id="drugInfoNo" name="drugInfoNo">
+			                        <label for="drugInfoNo" class="col-form-label">약 번호 (자동완성 결과)</label><br>
+			                        <input type="number" id="drugInfoNo" name="drugInfoNo" readonly><br>
 			                        
-			                        <label for="ddStartDate" class="col-form-label">복용 시작 날짜</label>
-			                        <input type="date" class="form-control" id="ddStartDate" name="ddStartDate">
-			                        <label for="ddEndDate" class="col-form-label">복용 종료 날짜</label>
-			                        <input type="date" class="form-control" id="ddEndDate" name="ddEndDate">
+			                        <label for="ddStartDate" class="col-form-label">복용 시작 날짜</label><br>
+			                        <input type="date" class="form-control" id="ddStartDate" name="ddStartDate"><br>
+			                        <label for="ddEndDate" class="col-form-label">복용 종료 날짜</label><br>
+			                        <input type="date" class="form-control" id="ddEndDate" name="ddEndDate"><br>
 			                        
-			                        <label for="ddCycle" class="col-form-label">복용 주기 (일 단위)</label>
-			            			<input type="number" min="1" id="ddCycle" name="ddCycle">
+			                        <label for="ddCycle" class="col-form-label">복용 주기 (일 단위)</label><br>
+			            			<input type="number" min="1" id="ddCycle" name="ddCycle"><br>
 			            			
-			            			<label for="ddTimeSlot" class="col-form-label">복용 시간대 (여러 개 선택 가능)</label>
+			            			<label for="ddTimeSlot" class="col-form-label">복용 시간대 (여러 개 선택 가능)</label><br>
 				            		<input type="checkbox" name="ddTimeSlot" value="기상직후">기상직후
 				            		<input type="checkbox" name="ddTimeSlot" value="아침식전">아침식전
 				            		<input type="checkbox" name="ddTimeSlot" value="아침식후">아침식후
@@ -191,9 +189,10 @@
 				            		<input type="checkbox" name="ddTimeSlot" value="저녁식전">저녁식전
 				            		<input type="checkbox" name="ddTimeSlot" value="저녁식후">저녁식후
 				            		<input type="checkbox" name="ddTimeSlot" value="취침전">취침전
+				            		<br>
 				            		
-				            		<label for="ddAmount" class="col-form-label">약 일회 복용 개수</label>
-			            			<input type="number" min="1" id="ddAmount" name="ddAmount">
+				            		<label for="ddAmount" class="col-form-label">약 일회 복용 개수</label><br>
+			            			<input type="number" min="1" id="ddAmount" name="ddAmount"><br>
 			            			
 			            			<div id='autoResult'></div> <!-- 자동완성 : 유사 데이터 표출 영역 -->
 			            			
@@ -211,44 +210,49 @@
         </section>
         
         <script>
-					var drugArr = [
-					    {key:1, name:'활명수'},
-					    {key:2, name:'신신티눈고(살리실산반창고)(수출명:SINSINCORNPLASTER)'},
-					    {key:3, name:'아네모정'},
-					    {key:4, name:'타치온정50밀리그램(글루타티온(환원형))'},
-					];
-					
-					var isComplete = false;  //autoResult 자식이 선택 되었는지 여부
-					$('#searchInput').keyup(function(){
-					    var txt = $(this).val();
-					    if(txt != ''){  //빈줄이 들어오면
-					        $('#autoResult').children().remove();
-
-					        drugArr.forEach(function(arg){
-					            if(arg.name.indexOf(txt) > -1 ){
-					                $('#autoResult').append(
-					                    $('<div>').text(arg.name).attr({'key':arg.key})
-					                );		
-					            }
-					        });
-					        $('#autoResult').children().each(function(){
-					            $(this).click(function(){
-					                $('#searchInput').val($(this).text());
-					                $('#drugInfoNo').val($(this).attr('key'));
-					                $('#autoResult').children().remove();	
-					                isComplete = true;
-					            });
-					        });			
-					    } else {
-					        $('#autoResult').children().remove();
-					    }  
-					});
-					$('#searchInput').keydown(function(event){
-					    if(isComplete) {  //autoMaker 자식이 선택 되었으면 초기화
-					        $('#drugInfoNo').val('')	
-					    }
-					})
-				</script>
+        	document.addEventListener('DOMContentLoaded', function() {
+		        /* 약 전체 목록 data */
+		    	var drugArr = new Array();
+		    	<c:forEach items="${drugList}" var="drug">
+		    		drugArr.push({
+		    			key:"${drug.drugInfoNo}",
+		    			name:"${drug.itemName}"
+		    		});
+				</c:forEach>
+				console.log(drugArr);
+				
+				var isComplete = false;  //autoResult 자식이 선택 되었는지 여부
+				$('#searchInput').keyup(function(){
+				    var txt = $(this).val();
+				    if(txt != ''){  //빈줄이 들어오면
+				        $('#autoResult').children().remove();
+		
+				        drugArr.forEach(function(arg){
+				            if(arg.name.indexOf(txt) > -1 ){
+				                $('#autoResult').append(
+				                    $('<div>').text(arg.name).attr({'key':arg.key})
+				                );		
+				            }
+				        });
+				        $('#autoResult').children().each(function(){
+				            $(this).click(function(){
+				                $('#searchInput').val($(this).text());
+				                $('#drugInfoNo').val($(this).attr('key'));
+				                $('#autoResult').children().remove();	
+				                isComplete = true;
+				            });
+				        });			
+				    } else {
+				        $('#autoResult').children().remove();
+				    }  
+				});
+				$('#searchInput').keydown(function(event){
+				    if(isComplete) {  //autoMaker 자식이 선택 되었으면 초기화
+				        $('#drugInfoNo').val('')	
+				    }
+				})
+        	});
+		</script>
 		
       </div> <!-- wrap -->
 	</body>
