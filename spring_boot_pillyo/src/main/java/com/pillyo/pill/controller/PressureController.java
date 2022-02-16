@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.pillyo.pill.model.PressureVO;
-import com.pillyo.pill.model.SugarVO;
 import com.pillyo.pill.service.PressureService;
 
 @Controller
