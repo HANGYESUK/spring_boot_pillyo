@@ -1,7 +1,7 @@
 package com.pillyo.pill.model;
 
 public class FamilyVO {
-	private String famNo; // 가족번호
+	private int famNo; // 가족번호
 	private String userId; // 아이디 
 	private String famMember; // 이름
 	private String famBirth; // 생년월일
@@ -9,11 +9,11 @@ public class FamilyVO {
 	
 	public FamilyVO() { }
 
-	public String getFamNo() {
+	public int getFamNo() {
 		return famNo;
 	}
 
-	public void setFamNo(String famNo) {
+	public void setFamNo(int famNo) {
 		this.famNo = famNo;
 	}
 
