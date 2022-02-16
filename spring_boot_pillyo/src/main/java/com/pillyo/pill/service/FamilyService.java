@@ -16,8 +16,8 @@ public class FamilyService implements IFamilyService {
 	IFamilyDAO dao;
 	
 	@Override
-	public ArrayList<FamilyVO> famListView() {
-		return dao.famListView();
+	public ArrayList<FamilyVO> famListView(String userId) {
+		return dao.famListView(userId);
 	}
 
 	@Override

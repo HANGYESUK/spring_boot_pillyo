@@ -36,6 +36,7 @@
 		                </td>
 		            </tr>          
 		           </table>
+		           	<input type="hidden" name="userId" value="${ sessionScope.sid }"/>
 		        </form> 
 	        </section>
 	        

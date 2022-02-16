@@ -2,6 +2,8 @@ package com.pillyo.pill.controller;
 
 import java.util.ArrayList;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -61,11 +63,14 @@ public class FamilyController {
 	
 	// 가족 목록 조회
 	@RequestMapping("/famListView")
-	public String famListView(Model model) {
-		ArrayList<FamilyVO> famList = service.famListView();
+	public String famListView(Model model, HttpSession session) {
+		String userId = (String)session.getAttribute("sid");
+		System.out.println(userId);
+		ArrayList<FamilyVO> famList = service.famListView(userId);
 		model.addAttribute("famList", famList);		
 		return "/family/famListView";
 	}
+	
 	
 	// 가족 상세 정보 조회
 	@RequestMapping("/famDetailView/{famNo}")

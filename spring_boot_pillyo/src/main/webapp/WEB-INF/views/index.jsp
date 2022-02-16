@@ -46,6 +46,7 @@
 				slideNavigation: false,
 				});
 			});
+
 		</script>
 
 	</head>
@@ -53,7 +54,6 @@
 
 <div id="fullpage">
 	<div class="section active" id="section0">
-	
 		<jsp:include page="/WEB-INF/views/layout/top.jsp"/>
 		<div class="container1 row">
 			<div class="Ellipse-1"></div>
@@ -63,7 +63,7 @@
 		</div>
 	</div>
 	<div class="section" id="section1">
-		<div class="section" id="section1">
+
 			<section>
 				<a href="<c:url value = '/loginForm'/>">로그인</a>
 				<a href="<c:url value = '/join'/>">회원가입</a>
@@ -97,7 +97,7 @@
 				<a href="<c:url value = '/insertDrugList'/>">API 약 정보 db 저장</a>
 				<br><br><br><br><br><br><br><br>
 			</section>
-		</div>
+
 	</div>
 	<div class="section low" id="section2">
 

@@ -10,13 +10,31 @@
 	<body>
 		<nav id="main-navigation">
 				<div class="pull-right fix low">
-					<div class="outer-menu">
-						<div class="outer-menu-btn"><a href="/dashboard"><h5>HOME</h5></a></div>
-						<div class="outer-menu-btn"><a href="#"><h5>복용관리</h5></a></div>
-						<div class="outer-menu-btn"><a href="#"><h5>재고관리</h5></a></div>
-						<div class="outer-menu-btn"><a href="#"><h5>가족관리</h5></a></div>
-						<div class="outer-menu-btn"><a href="#"><h5>건강관리</h5></a></div>
-					</div>
+				
+				  <!-- 로그인 하지 않은 경우 보여줄 메뉴 항목  -->
+               		<c:if test="${empty sessionScope.sid }">
+	                    <div class="outer-menu">
+							<div class="outer-menu-btn"><a href="/loginForm"><h5>로그인</h5></a></div>
+							<div class="outer-menu-btn"><a href="#"><h5>복용관리</h5></a></div>
+							<div class="outer-menu-btn"><a href="#"><h5>재고관리</h5></a></div>
+							<div class="outer-menu-btn"><a href="#"><h5>가족관리</h5></a></div>
+							<div class="outer-menu-btn"><a href="#"><h5>건강관리</h5></a></div>
+						</div>
+                    </c:if>
+                    
+                    			
+				<!-- 로그인 성공한 경우 보여줄 메뉴 항목  -->	
+					<c:if test="${not empty sessionScope.sid}">
+						 <div class="outer-menu">
+						 	<div class="outer-menu-btn"><a href="/dashboard"><h5>${sessionScope.sid}</h5></a></div>
+							<div class="outer-menu-btn"><a href="/dashboard"><h5>HOME</h5></a></div>
+							<div class="outer-menu-btn"><a href="#"><h5>복용관리</h5></a></div>
+							<div class="outer-menu-btn"><a href="#"><h5>재고관리</h5></a></div>
+							<div class="outer-menu-btn"><a href="#"><h5>가족관리</h5></a></div>
+							<div class="outer-menu-btn"><a href="/logout"><h5>로그아웃</h5></a></div>
+						</div>
+					</c:if>	
+					
 		
 					<div class="search-bar">
 						<form>
