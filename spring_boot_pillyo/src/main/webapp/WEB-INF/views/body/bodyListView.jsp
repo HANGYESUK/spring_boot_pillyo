@@ -10,7 +10,10 @@
 
 </head>
 <body>
+
 	<section>
+	
+	
 			<h3>전체 체형 관리 목록</h3>
 			
 			   <c:forEach items="${bodyList }" var="body">
@@ -20,8 +23,11 @@
 		   			BMI ${body.bmi}<br>
 		   			기록날짜 ${body.bodyRecordDate}<br>
 		   			가족 번호 ${body.famNo}<br>
-		
 			   	<br>
+
+			   	<a href="<c:url value='/bodyDetailView/${body.bodyNo}'/>">체형 관리 정보 수정</a>
+
+			   	
 			   	<a href="<c:url value='/updateBodyForm/${body.bodyNo}'/>">체형 관리 정보 수정</a>
 			   	<a href="javascript:deleteCheck();">체형 관리 정보 삭제</a><br>
 			   	

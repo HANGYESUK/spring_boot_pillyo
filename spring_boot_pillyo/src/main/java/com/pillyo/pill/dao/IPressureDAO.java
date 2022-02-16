@@ -10,5 +10,6 @@ public interface IPressureDAO {
 	void insertPressure(PressureVO vo);
 	void updatePressure(PressureVO vo);
 	void deletePressure(int pressureNo);
-	PressureVO detailViewPressure(int pessureNo);
+	PressureVO detailViewPressure(int famNo);
+	ArrayList<PressureVO>listAllPressure(int famNo);
 }

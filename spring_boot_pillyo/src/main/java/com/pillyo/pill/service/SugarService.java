@@ -36,7 +36,13 @@ public class SugarService implements ISugarService {
 	}
 	
 	@Override
-	public SugarVO detailViewSugar(int SugarNo) {
-		return dao.detailViewSugar(SugarNo);
+	public SugarVO detailViewSugar(int famNo) {
+		return dao.detailViewSugar(famNo);
+	}
+	
+	@Override
+	public ArrayList<SugarVO> listAllSugar(int famNo) {
+		// TODO Auto-generated method stub
+		return dao.listAllSugar(famNo);
 	}
 }

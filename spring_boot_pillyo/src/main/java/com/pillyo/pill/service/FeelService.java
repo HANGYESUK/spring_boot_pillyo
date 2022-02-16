@@ -36,7 +36,13 @@ public class FeelService implements IFeelService{
 	}
 
 	@Override
-	public FeelVO detailViewFeel(int feelNo) {
-		return dao.detailViewFeel(feelNo);
+	public FeelVO detailViewFeel(int famNo) {
+		return dao.detailViewFeel(famNo);
+	}
+	
+	@Override
+	public ArrayList<FeelVO> listAllFeel(int famNo) {
+		// TODO Auto-generated method stub
+		return dao.listAllFeel(famNo);
 	}
 }
