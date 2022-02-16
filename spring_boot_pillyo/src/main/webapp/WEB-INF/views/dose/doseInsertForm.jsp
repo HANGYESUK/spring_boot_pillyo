@@ -60,7 +60,7 @@
 		           </table>
 		           
 		           <br><br><br><br><br><br>
-		           <div id='autoResult'></div> <!-- 자동완성 - 유사 데이터 표출 영역 -->
+		           <div id='autoResult'></div> <!-- 자동완성 : 유사 데이터 표출 영역 -->
 		        </form>
 	        </section>
 	        
