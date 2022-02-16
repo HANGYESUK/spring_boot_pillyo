@@ -15,10 +15,11 @@
 			<a href="<c:url value = '/loginForm'/>">로그인</a>
 			<a href="<c:url value = '/join'/>">회원가입</a>
 			<a href="<c:url value = '/famInsertForm'/>">가족 등록 폼</a>
-			<a href="<c:url value = '/famListView'/>">가족 목록 리스트</a>
 			
 			<br><br><br><br><br><br>
-			<a href="<c:url value = '/feelManageForm'/>">기분관리</a>	
+			기분관리
+			<a href="<c:url value = '/feelForm'/>"> 기분관리</a>
+			<a href="<c:url value = '/listAllFeel'/>"> 기분리스트</a>	
 			
 			<br><br><br><br><br><br>
 			혈당관리
@@ -35,10 +36,10 @@
 
 			<a href="<c:url value = '/bodyForm'/>">체형관리정보 등록 </a>
 			<a href="<c:url value = '/listAllBody'/>">체형 관리 정보 리스트</a>
-			
+		
 			<br><br><br><br><br><br><br><br>
 			<a href="<c:url value = '/dashboard'/>">대쉬보드</a>
-			<br><br><br><br><br><br><br><br>
+			<a href="<c:url value = '/dashboard2'/>">대쉬보드 연습중...</a>
 			
 			<br><br><br><br><br><br><br><br>
 			<a href="<c:url value = '/insertDrugList'/>">API 약 정보 db 저장</a>
