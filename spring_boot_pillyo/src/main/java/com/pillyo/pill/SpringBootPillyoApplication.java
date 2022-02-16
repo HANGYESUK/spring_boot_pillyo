@@ -6,12 +6,14 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
 import com.pillyo.pill.controller.BodyController;
+import com.pillyo.pill.controller.DoseController;
 import com.pillyo.pill.controller.DrugInfoController;
 import com.pillyo.pill.controller.FamilyController;
 import com.pillyo.pill.controller.MainController;
 import com.pillyo.pill.controller.SugarController;
 import com.pillyo.pill.controller.UserController;
 import com.pillyo.pill.dao.IBodyDAO;
+import com.pillyo.pill.dao.IDoseDAO;
 import com.pillyo.pill.dao.IDrugDAO;
 import com.pillyo.pill.dao.IFamilyDAO;
 import com.pillyo.pill.dao.IFeelDAO;
@@ -25,12 +27,14 @@ import com.pillyo.pill.dao.IUserDAO;
 @ComponentScan(basePackageClasses = SugarController.class)
 @ComponentScan(basePackageClasses = BodyController.class)
 @ComponentScan(basePackageClasses = DrugInfoController.class)
+@ComponentScan(basePackageClasses = DoseController.class)
 @MapperScan(basePackageClasses = IUserDAO.class)
 @MapperScan(basePackageClasses = IFamilyDAO.class)
 @MapperScan(basePackageClasses = ISugarDAO.class)
 @MapperScan(basePackageClasses = IBodyDAO.class)
 @MapperScan(basePackageClasses = IFeelDAO.class)
 @MapperScan(basePackageClasses = IDrugDAO.class)
+@MapperScan(basePackageClasses = IDoseDAO.class)
 public class SpringBootPillyoApplication {
 
 	public static void main(String[] args) {

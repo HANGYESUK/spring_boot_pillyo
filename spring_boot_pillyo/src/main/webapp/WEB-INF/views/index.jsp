@@ -96,6 +96,10 @@
 				<br><br><br><br><br><br><br><br>
 				<a href="<c:url value = '/insertDrugList'/>">API 약 정보 db 저장</a>
 				<br><br><br><br><br><br><br><br>
+				
+				<a href="<c:url value = '/doseInsertForm'/>">복용 관리 - 등록 폼</a>
+				<a href="<c:url value = '/doseListView'/>">복용 목록 조회</a>
+				<br><br><br><br><br><br><br><br>
 			</section>
 
 	</div>
