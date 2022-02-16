@@ -13,4 +13,6 @@ public interface ISugarService {
 	void deleteSugar(int sugarNo);
 	SugarVO detailViewSugar(int famNo);
 	
+	ArrayList<SugarVO> listAllSugar(int famNo);
+
 }

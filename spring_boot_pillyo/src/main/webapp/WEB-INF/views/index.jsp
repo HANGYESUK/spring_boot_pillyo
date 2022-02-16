@@ -92,6 +92,9 @@
 				<br><br><br><br>
 				<a href="<c:url value = '/dashboard'/>">대쉬보드</a><br>
 				<a href="<c:url value = '/dashboard2'/>">대쉬보드 연습중...</a>
+				<a href="<c:url value = '/dashboardtest'/>">대쉬보드 연습중...2</a>
+				<a href="<c:url value = '/dashboardtest'/>">대쉬보드 연습중...2</a>
+				
 				<br><br><br><br>
 				
 				<br><br><br><br>

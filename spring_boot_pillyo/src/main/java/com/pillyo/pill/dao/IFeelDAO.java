@@ -12,4 +12,5 @@ public interface IFeelDAO{
 	void updateFeel(FeelVO feelVo);		// 기분 관리 수정
 	void deleteFeel(int feelNo);		// 기분 관리 삭제
 	FeelVO detailViewFeel(int famNo);	// 기분 관리 기록 상세 뷰
+	ArrayList<FeelVO> listAllFeel(int famNo);
 }

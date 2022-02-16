@@ -44,5 +44,11 @@ public class BodyService implements IBodyService {
 		// TODO Auto-generated method stub
 		return dao.detailViewBody(famNo);
 	}
+	
+	@Override
+	public ArrayList<BodyVO> listAllBody(int famNo) {
+		// TODO Auto-generated method stub
+		return dao.listAllBody(famNo);
+	}
 
 }

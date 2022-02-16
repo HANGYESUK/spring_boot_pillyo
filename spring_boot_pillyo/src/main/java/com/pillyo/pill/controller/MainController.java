@@ -36,4 +36,13 @@ public class MainController {
 		model.addAttribute("famList", famList);		
 		return "/Main/dashboard";
 	}
+	
+	@RequestMapping("/dashboardtest") // 테스트 // index.jsp에 주소 
+	public String dashboardtest(Model model, HttpSession session) {
+		String userId = (String)session.getAttribute("sid");
+		System.out.println(userId);
+		ArrayList<FamilyVO> famList = service.famListView(userId);
+		model.addAttribute("famList", famList);		
+		return "/Main/dashboard_famtest"; // dashboard_famtest 페이지 뛰우기 
+	}
 }
