@@ -9,6 +9,7 @@ import com.pillyo.pill.controller.BodyController;
 import com.pillyo.pill.controller.DoseController;
 import com.pillyo.pill.controller.DrugInfoController;
 import com.pillyo.pill.controller.FamilyController;
+import com.pillyo.pill.controller.FeelController;
 import com.pillyo.pill.controller.MainController;
 import com.pillyo.pill.controller.SugarController;
 import com.pillyo.pill.controller.UserController;
@@ -26,6 +27,7 @@ import com.pillyo.pill.dao.IUserDAO;
 @ComponentScan(basePackageClasses = FamilyController.class)
 @ComponentScan(basePackageClasses = SugarController.class)
 @ComponentScan(basePackageClasses = BodyController.class)
+@ComponentScan(basePackageClasses = FeelController.class)
 @ComponentScan(basePackageClasses = DrugInfoController.class)
 @ComponentScan(basePackageClasses = DoseController.class)
 @MapperScan(basePackageClasses = IUserDAO.class)

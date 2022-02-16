@@ -50,6 +50,6 @@
   		
   		<select id="detailViewPressure" parameterType="int" 
   														  resultType="com.pillyo.pill.model.PressureVO">
-  			SELECT * FROM pressureManage WHERE pressureNo=#{pressureNo}  		
+  			SELECT * FROM pressureManage WHERE pressureNo=#{pressureNo} order by pressureNo desc		
   		</select>
   </mapper>

@@ -50,6 +50,6 @@
   		
   		<select id="detailViewSugar" parameterType="int" 
   														  resultType="com.pillyo.pill.model.SugarVO">
-  			SELECT * FROM sugarManage WHERE sugarNo=#{sugarNo}  		
+  			SELECT * FROM sugarManage WHERE sugarNo=#{sugarNo} order by sugarNo desc 		
   		</select>
   </mapper>
