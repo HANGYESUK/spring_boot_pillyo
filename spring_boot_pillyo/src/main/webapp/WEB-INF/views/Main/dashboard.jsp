@@ -52,6 +52,7 @@
 							   		<h4>${ fam.famMember}</h4>
 							   		<input type="hidden" class="prInfo" value="☌">
 								</div>
+								<!-- test1 -->
 							</a>
 						  </c:forEach>
 
