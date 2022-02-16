@@ -100,6 +100,9 @@
 				
 				<a href="<c:url value = '/doseInsertForm'/>">복용 관리 - 등록 폼</a>
 				<a href="<c:url value = '/doseListView'/>">복용 목록 조회</a>
+				
+				<br><br>
+				<a href="calendarView">캘린더</a>
 			</section>
 
 	</div>
