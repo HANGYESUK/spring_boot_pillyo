@@ -16,8 +16,8 @@ public class FeelService implements IFeelService{
 	IFeelDAO dao;
 
 	@Override
-	public ArrayList<FeelVO> listAllFeel() {
-		return dao.listAllFeel();
+	public ArrayList<FeelVO> listAllFeelVO() {
+		return dao.listAllFeelVO();
 	}
 
 	@Override

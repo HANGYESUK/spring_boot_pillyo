@@ -13,13 +13,8 @@
 		<result property="feelRecordTime" column="feelRecordTime" />
 		<result property="famNo" column="famNo" />  
 	</resultMap>
-
-	<!-- 기분 전체 기록 조회 -->
-	<select id="listAllFeelVO" parameterType="com.pillyo.pill.model.FeelVO">
-	   SELECT * FROM feelManage
-	</select>
-	
-    <!-- 기분 등록 완료  -->
+        
+    <!-- 기분 등록  -->
 	<insert id="insertFeel" parameterType="com.pillyo.pill.model.FeelVO">
 		INSERT INTO feelManage ( feelScale, feelMemo, feelRecordDate, feelRecordTime, famNo)
 		VALUES ( #{feelScale}, #{feelMemo}, #{feelRecordDate}, #{feelRecordTime},'001')
@@ -37,9 +32,8 @@
       DELETE FROM feelManage WHERE feelNo=#{feelNo}
    </delete>
    
-   <!-- 기분 상세 뷰 -->
-   <select id="detailViewFeel" parameterType="int" 
-      resultType="com.pillyo.pill.model.FeelVO">
-      SELECT * FROM feelManage WHERE feelNo=#{feelNo} order by feelNo desc
-   </select>
+	<!-- 기분 전체 기록 조회 -->
+	<select id="listAllFeelVO" parameterType="com.pillyo.pill.model.FeelVO">
+	   SELECT * FROM feelManage
+	</select>
   </mapper>

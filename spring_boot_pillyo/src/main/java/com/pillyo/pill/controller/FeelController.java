@@ -17,10 +17,10 @@ public class FeelController {
 	@Autowired
 	FeelService service;
 	
-	// 기분 관리 등록
-	@RequestMapping("/feelForm")
+	// 기분 관리 등록 폼 이동
+	@RequestMapping("/feelManageForm")
 	public String mood() {
-		return "feel/feelForm";
+		return "/feel/feelManage";
 	}
 	
 	// 기분 관리 등록 완료 시 폼 이동
@@ -28,17 +28,16 @@ public class FeelController {
 	public String insertFeel(FeelVO feelvo) {
 		service.insertFeel(feelvo);
 		System.out.println(feelvo.getFeelScale());
-		return "feel/feelListView";
+		return "redirect:../listAllFeelVO";
 	}
 	
-	// 전체 기분 관리 기록 조회
-	@RequestMapping("/listAllFeel")
-	public String listAllFeel(Model model) {
-		ArrayList<FeelVO> feelList = service.listAllFeel();
-		model.addAttribute("feelList", feelList);
-		return "feel/feelListView";
+	// 기분 관리 수정
+	@RequestMapping("/updateFeel")
+	public String updateFeel(FeelVO feelvo) {
+		service.updateFeel(feelvo);
+		return "redirect:/listAllFeelVO";
 	}
-
+	
 	// 기분 관리 삭제
 	@RequestMapping("/deleteFeel/{feelNo}")
 	public String deleteFeel(@PathVariable int feelNo) {
@@ -46,19 +45,12 @@ public class FeelController {
 		return "redirect:/listAllFeelVO";
 	}
 	
-	// 기분 관리 수정
-	@RequestMapping("/updateFeel")
-	public String updateFeel(FeelVO feelvo) {
-		service.updateFeel(feelvo);
-		return "feel/feelListView";
+	// 전체 기분 관리 기록 조회
+	@RequestMapping("/listAllFeelVO")
+	public String listAllFeelVO(Model model) {
+		ArrayList<FeelVO> feelList = service.listAllFeelVO();
+		model.addAttribute("feelList", feelList);
+		return "feel/listAllFeelVO";
 	}
-	
-	//기분 관리 정보 업데이트 폼 이동
-	@RequestMapping("/updateFeelForm/{feelNo}")
-	public String updateFeelForm(@PathVariable int feelNo, Model model) {
-		FeelVO feel = service.detailViewFeel(feelNo);
-		model.addAttribute("feel", feel);
-		return "feel/updateFeelForm";
-}
-	
+
 }
