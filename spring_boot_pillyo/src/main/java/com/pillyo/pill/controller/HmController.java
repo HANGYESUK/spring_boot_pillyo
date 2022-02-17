@@ -39,7 +39,7 @@ public class HmController{
 		
 		return "household_medicine/insertHmResult";
 	}
-
+	// test
 	// 우리집 약관리 : 전체 조회
 	@RequestMapping("/listAllHm")
 	public String listAllHm(Model model) {
