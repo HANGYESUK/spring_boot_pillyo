@@ -28,16 +28,10 @@ public class DrugController {
 	public String drugSearch(@RequestParam("keyWord") String keyWord, Model model) {
 		ArrayList<DrugInfoVO> drugList = service.drugSearch(keyWord);
 		model.addAttribute("druglist", drugList);
-		
+
 		return "drug/drugSearchResultView";
 	}
-	//약 정보 상세조회
-	@RequestMapping("/drugDetailView/{drugInfoNo}")
-	public String drugDetailView(@PathVariable String drugInfoNo, Model model) {
-		DrugInfoVO vo = service.detailViewDrug(drugInfoNo);
-		model.addAttribute("drug", vo);
-		return "drug/drugDetailView";
-	}
+
 	
 	@ResponseBody
 	@RequestMapping("/drugAutoComplete")

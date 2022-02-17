@@ -37,8 +37,14 @@ public class PressureService implements IPressureService {
 	}
 	
 	@Override
-	public PressureVO detailViewPressure(int pressureNo) {
-		return dao.detailViewPressure(pressureNo);
+	public PressureVO detailViewPressure(int famNo) {
+		return dao.detailViewPressure(famNo);
+	}
+	
+	@Override
+	public ArrayList<PressureVO> listAllPressure(int famNo) {
+		// TODO Auto-generated method stub
+		return dao.listAllPressure(famNo);
 	}
 
 }

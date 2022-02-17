@@ -10,7 +10,7 @@ public class PressureVO {
 	private String pressureMemo;
 	private String pressureRecordDate;
 	private String pressureRecordTime;
-	private String famNo;
+	private int famNo;
 	
 	public int getPressureNo() {
 		return pressureNo;
@@ -60,10 +60,10 @@ public class PressureVO {
 	public void setPressureRecordTime(String pressureRecordTime) {
 		this.pressureRecordTime = pressureRecordTime;
 	}
-	public String getFamNo() {
+	public int getFamNo() {
 		return famNo;
 	}
-	public void setFamNo(String famNo) {
+	public void setFamNo(int famNo) {
 		this.famNo = famNo;
 	}
 

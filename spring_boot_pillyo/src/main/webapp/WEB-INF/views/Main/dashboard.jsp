@@ -45,12 +45,15 @@
 						</div>
 					</div>
 					<div class="profile-Family low">
-					
+						
 						  <c:forEach items="${famList }" var="fam">
-						   	<div class="profile-Family-Icon" style="text-align: center;" onclick="go()">
-						   		<h4>${ fam.famMember}</h4>
-						   		<input type="hidden" class="prInfo" value="☌">
-							</div>
+						   	<a href="/dashboard2/${fam.famNo}">
+							   	<div class="profile-Family-Icon" style="text-align: center;">
+							   		<h4>${ fam.famMember}</h4>
+							   		<input type="hidden" class="prInfo" value="☌">
+								</div>
+								<!-- test1 -->
+							</a>
 						  </c:forEach>
 
 					</div>
@@ -72,8 +75,9 @@
 								<div class="outer-menu-btn"><a href="/"><h5>HOME</h5></a></div>
 								<div class="outer-menu-btn"><a href="#"><h5>복용관리</h5></a></div>
 								<div class="outer-menu-btn"><a href="#"><h5>재고관리</h5></a></div>
-								<div class="outer-menu-btn"><a href="#"><h5>가족관리</h5></a></div>
+								<div class="outer-menu-btn"><a href="<c:url value = '/famListView'/>"><h5>가족관리</h5></a></div>
 								<div class="outer-menu-btn"><a href="#"><h5>건강관리</h5></a></div>
+												
 							</div>
 				  
 							<div class="search-bar">
@@ -174,7 +178,7 @@
                     alert("오류가 발생했습니다.")
                 }
             })
-       }
+       
 		
 		
     </script>

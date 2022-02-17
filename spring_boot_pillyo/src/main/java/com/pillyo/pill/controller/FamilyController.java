@@ -35,7 +35,7 @@ public class FamilyController {
 	
 	// 가족 정보 수정 폼으로 이동
 	@RequestMapping("/famUpdateForm/{famNo}")
-	public String famUpdateForm(@PathVariable String famNo, Model model) {
+	public String famUpdateForm(@PathVariable int famNo, Model model) {
 		FamilyVO famVo = service.famDetailView(famNo);
 		model.addAttribute("famVo", famVo);
 		return "/family/famUpdateForm";
@@ -53,7 +53,7 @@ public class FamilyController {
 	
 	// 가족 정보 삭제
 	@RequestMapping("/famDelete/{famNo}")
-	public String famDelete(@PathVariable String famNo) {
+	public String famDelete(@PathVariable int famNo) {
 		service.famDelete(famNo);
 		return "redirect:../famListView";
 	}
@@ -74,7 +74,7 @@ public class FamilyController {
 	
 	// 가족 상세 정보 조회
 	@RequestMapping("/famDetailView/{famNo}")
-	public String famDetailView(@PathVariable String famNo, Model model) {
+	public String famDetailView(@PathVariable("famNo") int famNo, Model model) {
 		FamilyVO famVo = service.famDetailView(famNo);
 		model.addAttribute("famVo", famVo);
 		

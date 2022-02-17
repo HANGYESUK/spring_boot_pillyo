@@ -1,13 +1,13 @@
 package com.pillyo.pill.service;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import com.pillyo.pill.dao.IDrugDAO;
+import com.pillyo.pill.model.AutoDrugInfoVO;
 import com.pillyo.pill.model.DrugInfoVO;
 
 @Service
@@ -26,12 +26,5 @@ public class DrugService implements IDrugService {
 	public DrugInfoVO detailViewDrug(String drugInfoNo) {
 		return dao.detailViewDrug(drugInfoNo);
 	}
-	@Override
-	public ArrayList<DrugInfoVO> selectItemBySearchWord(String keyWord){ //자동완성
-		return dao.selectItemBySearchWord(keyWord);
-	}
-	@Override
-	public ArrayList<DrugInfoVO> selectKeywordSearch(String keyWord) { //자동완성 제목조회
-		return dao.selectKeywordSearch(keyWord);
-	}
+
 }

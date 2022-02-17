@@ -3,6 +3,10 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   <mapper namespace="com.pillyo.pill.dao.IDrugDAO">
+  	<resultMap  id="AutoDrugInfoResult" type="com.pillyo.pill.model.AutoDrugInfoVO">
+ 		<result property="drugInfoNo" column="drugInfoNo" />
+ 		<result property="itemName" column="itemName" />
+	</resultMap>
   		
   		<insert id="insertDrugList" parameterType="java.util.List">
   			insert into drugInfo  (
@@ -47,20 +51,5 @@
   			SELECT * FROM drugInfo WHERE drugInfoNo = #{drugInfoNo}
   		</select>	
   		
-  		<!-- 자동완성 기능  -->
-  		<select id="selectItemBySearchWord" parameterType="String"
-  													resultType="com.pillyo.pill.model.DrugInfoVO">
-  			SELECT * FROM drugInfo 
-  			WHERE	itemName LIKE CONCAT('%', #{keyword}, '%')
-  		</select>
-  		
-  		<select id="selectKeywordSearch" parameterType="String"
-  													resultType="String">
-  			SELECT drugInfoNo, itemName FROM drugInfo 
-  			WHERE itemName LIKE CONCAT('%', #{keyword}, '%')
-  				
-  			
-  		</select>
-  		
-  		
+
   </mapper>

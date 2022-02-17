@@ -9,5 +9,6 @@ public interface ISugarDAO {
 	void insertSugar(SugarVO vo);
 	void updateSugar(SugarVO vo);
 	void deleteSugar(int sugarNo);
-	SugarVO detailViewSugar(int SugarNo);
+	SugarVO detailViewSugar(int famNo);
+	ArrayList<SugarVO> listAllSugar(int famNo);
 }

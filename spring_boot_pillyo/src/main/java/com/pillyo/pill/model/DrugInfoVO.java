@@ -1,7 +1,7 @@
 package com.pillyo.pill.model;
 
 public class DrugInfoVO {
-	private String drugInfoNo;
+	private int drugInfoNo;
 	private String entpName;
 	private String itemName;
 	private String efcyQesitm;
@@ -12,10 +12,10 @@ public class DrugInfoVO {
 	private String depositMethodQesitm;
 	private String itemImage;
 	
-	public String getDrugInfoNo() {
+	public int getDrugInfoNo() {
 		return drugInfoNo;
 	}
-	public void setDrugInfoNo(String drugInfoNo) {
+	public void setDrugInfoNo(int drugInfoNo) {
 		this.drugInfoNo = drugInfoNo;
 	}
 	public String getEntpName() {
