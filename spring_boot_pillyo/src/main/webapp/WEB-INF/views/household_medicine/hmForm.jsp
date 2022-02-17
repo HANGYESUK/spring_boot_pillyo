@@ -5,6 +5,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <title>우리집 상비약 메인 페이지</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -23,10 +24,70 @@
 	<link rel="stylesheet" href="/css/dashboard/dashboardContent.css" />
 	<link rel="stylesheet" href="/css/dashboard/dashboard.css" />
 
-
-
 	<script src="./jquery.fullPage.js"></script>
-    <title>Document</title>
+	
+	<!-- 임시 css / script-->
+	<style type="text/css">
+	
+	h2{ color : black;}
+	h3{ color : black;}
+	
+	p{	color : black;}
+	
+	#UserName{
+		color : #81B89A;
+	}
+	
+	.hm{
+		width : 95%;
+		margin:0 auto;
+		
+	}
+	.hm_Category{
+		width : 48%;
+		height : 350px;
+		background-color : white;
+		text-align : center;
+		float: left;
+		margin:0 auto;
+	}
+	.hm_List{
+		width : 48%;
+		height : 350px;
+		background-color : #B2D6C7;
+		text-align : center;
+		float: left;
+		margin-left:15px;
+	}
+	.hm_List_view{
+		widht : 100px;
+		height : 300px;
+		background-color : white;
+		overflow : auto;
+	}
+	table{
+		border: 1px solid #444444;
+    	border-collapse: collapse;
+		color : black;
+		
+		margin:0 auto;
+	}
+	th,td{
+		border: 1px solid #444444;
+	}
+	#hm_ctg{
+		width : 80px;
+		height : 80px;
+		margin-left:5px;
+		margin-right:5px;
+		margin-bottom:10px;
+	}
+
+	</style>
+	<script type="text/javascript">
+
+	</script>
+	
 </head>
 <body>
 
@@ -89,97 +150,57 @@
 					</nav>
 				</div>
 
+				<!-- 일단 여기 내용만 바꾸기
+					 나중에 ajax 기능 사용할 것-->
+					 
+				<div class="main-Content-Body_Center">
+					<div class = "hm">
+					<h2 id ="hmName">우리집 약관리</h2>
+						<hr><br>
+						<c:if test="${not empty sessionScope.sid}">
+							<h4 id="UserName">${sessionScope.sid} 님</h4>
+							<p>등록하신 우리집 상비약 목록 입니다 </p><br><br>
+						</c:if>
+						
+						<!-- 약 카테고리 -->
+						<div class="hm_Category"> 
+							<form>
+								<br> <h3> 약 카테고리</h3> <br><br>
+								<input type="button" id="hm_ctg" value="두통약" />
+								<input type="button" id="hm_ctg" value="감기약" />
+								<input type="button" id="hm_ctg" value="소화제" />
+								<input type="button" id="hm_ctg" value="해열제" />
+								<input type="button" id="hm_ctg" value="진통제" />
+								<input type="button" id="hm_ctg" value="치통약" />
+								<input type="button" id="hm_ctg" value="연고/파스" />
+								<input type="button" id="hm_ctg" value="기타" />			
+							</form>
+						</div><!-- hm_Category -->
+						
+						<!-- 선택한 카테고리의 약 목록 -->
+						<div class="hm_List">
+							<form>
+								<br> <h3> 약 목록</h3> <br>
+								<div class="hm_List_view">
+									<table id="list_table">
+										<tr> <th>사진</th><th>제품명</th> <th>사용기간</th></tr>
+										
+									</table>
+									<a href="/insertHm">
+									<input type="button" value="등록하러가기"></a>
+								</div>
+							</form>
+						</div><!-- hm_List -->
+						
+					</div><!-- hm -->
+				</div>
+				
 				<div class="main-Content-Body low">
-
-					<div class="basket-Item-Container">
-						<div class="basket-Item">
-							<div class="main-X"><i class="fas fa-times" onclick="go()" data-prdNo="${cart.prdNo }"></i></div>
-							<div class="basket-Item-Main-Box colum">
-								<h5>키 : </h5>
-								<h5>몸무게 : </h5>
-								<h5>BMI : </h5>
-							</div>
-						</div>
-						
-						<div class="basket-Item">
-							<div class="main-X"><i class="fas fa-times" onclick="go(this);" data-prdNo="${cart.prdNo }"></i></div>
-							<div class="basket-Item-Main-Box colum">
-								<h5>키 : </h5>
-								<h5>몸무게 : </h5>
-								<h5>BMI : </h5>
-							</div>
-						</div>
-						
-						<div class="basket-Item">
-							<div class="main-X"><i class="fas fa-times" onclick="go(this);" data-prdNo="${cart.prdNo }"></i></div>
-							<div class="basket-Item-Main-Box colum">
-								<h5>키 : </h5>
-								<h5>몸무게 : </h5>
-								<h5>BMI : </h5>
-							</div>
-						</div>
-
-                    
-              
-                    </div>
-					
-
 				</div>
 
 
 			</div>
 		</div>
 	</div>
-
-    <script>
-    
-			let profileFamIcon = document.getElementsByClassName('profile-Family-Icon')
-		    function go() {
-		        console.log(this.fam.famNo)
-		    }
-		        	
-        	
-        	$.ajax({
-                url:"<c:url value='/product/deleteCart'/>",
-                type:"post",
-                data:{prdNo : prdNo },
-                success:function (result) {
-                	console.log(result)
-                    if(result == 0) {
-           
-                    	 let mainBtnX = $(".main-X");
-                         let semiBtn = $(".semi-btn");
-                         let basketItem = $(".basket-Item")[0];
-
-                         $(clickElement).parent().parent().remove()
-                         
-                         let amount = $('.amount').length;
-                         console.log("amount : " + amount);
-                         let value = [amount]
-                         let total = 0;
-
-                         for(let i=0; i<amount; i++) {
-                            value[i] = + parseInt($('.amount').eq(i).text());
-                         }
-                         
-                        /*  let fullPrice =  $('.amount').val(); */
-                        for(let i=0; i<amount; i++) {
-                            total += value[i]
-                         }
-                        	$('#prdPrice').html(total + "원")
-                         $('#totalPrice').html((total -5000 +2500) + "원")
-                         console.log("total: " + total)
-                         
-                         
-                    }
-                },
-                error:function() {
-                    alert("오류가 발생했습니다.")
-                }
-            })
-       }
-		
-		
-    </script>
 </body>
 </html>

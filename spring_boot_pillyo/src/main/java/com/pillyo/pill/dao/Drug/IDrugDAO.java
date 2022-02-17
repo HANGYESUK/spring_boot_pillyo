@@ -1,0 +1,12 @@
+package com.pillyo.pill.dao.Drug;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+
+import com.pillyo.pill.model.Drug.DrugInfoVO;
+
+public interface IDrugDAO {
+	void insertDrugList(ArrayList<DrugInfoVO> drugList);		// API 약 정보 DB에 등록
+	ArrayList<DrugInfoVO> drugSearch(String keyWord);	//약 검색 
+	DrugInfoVO detailViewDrug(String drugInfoNo);	//약 상세정보 조회
+}

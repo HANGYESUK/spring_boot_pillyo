@@ -5,6 +5,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <title>우리집 상비약 등록 페이지</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -23,13 +24,28 @@
 	<link rel="stylesheet" href="/css/dashboard/dashboardContent.css" />
 	<link rel="stylesheet" href="/css/dashboard/dashboard.css" />
 
-
-
 	<script src="./jquery.fullPage.js"></script>
-    <title>Document</title>
+	
+	<!-- 임시 Css -->
+	<style type="text/css">
+	
+	h2{ color : black;}
+	h3{ color : black;}
+	
+	p{	color : black;}
+	
+	#UserName{
+		color : #81B89A;
+	}
+	
+	.hm{
+		width : 95%;
+		margin:0 auto;
+		
+	}
+	</style>
 </head>
 <body>
-
 	<div class="container low">
 		<div class="dashboard low">
 			<div class="profile">
@@ -89,97 +105,32 @@
 					</nav>
 				</div>
 
+				<!-- 일단 여기 내용만 바꾸기
+					 나중에 ajax 기능 사용할 것-->
+					 
+				<div class="main-Content-Body_Center">
+					<div class = "hm">
+					<h2 id ="hmName">우리집 약관리</h2>
+						<hr><br>
+						<c:if test="${not empty sessionScope.sid}">
+							<h4 id="UserName">${sessionScope.sid} 님</h4>
+							<p>어떤 약을 등록하실건가요? </p><br><br>
+						</c:if>
+						
+					<!-- 상비약 등록 -->
+					<form id = "hmForm" method="post" action="<c:url value ='/insertHm/insertHmResult'/>">
+															  <!-- 등록이 완료되면 작성완료된 페이지로 이동 -->
+						
+		   			</form>
+						
+				</div>
+				
 				<div class="main-Content-Body low">
-
-					<div class="basket-Item-Container">
-						<div class="basket-Item">
-							<div class="main-X"><i class="fas fa-times" onclick="go()" data-prdNo="${cart.prdNo }"></i></div>
-							<div class="basket-Item-Main-Box colum">
-								<h5>키 : </h5>
-								<h5>몸무게 : </h5>
-								<h5>BMI : </h5>
-							</div>
-						</div>
-						
-						<div class="basket-Item">
-							<div class="main-X"><i class="fas fa-times" onclick="go(this);" data-prdNo="${cart.prdNo }"></i></div>
-							<div class="basket-Item-Main-Box colum">
-								<h5>키 : </h5>
-								<h5>몸무게 : </h5>
-								<h5>BMI : </h5>
-							</div>
-						</div>
-						
-						<div class="basket-Item">
-							<div class="main-X"><i class="fas fa-times" onclick="go(this);" data-prdNo="${cart.prdNo }"></i></div>
-							<div class="basket-Item-Main-Box colum">
-								<h5>키 : </h5>
-								<h5>몸무게 : </h5>
-								<h5>BMI : </h5>
-							</div>
-						</div>
-
-                    
-              
-                    </div>
-					
-
 				</div>
 
 
 			</div>
 		</div>
 	</div>
-
-    <script>
-    
-			let profileFamIcon = document.getElementsByClassName('profile-Family-Icon')
-		    function go() {
-		        console.log(this.fam.famNo)
-		    }
-		        	
-        	
-        	$.ajax({
-                url:"<c:url value='/product/deleteCart'/>",
-                type:"post",
-                data:{prdNo : prdNo },
-                success:function (result) {
-                	console.log(result)
-                    if(result == 0) {
-           
-                    	 let mainBtnX = $(".main-X");
-                         let semiBtn = $(".semi-btn");
-                         let basketItem = $(".basket-Item")[0];
-
-                         $(clickElement).parent().parent().remove()
-                         
-                         let amount = $('.amount').length;
-                         console.log("amount : " + amount);
-                         let value = [amount]
-                         let total = 0;
-
-                         for(let i=0; i<amount; i++) {
-                            value[i] = + parseInt($('.amount').eq(i).text());
-                         }
-                         
-                        /*  let fullPrice =  $('.amount').val(); */
-                        for(let i=0; i<amount; i++) {
-                            total += value[i]
-                         }
-                        	$('#prdPrice').html(total + "원")
-                         $('#totalPrice').html((total -5000 +2500) + "원")
-                         console.log("total: " + total)
-                         
-                         
-                    }
-                },
-                error:function() {
-                    alert("오류가 발생했습니다.")
-                }
-            })
-       }
-		
-		
-    </script>
 </body>
 </html>
