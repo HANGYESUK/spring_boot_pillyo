@@ -22,7 +22,7 @@ public class DrugController {
 	public String drugSearch(@RequestParam("keyWord") String keyWord, Model model) {
 		ArrayList<DrugInfoVO> drugList = service.drugSearch(keyWord);
 		model.addAttribute("druglist", drugList);
-		
+
 		return "drug/drugSearchResultView";
 	}
 	

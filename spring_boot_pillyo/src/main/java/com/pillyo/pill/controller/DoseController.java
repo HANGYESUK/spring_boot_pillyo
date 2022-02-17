@@ -30,8 +30,6 @@ public class DoseController {
 		return "redirect:/doseListView";
 	}
 	
-	
-	
 	// 복용 관리 - 수정 폼으로 이동 
 	@RequestMapping("/doseUpdateForm/{ddNo}")
 	public String doseUpdateForm(@PathVariable String ddNo, Model model) {
@@ -47,18 +45,12 @@ public class DoseController {
 		return "redirect:./doseListView";
 	}
 	
-	
-	
-	
 	// 복용 관리 - 삭제
 	@RequestMapping("/doseDelete/{ddNo}")
 	public String doseDelete(@PathVariable String ddNo) {
 		service.doseDelete(ddNo);
 		return "redirect:../doseListView";
 	}
-	
-	
-	
 	
 	// 복용 목록 조회
 	@RequestMapping("/doseListView")
