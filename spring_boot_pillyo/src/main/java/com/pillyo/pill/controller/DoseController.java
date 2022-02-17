@@ -27,8 +27,7 @@ public class DoseController {
 	@RequestMapping("/doseInsert")
 	public String doseInsert(DoseVO doseVo) {
 		service.doseInsert(doseVo);
-		// return "redirect:/doseListView";
-		return "redirect:/calendarView";
+		return "redirect:/doseListView";
 	}
 	
 	// 복용 관리 - 수정 폼으로 이동 

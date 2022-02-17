@@ -46,4 +46,6 @@
 		<select id="doseDetailView" parameterType="string" resultType="com.pillyo.pill.model.DoseVO">
 			SELECT * FROM doseinfo WHERE ddNo=#{ddNo}
 		</select>
+		
+		<!-- 복용 날짜 포맷 변경 UPDATE doseInfo SET ddStartDate = DATE_FORMAT(STR_TO_DATE(start,'%Y-%m-%dT%H:%i:%s'),'%Y-%m-%d %H:%i:%s'); -->
   </mapper>

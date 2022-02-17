@@ -24,8 +24,7 @@
 		    	<c:forEach items="${doseList}" var="dose">
 		    		doseArr.push({
 		    			title:"${dose.ddTitle}",
-		    			start:"${dose.ddStartDate}",
-		    			end:"${dose.ddEndDate}"
+		    			start:"${dose.ddStartDate}"
 		    		});
 	    		</c:forEach>
 		    	
@@ -77,14 +76,15 @@
 	                                }else{ // 정상적으로 입력했을 경우, 전송할 객체 생성
 	                                    var obj = {
 	                                        "title" : ddTitle,
-	                                        "start" : ddStartDate,
-	                                        "end" : ddEndDate
+	                                        "start" : ddStartDate+":00"
 	                                    }
+	                                
 
 	                                    console.log(obj); // console에서 확인
 	                                    arrTxt.push(obj);
 	                                    console.log(arrTxt);
 	                                    calendar.addEvent(obj);
+	                                    console.log(ddStartDate+":00"); // console에서 확인
 	                                }
 	                            });
 	                        }
@@ -112,17 +112,8 @@
 	        	  },
 	        	  
 	        	  
-	        	  select: function(arg) { // 드래그로 이벤트 생성
-	        	  var title = prompt('Event Title:');
-		        	  if (title) {
-			        	  calendar.addEvent({
-			        	  title: title,
-			        	  start: arg.start,
-			        	  end: arg.end,
-			        	  allDay: arg.allDay
-		        	  	})
-		        	  }
-		        	  calendar.unselect()
+	        	  select: function(arg) { // 날짜 선택되면 발생하는 이벤트 (드래그 포함)
+	        		  $("#calendarModal").modal("show");
 	        	  }
 		        	  
 		        	  
@@ -135,6 +126,9 @@
 	            height: 800px;
 	            width: 800px;
 	        }
+	        .modal-dialog {
+	        	max-width:680px;
+	        }
         </style>
     </head>
 	<body>
@@ -146,8 +140,7 @@
 			</div>
 			
 			<!-- modal 추가 -->
-		    <div class="modal fade" id="calendarModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-		        aria-hidden="true">
+		    <div class="modal fade" id="calendarModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 		        <div class="modal-dialog" role="document">
 		            <div class="modal-content">
 		                <div class="modal-header">
@@ -158,29 +151,26 @@
 		                </div>
 		                <div class="modal-body">
 		                    <div class="form-group">
-		                    	<form methond="post" id="doseInsertForm" action="<c:url value='/doseInsert'/>">
+		                    	<form methond="post" id="doseInsertForm" action="<c:url value='/doseCalInsert'/>">
 			                    	<label for="famNo" class="col-form-label">가족 번호 (외래키) - 데이터 등록 테스트 위해서 임의 값 고정 </label><br>
-			                    	<input type="number" id="famNo" name="famNo" value="2" readonly><br>
-			                    	
+			                    	<input type="number" id="famNo" name="famNo" value="2" class="form-control" readonly><br>
 			                    	
 			                        <label for="ddTitle" class="col-form-label">복용 타이틀</label><br>
 			                        <input type="text" id="ddTitle" name="ddTitle" class="form-control"><br>
 			                        
 			                        <label for="searchInput" class="col-form-label">약 이름 입력받아서 -> 일치하는 약 선택 -> 해당 약 번호 넘기도록 : 약 이름 사용자 입력</label><br>
-			                        <input type="text" id="searchInput" name="searchInput" /><br>
-			                        
+			                        <input type="text" id="searchInput" name="searchInput" class="form-control" /><br>
 			                        <label for="drugInfoNo" class="col-form-label">약 번호 (자동완성 결과)</label><br>
-			                        <input type="number" id="drugInfoNo" name="drugInfoNo" readonly><br>
+			                        <input type="number" id="drugInfoNo" name="drugInfoNo" class="form-control" readonly><br>
 			                        
-			                        <label for="ddStartDate" class="col-form-label">복용 시작 날짜</label><br>
-			                        <input type="date" class="form-control" id="ddStartDate" name="ddStartDate"><br>
+			                        <label for="ddStartDate" class="col-form-label">복용 시작 날짜 및 복용 시간</label><br>
+			                        <input type="date" class="form-control" id="ddStartDate" class="form-control" name="ddStartDate"><br>
 			                        <label for="ddEndDate" class="col-form-label">복용 종료 날짜</label><br>
-			                        <input type="date" class="form-control" id="ddEndDate" name="ddEndDate"><br>
-			                        
+			                        <input type="date" class="form-control" id="ddEndDate" class="form-control" name="ddEndDate"><br>
 			                        <label for="ddCycle" class="col-form-label">복용 주기 (일 단위)</label><br>
-			            			<input type="number" min="1" id="ddCycle" name="ddCycle"><br>
+			            			<input type="number" min="1" id="ddCycle" name="ddCycle" class="form-control"><br>
 			            			
-			            			<label for="ddTimeSlot" class="col-form-label">복용 시간대 (여러 개 선택 가능)</label><br>
+			            			<label for="ddTimeSlot" class="col-form-label">복용 시기 (여러 개 선택 가능)</label><br>
 				            		<input type="checkbox" name="ddTimeSlot" value="기상직후">기상직후
 				            		<input type="checkbox" name="ddTimeSlot" value="아침식전">아침식전
 				            		<input type="checkbox" name="ddTimeSlot" value="아침식후">아침식후
@@ -192,7 +182,7 @@
 				            		<br>
 				            		
 				            		<label for="ddAmount" class="col-form-label">약 일회 복용 개수</label><br>
-			            			<input type="number" min="1" id="ddAmount" name="ddAmount"><br>
+			            			<input type="number" min="1" id="ddAmount" name="ddAmount" class="form-control"><br>
 			            			
 			            			<div id='autoResult'></div> <!-- 자동완성 : 유사 데이터 표출 영역 -->
 			            			
@@ -200,9 +190,6 @@
 		                    		<button type="button" class="btn btn-secondary" data-dismiss="modal" id="sprintSettingModalClose">취소</button>
 		            			</form>
 		                    </div>
-		                </div>
-		                <div class="modal-footer">
-		                    
 		                </div>
 		            </div>
 		        </div>

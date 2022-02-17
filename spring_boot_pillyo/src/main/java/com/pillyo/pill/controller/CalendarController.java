@@ -30,4 +30,11 @@ public class CalendarController {
 		model.addAttribute("drugList", drugList);
 		return "/dose/calendarView";
 	}
+	
+	// 복용 관리 - 캘린더 모달창 통해 등록
+	@RequestMapping("/doseCalInsert")
+	public String doseInsert(DoseVO doseVo) {
+		doseService.doseInsert(doseVo);
+		return "redirect:/calendarView";
+	}
 }
