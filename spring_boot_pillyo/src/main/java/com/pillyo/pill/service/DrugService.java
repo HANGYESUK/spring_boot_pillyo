@@ -26,5 +26,12 @@ public class DrugService implements IDrugService {
 	public DrugInfoVO detailViewDrug(String drugInfoNo) {
 		return dao.detailViewDrug(drugInfoNo);
 	}
-
+	@Override
+	public ArrayList<DrugInfoVO> selectItemBySearchWord(String keyWord){ //자동완성
+		return dao.selectItemBySearchWord(keyWord);
+	}
+	@Override
+	public ArrayList<DrugInfoVO> selectKeywordSearch(String keyWord) { //자동완성 제목조회
+		return dao.selectKeywordSearch(keyWord);
+	}
 }

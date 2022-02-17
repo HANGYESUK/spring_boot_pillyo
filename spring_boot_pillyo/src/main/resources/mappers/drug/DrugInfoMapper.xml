@@ -34,10 +34,11 @@
   		
   		
   		<!-- 약 정보 검색  -->
-  		<select id="drugSearch" resultType="com.pillyo.pill.model.DrugInfoVO" parameterType="String">
-  			SELECT * FROM drugInfo WHERE
-  			  					itemName LIKE CONCAT('%', #{keyword}, '%') OR
-  			  					efcyQesitm LIKE CONCAT('%', #{keyword}, '%')
+  		<select id="drugSearch" parameterType="String" 
+  												resultType="com.pillyo.pill.model.DrugInfoVO" >
+  			SELECT * FROM drugInfo 
+  			WHERE	itemName LIKE CONCAT('%', #{keyword}, '%') 
+  			OR efcyQesitm LIKE CONCAT('%', #{keyword}, '%')
   		</select>
   		
   		<!-- 약 상세 정보 조회  -->
@@ -45,6 +46,21 @@
   													resultType="com.pillyo.pill.model.DrugInfoVO">
   			SELECT * FROM drugInfo WHERE drugInfoNo = #{drugInfoNo}
   		</select>	
+  		
+  		<!-- 자동완성 기능  -->
+  		<select id="selectItemBySearchWord" parameterType="String"
+  													resultType="com.pillyo.pill.model.DrugInfoVO">
+  			SELECT * FROM drugInfo 
+  			WHERE	itemName LIKE CONCAT('%', #{keyword}, '%')
+  		</select>
+  		
+  		<select id="selectKeywordSearch" parameterType="String"
+  													resultType="String">
+  			SELECT drugInfoNo, itemName FROM drugInfo 
+  			WHERE itemName LIKE CONCAT('%', #{keyword}, '%')
+  				
+  			
+  		</select>
   		
   		
   </mapper>

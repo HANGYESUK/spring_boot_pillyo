@@ -71,6 +71,11 @@
 				<a href="<c:url value = '/famListView'/>">가족 목록 리스트</a>
 				
 				<br><br><br><br><br><br>
+					자동완성 연습
+					<jsp:include page="/WEB-INF/views/Main/searchBar.jsp" flush='ture'></jsp:include>
+					
+				<br><br><br><br><br><br>
+				
 				<a href="<c:url value = '/feelManageForm'/>">기분관리</a>	
 				
 				<br><br><br><br><br><br>
@@ -95,7 +100,9 @@
 				<br><br><br><br>
 				
 				<br><br><br><br>
-				<a href="<c:url value = '/insertDrugList'/>">API 약 정보 db 저장</a>
+				<a href="<c:url value = '/insertDrugList'/>">API 약 정보 db 저장</a><br>
+				<a href="<c:url value = '/drugShape'/>"> 약 낱알정보 API 테스트</a><br>
+				<a href="<c:url value = '/drugShapeSearchForm'/>"> 약 낱알정보 검색폼</a><br>
 				<br><br><br><br>
 				
 				<a href="<c:url value = '/doseInsertForm'/>">복용 관리 - 등록 폼</a>

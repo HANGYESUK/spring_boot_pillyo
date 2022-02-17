@@ -9,4 +9,7 @@ public interface IDrugService {
 	
 	ArrayList<DrugInfoVO> drugSearch(String keyWord);	//약 검색 
 	DrugInfoVO detailViewDrug(String drugInfoNo);	//약 상세정보 조회
+	
+	ArrayList<DrugInfoVO> selectItemBySearchWord(String keyWord);	//자동완성
+	ArrayList<DrugInfoVO> selectKeywordSearch(String keyWord); //자동완성 제목조회
 }
