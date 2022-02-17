@@ -24,8 +24,17 @@
 		    	<c:forEach items="${doseList}" var="dose">
 		    		doseArr.push({
 		    			title:"${dose.ddTitle}",
-		    			start:"${dose.ddStartDate}"
+		    			start:"${dose.ddStartDate}"+"T"+"${dose.ddTime}",
+		    			end:"${dose.ddStartDate}"+"T"+"${dose.ddTime}"+":01"
 		    		});
+		    		
+		    		/* <c:if test="${조건}">
+	    			/* 조건 : (ddEndDate - ddStartDate) > 0 */
+	    			/* 실행문 : ddStartDate split => 배열로 반환
+	    					=> 배열 요소 중 day에 해당하는 값 + 복용주기 = 새로운 ddStartDate
+	    					=> 새로운ddStartDate + 시간 = start / start + ":01" = end
+					*/
+	    			</c:if> */
 	    		</c:forEach>
 		    	
 		    	/* calender */
@@ -58,6 +67,7 @@
 	                                var ddEndDate = $("#ddEndDate").val();
 	                                var ddCycle = $("#ddCycle").val();
 	                                var ddTimeSlot = $("#ddTimeSlot").val();
+	                                var ddTime = $("#ddTime").val();
 	                                var ddAmount = $("#ddAmount").val();
 	                                
 	                                //내용 입력 여부 확인
@@ -71,20 +81,22 @@
 	                                    alert("종료일이 시작일보다 먼저입니다.");
 	                                }else if(ddCycle == null || ddCycle == ""){
 	                                	alert("복용 주기를 입력하세요.");
+	                                }else if(ddTime == null || ddTime == ""){
+	                                	alert("복용 상세 시간을 입력하세요.");
 	                                }else if(ddAmount == null || ddAmount == ""){
 	                                	alert("일회 복용량을 입력하세요.");
 	                                }else{ // 정상적으로 입력했을 경우, 전송할 객체 생성
 	                                    var obj = {
 	                                        "title" : ddTitle,
-	                                        "start" : ddStartDate+":00"
+	                                        "start" : ddStartDate+"T"+ddTime,
+	                                        "end" : ddStartDate+"T"+ddTime+":01"
 	                                    }
 	                                
 
 	                                    console.log(obj); // console에서 확인
 	                                    arrTxt.push(obj);
-	                                    console.log(arrTxt);
+	                                    console.log(arrTxt); // console에서 확인
 	                                    calendar.addEvent(obj);
-	                                    console.log(ddStartDate+":00"); // console에서 확인
 	                                }
 	                            });
 	                        }
@@ -163,7 +175,7 @@
 			                        <label for="drugInfoNo" class="col-form-label">약 번호 (자동완성 결과)</label><br>
 			                        <input type="number" id="drugInfoNo" name="drugInfoNo" class="form-control" readonly><br>
 			                        
-			                        <label for="ddStartDate" class="col-form-label">복용 시작 날짜 및 복용 시간</label><br>
+			                        <label for="ddStartDate" class="col-form-label">복용 시작 날짜 및 복용 시간</label><br><!-- yyyy-mm-ddThh-mm 형식으로 전송됨 -->
 			                        <input type="date" class="form-control" id="ddStartDate" class="form-control" name="ddStartDate"><br>
 			                        <label for="ddEndDate" class="col-form-label">복용 종료 날짜</label><br>
 			                        <input type="date" class="form-control" id="ddEndDate" class="form-control" name="ddEndDate"><br>
@@ -180,7 +192,10 @@
 				            		<input type="checkbox" name="ddTimeSlot" value="저녁식후">저녁식후
 				            		<input type="checkbox" name="ddTimeSlot" value="취침전">취침전
 				            		<br>
-				            		
+			            			
+			            			<label for="ddTime" class="col-form-label">복용 상세 시간</label><br>
+			            			<input type="time" id="ddTime" name="ddTime" class="form-control"><br>
+			            			
 				            		<label for="ddAmount" class="col-form-label">약 일회 복용 개수</label><br>
 			            			<input type="number" min="1" id="ddAmount" name="ddAmount" class="form-control"><br>
 			            			
