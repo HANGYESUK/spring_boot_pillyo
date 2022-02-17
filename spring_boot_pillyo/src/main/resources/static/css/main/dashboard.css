@@ -184,7 +184,8 @@ select {
 }
 
 .main-Content-Body {
-    margin-bottom: 100px;
+    overflow: hidden;
+    height: 85%;
 }
 
 .main-Content-Header {

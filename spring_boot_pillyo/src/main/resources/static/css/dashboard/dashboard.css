@@ -89,6 +89,7 @@ body {
     border-radius: 50%;
     border: 3px solid white;
     overflow: hidden;
+    background-color: #ff97a9;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -237,6 +238,7 @@ select {
 
 a {
     text-decoration: none;
+    color: white;
 }
 
 li {
@@ -294,6 +296,10 @@ li {
     align-items: center;
     cursor:pointer;
     transition: all 0.4s;
+}
+
+.outer-menu-btn h5 {
+	color: #1b81ff;
 }
 
 .outer-menu-btn:hover {

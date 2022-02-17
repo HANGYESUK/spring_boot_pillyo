@@ -75,7 +75,7 @@
 								<div class="outer-menu-btn"><a href="/"><h5>HOME</h5></a></div>
 								<div class="outer-menu-btn"><a href="#"><h5>복용관리</h5></a></div>
 								<div class="outer-menu-btn"><a href="#"><h5>재고관리</h5></a></div>
-								<div class="outer-menu-btn"><a href="#"><h5>가족관리</h5></a></div>
+								<div class="outer-menu-btn"><a href="<c:url value = '/famListView'/>"><h5>가족관리</h5></a></div>
 								<div class="outer-menu-btn"><a href="#"><h5>건강관리</h5></a></div>
 							</div>
 				  
@@ -107,7 +107,7 @@
 								</div>
 							</div>
 	                    </c:if>
-					
+	                    
 						
 						<div class="basket-Item">
 							<i class="fas fa-times" onclick="go(this);" data-prdNo="${cart.prdNo }"></i>

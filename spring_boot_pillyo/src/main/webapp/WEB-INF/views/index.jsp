@@ -38,7 +38,7 @@
 				anchors:['first', 'second', 'third', 'fourth'],
 				navigation: true,
 				navigationPosition: 'right',
-				navigationTooltips: ['인트로', '과거', '현재', '미래'],
+				navigationTooltips: ['메인', '과거', '현재', '미래'],
 				// sectionsColor : ['#fffa65', '#ff9f1a', '#7d5fff', '#17c0eb'],
 				showActiveTooltip: true,
 				sectionSelector: '.section',
@@ -59,7 +59,7 @@
 			<div class="Ellipse-1"></div>
 			<div class="Union"></div>
 			<div class="Ellipse-4"></div>
-			<h1>인트로</h1>
+			<h1>Pill-Yo</h1>
 		</div>
 	</div>
 	<div class="section" id="section1">
