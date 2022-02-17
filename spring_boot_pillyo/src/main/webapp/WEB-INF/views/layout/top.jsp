@@ -6,7 +6,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Insert title here</title>
-		<script src="<c:url value='drugAutoComplete.js'/>"></script>
+		
 	</head>
 	<body>
 		<nav id="main-navigation">
@@ -37,9 +37,9 @@
 					</c:if>	
 					
 		
-					<div id="searchBox" bgcolor="lightgray">
+					<div id="searchBox" >
 						<form method="post" action="<c:url value='/drugSearch'/>">
-							<input type="text" id="drugSearchInput" name="keyWord" />
+							<input type="text" id="drugSearchInput" name="keyWord" placeholder="약이름/효능으로 검색하세요"/>
 							<input type="submit" value="검색" />
 						</form>
 					</div>
