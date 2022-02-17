@@ -59,7 +59,8 @@
 						<input type="radio" name="MARK_CODE_FRONT_ANAL" value="-형" />-형
 						<input type="radio" name="MARK_CODE_FRONT_ANAL" value="기타" />기타
 					
-				
+					
+					<input type="text" />
 				</form>
 			
 			
