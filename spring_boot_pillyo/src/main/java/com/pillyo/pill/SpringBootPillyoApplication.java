@@ -31,7 +31,6 @@ import com.pillyo.pill.dao.IUserDAO;
 @ComponentScan(basePackageClasses = FeelController.class)
 @ComponentScan(basePackageClasses = DrugInfoController.class)
 @ComponentScan(basePackageClasses = DoseController.class)
-@ComponentScan(basePackageClasses = HealthController.class)
 @MapperScan(basePackageClasses = IUserDAO.class)
 @MapperScan(basePackageClasses = IFamilyDAO.class)
 @MapperScan(basePackageClasses = ISugarDAO.class)
