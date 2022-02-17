@@ -60,7 +60,7 @@
 						<input type="radio" name="MARK_CODE_FRONT_ANAL" value="기타" />기타
 					
 					
-					<input type="text" />
+					<input type="text" placeholder="테스트 입니다."/>
 				</form>
 			
 			
