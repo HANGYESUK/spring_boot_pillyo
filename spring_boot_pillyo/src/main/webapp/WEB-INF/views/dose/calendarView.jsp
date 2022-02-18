@@ -21,6 +21,8 @@
 		<!-- fullcalendar -->
 		<link href='/resources/fullcalendar-5.10.2/lib/main.css' rel='stylesheet' />
 		<script src='/resources/fullcalendar-5.10.2/lib/main.js'></script>
+		<script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
+		<script src="https://unpkg.com/tippy.js@6"></script>
 		<script>
 		      document.addEventListener('DOMContentLoaded', function() {
 		    	
@@ -30,7 +32,8 @@
 		    		doseArr.push({
 		    			title:"${dose.ddTitle}",
 		    			start:"${dose.ddStartDate}"+"T"+"${dose.ddTime}",
-		    			end:"${dose.ddStartDate}"+"T"+"${dose.ddTime}"+":01"
+		    			end:"${dose.ddStartDate}"+"T"+"${dose.ddTime}"+":01",
+		    			description: "일회 복용량 : ${dose.ddAmount}"
 		    		});
 		    		
 		    		// 조건절 작성 위한 데이터 처리 작업
@@ -90,7 +93,8 @@
 		    				doseArr.push({
 				    			title:"${dose.ddTitle}",
 				    			start:newddStartDate,
-				    			end:newddStartDate+":01"
+				    			end:newddStartDate+":01",
+				    			description: "일회 복용량 : ${dose.ddAmount}"
 				    		});
 				    	</c:if>
 					}
@@ -175,7 +179,13 @@
 	        	  
 	        	  select: function(arg) { // 날짜 선택되면 발생하는 이벤트 (드래그 포함)
 	        		  $("#calendarModal").modal("show");
-	        	  }
+	        	  },
+
+	              eventDidMount: function(info) {
+	                  tippy(info.el, {
+	                      content:  info.event.extendedProps.description,//이벤트 디스크립션을 툴팁으로 가져옵니다. 
+	                  });
+	              },
 		        	  
 		        	  
 		        });
