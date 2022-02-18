@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -8,26 +9,92 @@
 		<title>복용관리 - calendar</title>
 		<script src="<c:url value='/js/jquery-3.6.0.min.js'/>"></script>
 		
+		<!-- momento.js -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+		
 		<!-- bootstrap 4 -->
 	    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 	    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 	    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 	    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-
+		
 		<!-- fullcalendar -->
 		<link href='/resources/fullcalendar-5.10.2/lib/main.css' rel='stylesheet' />
 		<script src='/resources/fullcalendar-5.10.2/lib/main.js'></script>
 		<script>
 		      document.addEventListener('DOMContentLoaded', function() {
-		    	/* 복용 목록 data */
+		    	
 		    	var doseArr = new Array();
 		    	<c:forEach items="${doseList}" var="dose">
+		    		/* 복용 목록 캘린더에 추가 (시작일만) */
 		    		doseArr.push({
 		    			title:"${dose.ddTitle}",
-		    			start:"${dose.ddStartDate}"
+		    			start:"${dose.ddStartDate}"+"T"+"${dose.ddTime}",
+		    			end:"${dose.ddStartDate}"+"T"+"${dose.ddTime}"+":01"
 		    		});
+		    		
+		    		// 조건절 작성 위한 데이터 처리 작업
+		    		<c:set var="startDB" value="${dose.ddStartDate}" />
+		    		<c:set var="endDB" value="${dose.ddEndDate}" />
+					<fmt:parseDate var="start" value="${startDB }" pattern="yyyy-MM-dd"/>
+					<fmt:parseDate var="end" value="${endDB }" pattern="yyyy-MM-dd"/>
+					<fmt:formatDate var="startFmt" value="${start}" pattern="yyyyMMdd"/>
+					<fmt:formatDate var="endFmt" value="${end}" pattern="yyyyMMdd"/>
+					console.log("start : " + "${start}" + "타입 : " + "typeof ${start}");
+					console.log("end : " + "${end}" + "타입 : " + typeof "${end}");
+					console.log("startFmt : " + "${startFmt}" + "타입 : " + typeof "${startFmt}");
+					console.log("endFmt : " + "${endFmt}" + "타입 : " + typeof "${endFmt}");
+					
+					// 반복문 작성 위한 test
+					startFmt = parseInt(${startFmt});
+					endFmt = parseInt(${endFmt});
+					console.log("startFmt 값 : " + startFmt); // 콘솔 값 출력 test
+					console.log("endFmt 값 : " + endFmt); // 콘솔 값 출력 test
+					console.log("startFmt 타입 : " + typeof startFmt); // 콘솔 값 출력 test - type = number
+					console.log("endFmt 타입 : " + typeof endFmt); // 콘솔 값 출력 test - type = number
+					
+					for (var i=startFmt; i<endFmt; i+=${dose.ddCycle}) {
+						if(i+${dose.ddCycle}>(endFmt)) break;
+						console.log("성공!!!!!!");
+						console.log(i); // 제대로 바뀌고 있음
+						
+						var strStart = String(i);
+						console.log(strStart);
+						var strFmtStart = moment(strStart, "YYYYMMDD").format("YYYY-MM-DD");
+						console.log(strFmtStart);
+						
+						/* 복용 목록 캘린더에 추가 (시작일보다 종료일이 늦고, 복용 주기를 1이상의 값으로 입력했을 경우) */
+			    		<c:if test="${endFmt-startFmt > 0}">
+			    			console.log("조건절 성공...");
+		    				var arr = String(strFmtStart).split("-"); /* yyyy, mm, dd로 잘려 배열에 저장됨, 각 요소는 문자열 형태, dd=arr[2] */
+		    				console.log(arr); // 콘솔 값 출력 test
+		    				
+		    				// arr[2]를 숫자타입으로 변경 후, 복용주기와 덧셈 연산 -> 다시 문자열로 변경
+		    				console.log("arr[2] 타입 : " + typeof arr[2]); // 콘솔 값 출력 test - type = string
+		    				var day = parseInt(arr[2]);
+		    				console.log("day 값 : " + day);
+		    				console.log("dose.ddCycle 타입 : " + typeof ${dose.ddCycle}); // 콘솔 값 출력 test - type = number
+		    				day += ${dose.ddCycle};
+		    				console.log("day 타입 : " + typeof day); // 콘솔 값 출력 test - type = number
+		    				day = String(day).padStart(2,'0'); // day 값이 10 미만일 경우 고려하여 두 자리, 빈 자리는 0으로 채우도록 포매팅
+		    				console.log("포매팅 후 day 타입 : " + typeof day); // 콘솔 값 출력 test - type = string
+		    				
+		    				// newddStartDate = 문자열 합치기 (기존시작일yyyy + 기존시작일mm + 주기에 따라 새롭게 변경된 day + "T" + 기존복용시간)
+		    				console.log("dose.ddTime 타입 : " + typeof "${dose.ddTime}"); // 콘솔 값 출력 test - type = string
+		    				var newddStartDate = arr[0] + arr[1] + day + "T" + "${dose.ddTime}";
+		    				console.log("newddStartDate 값 : " + newddStartDate); // 콘솔 값 출력 test - type = string
+		    				console.log("newddStartDate 타입 : " + typeof newddStartDate); // 콘솔 값 출력 test - type = string
+		    				
+		    				// newddEndDate = newddStartDate + ":01"로 설정하여 복용 이벤트 등록
+		    				doseArr.push({
+				    			title:"${dose.ddTitle}",
+				    			start:newddStartDate,
+				    			end:newddStartDate+":01"
+				    		});
+				    	</c:if>
+					}
 	    		</c:forEach>
-		    	
+	    		
 		    	/* calender */
 		        var calendarEl = document.getElementById('calendar');
 		        var calendar = new FullCalendar.Calendar(calendarEl, {
@@ -58,6 +125,7 @@
 	                                var ddEndDate = $("#ddEndDate").val();
 	                                var ddCycle = $("#ddCycle").val();
 	                                var ddTimeSlot = $("#ddTimeSlot").val();
+	                                var ddTime = $("#ddTime").val();
 	                                var ddAmount = $("#ddAmount").val();
 	                                
 	                                //내용 입력 여부 확인
@@ -71,20 +139,12 @@
 	                                    alert("종료일이 시작일보다 먼저입니다.");
 	                                }else if(ddCycle == null || ddCycle == ""){
 	                                	alert("복용 주기를 입력하세요.");
+	                                }else if(ddTime == null || ddTime == ""){
+	                                	alert("복용 상세 시간을 입력하세요.");
 	                                }else if(ddAmount == null || ddAmount == ""){
 	                                	alert("일회 복용량을 입력하세요.");
-	                                }else{ // 정상적으로 입력했을 경우, 전송할 객체 생성
-	                                    var obj = {
-	                                        "title" : ddTitle,
-	                                        "start" : ddStartDate+":00"
-	                                    }
-	                                
-
-	                                    console.log(obj); // console에서 확인
-	                                    arrTxt.push(obj);
-	                                    console.log(arrTxt);
-	                                    calendar.addEvent(obj);
-	                                    console.log(ddStartDate+":00"); // console에서 확인
+	                                }else{
+	                                	// 정상적으로 입력했을 경우
 	                                }
 	                            });
 	                        }
@@ -163,7 +223,7 @@
 			                        <label for="drugInfoNo" class="col-form-label">약 번호 (자동완성 결과)</label><br>
 			                        <input type="number" id="drugInfoNo" name="drugInfoNo" class="form-control" readonly><br>
 			                        
-			                        <label for="ddStartDate" class="col-form-label">복용 시작 날짜 및 복용 시간</label><br>
+			                        <label for="ddStartDate" class="col-form-label">복용 시작 날짜 및 복용 시간</label><br><!-- yyyy-mm-ddThh-mm 형식으로 전송됨 -->
 			                        <input type="date" class="form-control" id="ddStartDate" class="form-control" name="ddStartDate"><br>
 			                        <label for="ddEndDate" class="col-form-label">복용 종료 날짜</label><br>
 			                        <input type="date" class="form-control" id="ddEndDate" class="form-control" name="ddEndDate"><br>
@@ -180,7 +240,10 @@
 				            		<input type="checkbox" name="ddTimeSlot" value="저녁식후">저녁식후
 				            		<input type="checkbox" name="ddTimeSlot" value="취침전">취침전
 				            		<br>
-				            		
+			            			
+			            			<label for="ddTime" class="col-form-label">복용 상세 시간</label><br>
+			            			<input type="time" id="ddTime" name="ddTime" class="form-control"><br>
+			            			
 				            		<label for="ddAmount" class="col-form-label">약 일회 복용 개수</label><br>
 			            			<input type="number" min="1" id="ddAmount" name="ddAmount" class="form-control"><br>
 			            			

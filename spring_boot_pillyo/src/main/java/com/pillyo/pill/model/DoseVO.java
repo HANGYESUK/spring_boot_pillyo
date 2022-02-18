@@ -8,7 +8,8 @@ public class DoseVO {
 	private String ddStartDate;
 	private String ddEndDate;
 	private int ddCycle;
-	private String ddTimeSlot; // 다중값 -> 타입 변경
+	private String ddTimeSlot;
+	private String ddTime;
 	private int ddAmount;
 
 	public DoseVO() { }
@@ -75,6 +76,14 @@ public class DoseVO {
 
 	public void setDdTimeSlot(String ddTimeSlot) {
 		this.ddTimeSlot = ddTimeSlot;
+	}
+	
+	public String getDdTime() {
+		return ddTime;
+	}
+
+	public void setDdTime(String ddTime) {
+		this.ddTime = ddTime;
 	}
 
 	public int getDdAmount() {
