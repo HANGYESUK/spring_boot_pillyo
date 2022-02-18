@@ -157,8 +157,8 @@
 		          locale: 'ko', // 한국어 설정
 		          expandRows: true, // 화면에 맞게 높이 재설정
 		          // selectMirror: true, // 힌트?
-        		  editable: true, // 수정 가능
-				  selectable: true, // 달력 일자 드래그 설정 가능
+        		  editable: false, // 수정 가능
+				  selectable: false, // 달력 일자 드래그 설정 가능
 				  events: doseArr, // DB 복용 목록 추가
 				  
 				  
@@ -167,7 +167,6 @@
 		          },
 	        	  eventChange: function(obj) { // 이벤트가 수정되면 발생하는 이벤트
 	        	  	console.log(obj);
-	        	  alert("a");
 	        	  },
 	        	  eventRemove: function(obj){ // 이벤트가 삭제되면 발생하는 이벤트
 	        	  	console.log(obj);
