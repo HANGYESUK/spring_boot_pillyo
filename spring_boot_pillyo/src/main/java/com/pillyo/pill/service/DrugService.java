@@ -27,4 +27,8 @@ public class DrugService implements IDrugService {
 		return dao.detailViewDrug(drugInfoNo);
 	}
 
+	@Override
+	public ArrayList<AutoDrugInfoVO> drugListView() {
+		return dao.drugListView();
+	}
 }
