@@ -41,24 +41,6 @@ public class DrugController {
 		return drugList;
 	}
 	
-	@ResponseBody
-	@RequestMapping("/selectItemBySearchWord")
-	public ArrayList<DrugInfoVO> selectItemBySearchWord(@RequestParam("keyWord") String keyWord) {
-		
-		if(keyWord == null || keyWord.equals("")) return null;
-	
-		ArrayList<DrugInfoVO> drugList = service.selectItemBySearchWord(keyWord);
-		return drugList;
-	}
-	
-	@ResponseBody
-	@RequestMapping("/selectKeywordSearch")
-	public ArrayList<DrugInfoVO> selectKeywordSearch(@RequestParam ("keyWord") String keyWord, Model model) {
-		ArrayList<DrugInfoVO> drugNameList = service.selectKeywordSearch(keyWord);
-		model.addAttribute("drugList", drugNameList);
-		return drugNameList;
-	}
-	
 	/* 약모양 Controller */
 	
 	@RequestMapping("/drugShape")
