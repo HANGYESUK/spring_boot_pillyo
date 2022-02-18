@@ -56,7 +56,7 @@
 					for (var i=startFmt; i<endFmt; i+=${dose.ddCycle}) {
 						if(i+${dose.ddCycle}>(endFmt)) break;
 						console.log("성공!!!!!!");
-						console.log(i); // 제대로 바뀌고 있음
+						console.log(i); // 제대로 바뀌고 있음 
 						
 						var strStart = String(i);
 						console.log(strStart);
