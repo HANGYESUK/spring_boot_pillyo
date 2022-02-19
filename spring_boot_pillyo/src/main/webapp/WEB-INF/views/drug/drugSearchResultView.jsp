@@ -9,6 +9,11 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>약리스트</title>
+		<link rel="stylesheet" href="/css/test.css" />
+		<script
+	    src="https://code.jquery.com/jquery-3.6.0.min.js"
+	    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+	    crossorigin="anonymous"></script>
 	</head>
 	<body>
 		<div id="wrap">
@@ -28,7 +33,7 @@
 		     <c:otherwise>
 				<div id="searchResult">
 				
-					<c:forEach items="${druglist}" var="drug" >
+					<c:forEach items="${druglist}" var="drug" varStatus="status">
 							<div class="drugBox">
 								<img src="${drug.itemImage}" width="200" height="100">
 								<a href="<c:url value='/drugDetailView/${drug.drugInfoNo}'/>">${drug.itemName}</a>
@@ -39,12 +44,34 @@
 				</div>
 			   </c:otherwise> 
 			</c:choose>
-			
+			<div id="more-Btn" class="low" onclick="more()"><h3>더보기</h3></div>
 		</section>
 
 		<!-- BOTTOM  -->
 		<jsp:include page="/WEB-INF/views/layout/bottom.jsp" flush='true' />
 		
     	</div> <!-- wrap -->
+    	
+    	<script>
+	        let count = 10;
+	        let drugBox = document.getElementsByClassName("drugBox")
+	        
+	        for(let i=count; i<drugBox.length; i++) {
+	        	drugBox[i].classList.add('displayNone')
+	        }
+	        
+	        function more() {
+		        for(let i=count; i<drugBox.length; i++) {
+		        	drugBox[i].classList.remove('displayNone')
+		        	if(i >= count + 9) {
+		        		break;
+		        	}
+		        }
+		        count += 10
+	        }
+	   
+	        
+    	</script>
+    	
 	</body>
 </html>

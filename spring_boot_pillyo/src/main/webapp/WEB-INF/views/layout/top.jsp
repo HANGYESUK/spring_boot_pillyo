@@ -45,5 +45,23 @@
 					</div>
 				</div>
 		</nav>
+		
+		<script>
+	        let drugSearchInput = document.getElementById('drugSearchInput')
+	
+	        let searchBox = document.getElementById('searchBox')
+	
+	        searchBox.addEventListener("submit", (e)=>{
+	            if(drugSearchInput.value == "") {
+	                e.preventDefault()
+	                alert("검색어를 입력해주세요")
+	                console.log("검색어를 입력해주세요")
+	            }
+	            else {
+	            	console.log("검색")
+	            }
+	        })
+		</script>
+		
 	</body>
 </html>

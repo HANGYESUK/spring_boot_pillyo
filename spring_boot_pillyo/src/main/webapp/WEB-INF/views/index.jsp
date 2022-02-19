@@ -38,7 +38,7 @@
 				anchors:['first', 'second', 'third', 'fourth'],
 				navigation: true,
 				navigationPosition: 'right',
-				navigationTooltips: ['메인', '과거', '현재', '미래'],
+				navigationTooltips: ['인트로', '과거', '현재', '미래'],
 				// sectionsColor : ['#fffa65', '#ff9f1a', '#7d5fff', '#17c0eb'],
 				showActiveTooltip: true,
 				sectionSelector: '.section',
@@ -59,7 +59,7 @@
 			<div class="Ellipse-1"></div>
 			<div class="Union"></div>
 			<div class="Ellipse-4"></div>
-			<h1>Pill-Yo</h1>
+			<h1>인트로</h1>
 		</div>
 	</div>
 	<div class="section" id="section1">
@@ -71,11 +71,6 @@
 				<a href="<c:url value = '/famListView'/>">가족 목록 리스트</a>
 				
 				<br><br><br><br><br><br>
-					자동완성 연습
-					<jsp:include page="/WEB-INF/views/Main/searchBar.jsp" flush='ture'></jsp:include>
-					
-				<br><br><br><br><br><br>
-				
 				<a href="<c:url value = '/feelManageForm'/>">기분관리</a>	
 				
 				<br><br><br><br><br><br>
@@ -99,20 +94,16 @@
 				<a href="<c:url value = '/dashboard2'/>">대쉬보드 연습중...</a>
 				<a href="<c:url value = '/dashboardtest'/>">대쉬보드 연습중...2</a>
 				<a href="<c:url value = '/dashboardtest'/>">대쉬보드 연습중...2</a>
-				
+				<br>
+				<a href="<c:url value = '/boardList'/>">페이징 연습중</a>
 				<br><br><br><br>
 				
 				<br><br><br><br>
-				<a href="<c:url value = '/insertDrugList'/>">API 약 정보 db 저장</a><br>
-				<a href="<c:url value = '/drugShape'/>"> 약 낱알정보 API 테스트</a><br>
-				<a href="<c:url value = '/drugShapeSearchForm'/>"> 약 낱알정보 검색폼</a><br>
+				<a href="<c:url value = '/insertDrugList'/>">API 약 정보 db 저장</a>
 				<br><br><br><br>
 				
 				<a href="<c:url value = '/doseInsertForm'/>">복용 관리 - 등록 폼</a>
 				<a href="<c:url value = '/doseListView'/>">복용 목록 조회</a>
-				
-				<br><br>
-				<a href="calendarView">캘린더</a>
 			</section>
 
 	</div>
