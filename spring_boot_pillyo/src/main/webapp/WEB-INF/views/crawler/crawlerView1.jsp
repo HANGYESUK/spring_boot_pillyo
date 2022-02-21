@@ -29,7 +29,7 @@
 					 ${aboutDrug }
 				 </div>
 				 
-				 <div id="OtcEtcStcBox">
+				 <div id="otcEtcStcBox">
 					 <h2>일반의약품과 전문의약품 - (안전 상비 의약품 이전 정보 따로 분리 불가능)</h2>
 					 ${OTCETC }
 					 <br>
