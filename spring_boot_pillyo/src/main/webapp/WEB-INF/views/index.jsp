@@ -94,7 +94,15 @@
 				<a href="<c:url value = '/dashboard2'/>">대쉬보드 연습중...</a>
 				<a href="<c:url value = '/dashboardtest'/>">대쉬보드 연습중...2</a>
 				<a href="<c:url value = '/dashboardtest'/>">대쉬보드 연습중...2</a>
-				
+
+<a href="<c:url value = '/postDetailView'/>">게시판 연습중...2</a>
+<a href="<c:url value = '/newPostForm'/>">게시판 연습중...2</a>
+<a href="<c:url value = '/listAllPost'/>">게시판 연습중...2</a>
+
+					<a href="<c:url value = '/boardForm'/>">게시판 등록</a>
+					<a href="<c:url value = '/listAllBoard'/>">게시판 목록</a>
+					<br>
+				<a href="<c:url value = '/boardList'/>">페이징 연습중</a>
 				<br><br><br><br>
 				
 				<br><br><br><br>

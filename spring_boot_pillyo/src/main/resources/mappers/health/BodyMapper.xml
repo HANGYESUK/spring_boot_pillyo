@@ -32,7 +32,7 @@
   				height =#{height},
 				weight =#{weight},
 				bmi =#{bmi},
-				bodyRecordDate =#{bodyRecordDate},
+				bodyRecordDate =#{boyRecordDate},
 				famNo =#{famNo}
   			where bodyNo = #{bodyNo}
   		</update>
