@@ -21,6 +21,8 @@
 		<!-- fullcalendar -->
 		<link href='/resources/fullcalendar-5.10.2/lib/main.css' rel='stylesheet' />
 		<script src='/resources/fullcalendar-5.10.2/lib/main.js'></script>
+		<script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
+		<script src="https://unpkg.com/tippy.js@6"></script>
 		<script>
 		      document.addEventListener('DOMContentLoaded', function() {
 		    	
@@ -30,7 +32,8 @@
 		    		doseArr.push({
 		    			title:"${dose.ddTitle}",
 		    			start:"${dose.ddStartDate}"+"T"+"${dose.ddTime}",
-		    			end:"${dose.ddStartDate}"+"T"+"${dose.ddTime}"+":01"
+		    			end:"${dose.ddStartDate}"+"T"+"${dose.ddTime}"+":01",
+		    			description: "일회 복용량 : ${dose.ddAmount}"
 		    		});
 		    		
 		    		// 조건절 작성 위한 데이터 처리 작업
@@ -45,7 +48,7 @@
 					console.log("startFmt : " + "${startFmt}" + "타입 : " + typeof "${startFmt}");
 					console.log("endFmt : " + "${endFmt}" + "타입 : " + typeof "${endFmt}");
 					
-					// 반복문 작성 위한 test
+					// 반복문 작성 위한 데이터 처리 작업
 					startFmt = parseInt(${startFmt});
 					endFmt = parseInt(${endFmt});
 					console.log("startFmt 값 : " + startFmt); // 콘솔 값 출력 test
@@ -54,6 +57,7 @@
 					console.log("endFmt 타입 : " + typeof endFmt); // 콘솔 값 출력 test - type = number
 					
 					for (var i=startFmt; i<endFmt; i+=${dose.ddCycle}) {
+						if(${dose.ddCycle}<=0) break;
 						if(i+${dose.ddCycle}>(endFmt)) break;
 						console.log("성공!!!!!!");
 						console.log(i); // 제대로 바뀌고 있음 
@@ -89,7 +93,8 @@
 		    				doseArr.push({
 				    			title:"${dose.ddTitle}",
 				    			start:newddStartDate,
-				    			end:newddStartDate+":01"
+				    			end:newddStartDate+":01",
+				    			description: "일회 복용량 : ${dose.ddAmount}"
 				    		});
 				    	</c:if>
 					}
@@ -156,8 +161,8 @@
 		          locale: 'ko', // 한국어 설정
 		          expandRows: true, // 화면에 맞게 높이 재설정
 		          // selectMirror: true, // 힌트?
-        		  editable: true, // 수정 가능
-				  selectable: true, // 달력 일자 드래그 설정 가능
+        		  editable: false, // 수정 가능
+				  selectable: false, // 달력 일자 드래그 설정 가능
 				  events: doseArr, // DB 복용 목록 추가
 				  
 				  
@@ -174,7 +179,13 @@
 	        	  
 	        	  select: function(arg) { // 날짜 선택되면 발생하는 이벤트 (드래그 포함)
 	        		  $("#calendarModal").modal("show");
-	        	  }
+	        	  },
+
+	              eventDidMount: function(info) {
+	                  tippy(info.el, {
+	                      content:  info.event.extendedProps.description,//이벤트 디스크립션을 툴팁으로 가져옵니다. 
+	                  });
+	              },
 		        	  
 		        	  
 		        });

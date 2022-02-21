@@ -690,10 +690,16 @@ A HORIZONTAL event
     border: 1px solid var(--fc-border-color, #ddd);
     background: #fff;
     background: var(--fc-page-bg-color, #fff);
+    /* Ä¶¸°´õ description ¹Ù±ùÂÊ ¹Ú½º */
+    border-radius: 68px;
+    padding: 20px;
+    background-color: #ccd5e3;
   }
 .fc-theme-standard .fc-popover-header {
-    background: rgba(208, 208, 208, 0.3);
-    background: var(--fc-neutral-bg-color, rgba(208, 208, 208, 0.3));
+    /* background: rgba(208, 208, 208, 0.3);
+    background: var(--fc-neutral-bg-color, rgba(208, 208, 208, 0.3)); */
+    background-color: #ccd5e3;
+    /* Ä¶¸°´õ description Çì´õ ¹è°æ »ö»ó */
   }
 
 
@@ -856,6 +862,7 @@ A HORIZONTAL event
 .fc .fc-more-popover .fc-popover-body {
     min-width: 220px;
     padding: 10px;
+    background-color: #ccd5e3; /* Ä¶¸°´õ description ¾ÈÂÊ ¹è°æ »ö»ó */
   }
 .fc-direction-ltr .fc-daygrid-event.fc-event-start,
 .fc-direction-rtl .fc-daygrid-event.fc-event-end {
