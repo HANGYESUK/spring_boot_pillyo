@@ -1,6 +1,10 @@
 package com.pillyo.pill.controller;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -19,7 +23,9 @@ public class HmController{
 	
 	// 우리집 약관리 페이지로 이동
 	@RequestMapping("/hmForm")
-	public String Household_Medicine() {
+	public String Household_Medicine(HmVO vo, Model model) {
+		model.addAttribute("HmVO", vo);
+		System.out.println(vo.getHmCtgNo());
 		return "household_medicine/hmForm";
 	}
 
@@ -50,9 +56,15 @@ public class HmController{
 	
 	// 우리집 약관리 : 카테고리별 조회
 	@RequestMapping("/listCtgHm/{hmCtgNo}")
-	public String listCtgHm(@PathVariable int hmCtgNo,
-							@PathVariable int userId, Model model) {
-		ArrayList<HmVO> hmCtgList = service.listCtgHm(hmCtgNo, userId);
+	public String listCtgHm(@PathVariable int hmCtgNo, Model model,
+			 					HttpSession session) {
+		HashMap<String, Object> map = new HashMap<String, Object>();
+		
+		String userId = (String)session.getAttribute("sid");
+		System.out.println(userId);
+		map.put("userId", userId);
+		map.put("hmCtgNo", hmCtgNo);
+		ArrayList<HmVO> hmCtgList = service.listCtgHm(map);
 		model.addAttribute("hmCtgList", hmCtgList);
 		model.addAttribute("userId", userId);
 		// DB에서 카테고리별 리스트 불러오기

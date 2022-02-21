@@ -3,6 +3,12 @@
  */
  
  $(document).ready(function(){
+	
+	    function go() {
+          	console.log("hello")
+        }
+	
+	
 	$('#hmCtg_ListView').on('submit', function(this){
 		
 		var formData = this.value;
