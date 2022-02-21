@@ -15,6 +15,9 @@
     src="https://code.jquery.com/jquery-3.6.0.min.js"
     integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
     crossorigin="anonymous"></script>
+    
+    <!-- 차트js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
 
     <!-- 폰트어썸 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.2.0/css/all.min.css" integrity="sha512-6c4nX2tn5KbzeBJo9Ywpa0Gkt+mzCzJBrE1RB6fmpcsoN+b/w/euwIMuQKNyUoU/nToKN3a8SgNOtPrbW12fug==" crossorigin="anonymous" />
@@ -98,17 +101,34 @@
 	                    </c:if>
 	                    
 	                    <c:if test="${not empty body}">
-							<div class="basket-Item">
+							<!--  <div class="basket-Item">
 								<i class="fas fa-times" onclick="go()" data-prdNo="${cart.prdNo }"></i>
 								<div class="basket-Item-Main-Box colum">
 									<h5>키 : ${body.height}</h5>
 									<h5>몸무게 : ${body.weight}</h5>
 									<h5>BMI : ${body.bmi}</h5>
 								</div>
-							</div>
+							</div> -->
+							
+							    <div class="chart">
+							        <canvas id="myChart1"></canvas>
+							    </div>
+							    
+							
+							    <div class="chart">
+							        <canvas id="myChart2"></canvas>
+							    </div>
+							
+							    <div class="chart">
+							        <canvas id="myChart3"></canvas>
+							    </div>
+							
+							    <div class="chart">
+							        <canvas id="myChart4"></canvas>
+							    </div>
 	                    </c:if>
 	                    
-						
+					<!-- 
 						<div class="basket-Item">
 							<i class="fas fa-times" onclick="go(this);" data-prdNo="${cart.prdNo }"></i>
 							<div class="basket-Item-Main-Box colum">
@@ -143,7 +163,8 @@
 								<h5>기록날짜 : ${sugar.sugarRecordDate}</h5>
 								<h5>기록시간 : ${sugar.sugarRecordTime}</h5>
 							</div>
-						</div>
+						</div>  -->
+						
 
                     </div>
 					
@@ -156,7 +177,7 @@
 	</div>
 
     <script>
-    
+    	
 			let profileFamIcon = document.getElementsByClassName('profile-Family-Icon')
 		    function go() {
 		        console.log(this.fam.famNo)
@@ -201,9 +222,202 @@
                     alert("오류가 발생했습니다.")
                 }
             })
-       }
+       
 		
 		
+    </script>
+    
+    
+    
+    
+    <!-- 체형 차트 -->
+        <script>
+        /*
+        - Chart를 생성하면서, 
+        - ctx를 첫번째 argument로 넘겨주고, 
+        - 두번째 argument로 그림을 그릴때 필요한 요소들을 모두 넘겨줍니다. 
+        */
+        
+        let height = ${body.height}
+        let weight = ${body.weight}
+        let bmi = ${body.bmi}
+     
+        let date = ['1일','2일','3일','4일','5일','6일','7일']
+            new Chart(document.getElementById("myChart1"), {
+            type: 'line',
+            data: {
+                labels:date,
+                datasets: [{ 
+                    data: [height, height, height, height, height, height,height],
+                    label: "키",
+                    borderColor: "#3e95cd",
+                    fill: false
+                },
+                { 
+                    data: [weight, weight, weight, weight, weight, weight, weight],
+                    label: "몸무게",
+                    borderColor: "#3e95cd",
+                    fill: false
+                },
+                { 
+                    data: [bmi, bmi, bmi, bmi, bmi, bmi, bmi,],
+                    label: "BMI",
+                    borderColor: "#3e95cd",
+                    fill: false
+                }]
+            },
+            options: {
+                maintainAspectRatio: false,
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero:true
+                        }
+                    }]
+                },
+                title: {
+                display: true,
+                text: '월간 체형',
+                }
+            }
+            });
+        </script>
+
+	<!-- 혈압 차트 -->
+    <script>
+    // 우선 컨텍스트를 가져옵니다. 
+    /*
+    - Chart를 생성하면서, 
+    - ctx를 첫번째 argument로 넘겨주고, 
+    - 두번째 argument로 그림을 그릴때 필요한 요소들을 모두 넘겨줍니다. 
+    */
+    let SBP = ${pressure.SBP}
+    let DBP = ${pressure.DBP}
+    let bpm = ${pressure.bpm}
+    
+    new Chart(document.getElementById("myChart2"), {
+        type: 'line',
+        data: {
+            labels:date,
+            datasets: [{ 
+                data: [SBP],
+                label: "최고혈압",
+                borderColor: "#3e95cd",
+                fill: false
+            }, 
+            {
+                data: [DBP],
+                label: "최저혈압",
+                borderColor: "#e74c3c",
+                fill: false
+            },
+            {
+                data: [bpm],
+                label: "최저혈압",
+                borderColor: "#e74c3c",
+                fill: false
+            }]
+        },
+        options: {
+            maintainAspectRatio: false,
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero:true
+                    }
+                }]
+            },
+            title: {
+            display: true,
+            text: '주간 혈압',
+            }
+        }
+        });
+    </script>
+
+	<!-- 기분 차트 -->
+    <script>
+    // 우선 컨텍스트를 가져옵니다. 
+    /*
+    - Chart를 생성하면서, 
+    - ctx를 첫번째 argument로 넘겨주고, 
+    - 두번째 argument로 그림을 그릴때 필요한 요소들을 모두 넘겨줍니다. 
+    */
+    let feelScale = ${feel.feelScale}
+    
+    new Chart(document.getElementById("myChart3"), {
+        type: 'line',
+        data: {
+            labels:date,
+            datasets: [{ 
+                data: [feelScale],
+                label: "기분점수",
+                borderColor: "#f1c40f",
+                fill: false
+            }]
+        },
+        options: {
+            maintainAspectRatio: false,
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero:true
+                    }
+                }]
+            },
+            title: {
+            display: true,
+            text: '주간 기분',
+            }
+        }
+        });
+    </script>
+
+
+	<!-- 혈당 차트 -->
+    <script>
+    // 우선 컨텍스트를 가져옵니다. 
+    /*
+    - Chart를 생성하면서, 
+    - ctx를 첫번째 argument로 넘겨주고, 
+    - 두번째 argument로 그림을 그릴때 필요한 요소들을 모두 넘겨줍니다. 
+    */
+    
+    let sugarMedication = ${sugar.sugarMedication}
+    let sugarLevel = ${sugar.sugarLevel}
+    
+    new Chart(document.getElementById("myChart4"), {
+        type: 'line',
+        data: {
+            labels:date,
+            datasets: [{ 
+                data: [sugarMedication],
+                label: "혈당",
+                borderColor: "#f1c40f",
+                fill: false
+            },
+            { 
+                data: [sugarLevel],
+                label: "혈당",
+                borderColor: "#f1c40f",
+                fill: false
+            }]
+        },
+        options: {
+            maintainAspectRatio: false,
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero:true
+                    }
+                }]
+            },
+            title: {
+            display: true,
+            text: '주간 혈당',
+            }
+        }
+        });
     </script>
 </body>
 </html>

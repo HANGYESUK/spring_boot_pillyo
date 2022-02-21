@@ -27,7 +27,7 @@
 
 
 	<script src="./jquery.fullPage.js"></script>
-    <title>Document 1111111111111111</title>
+    <title>가족등록</title>
 </head>
 <body>
 
@@ -93,14 +93,25 @@
 				<div class="main-Content-Body low">
 
 					<div class="basket-Item-Container colunm">
-					  <form methond="post" action="<c:url value='/famInsert'/>">
+					  <form methond="post" action="<c:url value='/famInsert'/>" class="insertForm">
+					  	<div>
 							<h3>이름 </h3><input type="text" id="famMember" name="famMember" >
+						</div>
+						<div>
 							<h3>생년월일 </h3><input type="date" id="famBirth" name="famBirth" />
-							<h3>성별</h3><input type="radio" id="famGender0" name="famGender" value="0">남성
-                            			<input type="radio" id="famGender1" name="famGender" value="1">여성
-                            			<input type="hidden" name="userId" value="${ sessionScope.sid }"/>
+						</div>
+						<div>
+							<h3>성별</h3>
+							<div class="low"><input type="radio" id="famGender0" name="famGender" value="0" style="width:100px">남성
+                            <input type="radio" id="famGender1" name="famGender" value="1" style="width:100px">여성</div>
+                            <input type="hidden" name="userId" value="${ sessionScope.sid }"/>
+                         </div>
+                         <div>
 							<input type="submit" id="famSubmitBtn" value="등록">
+						 </div>
+						 <div>
 							<input type="reset" id="famResetBtn" value="취소">
+						 </div>
 					  </form> 
                     </div>
 					
