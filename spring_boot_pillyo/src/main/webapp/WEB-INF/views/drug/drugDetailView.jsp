@@ -17,7 +17,7 @@
 				<h3>약 정보 상세 조회</h3>
 				
 				<div class="drugImg">
-					<img src="${drug.itemImage}" width="400" height="200">
+					<img src="${drug.itemImage}" height="180px" onerror="this.src='/img/fill_null.png'">
 				</div>
 				<div class="drugName">
 				<h4>제품명:</h4>	${drug.itemName} <br>

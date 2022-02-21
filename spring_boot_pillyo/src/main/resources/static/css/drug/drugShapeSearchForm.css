@@ -1,0 +1,22 @@
+/* drugShapeSearchForm.css */
+
+#drugShaptSearchForm table,tr,th,td{
+	border: 1px solid black;
+}
+#drugShaptSearchForm th{
+	background-color: #81B89A;
+}
+
+input[type="checkbox"]:label{
+ cursor: pointer;
+	
+}
+
+input[type="checkbox"]:checked+label{
+border: 2px solid blue;
+	
+}
+	
+input[type="checkbox"]{
+	display:none;
+}
