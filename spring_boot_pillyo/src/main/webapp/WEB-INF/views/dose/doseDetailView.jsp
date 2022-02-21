@@ -23,6 +23,7 @@
 			약 복용 종료 날짜 : ${doseVo.ddEndDate }<br>
 			복용 주기 (일 단위) : ${doseVo.ddCycle }<br>
 			복용 시간대(다중선택 가능) : ${doseVo.ddTimeSlot }<br>
+			복용 상세 시간 : ${doseVo.ddTime }<br>
 			약 일회 복용 개수 : ${doseVo.ddAmount }<br>
 			<br><br><br>
 			

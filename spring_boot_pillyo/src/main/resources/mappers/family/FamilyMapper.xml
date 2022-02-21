@@ -38,7 +38,7 @@
   		</update>
   		
   		<!-- 가족 정보 삭제 -->
-  		<delete id="famDelete"  parameterType="string">
+  		<delete id="famDelete"  parameterType="int">
   			DELETE FROM family WHERE famNo=#{famNo}
   		</delete>
   		
@@ -48,7 +48,7 @@
   		</select>
   		
   		<!-- 가족 정보 상세 조회 -->
-  		<select id="famDetailView" parameterType="string" resultType="com.pillyo.pill.model.FamilyVO">
+  		<select id="famDetailView" parameterType="int" resultType="com.pillyo.pill.model.FamilyVO">
   			SELECT * FROM family WHERE famNo=#{famNo}  		
   		</select>
   </mapper>

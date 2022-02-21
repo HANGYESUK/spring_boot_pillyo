@@ -10,9 +10,9 @@
 						data:{keyWord: $('#drugSearchInput').val()}, //검색 키워드
 						success:function(data){
 							response(
-								$.map(data, function(item){
+								$.map(data, function(drugList){
 									return{
-										lable: item.itemName
+										lable: drugList.itemName
 									};
 								})		
 							);

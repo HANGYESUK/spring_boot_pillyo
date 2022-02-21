@@ -74,7 +74,7 @@ public class FamilyController {
 	
 	// 가족 상세 정보 조회
 	@RequestMapping("/famDetailView/{famNo}")
-	public String famDetailView(@PathVariable int famNo, Model model) {
+	public String famDetailView(@PathVariable("famNo") int famNo, Model model) {
 		FamilyVO famVo = service.famDetailView(famNo);
 		model.addAttribute("famVo", famVo);
 		

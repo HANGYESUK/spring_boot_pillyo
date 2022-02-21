@@ -15,11 +15,6 @@
 	</resultMap>
 
 	<!-- 기분 전체 기록 조회 -->
-	<!-- <select id="listAllFeelVO" parameterType="com.pillyo.pill.model.FeelVO">
-	   SELECT * FROM feelManage
-	</select> -->
-	
-	<!-- 기분 전체 기록 조회 -->
 	<select id="listAllFeel" parameterType="int" resultType="com.pillyo.pill.model.FeelVO">
 	   SELECT * FROM feelManage where famNo=#{famNo}
 	</select>

@@ -17,13 +17,11 @@
 		<section>
 			<h3>가족 정보 수정</h3><br><br>
 				<form method="post" action="<c:url value='/famUpdate'/>">
-					<table>
-						<tr><td>가족번호</td><td><input type="hidden" name="famNo" value="${famVo.famNo}"></td></tr>
-						<tr><td>이름</td><td><input type="text" name="famMember" value="${famVo.famMember}"></td></tr>
-						<tr><td>생년월일</td><td><input type="date" name="famBirth" value="${famVo.famBirth}"></td></tr>
-						<tr><td>성별</td><td><input type="text" name="famGender" value="${famVo.famGender}"></td></tr>
-						<tr><td colspan="2"><input type="submit" value="수정"><input type="reset" value="취소"></td></tr>
-					</table>
+						<h4>가족번호</h4><input type="hidden" name="famNo" value="${famVo.famNo}"><br>
+						<h4>이름</h4><input type="text" name="famMember" value="${famVo.famMember}"><br>
+						<h4>생년월일</h4><input type="date" name="famBirth" value="${famVo.famBirth}"><br>
+						<h4>성별</h4><input type="text" name="famGender" value="${famVo.famGender}"><br>
+						<input type="submit" value="수정"><input type="reset" value="취소"><br>
 				</form>
         </section>
         

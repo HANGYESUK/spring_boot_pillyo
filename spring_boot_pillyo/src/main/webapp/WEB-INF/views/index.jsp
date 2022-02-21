@@ -71,7 +71,9 @@
 				<a href="<c:url value = '/famListView'/>">가족 목록 리스트</a>
 				
 				<br><br><br><br><br><br>
-				<a href="<c:url value = '/feelManageForm'/>">기분관리</a>	
+				<a href="<c:url value = '/feelManageForm'/>">기분관리</a>
+				<a href="<c:url value = '/hmForm'/>">우리집 약관리</a>	
+				<a href="<c:url value = '/clovaOCRForm'/>">OCR테스트</a>	
 				
 				<br><br><br><br><br><br>
 				혈당관리
@@ -95,13 +97,6 @@
 				<a href="<c:url value = '/dashboardtest'/>">대쉬보드 연습중...2</a>
 				<a href="<c:url value = '/dashboardtest'/>">대쉬보드 연습중...2</a>
 
-<a href="<c:url value = '/postDetailView'/>">게시판 연습중...2</a>
-<a href="<c:url value = '/newPostForm'/>">게시판 연습중...2</a>
-<a href="<c:url value = '/listAllPost'/>">게시판 연습중...2</a>
-
-					<a href="<c:url value = '/boardForm'/>">게시판 등록</a>
-					<a href="<c:url value = '/listAllBoard'/>">게시판 목록</a>
-					<br>
 				<a href="<c:url value = '/boardList'/>">페이징 연습중</a>
 				<br><br><br><br>
 				

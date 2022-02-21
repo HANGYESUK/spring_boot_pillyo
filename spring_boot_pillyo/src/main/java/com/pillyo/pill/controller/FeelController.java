@@ -18,16 +18,16 @@ public class FeelController {
 	FeelService service;
 	
 	// 기분 관리 등록
-	@RequestMapping("/feelForm")
-	public String mood() {
+	@RequestMapping("/feelManageForm")
+	public String feel() {
 		return "feel/feelForm";
 	}
 	
 	// 기분 관리 등록 완료 시 폼 이동
 	@RequestMapping("/insertFeel")
-	public String insertFeel(FeelVO feelvo) {
-		service.insertFeel(feelvo);
-		System.out.println(feelvo.getFeelScale());
+	public String insertFeel(FeelVO vo) {
+		service.insertFeel(vo);
+		System.out.println(vo.getFeelScale());
 		return "feel/feelListView";
 	}
 	
@@ -48,8 +48,8 @@ public class FeelController {
 	
 	// 기분 관리 수정
 	@RequestMapping("/updateFeel")
-	public String updateFeel(FeelVO feelvo) {
-		service.updateFeel(feelvo);
+	public String updateFeel(FeelVO vo) {
+		service.updateFeel(vo);
 		return "feel/feelListView";
 	}
 	

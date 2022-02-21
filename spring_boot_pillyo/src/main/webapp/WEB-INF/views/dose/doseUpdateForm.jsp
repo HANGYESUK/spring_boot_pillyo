@@ -41,6 +41,7 @@
 				        		<input type="checkbox" id="beforeBed" name="ddTimeSlot" value="취침전">취침전
 				            </td>
 				        </tr>
+				        <tr><th>복용 상세 시간</th><td><input type="time" id="ddTime" name="ddTime" value="${doseVo.ddTime }"></td></tr>
         				<tr><th>약 일회 복용 개수</th><td><input type="number" min="1" id="ddAmount" name="ddAmount" value="${doseVo.ddAmount }"></td></tr>
         				<td colspan="2">
         					<input type="submit" id="drugDoseSubmitBtn" value="등록">

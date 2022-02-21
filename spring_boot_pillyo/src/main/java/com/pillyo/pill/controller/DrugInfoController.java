@@ -10,7 +10,7 @@ import com.pillyo.pill.service.DrugInfoService;
 public class DrugInfoController {
 	@Autowired
 	DrugInfoService service;
-	
+
 	@RequestMapping("/insertDrugList")
 	public String insertDrugList(String num) throws Exception{
 		for(int i=1;i<45;i++) {
@@ -19,5 +19,5 @@ public class DrugInfoController {
 		}
 		return "/index";
 	}
-	
+
 }
