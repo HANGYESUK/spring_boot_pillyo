@@ -21,13 +21,13 @@ public class FeelService implements IFeelService{
 	}
 
 	@Override
-	public void insertFeel(FeelVO feelVo) {
-		dao.insertFeel(feelVo);
+	public void insertFeel(FeelVO vo) {
+		dao.insertFeel(vo);
 	}
 
 	@Override
-	public void updateFeel(FeelVO feelVo) {
-		dao.updateFeel(feelVo);
+	public void updateFeel(FeelVO vo) {
+		dao.updateFeel(vo);
 	}
 
 	@Override
