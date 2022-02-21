@@ -71,7 +71,9 @@
 				<a href="<c:url value = '/famListView'/>">가족 목록 리스트</a>
 				
 				<br><br><br><br><br><br>
-				<a href="<c:url value = '/feelManageForm'/>">기분관리</a>	
+				<a href="<c:url value = '/feelManageForm'/>">기분관리</a>
+				<a href="<c:url value = '/hmForm'/>">우리집 약관리</a>	
+				<a href="<c:url value = '/clovaOCRForm'/>">OCR테스트</a>	
 				
 				<br><br><br><br><br><br>
 				혈당관리

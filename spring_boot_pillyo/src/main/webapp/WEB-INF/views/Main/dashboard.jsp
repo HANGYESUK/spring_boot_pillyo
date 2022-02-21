@@ -74,7 +74,7 @@
 							<div class="outer-menu">
 								<div class="outer-menu-btn"><a href="/"><h5>HOME</h5></a></div>
 								<div class="outer-menu-btn"><a href="#"><h5>복용관리</h5></a></div>
-								<div class="outer-menu-btn"><a href="#"><h5>재고관리</h5></a></div>
+								<div class="outer-menu-btn"><a href="<c:url value = '/hmForm'/>"><h5>우리집 약관리</h5></a></div>
 								<div class="outer-menu-btn"><a href="<c:url value = '/famListView'/>"><h5>가족관리</h5></a></div>
 								<div class="outer-menu-btn"><a href="#"><h5>건강관리</h5></a></div>
 												
