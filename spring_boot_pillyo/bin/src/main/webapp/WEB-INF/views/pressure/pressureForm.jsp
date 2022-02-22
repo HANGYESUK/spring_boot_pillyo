@@ -17,6 +17,8 @@
 		<jsp:include page="/WEB-INF/views/layout/top.jsp" flush='true' />
 
 		<section>
+		
+			<h3>혈압등록</h3>
 			<form id="pressureForm" method="post" action="<c:url value='/insertPressure'/>">
 				상황<input type="text" id="situation" name="situation" placeholder="ex>아침"/><br>
 
@@ -26,6 +28,7 @@
 				메모<input type="text" id="pressureMemo" name="pressureMemo" /><br>
 				기록날짜<input type="date" id="pressureRecordDate" name="pressureRecordDate" /><br>
 				기록시간<input type="time" id="pressureRecordTime" name="pressureRecordTime" /><br>
+				<input type="hidden" name="famNo" value="${famNo}" />
 				
 			<input type="submit"  value="등록"/>
 				

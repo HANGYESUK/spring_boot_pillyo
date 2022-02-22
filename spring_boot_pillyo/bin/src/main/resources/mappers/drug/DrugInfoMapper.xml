@@ -3,11 +3,16 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   <mapper namespace="com.pillyo.pill.dao.IDrugDAO">
+  	<resultMap  id="AutoDrugInfoResult" type="com.pillyo.pill.model.AutoDrugInfoVO">
+ 		<result property="drugInfoNo" column="drugInfoNo" />
+ 		<result property="itemName" column="itemName" />
+	</resultMap>
   		
   		<insert id="insertDrugList" parameterType="java.util.List">
   			insert into drugInfo  (
   				entpName,
 				itemName,
+				itemSeq,
 				efcyQesitm,
 				useMethodQesitm,
 				atpnQesitm,
@@ -21,6 +26,7 @@
   				(
   				#{item.entpName},
 				#{item.itemName},
+				#{item.itemSeq},
 				#{item.efcyQesitm},
 				#{item.useMethodQesitm},
 				#{item.atpnQesitm},
@@ -32,4 +38,26 @@
   			</foreach>
   		</insert>
   		
+  		
+  		<!-- 약 정보 검색  -->
+  		<select id="drugSearch" parameterType="String" 
+  												resultType="com.pillyo.pill.model.DrugInfoVO" >
+  			SELECT * FROM drugInfo 
+  			WHERE	itemName LIKE CONCAT('%', #{keyword}, '%') 
+  			OR efcyQesitm LIKE CONCAT('%', #{keyword}, '%')
+  		</select>
+  		
+  		<!-- 약 상세 정보 조회  -->
+  		<select id="detailViewDrug" parameterType="String"
+  													resultType="com.pillyo.pill.model.DrugInfoVO">
+  			SELECT * FROM drugInfo WHERE drugInfoNo = #{drugInfoNo}
+  		</select>	
+  		
+  		<!-- 검색 자동완성 -->
+  		<select id="selectKeywordSearch" parameterType="String" 
+  												resultType="com.pillyo.pill.model.DrugInfoVO" >
+  			SELECT * FROM drugInfo 
+  			WHERE	itemName LIKE CONCAT('%', #{keyword}, '%') 
+  		</select>
+
   </mapper>

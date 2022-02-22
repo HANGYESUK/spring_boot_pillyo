@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="com.pillyo.pill.dao.IHmDAO">
+  	<insert id="insertHm" parameterType="com.pillyo.pill.model.HmVO">
+  		insert into HmManage(
+  				<!-- hmNo, -->
+  				userId,
+  				hmCtgNo,
+  				hmName,
+  				hmUseByDate,
+  				hmMemo,
+  				hmImg
+  		) values(
+  				<!-- #{hmNo}, -->
+  				#{userId},
+  				#{hmCtgNo},
+  				#{hmName},
+  				#{hmUseByDate},
+  				#{hmMemo},
+  				#{hmImg}
+  		)
+  	</insert>
+ 	
+ 	<!-- 우리집 약관리 등록 약 조회  -->
+  	<select id="listAllHm" parameterType="String" resultType="com.pillyo.pill.model.HmVO">
+  		SELECT * FROM household_medicine WHERE userId=#{userId}
+  	</select>
+  	
+  	<!-- 우리집 약관리 등록 수정 -->
+  	<update id="updateHm" parameterType="com.pillyo.pill.model.HmVO">
+  		UPDATE household_medicine SET
+  				userId =#{userId}
+  				hmCtgNo =#{hmCtgNo},
+  				hmName =#{hmName},
+  				hmUseByDate =#{hmUseByDate},
+  				hmMemo =#{hmMemo},
+  				hmImg =#{hmImg},
+  		WHERE hmNo =#{hmNo}
+  	</update>
+  	
+  	<!-- 우리집 약관리 등록 삭제 -->
+  	<delete id="deletehm" parameterType="int">
+  			DELETE FROM household_medicine WHERE hmNo =#{hmNo}
+  	</delete>
+  	
+  	<!-- 우리집 약관리 상세뷰 -->
+  	<select id="detailViewHm" parameterType="int" resultType="com.pillyo.pill.model.HmVO">
+  	SELECT * FROM household_medicine WHERE hmNo=#{hmNo}
+  	</select>
+  </mapper>
