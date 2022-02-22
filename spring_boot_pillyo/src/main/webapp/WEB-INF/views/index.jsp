@@ -59,7 +59,7 @@
 			<div class="Ellipse-1"></div>
 			<div class="Union"></div>
 			<div class="Ellipse-4"></div>
-			<h1>인트로</h1>
+			<h1>Pill-Yo</h1>
 		</div>
 	</div>
 	<div class="section" id="section1">
