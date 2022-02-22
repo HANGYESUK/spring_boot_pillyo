@@ -36,7 +36,7 @@
 
 <style>
 	.layout {
-	width:500px; /* 태그의 넓이를 500px로 */
+    width: fit-content; /* 태그의 넓이를 500px로 */
 	margin:0 auto; /* 양쪽 여백을 위아래는 0 좌우는 자동으로 잡아주겠다! */
 	margin-top : 40px;
 	}
@@ -64,11 +64,18 @@
 					<td><a href="<c:url value='/boardDetailView/${board.id}'/>">${board.title }</a></td>
 					<td>${board.userId}</td> 
 					<td>${board.joinDate}</td> 
+					
 				</tr>
 		   </c:forEach>
 			</tbody>
 		</table>
-				<ul class="paging">
+	
+		
+		<a href="<c:url value = '/boardForm'/>"><button>글쓰기</button></a>
+		</div>
+		
+		
+		<%-- 		<ul class="paging">
 		    <c:if test="${paging.prev}">
 		        <span><a href='<c:url value="/listAllBoard?page=${paging.startPage-1}"/>'>이전</a></span>
 		    </c:if>
@@ -140,7 +147,7 @@
 	
 	<!-- 부트스트랩 참조 영역 -->
 	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-	<script src="js/bootstrap.js"></script>
+	<script src="js/bootstrap.js"></script> --%>
 		
 		<%-- 	<th:block th:each="page : %{#numbers.sequence(startPage, endPage)}">
 				<a th:if="${page != nowPage} th:href="@{/board/boardList(page = ${page - 1 })}" th:text="$}"></a>
