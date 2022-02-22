@@ -157,7 +157,7 @@
 						</c:if>
 						
 					<!-- 상비약 등록 -->
-					<form id = "hmForm" method="post" action="<c:url value ='/insertHm/insertHmResult'/>">
+					<form id = "hmForm" method="post" action="<c:url value ='/insertHm/'/>" enctype="multipart/form-data">
 															  <!-- 등록이 완료되면 작성완료된 페이지로 이동 -->
 						<table>
 							<!-- OCR로 이미지 넣어서 글씨 출력 -->
@@ -175,11 +175,14 @@
 													            <option value="8">기타</option>
 												        	</datalist></td></tr>
 							<tr> <th id="hm">사용기한</th>	<td><input type="date" name="hmUseByDate"></td></tr>
-							<tr> <th id="hm">메모</th>	<td><textarea name="hmMemo" rows="10" cols="50" placeholder="내용을 입력하세요" style="resize: none;"></textarea></td>
-							<tr> <th colspan="2" class="btn_box">
-	   							<input  id = "img_btn" type="file" name="hmImg" accept="image/*" onchange="setThumbnail(event);">
-	   							<input class = "in" type="submit" value="등록" >
-	   							<input class = "in2" type="reset" value="취소">&nbsp;</th></tr>
+							<tr> <th id="hm">메모</th>	<td><textarea name="hmMemo" rows="10" cols="60" placeholder="내용을 입력하세요" style="resize: none;"></textarea></td>
+							<tr> <th id="hm" class="btn_box">
+	   							 <!-- 이미지 미리보기 : 올려진 이미지 파일을 화면에 띄워줌 -->
+	   							 <input  id = "uploadFile" type="file" name="uploadFile" onchange="setThumbnail(event);"></th> <td></td>
+	   						<tr> <th id="hm" colspan="3"> <br>
+	   							 <!-- 전송 버튼 / 취소 버튼 -->
+	   							 <input class = "in" type="submit" value="등록" >
+	   							 <input class = "in2" type="reset" value="취소">&nbsp;</th></tr>
 						
 						</table>
 					</form>

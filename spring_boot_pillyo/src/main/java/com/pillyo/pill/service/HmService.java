@@ -17,9 +17,9 @@ public class HmService implements IHmService{
 	IHmDAO dao;
 
 	@Override
-	public ArrayList<HmVO> listAllHm() {
+	public ArrayList<HmVO> insertHmResult() {
 		// 전체 약 목록 관리
-		return null;
+		return dao.insertHmResult();
 	}
 
 	@Override
@@ -31,31 +31,25 @@ public class HmService implements IHmService{
 	@Override
 	public void insertHm(HmVO vo) {
 		// 약 등록
-		
-	}
-	
-	@Override
-	public void insertHmResult(HmVO vo) {
-		// 약 등록 완료
-		
+		dao.insertHm(vo);
 	}
 
 	@Override
 	public void updateHm(HmVO vo) {
 		// 등록 된 약 수정
-		
+		dao.updateHm(vo);
 	}
 
 	@Override
 	public void deleteHm(int hmNo) {
 		// 등록 된 약 삭제
-		
+		dao.deleteHm(hmNo);
 	}
 
 	@Override
 	public HmVO detailViewHm(int hmNo) {
 		// 등록 된 약 상세정보
-		return null;
+		return dao.detailViewHm(hmNo);
 	}
 	
 	
