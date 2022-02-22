@@ -10,7 +10,20 @@
 		<script src="<c:url value='/js/jquery-3.6.0.min.js'/>"></script>
 
 </head>
+
+<style>
+	.layout {
+    width: fit-content; /* 태그의 넓이를 500px로 */
+	margin:0 auto; /* 양쪽 여백을 위아래는 0 좌우는 자동으로 잡아주겠다! */
+	margin-top : 40px;
+	}
+	
+</style>
+
 <body>
+
+	<div class="layout">
+
 		<section>
 			<%-- <h3>게시판 수정</h3>
 				<form id="updateBoardForm" method="post" action="<c:url value='/updateBoard/${board.id}'/>">					
@@ -46,13 +59,13 @@
 							</td>
 						</tr>
 					</tbody>
+					
 				</table>
 				<!-- 글쓰기 버튼 생성 -->
 				<input type="submit" class="btn btn-primary pull-right" value="글쓰기">
 				<a href="<c:url value='/boardDetailView/${board.id}'/>"><button>돌아가기</button></a>
-				
 			</form>		
 		</section>
-		
+	</div>
 </body>
 </html>

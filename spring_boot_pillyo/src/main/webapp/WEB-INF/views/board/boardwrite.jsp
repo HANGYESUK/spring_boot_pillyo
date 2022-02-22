@@ -29,11 +29,11 @@
 	box-sizing : border-box;
 	}
 	
-	.layout textarea {
+/* 	.layout textarea {
 	width:100%;
 	margin-top:10px;
 	min-height:300px;
-	}
+	} */
 	
 </style>
 
@@ -42,14 +42,49 @@
 <body>
 	<div class="layout">
 		<form id= "/boardForm" name="/boardForm" method="post" action="<c:url value='/insertboard'/>"> <!--  writedo로 넘겨주고 post방식으로 넘겨주겠다 -->
+		
+		<table class="table table-striped" style="text-align: center; border: 1px solid #dddddd; width:500px;">
 		<!-- 실행시 form 안에 데이터가 writedo로 넘어간다 -->
-<!-- 			아이디<input type="text" id="id" name="id">
- -->		    제목<input type="text" name="title">
-			내용 <textarea type="text" name="content"></textarea>
-			<input type="hidden" name="userId" value="${sessionScope.sid}">  <!-- 세션 아이디 받아오기 -->
+		<thead>
+			<tr>
+				<th colspan="2" style="background-color: #eeeeee; text-align: center;">게시판 글쓰기 양식</th>
+			</tr>	
+		</thead>
+		<tbody>
+		<tr>
+		    <td><textarea rows="1" cols="50" placeholder="글 제목"  name="title" maxlength="50" style="width:500px;"></textarea></td>
+		    </tr>
+		    <tr>
+			<td><textarea class="form-control" placeholder="글 내용" rows="10" cols="50" name="content" maxlength="2048" style="height: 350px; width: 500px;" >${board.content}</textarea></td>
+			</tr>
+		
+		
+	
+		</tbody>
+		</table>
+		<input type="hidden" name="userId" value="${sessionScope.sid}">  <!-- 세션 아이디 받아오기 -->
 			<input type="hidden" name="joinDate" value="<%= sf.format(nowDate) %>"> 
-			<button type="submit">작성</button> <!-- submit -> 이 버튼의 역할은 데이터를 전송하는 것 -->
+		<button type="submit" button style="float:right;">작성</button> <!-- submit -> 이 버튼의 역할은 데이터를 전송하는 것 -->
+				<a href="<c:url value='/boardDetailView/${board.id}'/>"><button>돌아가기</button></a>
+		
 		</form>
+		
+		<%-- <table class="table table-striped" style="text-align: center; border: 1px solid #dddddd">
+					<thead>
+						<tr>
+							<th colspan="2" style="background-color: #eeeeee; text-align: center;">게시판 글쓰기 양식</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><textarea rows="1" cols="50" placeholder="글 제목"  name="title" maxlength="50">${board.title}</textarea></td>
+						</tr>
+						<tr>
+							<td><textarea class="form-control" placeholder="글 내용" rows="10" cols="50" name="content" maxlength="2048" style="height: 350px;">${board.content}</textarea>
+							</td>
+						</tr>
+					</tbody>
+				</table> --%>
 		
 	</div>
 </body>

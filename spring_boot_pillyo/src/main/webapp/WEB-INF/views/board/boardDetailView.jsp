@@ -8,9 +8,19 @@
 		<title>title</title>
 		<script src="<c:url value='/js/jquery-3.6.0.min.js'/>"></script>
 	</head>
-	<body><!-- 
-		<div id="wrap">
-	 -->		
+	
+	<style>
+		.container {
+	    width: fit-content; /* 태그의 넓이를 500px로 */
+		margin:0 auto; /* 양쪽 여백을 위아래는 0 좌우는 자동으로 잡아주겠다! */
+		margin-top : 40px;
+		}
+	</style>
+	
+	
+	<body>
+	
+	
 	
 
 <%-- 		<section>
@@ -82,7 +92,7 @@
 			<table class="table table-striped" style="text-align: center; border: 1px solid #dddddd">
 				<thead>
 					<tr>
-						<th colspan="2" style="background-color: #eeeeee; text-align: center;">게시판 글 보기</th>
+						<th width=600px; colspan="2" style="background-color: #eeeeee; text-align: center;">게시판 글 보기</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -100,7 +110,7 @@
 					</tr>
 					<tr>
 						<td>내용</td>
-						<td colspan="2" style="height: 200px; text-align: left;">${board.content}</td>
+						<td colspan="2" style="height: 500px;; text-align: left;">${board.content}</td>
 					</tr>
 				</tbody>
 			</table>
@@ -111,8 +121,17 @@
 			<a href="<c:url value='/listAllBoard'/>"><button>목록</button></a>
 			
 			<!-- 해당 글의 작성자가 본인이라면 수정과 삭제가 가능하도록 코드 추가 -->
-			<a href="<c:url value='/updateBoardForm/${board.id}'/>">게시글 수정</a>
-			<a href="javascript:deleteCheck();">게시글 삭제</a><br>
+			<a href="javascript:deleteCheck();"><button style="float:right;">게시글 삭제</button></a>
+			<a href="<c:url value='/updateBoardForm/${board.id}'/>"><button style="float:right;" >게시글 수정</button></a>
+			
+			<script type="text/javascript">
+				function deleteCheck(){
+					var answer = confirm("게시글을 삭제하시겠습니까?");
+					if(answer == true){
+						location.href="<c:url value='/deleteBoard/${board.id}' />";
+					}
+				}
+			</script>
 		
 		</div>
 	</div>
