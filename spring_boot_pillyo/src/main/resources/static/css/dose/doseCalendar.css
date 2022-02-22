@@ -1,0 +1,13 @@
+/* ---------- header ------------ */
+#logoBox {
+	box-sizing: none;
+}
+
+/* ---------- Ä¶¸°´õ ------------ */
+#calendar {
+    height: 800px;
+    width: 800px;
+}
+.modal-dialog {
+	max-width:680px;
+}

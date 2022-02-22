@@ -7,7 +7,15 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>복용관리 - calendar</title>
+		
+		
 		<script src="<c:url value='/js/jquery-3.6.0.min.js'/>"></script>
+		
+		<!-- fullcalendar -->
+		<link href='/resources/fullcalendar-5.10.2/lib/main.css' rel='stylesheet' />
+		<script src='/resources/fullcalendar-5.10.2/lib/main.js'></script>
+		<script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
+		<script src="https://unpkg.com/tippy.js@6"></script>
 		
 		<!-- momento.js -->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
@@ -17,92 +25,86 @@
 	    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 	    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 	    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-		
-		<!-- fullcalendar -->
-		<link href='/resources/fullcalendar-5.10.2/lib/main.css' rel='stylesheet' />
-		<script src='/resources/fullcalendar-5.10.2/lib/main.js'></script>
-		<script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
-		<script src="https://unpkg.com/tippy.js@6"></script>
-		
-		<style>
-	        #calendar {
-	            height: 800px;
-	            width: 800px;
-	        }
-	        .modal-dialog {
-	        	max-width:680px;
-	        }
-        </style>
-    </head>
+	    
+	    <link rel="stylesheet" href="/css/dose/doseCalendar.css" />
+	</head>
 	<body>
 		<div id="wrap">
-
-		<section>
-			<div id="calendarBox">
-				<div id='calendar'></div>
-			</div>
 			
-			<div id="calendarListBox">
-				<div id='calendarList'></div>
-			</div>
+			<!-- TOP -->
+			<jsp:include page="/WEB-INF/views/layout/top.jsp" flush='true' />
+			<div id="navMargin"></div>
 			
-			<!-- modal 추가 -->
-		    <div class="modal fade" id="calendarModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-		        <div class="modal-dialog" role="document">
-		            <div class="modal-content">
-		                <div class="modal-header">
-		                    <h5 class="modal-title" id="exampleModalLabel">복용 정보 추가하기</h5>
-		                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-		                        <span aria-hidden="true">&times;</span>
-		                    </button>
-		                </div>
-		                <div class="modal-body">
-		                    <div class="form-group">
-		                    	<form methond="post" id="doseInsertForm" action="<c:url value='/doseCalInsert'/>">
-			                    	<label for="famNo" class="col-form-label">가족 번호 (외래키) - 데이터 등록 테스트 위해서 임의 값 고정 </label><br>
-			                    	<input type="number" id="famNo" name="famNo" value="2" class="form-control" readonly><br>
-			                    	
-			                        <label for="ddTitle" class="col-form-label">복용 타이틀</label><br>
-			                        <input type="text" id="ddTitle" name="ddTitle" class="form-control"><br>
-			                        
-			                        <label for="searchInput" class="col-form-label">약 이름 입력받아서 -> 일치하는 약 선택 -> 해당 약 번호 넘기도록 : 약 이름 사용자 입력</label><br>
-			                        <input type="text" id="searchInput" name="searchInput" class="form-control" /><br>
-			                        <input type="hidden" id="drugInfoNo" name="drugInfoNo" class="form-control" readonly><br>
-			                        
-			                        <label for="ddStartDate" class="col-form-label">복용 시작 날짜 및 복용 시간</label><br><!-- yyyy-mm-ddThh-mm 형식으로 전송됨 -->
-			                        <input type="date" class="form-control" id="ddStartDate" class="form-control" name="ddStartDate"><br>
-			                        <label for="ddEndDate" class="col-form-label">복용 종료 날짜</label><br>
-			                        <input type="date" class="form-control" id="ddEndDate" class="form-control" name="ddEndDate"><br>
-			                        <label for="ddCycle" class="col-form-label">복용 주기 (일 단위)</label><br>
-			            			<input type="number" min="0" id="ddCycle" name="ddCycle" class="form-control"><br>
-			            			
-			            			<label for="ddTimeSlot" class="col-form-label">복용 시기</label><br>
-				            		<input type="radio" name="ddTimeSlot" value="기상직후">기상직후
-				            		<input type="radio" name="ddTimeSlot" value="아침식전">아침식전
-				            		<input type="radio" name="ddTimeSlot" value="아침식후">아침식후
-				            		<input type="radio" name="ddTimeSlot" value="점심식전">점심식전
-				            		<input type="radio" name="ddTimeSlot" value="점심식후">점심식후
-				            		<input type="radio" name="ddTimeSlot" value="저녁식전">저녁식전
-				            		<input type="radio" name="ddTimeSlot" value="저녁식후">저녁식후
-				            		<input type="radio" name="ddTimeSlot" value="취침전">취침전
-
-			            			<label for="ddTime" class="col-form-label">복용 상세 시간</label><br>
-			            			<input type="time" id="ddTime" name="ddTime" class="form-control"><br>
-			            			
-				            		<label for="ddAmount" class="col-form-label">약 일회 복용 개수</label><br>
-			            			<input type="number" min="1" id="ddAmount" name="ddAmount" class="form-control"><br>
-			            			
-			            			<div id='autoResult'></div> <!-- 자동완성 : 유사 데이터 표출 영역 -->
-			            			
-			            			<button type="submit" class="btn btn-warning" id="addDose">추가</button>
-		                    		<button type="button" class="btn btn-secondary" data-dismiss="modal" id="sprintSettingModalClose">취소</button>
-		            			</form>
-		                    </div>
-		                </div>
-		            </div>
-		        </div>
-		    </div>
-        </section>
+			<section id="section">
+				<div id="calendarBox">
+					<div id='calendar'></div>
+				</div>
+				
+				<div id="calendarListBox">
+					<div id='calendarList'></div>
+				</div>
+				
+				<!-- modal 추가 -->
+			    <div class="modal fade" id="calendarModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			        <div class="modal-dialog" role="document">
+			            <div class="modal-content">
+			                <div class="modal-header">
+			                    <h5 class="modal-title" id="exampleModalLabel">복용 정보 추가하기</h5>
+			                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			                        <span aria-hidden="true">&times;</span>
+			                    </button>
+			                </div>
+			                <div class="modal-body">
+			                    <div class="form-group">
+			                    	<form methond="post" id="doseInsertForm" action="<c:url value='/doseCalInsert'/>">
+				                    	<label for="famNo" class="col-form-label">가족 번호 (외래키) - 데이터 등록 테스트 위해서 임의 값 고정 </label><br>
+				                    	<input type="number" id="famNo" name="famNo" value="2" class="form-control" readonly><br>
+				                    	
+				                        <label for="ddTitle" class="col-form-label">복용 타이틀</label><br>
+				                        <input type="text" id="ddTitle" name="ddTitle" class="form-control"><br>
+				                        
+				                        <label for="searchInput" class="col-form-label">약 이름 입력받아서 -> 일치하는 약 선택 -> 해당 약 번호 넘기도록 : 약 이름 사용자 입력</label><br>
+				                        <input type="text" id="searchInput" name="searchInput" class="form-control" /><br>
+				                        <input type="hidden" id="drugInfoNo" name="drugInfoNo" class="form-control" readonly><br>
+				                        
+				                        <label for="ddStartDate" class="col-form-label">복용 시작 날짜 및 복용 시간</label><br><!-- yyyy-mm-ddThh-mm 형식으로 전송됨 -->
+				                        <input type="date" class="form-control" id="ddStartDate" class="form-control" name="ddStartDate"><br>
+				                        <label for="ddEndDate" class="col-form-label">복용 종료 날짜</label><br>
+				                        <input type="date" class="form-control" id="ddEndDate" class="form-control" name="ddEndDate"><br>
+				                        <label for="ddCycle" class="col-form-label">복용 주기 (일 단위)</label><br>
+				            			<input type="number" min="0" id="ddCycle" name="ddCycle" class="form-control"><br>
+				            			
+				            			<label for="ddTimeSlot" class="col-form-label">복용 시기</label><br>
+					            		<input type="radio" name="ddTimeSlot" value="기상직후">기상직후
+					            		<input type="radio" name="ddTimeSlot" value="아침식전">아침식전
+					            		<input type="radio" name="ddTimeSlot" value="아침식후">아침식후
+					            		<input type="radio" name="ddTimeSlot" value="점심식전">점심식전
+					            		<input type="radio" name="ddTimeSlot" value="점심식후">점심식후
+					            		<input type="radio" name="ddTimeSlot" value="저녁식전">저녁식전
+					            		<input type="radio" name="ddTimeSlot" value="저녁식후">저녁식후
+					            		<input type="radio" name="ddTimeSlot" value="취침전">취침전
+	
+				            			<label for="ddTime" class="col-form-label">복용 상세 시간</label><br>
+				            			<input type="time" id="ddTime" name="ddTime" class="form-control"><br>
+				            			
+					            		<label for="ddAmount" class="col-form-label">약 일회 복용 개수</label><br>
+				            			<input type="number" min="1" id="ddAmount" name="ddAmount" class="form-control"><br>
+				            			
+				            			<div id='autoResult'></div> <!-- 자동완성 : 유사 데이터 표출 영역 -->
+				            			
+				            			<button type="submit" class="btn btn-warning" id="addDose">추가</button>
+			                    		<button type="button" class="btn btn-secondary" data-dismiss="modal" id="sprintSettingModalClose">취소</button>
+			            			</form>
+			                    </div>
+			                </div>
+			            </div>
+			        </div>
+			    </div>
+			</section>
+	        
+			<!-- BOTTOM  -->
+			<jsp:include page="/WEB-INF/views/layout/bottom.jsp" flush='true' />
+		
       </div> <!-- wrap -->
 	</body>
 	<script>
