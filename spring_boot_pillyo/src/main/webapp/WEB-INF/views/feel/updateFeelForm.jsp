@@ -16,7 +16,9 @@
 
 
 		<!-- Section -- 기분관리 : 기분척도, 메모, 기록날짜, 기록시간, 가족번호 -->
-		<section>
+		<div id="navMargin"></div>
+			
+			<section id="section">
 		<h1>기분관리 수정</h1>
 			<hr>
 			<c:if test="${not empty sessionScope.sid}">

@@ -21,27 +21,19 @@
 </style>
 
 <body>
+	<div id="wrap">
+			
+			<!-- TOP -->
+			<jsp:include page="/WEB-INF/views/layout/top.jsp" flush='true' />
+			<div id="navMargin"></div>
+			
+			<section id="section">
+
 
 	<div class="layout">
 
 		<section>
-			<%-- <h3>게시판 수정</h3>
-				<form id="updateBoardForm" method="post" action="<c:url value='/updateBoard/${board.id}'/>">					
-					    <div>
-					        <label>제목</label>
-					        <textarea rows="1" cols="50" name="title">${board.title}</textarea>
-					    </div>
-					    <div>
-					        <label>내용</label>
-					        <textarea rows="10" cols="50" name="content">${board.content}</textarea>
-					    </div>
-					    <input type="submit" value="등록"/>
-					    <button type="button" onclick="location.href='/boardDetailView'">돌아가기</button>
-
-						<a href="<c:url value='/boardDetailView/${board.id}'/>"><button>돌아가기</button></a>
-							
-						</form>	 --%>	
-						
+			
 						
 			<form id="updateBoardForm" method="post" action="<c:url value='/updateBoard/${board.id}'/>">					
 				<table class="table table-striped" style="text-align: center; border: 1px solid #dddddd">
@@ -67,5 +59,11 @@
 			</form>		
 		</section>
 	</div>
+	
+	
+	<!-- BOTTOM  -->
+			<jsp:include page="/WEB-INF/views/layout/bottom.jsp" flush='true' />
+		
+      </div> <!-- wrap -->
 </body>
 </html>

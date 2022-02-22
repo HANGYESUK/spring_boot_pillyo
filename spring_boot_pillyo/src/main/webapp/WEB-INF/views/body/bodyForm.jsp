@@ -12,11 +12,13 @@
 </head>
 <body>
 <div id="wrap">
-			<h3>체형 관리 정보 등록</h3>
+		
 		<!-- TOP -->
 		<jsp:include page="/WEB-INF/views/layout/top.jsp" flush='true' />
 
-		<section>
+		<div id="navMargin"></div>
+			
+			<section id="section">
 			
 			<h3>체형 등록</h3>		
 			<form id="bodyForm" method="post" action="<c:url value='/insertBody'/>">

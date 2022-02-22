@@ -16,7 +16,9 @@
 		<!-- TOP -->
 		<jsp:include page="/WEB-INF/views/layout/top.jsp" flush='true' />
 
-		<section>
+		<div id="navMargin"></div>
+			
+			<section id="section">
 			<form id="updateSugarForm" method="post" action="<c:url value='/updateSugar'/>">
 			혈당관리번호<input type="text" id="sugarNo" name="sugarNo" value="${sugar.sugarNo}"/><br>
 			상황<input type="text" id="situation" name="situation" value="${sugar.situation}"/><br>

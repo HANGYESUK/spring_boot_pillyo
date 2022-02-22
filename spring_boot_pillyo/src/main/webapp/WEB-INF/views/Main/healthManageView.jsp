@@ -10,9 +10,19 @@
 
 </head>
 <body>
+
+	<div id="wrap">
+			<!-- TOP -->
+			<jsp:include page="/WEB-INF/views/layout/top.jsp" flush='true' />
+			<div id="navMargin"></div>
+			
+			<section id="section">
+	
+
+
 			가족 목록(dashboard3으로 페이지 다시 호출(ajax는 아님.))<br>
 			<c:forEach items="${famList}" var="fam">
-				<a href="<c:url value='/dashboard3/${fam.famNo}'/>">${fam.famMember} </a><br>
+				<a href="<c:url value='/healthManageView/${fam.famNo}'/>">${fam.famMember} </a><br>
 			</c:forEach>
 			<br><br>
 			
@@ -23,7 +33,7 @@
 			
 			<a href="<c:url value='/sugarForm/${famNo}'/>">혈당등록</a><br>
 			<a href="<c:url value='/bodyForm/${famNo}'/>">체형등록</a><br>
-			<a href="<c:url value='/insertPressure/${famNo}'/>">혈압등록</a><br>
+			<a href="<c:url value='/pressureForm/${famNo}'/>">혈압등록</a><br>
 			<a href="<c:url value='/feelForm/${famNo}'/>">기분등록</a><br>
 			
 			
@@ -125,7 +135,13 @@
 				}
 			</script>
 			
-			</c:forEach>			   
+			</c:forEach>	
+			
+			</section>
+	        <!-- BOTTOM  -->
+			<jsp:include page="/WEB-INF/views/layout/bottom.jsp" flush='true' />
+		
+      </div> <!-- wrap -->		   
 			
 </body>
 </html>
