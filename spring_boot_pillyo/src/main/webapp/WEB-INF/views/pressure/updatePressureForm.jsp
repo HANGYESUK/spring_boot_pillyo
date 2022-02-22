@@ -16,7 +16,9 @@
 		<!-- TOP -->
 		<jsp:include page="/WEB-INF/views/layout/top.jsp" flush='true' />
 
-		<section>
+		<div id="navMargin"></div>
+			
+			<section id="section">
 			<form id="updatePressureForm" method="post" action="<c:url value='/updatePressure'/>">
 			혈압관리번호<input type="text" id="pressureNo" name="pressureNo" value="${pressure.pressureNo}"/><br>
 			상황<input type="text" id="situation" name="situation" value="${pressure.situation}"/><br>

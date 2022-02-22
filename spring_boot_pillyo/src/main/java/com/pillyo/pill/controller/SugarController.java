@@ -27,7 +27,7 @@ public class SugarController {
 	public String insertSugar(SugarVO vo) {
 		service.insertSugar(vo);
 		//return "redirect:../listAllSugar";
-		return "Main/dashboard";
+		return "sugar/sugarListView";  
 	}
 	//혈당 리스트 조회
 	@RequestMapping("/listAllSugar")

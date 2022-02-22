@@ -10,7 +10,11 @@
 
 </head>
 <body>
-	<section>
+			<jsp:include page="/WEB-INF/views/layout/top.jsp" flush='true' />
+
+	<div id="navMargin"></div>
+			
+			<section id="section">
 			<h3>전체 체형 관리 목록</h3>
 			
 			   <c:forEach items="${bodyList }" var="body">
@@ -38,6 +42,9 @@
 			   </c:forEach>
 			   
 	</section>
-			
+			<!-- BOTTOM  -->
+			<jsp:include page="/WEB-INF/views/layout/bottom.jsp" flush='true' />
+		
+      </div> <!-- wrap -->
 </body>
 </html>

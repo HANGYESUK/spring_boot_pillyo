@@ -9,6 +9,13 @@
 	</head>
 	
 	<body>
+	
+	<div id="wrap">
+			<!-- TOP -->
+			<jsp:include page="/WEB-INF/views/layout/top.jsp" flush='true' />
+			<div id="navMargin"></div>
+			
+			<section id="section">
 		<h1>뷰페이지</h1><br><br>
 		<c:forEach var="pressureList" items="${pressureList}" varStatus="i">
 			<h2>상황 : ${pressureList.situation}</h2>
@@ -32,6 +39,12 @@
 			</script>
 			
 		</c:forEach>
+		
+		</section>
+	        <!-- BOTTOM  -->
+			<jsp:include page="/WEB-INF/views/layout/bottom.jsp" flush='true' />
+		
+      </div> <!-- wrap -->
 		
 		
 	</body>

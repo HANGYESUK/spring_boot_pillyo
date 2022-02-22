@@ -13,9 +13,10 @@
 		<!-- TOP -->
 		<jsp:include page="/WEB-INF/views/layout/top.jsp" flush='true' />
 
-		<section>
+		<div id="navMargin"></div>
+			
+			<section id="section">
 			<h3>혈당 뷰페이지</h3>
-		 
 				 
 		 <c:forEach items="${sugarList}" var="sugar">
 		 		번호 ${sugar.sugarNo}
