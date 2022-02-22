@@ -1,0 +1,127 @@
+/* ---------- 복용 수정 폼 ------------ */
+#doseUpdateBox {
+	display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    padding-bottom: 25px;
+}
+
+#doseUpdateFormBox {
+	margin-top: 25px;
+    background: #f1f1f1;
+    border-radius: 20px;
+    padding: 20px 25px 20px 20px;
+}
+
+#doseUpdateFormBox h3, #autoResultBox h3 {
+    color: #4c86c2;
+    padding: 13px;
+    font-size: 19px;
+    margin: 0;
+}
+
+#doseUpdateForm {
+	width: 616px;
+    text-align: left;
+    color: #546777;
+}
+
+#doseUpdateForm table {
+	padding: 0 0 0 13px;
+}
+
+#doseUpdateForm th {
+	padding: 10px 0;
+	width: 160px;
+}
+
+#doseUpdateForm input[type=text], #doseUpdateForm input[type=number], #doseUpdateForm input[type=date], #doseUpdateForm input[type=time]{
+    height: 27px;
+    border-radius: 10px;
+    border: 1px solid #e7e7e7;
+    padding: 0 14px;
+}
+
+#doseUpdateForm input[type=date], #doseUpdateForm input[type=time] {
+    width: 151px;
+}
+
+#doseUpdateForm input:focus {
+	outline: 1px solid #b4b4b4;	
+}
+
+#doseUpdateForm input[type=radio]{
+    display: none;
+}
+
+#timeSlotTd {
+	display: flex;
+    flex-direction: row;
+    line-height: 27px;
+}
+
+#doseUpdateForm label {
+	background: #d0deea;
+    padding: 3px;
+    font-size: 12px;
+    border-radius: 7px;
+    margin: 1px;
+}
+
+#doseUpdateForm label:hover {
+	background: #b7cee2;
+}
+
+#doseUpdateBtnTd {
+	text-align: right;
+	padding-top: 17px;
+}
+
+.doseUpdateBtn {
+    width: 60px;
+    border-radius: 10px;
+    border: 1px solid #b4b4b4;
+}
+
+/* ---------- 자동완성 ------------ */
+#autoResult {
+    list-style: none;
+    padding-left: 15px;
+    margin-top: 0px;
+}
+
+#autoResultBox {
+	border-radius: 20px;
+    background: #f1f1f1;
+	width: 570px;
+    position: relative;
+    margin-top: 25px;
+    padding: 20px 0;
+}
+
+#autoResultScroll {
+    height: 403px;
+    overflow-y: scroll;
+    width: 530px;
+    background: #f1f1f1;
+    position: absolute;
+    left: 13px;
+    top: 73px;
+    padding-left: 3px;
+}
+
+#autoResultBox h3 {
+	margin-bottom: 0px;
+    padding-left: 32px;
+    display: inline-block;
+}
+
+#autoMsg {
+	font-size: 11px;
+    color: #8e8e8e;
+    opacity: 0.9;
+}
+
+.autoResultItem {
+    padding: 7px 0;
+}
