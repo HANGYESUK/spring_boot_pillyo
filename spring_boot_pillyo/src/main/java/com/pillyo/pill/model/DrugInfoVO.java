@@ -4,6 +4,7 @@ public class DrugInfoVO {
 	private int drugInfoNo;
 	private String entpName;
 	private String itemName;
+	private String itemSeq;	// 품목번호
 	private String efcyQesitm;
 	private String useMethodQesitm;
 	private String atpnQesitm;
@@ -29,6 +30,12 @@ public class DrugInfoVO {
 	}
 	public void setItemName(String itemName) {
 		this.itemName = itemName;
+	}
+	public String getItemSeq() {
+		return itemSeq;
+	}
+	public void setItemSeq(String itemSeq) {
+		this.itemSeq = itemSeq;
 	}
 	public String getEfcyQesitm() {
 		return efcyQesitm;
@@ -73,5 +80,5 @@ public class DrugInfoVO {
 		this.itemImage = itemImage;
 	}
 	
-			
-}
+	
+	}

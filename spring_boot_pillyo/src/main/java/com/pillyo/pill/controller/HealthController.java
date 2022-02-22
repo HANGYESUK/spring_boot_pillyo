@@ -51,8 +51,9 @@ public class HealthController { // 건강관리 컨트롤러
 	public String listAllHealth(@PathVariable int famNo, Model model, HttpSession session) {
 		// 가족번호를 전달하고, 각각의 관리 정보 받아오기
 		
-		String userId = (String)session.getAttribute("sid");
-		ArrayList<FamilyVO> famList = family_service.famListView(userId);
+		String userId = (String)session.getAttribute("sid");	//session통해 userId Controller로 받기
+		
+		ArrayList<FamilyVO> famList = family_service.famListView(userId);	// userId이용해 famList 받기
 		model.addAttribute("famList", famList);
 		
 		System.out.println(famNo);
@@ -73,10 +74,25 @@ public class HealthController { // 건강관리 컨트롤러
 	
 	
 	@RequestMapping("/dashboard3/{famNo}") //페이지 다중 매핑 -> 하나만 하기
-	public String listAllHealth2(@PathVariable int famNo, Model model) {
+	public String listAllHealth2(@PathVariable int famNo, Model model, HttpSession session) {
 		// 가족번호를 전달하고, 각각의 관리 정보 받아오기
-//		int famNo=1; 
+		//	 int famNo=1;
 		
+		// 가족정보 변경하면서 이동할 수 있게 famList 받아옴.
+		String userId = (String)session.getAttribute("sid");
+		ArrayList<FamilyVO> famList = family_service.famListView(userId);
+		model.addAttribute("famList", famList);
+		
+		String famMember =  famList.get(famNo).getFamMember();
+		model.addAttribute("famMember", famMember);
+		
+		
+		//매핑때 받은 @PathVariavle int famNo 다시 모델로 보냄.
+		// famNo 기준 다시 등록폼 이동하거나 할때 사용. 
+		model.addAttribute("famNo", famNo);
+		
+		
+		//famNo 기준 건강 정보 리스트 출력.
 		ArrayList<BodyVO> bodyList = body_service.listAllBody(famNo);
 		model.addAttribute("bodyList", bodyList);
 //		

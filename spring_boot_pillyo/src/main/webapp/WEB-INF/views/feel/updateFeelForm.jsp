@@ -24,10 +24,10 @@
 			</c:if>
 			
 			<form id="updateFeelForm" method="post" action="<c:url value='/updateFeel'/>">
-			기분관리번호	<input type="text" id="bodyNo" name="bodyNo" value="${feel.feelNo}"/><br>
-			기분척도		<input type="text" id="height" name="height" value="${feel.feelScale}"/><br>
-			기분일기		<input type="text" id="weight" name="weight" value="${feel.feelMemo}"/><br>
-			기록날짜		<input type="text" id="bmi" name="bmi" value="${feel.feelRecordDate}"/><br>
+			기분관리번호	<input type="text" id="feelNo" name="feelNo" value="${feel.feelNo}"/><br>
+			기분척도		<input type="text" id="feelScale" name="feelScale" value="${feel.feelScale}"/><br>
+			기분일기		<input type="text" id="feelMemo" name="feelMemo" value="${feel.feelMemo}"/><br>
+			기록날짜		<input type="text" id="feelRecordDate" name="feelRecordDate" value="${feel.feelRecordDate}"/><br>
 			기록시간		<input type="date" id="bodyRecordDate" name="bodyRecordDate" value="${feel.feelRecordTime}"/><br>
 			가족번호		<input type="text" id="famNo" name="famNo" value="${feel.famNo}"/><br>
 			

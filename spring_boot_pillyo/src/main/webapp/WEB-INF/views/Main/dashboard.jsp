@@ -47,7 +47,7 @@
 					<div class="profile-Family low">
 						
 						  <c:forEach items="${famList }" var="fam">
-						   	<a href="/dashboard2/${fam.famNo}">
+						   	<a href="/dashboard3/${fam.famNo}">
 							   	<div class="profile-Family-Icon" style="text-align: center;">
 							   		<h4>${ fam.famMember}</h4>
 							   		<input type="hidden" class="prInfo" value="☌">
@@ -76,7 +76,8 @@
 								<div class="outer-menu-btn"><a href="#"><h5>복용관리</h5></a></div>
 								<div class="outer-menu-btn"><a href="<c:url value = '/hmForm'/>"><h5>우리집 약관리</h5></a></div>
 								<div class="outer-menu-btn"><a href="<c:url value = '/famListView'/>"><h5>가족관리</h5></a></div>
-								<div class="outer-menu-btn"><a href="#"><h5>건강관리</h5></a></div>
+								<div class="outer-menu-btn"><a href="<c:url value = '/dashboard3/${famIdx.famNo}'/>"><h5>건강관리</h5></a></div>
+								
 												
 							</div>
 				  

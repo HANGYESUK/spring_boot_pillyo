@@ -16,15 +16,17 @@ public class PressureController {
 	@Autowired
 	PressureService service;
 	
-	@RequestMapping("/pressureForm")
-	public String PressureForm() {
+	@RequestMapping("/pressureForm/{famNo}")
+	public String PressureForm(@PathVariable("famNo") int famNo, Model model) {
+		model.addAttribute("famNo", famNo);
 		return "pressure/pressureForm";
 	}
 	
 	@RequestMapping("/insertPressure")
 	public String insertPressure(PressureVO vo) {
 		service.insertPressure(vo);
-		return "pressure/pressureListView";
+		//return "pressure/pressureListView";
+		return "Main/dashboard";
 	}
 	
 	@RequestMapping("/listAllPressure")

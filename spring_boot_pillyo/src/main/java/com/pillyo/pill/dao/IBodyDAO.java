@@ -9,6 +9,6 @@ public interface IBodyDAO {
 	void insertBody(BodyVO vo);
 	void updateBody(BodyVO vo);
 	void deleteBody(int bodyNo);
-	BodyVO detailViewBody(int famNo);
+	BodyVO detailViewBody(int bodyNo);
 	ArrayList<BodyVO>listAllBody(int famNo);
 }

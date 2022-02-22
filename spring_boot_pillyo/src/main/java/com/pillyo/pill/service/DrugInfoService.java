@@ -105,6 +105,7 @@ public class DrugInfoService {
 					
 					String entpName;
 					String itemName;
+					String itemSeq;
 					String efcyQesitm;
 					String useMethodQesitm;
 					String atpnQesitm;
@@ -115,6 +116,7 @@ public class DrugInfoService {
 					
 					entpName = (String) obj0.get("entpName");
 					itemName = (String) obj0.get("itemName");
+					itemSeq = (String) obj0.get("itemSeq");
 					efcyQesitm = (String) obj0.get("efcyQesitm");
 					useMethodQesitm = (String) obj0.get("useMethodQesitm");
 					atpnQesitm = (String) obj0.get("atpnQesitm");
@@ -125,6 +127,7 @@ public class DrugInfoService {
 					
 					vo.setEntpName(entpName);
 					vo.setItemName(itemName);
+					vo.setItemSeq(itemSeq);
 					vo.setEfcyQesitm(efcyQesitm);
 					vo.setUseMethodQesitm(useMethodQesitm);
 					vo.setAtpnQesitm(atpnQesitm);
@@ -137,10 +140,12 @@ public class DrugInfoService {
 										
 					}
 					
-				}else {
+				}
+					else {
 					DrugInfoVO vo = new DrugInfoVO();
 					vo.setEntpName("없음");
 					vo.setItemName("없음");
+					vo.setItemSeq("없음");
 					vo.setEfcyQesitm("없음");
 					vo.setUseMethodQesitm("없음");
 					vo.setAtpnQesitm("없음");

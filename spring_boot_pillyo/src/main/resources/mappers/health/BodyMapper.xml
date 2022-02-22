@@ -15,7 +15,7 @@
 							#{weight},
 							#{bmi},
 							#{bodyRecordDate},
-							"001"
+							#{famNo}
   			)	
   		</insert>
   		
@@ -43,7 +43,7 @@
   		
   		<select id="detailViewBody" parameterType="int" 
 			  	resultType="com.pillyo.pill.model.BodyVO">
-  			SELECT * FROM bodyManage WHERE famNo=#{famNo} 
+  			SELECT * FROM bodyManage WHERE bodyNo=#{bodyNo} 
   			<!--안됌 : SELECT * FROM bodyManage WHERE bodyNo=#{bodyNo} order by limit bodyNo desc -->
   			<!--안됌 : SELECT * FROM bodyNo, bodyManage WHERE bodyNo=#{bodyNo} order by bodyNo desc -->
   		</select>

@@ -10,7 +10,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.pillyo.pill.model.FamilyVO;
-import com.pillyo.pill.model.UserVO;
 import com.pillyo.pill.service.FamilyService;
 
 @Controller
@@ -31,9 +30,14 @@ public class MainController {
 	@RequestMapping("/dashboard")
 	public String dashboard(Model model, HttpSession session) {
 		String userId = (String)session.getAttribute("sid");
-		System.out.println(userId);
 		ArrayList<FamilyVO> famList = service.famListView(userId);
-		model.addAttribute("famList", famList);		
+		
+		FamilyVO famIdx = famList.get(0);
+		session.setAttribute("famNo", famIdx.getFamNo());
+		session.getAttribute("sfamNo");
+	
+		model.addAttribute("famList", famList); 	// 프로필 가족 리스트
+		model.addAttribute("famIdx", famIdx);	// 메뉴 이동시 famNo 기본값으로 이용.
 		return "/Main/dashboard";
 	}
 	

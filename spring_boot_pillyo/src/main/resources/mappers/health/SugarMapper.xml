@@ -21,7 +21,7 @@
 							#{acpcMemo},
 							#{sugarRecordDate},
 							#{sugarRecordTime},
-							"001"
+							#{famNo}
   			)
   			
   		</insert>
@@ -54,6 +54,6 @@
   		
   		<select id="detailViewSugar" parameterType="int" 
   														  resultType="com.pillyo.pill.model.SugarVO">
-  			SELECT * FROM sugarManage WHERE famNo=#{famNo} 		
+  			SELECT * FROM sugarManage WHERE sugarNo=#{sugarNo} 		
   		</select>
   </mapper>
