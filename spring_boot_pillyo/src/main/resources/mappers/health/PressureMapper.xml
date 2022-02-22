@@ -21,7 +21,7 @@
 							#{pressureMemo},
 							#{pressureRecordDate},
 							#{pressureRecordTime},
-							"001"
+							#{famNo}
   			)
   			
   		</insert>
@@ -54,6 +54,6 @@
   		
   		<select id="detailViewPressure" parameterType="int" 
   														  resultType="com.pillyo.pill.model.PressureVO">
-  			SELECT * FROM pressureManage WHERE famNo=#{famNo} 
+  			SELECT * FROM pressureManage WHERE pressureNo=#{pressureNo} 
   		</select>
   </mapper>

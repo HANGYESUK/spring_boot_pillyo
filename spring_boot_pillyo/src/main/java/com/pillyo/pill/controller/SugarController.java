@@ -17,15 +17,17 @@ public class SugarController {
 	SugarService service;
 	
 	//혈당 등록 폼 이동
-	@RequestMapping("/sugarForm")
-	public String sugarForm() {
+	@RequestMapping("/sugarForm/{famNo}")
+	public String sugarForm(@PathVariable("famNo") int famNo, Model model) {
+		model.addAttribute("famNo", famNo);
 		return "sugar/sugarForm";
 	}
 	//혈당 등록
 	@RequestMapping("/insertSugar")
 	public String insertSugar(SugarVO vo) {
 		service.insertSugar(vo);
-		return "redirect:../listAllSugar";
+		//return "redirect:../listAllSugar";
+		return "Main/dashboard";
 	}
 	//혈당 리스트 조회
 	@RequestMapping("/listAllSugar")

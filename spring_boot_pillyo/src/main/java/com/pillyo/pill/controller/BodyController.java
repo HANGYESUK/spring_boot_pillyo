@@ -17,15 +17,17 @@ public class BodyController {
 	BodyService service;
 	
 	// 체형관리 등록 폼으로 이동
-	@RequestMapping("/bodyForm")
-	public String bodyForm() {
+	@RequestMapping("/bodyForm/{famNo}")
+	public String bodyForm(@PathVariable("famNo") int famNo, Model model) {
+		model.addAttribute("famNo", famNo);
 		return "body/bodyForm";
 	}
 	// 체형 관리 정보 등록
 	@RequestMapping("/insertBody")
 	public String insertBody(BodyVO vo) {
 		service.insertBody(vo);
-		return "redirect:/listAllBody";  
+		//return "redirect:/dashBoard3";
+		return "Main/dashboard";
 	}
 	// 체형 관리 정보 조회
 	@RequestMapping("/listAllBody")
@@ -44,6 +46,7 @@ public class BodyController {
 	//체형 관리 정보 업데이트 폼 이동
 		@RequestMapping("/updateBodyForm/{bodyNo}")
 		public String updateBodyForm(@PathVariable int bodyNo, Model model) {
+			System.out.println(bodyNo);
 			BodyVO body = service.detailViewBody(bodyNo);
 			model.addAttribute("body", body);
 			return "body/updateBodyForm";
