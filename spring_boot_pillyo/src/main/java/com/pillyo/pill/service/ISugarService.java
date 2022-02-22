@@ -11,7 +11,7 @@ public interface ISugarService {
 	void insertSugar(SugarVO vo);
 	void updateSugar(SugarVO vo);
 	void deleteSugar(int sugarNo);
-	SugarVO detailViewSugar(int famNo);
+	SugarVO detailViewSugar(int sugarNo);
 	
 	ArrayList<SugarVO> listAllSugar(int famNo);
 

@@ -5,13 +5,29 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>HealthList</title>
 		<script src="<c:url value='/js/jquery-3.6.0.min.js'/>"></script>
 
 </head>
 <body>
-
+			가족 목록(dashboard3으로 페이지 다시 호출(ajax는 아님.))<br>
+			<c:forEach items="${famList}" var="fam">
+				<a href="<c:url value='/dashboard3/${fam.famNo}'/>">${fam.famMember} </a><br>
+			</c:forEach>
+			<br><br>
+			
+			<h3>${famMember} 님의 건강관리 입니다.</h3>
+			
+			
 			<h3>전체 혈당 관리 목록</h3>
+			
+			<a href="<c:url value='/sugarForm/${famNo}'/>">혈당등록</a><br>
+			<a href="<c:url value='/bodyForm/${famNo}'/>">체형등록</a><br>
+			<a href="<c:url value='/insertPressure/${famNo}'/>">혈압등록</a><br>
+			<a href="<c:url value='/feelForm/${famNo}'/>">기분등록</a><br>
+			
+			
+			
 			<c:forEach items="${sugarList}" var="sugar">
 		 		번호 ${sugar.sugarNo}
 		 		상황 ${sugar.situation}

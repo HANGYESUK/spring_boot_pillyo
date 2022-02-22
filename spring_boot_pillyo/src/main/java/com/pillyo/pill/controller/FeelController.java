@@ -18,8 +18,9 @@ public class FeelController {
 	FeelService service;
 	
 	// 기분 관리 등록
-	@RequestMapping("/feelManageForm")
-	public String feel() {
+	@RequestMapping("/feelForm/{famNo}")
+	public String feel(@PathVariable("famNo") int famNo, Model model) {
+		model.addAttribute("famNo", famNo);
 		return "feel/feelForm";
 	}
 	
@@ -28,7 +29,8 @@ public class FeelController {
 	public String insertFeel(FeelVO vo) {
 		service.insertFeel(vo);
 		System.out.println(vo.getFeelScale());
-		return "feel/feelListView";
+		//return "feel/feelListView";
+		return "Main/dashboard";
 	}
 	
 	// 전체 기분 관리 기록 조회

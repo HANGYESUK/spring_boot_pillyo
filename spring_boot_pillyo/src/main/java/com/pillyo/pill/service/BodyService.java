@@ -40,9 +40,9 @@ public class BodyService implements IBodyService {
 	}
 
 	@Override
-	public BodyVO detailViewBody(int famNo) {
+	public BodyVO detailViewBody(int bodyNo) {
 		// TODO Auto-generated method stub
-		return dao.detailViewBody(famNo);
+		return dao.detailViewBody(bodyNo);
 	}
 	
 	@Override

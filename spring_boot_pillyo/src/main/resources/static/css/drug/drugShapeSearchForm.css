@@ -18,5 +18,10 @@ border: 2px solid blue;
 }
 	
 input[type="checkbox"]{
-	display:none;
+	/* display:none; */
+}
+
+#shapebox{
+	display:inline;
+	border:2px solid red;
 }

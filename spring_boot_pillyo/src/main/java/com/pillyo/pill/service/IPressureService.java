@@ -9,6 +9,6 @@ public interface IPressureService {
 	void insertPressure(PressureVO vo);
 	void updatePressure(PressureVO vo);
 	void deletePressure(int pressureNo);
-	PressureVO detailViewPressure(int famNo);
+	PressureVO detailViewPressure(int pressureNo);
 	ArrayList<PressureVO>listAllPressure(int famNo);
 }

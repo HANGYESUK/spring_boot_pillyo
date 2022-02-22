@@ -37,9 +37,14 @@
 						<td>
 							<label for="shapeAlll">전체</label>
 							<input type="checkbox" id="shapeAlll" name="drug_shape" value="전체" />
-							<label for="shape1"> <img src="/img/drugShape/shape/shape01.jpg" alt="원형">
+							
+							<!-- <label for="shape1"> -->
+							<div id="shapebox">
+							<img src="/img/drugShape/shape/shape01.jpg" alt="원형">
 							<input type="checkbox" id="shape1" name="drug_shape" value="원형" />
-							</label>
+							</div>
+							<!-- </label> -->
+							
 							<label for="shape2"> <img src="/img/drugShape/shape/shape02.jpg" alt="타원형">
 							<input type="checkbox" id="shape2" name="drug_shape" value="타원형" />
 							</label>
