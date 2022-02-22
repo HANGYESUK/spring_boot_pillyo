@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="com.pillyo.pill.dao.IDoseDAO">
+  	<resultMap  id="doseResult" type="com.pillyo.pill.model.DoseVO">
+ 		<result property="ddNo" column="ddNo" />
+ 		<result property="famNo" column="famNo" />
+ 		<result property="ddTitle" column="ddTitle" />
+ 		<result property="drugInfoNo" column="drugInfoNo" />
+ 		<result property="ddStartDate" column="ddStartDate" />
+ 		<result property="ddEndDate" column="ddEndDate" />
+ 		<result property="ddCycle" column="ddCycle" />
+ 		<result property="ddTimeSlot" column="ddTimeSlot" />
+ 		<result property="ddTime" column="ddTime" />
+ 		<result property="ddAmount" column="ddAmount" />
+	</resultMap>
+  
+		<!-- 복용 정보 등록  -->
+		<insert id="doseInsert" parameterType="com.pillyo.pill.model.DoseVO">
+			INSERT INTO doseinfo (famNo, ddTitle, drugInfoNo, ddStartDate, ddEndDate, ddCycle, ddTimeSlot, ddTime, ddAmount)
+			VALUES (#{famNo}, #{ddTitle}, #{drugInfoNo}, #{ddStartDate}, #{ddEndDate}, #{ddCycle}, #{ddTimeSlot}, #{ddTime}, #{ddAmount})
+		</insert>
+		<!-- INSERT INTO doseinfo (famNo, ddTitle, drugInfoNo, ddStartDate, ddEndDate, ddCycle, ddTimeSlot, ddAmount)
+			VALUES (#{famNo}, #{ddTitle},
+					(SELECT drugInfoNo FROM druginfo WHERE itemName LIKE '%#{drugName}%' limit 1),
+					#{ddStartDate}, #{ddEndDate}, #{ddCycle}, #{ddTimeSlot}, #{ddAmount}) -->
+		
+		<!-- 복용 정보 수정 -->
+		<update id="doseUpdate" parameterType="com.pillyo.pill.model.DoseVO">
+			UPDATE doseinfo SET ddTitle=#{ddTitle}, drugInfoNo=#{drugInfoNo}, ddStartDate=#{ddStartDate}, ddEndDate=#{ddEndDate}, ddCycle=#{ddCycle}, ddTimeSlot=#{ddTimeSlot}, ddTime=#{ddTime}, ddAmount=#{ddAmount} 
+			WHERE ddNo=#{ddNo}
+		</update>
+		
+		<!-- 복용 정보 삭제 -->
+		<delete id="doseDelete"  parameterType="string">
+			DELETE FROM doseinfo WHERE ddNo=#{ddNo}
+		</delete>
+		
+		<!-- 복용 목록 조회 -->
+		<select id="doseListView" resultMap="doseResult">
+			SELECT * FROM doseinfo ORDER BY ddNo
+		</select>
+		
+		<!-- 복용 정보 상세 조회 -->
+		<select id="doseDetailView" parameterType="string" resultType="com.pillyo.pill.model.DoseVO">
+			SELECT * FROM doseinfo WHERE ddNo=#{ddNo}
+		</select>
+		
+		<!-- 복용 날짜 포맷 변경 UPDATE doseInfo SET ddStartDate = DATE_FORMAT(STR_TO_DATE(start,'%Y-%m-%dT%H:%i:%s'),'%Y-%m-%d %H:%i:%s'); -->
+  </mapper>

@@ -164,7 +164,7 @@
 						<div class="hm_Category"> 
 							<form id="hmCtg_ListView">
 								<br> <h3> 약 카테고리</h3> <br><br>
-								<button type="submit" id="hm_ctg" value="1" onclick="console.log(this.value)">
+								<button type="button" id="hm_ctg" value="1" onclick="go(this.value)">
 								<img src="./img/hm/두통.png" alt="" style="width:45px; height:45px;"><br>
 								<span>두통약</span></button>
 								
@@ -195,6 +195,13 @@
 								<button type="submit" id="hm_ctg" value="8" onclick="alert(this.value)">
 								<img src="./img/hm/기타.png" alt="" style="width:45px; height:45px;"><br>
 								<span>기타</span></button>
+								
+								<script>
+								    function go(a) {
+								    	 window.location.href = "/listCtgHm/" + a
+							        }
+								
+								</script>
 							</form>
 						</div><!-- hm_Category -->
 						

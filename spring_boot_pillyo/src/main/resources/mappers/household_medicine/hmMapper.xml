@@ -25,8 +25,8 @@
   	</insert>
  	
  	<!-- 우리집 약관리 등록 약 조회  -->
-  	<select id="listAllHm" parameterType="String" resultType="com.pillyo.pill.model.HmVO">
-  		SELECT * FROM household_medicine WHERE userId=#{userId}
+  	<select id="listAllHm" parameterType="Hashmap" resultType="com.pillyo.pill.model.HmVO">
+  		SELECT * FROM household_medicine WHERE userId=#{userId} AND hmCtgNo = #{hmCtgNo}
   	</select>
   	
   	<!-- 우리집 약관리 등록 수정 -->

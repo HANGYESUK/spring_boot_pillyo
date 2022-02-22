@@ -21,13 +21,17 @@
 							#{acpcMemo},
 							#{sugarRecordDate},
 							#{sugarRecordTime},
-							"001"
+							#{famNo}
   			)
   			
   		</insert>
   		
-  		<select id="listAllSugar" resultType="com.pillyo.pill.model.SugarVO">
+  		<!-- <select id="listAllSugar" resultType="com.pillyo.pill.model.SugarVO">
   			select * from sugarManage
+  		</select> -->
+  		
+  		<select id="listAllSugar" parameterType="int" resultType="com.pillyo.pill.model.SugarVO">
+  			select * from sugarManage where famNo=#{famNo}
   		</select>
   		
   		<update id="updateSugar" parameterType="com.pillyo.pill.model.SugarVO">
@@ -50,6 +54,6 @@
   		
   		<select id="detailViewSugar" parameterType="int" 
   														  resultType="com.pillyo.pill.model.SugarVO">
-  			SELECT * FROM sugarManage WHERE sugarNo=#{sugarNo}  		
+  			SELECT * FROM sugarManage WHERE sugarNo=#{sugarNo} 		
   		</select>
   </mapper>

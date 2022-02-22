@@ -7,12 +7,15 @@ hr {margin: 5px;}
 .main-X {
     font-size: 30px;
     font-weight: 100;
-    margin-left: 600px;
     padding: 10px;
 }
 
 i {
     cursor: pointer;
+    z-index: 2;
+    float: right;
+    margin-right: 10px;
+    margin-top: 10px;
 }
 
 i:hover {
@@ -50,10 +53,9 @@ i:hover {
 .basket-Item {
     background-color: white;
     color: black;
-    float: left;
-    width: 700px;
+    width: 300px;
     border-radius: 20px;
-    margin-top: 30px;
+    margin: 5px;
     z-index: 2;
 }
 
@@ -72,7 +74,7 @@ i:hover {
 }
 
 .basket-Item-Main-Box {
-    height: 100px;
+    padding: 20px;
 }
 
 .basket-Item-Header {

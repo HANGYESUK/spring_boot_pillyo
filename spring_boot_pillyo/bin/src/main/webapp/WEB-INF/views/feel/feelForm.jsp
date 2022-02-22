@@ -23,6 +23,7 @@
 				<h3 id="UserName">${sessionScope.sid}님</h3>
 			</c:if>
 			<p>오늘의 기분을 기록해보아요 :)</p>
+			
 			<form id="feelRecodeForm" method="post" action="<c:url value='/insertFeel'/>">
 				<h4>기분척도</h4>
 				<input type="range" name="feelScale" for="result" min="1" max="10" step="1" list="feelScaleMarks" id="feelScale" oninput="result.value=feelScale.value">
@@ -50,7 +51,7 @@
 				<input type="time" name="feelRecordTime">
 				
 				<h4>기록자</h4>
-
+				<input type="hidden" name="famNo" value="${famNo}" />
 				<input type="submit" id="send_btn" value="저장하기">
 				<input type="reset" id="reset_btn" value="취소하기">
 			</form>

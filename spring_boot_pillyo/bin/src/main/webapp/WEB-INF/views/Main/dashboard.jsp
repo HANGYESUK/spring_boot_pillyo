@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -45,15 +45,17 @@
 						</div>
 					</div>
 					<div class="profile-Family low">
-						<div class="profile-Family-Icon">
-							<img src="/img/루피.jpg" class="loopy">
-						</div>
-						<div class="profile-Family-Icon">
-							<img src="/img/루피.jpg" class="loopy">
-						</div>
-						<div class="profile-Family-Icon">
-							<img src="/img/루피.jpg" class="loopy">
-						</div>
+						
+						  <c:forEach items="${famList }" var="fam">
+						   	<a href="/dashboard3/${fam.famNo}">
+							   	<div class="profile-Family-Icon" style="text-align: center;">
+							   		<h4>${ fam.famMember}</h4>
+							   		<input type="hidden" class="prInfo" value="☌">
+								</div>
+								<!-- test1 -->
+							</a>
+						  </c:forEach>
+
 					</div>
 				</div>
 				<div class="btn-Container colum">
@@ -70,11 +72,13 @@
 					<nav id="main-navigation">
 						<div class="pull-right fix low">
 							<div class="outer-menu">
-								<div class="outer-menu-btn"><a href="#"><h5>HOME</h5></a></div>
+								<div class="outer-menu-btn"><a href="/"><h5>HOME</h5></a></div>
 								<div class="outer-menu-btn"><a href="#"><h5>복용관리</h5></a></div>
-								<div class="outer-menu-btn"><a href="#"><h5>재고관리</h5></a></div>
-								<div class="outer-menu-btn"><a href="#"><h5>가족관리</h5></a></div>
-								<div class="outer-menu-btn"><a href="#"><h5>건강관리</h5></a></div>
+								<div class="outer-menu-btn"><a href="<c:url value = '/hmForm'/>"><h5>우리집 약관리</h5></a></div>
+								<div class="outer-menu-btn"><a href="<c:url value = '/famListView'/>"><h5>가족관리</h5></a></div>
+								<div class="outer-menu-btn"><a href="<c:url value = '/dashboard3/${famIdx.famNo}'/>"><h5>건강관리</h5></a></div>
+								
+												
 							</div>
 				  
 							<div class="search-bar">
@@ -91,7 +95,7 @@
 
 					<div class="basket-Item-Container">
 						<div class="basket-Item">
-							<div class="main-X"><i class="fas fa-times" onclick="go(this);" data-prdNo="${cart.prdNo }"></i></div>
+							<div class="main-X"><i class="fas fa-times" onclick="go()" data-prdNo="${cart.prdNo }"></i></div>
 							<div class="basket-Item-Main-Box colum">
 								<h5>키 : </h5>
 								<h5>몸무게 : </h5>
@@ -130,10 +134,12 @@
 	</div>
 
     <script>
-		function go(clickElement) {
-        	var prdNo = $(clickElement).data('prdno');
-        	console.log('prdNo' + prdNo);
-        	
+    
+			let profileFamIcon = document.getElementsByClassName('profile-Family-Icon')
+		    function go() {
+		        console.log(this.fam.famNo)
+		    }
+		        	
         	
         	$.ajax({
                 url:"<c:url value='/product/deleteCart'/>",
@@ -173,7 +179,9 @@
                     alert("오류가 발생했습니다.")
                 }
             })
-       }
+       
+		
+		
     </script>
 </body>
 </html>

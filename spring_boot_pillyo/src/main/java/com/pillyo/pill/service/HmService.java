@@ -1,6 +1,7 @@
 package com.pillyo.pill.service;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -22,9 +23,9 @@ public class HmService implements IHmService{
 	}
 
 	@Override
-	public ArrayList<HmVO> listCtgHm(int hmCtgNo, int userId) {
+	public ArrayList<HmVO> listCtgHm(HashMap<String, Object>map) {
 		// 카테고리별 약 목록 관리
-		return null;
+		return dao.listCtgHm(map);
 	}
 
 	@Override

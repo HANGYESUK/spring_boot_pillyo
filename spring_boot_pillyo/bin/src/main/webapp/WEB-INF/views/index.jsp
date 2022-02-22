@@ -46,6 +46,7 @@
 				slideNavigation: false,
 				});
 			});
+
 		</script>
 
 	</head>
@@ -53,7 +54,6 @@
 
 <div id="fullpage">
 	<div class="section active" id="section0">
-	
 		<jsp:include page="/WEB-INF/views/layout/top.jsp"/>
 		<div class="container1 row">
 			<div class="Ellipse-1"></div>
@@ -63,7 +63,7 @@
 		</div>
 	</div>
 	<div class="section" id="section1">
-		<div class="section" id="section1">
+
 			<section>
 				<a href="<c:url value = '/loginForm'/>">로그인</a>
 				<a href="<c:url value = '/join'/>">회원가입</a>
@@ -71,7 +71,9 @@
 				<a href="<c:url value = '/famListView'/>">가족 목록 리스트</a>
 				
 				<br><br><br><br><br><br>
-				<a href="<c:url value = '/feelManageForm'/>">기분관리</a>	
+				<a href="<c:url value = '/feelManageForm'/>">기분관리</a>
+				<a href="<c:url value = '/hmForm'/>">우리집 약관리</a>	
+				<a href="<c:url value = '/clovaOCRForm'/>">OCR테스트</a>	
 				
 				<br><br><br><br><br><br>
 				혈당관리
@@ -89,15 +91,25 @@
 				<a href="<c:url value = '/bodyForm'/>">체형관리정보 등록 </a>
 				<a href="<c:url value = '/listAllBody'/>">체형 관리 정보 리스트</a>
 				
-				<br><br><br><br><br><br><br><br>
-				<a href="<c:url value = '/dashboard'/>">대쉬보드</a>
-				<br><br><br><br><br><br><br><br>
+				<br><br><br><br>
+				<a href="<c:url value = '/dashboard'/>">대쉬보드</a><br>
+				<a href="<c:url value = '/dashboard2'/>">대쉬보드 연습중...</a>
+				<a href="<c:url value = '/dashboardtest'/>">대쉬보드 연습중...2</a>
+				<a href="<c:url value = '/dashboardtest'/>">대쉬보드 연습중...2</a>
+
+				<a href="<c:url value = '/boardList'/>">페이징 연습중</a>
+				<br><br><br><br>
 				
-				<br><br><br><br><br><br><br><br>
-				<a href="<c:url value = '/insertDrugList'/>">API 약 정보 db 저장</a>
-				<br><br><br><br><br><br><br><br>
+				<br><br><br><br>
+				<a href="<c:url value = '/insertDrugList'/>">API 약 정보 db 저장</a><br>
+				<a href="<c:url value = '/drugShape'/>"> 약 낱알정보 API 테스트</a><br>
+				<a href="<c:url value = '/drugShapeSearchForm'/>"> 약 낱알정보 검색폼</a><br>
+				<br><br><br><br>
+				
+				<a href="<c:url value = '/doseInsertForm'/>">복용 관리 - 등록 폼</a>
+				<a href="<c:url value = '/doseListView'/>">복용 목록 조회</a>
 			</section>
-		</div>
+
 	</div>
 	<div class="section low" id="section2">
 

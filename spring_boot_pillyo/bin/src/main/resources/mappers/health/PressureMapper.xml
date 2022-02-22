@@ -21,13 +21,17 @@
 							#{pressureMemo},
 							#{pressureRecordDate},
 							#{pressureRecordTime},
-							"001"
+							#{famNo}
   			)
   			
   		</insert>
   		
-  		<select id="listAllPressure" resultType="com.pillyo.pill.model.PressureVO">
+  		<!-- <select id="listAllPressure" resultType="com.pillyo.pill.model.PressureVO">
   			select * from pressureManage
+  		</select> -->
+  		
+  		<select id="listAllPressure" parameterType="int" resultType="com.pillyo.pill.model.PressureVO">
+  			select * from pressureManage where famNo=#{famNo}
   		</select>
   		
   		<update id="updatePressure" parameterType="com.pillyo.pill.model.PressureVO">
@@ -50,6 +54,6 @@
   		
   		<select id="detailViewPressure" parameterType="int" 
   														  resultType="com.pillyo.pill.model.PressureVO">
-  			SELECT * FROM pressureManage WHERE pressureNo=#{pressureNo}  		
+  			SELECT * FROM pressureManage WHERE pressureNo=#{pressureNo} 
   		</select>
   </mapper>
