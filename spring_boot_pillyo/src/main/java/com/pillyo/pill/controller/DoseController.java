@@ -22,13 +22,6 @@ public class DoseController {
 	@Autowired
 	DrugService drugService;
 	
-	// 복용 관리 - 등록
-	@RequestMapping("/doseInsert")
-	public String doseInsert(DoseVO doseVo) {
-		doseService.doseInsert(doseVo);
-		return "redirect:/doseListView";
-	}
-	
 	// 복용 관리 - 수정 폼으로 이동 
 	@RequestMapping("/doseUpdateForm/{ddNo}")
 	public String doseUpdateForm(@PathVariable String ddNo, Model model) {

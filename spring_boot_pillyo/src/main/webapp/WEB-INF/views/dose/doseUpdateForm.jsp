@@ -8,6 +8,7 @@
 		<title>복용 수정 폼</title>
 		<script src="<c:url value='/js/jquery-3.6.0.min.js'/>"></script>
 		<link rel="stylesheet" href="/css/dose/doseUpdate.css" />
+		<link rel="stylesheet" href="/css/dose/doseAutoSearch.css" />
 	</head>
 	<body>
 		<div id="wrap">
@@ -46,9 +47,9 @@
 						            </td>
 						        </tr>
 						        <tr><th>복용 상세 시간</th><td><input type="time" id="ddTime" name="ddTime" value="${doseVo.ddTime }"></td></tr>
-		        				<tr><th>약 일회 복용 개수</th><td><input type="number" min="1" id="ddAmount" name="ddAmount" value="${doseVo.ddAmount }"></td></tr>
+		        				<tr><th>1회 복용량</th><td><input type="number" min="1" id="ddAmount" name="ddAmount" value="${doseVo.ddAmount }"></td></tr>
 		        				<td colspan="2" id="doseUpdateBtnTd">
-		        					<input type="submit" class="doseUpdateBtn" value="등록">
+		        					<input type="submit" class="doseUpdateBtn" value="수정">
 		        					<input type="reset" class="doseUpdateBtn" value="취소">
 		       					</td>
 							</table>
