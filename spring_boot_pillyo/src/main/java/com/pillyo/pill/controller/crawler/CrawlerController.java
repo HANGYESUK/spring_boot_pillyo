@@ -1,4 +1,4 @@
-package com.pillyo.pill.controller.Crawler;
+package com.pillyo.pill.controller.crawler;
 
 import java.io.IOException;
 
