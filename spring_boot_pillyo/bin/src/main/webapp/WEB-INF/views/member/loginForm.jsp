@@ -11,9 +11,7 @@
 	</head>
 	<body>
 		<div id="wrap">
-			
-		<!-- TOP -->
-		<jsp:include page="/WEB-INF/views/layout/top.jsp" flush='true' />
+		
 
 		<!--  로그인 폼  -->
 		<section>

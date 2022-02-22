@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="com.pillyo.pill.dao.IDrugShapeDAO">
+  		
+  		<select id="drugShapeSearch" parameterType="HashMap"
+  														resultType="com.pillyo.pill.model.DrugShapeVO">
+  			SELECT * FROM drugshape 
+  			WHERE 
+  				
+  			
+  				<if test="drug_shape != null">
+  					drug_shape = #{drug_shape}
+  				</if>  				
+  				<if test="color_class != null">
+  					AND color_class = #{color_class}
+  				</if>
+  				<if test="line_front != null">
+  					AND line_front = #{line_front}
+  				</if>
+  				
+  				<!-- 테스트 필요 -->
+  				<if test="form_code_name != null">
+	  					AND form_code_name LIKE CONCAT('%,#{form_code_name},%')
+  				</if>
+  				<if test="form_code_name != null and form_code_name.value('정제')">
+  					AND form_code_name NOT LIKE CONCAT('%연질%') AND CONCAT('%경질%')
+  				</if>
+  					
+  		
+  						<!-- 	<foreach
+							    item="항목"
+							    index="인덱스"
+							    collection="목록"
+							    open="시작문자열"
+							    close="종료문자열"
+							    separator="구분자">
+							</foreach> -->
+  							
+  														
+		</select>
+  		
+  </mapper>

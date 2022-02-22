@@ -1,0 +1,215 @@
+body {
+	background: linear-gradient(196deg, rgb(176 219 246) 0%, rgb(220 233 247) 100%);
+}
+
+#wrap {
+	position: relative;
+    width: 1373px;
+    margin: 0 auto;
+}
+
+#headerBox {
+    position: fixed;
+    width: 1373px;
+    top: 0px;
+}
+
+.mainHeader {
+	position: relative;
+	margin:0 auto;
+    width: 93%;
+    height: 105px;
+    background: linear-gradient(6deg, #f1f8fe, #edf5fe);
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+marquee {
+	width: 1000px;
+    font-size: 12px;
+    scrolldelay:10;
+}
+
+/* --------- pill-yo ------------ */
+#logoBox {
+	position: relative;
+    margin: 0 auto;
+    width: 1257px;
+    padding: 10px 0 13px 20px;
+    font-size: 24px;
+    background: #7cb7fe;
+}
+
+#logo {
+    display: inline-block;
+    width: 230px;
+}
+
+/* --------- proflie ------------ */
+.profileBox {
+	position:absolute;
+	width: 260px;
+    height: 105px;
+    background: linear-gradient(139deg, #79b5ff, #b9e1f4);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 0 0 0 10px;
+}
+
+.proflieImg {
+	position:relative;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.proflieImg img{
+	width: 80px;
+    height: 80px;
+}
+
+.profileText {
+	position:relative;
+}
+/* --------- nav bar ------------ */
+#mainNavBox {
+    position: absolute;
+    height: 100px;
+    left: 270px;
+    width: 80%;
+}
+
+.mainNav {
+    width: 98%;
+}
+
+.menuBox {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-color: white;
+    color: rgb(94, 150, 255);
+    border-radius: 0 0 10px 10px;
+    overflow: hidden;
+    width: 100%;
+    height: 50px;
+}
+
+.menuBox {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-color: white;
+    color: rgb(94, 150, 255);
+    border-radius: 0 0 10px 10px;
+    overflow: hidden;
+    width: 100%;
+    height: 50px;
+}
+
+.menuItem {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor:pointer;
+    transition: all 0.4s;
+}
+
+.menuItem a {
+	text-decoration: none;
+}
+
+.menuItem h5 {
+	color: #1b81ff;
+}
+
+.menuItem:hover {
+    background-color: rgb(94, 150, 255);
+    color: white;
+}
+
+.menuItem:hover h5{
+    color: white;
+}
+
+
+#navMargin {
+	margin-top:185px;
+}
+
+/* --------- search bar ------------ */
+.searchBar {
+    width: 100%;
+    height: 25px;
+    padding: 7px 0 0 0;
+}
+.inputSearch {
+    display: block;
+    float: left;
+    background-color: #FFFFFF;
+    border: 1px solid #CCCCCC;
+    border-radius: 7px 0 0 7px;
+    width: 95%;
+    height: 40px;
+    padding: 0 0 0 10px;
+    font-size: 12px;
+    color: #555555;
+}
+.inputSearch:focus { /* 검색창 클릭했을 때 색 변경 */
+    border-color: rgba(133, 196, 148, 0.8);
+    outline: 0;
+    box-shadow: inset 0 1px 1px rgba(133, 196, 148, 0.8);
+}
+
+#submitBtn { /* 검색 모양 */
+    display: block;
+    float: left;
+    width: 7%; 
+    height: 42px;
+    border-radius: 0 7px 7px 0;
+    border: 1px solid #CCCCCC;
+    background-color: #ffffff;
+    margin-left: -1px;
+    vertical-align: top;
+    display: inline-block;
+}
+
+/* --------- section ------------ */
+#section {
+	width: 93%;
+    margin: 0 auto;
+    opacity: 100%;
+    background-color: #F2F9FB;
+    border-radius: 10px;
+}
+
+/* --------- Footer ------------ */
+#footer {
+  width: 93%;
+  margin:0 auto;
+  padding: 25px 39px;
+}
+
+/* info */
+#info1 h3 {
+  margin-top: 8px;
+}
+
+#footerInfo > div {
+  margin-top: 18px;
+}
+
+#footer a {
+  text-decoration: none;
+  color: #e9e7e3;
+  margin: 0 12px 0 0;
+}
+
+#info4 {
+  line-height: 28px;
+}
