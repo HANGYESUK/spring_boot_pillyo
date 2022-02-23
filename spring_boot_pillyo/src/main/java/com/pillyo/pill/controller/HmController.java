@@ -25,6 +25,7 @@ public class HmController{
 	@Autowired
 	HmService service;	// 서비스 연결
 	
+	
 	// 우리집 약관리 페이지로 이동
 	@RequestMapping("/hmForm")
 	public String Household_Medicine(HmVO vo, Model model) {
@@ -38,6 +39,9 @@ public class HmController{
 	public String insertHmForm() {
 		return "household_medicine/insertHmForm"; 
 	}
+	
+	// 우리집 약관리 : 상비약 이미지 OCR 컨트롤러
+	// OCR 요청 받아서 서비스 호출하고 결과 받아서 반환
 	
 	//우리집 약관리 : 상비약 등록
 	@RequestMapping("/insertHm")
