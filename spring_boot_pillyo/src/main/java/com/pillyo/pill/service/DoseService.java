@@ -31,12 +31,12 @@ public class DoseService implements IDoseService {
 	}
 
 	@Override
-	public void doseDelete(String ddNo) {
+	public void doseDelete(int ddNo) {
 		dao.doseDelete(ddNo);
 	}
 
 	@Override
-	public DoseVO doseDetailView(String ddNo) {
+	public DoseVO doseDetailView(int ddNo) {
 		return dao.doseDetailView(ddNo);
 	}
 

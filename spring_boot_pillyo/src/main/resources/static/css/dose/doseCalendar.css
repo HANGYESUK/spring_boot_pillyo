@@ -1,18 +1,53 @@
-/* ---------- 캘린더 ------------ */
-#calendar {
-    height: 800px;
-    width: 800px;
+#section {
+	width: 90%;
 }
+
+/* ---------- 캘린더 ------------ */
+#calendarBox {
+	display: inline-block;
+    margin: 20px;
+    padding: 20px 20px 0 20px;
+    background: #eeedd5;
+    border-radius: 20px;
+}
+
+#calendar {
+    height: 610px;
+    width: 650px;
+}
+
 .modal-dialog {
 	max-width:680px;
 }
 
-/* ---------- 복용 수정 폼 ------------ */
+/* ---------- 오늘의 복용 목록 ------------ */
+#doseListBox {
+    display: inline-block;
+    margin: 20px 0;
+    padding: 20px 20px 0 20px;
+    background: #eeedd5;
+    border-radius: 20px;
+}
+
+#doseListCal {
+	width: 391px;
+    height: 300px;
+}
+
+#doseListCal #fc-dom-86 {
+	/* display:none; */
+}
+
+#doseListCal thead * {
+	display:none;
+}
+
+/* ---------- 복용 등록 폼 ------------ */
 #calendarModal {
 	display: flex;
     flex-wrap: nowrap;
     justify-content: space-around;
-    padding-bottom: 25px;
+    padding: 10px 20px;
 }
 
 #doseInsertFormBox {
@@ -20,6 +55,7 @@
     background: #f1f1f1;
     border-radius: 20px;
     padding: 20px 25px 20px 20px;
+    width:660px;
 }
 
 #doseInsertFormBox h3, #autoResultBox h3 {
@@ -72,7 +108,7 @@
 #doseInsertForm label {
     background: #d0deea;
     padding: 4px;
-    font-size: 11.484px;
+    font-size: 11px;
     border-radius: 7px;
     margin: 1px;
 }
@@ -90,4 +126,50 @@
     width: 60px;
     border-radius: 10px;
     border: 1px solid #b4b4b4;
+}
+
+input[type='checkbox']:checked + label {
+	background: red;
+}
+
+/* ----------  자동 완성 결과 ------------ */
+#doseInsertFormBox {
+	float: left;
+}
+
+#autoResultBox {
+    width: 560px;
+    float: right;
+    height: 540px;
+}
+
+#autoResultScroll {
+	width: 540px;
+    height: 455px;
+}
+
+/* ----------  btn box ------------ */
+#btnBoxParent {
+	display:inline-block;
+}
+
+#btnBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 61px;
+    height: 231px;
+    justify-content: space-around;
+    border-radius: 5px;
+    margin-left: 12px;
+}
+
+.calBtn {
+    margin: 2px;
+    background: #f6f6f6;
+    width: 68px;
+    height: 64px;
+    border-radius: 10px;
+    border: 1px solid #c8c8c8;
+    font-size: 14px;
 }
