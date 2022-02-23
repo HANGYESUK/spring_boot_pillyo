@@ -1,6 +1,7 @@
 package com.pillyo.pill.service;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -16,7 +17,7 @@ public class BoardService implements IBoardService {
 	@Qualifier("IBoardDAO")
 	IBoardDAO dao;
 	
-	public ArrayList<BoardVO> listAllBoard(Criteria cri) {
+	public ArrayList<BoardVO> listAllBoard() {
 		// TODO Auto-generated method stub
 		return dao.listAllBoard();
 	}
@@ -28,8 +29,8 @@ public class BoardService implements IBoardService {
 	}
 	
 	@Override
-	public BoardVO boardDetailView(int id) {
-		return dao.boardDetailView(id);
+	public BoardVO boardDetailView(int boardNo) {
+		return dao.boardDetailView(boardNo);
 	}
 	
 	@Override
@@ -39,8 +40,33 @@ public class BoardService implements IBoardService {
 	}
 	
 	@Override
-	public void deleteBoard(int id) {
-		dao.deleteBoard(id);
+	public void deleteBoard(int boardNo) {
+		dao.deleteBoard(boardNo);
+	}
+
+	public ArrayList<BoardVO> listAllBoardQna() {
+		// TODO Auto-generated method stub
+		return dao.listAllBoardQna();
+	}
+
+	public ArrayList<BoardVO> listAllBoardQna2() {
+		// TODO Auto-generated method stub
+		return dao.listAllBoardQna2(); 
+	}
+
+	public ArrayList<BoardVO> listAllBoardQna3() {
+		// TODO Auto-generated method stub
+		return dao.listAllBoardQna3();
+	}
+	
+	public ArrayList<BoardVO> listAllBoardQna4() {
+		// TODO Auto-generated method stub
+		return dao.listAllBoardQna4();
+	}
+	
+	public ArrayList<BoardVO> listAllBoardQna5() {
+		// TODO Auto-generated method stub
+		return dao.listAllBoardQna5();
 	}
 	
 //	@Override
@@ -49,14 +75,12 @@ public class BoardService implements IBoardService {
 //		dao.boardListCnt();
 //	}
 
-	@Override
-	public ArrayList<BoardVO> listAllBoard() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
 
-	public static int boardListCnt(Criteria cri) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
+//	public ArrayList<BoardVO> listAllBoard(HashMap<String, Object> map) {
+//		// TODO Auto-generated method stub
+//		return dao.listAllBoard(map);
+//	}
+
+
 }

@@ -34,7 +34,7 @@
 			reader.onload = function(event) { // 불러온 파일을 읽어 div#image_container에 넣음
 				var image = document.createElement("img"); 
 				image.setAttribute("src", event.target.result); 
-				document.querySelector("div#image_container").appendChild(image);
+				document.querySelector("div#image").appendChild(image);
 				}
 				
 			reader.readAsDataURL(event.target.files[0]);
@@ -72,11 +72,11 @@
 	#img_box{
 		border : 1px solid #A0A0A0;
 	}
-	#image_container{
+	#image{
 		width: 300px;
 		height: 300px;
 	}
-	#image_container img
+	#image img
 	{
 	  width: 300px;
 	  height: 300px;
@@ -157,11 +157,11 @@
 						</c:if>
 						
 					<!-- 상비약 등록 -->
-					<form id = "hmForm" method="post" action="<c:url value ='/insertHm/insertHmResult'/>">
+					<form id = "hmForm" method="post" action="<c:url value ='/insertHm/'/>" enctype="multipart/form-data">
 															  <!-- 등록이 완료되면 작성완료된 페이지로 이동 -->
 						<table>
 							<!-- OCR로 이미지 넣어서 글씨 출력 -->
-							<tr class="hm_OCR_img"> <td rowspan="5" id="img_box"><div id="image_container"></div></td></tr>
+							<tr class="hm_OCR_img"> <td rowspan="5" id="img_box"><div id="image"></div></td></tr>
 							<tr> <th id="hm">약품명</th>	<td><input type="text" id="hmName" name="hmName"></td></tr>
 							<tr> <th id="hm">카테고리</th>	<td><input type="text" id="hmCtgNo" name="hmCtgNo" list="hmCtgList">
 															<datalist id="hmCtgList">
@@ -175,11 +175,18 @@
 													            <option value="8">기타</option>
 												        	</datalist></td></tr>
 							<tr> <th id="hm">사용기한</th>	<td><input type="date" name="hmUseByDate"></td></tr>
-							<tr> <th id="hm">메모</th>	<td><textarea name="hmMemo" rows="10" cols="50" placeholder="내용을 입력하세요" style="resize: none;"></textarea></td>
-							<tr> <th colspan="2" class="btn_box">
-	   							<input  id = "img_btn" type="file" name="hmImg" accept="image/*" onchange="setThumbnail(event);">
-	   							<input class = "in" type="submit" value="등록" >
-	   							<input class = "in2" type="reset" value="취소">&nbsp;</th></tr>
+							<tr> <th id="hm">메모</th>	<td><textarea name="hmMemo" rows="10" cols="60" placeholder="내용을 입력하세요" style="resize: none;"></textarea></td>
+							<tr> <th id="hm" class="btn_box">
+								 <form id="ocrForm" enctype="multipart/form-data">
+	   							 <!-- 이미지 미리보기 : 올려진 이미지 파일을 화면에 띄워줌 -->
+	   							 <input  id = "uploadFile" type="file" name="uploadFile" onchange="setThumbnail(event);">
+	   							 <input type="submit" value="결과 확인"></form>
+	   							 </th> <td></td>
+	   							 
+	   						<tr> <th id="hm" colspan="3"> <br>
+	   							 <!-- 전송 버튼 / 취소 버튼 -->
+	   							 <input class = "in" type="submit" value="등록" >
+	   							 <input class = "in2" type="reset" value="취소">&nbsp;</th></tr>
 						
 						</table>
 					</form>

@@ -7,32 +7,63 @@
   
   	<insert id="insertboard" parameterType="com.pillyo.pill.model.BoardVO">
 		insert into board(
-							id,
-							boardCtg,
+							boardNo,
+							boardCtgNo,
 							userId,
-							title,
-							content,
-							joinDate
+							boardTitle,
+							boardContent,
+							boardWriteDate,
+							boardImg
 							
   			) values(
-							#{id},
-							#{boardCtg},
+							#{boardNo},
+							#{boardCtgNo},
 							#{userId},
-							#{title},
-							#{content},
-							#{joinDate}
+							#{boardTitle},
+							#{boardContent},
+							#{boardWriteDate},
+							#{boardImg}
   			)
 	</insert>
 	
-	<select id="listAllBoard" parameterType="int" resultType="com.pillyo.pill.model.BoardVO">
-  			select * from board 
+
+	
+	<select id="listAllBoard" parameterType="Hashmap" resultType="com.pillyo.pill.model.BoardVO">
+  			select * from board WHERE boardCtgNo=0 OR boardCtgNo=1
   			<!-- ORDER BY id DESC
             LIMIT #{pageStart}, #{perPageNum} -->
   	</select>
-  
+
+	<select id="listAllBoardQna" parameterType="Hashmap" resultType="com.pillyo.pill.model.BoardVO">
+  			select * from board WHERE boardCtgNo=2 OR boardCtgNo=3 OR boardCtgNo=4 OR boardCtgNo=5
+  			<!-- ORDER BY id DESC
+            LIMIT #{pageStart}, #{perPageNum} -->
+  	</select>
+  	
+  	<select id="listAllBoardQna2" parameterType="Hashmap" resultType="com.pillyo.pill.model.BoardVO">
+  			select * from board WHERE boardCtgNo=2
+  	</select>
+  	
+  	<select id="listAllBoardQna3" parameterType="Hashmap" resultType="com.pillyo.pill.model.BoardVO">
+  			select * from board WHERE boardCtgNo=3
+  	</select>
+  	
+  	<select id="listAllBoardQna4" parameterType="Hashmap" resultType="com.pillyo.pill.model.BoardVO">
+  			select * from board WHERE boardCtgNo=4
+  	</select>
+  	
+  	<select id="listAllBoardQna5" parameterType="Hashmap" resultType="com.pillyo.pill.model.BoardVO">
+  			select * from board WHERE boardCtgNo=5
+  	</select>
+  	
+<!--   <select id="listAllBoardQna" parameterType="int" resultType="com.pillyo.pill.model.BoardVO">
+  			select * from board 
+  			ORDER BY id DESC
+            LIMIT #{pageStart}, #{perPageNum}
+  	</select> -->
   	<!-- 게시판 정보 상세 조회 -->
 	<select id="boardDetailView" parameterType="int" resultType="com.pillyo.pill.model.BoardVO">
-		SELECT * FROM board WHERE id=#{id}  		
+		SELECT * FROM board WHERE boardNo=#{boardNo}  		
 	</select>
 	
 	<!-- 	private int id;
@@ -43,15 +74,15 @@
 	
 	<!-- 게시판 정보 수정 -->
 	<update id="updateBoard" parameterType="com.pillyo.pill.model.BoardVO">
-		UPDATE board SET title=#{title}, content=#{content} 
-		WHERE id=#{id}
+		UPDATE board SET boardTitle=#{boardTitle}, boardContent=#{boardContent} 
+		WHERE boardNo=#{boardNo}
 	</update>
 	
 	<!-- 게시판 정보 삭제 -->
 	<delete id="deleteBoard"  parameterType="int">
-		DELETE FROM board WHERE id=#{id}
+		DELETE FROM board WHERE boardNo=#{boardNo}
 	</delete>
-	
+	<!-- 
 	 <select id="boardList" resultType="hashmap" parameterType="hashmap">
         <![CDATA[
             SELECT * 
@@ -59,11 +90,11 @@
             ORDER BY NUM DESC
             LIMIT #{pageStart}, #{perPageNum}
         ]]>
-	</select>
-		<select id="boardListCnt" resultType="int">
+	</select> -->
+<!-- 		<select id="boardListCnt" resultType="int">
 		        SELECT count(*)
 		        FROM hello_board
 		</select>
-
+ -->
 
   </mapper>

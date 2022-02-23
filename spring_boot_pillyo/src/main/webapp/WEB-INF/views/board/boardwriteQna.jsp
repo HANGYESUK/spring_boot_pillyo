@@ -69,7 +69,7 @@
 
 
 	<div class="layout">
-		<form id= "/boardForm" name="/boardForm" enctype="multipart/form-data" method="post" action="<c:url value='/insertboard'/>"> <!--  writedo로 넘겨주고 post방식으로 넘겨주겠다 -->
+		<form id= "/boardFormQna" name="/boardFormQna" enctype="multipart/form-data" method="post" action="<c:url value='/insertboardQna'/>"> <!--  writedo로 넘겨주고 post방식으로 넘겨주겠다 -->
 		
 		<table class="table table-striped" style="text-align: center; border: 1px solid #dddddd; width:500px;">
 		<!-- 실행시 form 안에 데이터가 writedo로 넘어간다 -->
@@ -80,21 +80,16 @@
 		</thead>
 		<tbody>
 		<tr>
-			<td><select id="boardCtgNo" name="boardCtgNo">
-				<option value="0" selected>소식</option>
-				<option value="1">카드뉴스</option>
-				<option value="2">주문/결제</option>
-				<option value="3">교환/반품</option>
-				<option value="4">제품</option>
-				<option value="5">회원</option>
-				
+			<td><select id="boardCtgQna" name="boardCtgQna">
+				<option value="소식" selected>소식</option>
+				<option value="카드뉴스">카드뉴스</option>
 			</select></td>
 			</tr>
 			<tr>
-		    <td><textarea rows="1" cols="50" placeholder="글 제목"  name="boardTitle" maxlength="50" style="width:500px;"></textarea></td>
+		    <td><textarea rows="1" cols="50" placeholder="글 제목"  name="title" maxlength="50" style="width:500px;"></textarea></td>
 		    </tr>
 		    <tr>
-			<td><textarea class="form-control" placeholder="글 내용" rows="10" cols="50" name="boardContent" maxlength="2048" style="height: 350px; width: 500px;" >${boardCtgList.boardContent}</textarea>
+			<td><textarea class="form-control" placeholder="글 내용" rows="10" cols="50" name="content" maxlength="2048" style="height: 350px; width: 500px;" >${board.content}</textarea>
 			
 			</td>
 			
@@ -110,9 +105,9 @@
 		</tbody>
 		</table>
 		<input type="hidden" name="userId" value="${sessionScope.sid}">  <!-- 세션 아이디 받아오기 -->
-			<input type="hidden" name="boardWriteDate" value="<%= sf.format(nowDate) %>"> 
+			<input type="hidden" name="joinDate" value="<%= sf.format(nowDate) %>"> 
 		<button type="submit" button style="float:right;">작성</button> <!-- submit -> 이 버튼의 역할은 데이터를 전송하는 것 -->
-				<a href="<c:url value='/boardDetailView/${boardCtgList.boardNo}'/>"><button>돌아가기</button></a>
+				<a href="<c:url value='/boardDetailView/${board.id}'/>"><button>돌아가기</button></a>
 		
 		
 		</form>
