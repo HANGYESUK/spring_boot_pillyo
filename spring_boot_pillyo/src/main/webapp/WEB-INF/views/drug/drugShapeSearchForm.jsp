@@ -25,7 +25,7 @@
 					</form>
 				</div>
 				
-				<div id="drugShaptSearchForm">
+				<div id="drugShapeSearchForm">
 					<form method="post" action="/drugShape">
 						<table>
 							<tr id="search_shape">
@@ -241,9 +241,9 @@
 										</label>
 									</div>
 									
-									<div class="lineBox">
-										<label for="drugLineEtc">없음
-											<input type="checkbox" id="drugLineEtc" name="line_front" value="" />
+									<div class="lineBox lineNoneBox">
+										<label for="drugLineEtc"><span class="textItem">없음</span>
+											<input type="checkbox" id="drugLineEtc" name="line_front" value="기타" />
 										</label>
 									</div>
 								</td>
