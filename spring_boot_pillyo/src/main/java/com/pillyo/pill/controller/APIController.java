@@ -25,6 +25,6 @@ public class APIController {
 	// (2) ocrView.jsp 페이지로 이동
 	@RequestMapping("/clovaOCRForm")
 	public String clovaOCRForm() {
-		return "/household_medicine/ocrView";
+		return "/household_medicine/insertHmForm";
 	}
 }
