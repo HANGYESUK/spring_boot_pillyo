@@ -207,6 +207,7 @@
 							
 		 		 
 						 	<script>
+						 		//
 			 					SBP.push(${pressure.SBP})
 						        DBP.push(${pressure.DBP})
 						        bpm.push(${pressure.bpm})
