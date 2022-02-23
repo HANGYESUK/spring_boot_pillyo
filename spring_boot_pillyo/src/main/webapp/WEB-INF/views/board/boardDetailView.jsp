@@ -32,7 +32,7 @@
 		<!-- 게시판 글 보기 양식 영역 시작 -->
 	<div class="container">
 		<div class="row">
-			<table class="table table-striped">
+			<table class="table table-stripedDetail">
 				<thead>
 					<tr>
 						<th width=600px; colspan="3" style="background-color: #f2f9fb; text-align: center;">알약요
@@ -77,17 +77,20 @@
 						<td colspan="3" style="background:#cfe3f6; height: 500px;; text-align: left;">${board.boardContent}</td>
 					</tr>
 					<tr>
-						<td>
-							<a href="<c:url value='/listAllBoard'/>"><button>목록</button></a>
+						<td style="float: left;">
+							<a href="<c:url value='/listAllBoard'/>"><button>목록</button></a></td>
 			
 			<!-- 해당 글의 작성자가 본인이라면 수정과 삭제가 가능하도록 코드 추가 -->
-			<a href="javascript:deleteCheck();"><button style="float:right;">게시글 삭제</button></a>
-			<a href="<c:url value='/updateBoardForm/${board.boardNo}'/>"><button style="float:right;" >게시글 수정</button></a>
+			<td>
+			<a href="<c:url value='/updateBoardForm/${board.boardNo}'/>"><button  >게시글 수정</button></a>
+			<a href="javascript:deleteCheck();"><button>게시글 삭제</button></a>
+			
 						</td>
 					</tr>
 				</tbody>
 				
 			</table>
+			<br>
 			
 			
 <%-- 			<input type="hidden" name="id" value="${board.id}">

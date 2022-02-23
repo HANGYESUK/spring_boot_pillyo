@@ -1,0 +1,38 @@
+ul li{
+	list-style: none;
+}
+
+.info {
+	display:none;
+}
+
+#GMIbox, #HTTMbox, #MFEUbox {
+	display:none;
+}
+
+#dropdownInfoBox {
+	width: 335px;
+    background: #f2f2f2;
+    font-size: 12px;
+    padding: 11px 18px;
+    border-radius: 10px;
+}
+
+#dropdownInfoBox h1 {
+	display: inline;
+}
+
+#dropdownInfoBox a {
+	text-decoration:none;
+	color: black;
+    line-height: 30px;
+}
+
+.openBtnBox a {
+	float: right;
+}
+
+.infoBox {
+    padding: 10px;
+    font-size: 16px;
+}

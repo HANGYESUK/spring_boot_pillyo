@@ -16,10 +16,12 @@
                		<c:if test="${empty sessionScope.sid }">
 	                    <div class="outer-menu">
 							<div class="outer-menu-btn"><a href="/loginForm"><h5>로그인</h5></a></div>
+							<div class="outer-menu-btn"><a href="/dashboard"><h5>건강관리</h5></a></div>
 							<div class="outer-menu-btn"><a href="#"><h5>복용관리</h5></a></div>
-							<div class="outer-menu-btn"><a href="#"><h5>재고관리</h5></a></div>
-							<div class="outer-menu-btn"><a href="#"><h5>가족관리</h5></a></div>
-							<div class="outer-menu-btn"><a href="#"><h5>건강관리</h5></a></div>
+							<div class="outer-menu-btn"><a href="#"><h5>우리집 약관리</h5></a></div>
+							<div class="outer-menu-btn"><a href="/listAllBoard"><h5>공지사항</h5></a></div>
+							<div class="outer-menu-btn"><a href="/medicInfo"><h5>의약정보</h5></a></div>
+							
 						</div>
                     </c:if>
                     
@@ -27,11 +29,12 @@
 				<!-- 로그인 성공한 경우 보여줄 메뉴 항목  -->	
 					<c:if test="${not empty sessionScope.sid}">
 						 <div class="outer-menu">
-						 	<div class="outer-menu-btn"><a href="/dashboard"><h5>${sessionScope.sid}</h5></a></div>
-							<div class="outer-menu-btn"><a href="/dashboard"><h5>HOME</h5></a></div>
-							<div class="outer-menu-btn"><a href="#"><h5>복용관리</h5></a></div>
-							<div class="outer-menu-btn"><a href="#"><h5>재고관리</h5></a></div>
-							<div class="outer-menu-btn"><a href="#"><h5>가족관리</h5></a></div>
+						 	<div class="outer-menu-btn"><a href="/myPage"><h5>마이페이지</h5></a></div>
+							<div class="outer-menu-btn"><a href="/dashboard"><h5>건강관리</h5></a></div>
+							<div class="outer-menu-btn"><a href="/calendarView/{famNo}"><h5>복용관리</h5></a></div>
+							<div class="outer-menu-btn"><a href="/hmForm"><h5>우리집 약관리</h5></a></div>
+							<div class="outer-menu-btn"><a href="/listAllBoard"><h5>공지사항</h5></a></div>
+							<div class="outer-menu-btn"><a href="/medicInfo"><h5>의약정보</h5></a></div>
 							<div class="outer-menu-btn"><a href="/logout"><h5>로그아웃</h5></a></div>
 						</div>
 					</c:if>	

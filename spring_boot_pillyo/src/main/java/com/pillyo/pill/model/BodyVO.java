@@ -9,6 +9,7 @@ public class BodyVO {
 	private int famNo;
 	public int getBodyNo() {
 		return BodyNo;
+		
 	}
 	public void setBodyNo(int bodyNo) {
 		BodyNo = bodyNo;

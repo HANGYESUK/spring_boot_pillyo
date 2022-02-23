@@ -23,6 +23,19 @@
 	margin-top : 40px;
 	}
 	
+	.displayNone {
+		display:none;
+	}
+	
+	#more-Btn{
+		color: #3f63b5;
+   	}
+	
+	#more-Btn h3{
+		text-align:center;
+   	    margin: 10px 10px 10px 0px;
+   	}
+	
 </style>
 
 <body>
@@ -73,8 +86,7 @@
 			
 			<c:forEach items="${boardList}" var="board">
 			    
-			   <tr>
-			   		
+			  <tr class="drugBox">
 					<td>
 						<c:if test="${board.boardCtgNo eq '0'}">소식</c:if>
 						<c:if test="${board.boardCtgNo eq '1'}">카드뉴스</c:if>
@@ -90,6 +102,34 @@
 		</table>
 		
 		<a href="<c:url value = '/boardForm'/>"><button>글쓰기</button></a>
+		
+		<div id="more-Btn" class="low" onclick="more()"><h3>더보기</h3>
+		
+		
+		
+		</div>
+		
+		
+		<script>
+					let count = 10;
+			        let drugBox = document.getElementsByClassName("drugBox")
+			        
+			        for(let i=count; i<drugBox.length; i++) {
+			        	drugBox[i].classList.add('displayNone')
+			        }
+			        
+			        function more() {
+			        	
+			        	console.log('string')
+				        for(let i=count; i<drugBox.length; i++) {
+				        	drugBox[i].classList.remove('displayNone')
+				        	if(i >= count + 9) {
+				        		break;
+				        	}
+				        }
+				        count += 10
+			        }
+			</script>
 		
 	
 		</div>

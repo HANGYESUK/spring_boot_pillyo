@@ -2,16 +2,16 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 	<head>
 		<meta charset="UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Pill-Yo 회원가입</title>
-		<link href="<c:url value='/css/join.css'/>" rel="stylesheet" type="text/css">	
+		<link rel="stylesheet" href="/css/member/join.css">	
 		
-		<link rel="stylesheet" href="/css/dashboard/dashboardContent.css" />
-		<link rel="stylesheet" href="/css/dashboard/dashboard.css" />	
+		<!-- <link rel="stylesheet" href="/css/dashboard/dashboardContent.css" />
+		<link rel="stylesheet" href="/css/dashboard/dashboard.css" /> -->	
 		
 		<script src="<c:url value='/js/jquery-3.6.0.min.js'/>"></script>
 		<script src="<c:url value='/js/formCheck.js'/>"></script>
@@ -23,10 +23,18 @@
 	</head>
 	<body>
 		<div id="wrap">
+				
+			<!-- TOP -->
+		<jsp:include page="/WEB-INF/views/layout/top.jsp" flush='true' />
 			
+			<div id="navMargin"></div>
+			
+		<!--  로그인 폼  -->
+			<section id="section">
+		
 
 			
-			<section id="section1">
+			<div id="section1">
 				<div id="joinBox">
 					<h2 align="center">회원가입</h2>
 					<br>
@@ -34,8 +42,8 @@
 					<form name="joinForm" id="joinForm" method="post" action="<c:url value='/userJoin'/>">
 						<div class="container">
 							<div class="insert">
-								<table>
-									<br>
+								<table id="joinTable">
+									
 									<tr>
 										<td class="col1">성명</td>
 										<td class="col2">
@@ -80,7 +88,7 @@
 									<tr>
 										<td class="col1">이메일 수신 여부</td>
 										<td class="col2">
-											<input type="radio" name="emailRcv" value="yes" style="margin-left:10px;" checked>예&nbsp;&nbsp;
+											<input type="radio" name="emailRcv" id="emailRcv" value="yes" checked>예&nbsp;&nbsp;
 											<input type="radio" name="emailRcv" value="no">아니오
 										</td>
 									</tr>
@@ -105,7 +113,7 @@
 									<td class="col1">약관 동의</td>
 									<td align="center">
 									<br>
-										<div class="agreebox" style="overflow:scroll; width:600px; height:200px; background-color:white">
+										<div class="agreebox" >
 										여러분을 환영합니다.
 	Pill-Yo 서비스 및 제품(이하 ‘서비스’)을 이용해 주셔서 감사합니다. 본 약관은 다양한 Pill-Yo 서비스의 이용과 관련하여 Pill-Yo 서비스를 제공하는 Pill-Yo 주식회사(이하 ‘Pill-Yo’)와 이를 이용하는 Pill-Yo 서비스 회원(이하 ‘회원’) 또는 비회원과의 관계를 설명하며, 아울러 여러분의 Pill-Yo 서비스 이용에 도움이 될 수 있는 유익한 정보를 포함하고 있습니다.
 	
@@ -227,7 +235,7 @@
 										</div>
 										<label><input type="checkbox" id="userAgreement1" value="모든약관" > 모든 약관에 동의</label>
 										<br><br><br>
-										<div class="agreebox" style="overflow:scroll; width:600px; height:200px; background-color:white">					
+										<div class="agreebox" >					
 	개인정보보호법에 따라 Pill-Yo에 회원가입 신청하시는 분께 수집하는 개인정보의 항목, 개인정보의 수집 및 이용목적, 개인정보의 보유 및 이용기간, 동의 거부권 및 동의 거부 시 불이익에 관한 사항을 안내 드리오니 자세히 읽은 후 동의하여 주시기 바랍니다.
 	
 	1. 수집하는 개인정보
@@ -299,11 +307,13 @@
 							</div>
 	
 							<div class="create">
-								<input class="btn3" type="submit" value="가입취소" onclick="">
-								<input class="btn4" type="submit" value="회원가입" onclick="formCheck(this.form)">
+								<button type="submit" id="joinBtn" onclick="">회원가입</button>
+								<button type="submit" id="cancelBtn" onclick="formCheck(this.form)">취소</button>
+								
 							</div>
 						</div>
 					</form>
+				</div>
 				</div>
 			</section>
 			
