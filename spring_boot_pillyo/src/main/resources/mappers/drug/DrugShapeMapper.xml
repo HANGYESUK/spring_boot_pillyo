@@ -4,40 +4,45 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   <mapper namespace="com.pillyo.pill.dao.IDrugShapeDAO">
   		
+  		<!-- 약모양 다중 검색 -->
   		<select id="drugShapeSearch" parameterType="HashMap"
   														resultType="com.pillyo.pill.model.DrugShapeVO">
   			SELECT * FROM drugshape 
   			WHERE 
   				
-  			
+  				
   				<if test="drug_shape != null">
-  					drug_shape = #{drug_shape}
+  					drug_shape = #{drug_shape} AND
   				</if>  				
   				<if test="color_class != null">
-  					AND color_class = #{color_class}
-  				</if>
+  					 color_class = #{color_class} AND
+  				</if> 
   				<if test="line_front != null">
-  					AND line_front = #{line_front}
+  					line_front = #{line_front} AND
   				</if>
   				
-  				<!-- 테스트 필요 -->
+  				<!-- 제형
+  					경질, 연질 : 폼 value 값을 변수로
+  					정제 : 쿼리 통해 경질, 연질을 제외한 약 목록 조회
+  						 1.정제: 나정, 필름 코팅정, 설하정, 붕해현탁정, 당의정, 다층정 등이 있음.
+  						 2. 경질, 연질약 제형에는 캡슐제라는 글자가 포함되어 있음
+  						 	(예: 경질 캡슐제, 연질 캡슐제)
+  				  -->
   				<if test="form_code_name != null">
-	  					AND form_code_name LIKE CONCAT('%,#{form_code_name},%')
+	  					 form_code_name LIKE CONCAT('%',#{form_code_name},'%') AND
   				</if>
-  				<if test="form_code_name != null and form_code_name.value('정제')">
-  					AND form_code_name NOT LIKE CONCAT('%연질%') AND CONCAT('%경질%')
+  				<if test="form_code_name != null and form_code_name.equals('정제')">
+  					 form_code_name NOT LIKE CONCAT('%캡슐%') AND 
+  					 <!-- 경질, 연질약은 이름에 캡슐을 포함함(ex 경질캡슐제, 연질캡슐제) -->
   				</if>
+  				
+  				<!-- AND 조건 쿼리문 앞쪽에 있으면 앞에 항목이 null인 경우 쿼리 문법 오류 발생 
+  				 맨앞에 항목이 NULL이거나 모두 널이어도 실행 될수 있도록
+  				 결과에 영향이 없는 무조건 참인 조건을 추가함.  -->	
+  				1=1
   					
   		
-  						<!-- 	<foreach
-							    item="항목"
-							    index="인덱스"
-							    collection="목록"
-							    open="시작문자열"
-							    close="종료문자열"
-							    separator="구분자">
-							</foreach> -->
-  							
+  					
   														
 		</select>
   		

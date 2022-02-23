@@ -13,4 +13,8 @@ public interface IUserDAO {
 	// 회원가입
 	String userEmailCheck(String email); // 이메일 중복 확인
 	void userJoin(UserVO vo); // 회원가입
+	
+	UserVO detailUserView(String userId);	// 회원 상세 정보
+	void updateUser(UserVO vo);	// 회원 정보 수정
+	void deleteUser(String userId);	// 회원 정보 삭제
 }

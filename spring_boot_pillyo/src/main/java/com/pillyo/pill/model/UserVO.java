@@ -2,7 +2,7 @@ package com.pillyo.pill.model;
 
 public class UserVO {
 
-	// 로그인
+	//user 테이블 필드
 	private String userId;
 	private String userPw;
 	private String userName;
@@ -12,6 +12,14 @@ public class UserVO {
 	private String userZipcode;
 	private String userAddress1;
 	private String userAddress2;
+	
+	//update때 사용할 변수
+	private String userEmailId;
+	private String userEmailText;
+	private String userHp1;
+	private String userHp2;
+	private String userHp3;
+	
 	public String getUserId() {
 		return userId;
 	}
@@ -66,6 +74,35 @@ public class UserVO {
 	public void setUserAddress2(String userAddress2) {
 		this.userAddress2 = userAddress2;
 	}
-	
-	
+	public String getUserEmailId() {
+		return userEmailId;
+	}
+	public void setUserEmailId(String userEmailId) {
+		this.userEmailId = userEmailId;
+	}
+	public String getUserEmailText() {
+		return userEmailText;
+	}
+	public void setUserEmailText(String userEmailText) {
+		this.userEmailText = userEmailText;
+	}
+	public String getUserHp1() {
+		return userHp1;
+	}
+	public void setUserHp1(String userHp1) {
+		this.userHp1 = userHp1;
+	}
+	public String getUserHp2() {
+		return userHp2;
+	}
+	public void setUserHp2(String userHp2) {
+		this.userHp2 = userHp2;
+	}
+	public String getUserHp3() {
+		return userHp3;
+	}
+	public void setUserHp3(String userHp3) {
+		this.userHp3 = userHp3;
+	}
+		
 }

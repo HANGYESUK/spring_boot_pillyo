@@ -16,11 +16,8 @@
 			<div id="navMargin"></div>
 			
 			<section id="section">
-				dd<br><br><br><br><br><br><br><br><br><br><br><br>
-				<br><br><br><br><br><br><br><br><br><br><br><br>
-				<br><br><br><br><br><br><br><br><br><br><br><br>
-				<br><br><br><br><br><br><br><br><br><br><br><br>
-				<br><br><br><br><br><br><br><br><br><br><br><br>
+			
+			
 			</section>
 	        
 			<!-- BOTTOM  -->

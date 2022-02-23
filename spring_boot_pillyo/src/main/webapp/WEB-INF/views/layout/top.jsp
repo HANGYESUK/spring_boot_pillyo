@@ -43,7 +43,7 @@
 						<!-- 로그인 성공한 경우 보여줄 메뉴 항목  -->	
 						<c:if test="${not empty sessionScope.sid}">
 							 <div class="menuBox">
-							 	<div class="menuItem"><a href=""><h5>마이페이지</h5></a></div>
+							 	<div class="menuItem"><a href="/myPage"><h5>마이페이지</h5></a></div>
 								<div class="menuItem"><a href="/dashboard"><h5>건강관리</h5></a></div>
 								<div class="menuItem"><a href="#"><h5>복용관리</h5></a></div>
 								<div class="menuItem"><a href="#"><h5>우리집 약 관리</h5></a></div>
