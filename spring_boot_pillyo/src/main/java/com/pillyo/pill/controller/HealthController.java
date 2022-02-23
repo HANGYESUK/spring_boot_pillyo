@@ -84,8 +84,8 @@ public class HealthController { // 건강관리 컨트롤러
 		model.addAttribute("famList", famList);
 		
 
-		String famMember =  famList.get(famNo-1).getFamMember();
-		model.addAttribute("famMember", famMember);
+//		String famMember =  famList.get(famNo-1).getFamMember();
+//		model.addAttribute("famMember", famMember);
 
 		
 		
