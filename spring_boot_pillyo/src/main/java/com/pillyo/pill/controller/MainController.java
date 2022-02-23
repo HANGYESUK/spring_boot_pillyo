@@ -34,9 +34,10 @@ public class MainController {
 		
 		FamilyVO famIdx = famList.get(0);
 		session.setAttribute("famNo", famIdx.getFamNo());
-		session.getAttribute("sfamNo");
+		session.getAttribute("famNo");
 	
 		model.addAttribute("famList", famList); 	// 프로필 가족 리스트
+		System.out.println(famList);
 		model.addAttribute("famIdx", famIdx);	// 메뉴 이동시 famNo 기본값으로 이용.
 		return "/Main/dashboard";
 	}

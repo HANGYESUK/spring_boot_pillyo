@@ -8,8 +8,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<script src="./jquery.fullPage.js"></script>
 	<script src="<c:url value='/js/jquery-3.6.0.min.js'/>"></script>
+	
+	<link rel="stylesheet" href="/css/dashboard/dashboard.css" />
     <title>Document</title>
 </head>
 <body>
@@ -20,11 +21,18 @@
 			<div id="navMargin"></div>
 			
 			<section id="section">
+			
+							<script>
+									console.log(${famList})
+								</script>
 						
-						  <c:forEach items="${famList }" var="fam">
+						  
+						    <c:forEach items="${famList }" var="fam">
 						   	<a href="/healthManageView/${fam.famNo}">
-							   		${ fam.famMember}
+							   	<div class="profile-Family-Icon" style="text-align: center;">
+							   		<h4>${ fam.famMember}</h4>
 							   		<input type="hidden" class="prInfo" value="☌">
+								</div>
 								<!-- test1 -->
 							</a>
 						  </c:forEach>
