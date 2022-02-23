@@ -31,5 +31,30 @@
 		INSERT INTO user(userId, userPw, userName, userHp, userEmail, userAddress1, userAddress2, userZipcode, joinDate)
 		VALUES (#{userId}, #{userPw}, #{userName}, #{userHp}, #{userEmail}, #{userAddress1}, #{userAddress2},#{userZipcode}, default )
 	</insert>
-  
+  	
+		<!-- 회원 상세 정보 -->
+	<select id="detailUserView" parameterType="String" resultType="com.pillyo.pill.model.UserVO">
+		SELECT * FROM user WHERE userId =#{userId}
+	</select>
+		
+		<!-- 회원 정보 삭제 -->
+	<delete id="deleteUser" parameterType="String">
+		DELETE FROM user WHERE userId =#{userId}
+	</delete>
+  		
+  		<!-- 회원 정보 수정 -->
+		<update id="updateUser" parameterType="com.pillyo.pill.model.UserVO">
+			UPDATE user SET
+ 			userPw=#{userPw}, 
+ 			userName=#{userName}, 
+ 			userHp=#{userHp}, 
+ 			userEmail=#{userEmail}, 
+ 			userAddress1=#{userAddress1}, 
+ 			userAddress2=#{userAddress2}, 
+ 			userZipcode=#{userZipcode}
+			WHERE userId =#{userId}
+		</update>
+		
+		
+  		
   </mapper>

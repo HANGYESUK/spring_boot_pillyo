@@ -6,22 +6,44 @@
 #drugShaptSearchForm th{
 	background-color: #81B89A;
 }
+#shapeAlll,#shapeEtc{
+	line-height: 51px
+}
+.textItem{
+	margin: 0 auto;
+}
 
-input[type="checkbox"]:label{
+.shapeBox{
+	display:inline-block;
+	width:51px;
+	height:51px;
+	border: 1px solid black;
+	background-color: white;
+
+}
+input[type=checkbox]:label{
  cursor: pointer;
 	
 }
 
-input[type="checkbox"]:checked+label{
+input[type=checkbox]:checked+label{
 border: 2px solid blue;
 	
 }
 	
-input[type="checkbox"]{
+input[type=checkbox]{
 	/* display:none; */
 }
 
-#shapebox{
-	display:inline;
-	border:2px solid red;
+.colorAll{
+	display:inline-block;
+	width:51px;
+	height:51px;
+	border: 1px solid black;
+	background: white;
 }
+.colorRed span{
+	background: white;
+	}
+
+

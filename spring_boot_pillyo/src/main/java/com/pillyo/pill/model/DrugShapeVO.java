@@ -1,18 +1,18 @@
 package com.pillyo.pill.model;
 
 public class DrugShapeVO {
-	private String itemName;
-	private String entpName;
+	private String itemName;		//약 제품명
+	private String entpName;		// 업체명
 	private String itemSeq;	// 품목번호
-	private String chart;		// 성상
-	private String itemImage;
+	private String chart;		// 성상 : 약 모양에 대한 간단 설명
+	private String itemImage;	// 약 이미지
 	private String print_front;	// 표기
 	private String print_back;	// 표기
 	private String drug_shape;	// 모양
 	private String color_class;	// 색상
 	private String color_class_two;	// 색상
-	private String line_front;	// 색상
-	private String line_back;	// 색상
+	private String line_front;	// 분할선_앞면
+	private String line_back;	// 분할선_뒷면
 	private String class_name;	// 해열,진통,소염제..
 	private String etc_otc_name; // 전문의약품...
 	private String form_code_name;	// 제형
