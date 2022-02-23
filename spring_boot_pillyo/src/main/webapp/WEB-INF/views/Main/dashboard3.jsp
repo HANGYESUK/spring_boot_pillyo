@@ -7,7 +7,7 @@
 <meta charset="UTF-8">
 <title>HealthList</title>
 		<script src="<c:url value='/js/jquery-3.6.0.min.js'/>"></script>
-	
+
 </head>
 <body>
 			가족 목록(dashboard3으로 페이지 다시 호출(ajax는 아님.))<br>

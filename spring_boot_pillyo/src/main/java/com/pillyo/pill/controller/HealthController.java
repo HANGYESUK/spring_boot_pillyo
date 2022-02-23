@@ -71,7 +71,7 @@ public class HealthController { // 건강관리 컨트롤러
 		
 		return "Main/dashboard2"; // 대시보드 페이지로 포워딩
 	}	
-	 
+	
 	
 	@RequestMapping("/dashboard3/{famNo}") //페이지 다중 매핑 -> 하나만 하기
 	public String listAllHealth2(@PathVariable int famNo, Model model, HttpSession session) {
@@ -83,9 +83,8 @@ public class HealthController { // 건강관리 컨트롤러
 		ArrayList<FamilyVO> famList = family_service.famListView(userId);
 		model.addAttribute("famList", famList);
 		
-		String famMember =  famList.get(famNo-1).getFamMember();
+		String famMember =  famList.get(famNo).getFamMember();
 		model.addAttribute("famMember", famMember);
-		System.out.println(famMember);
 		
 		
 		//매핑때 받은 @PathVariavle int famNo 다시 모델로 보냄.
