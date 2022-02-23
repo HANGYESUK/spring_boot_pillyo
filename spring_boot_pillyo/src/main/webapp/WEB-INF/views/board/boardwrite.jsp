@@ -102,9 +102,9 @@
 			<tr>
 				<td><input type="file" name="fileName"></td>
 			</tr>
-			<tr>
+			<!-- <tr>
 			<td><input  id = "img_btn" type="file" name="hmImg" accept="image/*" onchange="setThumbnail(event);"></td>
-			</tr>
+			</tr> -->
 		
 	
 		</tbody>
@@ -117,8 +117,8 @@
 		
 		</form>
 		<form action="<c:url value='boardDetailView'/>" enctype="multipart/form-data" method="post">
-<input type="file" name="profile">
-<input type="submit">
+<!-- <input type="file" name="profile">
+<input type="submit"> -->
 </form>
 	</div>
 	
