@@ -18,7 +18,7 @@
 <meta charset="UTF-8">
 <title>게시물 작성</title>
 	<script src="<c:url value='/js/jquery-3.6.0.min.js'/>"></script>
-
+	<link href="<c:url value='/css/board/board.css'/>" rel="stylesheet" type="text/css">	
 </head>
 
 
@@ -49,10 +49,36 @@
 					/* .layout input 은 layout 안의 input 태그에 적용 */
 	width:100%;
 	box-sizing : border-box;
+	    height: 30px;
 	}
 	#boardCtg {
 	    float: left;
 	}
+	td > textarea{
+	    color: #3f63b5;
+    height: 40px;
+    font-size: 20px;
+    background: #cfe3f6;
+    border-color: aliceblue;
+
+	}
+	
+	#boardCtgNo    {background: #f2f9fb;
+    float: left;
+    height: 30px;
+    text-align: center;
+    font-size: 19px;
+	width: 95px;
+    color: #3f63b5;
+    border-radius: 10px;
+    border-color: #f2f9fb;
+    font-weight: 400;
+	}
+	
+	input file-upload-button{
+	color:red;
+	}
+
 </style>
 
 
@@ -70,12 +96,12 @@
 
 	<div class="layout">
 		<form id= "/boardForm" name="/boardForm" enctype="multipart/form-data" method="post" action="<c:url value='/insertboard'/>"> <!--  writedo로 넘겨주고 post방식으로 넘겨주겠다 -->
-		
-		<table class="table table-striped" style="text-align: center; border: 1px solid #dddddd; width:500px;">
+		<br>
+		<table class="table table-striped" style="text-align: center; border: 1px solid #f2f9fb; width:500px;">
 		<!-- 실행시 form 안에 데이터가 writedo로 넘어간다 -->
 		<thead>
 			<tr>
-				<th colspan="2" style="background-color: #eeeeee; text-align: center;">공지사항 글쓰기</th>
+				<th colspan="2" style="background-color: #f2f9fb; text-align: center;">공지사항 글쓰기</th>
 			</tr>	
 		</thead>
 		<tbody>
@@ -100,7 +126,13 @@
 			
 			</tr>
 			<tr>
-				<td><input type="file" name="fileName"></td>
+				<td><input type="file" name="fileName" 
+				
+				style="color: #3f63b5;
+					    width: 160px;
+					    float: left;">
+				
+				</td>
 			</tr>
 			<!-- <tr>
 			<td><input  id = "img_btn" type="file" name="hmImg" accept="image/*" onchange="setThumbnail(event);"></td>
@@ -116,6 +148,7 @@
 		
 		
 		</form>
+		<br>
 		<form action="<c:url value='boardDetailView'/>" enctype="multipart/form-data" method="post">
 <!-- <input type="file" name="profile">
 <input type="submit"> -->

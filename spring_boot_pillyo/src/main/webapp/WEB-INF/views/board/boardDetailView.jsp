@@ -90,6 +90,7 @@
 				</tbody>
 				
 			</table>
+			<br>
 			
 			
 <%-- 			<input type="hidden" name="id" value="${board.id}">

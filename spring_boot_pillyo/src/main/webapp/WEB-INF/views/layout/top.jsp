@@ -11,7 +11,7 @@
 	<body>
 		<div id="headerBox">
 			<div id="logoBox">
-				<div id="logo">Pill-yo</div>
+				<div id="logo"><a href="/">Pill-yo</a></div>
 				<marquee>
 					220219 새로운 약 정보 업데이트!
 				</marquee>
@@ -35,18 +35,18 @@
 								<div class="menuItem"><a href="/dashboard"><h5>건강관리</h5></a></div>
 								<div class="menuItem"><a href="#"><h5>복용관리</h5></a></div>
 								<div class="menuItem"><a href="#"><h5>우리집 약 관리</h5></a></div>
-								<div class="menuItem"><a href="#"><h5>공지사항</h5></a></div>
-								<div class="menuItem"><a href="medicInfo"><h5>의약정보</h5></a></div>
+								<div class="menuItem"><a href="/listAllBoard"><h5>공지사항</h5></a></div>
+								<div class="menuItem"><a href="/medicInfo"><h5>의약정보</h5></a></div>
 							</div>
 	                    </c:if>
 	                    
 						<!-- 로그인 성공한 경우 보여줄 메뉴 항목  -->	
 						<c:if test="${not empty sessionScope.sid}">
 							 <div class="menuBox">
-							 	<div class="menuItem"><a href="/"><h5>마이페이지</h5></a></div>
+							 	<div class="menuItem"><a href="/myPage"><h5>마이페이지</h5></a></div>
 								<div class="menuItem"><a href="/dashboard"><h5>건강관리</h5></a></div>
-								<div class="menuItem"><a href="#"><h5>복용관리</h5></a></div>
-								<div class="menuItem"><a href="#"><h5>우리집 약 관리</h5></a></div>
+								<div class="menuItem"><a href="/calendarView/{famNo}"><h5>복용관리</h5></a></div>
+								<div class="menuItem"><a href="/hmForm"><h5>우리집 약 관리</h5></a></div>
 								<div class="menuItem"><a href="/listAllBoard"><h5>공지사항</h5></a></div>
 								<div class="menuItem"><a href="/medicInfo"><h5>의약정보</h5></a></div>
 								<div class="menuItem"><a href="/logout"><h5>로그아웃</h5></a></div>
@@ -55,7 +55,7 @@
 					</div>
 		  
 					<div class="searchBar">
-						<form>
+						<form method="post" action="<c:url value='/drugSearch'/>">
 							<input type="text" class="inputSearch" placeholder="약에 대한 정보를 얻고 싶으시면 이곳에 입력해주세요">
 							<input type="submit" class="submitBtn" value="☌">
 						</form>
