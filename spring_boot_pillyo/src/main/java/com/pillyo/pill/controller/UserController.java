@@ -6,6 +6,8 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -88,5 +90,70 @@ public class UserController {
 			service.userJoin(vo);
 			
 			return "redirect:/";
+		}
+		//마이페이지 이동
+		@RequestMapping("/myPage")
+		public String myPage() {
+			return "/member/myPage";
+		}
+		
+		
+		//회원정보 수정폼으로 이동
+		@RequestMapping("/updateMemberForm")
+		public String updateMemberForm(HttpSession session, Model model) {
+			String userId = (String)session.getAttribute("sid");
+			UserVO vo = service.detailUserView(userId);
+			
+			//이메일 분리
+			String emailStr = vo.getUserEmail();
+			String[] emailArray = emailStr.split("@");
+			String emailId = emailArray[0];
+			String email = emailArray[1];
+			
+			  //핸드폰 분리
+			String hpStr = vo.getUserHp();
+			System.out.println(hpStr);
+			String[] hpArray = hpStr.split("-");
+			 
+			
+			String userHp1 = hpArray[0];
+			String userHp2 = hpArray[1];
+			String userHp3 = hpArray[2];
+			 
+						
+			model.addAttribute("user", vo);
+			model.addAttribute("emailId", emailId);
+			model.addAttribute("email", email);
+			model.addAttribute("userHp1", userHp1);
+			model.addAttribute("userHp2", userHp2);
+			model.addAttribute("userHp3", userHp3);
+			
+			return "/member/updateMemberForm";
+		}
+		
+		@RequestMapping("/updateUser")
+		public String updateUser(UserVO vo) {
+			String emailId = vo.getUserEmailId();
+			String email = vo.getUserEmailText();
+			String userEmail = emailId + "@" + email;
+			System.out.println(userEmail);
+			vo.setUserEmail(userEmail);
+			
+			String userHp1 = vo.getUserHp1();
+			String userHp2 = vo.getUserHp2();
+			String userHp3 = vo.getUserHp3();
+			String userHp = userHp1 + "-" + userHp2 +"-" +userHp3;
+			vo.setUserHp(userHp);
+			
+			service.updateUser(vo);
+			return "redirect:/myPage";
+		}
+		
+		//회원탈퇴
+		@RequestMapping("/deleteUser/{userId}")
+		public String deleteUser(@PathVariable("userId") String userId, HttpSession session) {
+			service.deleteUser(userId);
+			session.invalidate();
+			return "index";
 		}
 }

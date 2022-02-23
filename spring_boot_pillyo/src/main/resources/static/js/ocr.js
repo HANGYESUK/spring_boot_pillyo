@@ -25,6 +25,7 @@
 				// 이미지 출력 : div에 append 시킴
 				$('#image').empty();
 				$('#image').append('<img src="/img/'+fileName+'"/>');
+				// $('#image').append('<img src="/images/'+fileName+'"/>');
 			},
 			error:function(){
 				alert("오류가 발생했습니다.")

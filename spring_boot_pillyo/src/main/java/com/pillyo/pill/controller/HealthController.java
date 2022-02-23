@@ -83,8 +83,10 @@ public class HealthController { // 건강관리 컨트롤러
 		ArrayList<FamilyVO> famList = family_service.famListView(userId);
 		model.addAttribute("famList", famList);
 		
-//		String famMember =  famList.get(famNo).getFamMember();
-//		model.addAttribute("famMember", famMember);
+
+		String famMember =  famList.get(famNo-1).getFamMember();
+		model.addAttribute("famMember", famMember);
+
 		
 		
 		//매핑때 받은 @PathVariavle int famNo 다시 모델로 보냄.

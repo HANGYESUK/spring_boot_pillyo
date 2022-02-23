@@ -34,4 +34,16 @@ public class UserService implements IUserService {
 	public void userJoin(UserVO vo) {
 		dao.userJoin(vo);
 	}
+	@Override
+	public UserVO detailUserView(String userId) {	// 회원 상세 정보
+		return dao.detailUserView(userId);
+	}
+	@Override
+	public void updateUser(UserVO vo) {	// 회원 정보 수정
+		dao.updateUser(vo);
+	}
+	@Override
+	public void deleteUser(String userId) {	// 회원 정보 삭제
+		dao.deleteUser(userId);
+	}
 }

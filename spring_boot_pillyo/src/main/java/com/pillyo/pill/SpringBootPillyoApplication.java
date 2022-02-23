@@ -38,6 +38,7 @@ import com.pillyo.pill.dao.IUserDAO;
 @ComponentScan(basePackageClasses = DrugController.class)
 @ComponentScan(basePackageClasses = DoseController.class)
 @ComponentScan(basePackageClasses = BoardController.class)
+@ComponentScan(basePackageClasses = HmController.class) // 우리집 약관리
 
 @MapperScan(basePackageClasses = IUserDAO.class)
 @MapperScan(basePackageClasses = IFamilyDAO.class)
@@ -47,6 +48,7 @@ import com.pillyo.pill.dao.IUserDAO;
 @MapperScan(basePackageClasses = IDrugDAO.class)
 @MapperScan(basePackageClasses = IDoseDAO.class)
 @MapperScan(basePackageClasses = IBoardDAO.class)
+@MapperScan(basePackageClasses = IHmDAO.class)
 
 public class SpringBootPillyoApplication {
 

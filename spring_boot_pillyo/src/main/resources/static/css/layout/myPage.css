@@ -1,0 +1,34 @@
+/* myPage.css */
+
+
+#myPageItemBox{
+    background-color: white;
+    width: 10%;
+    border-radius: 10px;
+    height: 500px;
+    padding-top: 20px;
+    margin: 0 auto;
+    float: left;
+}
+#myPageItemBox li{
+	list-style: none;
+	
+}
+#myPageItemBox li a{
+text-decoration:none;
+}
+
+#myPageBox{
+	width:100%;
+	height: 500px;
+}
+
+
+
+/* 회원정보수정 */
+#updateUserBox{
+ margin: 0 auto;
+ width:70%;
+ height: 520px;
+	
+}

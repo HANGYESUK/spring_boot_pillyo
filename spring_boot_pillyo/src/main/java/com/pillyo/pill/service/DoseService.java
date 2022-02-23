@@ -16,8 +16,8 @@ public class DoseService implements IDoseService {
 	IDoseDAO dao;
 	
 	@Override
-	public ArrayList<DoseVO> doseListView() {
-		return dao.doseListView();
+	public ArrayList<DoseVO> doseListView(int famNo) {
+		return dao.doseListView(famNo);
 	}
 
 	@Override
@@ -31,12 +31,12 @@ public class DoseService implements IDoseService {
 	}
 
 	@Override
-	public void doseDelete(String ddNo) {
+	public void doseDelete(int ddNo) {
 		dao.doseDelete(ddNo);
 	}
 
 	@Override
-	public DoseVO doseDetailView(String ddNo) {
+	public DoseVO doseDetailView(int ddNo) {
 		return dao.doseDetailView(ddNo);
 	}
 
