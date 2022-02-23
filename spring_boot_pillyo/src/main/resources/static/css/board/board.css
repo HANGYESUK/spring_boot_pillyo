@@ -1,0 +1,104 @@
+@charset "UTF-8";
+
+	.boardBody {
+    width: fit-content; /* 태그의 넓이를 500px로 */
+	margin:0 auto; /* 양쪽 여백을 위아래는 0 좌우는 자동으로 잡아주겠다! */
+	margin-top : 40px;
+	}
+	.ctgMenuItem {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor:pointer;
+    transition: all 0.4s;
+   }
+   .ctgMenuItem a {
+	text-decoration: none;
+	color: #1b81ff;
+	}
+   .ctgMenuItemSub {
+    width: 100%;
+    height: 45px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-content: space-around;
+    align-items: center;
+    cursor:pointer;
+    transition: all 0.4s;
+	flex-direction: row;
+   }
+   .ctgMenuItemSub a {
+	text-decoration: none;
+	color: #1b81ff;
+}
+   
+.ctgMenuItem:hover {
+    background-color: rgb(94, 150, 255);
+    color: white;
+}
+
+.ctgMenuItem:hover a{
+    color: white;
+}
+.ctgMenuItemSub:hover {
+    background-color: rgb(94, 150, 255);
+    color: white;
+}
+
+.ctgMenuItemSub:hover a{
+    color: white;
+}
+    
+    .ctgMenuBox {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-color: aliceblue;
+    color: rgb(94, 150, 255);
+    border-radius: 0 0 10px 10px;
+    overflow: hidden;
+    width: 100%;
+    height: 50px;
+}
+.ctgMenuItemtotal{
+	    display: flex;
+}
+.table-striped{
+/* 	    margin-top: 15px;
+
+ */
+ text-align: center; border: 1px solid #b2dcf6; width:880px;
+ 
+ }
+tr{
+	height: 40px;
+    font-size: 17px;
+}
+td {
+	color:#3f63b5;
+	height: 40px;
+    font-size: 20px;
+}
+
+td > a {
+	text-decoration: none;
+}
+
+button {
+	background: #f2f9fb;
+    color: #3f63b5;
+    border-color: #f2f9fb;
+    height: 38px;
+    width: 70px;
+    border-radius: 10px;
+    font-size: 15px;
+    float: right;
+}
+	th{
+	background-color: #b2dcf6; text-align: center; width:90px; color:#3f63b5;
+	}
