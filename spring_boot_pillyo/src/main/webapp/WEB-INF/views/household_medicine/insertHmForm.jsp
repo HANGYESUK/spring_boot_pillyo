@@ -81,7 +81,7 @@
 					 <input class = "in" type="submit" value="등록" >
 					 <input class = "in2" type="reset" value="취소">
 				</form>
-				
+				<!-- 깃되라 -->
 				<form id="ocrForm" enctype="multipart/form-data">
 				<table>
 					<tr> <th id="hm" rowspan="2">사진</th>	<td><input type="file" id="uploadFile" name="uploadFile">
