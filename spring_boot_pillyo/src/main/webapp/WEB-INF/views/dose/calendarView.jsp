@@ -323,7 +323,25 @@
        		alert("click");
        		if($("input[name='ddTimeSlot']:checked")) {
        			alert("change");
+       			alert(($("input[name='ddTimeSlot']:checked")).val());
+       			//alert(labelItem.value());
        			// 조건절 : and 클릭한 라디오버튼의 value = 라벨의 텍스트
+       			
+       			
+       			//var labelAttr = ($("input[name='ddTimeSlot']:checked")).val(); // 기상직후
+				//var labelItem = document.querySelector('label[for=labelAttr]');
+				
+       			
+/*        			chorme에서만 되는 경우
+				var label = $("input:radio[name=view]:checked").prop("labels");
+				console.log($(label).text())
+				
+				IE와 chrome 둘다 되는 경우
+				var radioId = $("input:radio[name=view]:checked").attr("id");
+				console.log($("label[for='"+radioId+"']").text()); */
+
+
+
        		} else {
        			
        		}
