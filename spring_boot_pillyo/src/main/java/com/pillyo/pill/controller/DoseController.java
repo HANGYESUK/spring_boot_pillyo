@@ -22,16 +22,9 @@ public class DoseController {
 	@Autowired
 	DrugService drugService;
 	
-	// 복용 관리 - 등록
-	@RequestMapping("/doseInsert")
-	public String doseInsert(DoseVO doseVo) {
-		doseService.doseInsert(doseVo);
-		return "redirect:/doseListView";
-	}
-	
 	// 복용 관리 - 수정 폼으로 이동 
 	@RequestMapping("/doseUpdateForm/{ddNo}")
-	public String doseUpdateForm(@PathVariable String ddNo, Model model) {
+	public String doseUpdateForm(@PathVariable int ddNo, Model model) {
 		ArrayList<AutoDrugInfoVO> drugList = drugService.drugListView();
 		DoseVO doseVo = doseService.doseDetailView(ddNo);
 		model.addAttribute("drugList", drugList);
@@ -48,7 +41,7 @@ public class DoseController {
 	
 	// 복용 관리 - 삭제
 	@RequestMapping("/doseDelete/{ddNo}")
-	public String doseDelete(@PathVariable String ddNo) {
+	public String doseDelete(@PathVariable int ddNo) {
 		doseService.doseDelete(ddNo);
 		return "redirect:../doseListView";
 	}
@@ -63,7 +56,7 @@ public class DoseController {
 	
 	// 복용 목록 상세 조회
 	@RequestMapping("/doseDetailView/{ddNo}")
-	public String doseDetailView(@PathVariable String ddNo, Model model) {
+	public String doseDetailView(@PathVariable int ddNo, Model model) {
 		DoseVO doseVo = doseService.doseDetailView(ddNo);
 		model.addAttribute("doseVo", doseVo);
 		
