@@ -318,4 +318,15 @@
 			})
        	});
 	</script>
+	<script>
+       	$("input[name='ddTimeSlot']").change(function() {
+       		alert("click");
+       		if($("input[name='ddTimeSlot']:checked")) {
+       			alert("change");
+       			// 조건절 : and 클릭한 라디오버튼의 value = 라벨의 텍스트
+       		} else {
+       			
+       		}
+     	});
+	</script>
 </html>
