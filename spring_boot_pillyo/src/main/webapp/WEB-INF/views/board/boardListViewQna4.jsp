@@ -51,7 +51,7 @@
 	
 	#more-Btn h3{
 		text-align:center;
-   	    margin: 10px 10px 10px 54px;
+   	    margin: 10px 10px 10px 0px;
    	}
 </style>
 

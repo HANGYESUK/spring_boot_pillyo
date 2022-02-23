@@ -90,7 +90,7 @@ tr{
 td {
 	color:#3f63b5;
 	height: 40px;
-    font-size: 20px;
+    font-size: 18px;
 }
 
 td > a {
@@ -102,10 +102,12 @@ button {
     color: #3f63b5;
     border-color: #f2f9fb;
     height: 38px;
-    width: 70px;
-    border-radius: 10px;
+    width: 86px;
+    border-radius: 20px;
     font-size: 15px;
+    border-bottom-color: white
 }
 	th{
-	background-color: #b2dcf6; text-align: center; width:90px; color:#3f63b5;
+	background-color: #b2dcf6; text-align: center; width:90px;     font-size: 20px;
+    color: #3f63b5;
 	}
