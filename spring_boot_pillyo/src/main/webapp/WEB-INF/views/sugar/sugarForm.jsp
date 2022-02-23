@@ -16,7 +16,9 @@
 		<!-- TOP -->
 		<jsp:include page="/WEB-INF/views/layout/top.jsp" flush='true' />
 
-		<section>
+		<div id="navMargin"></div>
+			
+			<section id="section">
 			
 			<h3>혈당등록</h3>
 			<form id="sugarForm" method="post" action="<c:url value='/insertSugar'/>">

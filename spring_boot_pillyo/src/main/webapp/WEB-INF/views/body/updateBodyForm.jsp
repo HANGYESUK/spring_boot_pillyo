@@ -11,7 +11,12 @@
  
 </head>
 <body>
-		<section>
+		<div id="wrap">
+			<!-- TOP -->
+			<jsp:include page="/WEB-INF/views/layout/top.jsp" flush='true' />
+			<div id="navMargin"></div>
+			
+			<section id="section">
 			<h3>체형관리 수정</h3>
 				<form id="updateBodyForm" method="post" action="<c:url value='/updateBody'/>">
 						체형관리번호<input type="text" id="bodyNo" name="bodyNo" value="${body.bodyNo}"/><br>
@@ -25,6 +30,10 @@
 							
 						</form>				
 		</section>
+		 <!-- BOTTOM  -->
+			<jsp:include page="/WEB-INF/views/layout/bottom.jsp" flush='true' />
 		
+      </div> <!-- wrap -->
+			
 </body>
 </html>

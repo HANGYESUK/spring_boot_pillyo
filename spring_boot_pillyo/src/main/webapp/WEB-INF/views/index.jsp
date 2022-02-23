@@ -20,13 +20,21 @@
 		<link rel="stylesheet" href="/css/main/dashboard.css" />
 		<link rel="stylesheet" href="/css/main/dashboard2.css" />
 		<link rel="stylesheet" href="/css/main/test.css" />
-	
-	
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-		<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
 		
 	
+		<!-- 구글폰트 -->
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+		
+		<!-- 차트js -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+		
+		<!-- 타이핑js -->
+		<script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+		
+		<script src="https://kit.fontawesome.com/cc2482b5e0.js" crossorigin="anonymous"></script>
+		
+		<!-- 제이쿼리 -->
 		<script src="/js/jquery.fullPage.js"></script>
 	
 		<script>
@@ -38,7 +46,7 @@
 				anchors:['first', 'second', 'third', 'fourth'],
 				navigation: true,
 				navigationPosition: 'right',
-				navigationTooltips: ['인트로', '과거', '현재', '미래'],
+				navigationTooltips: ['메인', '인사', '서비스 소개', '시작하기'],
 				// sectionsColor : ['#fffa65', '#ff9f1a', '#7d5fff', '#17c0eb'],
 				showActiveTooltip: true,
 				sectionSelector: '.section',
@@ -52,19 +60,54 @@
 	</head>
 <body>
 
+<jsp:include page="/WEB-INF/views/layout/indexTop.jsp"/>
 <div id="fullpage">
 	<div class="section active" id="section0">
-		<jsp:include page="/WEB-INF/views/layout/top.jsp"/>
 		<div class="container1 row">
 			<div class="Ellipse-1"></div>
-			<div class="Union"></div>
-			<div class="Ellipse-4"></div>
-			<h1>Pill-Yo</h1>
+			<div class="Ellipse-2"></div>
+			<div class="Ellipse-3"></div>
+			<h1 style="position: absolute">Pill-Yo</h1>
 		</div>
 	</div>
 	<div class="section" id="section1">
-
-			<section>
+		<div class="container2 row">
+			<div class="content-Box calum">
+				<h1 class="text">가족들의 건강관리를 한번에</h1>
+			</div>
+		</div>
+	</div>
+	<div class="section low" id="section2">
+		<div class="container3 row">
+			<div class="content-Box row">
+				<div class="Union">
+					<i class="fa-solid fa-house-chimney-medical"style="color:#444"></i>
+					<h2 class="Union-Title">건강관리</h2>
+					<p class="Union-Text">가족들의 건강관리를 대쉬보드로 한번에</p>
+				</div>
+				<div class="Union">
+					<i class="fa-solid fa-suitcase-medical" style="color:#444"></i>
+					<h2 class="Union-Title">상비약 관리</h2>
+					<p class="Union-Text">우리집에 있는 상비약의 유통기한과 위치메모</p>
+				</div>
+				<div class="Union">
+					<i class="fa-solid fa-pills" style="color:#444"></i>
+					<h2 class="Union-Title">복용관리</h2>
+					<p class="Union-Text">하루의 섭취하는 약들을 관리하고 매일매일 복용 습관 만들기 </p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="section" id="section3">
+		<div class="container2 row">
+			<div class="content-Box3">
+				<h2 class="content-Title">지금 바로 시작하세요</h2>
+				<button class="content-Box3-Btn">시작하기</button>
+			</div>
+		</div>
+	</div>
+	<div class="section" id="section4">
+					<section>
 				<a href="<c:url value = '/loginForm'/>">로그인</a>
 				<a href="<c:url value = '/join'/>">회원가입</a>
 				<a href="<c:url value = '/famInsertForm'/>">가족 등록 폼</a>
@@ -109,14 +152,33 @@
 				<a href="<c:url value = '/doseInsertForm'/>">복용 관리 - 등록 폼</a>
 				<a href="<c:url value = '/doseListView'/>">복용 목록 조회</a>
 			</section>
-
 	</div>
-	<div class="section low" id="section2">
-
-	</div>
-	<div class="section" id="section3"><h1>미래</h1></div>
 </div>
 
+
+<script>
+// 타이핑 함수
+	window.addEventListener('scroll', function(){
+	 	console.log(window.scrollY)
+	 });
+
+	let text = document.getElementsByClassName('text')[0];
+	
+	let textArr = ['안녕하세요', '당신의 건강관리를 위해 꼭 Pill-yo한 서비스, Pill-Yo 입니다!']
+	
+	let typewriter = new Typewriter(text, {
+	    loop: true
+	});
+	
+	for(let i=0; i<textArr.length; i++) {
+		typewriter.typeString(textArr[i])
+	    .pauseFor(600)
+	    .deleteAll()
+	    .start()
+	}
+	
+
+</script>
 <script type="text/javascript">
 	var context = document
 		.getElementById('myChart')

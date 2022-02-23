@@ -6,8 +6,14 @@ public class BoardVO {
 	private String content;
 	private String userId;
 	private String joinDate;
+	private String boardCtg;
 	
-	
+	public String getBoardCtg() {
+		return boardCtg;
+	}
+	public void setBoardCtg(String boardCtg) {
+		this.boardCtg = boardCtg;
+	}
 	public int getId() {
 		return id;
 	}
