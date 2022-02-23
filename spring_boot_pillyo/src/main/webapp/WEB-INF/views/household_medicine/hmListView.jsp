@@ -33,8 +33,7 @@
 				<tr> <th>사진</th> <th>제품명</th> <th>사용기간</th> </tr>
 				
 				<c:forEach items="${hmCtgList}" var="hmList">
-				<tr> <td> <img src="/img/hmListImg/${hmList.hmImg}"></td>
-				<!--현재 위에있는 코드는 pill-yo파일의 img폴더에 직접 내가 넣어둔것  -->
+				<tr> <td> <img src="<c:url value='/images/${hmList.hmImg}'/>"> </td>
 				<%-- <td> <img src="<c:url value='/images/${hmList.hmImg}'/>"> </td> --%>
 				<%-- <tr> <td> <img src="/img/hmListImg/${hmList.hmImg}"></td> --%>
 				<%-- 테스트 했는데 안되는것들 ------> 이거 WebConfig 쓰는거라 절대경로쓰는건데 왜 안나오지
@@ -43,7 +42,6 @@
 				<img src="/images/${hmList.hmImg}.jpg"> ${hmList.hmImg}</td>
 				<img src="<c:url value="/images/${hmList.hmImg}"/>"> ${hmList.hmImg}</td>
 				--%>
-							<!-- 이미지 맥박 뜨는거 안고쳐짐.. -->
 					 <td> <a href="<c:url value='/householde_medicine/detailViewHm/${hmList.hmName}'/>"> ${hmList.hmName}</a></td>
 					 <td>${hmList.hmUseByDate}</td></tr>
 				</c:forEach>
