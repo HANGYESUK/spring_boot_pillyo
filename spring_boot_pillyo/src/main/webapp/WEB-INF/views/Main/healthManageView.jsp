@@ -170,7 +170,7 @@
 							<div class="health-Content-Title low">
 									<img src="#"/>
 									<div class="health-Box1 low">
-										<h2>상황 ${pressure.situation}</h2>
+										<h2>상황 : ${pressure.situation}</h2>
 									</div>
 									<div class="health-Box2 low">
 										<h2>기록일 : ${pressure.pressureRecordDate}</h2>
@@ -373,15 +373,15 @@
 								<a href="<c:url value='/updateSugarForm/${sugar.sugarNo}'/>"><button class="updateBtn btn low">수정</button></a>
 		 
 						</div>
+						<script>
+					        sugarMedication.push(${sugar.sugarMedication})
+					        sugarLevel.push(${sugar.sugarLevel})
+						</script>
+				 	</c:forEach>
+						
 					</div>
 				</div>
 
-		 		
-				<script>
-			        sugarMedication.push(${sugar.sugarMedication})
-			        sugarLevel.push(${sugar.sugarLevel})
-				</script>
-		 	</c:forEach>
 			<script type="text/javascript">
 				function deleteCheck(){
 					var answer = confirm("선택한 혈당 정보를 삭제하시겠습니까?");
