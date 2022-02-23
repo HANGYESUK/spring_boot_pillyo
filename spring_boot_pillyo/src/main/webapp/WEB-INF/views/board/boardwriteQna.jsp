@@ -86,10 +86,10 @@
 			</select></td>
 			</tr>
 			<tr>
-		    <td><textarea rows="1" cols="50" placeholder="글 제목"  name="title" maxlength="50" style="width:500px;"></textarea></td>
+		    <td><textarea rows="1" cols="50" placeholder="글 제목"  name="boardTitle" maxlength="50" style="width:500px;"></textarea></td>
 		    </tr>
 		    <tr>
-			<td><textarea class="form-control" placeholder="글 내용" rows="10" cols="50" name="content" maxlength="2048" style="height: 350px; width: 500px;" >${board.content}</textarea>
+			<td><textarea class="form-control" placeholder="글 내용" rows="10" cols="50" name="boardContent" maxlength="2048" style="height: 350px; width: 500px;" >${board.boardContent}</textarea>
 			
 			</td>
 			
@@ -107,7 +107,7 @@
 		<input type="hidden" name="userId" value="${sessionScope.sid}">  <!-- 세션 아이디 받아오기 -->
 			<input type="hidden" name="joinDate" value="<%= sf.format(nowDate) %>"> 
 		<button type="submit" button style="float:right;">작성</button> <!-- submit -> 이 버튼의 역할은 데이터를 전송하는 것 -->
-				<a href="<c:url value='/boardDetailView/${board.id}'/>"><button>돌아가기</button></a>
+				<a href="<c:url value='/boardDetailView/${board.boardNo}'/>"><button>돌아가기</button></a>
 		
 		
 		</form>

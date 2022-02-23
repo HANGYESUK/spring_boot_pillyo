@@ -21,6 +21,23 @@
 </head>
 
 
+	<style>
+	
+	
+	.displayNone {
+		display:none;
+	}
+	
+	#more-Btn{
+		color: #3f63b5;
+   	}
+	
+	#more-Btn h3{
+		text-align:center;
+   	    margin: 10px 10px 10px 54px;
+   	}
+</style>
+
 
 <body>
 
@@ -62,7 +79,7 @@
 			</thead>
 			<tbody>
 			<c:forEach items="${boardListQna}" var="board">
-			   <tr>
+			   <tr class="drugBox">
 					<td>
 						<c:if test="${board.boardCtgNo eq '3'}">교환/반품</c:if>
 					</td> 
@@ -77,6 +94,33 @@
 		</table>
 		
 		<a href="<c:url value = '/boardForm'/>"><button>글쓰기</button></a>
+		<div id="more-Btn" class="low" onclick="more()"><h3>더보기</h3>
+		
+		
+		
+		</div>
+		
+		
+		<script>
+					let count = 10;
+			        let drugBox = document.getElementsByClassName("drugBox")
+			        
+			        for(let i=count; i<drugBox.length; i++) {
+			        	drugBox[i].classList.add('displayNone')
+			        }
+			        
+			        function more() {
+			        	
+			        	console.log('string')
+				        for(let i=count; i<drugBox.length; i++) {
+				        	drugBox[i].classList.remove('displayNone')
+				        	if(i >= count + 9) {
+				        		break;
+				        	}
+				        }
+				        count += 10
+			        }
+			</script>
 		
 	
 		</div>
