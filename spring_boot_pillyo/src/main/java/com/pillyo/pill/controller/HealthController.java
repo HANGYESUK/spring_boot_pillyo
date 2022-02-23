@@ -100,6 +100,7 @@ public class HealthController { // 건강관리 컨트롤러
 //		
 		ArrayList<FeelVO> feelList = feel_service.listAllFeel(famNo);
 		model.addAttribute("feelList", feelList);
+		System.out.println(feelList);
 //		FeelVO feel = feel_service.detailViewFeel(famNo);					// 기분관리
 //		model.addAttribute("feel", feel);
 //		

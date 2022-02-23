@@ -231,13 +231,8 @@
 
 			        console.log("${pressure.pressureRecordDate}")
 		 		</script>
-
-			   	<a href="<c:url value='/updatePressureForm/${pressure.pressureNo}'/>">혈압 관리 정보 수정</a>
-			   	<a href="javascript:deleteCheck();">혈압 관리 정보 삭제</a><br>
-			   	
-
- 				<br>
- 				
+		 		
+		 		
  			
 			
 				<!-- 기분 변수 -->
@@ -290,20 +285,21 @@
 								feelScale.push(${feel.feelScale})
 						        console.log(${feel.feelRecordDate})
 					 		</script>
-					 		
-					 	<script type="text/javascript">
-							function deleteCheck(){
-								var answer = confirm("선택한 기분 정보를 삭제하시겠습니까?");
-								if(answer == true){
-									location.href="<c:url value='/deleteFeel/${feel.feelNo}' />";
-								}
+					 	</div>
+					 </c:forEach>
+				 	<script type="text/javascript">
+						function deleteCheck(){
+							var answer = confirm("선택한 기분 정보를 삭제하시겠습니까?");
+							if(answer == true){
+								location.href="<c:url value='/deleteFeel/${feel.feelNo}' />";
 							}
-						</script>
+						}
+					</script>
 						
-						</c:forEach>	
+	
 				 		
-						</div>
-					</div>
+				</div>
+			</div>
 
 			
 			

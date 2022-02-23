@@ -22,13 +22,13 @@
     <!-- 기분 등록 완료  -->
 	<insert id="insertFeel" parameterType="com.pillyo.pill.model.FeelVO">
 		INSERT INTO feelManage ( feelScale, feelMemo, feelRecordDate, feelRecordTime, famNo)
-		VALUES ( #{feelScale}, #{feelMemo}, #{feelRecordDate}, #{feelRecordTime},'001')
+		VALUES ( #{feelScale}, #{feelMemo}, #{feelRecordDate}, #{feelRecordTime}, #{famNo})
 	</insert>
 	
     <!-- 기분 정보 수정 : 수정된 정보 DB에 저장 -->
 	<update id="updateFeel" parameterType="com.pillyo.pill.model.FeelVO">
 	   UPDATE feelManage SET feelNo=#{feelNo}, feelScale=#{feelScale}, feelMemo=#{feelMemo},
-	                         feelRecordDate=#{feelRecordDate}, feelRecordTime=#{feelRecordTime}, famNo='001' 
+	                         feelRecordDate=#{feelRecordDate}, feelRecordTime=#{feelRecordTime}, famNo=#{famNo}
 	   WHERE feelNo=#{feelNo}
 	</update>
 	
