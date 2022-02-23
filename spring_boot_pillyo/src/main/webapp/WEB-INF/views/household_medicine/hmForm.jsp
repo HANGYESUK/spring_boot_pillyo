@@ -25,6 +25,7 @@
 	<link rel="stylesheet" href="/css/dashboard/dashboard.css" />
 
 	<script src="./jquery.fullPage.js"></script>
+	<script src="/js/hmListView.js"></script>
 	
 	<!-- 임시 css / script-->
 	<style type="text/css">
@@ -164,44 +165,48 @@
 						<div class="hm_Category"> 
 							<form id="hmCtg_ListView">
 								<br> <h3> 약 카테고리</h3> <br><br>
-								<button type="button" id="hm_ctg" value="1" onclick="go(this.value)">
+								<!-- <button type="button" id="hm_ctg" value="1" onclick="go(this.value)"> -->
+								<!-- <input type="text" id="hmCtgInput">
+								<input type="submit" value="전송"> -->
+								
+								<button type="submit" id="hm_ctg" value="1" >
 								<img src="./img/hm/두통.png" alt="" style="width:45px; height:45px;"><br>
 								<span>두통약</span></button>
 								
-								<button type="submit" id="hm_ctg" value="2" onclick="alert(this.value)">
+								<button type="submit" id="hm_ctg" value="2">
 								<img src="./img/hm/감기.png" alt="" style="width:45px; height:45px;"><br>
 								<span>감기약</span></button>
 								
-								<button type="submit" id="hm_ctg" value="3" onclick="alert(this.value)">
+								<button type="submit" id="hm_ctg" value="3">
 								<img src="./img/hm/소화.png" alt="" style="width:45px; height:45px;"><br>
 								<span>소화제</span></button>
 								
-								<button type="submit" id="hm_ctg" value="4" onclick="alert(this.value)">
+								<button type="submit" id="hm_ctg" value="4">
 								<img src="./img/hm/해열.png" alt="" style="width:45px; height:45px;"><br>
 								<span>해열제</span></button>
 								
-								<button type="submit" id="hm_ctg" value="5" onclick="alert(this.value)">
+								<button type="submit" id="hm_ctg" value="5">
 								<img src="./img/hm/진통.png" alt="" style="width:45px; height:45px;"><br>
 								<span>진통제</span></button>
 								
-								<button type="submit" id="hm_ctg" value="6" onclick="alert(this.value)">
+								<button type="submit" id="hm_ctg" value="6" >
 								<img src="./img/hm/치통.png" alt="" style="width:45px; height:45px;"><br>
 								<span>치통약</span></button>
 								 
-								<button type="submit" id="hm_ctg" value="7" onclick="alert(this.value)">
+								<button type="submit" id="hm_ctg" value="7" >
 								<img src="./img/hm/연고.png" alt="" style="width:45px; height:45px;"><br>
 								<span>연고/파스</span></button>
 								
-								<button type="submit" id="hm_ctg" value="8" onclick="alert(this.value)">
+								<button type="submit" id="hm_ctg" value="8">
 								<img src="./img/hm/기타.png" alt="" style="width:45px; height:45px;"><br>
 								<span>기타</span></button>
 								
-								<script>
+								<!-- <script>
 								    function go(a) {
 								    	 window.location.href = "/listCtgHm/" + a
 							        }
 								
-								</script>
+								</script> -->
 							</form>
 						</div><!-- hm_Category -->
 						
