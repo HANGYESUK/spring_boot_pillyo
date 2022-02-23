@@ -48,8 +48,8 @@ public class DoseController {
 	
 	// 복용 목록 조회
 	@RequestMapping("/doseListView")
-	public String doseListView(Model model) {
-		ArrayList<DoseVO> doseList = doseService.doseListView();
+	public String doseListView(int famNo, Model model) {
+		ArrayList<DoseVO> doseList = doseService.doseListView(famNo);
 		model.addAttribute("doseList", doseList);		
 		return "/dose/doseListView";
 	}
