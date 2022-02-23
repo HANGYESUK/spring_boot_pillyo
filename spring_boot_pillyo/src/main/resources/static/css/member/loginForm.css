@@ -1,0 +1,126 @@
+/* loginForm.css */
+
+#loginContainer{
+	margin: 0 auto;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+}
+#title{
+	text-align: center;
+}
+
+button:hover{
+    opacity: 0.8;
+}
+
+#loginBox{
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#idBox, #pwBox{
+    width: 300px;
+    height: 40px;
+    border: solid 1px black;
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+}
+#idBox{
+    margin-top: 25px;
+}
+#pwBox{
+    margin-top: 13px;
+}
+#loginBox input{
+    border:none;
+    width: 280px;
+    margin-top: 2px;
+    font-size: 14px;
+    margin-left: 2px;
+    height:30px;
+}
+
+
+#login_btn{
+    width: 300px;
+    height: 40px;
+    margin-top: 13px;
+    font-size: 18px;
+    font-weight: bold;
+    background: #338adc;
+    color: black;
+    border-radius: 20px;
+    overflow: hidden;
+    cursor: pointer;
+}
+.forgetMsg{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding:0px;
+}
+
+.socialLoginBox{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding:0px;
+}
+
+.socialLoginBox h2{
+    font-size: 20px;
+}
+
+.socialLoginList{
+    padding: 25px 0 0 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.socialLoginList ul{
+	padding:0px;
+}
+.socialLoginList li{
+    padding-bottom: 10px;
+}
+.kakaoLoginButton{
+    background-color: #fae100;
+    color: black;
+}
+.googleLoginButton{
+    background-color: #ff3e30;
+    color: white;
+}
+.naverLoginButton{
+    background-color: #2db400;
+    color: white;
+}
+
+.socialLoginList li button{
+    width: 300px;
+    height: 40px;
+    border-radius: 20px;
+    border: none;
+    text-align: left;
+    cursor: pointer;
+}
+
+.socialLoginList li button span{
+    padding-left: 20px;
+    line-height: 56px;
+    font-size: 18px;
+}
+#forgetMsg{
+    font-size: 14px;
+    padding-top: 10px;
+    float:right;
+}
+#forgetMsg a{
+    text-decoration: none;
+    color: black;
+}
