@@ -126,11 +126,12 @@
     width: 60px;
     border-radius: 10px;
     border: 1px solid #b4b4b4;
+    margin: 5px;
 }
 
-input[type='checkbox']:checked + label {
+/* input[type='checkbox']:checked + label {
 	background: red;
-}
+} */
 
 /* ----------  자동 완성 결과 ------------ */
 #doseInsertFormBox {
@@ -140,12 +141,12 @@ input[type='checkbox']:checked + label {
 #autoResultBox {
     width: 560px;
     float: right;
-    height: 540px;
+    height: 455px;
 }
 
 #autoResultScroll {
 	width: 540px;
-    height: 455px;
+    height: 370px;
 }
 
 /* ----------  btn box ------------ */

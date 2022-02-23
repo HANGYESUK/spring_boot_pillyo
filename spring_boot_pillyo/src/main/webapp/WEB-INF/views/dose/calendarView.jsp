@@ -77,8 +77,8 @@
 		    }
 		});
 		
-		modal.setContent('<div class="calendarModal"><div id="doseInsertFormBox"><div id="modalHeader"><h3>복용 정보 추가하기</h3></div><form methond="post" action="/doseCalInsert" id="doseInsertForm"><table><input type="hidden" id="ddNo" name="ddNo" value=1 readonly><input type="hidden" id="drugInfoNo" name="drugInfoNo" value="${doseVo.drugInfoNo }"><tr><th>가족 번호(수정불가/테스트용고정)</th><td><input type="number" id="famNo" name="famNo" value=${doseVo.famNo } readonly></td></tr><tr><th>복용 타이틀></th><td><input type="text" id="ddTitle" name="ddTitle"></td></tr><tr><th>약 이름</th><td><input type="text" id="searchInput" name="searchInput"></td></tr><tr><th>복용 시작 날짜</th><td><input type="date" id="ddStartDate" name="ddStartDate"></td></tr><tr><th>복용 종료 날짜</th><td><input type="date" id="ddEndDate" name="ddEndDate"></td></tr><tr><th>복용 주기</th><td><input type="number" min="0" id="ddCycle" name="ddCycle">일</td></tr><tr><th>복용 시기</th><td id="timeSlotTd"><label for="afterGetUp">기상직후</label><input type="radio" id="afterGetUp" name="ddTimeSlot" value="기상직후"><label for="beforeB">아침식전</label><input type="radio" id="beforeB" name="ddTimeSlot" value="아침식전"><label for="afterB">아침식후</label><input type="radio" id="afterB" name="ddTimeSlot" value="아침식후"><label for="beforeL">점심식전</label><input type="radio" id="beforeL" name="ddTimeSlot" value="점심식전"><label for="afterL">점심식후</label><input type="radio" id="afterL" name="ddTimeSlot" value="점심식후"><label for="beforeD">저녁식전</label><input type="radio" id="beforeD" name="ddTimeSlot" value="저녁식전"><label for="afterD">저녁식후</label><input type="radio" id="afterD" name="ddTimeSlot" value="저녁식후"><label for="beforeBed">취침전</label><input type="radio" id="beforeBed" name="ddTimeSlot" value="취침전"></td></tr><tr><th>복용 상세 시간</th><td><input type="time" id="ddTime" name="ddTime"></td></tr><tr><th>1회 복용량</th><td><input type="number" min="1" id="ddAmount" name="ddAmount"></td></tr><td colspan="2" id="doseInsertBtnTd"><input type="submit" id="addDose" value="등록"><input type="reset" id="resetDose" value="취소"></td></table></form></div><div id="autoResultBox"><h3>자동완성 결과</h3><span id="autoMsg">수정 결과로 반영할 약물 이름을 클릭하세요.</span><div id="autoResultScroll"><ul id="autoResult"></ul></div></div></div>');
-		
+		modal.setContent('<div class="calendarModal"><div id="doseInsertFormBox"><div id="modalHeader"><h3>복용 정보 추가하기</h3></div><form methond="post" action="/doseCalInsert" id="doseInsertForm"><table><input type="hidden" id="ddNo" name="ddNo" value=1 readonly><input type="hidden" id="drugInfoNo" name="drugInfoNo" value="${doseVo.drugInfoNo }"><input type="hidden" id="famNo" name="famNo" value=${famNo } readonly><tr><th>복용 타이틀</th><td><input type="text" id="ddTitle" name="ddTitle"></td></tr><tr><th>약 이름</th><td><input type="text" id="searchInput" name="searchInput"></td></tr><tr><th>복용 시작 날짜</th><td><input type="date" id="ddStartDate" name="ddStartDate"></td></tr><tr><th>복용 종료 날짜</th><td><input type="date" id="ddEndDate" name="ddEndDate"></td></tr><tr><th>복용 주기</th><td><input type="number" min="0" id="ddCycle" name="ddCycle">일</td></tr><tr><th>복용 시기</th><td id="timeSlotTd"><label for="afterGetUp">기상직후</label><input type="radio" id="afterGetUp" name="ddTimeSlot" value="기상직후"><label for="beforeB">아침식전</label><input type="radio" id="beforeB" name="ddTimeSlot" value="아침식전"><label for="afterB">아침식후</label><input type="radio" id="afterB" name="ddTimeSlot" value="아침식후"><label for="beforeL">점심식전</label><input type="radio" id="beforeL" name="ddTimeSlot" value="점심식전"><label for="afterL">점심식후</label><input type="radio" id="afterL" name="ddTimeSlot" value="점심식후"><label for="beforeD">저녁식전</label><input type="radio" id="beforeD" name="ddTimeSlot" value="저녁식전"><label for="afterD">저녁식후</label><input type="radio" id="afterD" name="ddTimeSlot" value="저녁식후"><label for="beforeBed">취침전</label><input type="radio" id="beforeBed" name="ddTimeSlot" value="취침전"></td></tr><tr><th>복용 상세 시간</th><td><input type="time" id="ddTime" name="ddTime"></td></tr><tr><th>1회 복용량</th><td><input type="number" min="1" id="ddAmount" name="ddAmount"></td></tr><td colspan="2" id="doseInsertBtnTd"><input type="submit" id="addDose" value="등록"><input type="reset" id="resetDose" value="취소"></td></table></form></div><div id="autoResultBox"><h3>자동완성 결과</h3><span id="autoMsg">수정 결과로 반영할 약물 이름을 클릭하세요.</span><div id="autoResultScroll"><ul id="autoResult"></ul></div></div></div>');
+		// hidden 태그 value famNo는 잘 받아오고 있음
 		
 		/* calender : DB 데이터 캘린더에 추가 */
 		document.addEventListener('DOMContentLoaded', function() {
@@ -317,5 +317,16 @@
 			    }
 			})
        	});
+	</script>
+	<script>
+       	$("input[name='ddTimeSlot']").change(function() {
+       		alert("click");
+       		if($("input[name='ddTimeSlot']:checked")) {
+       			alert("change");
+       			// 조건절 : and 클릭한 라디오버튼의 value = 라벨의 텍스트
+       		} else {
+       			
+       		}
+     	});
 	</script>
 </html>

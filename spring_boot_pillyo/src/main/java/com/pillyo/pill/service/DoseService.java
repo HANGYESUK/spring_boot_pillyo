@@ -16,8 +16,8 @@ public class DoseService implements IDoseService {
 	IDoseDAO dao;
 	
 	@Override
-	public ArrayList<DoseVO> doseListView() {
-		return dao.doseListView();
+	public ArrayList<DoseVO> doseListView(int famNo) {
+		return dao.doseListView(famNo);
 	}
 
 	@Override

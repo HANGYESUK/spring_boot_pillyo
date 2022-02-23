@@ -34,17 +34,17 @@
 		</update>
 		
 		<!-- 복용 정보 삭제 -->
-		<delete id="doseDelete"  parameterType="string">
+		<delete id="doseDelete"  parameterType="int">
 			DELETE FROM doseinfo WHERE ddNo=#{ddNo}
 		</delete>
 		
 		<!-- 복용 목록 조회 -->
-		<select id="doseListView" resultMap="doseResult">
-			SELECT * FROM doseinfo ORDER BY ddNo
+		<select id="doseListView" parameterType="int" resultMap="doseResult">
+			SELECT * FROM doseinfo WHERE famNo=#{famNo} ORDER BY ddNo
 		</select>
 		
 		<!-- 복용 정보 상세 조회 -->
-		<select id="doseDetailView" parameterType="string" resultType="com.pillyo.pill.model.DoseVO">
+		<select id="doseDetailView" parameterType="int" resultType="com.pillyo.pill.model.DoseVO">
 			SELECT * FROM doseinfo WHERE ddNo=#{ddNo}
 		</select>
 		
