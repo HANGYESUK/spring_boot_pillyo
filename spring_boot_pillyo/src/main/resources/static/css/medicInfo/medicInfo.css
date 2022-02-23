@@ -11,7 +11,6 @@ ul li{
 }
 
 #dropdownInfoBox {
-	width: 335px;
     background: #f2f2f2;
     font-size: 12px;
     padding: 11px 18px;
@@ -20,6 +19,7 @@ ul li{
 
 #dropdownInfoBox h1 {
 	display: inline;
+	font-size: 21px;
 }
 
 #dropdownInfoBox a {
@@ -30,9 +30,57 @@ ul li{
 
 .openBtnBox a {
 	float: right;
+	font-size: 25px;
 }
 
 .infoBox {
     padding: 10px;
     font-size: 16px;
+}
+
+.info {
+	background: #c3ccd9;
+    border-radius: 15px;
+    padding: 10px 20px;
+}
+
+.info > ul {
+	padding-left: 0px;
+}
+
+#otcEtcStcBox {
+	list-style: none;	
+}
+
+#otcEtcStcBox > li {
+	margin: 0 0 20px 0;
+}
+
+#typeOfDrugBox > ul > li > ul {
+	    background: #aab6c7;
+    border-radius: 10px;
+    padding: 18px;
+}
+
+#drugExpirationBox > ul > li {
+	margin: 12px 0;
+}
+
+#howToTakeMBox > ul > li > h5 {
+	font-size: 19px;
+	margin: 16px 0;
+}
+
+#howToTakeMBox > ul > li > ul > li {
+	margin: 8px 0;
+}
+
+#howToTakeMBox > ul > li:nth-child(5) > ul li {
+	background: #aab6c7;
+    padding: 3px 13px;
+    border-radius: 10px;
+}
+
+#howToTakeMBox > ul > li:nth-child(5) > ul {
+	margin-bottom: 20px;
 }
