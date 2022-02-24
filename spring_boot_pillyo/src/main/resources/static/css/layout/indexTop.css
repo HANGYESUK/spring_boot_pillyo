@@ -10,6 +10,7 @@
 #drugSearchInput {
 	width: 90%;
     padding: 5px;
+    border-radius: 10px 0 0 10px;
     height: 40px;
 }
 
@@ -17,5 +18,13 @@
 	width: 5%;
     padding: 5px;
     height: 50px;
+    cursor: pointer;
+}
+
+#submit {
+	width: 5%;
+    padding: 5px;
+    height: 50px;
+    border-radius: 0 10px 10px 0;
     cursor: pointer;
 }
