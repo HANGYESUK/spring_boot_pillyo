@@ -11,37 +11,33 @@
 		<style>
 			marquee{
 			    height: 22px;
-			    }
+		    }
 			.submitBtn{
-				    color: #3f63b5;
-	    border: 0.3px solid white;
-    background:white;
-    border-radius: 40px 40px 40px 40px;
-    width: 60px;
-    height: 37px;
-    font-size: 17px;
-    font-weight: 600;
-    border-color: white;
-    box-shadow: 1px 1px 3px #0d3bb1;
+			    color: #3f63b5;
+	    		border: 0.3px solid white;
+			    background:white;
+			    border-radius: 40px 40px 40px 40px;
+			    width: 60px;
+			    height: 37px;
+			    font-size: 17px;
+			    font-weight: 600;
+			    border-color: white;
+			    box-shadow: 1px 1px 3px #0d3bb1;
 			}
 			.submitBtn:hover{
-			
-			background: #white;
-			border: 3px solid #F2F9FB;
-			box-shadow: 2px 2px 5px #0d3bb1;
+				background: #white;
+				border: 3px solid #F2F9FB;
+				box-shadow: 2px 2px 5px #0d3bb1;
 			}
-			
 			.inputSearch::placeholder{
-			color: #3f63b5;
-			  opacity: 1; 
-		      text-align: center;
-			   font-size: 14px;
-}
-.profileText > a{
-    text-decoration: none;
-    color: white;
-    
-
+				color: #3f63b5;
+			  	opacity: 1; 
+		      	text-align: center;
+			   	font-size: 14px;
+			}
+			.profileText > a{
+			    text-decoration: none;
+			    color: white;
 			}
 		</style>
 	<body>
@@ -49,7 +45,11 @@
 			<div id="logoBox">
 				<!-- <div id="logo"><a href="/">Pill-yo</a></div> -->
 				<marquee>
-					220219 새로운 약 정보 업데이트!
+					<a href="<c:url value="/boardDetailView/1"/>">Pill-Yo 중요 공지</a>
+					<a href="<c:url value="/boardDetailView/1"/>">Pill-Yo 중요 공지</a>
+					<a href="<c:url value="/boardDetailView/1"/>">Pill-Yo 중요 공지</a>
+					<a href="<c:url value="/boardDetailView/1"/>">Pill-Yo 중요 공지</a>
+					<a href="<c:url value="/boardDetailView/1"/>">Pill-Yo 중요 공지</a>
 				</marquee>
 			</div>
 			<div class="mainHeader">
@@ -84,7 +84,7 @@
 						<!-- 로그인 성공한 경우 보여줄 메뉴 항목  -->	
 						<c:if test="${not empty sessionScope.sid}">
 							 <div class="menuBox">
-							 	<div class="menuItem"><a href="/myPage"><h5>마이페이지</h5></a></div>
+							 	<div class="menuItem"><a href="/updateMemberForm"><h5>마이페이지</h5></a></div>
 								<div class="menuItem"><a href="/dashboard"><h5>건강관리</h5></a></div>
 								<div class="menuItem"><a href="/calendarView"><h5>복용관리</h5></a></div>
 								<div class="menuItem"><a href="/hmForm"><h5>우리집 약 관리</h5></a></div>
@@ -99,7 +99,7 @@
 		  
 					<div class="searchBar">
 						<form method="post" action="<c:url value='/drugSearch'/>">
-							<input type="text" class="inputSearch" placeholder="약에 대한 정보를 얻고 싶으시면 이곳에 입력해주세요">
+							<input type="text" class="inputSearch" name="keyWord" placeholder="약에 대한 정보를 얻고 싶으시면 이곳에 입력해주세요">
 							<input type="submit" class="submitBtn" value="검색">
 						</form>
 					</div>

@@ -57,7 +57,7 @@ input[type=checkbox]{
 }
 
 .typeBox, .lineBox{
-    width: 266px;
+    width: 270px;
 }
 
 /* 색상 검색 */
@@ -152,7 +152,7 @@ label[for="cTrans"] {
 
 .lineNoneBox {
 	position: absolute;
-    right: 4px;
+    right: 3px;
 }
 
 /* 버튼 */

@@ -33,14 +33,7 @@
 				<a href="<c:url value='/doseUpdateForm/${doseVo.ddNo}'/>">복용 정보 수정</a><br>
 				<a href="javascript:deleteCheck();">복용 정보 삭제</a><br>
 			
-				<script type="text/javascript">
-					function deleteCheck(){
-						var answer = confirm("해당 복용 정보를 목록에서 삭제하시겠습니까?");
-						if(answer == true){
-							location.href="/doseDelete/${doseVo.ddNo}";
-						}
-					}
-				</script>
+				
 			</section>
 	        
 			<!-- BOTTOM  -->

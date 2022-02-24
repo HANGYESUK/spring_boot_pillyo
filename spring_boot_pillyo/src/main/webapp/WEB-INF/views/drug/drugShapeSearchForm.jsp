@@ -26,7 +26,7 @@
 								<td>
 									<div class="shapeBox">
 										<label for="shapeAlll"><span class="textItem">전체</span>
-											<input type="checkbox" id="shapeAlll" name="drug_shape" class="sBox" value="전체" checked />
+											<input type="checkbox" id="shapeAlll" name="drug_shape" class="sBox" value="전체" />
 										</label>
 									</div>
 		
@@ -104,7 +104,7 @@
 								<td>
 									<label for="cWhite">
 										<div class="colorBox">
-											<input type="checkbox" id="cWhite" name="color_class" class="cBox" value="하양" checked/>
+											<input type="checkbox" id="cWhite" name="color_class" class="cBox" value="하양" />
 										</div>
 									</label>
 									
@@ -204,7 +204,7 @@
 								<td>
 									<div class="typeBox">
 										<label for="drugType1"> <img src="/img/drugShape/type/type01.jpg" alt="정제">
-											<input type="checkbox" id="drugType1" name="form_code_name" class="tBox" value="정제" checked/>
+											<input type="checkbox" id="drugType1" name="form_code_name" class="tBox" value="정제" />
 										</label>
 									</div>
 									
@@ -226,7 +226,7 @@
 								<td>
 									<div class="lineBox">
 										<label for="drugLine2"> <img src="/img/drugShape/line/line02.jpg" alt="+형">
-											<input type="checkbox" id="drugLine2" name="line_front" class="lBox" value="+" checked/>
+											<input type="checkbox" id="drugLine2" name="line_front" class="lBox" value="+" />
 										</label>
 									</div>
 									
@@ -255,10 +255,12 @@
       </div> <!-- wrap -->
 	</body>
 	<script type="text/javascript">
-		// 기본으로 체크되어있는 값 테두리 설정
-		/* $(document).ready(function() {
+/* 		// 기본으로 체크되어있는 값 테두리 설정
+		$(document).ready(function() {
 			if($('input[type=checkbox]').is(':checked')){
-				$(this).parent().parent().css('border', '4px solid #697fba');
+				var chk = $('input[type=checkbox]').is(':checked');
+				//chk.parent().parent().css('border', '4px solid #697fba');
+				console.log(chk);
 			}
 		}); */
 
