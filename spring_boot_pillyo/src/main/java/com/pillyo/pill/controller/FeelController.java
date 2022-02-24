@@ -48,7 +48,7 @@ public class FeelController {
 	@RequestMapping("/deleteFeel/{feelNo}")
 	public String deleteFeel(@PathVariable int feelNo) {
 		service.deleteFeel(feelNo);
-		return "redirect:/dashboard";
+		return "redirect:/healthManageView";
 	}
 	
 	// 기분 관리 수정

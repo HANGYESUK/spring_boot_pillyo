@@ -27,7 +27,7 @@ public class BodyController {
 	public String insertBody(BodyVO vo) {
 		service.insertBody(vo);
 		//return "redirect:/dashBoard3";
-		return "Main/dashboard";
+		return "redirect:/healthManageView";
 	}
 	// 체형 관리 정보 조회
 	@RequestMapping("/listAllBody")
@@ -41,7 +41,7 @@ public class BodyController {
 	public String deleteBody(@PathVariable int bodyNo) {
 		System.out.println(bodyNo);
 		service.deleteBody(bodyNo);
-		return "redirect:/dashboard";
+		return "redirect:/healthManageView";
 	}
 	//체형 관리 정보 업데이트 폼 이동
 		@RequestMapping("/updateBodyForm/{bodyNo}")
