@@ -27,8 +27,12 @@ text-decoration:none;
 
 /* 회원정보수정 */
 #updateUserBox{
- margin: 0 auto;
- width:70%;
- height: 520px;
+margin: 0 auto;
+    width: 70%;
+    height: 520px;
+    padding-top: 15px;
+    color: #3f63b5;
+    padding-left: 120px;
+ 
 	
 }

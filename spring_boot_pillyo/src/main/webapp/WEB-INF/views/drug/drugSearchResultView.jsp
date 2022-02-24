@@ -36,6 +36,11 @@
 0deg
 , #f7f9fb, #ffffff);
 }
+#search_result_container{
+background: white;
+    padding-top: 1px;
+}
+
 #search_result_container > h3{
 color: #0d3bb1;
     font-size: 24px;

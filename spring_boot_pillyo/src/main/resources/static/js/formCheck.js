@@ -185,5 +185,7 @@ window.onload = function() {
 			document.location.href='#agreement1';
 			return false;
 		}
+		/*
+		alert(form.userId.value+'('+form.userName.value +") 님의 \n 회원가입이 완료되었습니다.");*/
 	};
 };
