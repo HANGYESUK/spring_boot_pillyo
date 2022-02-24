@@ -21,7 +21,7 @@
 							<div class="outer-menu-btn"><a href="#"><h5>우리집 약관리</h5></a></div>
 							<div class="outer-menu-btn"><a href="/listAllBoard"><h5>공지사항</h5></a></div>
 							<div class="outer-menu-btn"><a href="/medicInfo"><h5>의약정보</h5></a></div>
-							<div class="outer-menu-btn"><a href="/drugShapeSearchForm"><h5>낱알검색</h5></a></div>
+							
 						</div>
                     </c:if>
                     
@@ -35,7 +35,6 @@
 							<div class="outer-menu-btn"><a href="/hmForm"><h5>우리집 약관리</h5></a></div>
 							<div class="outer-menu-btn"><a href="/listAllBoard"><h5>공지사항</h5></a></div>
 							<div class="outer-menu-btn"><a href="/medicInfo"><h5>의약정보</h5></a></div>
-							<div class="outer-menu-btn"><a href="/drugShapeSearchForm"><h5>낱알검색</h5></a></div>
 							<div class="outer-menu-btn"><a href="/logout"><h5>로그아웃</h5></a></div>
 						</div>
 					</c:if>	
