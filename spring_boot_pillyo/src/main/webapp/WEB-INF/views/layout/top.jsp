@@ -37,6 +37,10 @@
 		      text-align: center;
 			   font-size: 14px;
 }
+.profileText > a{
+    text-decoration: none;
+    color: white;
+    
 
 			}
 		</style>
@@ -57,7 +61,8 @@
 					<div class="profileText">
 						<!-- <h3>홍길동</h3>
 						<h4>나이 : 26</h4> -->
-						Pill-Yo
+						
+						<a href="/">Pill-Yo</a>
 					</div>
 				</div>
 				<div id="mainNavBox">
@@ -85,8 +90,9 @@
 								<div class="menuItem"><a href="/hmForm"><h5>우리집 약 관리</h5></a></div>
 								<div class="menuItem"><a href="/listAllBoard"><h5>공지사항</h5></a></div>
 								<div class="menuItem"><a href="/medicInfo"><h5>의약정보</h5></a></div>
-								<div class="menuItem"><a href="/logout"><h5>로그아웃</h5></a></div>
 								<div class="menuItem"><a href="/drugShapeSearchForm"><h5>낱알검색</h5></a></div>
+								<div class="menuItem"><a href="/logout"><h5>로그아웃</h5></a></div>
+								
 							</div>
 						</c:if>
 					</div>
