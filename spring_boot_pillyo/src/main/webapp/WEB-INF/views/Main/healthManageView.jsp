@@ -36,7 +36,7 @@
 						<!-- test1 -->
 					</a>
 				 </c:forEach>
-			   <a href="<c:url value = '/famInsertForm'/>">
+			   <a href="<c:url value = '/famListView'/>">
 			 		<div class="profile-Family-Icon"><p id="plus">+</p></div>
 			   </a>
 			 </div>

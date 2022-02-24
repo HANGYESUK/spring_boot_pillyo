@@ -31,65 +31,16 @@
 </head>
 <body>
 
-	<div class="container low">
-		<div class="dashboard low">
-			<div class="profile">
-				<div class="profile-Box colum">
-					<h1>Pill-Yo</h1>
-					<div class="profile-My-Box low">
-						<dvi class="proflie-Img">
-							<img src="/img/루피.jpg" class="loopy">
-						</dvi>
-						<div class="profile-Text">
-							<h3>홍길동</h3>
-							<h4>나이 : 26</h4>
-						</div>
-					</div>
-					<div class="profile-Family low">
-						
-						  <c:forEach items="${famList }" var="fam">
-						   	<a href="/dashboard2/${fam.famNo}">
-							   	<div class="profile-Family-Icon" style="text-align: center;">
-							   		<h4>${ fam.famMember}</h4>
-							   		<input type="hidden" class="prInfo" value="☌">
-								</div>
-								<!-- test1 -->
-							</a>
-						  </c:forEach>
-
-					</div>
-				</div>
-				<div class="btn-Container colum">
-					<div class="btn low"><h4>공지사항</h4></div>
-					<div class="btn low"><h4>약국찾기</h4></div>
-					<div class="btn low"><h4>맞춤추천</h4></div>
-					<div class="btn low"><h4>복용하기</h4></div>
-					<div class="btn low"><h4>마이페이지</h4></div>
-					<div class="btn low"><h4>로그아웃</h4></div>
-				</div>
-			</div>
-			<div class="main-Content-Container">
-				<div class="main-Content-Header colum">
-					<nav id="main-navigation">
-						<div class="pull-right fix low">
-							<div class="outer-menu">
-								<div class="outer-menu-btn"><a href="/"><h5>HOME</h5></a></div>
-								<div class="outer-menu-btn"><a href="#"><h5>복용관리</h5></a></div>
-								<div class="outer-menu-btn"><a href="#"><h5>재고관리</h5></a></div>
-								<div class="outer-menu-btn"><a href="#"><h5>가족관리</h5></a></div>
-								<div class="outer-menu-btn"><a href="#"><h5>건강관리</h5></a></div>
-							</div>
-				  
-							<div class="search-bar">
-								<form>
-									<input type="text" class="input-search" placeholder="약에 대한 정보를 얻고 싶으시면 이곳에 입력해주세요">
-									<input type="submit" class="input-search-submit" value="☌">
-								</form>
-							</div>
-						</div>
-					</nav>
-				</div>
-
+	<div id="wrap">
+			<!-- TOP -->
+			<jsp:include page="/WEB-INF/views/layout/top.jsp" flush='true' />
+			<div id="navMargin"></div>
+			
+			<section id="section" class="calum">
+			<h2>가족관리</h2>
+			<hr>
+			
+			
 				<div class="main-Content-Body low">
 
 					<div class="basket-Item-Container low">
@@ -128,64 +79,13 @@
 					
 
 				</div>
-
-
-			</div>
+			 
+			 </section>
+			 <!-- BOTTOM  -->
+			<jsp:include page="/WEB-INF/views/layout/bottom.jsp" flush='true' />
 		</div>
-	</div>
 
-    <script>
-    
-			let profileFamIcon = document.getElementsByClassName('profile-Family-Icon')
-		    function go() {
-		        console.log(this.fam.famNo)
-		    }
-		        	
-        	
-        	$.ajax({
-                url:"<c:url value='/product/deleteCart'/>",
-                type:"post",
-                data:{prdNo : prdNo },
-                success:function (result) {
-                	console.log(result)
-                    if(result == 0) {
-           
-                    	 let mainBtnX = $(".main-X");
-                         let semiBtn = $(".semi-btn");
-                         let basketItem = $(".basket-Item")[0];
 
-                         $(clickElement).parent().parent().remove()
-                         
-                         let amount = $('.amount').length;
-                         console.log("amount : " + amount);
-                         let value = [amount]
-                         let total = 0;
-
-                         for(let i=0; i<amount; i++) {
-                            value[i] = + parseInt($('.amount').eq(i).text());
-                         }
-                         
-                        /*  let fullPrice =  $('.amount').val(); */
-                        for(let i=0; i<amount; i++) {
-                            total += value[i]
-                         }
-                        	$('#prdPrice').html(total + "원")
-                         $('#totalPrice').html((total -5000 +2500) + "원")
-                         console.log("total: " + total)
-                         
-                         
-                    }
-                },
-                error:function() {
-                    alert("오류가 발생했습니다.")
-                }
-            })
-       }
-        	
-        	
-
-		
-		
-    </script>
+  
 </body>
 </html>
