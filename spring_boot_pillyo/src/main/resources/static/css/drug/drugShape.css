@@ -1,5 +1,5 @@
 /* drug.css */
- a{
+ .drugShapeBox > a{
  	text-decoration: none;
     color: #e75500;
  }
