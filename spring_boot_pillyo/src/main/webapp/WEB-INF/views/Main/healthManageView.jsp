@@ -98,7 +98,9 @@
 										<h2>기록일 : ${body.bodyRecordDate}</h2>
 									</div>
 									<button value="${body.bodyNo}" class="moreBtn low"  onclick="toggle(this)">더보기</button>
-									<a href="javascript:deleteCheck();"><button class="delBtn low">삭제</button></a>
+									<a href="javascript:deleteBodyCheck(${body.bodyNo});"><button class="delBtn low">삭제</button></a>
+										
+									
 
 							</div>
 							<div class="health-Content low border">
@@ -127,14 +129,7 @@
 							</div>
 								<a href="<c:url value='/updateBodyForm/${body.bodyNo}'/>"><button class="updateBtn btn low">수정</button></a>
 							
-							<script type="text/javascript">
-								function deleteCheck(){
-									var answer = confirm("선택한 체형 정보를 삭제하시겠습니까?");
-									if(answer == true){
-										location.href="<c:url value='/deleteBody/${body.bodyNo}' />";
-									}
-								}
-							</script><br>
+							<br>
 		 		 
 					 		 <script>
 						        height.push(${body.height})
@@ -145,6 +140,15 @@
 					 		</script>
 						</div>
 						</c:forEach>
+							<script type="text/javascript">
+								function deleteBodyCheck(no){
+									var answer = confirm("선택한 체형 정보를 삭제하시겠습니까?");
+									if(answer == true){
+										location.href="<c:url value='/deleteBody/"+no+ "' />";
+									}
+								}
+								
+							</script>	
 					</div>
 				</div>
 
@@ -176,8 +180,8 @@
 										<h2>기록일 : ${pressure.pressureRecordDate}</h2>
 									</div>
 									<button value="1" class="moreBtn low"  onclick="toggle(this)">더보기</button>
-									<a href="javascript:deleteCheck();"><button class="delBtn low">삭제</button></a>
-
+									<a href="javascript:deletePressureCheck(${pressure.pressureNo});"><button class="delBtn low">삭제</button></a>
+										
 							</div>
 							<div class="health-Content low border">
 								<div class="health-Box1 low">
@@ -215,15 +219,15 @@
 				 		
 						</div>
 						</c:forEach>
-						
 							<script type="text/javascript">
-								function deleteCheck(){
-									var answer = confirm("선택한 혈압 정보를 삭제하시겠습니까?");
-									if(answer == true){
-										location.href="<c:url value='/deleteBody/${body.bodyNo}' />";
+									function deletePressureCheck(no){
+										var answer = confirm("선택한 혈압 정보를 삭제하시겠습니까?");
+										if(answer == true){
+											location.href="<c:url value='/deletePressure/"+no+ "' />";
+										}
 									}
-								}
 							</script>
+							
 					</div>
 				</div>
 					
@@ -233,7 +237,7 @@
 		 		</script>
 
 			   	<a href="<c:url value='/updatePressureForm/${pressure.pressureNo}'/>">혈압 관리 정보 수정</a>
-			   	<a href="javascript:deleteCheck();">혈압 관리 정보 삭제</a><br>
+			   	<a href="javascript:deletePressureCheck(${pressure.pressureNo});">혈압 관리 정보 삭제</a><br>
 			   	
 
  				<br>
@@ -264,7 +268,7 @@
 										<h2>기록일 : ${feel.feelRecordDate}</h2>
 									</div>
 									<button value="1" class="moreBtn low"  onclick="toggle(this)">더보기</button>
-									<a href="javascript:deleteCheck();"><button class="delBtn low">삭제</button></a>
+									<a href="javascript:deleteFeelCheck(${feel.feelNo});"><button class="delBtn low">삭제</button></a>
 
 							</div>
 							<div class="health-Content low border">
@@ -290,18 +294,17 @@
 								feelScale.push(${feel.feelScale})
 						        console.log(${feel.feelRecordDate})
 					 		</script>
-					 		
-					 	<script type="text/javascript">
-							function deleteCheck(){
-								var answer = confirm("선택한 기분 정보를 삭제하시겠습니까?");
-								if(answer == true){
-									location.href="<c:url value='/deleteFeel/${feel.feelNo}' />";
-								}
-							}
-						</script>
-						
+					 	
+						</div>
 						</c:forEach>	
-				 		
+					 		<script type="text/javascript">
+								function deleteFeelCheck(no){
+									var answer = confirm("선택한 기분 정보를 삭제하시겠습니까?");
+									if(answer == true){
+										location.href="<c:url value='/deleteFeel/"+no+ "' />";
+									}
+								}
+							</script>
 						</div>
 					</div>
 
@@ -335,7 +338,9 @@
 										<h2>기록일 : ${sugar.sugarRecordDate}</h2>
 									</div>
 									<button value="1" class="moreBtn low"  onclick="toggle(this)">더보기</button>
-									<a href="javascript:deleteCheck();"><button class="delBtn low">삭제</button></a>
+									<a href="javascript:deleteSugarCheck(${sugar.sugarNo});"><button class="delBtn low">삭제</button>
+										
+									</a>
 
 							</div>
 							<div class="health-Content low border">
@@ -379,18 +384,19 @@
 					        sugarLevel.push(${sugar.sugarLevel})
 						</script>
 				 	</c:forEach>
-						
+						<script type="text/javascript">
+							function deleteSugarCheck(no){
+								console.log(no);
+								var answer = confirm("선택한 혈당 정보를 삭제하시겠습니까?");
+								if(answer == true){
+									location.href="<c:url value='/deleteSugar/"+no+ "' />";
+								}
+							}
+						</script>	
 					</div>
 				</div>
 
-			<script type="text/javascript">
-				function deleteCheck(){
-					var answer = confirm("선택한 혈당 정보를 삭제하시겠습니까?");
-					if(answer == true){
-						location.href="<c:url value='/deleteSugar/${sugar.sugarNo}' />";
-					}
-				}
-			</script>		
+				
 			
 			</section>
 	        <!-- BOTTOM  -->

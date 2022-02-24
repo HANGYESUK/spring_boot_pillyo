@@ -24,6 +24,9 @@ public class DrugInfoService {
 	@Qualifier("IDrugDAO")
 	IDrugDAO dao;
 	
+	
+		/* 약정보 API으로 받은 JSON정보를 파싱해 insert 반복문을 통해 DB에 저장 */
+	
 		public void insertDrugList(String num) throws IOException{
 			ArrayList<DrugInfoVO> drugList = new ArrayList<DrugInfoVO>(1000);  
 			
