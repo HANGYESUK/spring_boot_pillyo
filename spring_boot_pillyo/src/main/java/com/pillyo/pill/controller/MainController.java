@@ -34,14 +34,14 @@ public class MainController {
 		ArrayList<FamilyVO> famList = service.famListView(userId);
 		
 		FamilyVO famIdx = famList.get(0);
-		session.setAttribute("SFamList", famList);
-		session.getAttribute("SFamList");
+		//session.setAttribute("SFamList", famList);
+		//session.getAttribute("SFamList");
 		//session.setAttribute("famNo", famIdx.getFamNo());
-		session.getAttribute("famNo");
+		//session.getAttribute("famNo");
 	
 		model.addAttribute("famList", famList); 	// 프로필 가족 리스트
 		System.out.println(famList);
-		model.addAttribute("famIdx", famIdx);	// 메뉴 이동시 famNo 기본값으로 이용.
+		//model.addAttribute("famIdx", famIdx);	// 메뉴 이동시 famNo 기본값으로 이용.
 		return "/Main/dashboard";
 	}
 	

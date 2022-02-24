@@ -28,6 +28,7 @@
 		
 	    <link rel="stylesheet" href="/css/dose/doseAutoSearch.css" />
 	    <link rel="stylesheet" href="/css/dose/doseCalendar.css" />
+	    <link rel="stylesheet" href="/css/main/familyProfile.css" />
 	</head>
 	<body>
 		<div id="wrap">
@@ -37,6 +38,26 @@
 			<div id="navMargin"></div>
 			
 			<section id="section">
+			
+			<div class="fam-List calum">
+				 <c:forEach items="${famList }" var="fam">
+				   	<a href="<c:url value='/calendarView/${fam.famNo}'/>">
+					   	<div class="profile-Family-Icon" style="text-align: center;">
+					   		<h4>${ fam.famMember}</h4>
+					   		<input type="hidden" class="prInfo" value="☌">
+						</div>
+						<!-- test1 -->
+					</a>
+				 </c:forEach>
+			   <a href="<c:url value = '/famListView'/>">
+			 		<div class="profile-Family-Icon"><p id="plus">+</p></div>
+			   </a>
+			 </div>
+
+			
+			<h3>${famMember} 님의 건강관리 입니다.</h3><br><br>
+			
+			
 				<div id="doseBox">
 					<div id="calendarBox">
 						<div id='calendar'></div>
