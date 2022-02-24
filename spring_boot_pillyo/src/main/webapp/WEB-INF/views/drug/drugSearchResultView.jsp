@@ -105,7 +105,7 @@ font-size: 20px;
 					</c:forEach>
 					
 				</div>
-				<div id="more-Btn" class="low" onclick="more()"><h3>더보기</h3></div><br>
+				<div id="more-Btn" class="low" onclick="more()" style="cursor: pointer"><h3>더보기</h3></div><br>
 			</div>
 			   </c:otherwise> 
 			</c:choose>

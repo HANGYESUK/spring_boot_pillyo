@@ -29,6 +29,7 @@
 	    <link rel="stylesheet" href="/css/dose/doseAutoSearch.css" />
 	    <link rel="stylesheet" href="/css/dose/doseCalendar.css" />
 	    <link rel="stylesheet" href="/css/main/familyProfile.css" />
+	    <link rel="stylesheet" href="<c:url value='/css/health/healthManage.css'/>" />
 	</head>
 	<body>
 		<div id="wrap">
@@ -37,8 +38,7 @@
 			<jsp:include page="/WEB-INF/views/layout/top.jsp" flush='true' />
 			<div id="navMargin"></div>
 			
-			<section id="section">
-			
+			<section id="section" class="calum">
 			<div class="fam-List calum">
 				 <c:forEach items="${famList }" var="fam">
 				   	<a href="<c:url value='/calendarView/${fam.famNo}'/>">
@@ -53,9 +53,10 @@
 			 		<div class="profile-Family-Icon"><p id="plus">+</p></div>
 			   </a>
 			 </div>
+			
 
 			
-			<h3>${famMember} 님의 건강관리 입니다.</h3><br><br>
+			<h3>${famMember} 님의 복용관리 입니다.</h3><br><br>
 			
 			
 				<div id="doseBox">

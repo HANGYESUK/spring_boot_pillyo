@@ -41,7 +41,7 @@
 			 </div>
 
 			
-			<h3>${famList[0].famMember} 님의 건강관리 입니다.</h3><br><br>
+			<h3>${famMember} 님의 건강관리 입니다.</h3><br><br>
 			
 				
 		

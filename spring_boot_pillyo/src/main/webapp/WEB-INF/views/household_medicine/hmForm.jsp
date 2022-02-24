@@ -11,64 +11,70 @@
 	<!-- 임시 css / script-->
 	<style type="text/css">
 	
-	h2{ color : black;}
-	h3{ color : black;}
+h2{ color : black;}
+h3{ color : black;}
 	
-	p{	color : black;}
+p{	color : black;}
 	
-	#UserName{
+#UserName{
 		color : #81B89A;
 	}
 	
-	.hm{
+.hm{
 		width : 95%;
 		height : 600px;
 		margin:0 auto;
 		
 	}
-	.hm_Category{
-		width : 60%;
-		height : 250px;
-		background-color : white;
-		text-align : center;
-		margin:0 auto;
+.hm_Category{
+		width: 60%;
+	    height: 250px;
+	    background-color: white;
+	    text-align: center;
+	    margin: 0 auto;
+	    border-radius: 20px;
 	}
-	.hm_List{
+.hm_List{
 		width : 60%;
 		height : 350px;
-		background-color : #B2D6C7;
 		text-align : center;
 		margin-left:15px;
 		margin:0 auto;
 	}
-	.hm_List_view{
+.hm_List_view{
 		widht : 100px;
 		height : 300px;
 		background-color : white;
 		overflow : auto;
 	}
-	table{
+table{
 		border: 1px solid #444444;
     	border-collapse: collapse;
 		color : black;
 		
 		margin:0 auto;
 	}
-	th,td{
+th,td{
 		border: 1px solid #444444;
 	}
-	#hm_ctg{
-		width : 80px;
-		height : 80px;
-		margin-left:5px;
-		margin-right:5px;
-		margin-bottom:10px;
+#hm_ctg{
+		width: 80px;
+	    height: 80px;
+	    margin-left: 5px;
+	    margin-right: 5px;
+	    margin-bottom: 10px;
+	    background-color: #eef2ff;
+	    border: none;
+	    border-radius: 50%;
+	    cursor: pointer;
 	}
-	iframe{
-	width:100%;
-	height:350px;
-	background-color : white;
-	}
+iframe{
+	width: 100%;
+    height: 350px;
+    background-color: white;
+    border-radius: 20px;
+    border: none;
+}
 	</style>
 
 </head>

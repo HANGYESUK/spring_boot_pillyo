@@ -6,7 +6,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Insert title here</title>
-		
+		<link rel="stylesheet" href="/css/layout/indexTop.css" />
 	</head>
 	<body>
 		<nav id="main-navigation">
@@ -53,7 +53,7 @@
 					<div id="searchBox" >
 						<form method="post" action="<c:url value='/drugSearch'/>">
 							<input type="text" id="drugSearchInput" name="keyWord" placeholder="약이름/효능으로 검색하세요"/>
-							<input type="submit" value="검색" />
+							<input type="submit" id="submit" value="검색" />
 						</form>
 					</div>
 				</div>
