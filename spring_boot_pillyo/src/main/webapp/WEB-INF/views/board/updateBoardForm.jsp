@@ -26,6 +26,10 @@
     width: 70px;
     border-radius: 10px;
     font-size: 15px;
+    
+    float: right;
+    margin-right: 127px;
+    
 	}
 	td > textarea{
 	    color: #3f63b5;
@@ -35,7 +39,22 @@
     border-color: aliceblue;
 
 	}
+	.button3{
+	float:right;
+	}
+	.button3:hover {
+	top:-2px;
+	border: 1px solid white;
+	background:white;
+ 	box-shadow: 2px 2px 5px #0d3bb1;
+}
+#button2:hover{
+top:-2px;
+	border: 1px solid white;
+	background:white;
 	
+ 	box-shadow: 2px 2px 5px #0d3bb1;
+}
 </style>
 
 <body>
@@ -88,7 +107,7 @@
 				</table>
 				<!-- 글쓰기 버튼 생성 -->
 				<input type="submit" id="button2" class="btn btn-primary pull-right" value="글쓰기">
-				<a href="<c:url value='/boardDetailView/${board.boardNo}'/>"><button>돌아가기</button></a>
+				<a href="<c:url value='/boardDetailView/${board.boardNo}'/>"><button class="button3">돌아가기</button></a>
 			</form>		
 		</section>
 	</div>

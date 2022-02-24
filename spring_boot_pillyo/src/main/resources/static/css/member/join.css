@@ -3,6 +3,9 @@
 #joinBox{
 	margin: 0 auto;
 	text-align: center;
+	background: #fdecec;;
+    color: #912929;
+        border-radius: 100px;
 }
 
 Table#joinTable{
@@ -21,13 +24,16 @@ Table#joinTable{
 }
 
 .agreebox{
+	padding-bottom: 5px;
 	overflow:scroll;
 	width:600px;
 	height:200px;
-	background-color:white
+	background-color:white;
+	margin-bottom: 5px;
 }
 .create{
 	padding-bottom: 20px;
+    padding-left: 95px;
 }
 #joinBtn, #cancelBtn{
 	width: 300px;
@@ -35,9 +41,50 @@ Table#joinTable{
     margin-top: 13px;
     font-size: 18px;
     font-weight: bold;
-    color: black;
     border-radius: 20px;
     overflow: hidden;
     cursor: pointer;
+    background: #b76a6a;
+    border-color: #ffe4e4;
+    color: antiquewhite;
+    border-radius: 16px;
 }
 
+
+
+.btn1{
+	
+	background: #b76a6a;
+    border-color: #ffe4e4;
+    color: antiquewhite;
+    border-radius: 5px;
+}
+
+.btn2{
+	
+	background: #b76a6a;
+    border-color: #ffe4e4;
+    color: antiquewhite;
+    border-radius: 5px;
+}
+
+
+
+h2{
+	padding-top: 25px;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+}
+
+
+label{
+	padding-right: 25px;
+}
+#section2{
+width: 93%;
+    margin: 0 auto;
+    opacity: 100%;
+    background-color: #fdecec;
+    border-radius: 100px;
+    padding-bottom: 5%;
+}

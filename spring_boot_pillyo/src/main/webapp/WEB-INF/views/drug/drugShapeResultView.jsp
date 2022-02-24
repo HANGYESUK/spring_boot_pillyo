@@ -11,6 +11,11 @@
 		<title>약리스트 API</title>
 		<link rel="stylesheet" href="<c:url value='/css/drug/drugShape.css'/>">	
 	</head>
+	<style>
+		.displayNone {
+		display:none;
+	}
+	</style>
 	<body>
 		<div id="search_result_container">
 			
@@ -26,6 +31,7 @@
 				<div id="searchResult">
 				
 					<c:forEach items="${shapeList}" var="shape" >
+						<div class="drugBox">
 							<div class="drugShapeBox">
 								<a href="<c:url value='/drugDetailView/${shape.itemSeq}'/>">
 									<img src="${shape.itemImage}" class="drugShapeImg" onerror="this.src='/img/fill_null.png'">
@@ -41,13 +47,42 @@
 									</div>
 								</a>
 							</div>
+						</div>
 					</c:forEach>
 					
 				</div>
+				
+				<div id="more-Btn" class="low" onclick="more()"><h3>더보기</h3></div><br>
+			</div>
 			   </c:otherwise> 
 			</c:choose>
 			
+		<!-- BOTTOM  -->
+		<jsp:include page="/WEB-INF/views/layout/bottom.jsp" flush='true' />
 		
+    	</div> <!-- wrap -->
+    	
+    	<script>
+	        let count = 10;
+	        let drugBox = document.getElementsByClassName("drugBox")
+	        
+	        for(let i=count; i<drugBox.length; i++) {
+	        	drugBox[i].classList.add('displayNone')
+	        }
+	        
+	        function more() {
+		        for(let i=count; i<drugBox.length; i++) {
+		        	drugBox[i].classList.remove('displayNone')
+		        	if(i >= count + 9) {
+		        		break;
+		        	}
+		        }
+		        count += 10
+	        }
+	   
+	        
+	        
+    	</script>
     	</div> <!-- searchResult_container -->
 	</body>
 </html>

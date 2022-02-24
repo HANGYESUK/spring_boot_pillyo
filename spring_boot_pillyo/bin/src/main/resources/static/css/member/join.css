@@ -1,0 +1,43 @@
+/* join.css */
+
+#joinBox{
+	margin: 0 auto;
+	text-align: center;
+}
+
+Table#joinTable{
+	margin:auto; 
+    
+}
+.col1{
+	font-weight: bold;
+}
+.col1, .col2{
+	text-align: left;
+}
+
+#emailRcv{
+	margin-left:10px;
+}
+
+.agreebox{
+	overflow:scroll;
+	width:600px;
+	height:200px;
+	background-color:white
+}
+.create{
+	padding-bottom: 20px;
+}
+#joinBtn, #cancelBtn{
+	width: 300px;
+    height: 40px;
+    margin-top: 13px;
+    font-size: 18px;
+    font-weight: bold;
+    color: black;
+    border-radius: 20px;
+    overflow: hidden;
+    cursor: pointer;
+}
+

@@ -1,8 +1,7 @@
 body {
-/* 	background: linear-gradient(196deg, rgb(176 219 246) 0%, rgb(220 233 247) 100%);
- */
-     background: #dfeefb;
- }
+	background: linear-gradient(196deg, rgb(176 219 246) 0%, rgb(220 233 247) 100%);
+}
+
 #wrap {
 	position: relative;
     width: 1373px;
@@ -20,11 +19,10 @@ body {
 	position: relative;
 	margin:0 auto;
     width: 93%;
-        height: 94px;
+    height: 105px;
     background: linear-gradient(6deg, #f1f8fe, #edf5fe);
-    /* border-bottom-right-radius: 10px;
-    border-bottom-left-radius: 10px; */
-    border-radius: 0px 0px 40px 40px
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
 }
 
 marquee {
@@ -40,9 +38,7 @@ marquee {
     width: 1257px;
     padding: 10px 0 13px 20px;
     font-size: 24px;
-        background: #a4cdff;
-        height: 9px;
-        color:darkblue;
+    background: #7cb7fe;
 }
 
 #logo {
@@ -52,22 +48,20 @@ marquee {
 
 /* --------- proflie ------------ */
 .profileBox {
-	position: absolute;
-    width: 197px;
-    height: 74px;
-    background: linear-gradient(
-139deg
-, #79b5ff, #b9e1f4);
+	position:absolute;
+	width: 260px;
+    height: 105px;
+    background: linear-gradient(139deg, #79b5ff, #b9e1f4);
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    border-radius: 0px 0px 27px 27px;
+    border-radius: 0 0 0 10px;
 }
 
 .proflieImg {
 	position:relative;
-/*     border-radius: 50%;
- */    overflow: hidden;
+    border-radius: 50%;
+    overflow: hidden;
 }
 
 .proflieImg img{
@@ -77,22 +71,18 @@ marquee {
 
 .profileText {
 	position:relative;
-	   font-size: 51px;
-    color: white;
-        font-weight: 576;
 }
 /* --------- nav bar ------------ */
 #mainNavBox {
-        position: absolute;
+    position: absolute;
     height: 100px;
-    left: 245px;
-    width: 79%;
+    left: 270px;
+    width: 80%;
 }
 
 .mainNav {
     width: 98%;
 }
-
 
 .menuBox {
     display: flex;
@@ -117,7 +107,7 @@ marquee {
     border-radius: 0 0 10px 10px;
     overflow: hidden;
     width: 100%;
-    height: 37px;
+    height: 50px;
 }
 
 .menuItem {
@@ -129,10 +119,6 @@ marquee {
     align-items: center;
     cursor:pointer;
     transition: all 0.4s;
-    padding-bottom: 0px;
-    margin-bottom: 0px
-px
-;
 }
 
 .menuItem a {
@@ -140,7 +126,7 @@ px
 }
 
 .menuItem h5 {
-	color: #2f5cc3;
+	color: #1b81ff;
 }
 
 .menuItem:hover {
@@ -154,7 +140,7 @@ px
 
 
 #navMargin {
-    margin-top: 153px;
+	margin-top:185px;
 }
 
 /* --------- search bar ------------ */
@@ -164,8 +150,8 @@ px
     padding: 7px 0 0 0;
 }
 .inputSearch {
-	/* /*
-   rgb(232, 255, 238) left;
+    display: block;
+    float: left;
     background-color: #FFFFFF;
     border: 1px solid #CCCCCC;
     border-radius: 7px 0 0 7px;
@@ -173,25 +159,12 @@ px
     height: 40px;
     padding: 0 0 0 10px;
     font-size: 12px;
-    color: #555555; */ 
-   
-    display: block;
-    float: left;
-    background-color: #FFFFFF;
-    border: none;
-        border-radius: 7px 7px 7px 7px;
-    width: 90%;
-    height: 40px;
-    padding: 0 0 0 10px;
-    font-size: 15px;
-    color: #3f63b5;
-    font-weight: 800;
-
+    color: #555555;
 }
 .inputSearch:focus { /* 占싯삼옙창 클占쏙옙占쏙옙占쏙옙 占쏙옙 占쏙옙 占쏙옙占쏙옙 */
-    border-color: white;
+    border-color: rgba(133, 196, 148, 0.8);
     outline: 0;
-    box-shadow: inset 0 1px 1px white;
+    box-shadow: inset 0 1px 1px rgba(133, 196, 148, 0.8);
 }
 
 #submitBtn { /* 占싯삼옙 占쏙옙占� */
@@ -242,4 +215,3 @@ px
 #info4 {
   line-height: 28px;
 }
-

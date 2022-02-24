@@ -39,7 +39,11 @@
     width: fit-content; /* 태그의 넓이를 500px로 */
 	margin:0 auto; /* 양쪽 여백을 위아래는 0 좌우는 자동으로 잡아주겠다! */
 	margin-top : 40px;
+	    box-shadow: 1px 0px 6px #0d3bb1;
+    height: 700px;
+    border-radius: 11px;
 	}
+	
 	
 	.displayNone {
 		display:none;
@@ -63,12 +67,13 @@
 			<jsp:include page="/WEB-INF/views/layout/top.jsp" flush='true' />
 			<div id="navMargin"></div>
 			
+			
 			<section id="section">
 			
 			
 
 	<div class="boardBody">
-	
+	<br>
 	<div class="ctgMenuBox">
 		<div class="ctgMenuItem"><a href="<c:url value='/listAllBoard'/>">알약요 소식</a></div>
 		<div class="ctgMenuItem"><a href="<c:url value='/listAllBoardQna'/>">자주 묻는 질문</a></div>

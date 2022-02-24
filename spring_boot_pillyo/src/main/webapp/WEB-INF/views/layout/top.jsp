@@ -8,22 +8,56 @@
 		<title>Insert title here</title>
 		<link rel="stylesheet" href="/css/layout/common.css" />
 	</head>
+		<style>
+			marquee{
+			    height: 22px;
+			    }
+			.submitBtn{
+				    color: #3f63b5;
+	    border: 0.3px solid white;
+    background:white;
+    border-radius: 40px 40px 40px 40px;
+    width: 60px;
+    height: 37px;
+    font-size: 17px;
+    font-weight: 600;
+    border-color: white;
+    box-shadow: 1px 1px 3px #0d3bb1;
+			}
+			.submitBtn:hover{
+			
+			background: #white;
+			border: 3px solid #F2F9FB;
+			box-shadow: 2px 2px 5px #0d3bb1;
+			}
+			
+			.inputSearch::placeholder{
+			color: #3f63b5;
+			  opacity: 1; 
+		      text-align: center;
+			   font-size: 14px;
+}
+
+			}
+		</style>
 	<body>
 		<div id="headerBox">
 			<div id="logoBox">
-				<div id="logo"><a href="/">Pill-yo</a></div>
+				<!-- <div id="logo"><a href="/">Pill-yo</a></div> -->
 				<marquee>
 					220219 새로운 약 정보 업데이트!
 				</marquee>
 			</div>
 			<div class="mainHeader">
 				<div class="profileBox">
-					<div class="proflieImg">
+					<!-- <div class="proflieImg">
 						<img src="./img/루피.jpg" class="loopy">
-					</div>
+					
+					</div> -->
 					<div class="profileText">
-						<h3>홍길동</h3>
-						<h4>나이 : 26</h4>
+						<!-- <h3>홍길동</h3>
+						<h4>나이 : 26</h4> -->
+						Pill-Yo
 					</div>
 				</div>
 				<div id="mainNavBox">
@@ -33,10 +67,12 @@
 		                    <div class="menuBox">
 								<div class="menuItem"><a href="/loginForm"><h5>로그인</h5></a></div>
 								<div class="menuItem"><a href="/dashboard"><h5>건강관리</h5></a></div>
-								<div class="menuItem"><a href="#"><h5>복용관리</h5></a></div>
+								<div class="menuItem"><a href="/calendarView"><h5>복용관리</h5></a></div>
 								<div class="menuItem"><a href="#"><h5>우리집 약 관리</h5></a></div>
 								<div class="menuItem"><a href="/listAllBoard"><h5>공지사항</h5></a></div>
 								<div class="menuItem"><a href="/medicInfo"><h5>의약정보</h5></a></div>
+								<div class="menuItem"><a href="/drugShapeSearchForm"><h5>낱알검색</h5></a></div>
+								
 							</div>
 	                    </c:if>
 	                    
@@ -45,11 +81,12 @@
 							 <div class="menuBox">
 							 	<div class="menuItem"><a href="/myPage"><h5>마이페이지</h5></a></div>
 								<div class="menuItem"><a href="/dashboard"><h5>건강관리</h5></a></div>
-								<div class="menuItem"><a href="/calendarView/{famNo}"><h5>복용관리</h5></a></div>
+								<div class="menuItem"><a href="/calendarView"><h5>복용관리</h5></a></div>
 								<div class="menuItem"><a href="/hmForm"><h5>우리집 약 관리</h5></a></div>
 								<div class="menuItem"><a href="/listAllBoard"><h5>공지사항</h5></a></div>
 								<div class="menuItem"><a href="/medicInfo"><h5>의약정보</h5></a></div>
 								<div class="menuItem"><a href="/logout"><h5>로그아웃</h5></a></div>
+								<div class="menuItem"><a href="/drugShapeSearchForm"><h5>낱알검색</h5></a></div>
 							</div>
 						</c:if>
 					</div>
@@ -57,7 +94,7 @@
 					<div class="searchBar">
 						<form method="post" action="<c:url value='/drugSearch'/>">
 							<input type="text" class="inputSearch" placeholder="약에 대한 정보를 얻고 싶으시면 이곳에 입력해주세요">
-							<input type="submit" class="submitBtn" value="☌">
+							<input type="submit" class="submitBtn" value="검색">
 						</form>
 					</div>
 				</div>

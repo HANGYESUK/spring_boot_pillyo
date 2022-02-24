@@ -8,31 +8,45 @@
 		<title>로그인 페이지</title>
 		<script src="<c:url value='/js/jquery-3.6.0.min.js'/>"></script>
 		<script src="<c:url value='/js/login.js'/>"></script>
+		<link rel="stylesheet" href="<c:url value='/css/member/loginForm.css'/>">
 	</head>
 	<body>
 		<div id="wrap">
 		
-
+			<!-- TOP -->
+		<jsp:include page="/WEB-INF/views/layout/top.jsp" flush='true' />
+			
+			<div id="navMargin"></div>
+			
+			<section id="section">
+			
 		<!--  로그인 폼  -->
-		<section>
+		<div id="loginContainer">
 	        <h1 id="title">로그인</h1>
 	        <hr>
-	        <form id="loginForm" name="loginForm">
-	          <table>
-	            <tr><th>아이디</th><td><input type="text" id="id" name="id" ></td></tr>
-	            <tr><th>비밀번호</th><td><input type="password" id="pw" name="pw"></td></tr>
-	             <tr><th></th>
-	                <td align="center" id="button"> <br>
-	                    <input type="submit" id="login_btn"value="로그인">
-	                    <input type="reset" value="취소">
-	                </td>
-	            </tr>             
-	            </table>
-	        </form>	
-	        
-	        <input type="submit" id="join_btn" value="회원가입">
-	        <input type="submit" id="ID/PW_btn" value="ID/PW찾기">
-	        
+	        <div id="loginBox">
+		        <form id="loginForm" name="loginForm">
+		          
+		          <div id="idBox"> <input type="text" id="id" name="id" placeholder="아이디"></div>
+		           <div id="pwBox"> <input type="password" id="pw" name="pw" placeholder="비밀번호"></div>
+		                  <button type="submit" id="login_btn">로그인</button>
+	        	</form>	
+       		</div>
+       		<div class="forgetMsg">
+       		 	<a href="#">아이디/비밀번호 찾기</a>  |   <a href="<c:url value='/join'/>">회원가입</a>
+       		</div>
+       		
+	     		 <div class="box">
+                   	<div class="socialLoginBox">
+                   		<h1>소셜 로그인</h1>
+                        <ul class="socialLoginList">
+                            <li><button class="kakaoLoginButton"><span>KakaoTalk ID 로그인</span></button></li>
+                            <li><button class="googleLoginButton"><span>Google ID 로그인</span></button></li>  
+                            <li><button class="naverLoginButton"><span>Naver ID 로그인</span></button></li>  
+                        </ul>
+                   	</div>
+                 </div>
+               </div>
         </section>
         
 		<!-- BOTTOM  -->

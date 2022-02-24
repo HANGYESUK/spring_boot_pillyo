@@ -16,6 +16,7 @@
 
 </head>
 
+
 <style>
 	.boardBody {
     width: fit-content; /* 태그의 넓이를 500px로 */
@@ -51,7 +52,7 @@
 			
 
 	<div class="boardBody">
-	
+	<br>
 	<div class="ctgMenuBox">
 		<div class="ctgMenuItem"><a href="<c:url value='/listAllBoard'/>">알약요 소식</a></div>
 		<div class="ctgMenuItem"><a href="<c:url value='/listAllBoardQna'/>">자주 묻는 질문</a></div>

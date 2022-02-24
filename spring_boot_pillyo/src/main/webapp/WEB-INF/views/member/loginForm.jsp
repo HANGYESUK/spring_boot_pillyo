@@ -10,32 +10,46 @@
 		<script src="<c:url value='/js/login.js'/>"></script>
 		<link rel="stylesheet" href="<c:url value='/css/member/loginForm.css'/>">
 	</head>
+	
+	<style>
+		hr{
+		background-color: #fff2f2;
+    height: 1px
+		}
+	</style>
 	<body>
 		<div id="wrap">
 		
+	<div id="section2">
 			<!-- TOP -->
 		<jsp:include page="/WEB-INF/views/layout/top.jsp" flush='true' />
 			
 			<div id="navMargin"></div>
 			
-			<section id="section">
+			<section id="section3">
 			
 		<!--  로그인 폼  -->
 		<div id="loginContainer">
+		<br>
 	        <h1 id="title">로그인</h1>
-	        <hr>
+	        <br>
+	        
+        <div id="loginTopBox">
 	        <div id="loginBox">
 		        <form id="loginForm" name="loginForm">
+		        
 		          
 		          <div id="idBox"> <input type="text" id="id" name="id" placeholder="아이디"></div>
 		           <div id="pwBox"> <input type="password" id="pw" name="pw" placeholder="비밀번호"></div>
 		                  <button type="submit" id="login_btn">로그인</button>
 	        	</form>	
-       		</div>
+       		</div><br>
        		<div class="forgetMsg">
-       		 	<a href="#">아이디/비밀번호 찾기</a>  |   <a href="<c:url value='/join'/>">회원가입</a>
-       		</div>
+       		 	<a href="#">아이디/비밀번호 찾기</a>  &nbsp;&nbsp;|&nbsp;&nbsp;   <a href="<c:url value='/join'/>">회원가입</a>
+       		</div><br><br>
+       	</div>
        		
+       	<div id="loginBottomBox">	
 	     		 <div class="box">
                    	<div class="socialLoginBox">
                    		<h1>소셜 로그인</h1>
@@ -47,8 +61,9 @@
                    	</div>
                  </div>
                </div>
+         </div>
         </section>
-        
+        </div>
 		<!-- BOTTOM  -->
 		<jsp:include page="/WEB-INF/views/layout/bottom.jsp" flush='true' />
 		

@@ -1,27 +1,138 @@
 /* drugShapeSearchForm.css */
 
-#drugShaptSearchForm table,tr,th,td{
+/* input[type=checkbox]{
+	display:none;
+} */
+
+#drugShaptSearchForm table {
+	width: 460px;	
+}
+
+#drugShaptSearchForm th, #drugShaptSearchForm td{
 	border: 1px solid black;
 }
+
+/* 모양 검색 */
+#search_shape td, #search_color td {
+	display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.textItem{
+	margin: 0 auto;
+	display: inline-block;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    line-height: 52px;
+}
+
 #drugShaptSearchForm th{
-	background-color: #81B89A;
+	background-color: #dadada;
 }
 
-input[type="checkbox"]:label{
- cursor: pointer;
-	
+#shapeAlll, #shapeEtc, #drugLineEtc{
+	line-height: 51px
 }
 
-input[type="checkbox"]:checked+label{
-border: 2px solid blue;
-	
-}
-	
-input[type="checkbox"]{
-	/* display:none; */
+.shapeBox, .typeBox, .lineBox{
+	display: inline-block;
+    height: 51px;
+    border: 1px solid black;
+    background-color: white;
+    text-align: center;
 }
 
-#shapebox{
-	display:inline;
-	border:2px solid red;
+.shapeBox {
+	width: 65px;
 }
+
+.typeBox, .lineBox{
+    width: 133px;
+}
+
+/* 색상 검색 */
+.colorBox {
+    width: 45px;
+    margin: 0 2px;
+    height: 45px;
+}
+
+#search_color td { 
+	justify-content: space-around;
+}
+
+#search_color td label {
+	border-radius: 10px;
+	border: 1px solid #b0b0b0;
+}
+
+label[for="cWhite"] {
+	background: #ffffff;
+}
+
+label[for="cYellow"] {
+	background: #ffd60b;
+}
+
+label[for="cOrange"] {
+	background: #ff8100;
+}
+
+label[for="cPink"] {
+	background: #ffb2d6;
+}
+
+label[for="cRed"] {
+	background: #ff4545;
+}
+
+label[for="cBrown"] {
+	background: #7f4a31;
+}
+
+label[for="cLightGreen"] {
+	background: #b6ea63;
+}
+
+label[for="cGreen"] {
+	background: #11972e;
+}
+
+label[for="cCyan"] {
+	background: #4fced4;
+}
+
+label[for="cBlue"] {
+	background: #3183fe;
+}
+
+label[for="cNavy"] {
+	background: #103e83;
+}
+
+label[for="cPurple"] {
+	background: #9a4cad;
+}
+
+label[for="cViolet"] {
+	background: #6b51d2;
+}
+
+label[for="cGray"] {
+	background: #b3b3b3;
+}
+
+label[for="cBlack"] {
+	background: #333333;
+}
+
+label[for="cTrans"] {
+	background: #ffffff94;
+}
+
+/* 제형, 분할선 검색 */
+/* #search_type .typeBox, #search_line .lineBox {
+	margin: 0 1px;
+} */

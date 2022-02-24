@@ -20,9 +20,11 @@
 		<script src="<c:url value='/js/searchZip.js'/>"></script>
 		<script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 		<script src="https://kit.fontawesome.com/2d323a629b.js"crossorigin="anonymous"></script>
+		
 	</head>
 	<body>
 		<div id="wrap">
+				
 				
 			<!-- TOP -->
 		<jsp:include page="/WEB-INF/views/layout/top.jsp" flush='true' />
@@ -30,7 +32,8 @@
 			<div id="navMargin"></div>
 			
 		<!--  로그인 폼  -->
-			<section id="section">
+			<section id="section2">
+		
 		
 
 			
@@ -38,7 +41,7 @@
 				<div id="joinBox">
 					<h2 align="center">회원가입</h2>
 					<br>
-					<hr>
+					<br>
 					<form name="joinForm" id="joinForm" method="post" action="<c:url value='/userJoin'/>">
 						<div class="container">
 							<div class="insert">

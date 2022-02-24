@@ -49,12 +49,10 @@
 		
 		.BoxAll{
 			    height: 654px;
-   				    background: linear-gradient(
-186deg
-, #bcdff6, #cde3f7);
+   				       background: #dfeefb;
 		}
 		.h3{
-		background: #bcdff6;
+		    background: #dfeefb;
 		margin-bottom: 0px;
 		}
 		h3{
@@ -92,8 +90,9 @@
 		
 		<div id="navMargin"></div>
 		
-		<section id="section">
-			<div style="    background: #bcdff6;">
+		<section id="section2">
+			<div style="    background: #dfeefb;
+			">
 				<div class="h3">
 					<h3>약 정보 상세 조회</h3>
 				</div>
