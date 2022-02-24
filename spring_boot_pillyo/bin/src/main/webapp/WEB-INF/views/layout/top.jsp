@@ -6,62 +6,62 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Insert title here</title>
-		
+		<link rel="stylesheet" href="/css/layout/common.css" />
 	</head>
 	<body>
-		<nav id="main-navigation">
-				<div class="pull-right fix low">
-				
-				  <!-- 로그인 하지 않은 경우 보여줄 메뉴 항목  -->
-               		<c:if test="${empty sessionScope.sid }">
-	                    <div class="outer-menu">
-							<div class="outer-menu-btn"><a href="/loginForm"><h5>로그인</h5></a></div>
-							<div class="outer-menu-btn"><a href="#"><h5>복용관리</h5></a></div>
-							<div class="outer-menu-btn"><a href="#"><h5>재고관리</h5></a></div>
-							<div class="outer-menu-btn"><a href="#"><h5>가족관리</h5></a></div>
-							<div class="outer-menu-btn"><a href="#"><h5>건강관리</h5></a></div>
-						</div>
-                    </c:if>
-                    
-                    			
-				<!-- 로그인 성공한 경우 보여줄 메뉴 항목  -->	
-					<c:if test="${not empty sessionScope.sid}">
-						 <div class="outer-menu">
-						 	<div class="outer-menu-btn"><a href="/dashboard"><h5>${sessionScope.sid}</h5></a></div>
-							<div class="outer-menu-btn"><a href="/dashboard"><h5>HOME</h5></a></div>
-							<div class="outer-menu-btn"><a href="#"><h5>복용관리</h5></a></div>
-							<div class="outer-menu-btn"><a href="#"><h5>재고관리</h5></a></div>
-							<div class="outer-menu-btn"><a href="#"><h5>가족관리</h5></a></div>
-							<div class="outer-menu-btn"><a href="/logout"><h5>로그아웃</h5></a></div>
-						</div>
-					</c:if>	
-					
-		
-					<div id="searchBox" >
+		<div id="headerBox">
+			<div id="logoBox">
+				<div id="logo"><a href="/">Pill-yo</a></div>
+				<marquee>
+					220219 새로운 약 정보 업데이트!
+				</marquee>
+			</div>
+			<div class="mainHeader">
+				<div class="profileBox">
+					<div class="proflieImg">
+						<img src="./img/루피.jpg" class="loopy">
+					</div>
+					<div class="profileText">
+						<h3>홍길동</h3>
+						<h4>나이 : 26</h4>
+					</div>
+				</div>
+				<div id="mainNavBox">
+					<div class="mainNav">
+						<!-- 로그인 하지 않은 경우 보여줄 메뉴 항목  -->
+	               		<c:if test="${empty sessionScope.sid }">
+		                    <div class="menuBox">
+								<div class="menuItem"><a href="/loginForm"><h5>로그인</h5></a></div>
+								<div class="menuItem"><a href="/dashboard"><h5>건강관리</h5></a></div>
+								<div class="menuItem"><a href="#"><h5>복용관리</h5></a></div>
+								<div class="menuItem"><a href="#"><h5>우리집 약 관리</h5></a></div>
+								<div class="menuItem"><a href="/listAllBoard"><h5>공지사항</h5></a></div>
+								<div class="menuItem"><a href="/medicInfo"><h5>의약정보</h5></a></div>
+							</div>
+	                    </c:if>
+	                    
+						<!-- 로그인 성공한 경우 보여줄 메뉴 항목  -->	
+						<c:if test="${not empty sessionScope.sid}">
+							 <div class="menuBox">
+							 	<div class="menuItem"><a href="/myPage"><h5>마이페이지</h5></a></div>
+								<div class="menuItem"><a href="/dashboard"><h5>건강관리</h5></a></div>
+								<div class="menuItem"><a href="/calendarView/{famNo}"><h5>복용관리</h5></a></div>
+								<div class="menuItem"><a href="/hmForm"><h5>우리집 약 관리</h5></a></div>
+								<div class="menuItem"><a href="/listAllBoard"><h5>공지사항</h5></a></div>
+								<div class="menuItem"><a href="/medicInfo"><h5>의약정보</h5></a></div>
+								<div class="menuItem"><a href="/logout"><h5>로그아웃</h5></a></div>
+							</div>
+						</c:if>
+					</div>
+		  
+					<div class="searchBar">
 						<form method="post" action="<c:url value='/drugSearch'/>">
-							<input type="text" id="drugSearchInput" name="keyWord" placeholder="약이름/효능으로 검색하세요"/>
-							<input type="submit" value="검색" />
+							<input type="text" class="inputSearch" placeholder="약에 대한 정보를 얻고 싶으시면 이곳에 입력해주세요">
+							<input type="submit" class="submitBtn" value="☌">
 						</form>
 					</div>
 				</div>
-		</nav>
-		
-		<script>
-	        let drugSearchInput = document.getElementById('drugSearchInput')
-	
-	        let searchBox = document.getElementById('searchBox')
-	
-	        searchBox.addEventListener("submit", (e)=>{
-	            if(drugSearchInput.value == "") {
-	                e.preventDefault()
-	                alert("검색어를 입력해주세요")
-	                console.log("검색어를 입력해주세요")
-	            }
-	            else {
-	            	console.log("검색")
-	            }
-	        })
-		</script>
-		
+			</div>
+		</div>
 	</body>
 </html>

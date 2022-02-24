@@ -8,8 +8,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-		<script src="<c:url value='/js/jquery-3.6.0.min.js'/>"></script>
 		<link href="<c:url value='/css/board/board.css'/>" rel="stylesheet" type="text/css">	
+		<script src="<c:url value='/js/jquery-3.6.0.min.js'/>"></script>
 
 
 <title>Insert title here</title>
@@ -51,47 +51,36 @@
 			
 
 	<div class="boardBody">
-	<br>
+	
 	<div class="ctgMenuBox">
 		<div class="ctgMenuItem"><a href="<c:url value='/listAllBoard'/>">알약요 소식</a></div>
 		<div class="ctgMenuItem"><a href="<c:url value='/listAllBoardQna'/>">자주 묻는 질문</a></div>
+		</div>
+	<div class="ctgMenuItemtotal">
+		<div class="ctgMenuItemSub">
+		<a href="<c:url value='/listAllBoardQna2'/>">주문/결제</a></div>
+		<div class="ctgMenuItemSub">
+		<a href="<c:url value='/listAllBoardQna3'/>">교환/반품</a></div>
+		<div class="ctgMenuItemSub">
+		<a href="<c:url value='/listAllBoardQna4'/>">제품</a></div>
+		<div class="ctgMenuItemSub">
+		<a href="<c:url value='/listAllBoardQna5'/>">회원</a>
+	</div>	
 	</div>
-	<br><br>
-		<table class="table table-striped">
+		<table class="table table-striped" >
 			<thead>
 				<tr>
 					<th style="width:90px;">분류</th>
 					<th style="width:470px;">제목</th>
 					<!-- <th style="background-color: #eeeeee; text-align: center; width:100px;">작성자</th> -->
 					<th style="width:100px;">작성일</th>
-				</tr>
+ 				</tr>
 			</thead>
 			<tbody>
-			
-			 
-			 <%-- 변수 하나 생성 (ctgName)
-			 
-					c : if 사용 => boardNo == 0일때
-					ctgName = 소실
-					else if boardNo == 1일때
-					ctgName == 카드뉴스		
-					
-					<%= =%> --%>
-					
-				<%-- <c:set var="boardNo" value="소식">
-					
-				</c:set> --%>
-				
-				<%-- <c:if test="${board.boardCtgNo eq '0'}">
-			 	소식
-				</c:if>  --%>
-			
-			<c:forEach items="${boardList}" var="board">
-			    
+			<c:forEach items="${boardListQna}" var="board">
 			  <tr class="drugBox">
 					<td>
-						<c:if test="${board.boardCtgNo eq '0'}">소식</c:if>
-						<c:if test="${board.boardCtgNo eq '1'}">카드뉴스</c:if>
+						<c:if test="${board.boardCtgNo eq '5'}">회원</c:if>
 					</td> 
 					<!-- each는 반복 리스트에서 board가 없어질때 까지 반복 한다는 뜻  -->
 					<td><a href="<c:url value='/boardDetailView/${board.boardNo}'/>">${board.boardTitle }</a></td>
@@ -105,7 +94,7 @@
 		
 		<a href="<c:url value = '/boardForm'/>"><button>글쓰기</button></a>
 		
-		<div id="more-Btn" class="low" onclick="more()"><h3>더보기</h3>
+	<div id="more-Btn" class="low" onclick="more()"><h3>더보기</h3>
 		
 		
 		
@@ -133,7 +122,6 @@
 			        }
 			</script>
 		
-	
 		</div>
 		<br><br><br><br><br><br><br><br><br><br>
 		

@@ -6,8 +6,6 @@
 	margin-top : 40px;
 	}
 	.ctgMenuItem {
-	border-radius: 28px 28px 0px 10px;
-        font-size: 18px;
     width: 100%;
     height: 100%;
     display: flex;
@@ -19,9 +17,8 @@
    }
    .ctgMenuItem a {
 	text-decoration: none;
-	color: #3f63b5;
+	color: #1b81ff;
 	}
-	
    .ctgMenuItemSub {
     width: 100%;
     height: 45px;
@@ -36,11 +33,11 @@
    }
    .ctgMenuItemSub a {
 	text-decoration: none;
-	color: #3f63b5;
+	color: #1b81ff;
 }
    
 .ctgMenuItem:hover {
-    background-color: rgb(145 204 255);
+    background-color: rgb(94, 150, 255);
     color: white;
 }
 
@@ -48,7 +45,7 @@
     color: white;
 }
 .ctgMenuItemSub:hover {
-    background-color: rgb(145 204 255);
+    background-color: rgb(94, 150, 255);
     color: white;
 }
 
@@ -75,7 +72,7 @@
 /* 	    margin-top: 15px;
 
  */
- text-align: center;  width:880px;
+ text-align: center; border: 1px solid #d6efff; width:880px;
  
  }
  
@@ -98,7 +95,6 @@ td {
 
 td > a {
 	text-decoration: none;
-	color:#3f63b5;
 }
 
 button {
@@ -107,21 +103,11 @@ button {
     border-color: #f2f9fb;
     height: 38px;
     width: 86px;
-    border-radius: 10px;
+    border-radius: 20px;
     font-size: 15px;
-    border-bottom-color: white;
-    
-    
-    
-}
-button:hover {
-	top:-2px;
-	border: 1px solid white;
-	background:white;
- 	box-shadow: 2px 2px 5px #0d3bb1;
+    border-bottom-color: white
 }
 	th{
-	background-color:#dcf2ff;
-	 text-align: center; width:90px;     font-size: 17px;
+	background-color: #b2dcf6; text-align: center; width:90px;     font-size: 20px;
     color: #3f63b5;
 	}

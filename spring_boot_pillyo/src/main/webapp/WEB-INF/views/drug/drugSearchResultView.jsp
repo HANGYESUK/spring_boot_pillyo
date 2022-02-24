@@ -52,9 +52,7 @@ font-size: 20px;
 	#more-Btn > h3{
 	color: #0d3bb1;
     font-size: 35px;
-    background: linear-gradient(
-176deg
-, #f7f9fb, #ecf2ff);
+    
     width: 200px;
     height: 50px;
     /* margin-top: 14px; */
@@ -62,6 +60,7 @@ font-size: 20px;
     border-radius: 25px;
 	}
 	</style>
+	
 	
 	<body>
 	

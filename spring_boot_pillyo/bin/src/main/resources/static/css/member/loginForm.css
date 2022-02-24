@@ -5,33 +5,10 @@
     padding: 0;
     list-style: none;
     text-align: center;
-    background: #fdecec;
-    height: 700px;
-    padding-top: 30px;
-        position: relative;
-    top: 32px;
 }
 #title{
 	text-align: center;
-	    margin-top: 0px;
-    color: #ca6464
 }
-
- #loginTopBox{
-	height: 270px;
-    background: white;
-    width: 400px;
-    display: inline-block;
-    border-radius: 82px 82px 0px 0px;
-}
-/*
-#loginBottomBox{
-	background: #ffe4e4;
-    height: 300px;
-    display: inline-block;
-    width: 400px;
-    border-radius: 0px 0px 82px 82px;
-} */
 
 button:hover{
     opacity: 0.8;
@@ -49,18 +26,14 @@ button:hover{
     height: 40px;
     border: solid 1px black;
     background: white;
-    border-radius: 15px;
+    border-radius: 20px;
     overflow: hidden;
 }
 #idBox{
     margin-top: 25px;
-    border-color: #e8f0fe;
-    background: #e8f0fe;
 }
 #pwBox{
     margin-top: 13px;
-    border-color: #e8f0fe;
-    background: #e8f0fe;
 }
 #loginBox input{
     border:none;
@@ -70,28 +43,19 @@ button:hover{
     margin-left: 2px;
     height:30px;
 }
-.socialLoginBox > h1{
-    color: #c96262;
-    margin-bottom: -6px;
-    }
-    
+
 
 #login_btn{
     width: 300px;
     height: 40px;
     margin-top: 13px;
     font-size: 18px;
-   /*  font-weight: bold; */
-    background: #fff3f3;
-    color: #c65b5b;
-    border-radius: 15px;
-    border-color: #ffffff;
+    font-weight: bold;
+    background: #338adc;
+    color: black;
+    border-radius: 20px;
     overflow: hidden;
     cursor: pointer;
-}
-#login_btn:hover{
-	color:#c65b5b;
-	background: #ffffff;
 }
 .forgetMsg{
     display: flex;
@@ -99,21 +63,12 @@ button:hover{
     justify-content: center;
     padding:0px;
 }
-.forgetMsg > a{
-	text-decoration: none;
-    color: #c35151;
-}
 
 .socialLoginBox{
     display: flex;
     flex-direction: column;
     align-items: center;
     padding:0px;
-    background: #fdcbcb;
-    height: 300px;
-    display: inline-block;
-    width: 400px;
-    border-radius: 0px 0px 82px 82px;
 }
 
 .socialLoginBox h2{
@@ -121,7 +76,7 @@ button:hover{
 }
 
 .socialLoginList{
-    padding: 1px 0 0 0;
+    padding: 25px 0 0 0;
     list-style: none;
     display: flex;
     flex-direction: column;
@@ -138,31 +93,27 @@ button:hover{
     color: black;
 }
 .googleLoginButton{
-    background-color: #ff7368;;
+    background-color: #ff3e30;
     color: white;
 }
 .naverLoginButton{
-    background-color: #72dd4f;
+    background-color: #2db400;
     color: white;
 }
 
 .socialLoginList li button{
-   	width: 299px;
-    height: 47px;
+    width: 300px;
+    height: 40px;
     border-radius: 20px;
     border: none;
-    text-align: center;
+    text-align: left;
     cursor: pointer;
-    margin-top: 7px;
-    padding-top: 0px;
-    padding-right: 23px;
 }
 
 .socialLoginList li button span{
     padding-left: 20px;
-    line-height: 49px;
+    line-height: 56px;
     font-size: 18px;
-    color: white;
 }
 #forgetMsg{
     font-size: 14px;
@@ -172,20 +123,4 @@ button:hover{
 #forgetMsg a{
     text-decoration: none;
     color: black;
-}
-#section2{
-background: #fdecec;
-    border-radius: 80px;
-}
-
-#section3{
-	
-	position: relative;
-    width: 93%;
-    margin: 0 auto;
-    opacity: 100%;
-   
-   
-    border-radius: 10px;
-    padding-bottom: 5%;
 }

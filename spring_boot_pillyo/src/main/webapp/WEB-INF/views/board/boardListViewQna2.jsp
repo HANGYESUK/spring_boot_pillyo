@@ -52,6 +52,7 @@
 			
 
 	<div class="boardBody">
+	<br>
 	
 	<div class="ctgMenuBox">
 		<div class="ctgMenuItem"><a href="<c:url value='/listAllBoard'/>">알약요 소식</a></div>
