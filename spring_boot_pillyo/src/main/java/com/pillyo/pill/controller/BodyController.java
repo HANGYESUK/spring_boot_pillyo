@@ -41,7 +41,7 @@ public class BodyController {
 	public String deleteBody(@PathVariable int bodyNo) {
 		System.out.println(bodyNo);
 		service.deleteBody(bodyNo);
-		return "redirect:../listAllBody";
+		return "redirect:/dashboard";
 	}
 	//체형 관리 정보 업데이트 폼 이동
 		@RequestMapping("/updateBodyForm/{bodyNo}")

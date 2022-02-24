@@ -64,6 +64,13 @@ font-size: 20px;
 	</style>
 	
 	<body>
+	
+	<div id="wrap">
+			<!-- TOP -->
+			<jsp:include page="/WEB-INF/views/layout/top.jsp" flush='true' />
+			<div id="navMargin"></div>
+			
+	<section id="section">
 		<div id="search_result_container">
 			
 				<h3>약 검색 결과</h3>
@@ -82,7 +89,7 @@ font-size: 20px;
 					<c:forEach items="${druglist}" var="drug" varStatus="status">
 							
 							<div class="drugBox">
-								<img src="${drug.itemImage}" >
+								<img src="${drug.itemImage}" onerror="this.src='/img/fill_null.png'">
 								<div class="drugBoxText">
 								<a class="itemName" href="<c:url value='/drugDetailView/${drug.drugInfoNo}'/>">${drug.itemName}</a><br>
 								<a class="shapeInfo">${drug.entpName}</a>
@@ -128,6 +135,6 @@ font-size: 20px;
     	</script>
 			
 		
-    	</div> <!-- searchResult_container -->
+    	</div> <!— searchResult_container —>
 	</body>
 </html>

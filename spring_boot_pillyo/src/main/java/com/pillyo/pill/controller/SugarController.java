@@ -41,7 +41,7 @@ public class SugarController {
 	public String deleteSugar(@PathVariable int sugarNo) {
 		System.out.println(sugarNo);
 		service.deleteSugar(sugarNo);
-		return "redirect:../listAllSugar";
+		return "redirect:/dashboard";
 	}
 	//혈당 업데이트 폼 이동
 	@RequestMapping("/updateSugarForm/{sugarNo}")

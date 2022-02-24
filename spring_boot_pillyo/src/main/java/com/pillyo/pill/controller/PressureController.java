@@ -41,7 +41,7 @@ public class PressureController {
 	public String deletePressure(@PathVariable int pressureNo) {
 		System.out.println(pressureNo);
 		service.deletePressure(pressureNo);
-		return "redirect:../listAllPressure";
+		return "redirect:/dashboard";
 	}
 	//혈압 업데이트 폼 이동
 	@RequestMapping("/updatePressureForm/{pressureNo}")

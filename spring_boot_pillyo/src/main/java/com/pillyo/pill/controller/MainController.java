@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.pillyo.pill.model.FamilyVO;
 import com.pillyo.pill.service.FamilyService;
@@ -33,7 +34,9 @@ public class MainController {
 		ArrayList<FamilyVO> famList = service.famListView(userId);
 		
 		FamilyVO famIdx = famList.get(0);
-		session.setAttribute("famNo", famIdx.getFamNo());
+		session.setAttribute("SFamList", famList);
+		session.getAttribute("SFamList");
+		//session.setAttribute("famNo", famIdx.getFamNo());
 		session.getAttribute("famNo");
 	
 		model.addAttribute("famList", famList); 	// 프로필 가족 리스트
@@ -49,5 +52,20 @@ public class MainController {
 		ArrayList<FamilyVO> famList = service.famListView(userId);
 		model.addAttribute("famList", famList);		
 		return "/Main/dashboard_famtest"; // dashboard_famtest 페이지 뛰우기 
+	}
+	
+	//세션 테스트
+	@RequestMapping("/sessionTest")
+	public String sessionTest(RedirectAttributes redirect, Model model, HttpSession session) {
+		
+		String userId = (String)session.getAttribute("sid");
+		ArrayList<FamilyVO> famList = service.famListView(userId);
+		
+		session.setAttribute("SFamList", famList);
+		session.getAttribute("SFamList");
+		
+		
+		
+		return "redirect:/member/sessionTest";
 	}
 }

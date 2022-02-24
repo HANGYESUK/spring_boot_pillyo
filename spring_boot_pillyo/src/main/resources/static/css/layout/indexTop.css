@@ -1,0 +1,21 @@
+#searchBox {
+	width: 100%;
+    margin-top: 10px;
+}
+
+#searchBox form {
+	width: 100%;
+}
+
+#drugSearchInput {
+	width: 90%;
+    padding: 5px;
+    height: 40px;
+}
+
+#search-Btn {
+	width: 5%;
+    padding: 5px;
+    height: 50px;
+    cursor: pointer;
+}
