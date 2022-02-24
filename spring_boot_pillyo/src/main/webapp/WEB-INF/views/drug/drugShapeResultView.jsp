@@ -12,11 +12,44 @@
 		<link rel="stylesheet" href="<c:url value='/css/drug/drugShape.css'/>">	
 	</head>
 	<style>
-		.displayNone {
+		#search_result_container{
+		background: white;
+		    padding-top: 1px;
+		}
+		
+		#search_result_container > h3{
+			color: #e75500;
+		    font-size: 24px;
+		}
+		
+		#search_result_container > small{
+			font-size: 20px;
+		    color: #e75500;
+		}
+.displayNone {
 		display:none;
 	}
+	
+	#more-Btn > h3{
+	color: #e75500;
+    font-size: 35px;
+    
+    width: 200px;
+    height: 50px;
+    /* margin-top: 14px; */
+    padding-top: 10px;
+    border-radius: 25px;
+	}
+	
 	</style>
 	<body>
+		<div id="wrap">
+			<!-- TOP -->
+			<jsp:include page="/WEB-INF/views/layout/top.jsp" flush='true' />
+			<div id="navMargin"></div>
+			
+	<section id="section">
+	
 		<div id="search_result_container">
 			
 				<h3>약모양 검색 결과</h3>
@@ -56,6 +89,9 @@
 			</div>
 			   </c:otherwise> 
 			</c:choose>
+			
+			
+			</section>
 			
 		<!-- BOTTOM  -->
 		<jsp:include page="/WEB-INF/views/layout/bottom.jsp" flush='true' />

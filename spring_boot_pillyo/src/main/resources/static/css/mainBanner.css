@@ -108,7 +108,7 @@ article{
   transform: translatey(-50%);
   background-color: white;
   opacity: 0.5;
-  padding: 1px 13px;
+  padding: 1px 0px;
   border-radius: 50px;
   font-size: 25px;
 }
