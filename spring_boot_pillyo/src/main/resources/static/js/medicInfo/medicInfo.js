@@ -18,16 +18,16 @@
 
 $(document).ready(function(){
   
-  $('#GMIbox > a').click(function(){
+  $('#GMIbox > h2').click(function(){
     $(this).next($('div')).slideToggle('fast');
   })
   
-  $('#HTTMbox > a').click(function(e){
+  $('#HTTMbox > h2').click(function(e){
     e.stopPropagation();
     $(this).next($('div')).slideToggle('fast');
   })
   
-  $('#MFEUbox > a').click(function(e){
+  $('#MFEUbox > h2').click(function(e){
     e.stopPropagation();
     $(this).next($('div')).slideToggle('fast');
   })

@@ -1,3 +1,7 @@
+#section {
+	background: #f2f2f2;
+}
+
 ul li{
 	list-style: none;
 }
@@ -36,6 +40,12 @@ ul li{
 .infoBox {
     padding: 10px;
     font-size: 16px;
+    color: #1c1c1c;
+}
+
+.infoBox h2 {
+	font-size: 18px;
+    margin: 0 12px;
 }
 
 .info {
@@ -81,6 +91,43 @@ ul li{
     border-radius: 10px;
 }
 
+#howToTakeMBox > ul > li:nth-child(5) > ul li > p {
+	margin-bottom: 25px;
+}
+
 #howToTakeMBox > ul > li:nth-child(5) > ul {
 	margin-bottom: 20px;
+}
+
+#howToTakeMBox > ul > li:nth-child(5) > ul > li > ul {
+	background: #aab6c7;
+}
+
+#howToTakeMBox > ul > li:nth-child(5) > ul > li > ul:nth-child(1) > li {
+	background: #8c9cb4;
+}
+
+#howToTakeMBox > ul > li:nth-child(5) > ul > li > ul > li:nth-child(1) * {
+	background: #8c9cb4;
+}
+
+#howToTakeMBox > ul > li:nth-child(5) > ul > li > ul > li {
+	margin-bottom: 13px;
+}
+
+#howToTakeMBox > ul > li:nth-child(5) > ul > li > ul > li * {
+	background: #8c9cb4;
+}
+
+#howToTakeMBox > ul > li:nth-child(5) > ul > li > ul > li span {
+    padding: 10px 10px 10px 15px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+#howToTakeMBox > ul > li:nth-child(5) > ul > li > ul > li ul {
+	padding: 6px 0 11px 0;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    margin-bottom: 6px
 }
