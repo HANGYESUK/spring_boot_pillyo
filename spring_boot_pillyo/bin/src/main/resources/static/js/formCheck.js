@@ -5,6 +5,7 @@
 
 function formCheck(frm) {
 		  		alert('회원가입이 완료되었습니다.');
+		  		/*alert(form.userId.value+'('+form.userName.value +") 님의 \n 회원가입이 완료되었습니다.");*/
 				location.href="/";
 		    return true; 
 		  } 
@@ -185,5 +186,7 @@ window.onload = function() {
 			document.location.href='#agreement1';
 			return false;
 		}
+		
+		
 	};
 };

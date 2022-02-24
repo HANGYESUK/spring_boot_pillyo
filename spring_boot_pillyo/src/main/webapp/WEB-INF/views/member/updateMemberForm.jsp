@@ -79,6 +79,10 @@
 	border: 3px solid white;
  	box-shadow: 4px 4px 7px #0d3bb1;
 }
+
+.insert{
+    padding-left: 112px;
+}
 	</style>
 	
 	<body>

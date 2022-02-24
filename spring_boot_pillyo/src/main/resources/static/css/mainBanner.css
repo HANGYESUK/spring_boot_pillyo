@@ -38,8 +38,13 @@ a {
 
 /* 슬라이더 1 시작 */
 .slider-1 {
-  height: 400px;
+  height: 250px;
   position: relative;
+  width: 1200px;
+}
+article{
+	padding-left: 85px;
+	
 }
 
 /* 슬라이더 1 - 페이지 버튼 */
