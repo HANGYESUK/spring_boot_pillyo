@@ -40,20 +40,20 @@
 }
    
 .ctgMenuItem:hover {
-    background-color: rgb(145 204 255);
+    background-color:#cfe1f6;
     color: white;
 }
 
 .ctgMenuItem:hover a{
-    color: white;
+    color: #133e9f;
 }
 .ctgMenuItemSub:hover {
-    background-color: rgb(145 204 255);
+    background-color: #cfe1f6;
     color: white;
 }
 
 .ctgMenuItemSub:hover a{
-    color: white;
+    color: #133e9f;
 }
     
     .ctgMenuBox {
@@ -94,6 +94,7 @@ td {
 	color:#3f63b5;
 	height: 40px;
     font-size: 18px;
+    
 }
 
 td > a {
@@ -110,7 +111,7 @@ button {
     border-radius: 10px;
     font-size: 15px;
     border-bottom-color: white;
-    
+    margin-left: 14px;
     
     
 }
@@ -121,7 +122,7 @@ button:hover {
  	box-shadow: 2px 2px 5px #0d3bb1;
 }
 	th{
-	background-color:#dcf2ff;
+	background-color:#cfe2f6;
 	 text-align: center; width:90px;     font-size: 17px;
     color: #3f63b5;
 	}

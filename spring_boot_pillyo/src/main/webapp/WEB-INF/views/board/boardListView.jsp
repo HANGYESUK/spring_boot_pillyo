@@ -10,7 +10,8 @@
 
 		<script src="<c:url value='/js/jquery-3.6.0.min.js'/>"></script>
 		<link href="<c:url value='/css/board/board.css'/>" rel="stylesheet" type="text/css">	
-
+		<script src="<c:url value='/js/mainBanner.js'/>"></script>
+	    <link href="<c:url value='/css/mainBanner.css'/>" rel="stylesheet" type="text/css">	
 
 <title>Insert title here</title>
 
@@ -21,6 +22,8 @@
     width: fit-content; /* 태그의 넓이를 500px로 */
 	margin:0 auto; /* 양쪽 여백을 위아래는 0 좌우는 자동으로 잡아주겠다! */
 	margin-top : 40px;
+box-shadow: 0px 1px 4px #0d3bb1;   /*  height: 700px; */
+    border-radius: 11px;
 	}
 	
 	.displayNone {
@@ -46,10 +49,38 @@
 			<jsp:include page="/WEB-INF/views/layout/top.jsp" flush='true' />
 			<div id="navMargin"></div>
 			
+			
+			 <article>             
+	                <div class="slider-1">
+	                    <div class="slides">
+	                        <div class="active" style="background-image:url(image/slide_img_01.jpg);">></div>
+	                        <div style="background-image:url(image/slide_img_02.jpg);"></div>
+	                        <div style="background-image:url(image/slide_img_03.jpg);"></div>
+	                        <div style="background-image:url(image/slide_img_04.jpg);"></div>
+	                        <div style="background-image:url(image/slide_img_05.jpg);"></div>
+	                    </div>
+	                    <div class="page-btns">
+	                        <div class="active" style="background-image:url(image/slide_img_01.jpg);"></div>
+	                        <div></div>
+	                        <div></div>
+	                        <div></div>
+	                    </div>
+	                    <div class="side-btns">
+	                        <div>
+	                            <span><i class="fas fa-angle-left"></i></span>
+	                        </div>
+	                        <div>
+	                            <span><i class="fas fa-angle-right"></i></span>
+	                        </div>
+	                    </div>
+	                </div>
+	            </article>
+	
+			
 			<section id="section">
 			
 			
-
+<br>
 	<div class="boardBody">
 	<br>
 	<div class="ctgMenuBox">
@@ -105,7 +136,7 @@
 		
 		<a href="<c:url value = '/boardForm'/>"><button>글쓰기</button></a>
 		
-		<div id="more-Btn" class="low" onclick="more()"><h3>더보기</h3>
+		<div id="more-Btn" class="low" onclick="more()"><h3>더보기</h3><br>
 		
 		
 		

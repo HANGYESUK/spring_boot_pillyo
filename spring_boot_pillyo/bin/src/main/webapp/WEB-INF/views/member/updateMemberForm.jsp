@@ -17,70 +17,6 @@
 		<script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 		<script src="https://kit.fontawesome.com/2d323a629b.js"crossorigin="anonymous"></script>
 	</head>
-	
-	<style>
-	.col2 > input {
-		height: 17px;
-    margin-top: 11px;
-    background: white;
-    border-color: white;
-    border-radius: 2px;
-    color: black;
-    }
-    
-    #emailCheck, #searchZip{
-        color: #0033a7;
-    background: white;
-    border-radius: 5px;
-    border-color: white;
-    height: 28px;
-    width: 100px;}
-    
-    #memberEdit{
-        text-align: center;
-    padding-left: 5px;
-    margin-left: 301px;
-    margin-top: 27px;
-   height: 34px;
-    font-size: 14.5px;
-    width: 105px;
-     color: #0033a7;
-    background: white;
-    border-radius: 24px;
-   
-    border: 3px solid white;
-    box-shadow: 2px 2px 5px #0d3bb1;
-    
-    }
-    
-    #memberEdit:hover {
-	top:-2px;
-	border: 3px solid white;
- 	box-shadow: 4px 4px 7px #0d3bb1;
-}
-    #memberEdit2{
-       text-align: center;
-    padding-left: 5px;
-    margin-left: 10px;
-    margin-top: 27px;
-    height: 34px;
-    font-size: 14.5px;
-    width: 105px;
-    color: #0033a7;
-    background: white;
-    border-radius: 24px;
-   
-    border: 3px solid white;
-    box-shadow: 2px 2px 5px #0d3bb1;
-    }
-    
-    #memberEdit2:hover {
-	top:-2px;
-	border: 3px solid white;
- 	box-shadow: 4px 4px 7px #0d3bb1;
-}
-	</style>
-	
 	<body>
 		<div id="wrap">
 			
@@ -138,7 +74,7 @@
 												<option value="gmail.com">gmail.com</option>
 												<option value="daum.com">daum.com</option>
 												<option value="yahoo.com">yahoo.com</option>
-										</select> <input class='btn2' id="emailCheck" type="button" value="이메일 중복확인" >
+										</select> <input class='btn2' id="emailCheck" type="button" value="이메일 중복확인">
 										<input type="hidden" name="userEmail" id="userEmail" />
 										</td>
 									</tr>
@@ -171,14 +107,13 @@
 							</div>
 	
 							<div class="create">
-								<input class="btn4" id="memberEdit" type="submit" value="회원 정보 수정" >
-								<input class="btn4" id="memberEdit2" type="reset" value="취소" >
+								<input class="btn4" type="submit" value="회원 정보 수정" >
 							</div>
 						</div>
 					</form>
 				</div>
 			</section>
-		<br><br><br>
+		
 		
 		<!-- BOTTOM  -->
 		<jsp:include page="/WEB-INF/views/layout/bottom.jsp" flush='true' />
