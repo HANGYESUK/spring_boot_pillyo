@@ -45,7 +45,7 @@
 
 					<div class="basket-Item-Container colunm">
 					  <form methond="post" action="<c:url value='/famInsert'/>" class="insertForm">
-					  	<input type="hidden" name="famNo" value="${famVo.famNo}">
+					  	<!-- <input type="hidden" name="famNo" value="${famVo.famNo}"> -->
 					  
 					  	<div>
 							<h3>이름 </h3><input type="text" id="famMember" name="famMember" >

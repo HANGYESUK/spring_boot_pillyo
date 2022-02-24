@@ -7,6 +7,10 @@
 		<meta charset="UTF-8">
 		<title>복용 목록 조회</title>
 		<script src="<c:url value='/js/jquery-3.6.0.min.js'/>"></script>
+		<link rel="stylesheet" href="/css/dose/doseListView.css" />
+		
+		<!-- kakao developers -->
+		<script type="text/JavaScript" src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
 	</head>
 	<body>
 		<div id="wrap">
@@ -16,22 +20,29 @@
 			<div id="navMargin"></div>
 			
 			<section id="section">
-				<h3>복용 목록 조회</h3>
-				<table>
-					<tr><th>복용 타이틀</th><th>약 번호</th><th>복용 시작 날짜</th><th>복용 종료 날짜</th><th>복용 주기</th><th>복용 시기</th><th>복용 상세 시간</th><th>1회 복용량</th></tr>
-				   <c:forEach items="${doseList }" var="dose">
-				   	<tr>
-			   			<td><a href="<c:url value='/doseDetailView/${dose.ddNo}'/>">${dose.ddTitle }</a></td>
-			   			<td>${dose.drugInfoNo }</td>
-			   			<td>${dose.ddStartDate }</td>
-			   			<td>${dose.ddEndDate }</td>
-			   			<td>${dose.ddCycle }</td>
-			   			<td>${dose.ddTimeSlot }</td>
-			   			<td>${dose.ddTime }</td>
-			   			<td>${dose.ddAmount }</td>
-				   	</tr>
-				   </c:forEach>
-				</table>
+				<div id="doseListHeader">
+					<h3>복용 목록 조회</h3>
+				</div>
+				<div>
+					<table id="doseTbl">
+						<tr><th>복용 타이틀</th><th>약 번호</th><th>복용 시작 날짜</th><th>복용 종료 날짜</th><th>복용 주기</th><th>복용 시기</th><th>복용 상세 시간</th><th>1회 복용량</th><th>수정하기</th><th>삭제하기</th><th>공유하기</th></tr>
+				  		 <c:forEach items="${doseList }" var="dose">
+				   			<tr>
+					   			<td>${dose.ddTitle }</td>
+					   			<td>${dose.drugInfoNo }</td>
+					   			<td>${dose.ddStartDate }</td>
+					   			<td>${dose.ddEndDate }</td>
+					   			<td>${dose.ddCycle }</td>
+					   			<td>${dose.ddTimeSlot }</td>
+					   			<td>${dose.ddTime }</td>
+					   			<td>${dose.ddAmount }</td>
+					   			<td><a href="<c:url value='/doseUpdateForm/${doseVo.ddNo}'/>">수정하기</a></td>
+					   			<td><a href="javascript:deleteCheck();">삭제하기</a></td>
+					   			<td><label><button id="doseShareBtn" class="calBtn" onClick="sendLinkDefault();"></button>공유하기</label></td>
+						   	</tr>
+				   		</c:forEach>
+					</table>
+				</div>
 			</section>
 	        
 			<!-- BOTTOM  -->
@@ -145,5 +156,53 @@
             
             return result;
         });
+	</script>
+	<script type="text/javascript">
+		function deleteCheck(){
+			var answer = confirm("해당 복용 정보를 목록에서 삭제하시겠습니까?");
+			if(answer == true){
+				alert("복용 정보가 삭제되었습니다.");
+				location.href="/doseDelete/${doseVo.ddNo}";
+			}
+		}
+	</script>
+	<script type="text/javascript">
+	    function sendLinkCustom() {
+	        Kakao.init("b3bc39226c10ad1e0663733a444b7b1d");
+	        Kakao.Link.sendCustom({
+	            templateId: 71421
+	        });
+	    }
+	</script>
+	
+	<script>
+		try {
+		  function sendLinkDefault() {
+		    Kakao.init('b3bc39226c10ad1e0663733a444b7b1d')
+		    Kakao.Link.sendDefault({
+		      objectType: 'feed',
+		      content: {
+		        title: '${doseVo.ddTitle }',
+		        description: '${doseVo.ddStartDate }~${doseVo.ddEndDate } (${doseVo.ddCycle }일 주기)\n${doseVo.ddTime }시 ${doseVo.ddAmount }정 복용',
+		        imageUrl:
+		          'https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbgzsMC%2Fbtrt7qKB89C%2FOFby4PY9iEE6a6Uzqjc5kK%2Fimg.png',
+		        link: {
+		          mobileWebUrl: 'https://developers.kakao.com',
+		          webUrl: 'https://developers.kakao.com',
+		        },
+		      },
+		      buttons: [
+		        {
+		          title: 'Pill-Yo 접속하기',
+		          link: {
+		            mobileWebUrl: 'https://developers.kakao.com',
+		            webUrl: 'https://developers.kakao.com',
+		          },
+		        },
+		      ],
+		    })
+		  }
+		; window.kakaoDemoCallback && window.kakaoDemoCallback() }
+		catch(e) { window.kakaoDemoException && window.kakaoDemoException(e) }
 	</script>
 </html>

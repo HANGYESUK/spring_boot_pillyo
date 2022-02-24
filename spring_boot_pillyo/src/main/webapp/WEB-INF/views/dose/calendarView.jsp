@@ -28,6 +28,7 @@
 		
 	    <link rel="stylesheet" href="/css/dose/doseAutoSearch.css" />
 	    <link rel="stylesheet" href="/css/dose/doseCalendar.css" />
+	    <link rel="stylesheet" href="/css/main/familyProfile.css" />
 	</head>
 	<body>
 		<div id="wrap">
@@ -37,6 +38,26 @@
 			<div id="navMargin"></div>
 			
 			<section id="section">
+			
+			<div class="fam-List calum">
+				 <c:forEach items="${famList }" var="fam">
+				   	<a href="<c:url value='/calendarView/${fam.famNo}'/>">
+					   	<div class="profile-Family-Icon" style="text-align: center;">
+					   		<h4>${ fam.famMember}</h4>
+					   		<input type="hidden" class="prInfo" value="☌">
+						</div>
+						<!-- test1 -->
+					</a>
+				 </c:forEach>
+			   <a href="<c:url value = '/famListView'/>">
+			 		<div class="profile-Family-Icon"><p id="plus">+</p></div>
+			   </a>
+			 </div>
+
+			
+			<h3>${famMember} 님의 건강관리 입니다.</h3><br><br>
+			
+			
 				<div id="doseBox">
 					<div id="calendarBox">
 						<div id='calendar'></div>
@@ -168,18 +189,19 @@
 	        var calendar = new FullCalendar.Calendar(calendarEl, {
 	        	initialView: 'dayGridMonth',
 	        	headerToolbar: {
-	        		left: '',
+	        		left: 'prev',
 	                center: 'title',
-	                right: '',
+	                right: 'next',
 	            },
                 footerToolbar: {
-                	left: 'dayGridMonth listWeek',
-                	center: 'prev today next',
+                	left: '',
+                	center: 'dayGridMonth listWeek today',
+                	right: '',
                 },
                 buttonText: { // 버튼 글자 커스텀
 	        	  today: 'Today',
-	        	  month: '월별',
-	        	  list: '주별',
+	        	  month: 'Monthly',
+	        	  list: 'Weekly',
 	       	    },
 	          navLinks: false, // 달력 상의 날짜 클릭 가능 여부 : true 클릭 가능. 클릭 시 해당 날짜의 일정 나타남
 	          dayMaxEvents: true, // 셀 크기보다 일정이 많이 등록되어 있는 경우 more 표시
@@ -283,34 +305,17 @@
 			})
        	});
 	</script>
-	<script>
-       	$("input[name='ddTimeSlot']").change(function() {
-       		alert("click");
-       		if($("input[name='ddTimeSlot']:checked")) {
-       			alert("change");
-       			alert(($("input[name='ddTimeSlot']:checked")).val());
-       			//alert(labelItem.value());
-       			// 조건절 : and 클릭한 라디오버튼의 value = 라벨의 텍스트
-       			
-       			
-       			//var labelAttr = ($("input[name='ddTimeSlot']:checked")).val(); // 기상직후
-				//var labelItem = document.querySelector('label[for=labelAttr]');
-				
-       			
-/*        			chorme에서만 되는 경우
-				var label = $("input:radio[name=view]:checked").prop("labels");
-				console.log($(label).text())
-				
-				IE와 chrome 둘다 되는 경우
-				var radioId = $("input:radio[name=view]:checked").attr("id");
-				console.log($("label[for='"+radioId+"']").text()); */
-
-
-
-       		} else {
-       			
-       		}
-     	});
+	<script type="text/javascript">
+		$('input[type="radio"]').change(function(){
+			$('input[type="radio"]').prev('label').css('background-color', '#d0deea');
+			
+			if($(this).is(':checked')){
+				$(this).prev('label').css('background-color', '#b7cee2');
+			}
+		    else{
+				$(this).prev('label').css('background-color', '#d0deea');
+			}
+		});
 	</script>
 	<script>
 		$("#doseAddBtn").on("click",function(){
@@ -346,6 +351,7 @@
             }else{
          	   // 정상적으로 입력했을 경우
             	result = true;
+         	   alert("복용 정보 등록이 완료되었습니다.");
             }
             
             return result;

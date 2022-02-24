@@ -5,7 +5,7 @@ input[type=checkbox]{
 }
 
 #drugShapeSearchForm table {
-	width: 881px;
+	width: 900px;
 	margin: 0 auto;
 	margin-bottom: 25px;
 }
@@ -57,7 +57,7 @@ input[type=checkbox]{
 }
 
 .typeBox, .lineBox{
-    width: 266px;
+    width: 274px;
 }
 
 /* 색상 검색 */
@@ -152,7 +152,14 @@ label[for="cTrans"] {
 
 .lineNoneBox {
 	position: absolute;
-    right: 4px;
+    right: 2px;
+}
+
+/* 제형 검색 */
+#search_type td {
+	display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 /* 버튼 */
@@ -165,4 +172,8 @@ label[for="cTrans"] {
     color: #515151;
     font-weight: bold;
     font-size: 16px;
+}
+
+img {
+	cursor: pointer;
 }

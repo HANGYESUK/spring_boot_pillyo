@@ -15,6 +15,20 @@ a {
     align-items: center;
 }
 
+.profile-Family-Icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 3px solid #e9e9e9;
+    overflow: hidden;
+    background-color: #80bafe;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 2px;
+}
+
+
 .health-Container {
     width: 80%;
     background-color: white;

@@ -64,30 +64,16 @@
 				</div>
 				
 				<script type="text/javascript">
-					window.onload = function timeSlotCheck(){
-						var timeSlotTxt = "${doseVo.ddTimeSlot}";
-						var timeSlotArr = timeSlotTxt.split(",");
-						var timeSlotChk = document.getElementsByName("ddTimeSlot");
+					$('input[type="radio"]').change(function(){
+						$('input[type="radio"]').prev('label').css('background-color', '#d0deea');
 						
-						var AGU = document.querySelector('label[for="afterGetUp"]');
-						var BB = document.querySelector('label[for="beforeB"]');
-						var AB = document.querySelector('label[for="afterB"]');
-						var BL = document.querySelector('label[for="beforeL"]');
-						var AL = document.querySelector('label[for="afterL"]');
-						var BD = document.querySelector('label[for="beforeD"]');
-						var AD = document.querySelector('label[for="afterD"]');
-						var BBed = document.querySelector('label[for="beforeBed"]');
-						var radioLabelArr = [AGU, BB, AB, BL, AL, BD, AD, BBed];
-						
-						for (var i=0; i<timeSlotArr.length; i++) {
-							for (var j=0; j<timeSlotChk.length; j++) {
-				                if (timeSlotChk[j].value == timeSlotArr[i]) {
-				                	timeSlotChk[j].checked = true;
-				                	radioLabelArr[j].style.background = '#b7cee2';
-				                }
-				            }
+						if($(this).is(':checked')){
+							$(this).prev('label').css('background-color', '#b7cee2');
 						}
-					}
+					    else{
+							$(this).prev('label').css('background-color', '#d0deea');
+						}
+					});
 				</script>
 				<script>
 			       	document.addEventListener('DOMContentLoaded', function() {

@@ -33,14 +33,7 @@
 				<a href="<c:url value='/doseUpdateForm/${doseVo.ddNo}'/>">복용 정보 수정</a><br>
 				<a href="javascript:deleteCheck();">복용 정보 삭제</a><br>
 			
-				<script type="text/javascript">
-					function deleteCheck(){
-						var answer = confirm("해당 복용 정보를 목록에서 삭제하시겠습니까?");
-						if(answer == true){
-							location.href="/doseDelete/${doseVo.ddNo}";
-						}
-					}
-				</script>
+				
 			</section>
 	        
 			<!-- BOTTOM  -->
@@ -67,7 +60,7 @@
 		        title: '${doseVo.ddTitle }',
 		        description: '${doseVo.ddStartDate }~${doseVo.ddEndDate } (${doseVo.ddCycle }일 주기)\n${doseVo.ddTime }시 ${doseVo.ddAmount }정 복용',
 		        imageUrl:
-		          'https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fbx5O0E%2FbtruiQHe7Yc%2FHsrAiKKfRazgQOsZ5RXKgK%2Fimg.png',
+		          'https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbgzsMC%2Fbtrt7qKB89C%2FOFby4PY9iEE6a6Uzqjc5kK%2Fimg.png',
 		        link: {
 		          mobileWebUrl: 'https://developers.kakao.com',
 		          webUrl: 'https://developers.kakao.com',

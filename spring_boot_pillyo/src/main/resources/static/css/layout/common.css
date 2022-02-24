@@ -33,6 +33,10 @@ marquee {
     scrolldelay:10;
 }
 
+marquee a {
+	margin: 0 48px;
+}
+
 /* --------- pill-yo ------------ */
 #logoBox {
 	position: relative;
@@ -40,9 +44,10 @@ marquee {
     width: 1257px;
     padding: 10px 0 13px 20px;
     font-size: 24px;
-        background: #a4cdff;
-        height: 9px;
-        color:darkblue;
+    background: #a4cdff;
+    height: 9px;
+    color:darkblue;
+    line-height: 13px;
 }
 
 #logo {
@@ -62,6 +67,7 @@ marquee {
     align-items: center;
     justify-content: space-evenly;
     border-radius: 0px 0px 27px 27px;
+    padding: 10px;
 }
 
 .proflieImg {
@@ -188,13 +194,13 @@ px
     font-weight: 800;
 
 }
-.inputSearch:focus { /* 占싯삼옙창 클占쏙옙占쏙옙占쏙옙 占쏙옙 占쏙옙 占쏙옙占쏙옙 */
+.inputSearch:focus { /* �뜝�떙�궪�삕李� �겢�뜝�룞�삕�뜝�룞�삕�뜝�룞�삕 �뜝�룞�삕 �뜝�룞�삕 �뜝�룞�삕�뜝�룞�삕 */
     border-color: white;
     outline: 0;
     box-shadow: inset 0 1px 1px white;
 }
 
-#submitBtn { /* 占싯삼옙 占쏙옙占� */
+#submitBtn { /* �뜝�떙�궪�삕 �뜝�룞�삕�뜝占� */
     display: block;
     float: left;
     width: 7%; 

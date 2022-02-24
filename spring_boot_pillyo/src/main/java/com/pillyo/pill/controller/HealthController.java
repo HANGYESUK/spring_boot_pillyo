@@ -83,9 +83,18 @@ public class HealthController { // 건강관리 컨트롤러
 		ArrayList<FamilyVO> famList = family_service.famListView(userId);
 		model.addAttribute("famList", famList);
 		
-
-//		String famMember =  famList.get(famNo-1).getFamMember();
-//		model.addAttribute("famMember", famMember);
+		//선택한 famNO의 famList 인덱스를 확인하여
+		int idx = 0;
+		for(int i=0;i<famList.size();i++) {
+			
+			if(famList.get(i).getFamNo() == famNo) {
+				idx= i;
+			}
+		}
+		System.out.println(idx);
+		//famMember 이름 model값으로 보냄.
+		String famMember =  famList.get(idx).getFamMember();
+		model.addAttribute("famMember", famMember);
 
 		
 		
