@@ -1,5 +1,6 @@
 a {
     text-decoration-line: none;
+    color: white;
 }
 
 .low {
@@ -129,6 +130,22 @@ a {
     cursor: pointer;
 }
 
+.insertBtn {
+	width: 200px;
+    border-radius: 30px;
+    font-size: 20px;
+    height: 40px;
+    font-weight: bold;
+}
+
+.updateBtn {
+	width: 200px;
+    border-radius: 30px;
+    font-size: 20px;
+    height: 40px;
+    font-weight: bold;
+}
+
 .fam-List {
 	position: fixed;
 	margin-right: 1360px;
@@ -143,4 +160,20 @@ a {
     font-weight: bold;
     color: white;
     margin-top: 28px;
+}
+
+#body-Btn {
+	background-color: #508BFF;
+}
+
+#pressure-Btn {
+	background-color: #FF6D2F;
+}
+
+#feel-Btn {
+	background-color: #23ED1F;
+}
+
+#sugur-Btn {
+	background-color: #FF6363;
 }

@@ -64,10 +64,10 @@
 			    
 			    
 			    <div class="health-Btn-Container low">
-			  		<button class="health-Btn " value=0 onclick="change(this.value)">체형</button>
-				    <button class="health-Btn" value=1 onclick="change(this.value)">혈압</button>
-				    <button class="health-Btn" value=2 onclick="change(this.value)">기분</button>
-				    <button class="health-Btn" value=3 onclick="change(this.value)">혈당</button>
+			  		<button class="health-Btn" id="body-Btn" value=0 onclick="change(this.value)">체형</button>
+				    <button class="health-Btn" id="pressure-Btn" value=1 onclick="change(this.value)">혈압</button>
+				    <button class="health-Btn" id="feel-Btn" value=2 onclick="change(this.value)">기분</button>
+				    <button class="health-Btn" id="sugur-Btn" value=3 onclick="change(this.value)">혈당</button>
 			    </div>
 
 			
@@ -84,7 +84,7 @@
 				<div class="health-Container calum">
 					<div class="healthTitle low">
 						<h2>체형 리스트</h2>
-						<a href="<c:url value='/bodyForm/${famNo}'/>"><button value="0" class="btn low">등록</button></a>
+						<a href="<c:url value='/bodyForm/${famNo}'/>"><button value="0" class="insertBtn btn low">등록</button></a>
 					</div>
 					<div class="calum" style="width: 90%;">
 					 <c:forEach items="${bodyList }" var="body">
@@ -166,7 +166,7 @@
 					<div class="health-Container calum">
 					<div class="healthTitle low">
 						<h2>혈압 리스트</h2>
-						<a href="<c:url value='/pressureForm/${famNo}'/>"><button value="0" class="btn low">등록</button></a>
+						<a href="<c:url value='/pressureForm/${famNo}'/>"><button value="0" class="insertBtn btn low">등록</button></a>
 					</div>
 					<div class="calum" style="width: 90%;">
 					 <c:forEach items="${pressureList }" var="pressure">
@@ -235,18 +235,8 @@
 
 			        console.log("${pressure.pressureRecordDate}")
 		 		</script>
-<<<<<<< HEAD
-		 		
-		 		
-=======
-
-			   	<a href="<c:url value='/updatePressureForm/${pressure.pressureNo}'/>">혈압 관리 정보 수정</a>
-			   	<a href="javascript:deletePressureCheck(${pressure.pressureNo});">혈압 관리 정보 삭제</a><br>
-			   	
-
- 				<br>
  				
->>>>>>> branch 'main' of https://github.com/HANGYESUK/spring_boot_pillyo.git
+
  			
 			
 				<!-- 기분 변수 -->
@@ -259,10 +249,10 @@
 			<div class="health-Container calum">
 					<div class="healthTitle low">
 						<h2>기분 리스트</h2>
-						<a href="<c:url value='/feelForm/${famNo}'/>"><button value="0" class="btn low">등록</button></a>
+						<a href="<c:url value='/feelForm/${famNo}'/>"><button value="0" class="insertBtn btn low">등록</button></a>
 					</div>
 					<div class="calum" style="width: 90%;">
-					 	<c:forEach var="feel" items="${feelList}">
+					 <c:forEach var="feel" items="${feelList}">
 						<div class="health-Container-Box calum">
 							<div class="health-Content-Title low">
 									<img src="#"/>
@@ -299,26 +289,9 @@
 								feelScale.push(${feel.feelScale})
 						        console.log(${feel.feelRecordDate})
 					 		</script>
-<<<<<<< HEAD
-					 	</div>
-					 </c:forEach>
-				 	<script type="text/javascript">
-						function deleteCheck(){
-							var answer = confirm("선택한 기분 정보를 삭제하시겠습니까?");
-							if(answer == true){
-								location.href="<c:url value='/deleteFeel/${feel.feelNo}' />";
-							}
-						}
-					</script>
-						
-	
-				 		
-				</div>
-			</div>
-=======
 					 	
-						</div>
-						</c:forEach>	
+							</div>
+						</c:forEach>
 					 		<script type="text/javascript">
 								function deleteFeelCheck(no){
 									var answer = confirm("선택한 기분 정보를 삭제하시겠습니까?");
@@ -329,7 +302,7 @@
 							</script>
 						</div>
 					</div>
->>>>>>> branch 'main' of https://github.com/HANGYESUK/spring_boot_pillyo.git
+
 
 			
 			
@@ -347,7 +320,7 @@
 		 	<div class="health-Container calum">
 					<div class="healthTitle low">
 						<h2>혈당 리스트</h2>
-						<a href="<c:url value='/sugarForm/${famNo}'/>"><button value="0" class="btn low">등록</button></a>
+						<a href="<c:url value='/sugarForm/${famNo}'/>"><button value="0" class="insertBtn btn low">등록</button></a>
 					</div>
 					<div class="calum" style="width: 90%;">
 					 <c:forEach items="${sugarList}" var="sugar">
@@ -502,19 +475,19 @@
                 datasets: [{ 
                     data: height,
                     label: "키",
-                    borderColor: "#3e95cd",
+                    borderColor: "#508BFF",
                     fill: false
                 },
                 { 
                     data: weight,
                     label: "몸무게",
-                    borderColor: "#3e95cd",
+                    borderColor: "#1f3a70",
                     fill: false
                 },
                 { 
                     data: bmi,
                     label: "BMI",
-                    borderColor: "#3e95cd",
+                    borderColor: "#52e7ff",
                     fill: false
                 }]
             },
@@ -551,19 +524,19 @@
             datasets: [{ 
                 data: SBP,
                 label: "최고혈압",
-                borderColor: "#3e95cd",
+                borderColor: "#ff3e3e",
                 fill: false
             }, 
             {
                 data: DBP,
                 label: "최저혈압",
-                borderColor: "#e74c3c",
+                borderColor: "#ff8935",
                 fill: false
             },
             {
                 data: bpm,
                 label: "심박수",
-                borderColor: "#e74c3c",
+                borderColor: "red",
                 fill: false
             }]
         },
@@ -600,7 +573,7 @@
             datasets: [{ 
                 data: feelScale,
                 label: "기분점수",
-                borderColor: "#f1c40f",
+                borderColor: "#23ED1F",
                 fill: false
             }]
         },
@@ -639,7 +612,7 @@
             datasets: [{ 
                 data: sugarMedication,
                 label: "혈당",
-                borderColor: "#f1c40f",
+                borderColor: "#FF6363",
                 fill: false
             },
             { 
