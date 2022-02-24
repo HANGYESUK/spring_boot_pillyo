@@ -47,7 +47,7 @@
 							<div id="btnBox">
 								<label><button id="doseShareBtn" class="calBtn">복용 정보 공유하기</button></label>
 								<label><button id="doseAddBtn" class="calBtn">복용 정보 추가하기</button></label>
-								<label><button id="doseMngBtn" class="calBtn">복용 목록 관리</button></label>
+								<label><button id="doseMngBtn" class="calBtn"><a href="<c:url value='/doseListView/${famNo}'/>">복용 목록 관리</a></button></label>
 							</div>
 						</div>
 					</div>

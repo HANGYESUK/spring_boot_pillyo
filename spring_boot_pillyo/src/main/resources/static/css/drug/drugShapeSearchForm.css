@@ -5,7 +5,7 @@ input[type=checkbox]{
 }
 
 #drugShapeSearchForm table {
-	width: 875px;
+	width: 881px;
 	margin: 0 auto;
 	margin-bottom: 25px;
 }
@@ -14,10 +14,10 @@ input[type=checkbox]{
     padding-top: 90px;
 }
 
-#drugShapeSearchForm th, #drugShapeSearchForm td{
+/* #drugShapeSearchForm th, #drugShapeSearchForm td{
 	border: 1px solid #00000000;
     border-radius: 5px;
-}
+} */
 
 /* 모양 검색 */
 #search_shape td, #search_color td {
@@ -74,6 +74,11 @@ input[type=checkbox]{
 #search_color td label {
 	border-radius: 10px;
 	border: 1px solid #b0b0b0;
+}
+
+#search_color td label:hover {
+	border: 3px solid white;
+ 	box-shadow: 2px 2px 5px #bfbfbf;
 }
 
 label[for="cWhite"] {

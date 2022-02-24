@@ -2,6 +2,8 @@ package com.pillyo.pill.controller;
 
 import java.util.ArrayList;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,6 +15,7 @@ import com.pillyo.pill.model.DoseVO;
 import com.pillyo.pill.model.FamilyVO;
 import com.pillyo.pill.service.DoseService;
 import com.pillyo.pill.service.DrugService;
+import com.pillyo.pill.service.FamilyService;
 
 @Controller
 public class DoseController {
@@ -21,6 +24,9 @@ public class DoseController {
 	
 	@Autowired
 	DrugService drugService;
+	
+	@Autowired
+	FamilyService familyService;
 	
 	// 복용 관리 - 수정 폼으로 이동 
 	@RequestMapping("/doseUpdateForm/{ddNo}")
@@ -47,8 +53,16 @@ public class DoseController {
 	}
 	
 	// 복용 목록 조회
-	@RequestMapping("/doseListView")
-	public String doseListView(int famNo, Model model) {
+	@RequestMapping("/doseListView/{famNo}")
+	public String doseListView(@PathVariable int famNo, Model model, HttpSession session) {
+		String userId = (String)session.getAttribute("sid");
+		ArrayList<FamilyVO> famList = familyService.famListView(userId);
+		model.addAttribute("famList", famList);
+		
+		//매핑때 받은 @PathVariavle int famNo 다시 모델로 보냄.
+		// famNo 기준 다시 등록폼 이동하거나 할때 사용. 
+		model.addAttribute("famNo", famNo);
+		
 		ArrayList<DoseVO> doseList = doseService.doseListView(famNo);
 		model.addAttribute("doseList", doseList);		
 		return "/dose/doseListView";
