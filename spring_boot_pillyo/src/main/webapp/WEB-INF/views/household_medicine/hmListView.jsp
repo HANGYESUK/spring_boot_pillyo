@@ -6,6 +6,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>제품 리스트</title>
+		<script src="<c:url value='/js/jquery-3.6.0.min.js'/>"></script>
 		<style type="text/css">
 		table{
 		border: 1px solid #444444;
@@ -15,7 +16,7 @@
 		}
 
 		th,td{
-			width:200px;
+			width:250px;
 			border: 1px solid #444444;
 		}
 		img{
@@ -30,25 +31,14 @@
 		<div class="hm_List_view">
 		
 			<table id="list_table">
-				<tr> <th>사진</th> <th>제품명</th> <th>사용기간</th> </tr>
+				<tr> <th>사진</th> <th>제품명</th> <th>사용기한</th> </tr>
 				
 				<c:forEach items="${hmCtgList}" var="hmList">
 				<tr> <td> <img src="<c:url value='/images/${hmList.hmImg}'/>"> </td>
-				<%-- <td> <img src="<c:url value='/images/${hmList.hmImg}'/>"> </td> --%>
-				<%-- <tr> <td> <img src="/img/hmListImg/${hmList.hmImg}"></td> --%>
-				<%-- 테스트 했는데 안되는것들 ------> 이거 WebConfig 쓰는거라 절대경로쓰는건데 왜 안나오지
-				<img src="/images/${hmList.hmImg}"> ${hmList.hmImg}</td>
-				<img src="/img/${hmList.hmImg}"> ${hmList.hmImg}</td> 
-				<img src="/images/${hmList.hmImg}.jpg"> ${hmList.hmImg}</td>
-				<img src="<c:url value="/images/${hmList.hmImg}"/>"> ${hmList.hmImg}</td>
-				--%>
 					 <td> <a href="<c:url value='/householde_medicine/detailViewHm/${hmList.hmName}'/>"> ${hmList.hmName}</a></td>
-					 <td>${hmList.hmUseByDate}</td></tr>
+					 <td>${hmList.hmUseByDate} 까지</td></tr>
 				</c:forEach>
 				</table>
-				
-				<a href="/insertHmForm">
-				<input type="button" value="등록하러가기"></a>
 		</div>
 	</body>
 </html>

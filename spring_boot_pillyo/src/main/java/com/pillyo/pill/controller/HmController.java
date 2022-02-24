@@ -1,6 +1,5 @@
 package com.pillyo.pill.controller;
 
-import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -33,34 +32,41 @@ public class HmController{
 		// System.out.println(vo.getHmCtgNo());
 		return "household_medicine/hmForm";
 	}
-
+	
+	
 	// 우리집 약관리 : 상비약 등록 페이지 이동
 	@RequestMapping("/insertHmForm")
 	public String insertHmForm() {
 		return "household_medicine/insertHmForm"; 
 	}
+	@RequestMapping("/insertHmForm2/{ocrResult}")
+	public String insertHmForm2(@PathVariable String ocrResult, Model model) {
+		model.addAttribute("ocrResult", ocrResult);
+		return "household_medicine/insertHmForm2";
+	}
+	
 	
 	// 우리집 약관리 : 상비약 이미지 OCR 컨트롤러
 	// OCR 요청 받아서 서비스 호출하고 결과 받아서 반환
 	
 	//우리집 약관리 : 상비약 등록
 	@RequestMapping("/insertHm")
-	public String insertHm(@RequestParam("uploadFile")MultipartFile file,
-			HmVO vo, Model model) throws IOException{
+	//public String insertHm(@RequestParam("uploadFile")MultipartFile file,
+	public String insertHm(HmVO vo, Model model) throws IOException{
 				
 		//1.파일 저장 경로 설정: 실제 서비스되는 위치로 (프로젝트 외부에 저장)
-		String uploadPath = "C:/upload/";
+		//String uploadPath = "C:/upload/";
 		
 		//2. 원본 파일 이름 알아오기
-		String originalFileName = file.getOriginalFilename();
+		//String originalFileName = file.getOriginalFilename();
 		
 		//3. 파일 생성
-		File file1 = new File(uploadPath + originalFileName);
+		//File file1 = new File(uploadPath + originalFileName);
 		
 		//4.서버로 전송
-		file.transferTo(file1);
-		vo.setHmImg(originalFileName);
-		System.out.println(vo.getHmImg());
+		////file.transferTo(file1);
+		//vo.setHmImg(originalFileName);
+		//System.out.println(vo.getHmImg());
 		
 		service.insertHm(vo);
 		model.addAttribute("HmVO", vo);

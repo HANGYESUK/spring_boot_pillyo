@@ -6,7 +6,8 @@
 <head>
     <meta charset="UTF-8">
     <title>우리집 상비약 메인 페이지</title>
-	<script src="/js/hmListView.js"></script>
+    <script src="<c:url value='/js/jquery-3.6.0.min.js'/>"></script>
+	<!-- <script src="/js/hmListView.js"></script> -->
 	<!-- 임시 css / script-->
 	<style type="text/css">
 	
@@ -21,24 +22,24 @@
 	
 	.hm{
 		width : 95%;
+		height : 600px;
 		margin:0 auto;
 		
 	}
 	.hm_Category{
-		width : 48%;
-		height : 350px;
+		width : 60%;
+		height : 250px;
 		background-color : white;
 		text-align : center;
-		float: left;
 		margin:0 auto;
 	}
 	.hm_List{
-		width : 48%;
+		width : 60%;
 		height : 350px;
 		background-color : #B2D6C7;
 		text-align : center;
-		float: left;
 		margin-left:15px;
+		margin:0 auto;
 	}
 	.hm_List_view{
 		widht : 100px;
@@ -63,7 +64,11 @@
 		margin-right:5px;
 		margin-bottom:10px;
 	}
-
+	iframe{
+	width:100%;
+	height:350px;
+	background-color : white;
+	}
 	</style>
 
 </head>
@@ -75,27 +80,27 @@
 		
 		<div id="navMargin"></div>
 		<section id="section">
-				<h2 id ="hmName">우리집 약관리</h2>
-				<hr><br>
-				<c:if test="${not empty sessionScope.sid}">
-					<h4 id="UserName">${sessionScope.sid} 님</h4>
-					<p>등록하신 우리집 상비약 목록 입니다 </p><br><br>
-				</c:if>
+			<h2 id ="hmName">우리집 약관리</h2>
+			<hr><br>
+			<c:if test="${not empty sessionScope.sid}">
+				<h4 id="UserName">${sessionScope.sid} 님</h4>
+				<p>등록하신 우리집 상비약 목록 입니다 </p><br>
+			</c:if>
 				
-				<div id="hm">
+			<div id="hm">
 				<!-- 약 카테고리 -->
 				<div class="hm_Category"> 
 					<form id="hmCtg_ListView">
-						<br> <h3> 약 카테고리</h3> <br><br>
+						<br> <h3> 약 카테고리</h3> <br>
 						<!-- <button type="button" id="hm_ctg" value="1" onclick="go(this.value)"> -->
 						<!-- <input type="text" id="hmCtgInput">
 						<input type="submit" value="전송"> -->
 						
-						<button type="submit" id="hm_ctg" value="1" >
+						<button id="hm_ctg" value="1" onclick="go(this.value)">
 						<img src="./img/hm/두통.png" alt="" style="width:45px; height:45px;"><br>
 						<span>두통약</span></button>
 						
-						<button type="submit" id="hm_ctg" value="2">
+						<button id="hm_ctg" value="2">
 						<img src="./img/hm/감기.png" alt="" style="width:45px; height:45px;"><br>
 						<span>감기약</span></button>
 						
@@ -123,22 +128,31 @@
 						<img src="./img/hm/기타.png" alt="" style="width:45px; height:45px;"><br>
 						<span>기타</span></button>
 						
-						<!-- <script>
-						    function go(a) {
-						    	 window.location.href = "/listCtgHm/" + a
-					        }
-						
-						</script> -->
 					</form>
 				</div><!-- hm_Category -->
 				
 				<!-- 선택한 카테고리의 약 목록 -->
 				<div class="hm_List">
-					<form>
-						<br> <h3> 약 목록</h3> <br>
-						<jsp:include page="/WEB-INF/views/household_medicine/hmListView.jsp" flush='true' />
-					</form>
+					<iframe id="iframeUrl" name="iframeUrl" src="http://localhost:8082/listCtgHm/1"></iframe>
+					<%-- <jsp:include page="/WEB-INF/views/household_medicine/hmListView.jsp" flush='true' /> --%>	
+					
+					<script>
+						function go(a) {
+			                console.log(a)
+			                let url = "http://localhost:8082/listCtgHm/"
+			                console.log(url + (a))
+			                document.getElementById('iframeUrl').src = url + (a)
+			            }
+					</script>
+					
+					<a href="/insertHmForm">
+					<input type="button" value="등록하러가기"></a>
+					
+					<a href="/insertHmResult">
+					<input type="button" value="등록된 전체 목록 보러가기"></a>
+					
 				</div>
+				<br>
 			</div><!-- hm -->
 		</section>
 	
