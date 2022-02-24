@@ -25,9 +25,9 @@
 							<table>
 								<input type="hidden" id="ddNo" name="ddNo" value="${doseVo.ddNo }" readonly><!-- 약 복용 번호(수정불가) -->
 								<input type="hidden" id="drugInfoNo" name="drugInfoNo" value="${doseVo.drugInfoNo }"><!-- 약 번호 (자동완성 결과) -->
-								<tr><th>가족 번호(수정불가)</th><td><input type="number" id="famNo" name="famNo" value="${doseVo.famNo }" readonly></td></tr>
+								<input type="hidden" id="famNo" name="famNo" value="${doseVo.famNo }" readonly>
 								
-								<tr><th>복용 타이틀></th><td><input type="text" id="ddTitle" name="ddTitle" value="${doseVo.ddTitle }"></td></tr>
+								<tr><th>복용 타이틀</th><td><input type="text" id="ddTitle" name="ddTitle" value="${doseVo.ddTitle }"></td></tr>
 		        				<tr><th>약 이름</th><td><input type="text" id="searchInput" name="searchInput"></td></tr>
 						        
 						        <tr><th>복용 시작 날짜</th><td><input type="date" id="ddStartDate" name="ddStartDate" value="${doseVo.ddStartDate }"></td></tr>

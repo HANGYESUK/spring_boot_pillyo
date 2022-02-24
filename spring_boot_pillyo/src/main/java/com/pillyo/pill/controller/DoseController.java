@@ -42,14 +42,14 @@ public class DoseController {
 	@RequestMapping("/doseUpdate")
 	public String doseUpdate(DoseVO doseVo) {
 		doseService.doseUpdate(doseVo);
-		return "redirect:./doseListView";
+		return "redirect:/calendarView/2";
 	}
 	
 	// 복용 관리 - 삭제
 	@RequestMapping("/doseDelete/{ddNo}")
 	public String doseDelete(@PathVariable int ddNo) {
 		doseService.doseDelete(ddNo);
-		return "redirect:../doseListView";
+		return "redirect:/calendarView";
 	}
 	
 	// 복용 목록 조회

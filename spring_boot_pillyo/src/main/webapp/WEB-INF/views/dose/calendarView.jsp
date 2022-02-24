@@ -23,6 +23,9 @@
 		<link rel="stylesheet" href="/css/tingle.min.css">
 		<script src="/js/tingle.min.js"></script>
 		
+		<!-- kakao developers -->
+		<script type="text/JavaScript" src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+		
 	    <link rel="stylesheet" href="/css/dose/doseAutoSearch.css" />
 	    <link rel="stylesheet" href="/css/dose/doseCalendar.css" />
 	</head>
@@ -45,7 +48,6 @@
 						
 						<div id="btnBoxParent">
 							<div id="btnBox">
-								<label><button id="doseShareBtn" class="calBtn">복용 정보 공유하기</button></label>
 								<label><button id="doseAddBtn" class="calBtn">복용 정보 추가하기</button></label>
 								<label><button id="doseMngBtn" class="calBtn"><a href="<c:url value='/doseListView/${famNo}'/>">복용 목록 관리</a></button></label>
 							</div>
