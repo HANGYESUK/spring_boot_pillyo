@@ -1,43 +1,35 @@
 #doseListHeader h3 {
-	font-size: 23px;
-    text-align: center;
-    padding-top: 20px;
-    color: #2c2c2c;
-    font-weight: bold;
+	text-align: center;
+    font-size: 28px;
+    padding-top: 30px;
 }
 
-#doseTbl {
-    margin: 0 auto;
-    width: 1241px;
-    line-height: 35px;
-    text-align: center;
-    background: #e8f2f9;
-    padding: 14px;
-    border-radius: 20px;
+#doseItemBox {
+	display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
-#doseTbl th {
-	font-size: 19px;
-	background: #cfe7f5;
-	border-radius: 8px;
-    border: solid 1px #f3f3f3;
-}
-
-#doseTbl a {
+#doseItemBox a {
 	text-decoration: none;
-	color: black;
 }
 
-#doseTbl td {
-	font-size: 17px;
-    padding: 3px;
+.doseItem {
+	width: 300px;
+    height: 350px;
+    background: #dfeefb;
+    margin: 10px 10px 23px 10px;
+    border-radius: 85px;
 }
 
-#doseTbl tr a, label {
-	color: #bf6868;
-    font-weight: bold;
-}
-
-#doseShareBtn  {
-	display: none;
+.itemBottom {
+	width: 300px;
+    height: 180px;
+    border-radius: 85px 85px 0 0;
+    background: white;
+    text-align: center;
+    line-height: 180px;
+    font-size: 30px;
+    font-weight: 900;
+    color: #6f82ae;
 }

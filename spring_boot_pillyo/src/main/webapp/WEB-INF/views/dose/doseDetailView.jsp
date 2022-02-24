@@ -7,6 +7,7 @@
 		<meta charset="UTF-8">
 		<title>복용 상세 정보 조회</title>
 		<script src="<c:url value='/js/jquery-3.6.0.min.js'/>"></script>
+		<link rel="stylesheet" href="/css/dose/doseDetailView.css" />
 		
 		<!-- kakao developers -->
 		<script type="text/JavaScript" src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
@@ -20,27 +21,37 @@
 			<div id="navMargin"></div>
 				
 			<section id="section">
-				복용 타이틀 : ${doseVo.ddTitle }<br>
-				약 번호 : ${doseVo.drugInfoNo }<br>
-				복용 시작 날짜 : ${doseVo.ddStartDate }<br>
-				복용 종료 날짜 : ${doseVo.ddEndDate }<br>
-				복용 주기 : ${doseVo.ddCycle }<br>
-				복용 시기 : ${doseVo.ddTimeSlot }<br>
-				복용 상세 시간 : ${doseVo.ddTime }<br>
-				1회 복용량 : ${doseVo.ddAmount }<br>
-				
-				<label><button id="doseShareBtn" class="calBtn" onClick="sendLinkDefault();">복용 정보 공유하기</button></label>
-				<a href="<c:url value='/doseUpdateForm/${doseVo.ddNo}'/>">복용 정보 수정</a><br>
-				<a href="javascript:deleteCheck();">복용 정보 삭제</a><br>
-			
-				
+				<div id="doseTblBox">
+					<table id="doseTbl">
+						<tr><th colspan="2">복용 타이틀</th></tr>
+						<tr><td colspan="2">${doseVo.ddTitle }</td></tr>
+						<tr><th colspan="2">약 번호</th></tr>
+						<tr><td colspan="2">${doseVo.drugInfoNo }</td></tr>
+						<tr><th>복용 시작 날짜</th><th>복용 종료 날짜</th></tr>
+						<tr><td>${doseVo.ddStartDate }</td><td>${doseVo.ddEndDate }</td></tr>
+						<tr><th>복용 시기</th><th>복용 상세 시간</th></tr>
+						<tr><td>${doseVo.ddTimeSlot }</td><td>${doseVo.ddTime }</td></tr>
+						<tr><th>복용 주기</th><th>1회 복용량</th></tr>
+						<tr><td>${doseVo.ddCycle }</td><td>${doseVo.ddAmount }</td></tr>
+						<tr><th><a href="<c:url value='/doseUpdateForm/${doseVo.ddNo}'/>">수정하기</a></th><th><a href="javascript:deleteCheck();">삭제하기</a></th></tr>
+						<tr><th colspan="2"><label><button id="doseShareBtn" class="calBtn" onClick="sendLinkDefault();"></button>공유하기</label></th></tr>
+					</table>
+				</div>
 			</section>
-	        
+			
 			<!-- BOTTOM  -->
 			<jsp:include page="/WEB-INF/views/layout/bottom.jsp" flush='true' />
 		
       </div> <!-- wrap -->
 	</body>
+	<script type="text/javascript">
+		function deleteCheck(){
+			var answer = confirm("해당 복용 정보를 목록에서 삭제하시겠습니까?");
+			if(answer == true){
+				location.href="/doseDelete/${doseVo.ddNo}";
+			}
+		}
+	</script>
 	<script type="text/javascript">
 	    function sendLinkCustom() {
 	        Kakao.init("b3bc39226c10ad1e0663733a444b7b1d");
@@ -49,7 +60,6 @@
 	        });
 	    }
 	</script>
-	
 	<script>
 		try {
 		  function sendLinkDefault() {
