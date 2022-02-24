@@ -22,8 +22,9 @@
     width: fit-content; /* 태그의 넓이를 500px로 */
 	margin:0 auto; /* 양쪽 여백을 위아래는 0 좌우는 자동으로 잡아주겠다! */
 	margin-top : 40px;
-box-shadow: 0px 1px 4px #0d3bb1;   /*  height: 700px; */
+	box-shadow: 0px 1px 4px #0d3bb1;   /*  height: 700px; */
     border-radius: 11px;
+    
 	}
 	
 	.displayNone {
@@ -53,14 +54,14 @@ box-shadow: 0px 1px 4px #0d3bb1;   /*  height: 700px; */
 			 <article>             
 	                <div class="slider-1">
 	                    <div class="slides">
-	                        <div class="active" style="background-image:url(image/slide_img_01.jpg);">></div>
+	                        <div class="active" style="background-image:url(image/slide_img_01.jpg);"></div>
 	                        <div style="background-image:url(image/slide_img_02.jpg);"></div>
 	                        <div style="background-image:url(image/slide_img_03.jpg);"></div>
-	                        <div style="background-image:url(image/slide_img_04.jpg);"></div>
 	                        <div style="background-image:url(image/slide_img_05.jpg);"></div>
+	                        <div style="background-image:url(image/slide_img_04.jpg);"></div>
 	                    </div>
 	                    <div class="page-btns">
-	                        <div class="active" style="background-image:url(image/slide_img_01.jpg);"></div>
+	                        <div class="active" ></div>
 	                        <div></div>
 	                        <div></div>
 	                        <div></div>
@@ -77,10 +78,10 @@ box-shadow: 0px 1px 4px #0d3bb1;   /*  height: 700px; */
 	            </article>
 	
 			
-			<section id="section">
+			<section id="section" style="    padding-top: 1px;">
 			
 			
-<br>
+
 	<div class="boardBody">
 	<br>
 	<div class="ctgMenuBox">
@@ -166,7 +167,7 @@ box-shadow: 0px 1px 4px #0d3bb1;   /*  height: 700px; */
 		
 	
 		</div>
-		<br><br><br><br><br><br><br><br><br><br>
+		<br><br><br><br>
 		
 
 	</section>

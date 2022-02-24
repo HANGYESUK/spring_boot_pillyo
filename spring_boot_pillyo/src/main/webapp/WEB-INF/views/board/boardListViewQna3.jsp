@@ -9,7 +9,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <script src="https://code.jquery.com/jquery-latest.min.js"></script>
-
+		<script src="<c:url value='/js/mainBanner.js'/>"></script>
+	    <link href="<c:url value='/css/mainBanner.css'/>" rel="stylesheet" type="text/css">	
 
 		<link href="<c:url value='/css/board/board.css'/>" rel="stylesheet" type="text/css">	
 
@@ -52,7 +53,31 @@ box-shadow: 0px 1px 4px #0d3bb1;   /*  height: 700px; */
 			<!-- TOP -->
 			<jsp:include page="/WEB-INF/views/layout/top.jsp" flush='true' />
 			<div id="navMargin"></div>
-			
+			 <article>             
+	                <div class="slider-1">
+	                    <div class="slides">
+	                        <div class="active" style="background-image:url(image/slide_img_01.jpg);"></div>
+	                        <div style="background-image:url(image/slide_img_02.jpg);"></div>
+	                        <div style="background-image:url(image/slide_img_03.jpg);"></div>
+	                        <div style="background-image:url(image/slide_img_05.jpg);"></div>
+	                        <div style="background-image:url(image/slide_img_04.jpg);"></div>
+	                    </div>
+	                    <div class="page-btns">
+	                        <div class="active" ></div>
+	                        <div></div>
+	                        <div></div>
+	                        <div></div>
+	                    </div>
+	                    <div class="side-btns">
+	                        <div>
+	                            <span><i class="fas fa-angle-left"></i></span>
+	                        </div>
+	                        <div>
+	                            <span><i class="fas fa-angle-right"></i></span>
+	                        </div>
+	                    </div>
+	                </div>
+	            </article>
 			<section id="section">
 			
 			
