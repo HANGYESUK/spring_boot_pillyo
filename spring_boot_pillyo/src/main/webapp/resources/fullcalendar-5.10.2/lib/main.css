@@ -200,17 +200,17 @@ When it's NOT activated, the fc-button classes won't even be in the DOM.
 }
 .fc .fc-button-primary {
     color: #fff;
-    color: var(--fc-button-text-color, #787878);
+    color: var(--fc-button-text-color, #fff);
     background-color: #2C3E50;
     background-color: var(--fc-button-bg-color, #2C3E50);
-    border-color: #cccccc;
-    background-color: #afafa6;
+    border-color: #ffffff00;
+    background-color: #c8c8c8;
   }
 .fc .fc-button-primary:hover {
     color: #fff;
     color: var(--fc-button-text-color, #fff);
     background-color: #1e2b37;
-    background-color: var(--fc-button-hover-bg-color, #6c8dad);
+    background-color: var(--fc-button-hover-bg-color, #c8c8c8);
     border-color: #1a252f;
     border-color: var(--fc-button-hover-border-color, #1a252f);
   }
@@ -232,7 +232,7 @@ When it's NOT activated, the fc-button classes won't even be in the DOM.
     background-color: #1a252f;
     background-color: var(--fc-button-active-bg-color, #1a252f);
     border-color: #cccccc;
-    background-color: #afafa6; /* 버튼 색상 */
+    background-color: #c8c8c8; /* 버튼 색상 */
   }
 .fc .fc-button-primary:not(:disabled):active:focus,
   .fc .fc-button-primary:not(:disabled).fc-button-active:focus {
@@ -299,7 +299,7 @@ When it's NOT activated, the fc-button classes won't even be in the DOM.
   }
 .fc-direction-ltr .fc-toolbar > * > :not(:first-child) {
     margin-left: .75em; /* space between */
-    background-color: #afafa6; /* 버튼 색상 */
+    background-color: #c8c8c8; /* 버튼 색상 */
     border-color: #cccccc;
   }
 .fc-direction-rtl .fc-toolbar > * > :not(:first-child) {
@@ -387,6 +387,7 @@ When it's NOT activated, the fc-button classes won't even be in the DOM.
 .fc .fc-scrollgrid-section-body table,
   .fc .fc-scrollgrid-section-footer table {
     border-bottom-style: hidden; /* head keeps its bottom border tho */
+    height: 390px;
   }
 .fc {
 
@@ -418,7 +419,7 @@ When it's NOT activated, the fc-button classes won't even be in the DOM.
     flex-grow: 1; /* because this harness is WITHIN the .fc's flexbox */
     position: relative;
     background-color: #f2f9fb; /* 캘린더 배경 색상 */
-    border-radius: 7px;
+    border-radius: 15px;
   }
 .fc {
 
@@ -431,6 +432,7 @@ When it's NOT activated, the fc-button classes won't even be in the DOM.
     right: 0;
     bottom: 0;
     left: 0;
+    border-radius: 15px;
   }
 .fc .fc-col-header-cell-cushion {
     display: inline-block; /* x-browser for when sticky (when multi-tier header) */
@@ -1416,8 +1418,8 @@ A VERTICAL event
   display: table; /* clear floating */
     }
 .fc-theme-standard .fc-list-day-cushion {
-    background-color: rgba(208, 208, 208, 0.3);
-    background-color: var(--fc-neutral-bg-color, rgba(208, 208, 208, 0.3));
+    background-color: #d9d9d9;
+    /* background-color: var(--fc-neutral-bg-color, rgba(208, 208, 208, 0.3)); */
   }
 .fc-direction-ltr .fc-list-day-text,
 .fc-direction-rtl .fc-list-day-side-text {

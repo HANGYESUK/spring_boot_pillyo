@@ -38,7 +38,7 @@
 
 #doseListCal {
 	width: 490px;
-    height: 430px;
+    height: 410px;
     font-size: 24px;
 }
 
@@ -181,5 +181,10 @@
     border: 1px solid #c8c8c8;
     font-size: 17px;
     font-weight: 800;
+    color: #626262;
+}
+
+.calBtn a {
+	text-decoration: none;
     color: #626262;
 }

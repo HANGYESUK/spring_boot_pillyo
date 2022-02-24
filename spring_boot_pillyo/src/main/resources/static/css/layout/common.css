@@ -33,6 +33,10 @@ marquee {
     scrolldelay:10;
 }
 
+marquee a {
+	margin: 0 48px;
+}
+
 /* --------- pill-yo ------------ */
 #logoBox {
 	position: relative;
@@ -40,9 +44,10 @@ marquee {
     width: 1257px;
     padding: 10px 0 13px 20px;
     font-size: 24px;
-        background: #a4cdff;
-        height: 9px;
-        color:darkblue;
+    background: #a4cdff;
+    height: 9px;
+    color:darkblue;
+    line-height: 13px;
 }
 
 #logo {
