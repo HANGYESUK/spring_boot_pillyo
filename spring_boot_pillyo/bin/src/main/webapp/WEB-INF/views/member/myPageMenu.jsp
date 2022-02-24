@@ -10,15 +10,6 @@
 		<script src="<c:url value='/js/jquery-3.6.0.min.js'/>"></script>
 		<script src="<c:url value='/js/drugShapeSearchForm.js'/>"></script>
 	</head>
-	
-	<style>
-		li > a{
-		        font-size: 20px;
-			    color: #305ec7;
-			    font-weight: 49;
-			        line-height: 43px;
-		}
-	</style>
 	<body>
 		
 	
@@ -31,7 +22,7 @@
 			
 			<ul id="myPageItemBox">
 				<li><a href="<c:url value='/updateMemberForm'/>">개인정보 수정</a></li>
-				<li><a>나의 건강정보</a></li>
+				<li>나의 건강정보</li>
 				<li><a href="">구매내역</a></li>
 				<li><a href="javascript:deleteCheck();">회원탈퇴</a></li>
 				<li><a href="">로그아웃</a></li>

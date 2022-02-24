@@ -2,14 +2,13 @@
 
 
 #myPageItemBox{
-        background-color: white;
+    background-color: white;
     width: 10%;
-    border-radius: 42px 42px 42px 42px;
-    height: 225px;
+    border-radius: 10px;
+    height: 500px;
     padding-top: 20px;
     margin: 0 auto;
     float: left;
-
 }
 #myPageItemBox li{
 	list-style: none;
@@ -31,7 +30,5 @@ text-decoration:none;
  margin: 0 auto;
  width:70%;
  height: 520px;
- padding-top: 15px;
-    color: #3f63b5;
 	
 }

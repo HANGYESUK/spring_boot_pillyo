@@ -22,7 +22,13 @@
 
 
 	<style>
-	
+	.boardBody {
+    width: fit-content; /* 태그의 넓이를 500px로 */
+	margin:0 auto; /* 양쪽 여백을 위아래는 0 좌우는 자동으로 잡아주겠다! */
+	margin-top : 40px;
+box-shadow: 0px 1px 4px #0d3bb1;   /*  height: 700px; */
+    border-radius: 11px;
+	}
 	
 	.displayNone {
 		display:none;
@@ -50,7 +56,7 @@
 			<section id="section">
 			
 			
-
+<br>
 	<div class="boardBody">
 	<br>
 	
@@ -95,7 +101,7 @@
 		</table>
 		
 		<a href="<c:url value = '/boardForm'/>"><button>글쓰기</button></a>
-		<div id="more-Btn" class="low" onclick="more()"><h3>더보기</h3>
+		<div id="more-Btn" class="low" onclick="more()"><h3>더보기</h3><br>
 		
 		
 		

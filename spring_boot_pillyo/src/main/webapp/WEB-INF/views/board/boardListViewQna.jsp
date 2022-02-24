@@ -8,39 +8,22 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<script src="https://code.jquery.com/jquery-latest.min.js"></script>
-
-    <!-- 제이쿼리 -->
-    <script
-    src="https://code.jquery.com/jquery-3.6.0.min.js"
-    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-    crossorigin="anonymous"></script>
-
-    <!-- 폰트어썸 -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.2.0/css/all.min.css" integrity="sha512-6c4nX2tn5KbzeBJo9Ywpa0Gkt+mzCzJBrE1RB6fmpcsoN+b/w/euwIMuQKNyUoU/nToKN3a8SgNOtPrbW12fug==" crossorigin="anonymous" />
-
-
-	<link rel="stylesheet" href="/css/dashboard/dashboardContent.css" />
-
-
-		<link href="<c:url value='/css/board/board.css'/>" rel="stylesheet" type="text/css">	
-
-	<script src="./jquery.fullPage.js"></script>
 
 		<script src="<c:url value='/js/jquery-3.6.0.min.js'/>"></script>
-	
+		<link href="<c:url value='/css/board/board.css'/>" rel="stylesheet" type="text/css">	
+
 
 <title>Insert title here</title>
 
 </head>
+
 
 <style>
 	.boardBody {
     width: fit-content; /* 태그의 넓이를 500px로 */
 	margin:0 auto; /* 양쪽 여백을 위아래는 0 좌우는 자동으로 잡아주겠다! */
 	margin-top : 40px;
-	    box-shadow: 1px 0px 6px #0d3bb1;
-    height: 700px;
+box-shadow: 0px 1px 4px #0d3bb1;   /*  height: 700px; */
     border-radius: 11px;
 	}
 	
@@ -71,7 +54,7 @@
 			<section id="section">
 			
 			
-
+<br>
 	<div class="boardBody">
 	<br>
 	<div class="ctgMenuBox">
@@ -117,7 +100,7 @@
 			</tbody>
 		</table>
 		<a href="<c:url value = '/boardForm'/>"><button>글쓰기</button></a>
-		<div id="more-Btn" class="low" onclick="more()"><h3>더보기</h3>
+		<div id="more-Btn" class="low" onclick="more()"><h3>더보기</h3><br>
 		
 		
 		

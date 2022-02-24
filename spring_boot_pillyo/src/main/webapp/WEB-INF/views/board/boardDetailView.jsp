@@ -28,14 +28,14 @@
 			
 			<section id="section">
 	
-	
+	<br>
 		<!-- 게시판 글 보기 양식 영역 시작 -->
 	<div class="container">
 		<div class="row">
 			<table class="table table-stripedDetail">
 				<thead>
 					<tr>
-						<th width=600px; colspan="3" style="background-color: #f2f9fb; text-align: center;">알약요
+						<th width=600px; colspan="3" style="background-color: #f2f9fb; text-align: center; font-size:25px;">알약요
 						<c:if test="${board.boardCtgNo eq '0'}">소식</c:if>
 						<c:if test="${board.boardCtgNo eq '1'}">카드뉴스</c:if>
 						<c:if test="${board.boardCtgNo eq '2'}">주문/결제</c:if>
@@ -45,6 +45,8 @@
 						Q&A
 						</th>
 						
+					</tr>
+					<tr>
 					</tr>
 					<tr>
 					<th style="width:90px;">분류</th>

@@ -19,7 +19,7 @@
   /* layout of immediate children */
   display: flex;
   flex-direction: column;
-  background-color: #e9e9e9; /* header 색상 */
+  background-color: #eeedd5; /* header 색상 */
   font-size: 1em
   
 }
@@ -200,18 +200,17 @@ When it's NOT activated, the fc-button classes won't even be in the DOM.
 }
 .fc .fc-button-primary {
     color: #fff;
-    color: var(--fc-button-text-color, #fff);
+    color: var(--fc-button-text-color, #787878);
     background-color: #2C3E50;
     background-color: var(--fc-button-bg-color, #2C3E50);
-    border-color: #2C3E50;
-    border-color: var(--fc-button-border-color, #2C3E50);
-    background-color: #8aabc5; /* 버튼 색상 */
+    border-color: #cccccc;
+    background-color: #afafa6;
   }
 .fc .fc-button-primary:hover {
     color: #fff;
     color: var(--fc-button-text-color, #fff);
     background-color: #1e2b37;
-    background-color: var(--fc-button-hover-bg-color, #1e2b37);
+    background-color: var(--fc-button-hover-bg-color, #6c8dad);
     border-color: #1a252f;
     border-color: var(--fc-button-hover-border-color, #1a252f);
   }
@@ -232,9 +231,8 @@ When it's NOT activated, the fc-button classes won't even be in the DOM.
     color: var(--fc-button-text-color, #fff);
     background-color: #1a252f;
     background-color: var(--fc-button-active-bg-color, #1a252f);
-    border-color: #151e27;
-    border-color: var(--fc-button-active-border-color, #151e27);
-    background-color: #8aabc5; /* 버튼 색상 */
+    border-color: #cccccc;
+    background-color: #afafa6; /* 버튼 색상 */
   }
 .fc .fc-button-primary:not(:disabled):active:focus,
   .fc .fc-button-primary:not(:disabled).fc-button-active:focus {
@@ -290,18 +288,19 @@ When it's NOT activated, the fc-button classes won't even be in the DOM.
     align-items: center;
   }
 .fc .fc-toolbar.fc-header-toolbar {
-    margin-bottom: 1.5em;
+    margin: 0 0 16px 0;
   }
 .fc .fc-toolbar.fc-footer-toolbar {
-    margin-top: 1.5em;
+    margin: 18px 0;
   }
 .fc .fc-toolbar-title {
-    font-size: 1.75em;
+    font-size: 22px;
     margin: 0;
   }
 .fc-direction-ltr .fc-toolbar > * > :not(:first-child) {
     margin-left: .75em; /* space between */
-    background-color: #8aabc5; /* 버튼 색상 */
+    background-color: #afafa6; /* 버튼 색상 */
+    border-color: #cccccc;
   }
 .fc-direction-rtl .fc-toolbar > * > :not(:first-child) {
     margin-right: .75em; /* space between */
@@ -359,6 +358,7 @@ When it's NOT activated, the fc-button classes won't even be in the DOM.
   }
 .fc .fc-scrollgrid-liquid {
     height: 100%;
+    border: none;
   }
 .fc .fc-scrollgrid-section { /* a <tr> */
     height: 1px /* better than 0, for firefox */
@@ -374,6 +374,7 @@ When it's NOT activated, the fc-button classes won't even be in the DOM.
     }
 .fc .fc-scrollgrid-section-liquid > td {
       height: 100%; /* better than `auto`, for firefox */
+      border: none;
     }
 .fc .fc-scrollgrid-section > * {
     border-top-width: 0;
@@ -416,7 +417,8 @@ When it's NOT activated, the fc-button classes won't even be in the DOM.
 .fc .fc-view-harness {
     flex-grow: 1; /* because this harness is WITHIN the .fc's flexbox */
     position: relative;
-    background-color: #e7f5ff; /* 캘린더 배경 색상 */
+    background-color: #f2f9fb; /* 캘린더 배경 색상 */
+    border-radius: 7px;
   }
 .fc {
 
@@ -691,14 +693,14 @@ A HORIZONTAL event
     background: #fff;
     background: var(--fc-page-bg-color, #fff);
     /* 캘린더 description 바깥쪽 박스 */
-    border-radius: 68px;
+    border-radius: 3px;
     padding: 20px;
-    background-color: #ccd5e3;
+    background-color: #acc1d2;
   }
 .fc-theme-standard .fc-popover-header {
     /* background: rgba(208, 208, 208, 0.3);
     background: var(--fc-neutral-bg-color, rgba(208, 208, 208, 0.3)); */
-    background-color: #ccd5e3;
+    background-color: #acc1d2;
     /* 캘린더 description 헤더 배경 색상 */
   }
 
@@ -724,12 +726,12 @@ A HORIZONTAL event
     z-index: 1; /* container inner z-index's because <tr>s can't do it */
   }
 .fc .fc-daygrid-day.fc-day-today {
-      background-color: rgba(255, 220, 40, 0.15);
-      background-color: var(--fc-today-bg-color, rgba(255, 220, 40, 0.15));
+      background-color: #eeedd5;
+      border: none;
     }
 .fc .fc-daygrid-day-frame {
     position: relative;
-    min-height: 100%; /* seems to work better than `height` because sets height after rows/cells naturally do it */
+    min-height: 93%; /* seems to work better than `height` because sets height after rows/cells naturally do it */
   }
 .fc {
 
@@ -862,7 +864,7 @@ A HORIZONTAL event
 .fc .fc-more-popover .fc-popover-body {
     min-width: 220px;
     padding: 10px;
-    background-color: #ccd5e3; /* 캘린더 description 안쪽 배경 색상 */
+    background-color: #acc1d2; /* 캘린더 description 안쪽 배경 색상 */
   }
 .fc-direction-ltr .fc-daygrid-event.fc-event-start,
 .fc-direction-rtl .fc-daygrid-event.fc-event-end {
