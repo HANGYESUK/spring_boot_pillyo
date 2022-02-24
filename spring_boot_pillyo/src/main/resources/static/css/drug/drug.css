@@ -4,7 +4,7 @@
  	    color: #0d3bb1;
  	 margin-left: 11px;
  }
- /* 스크롤바 없애기 */
+ /* �뒪�겕濡ㅻ컮 �뾾�븷湲� */
 body{
  -ms-overflow-style: none;
  }
@@ -15,7 +15,7 @@ body{
 #searchResult{
 	width: 1000px;
 	display:flex;
-	flex-wrap: wrap; /* 박스 크기안에서 줄바꿈 */
+	flex-wrap: wrap; /* 諛뺤뒪 �겕湲곗븞�뿉�꽌 以꾨컮轅� */
 	justify-content: start;
 	
 }
@@ -37,10 +37,12 @@ body{
 	border-color: #f7f7f7;
 	box-shadow: 0 4px 5px rgba(0, 0, 0, .2);
 	background: #f6f8ff94;
+	cursor: pointer;
+	transition: all 0.3s;
 }
 
 .drugBox2{
-	    width: 600px;
+	width: 600px;
     height: 600px;
 	margin: 10px 10px;
 	display:flex;
@@ -51,7 +53,8 @@ body{
 	border-color: #f7f7f7;
 	box-shadow: 0 4px 5px rgba(0, 0, 0, .2);
 	background: white;
-	
+	cursor: pointer;
+	transition: all 0.3s;
 }
 
 
@@ -73,15 +76,13 @@ body{
 	font-size: 13px;
 }
 .drugBox:hover {
-	top:-2px;
 	border: 3px solid white;
- 	box-shadow: 2px 2px 5px #0d3bb1;
+ 	box-shadow: 5px 5px 5px #0d3bb1;
 }
 
 .drugBox2:hover {
-	top:-2px;
 	border: 3px solid white;
- 	box-shadow: 2px 2px 5px #0d3bb1;
+ 	box-shadow: 5px 5px 5px #0d3bb1;
 }
 
 
