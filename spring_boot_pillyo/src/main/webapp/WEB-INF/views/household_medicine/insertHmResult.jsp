@@ -19,7 +19,7 @@
 		}
 		#table_tab{
 		 display : inline-block;
-		 width:25%;
+		 width:24.5%;
 		}
 		
 		table{
