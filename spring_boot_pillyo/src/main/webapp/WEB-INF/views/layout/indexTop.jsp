@@ -38,7 +38,7 @@
 						
 						 <div class="outer-menu">
 						 	<div class="outer-menu-btn"><a href="/updateMemberForm"><h5>마이페이지</h5></a></div>
-							<div class="outer-menu-btn"><a href="/dashboard"><h5>건강관리</h5></a></div>
+							<div class="outer-menu-btn"><a href="/healthManageView"><h5>건강관리</h5></a></div>
  							<div class="outer-menu-btn" ><a href="/calendarView/${famNo}"><h5>복용관리</h5></a></div>
  							<!-- <div class="outer-menu-btn" ><a href="/calendarView"><h5>복용관리</h5></a></div> -->
 							<div class="outer-menu-btn"><a href="/hmForm"><h5>우리집 약관리</h5></a></div>

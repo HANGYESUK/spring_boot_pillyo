@@ -17,20 +17,23 @@ public class FeelController {
 	@Autowired
 	FeelService service;
 	
-	// 기분 관리 등록
+	// 기분 관리 등록 폼으로 이동
 	@RequestMapping("/feelForm/{famNo}")
 	public String feel(@PathVariable("famNo") int famNo, Model model) {
 		model.addAttribute("famNo", famNo);
 		return "feel/feelForm";
 	}
 	
-	// 기분 관리 등록 완료 시 폼 이동
+	// 기분 관리 등록
 	@RequestMapping("/insertFeel")
 	public String insertFeel(FeelVO vo) {
 		service.insertFeel(vo);
 		System.out.println(vo.getFeelScale());
+		int famNo = vo.getFamNo();
+		System.out.println("팸넘버"+famNo);
+				
 		//return "feel/feelListView";
-		return "Main/dashboard";
+		return "redirect:/healthManageView";
 	}
 	
 	// 전체 기분 관리 기록 조회

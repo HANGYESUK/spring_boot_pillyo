@@ -28,7 +28,7 @@ public class CalendarController {
 	@Autowired
 	FamilyService familyService;
 
-	// 복용관리 - 캘린더
+	// 복용관리 - 캘린더 (famNo 없이 매핑)
 	@RequestMapping("/calendarView")
 	public String calendarView(Model model, HttpSession session) {
 		
@@ -36,8 +36,25 @@ public class CalendarController {
 		String userId = (String)session.getAttribute("sid");
 		ArrayList<FamilyVO> famList = familyService.famListView(userId);
 		model.addAttribute("famList", famList);
+
+		int idx = 0;
 		
+		String famMember =  famList.get(idx).getFamMember();
+		model.addAttribute("famMember", famMember);
+		
+		int famNo = famList.get(idx).getFamNo();
+		
+		// 캘린더 추가용 복용 목록 데이터 (json) 생성
+		ArrayList<DoseVO> doseList = doseService.doseListView(famNo);
+		ArrayList<AutoDrugInfoVO> drugList = drugService.drugListView();
+		model.addAttribute("doseList", doseList);
+		model.addAttribute("drugList", drugList);
+		
+		// 매핑때 받은 @PathVariavle int famNo 다시 모델로 보냄.
+		// famNo 기준 다시 등록폼 이동하거나 할때 사용. 
 				
+		model.addAttribute("famNo", famNo);
+		
 		return "/dose/calendarView";
 	}
 	
