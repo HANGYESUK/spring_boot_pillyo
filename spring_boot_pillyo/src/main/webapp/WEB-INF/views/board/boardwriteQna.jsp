@@ -18,7 +18,8 @@
 <meta charset="UTF-8">
 <title>게시물 작성</title>
 	<script src="<c:url value='/js/jquery-3.6.0.min.js'/>"></script>
-
+<script src="<c:url value='/js/mainBanner.js'/>"></script>
+	    <link href="<c:url value='/css/mainBanner.css'/>" rel="stylesheet" type="text/css">	
 </head>
 
 
