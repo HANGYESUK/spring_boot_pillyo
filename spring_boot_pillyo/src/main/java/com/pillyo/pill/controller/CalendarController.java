@@ -30,23 +30,45 @@ public class CalendarController {
 
 	// 복용관리 - 캘린더
 	@RequestMapping("/calendarView")
-	public String calendarView() {
+	public String calendarView(Model model, HttpSession session) {
+		
+		// 가족정보 변경하면서 이동할 수 있게 famList 받아옴.
+		String userId = (String)session.getAttribute("sid");
+		ArrayList<FamilyVO> famList = familyService.famListView(userId);
+		model.addAttribute("famList", famList);
+		
+				
 		return "/dose/calendarView";
 	}
 	
 	// 복용관리 - 캘린더
 	@RequestMapping("/calendarView/{famNo}")
 	public String calendarView(@PathVariable("famNo") int famNo, Model model, HttpSession session) {
+		
+		// 가족정보 변경하면서 이동할 수 있게 famList 받아옴.
+		String userId = (String)session.getAttribute("sid");
+		ArrayList<FamilyVO> famList = familyService.famListView(userId);
+		model.addAttribute("famList", famList);
+		
+		//선택한 famNO의 famList 인덱스를 확인하여
+		int idx = 0;
+		for(int i=0;i<famList.size();i++) {
+			
+			if(famList.get(i).getFamNo() == famNo) {
+				idx= i;
+			}
+		}
+		System.out.println(idx);
+		//famMember 이름 model값으로 보냄.
+		String famMember =  famList.get(idx).getFamMember();
+		model.addAttribute("famMember", famMember);
+
+		
 		// 캘린더 추가용 복용 목록 데이터 (json) 생성
 		ArrayList<DoseVO> doseList = doseService.doseListView(famNo);
 		ArrayList<AutoDrugInfoVO> drugList = drugService.drugListView();
 		model.addAttribute("doseList", doseList);
 		model.addAttribute("drugList", drugList);
-		
-		// 가족정보 변경하면서 이동할 수 있게 famList 받아옴.
-		String userId = (String)session.getAttribute("sid"); //session통해 userId Controller로 받기
-		ArrayList<FamilyVO> famList = familyService.famListView(userId);
-		model.addAttribute("famList", famList);
 		
 		// 매핑때 받은 @PathVariavle int famNo 다시 모델로 보냄.
 		// famNo 기준 다시 등록폼 이동하거나 할때 사용. 
