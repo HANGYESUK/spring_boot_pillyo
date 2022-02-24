@@ -26,9 +26,9 @@
   	</insert>
  	
  	<!-- 우리집 등록된 약 조회 -->
- 	<select id="insertHmResult" 
+ 	<select id="insertHmResult" parameterType="String"
  			resultType = "com.pillyo.pill.model.HmVO">
- 		SELECT * FROM household_medicine ORDER BY hmNo
+ 		SELECT * FROM household_medicine where userId=#{userId} ORDER BY hmNo
  	</select>
  	
  	

@@ -80,10 +80,14 @@ public class HmController{
 
 	// 우리집 약관리 : 조회
 	@RequestMapping("/insertHmResult")
-	public String insertHmResult(Model model) {
+	public String insertHmResult (Model model, HttpSession session) {
 		
-		ArrayList<HmVO> hmList = service.insertHmResult();
+		String userId = (String)session.getAttribute("sid");
+		
+		ArrayList<HmVO> hmList = service.insertHmResult(userId);
 		model.addAttribute("hmList", hmList);
+		
+		System.out.println(hmList);
 		
 		return "household_medicine/insertHmResult";
 	}

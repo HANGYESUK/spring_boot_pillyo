@@ -17,9 +17,9 @@ public class HmService implements IHmService{
 	IHmDAO dao;
 
 	@Override
-	public ArrayList<HmVO> insertHmResult() {
+	public ArrayList<HmVO> insertHmResult(String userId) {
 		// 전체 약 목록 관리
-		return dao.insertHmResult();
+		return dao.insertHmResult(userId);
 	}
 
 	@Override
