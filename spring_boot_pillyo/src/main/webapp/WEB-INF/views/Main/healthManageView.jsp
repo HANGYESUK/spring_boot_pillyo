@@ -8,9 +8,8 @@
 <title>HealthList</title>
 		<script src="<c:url value='/js/jquery-3.6.0.min.js'/>"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
-	 	<link rel="stylesheet" href="/css/dashboard/dashboard.css" />
-	 	<link rel="stylesheet" href="/css/health/healthManage.css" />
-		 	
+	 	<link rel="stylesheet" href="<c:url value='/css/dashboard/dashboard.css'/>" />
+	 	<link rel="stylesheet" href="<c:url value='/css/health/healthManage.css'/>" />
 		 <style>
 		 	.display-none {
 		 		display: none;
@@ -42,7 +41,7 @@
 			 </div>
 
 			
-			<h3>${famMember} 님의 건강관리 입니다.</h3><br><br>
+			<h3>${famList[0].famMember} 님의 건강관리 입니다.</h3><br><br>
 			
 				
 		
@@ -90,9 +89,8 @@
 					 <c:forEach items="${bodyList }" var="body">
 						<div class="health-Container-Box calum">
 							<div class="health-Content-Title low">
-									<img src="#"/>
 									<div class="health-Box1 low">
-										<h2>번호 ${body.bodyNo}</h2>
+										<h2>BMI ${body.bmi}</h2>
 									</div>
 									<div class="health-Box2 low">
 										<h2>기록일 : ${body.bodyRecordDate}</h2>
@@ -117,14 +115,6 @@
 								</div>
 								<div class="health-Box2 low">
 									<h2>${body.weight}</h2>
-								</div>
-							</div>
-							<div class="health-Content low border">
-								<div class="health-Box1 low">
-									<h2>BMI</h2>
-								</div>
-								<div class="health-Box2 low">
-									<h2>${body.bmi}</h2>
 								</div>
 							</div>
 								<a href="<c:url value='/updateBodyForm/${body.bodyNo}'/>"><button class="updateBtn btn low">수정</button></a>
@@ -172,7 +162,6 @@
 					 <c:forEach items="${pressureList }" var="pressure">
 						<div class="health-Container-Box calum">
 							<div class="health-Content-Title low">
-									<img src="#"/>
 									<div class="health-Box1 low">
 										<h2>상황 : ${pressure.situation}</h2>
 									</div>
@@ -255,7 +244,6 @@
 					 <c:forEach var="feel" items="${feelList}">
 						<div class="health-Container-Box calum">
 							<div class="health-Content-Title low">
-									<img src="#"/>
 									<div class="health-Box1 low">
 										<h2>기분점수 ${feel.feelScale}</h2>
 									</div>
@@ -266,19 +254,11 @@
 									<a href="javascript:deleteFeelCheck(${feel.feelNo});"><button class="delBtn low">삭제</button></a>
 
 							</div>
-							<div class="health-Content low border">
-								<div class="health-Box1 low">
-									<h2>기록자</h2>
-								</div>
-								<div class="health-Box2 low">
-									<h2>${feel.famNo}</h2>
-								</div>
-							</div>
-							<div class="health-Content low border">
-								<div class="health-Box1 low">
+							<div class="health-Content calum border">
+								<div class="feel-Box1 low">
 									<h2>기분일기</h2>
 								</div>
-								<div class="health-Box2 low">
+								<div class="feel-Box2 low">
 									<h2>${feel.feelMemo}</h2>
 								</div>
 							</div>
@@ -312,7 +292,6 @@
 				
 				<!-- 혈당 변수 -->
 			<script>
-		        let sugarMedication = []
 		        let sugarLevel = []
 			</script>
 		
@@ -326,9 +305,8 @@
 					 <c:forEach items="${sugarList}" var="sugar">
 						<div class="health-Container-Box calum">
 							<div class="health-Content-Title low">
-									<img src="#"/>
 									<div class="health-Box1 low">
-										<h2>번호 ${sugar.sugarNo}</h2>
+										<h2>식사여부 : ${sugar.acpc}</h2>
 									</div>
 									<div class="health-Box2 low">
 										<h2>기록일 : ${sugar.sugarRecordDate}</h2>
@@ -375,10 +353,11 @@
 								<a href="<c:url value='/updateSugarForm/${sugar.sugarNo}'/>"><button class="updateBtn btn low">수정</button></a>
 		 
 						</div>
+						
 						<script>
-					        sugarMedication.push(${sugar.sugarMedication})
 					        sugarLevel.push(${sugar.sugarLevel})
 						</script>
+						
 				 	</c:forEach>
 						<script type="text/javascript">
 							function deleteSugarCheck(no){
@@ -603,21 +582,15 @@
     - ctx를 첫번째 argument로 넘겨주고, 
     - 두번째 argument로 그림을 그릴때 필요한 요소들을 모두 넘겨줍니다. 
     */
-    
+    console.log(sugarLevel)
     
     new Chart(document.getElementById("myChart4"), {
         type: 'line',
         data: {
             labels:date,
             datasets: [{ 
-                data: sugarMedication,
-                label: "혈당",
-                borderColor: "#FF6363",
-                fill: false
-            },
-            { 
                 data: sugarLevel,
-                label: "투약",
+                label: "수치",
                 borderColor: "#f1c40f",
                 fill: false
             }]
