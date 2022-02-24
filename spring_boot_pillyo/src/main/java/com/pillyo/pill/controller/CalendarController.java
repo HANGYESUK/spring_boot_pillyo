@@ -27,6 +27,12 @@ public class CalendarController {
 	
 	@Autowired
 	FamilyService familyService;
+
+	// 복용관리 - 캘린더
+	@RequestMapping("/calendarView")
+	public String calendarView() {
+		return "/dose/calendarView";
+	}
 	
 	// 복용관리 - 캘린더
 	@RequestMapping("/calendarView/{famNo}")

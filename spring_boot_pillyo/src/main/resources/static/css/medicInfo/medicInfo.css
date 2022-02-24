@@ -1,3 +1,7 @@
+#section {
+	background: #f2f2f2;
+}
+
 ul li{
 	list-style: none;
 }
@@ -11,7 +15,6 @@ ul li{
 }
 
 #dropdownInfoBox {
-	width: 335px;
     background: #f2f2f2;
     font-size: 12px;
     padding: 11px 18px;
@@ -20,6 +23,7 @@ ul li{
 
 #dropdownInfoBox h1 {
 	display: inline;
+	font-size: 21px;
 }
 
 #dropdownInfoBox a {
@@ -30,9 +34,100 @@ ul li{
 
 .openBtnBox a {
 	float: right;
+	font-size: 25px;
 }
 
 .infoBox {
     padding: 10px;
     font-size: 16px;
+    color: #1c1c1c;
+}
+
+.infoBox h2 {
+	font-size: 18px;
+    margin: 0 12px;
+}
+
+.info {
+	background: #c3ccd9;
+    border-radius: 15px;
+    padding: 10px 20px;
+}
+
+.info > ul {
+	padding-left: 0px;
+}
+
+#otcEtcStcBox {
+	list-style: none;	
+}
+
+#otcEtcStcBox > li {
+	margin: 0 0 20px 0;
+}
+
+#typeOfDrugBox > ul > li > ul {
+	    background: #aab6c7;
+    border-radius: 10px;
+    padding: 18px;
+}
+
+#drugExpirationBox > ul > li {
+	margin: 12px 0;
+}
+
+#howToTakeMBox > ul > li > h5 {
+	font-size: 19px;
+	margin: 16px 0;
+}
+
+#howToTakeMBox > ul > li > ul > li {
+	margin: 8px 0;
+}
+
+#howToTakeMBox > ul > li:nth-child(5) > ul li {
+	background: #aab6c7;
+    padding: 3px 13px;
+    border-radius: 10px;
+}
+
+#howToTakeMBox > ul > li:nth-child(5) > ul li > p {
+	margin-bottom: 25px;
+}
+
+#howToTakeMBox > ul > li:nth-child(5) > ul {
+	margin-bottom: 20px;
+}
+
+#howToTakeMBox > ul > li:nth-child(5) > ul > li > ul {
+	background: #aab6c7;
+}
+
+#howToTakeMBox > ul > li:nth-child(5) > ul > li > ul:nth-child(1) > li {
+	background: #8c9cb4;
+}
+
+#howToTakeMBox > ul > li:nth-child(5) > ul > li > ul > li:nth-child(1) * {
+	background: #8c9cb4;
+}
+
+#howToTakeMBox > ul > li:nth-child(5) > ul > li > ul > li {
+	margin-bottom: 13px;
+}
+
+#howToTakeMBox > ul > li:nth-child(5) > ul > li > ul > li * {
+	background: #8c9cb4;
+}
+
+#howToTakeMBox > ul > li:nth-child(5) > ul > li > ul > li span {
+    padding: 10px 10px 10px 15px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+#howToTakeMBox > ul > li:nth-child(5) > ul > li > ul > li ul {
+	padding: 6px 0 11px 0;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    margin-bottom: 6px
 }

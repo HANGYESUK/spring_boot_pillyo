@@ -34,19 +34,22 @@
 			<div id="navMargin"></div>
 			
 			<section id="section">
-				<div id="calendarBox">
-					<div id='calendar'></div>
-				</div>
-				
-				<div id="doseListBox">
-					<div id='doseListCal'></div>
-				</div>
-				
-				<div id="btnBoxParent">
-					<div id="btnBox">
-						<label><button class="calBtn">공유</button></label>
-						<label><button class="calBtn">추가</button></label>
-						<label><button class="calBtn">뭐할까</button></label>
+				<div id="doseBox">
+					<div id="calendarBox">
+						<div id='calendar'></div>
+					</div>
+					<div id="doseListAndBtnBox">
+						<div id="doseListBox">
+							<div id='doseListCal'></div>
+						</div>
+						
+						<div id="btnBoxParent">
+							<div id="btnBox">
+								<label><button id="doseShareBtn" class="calBtn">복용 정보 공유하기</button></label>
+								<label><button id="doseAddBtn" class="calBtn">복용 정보 추가하기</button></label>
+								<label><button id="doseMngBtn" class="calBtn"><a href="<c:url value='/doseListView/${famNo}'/>">복용 목록 관리</a></button></label>
+							</div>
+						</div>
 					</div>
 				</div>
 			</section>
@@ -170,52 +173,12 @@
                 footerToolbar: {
                 	left: 'dayGridMonth listWeek',
                 	center: 'prev today next',
-                	right: 'addEventButton'
                 },
                 buttonText: { // 버튼 글자 커스텀
 	        	  today: 'Today',
 	        	  month: '월별',
 	        	  list: '주별',
-	        	  addEventButton: "+"
 	       	    },
-                customButtons: {
-                   addEventButton: { // 추가한 버튼 설정
-                       text : "복용 정보 추가",  // 버튼 내용
-                       click : function(){ // 버튼 클릭 시 이벤트 추가
-                    	   modal.open(); //-------------------------------------------------------------------- 모달 open
-
-                           $("#addDose").on("click",function(){  // modal의 추가 버튼 클릭 시
-                               var ddTitle = $("#ddTitle").val();
-                               var drugInfoNo = $("#drugInfoNo").val();
-                               var ddStartDate = $("#ddStartDate").val();
-                               var ddEndDate = $("#ddEndDate").val();
-                               var ddCycle = $("#ddCycle").val();
-                               var ddTimeSlot = $("#ddTimeSlot").val();
-                               var ddTime = $("#ddTime").val();
-                               var ddAmount = $("#ddAmount").val();
-                               
-                               //내용 입력 여부 확인
-                               if(ddTitle == null || ddTitle == ""){
-                                   alert("복용 타이틀을 입력하세요.");
-                               }else if(drugInfoNo == null || drugInfoNo ==""){
-                                   alert("약 이름을 입력하세요.");
-                               }else if(ddStartDate == "" || ddEndDate ==""){
-                                   alert("날짜를 입력하세요.");
-                               }else if(new Date(ddEndDate)- new Date(ddStartDate) < 0){
-                                   alert("종료일이 시작일보다 먼저입니다.");
-                               }else if(ddCycle == null || ddCycle == ""){
-                               	alert("복용 주기를 입력하세요.");
-                               }else if(ddTime == null || ddTime == ""){
-                               	alert("복용 상세 시간을 입력하세요.");
-                               }else if(ddAmount == null || ddAmount == ""){
-                               	alert("일회 복용량을 입력하세요.");
-                               }else{
-                            	   // 정상적으로 입력했을 경우
-                               }
-                           });
-                       }
-                   }
-              },
 	          navLinks: false, // 달력 상의 날짜 클릭 가능 여부 : true 클릭 가능. 클릭 시 해당 날짜의 일정 나타남
 	          dayMaxEvents: true, // 셀 크기보다 일정이 많이 등록되어 있는 경우 more 표시
 	          timeZone: 'local', // 한국 시간으로 설정
@@ -253,7 +216,7 @@
 			var listCal = document.getElementById('doseListCal');
 			var doseListCal = new FullCalendar.Calendar(listCal, {
 				initialView: 'dayGridDay',
-		        dayMaxEvents: true, // 셀 크기보다 일정이 많이 등록되어 있는 경우 more 표시
+		        dayMaxEvents: false, // 셀 크기보다 일정이 많이 등록되어 있는 경우 more 표시 X => 스크롤되게
 		        timeZone: 'local', // 한국 시간으로 설정
 		        locale: 'ko', // 한국어 설정
 		        expandRows: true, // 화면에 맞게 높이 재설정
@@ -346,5 +309,44 @@
        			
        		}
      	});
+	</script>
+	<script>
+		$("#doseAddBtn").on("click",function(){
+			modal.open();
+		});
+		
+		$("#addDose").on("click",function(){  // modal의 추가 버튼 클릭 시
+			var result = false;
+            var ddTitle = $("#ddTitle").val();
+            var drugInfoNo = $("#drugInfoNo").val();
+            var ddStartDate = $("#ddStartDate").val();
+            var ddEndDate = $("#ddEndDate").val();
+            var ddCycle = $("#ddCycle").val();
+            var ddTimeSlot = $("#ddTimeSlot").val();
+            var ddTime = $("#ddTime").val();
+            var ddAmount = $("#ddAmount").val();
+            
+            //내용 입력 여부 확인
+            if(ddTitle == null || ddTitle == ""){
+                alert("복용 타이틀을 입력하세요.");
+            }else if(drugInfoNo == null || drugInfoNo ==""){
+                alert("약 이름을 입력하세요.");
+            }else if(ddStartDate == "" || ddEndDate ==""){
+                alert("날짜를 입력하세요.");
+            }else if(new Date(ddEndDate)- new Date(ddStartDate) < 0){
+                alert("종료일이 시작일보다 먼저입니다.");
+            }else if(ddCycle == null || ddCycle == ""){
+            	alert("복용 주기를 입력하세요.");
+            }else if(ddTime == null || ddTime == ""){
+            	alert("복용 상세 시간을 입력하세요.");
+            }else if(ddAmount == null || ddAmount == ""){
+            	alert("일회 복용량을 입력하세요.");
+            }else{
+         	   // 정상적으로 입력했을 경우
+            	result = true;
+            }
+            
+            return result;
+        });
 	</script>
 </html>

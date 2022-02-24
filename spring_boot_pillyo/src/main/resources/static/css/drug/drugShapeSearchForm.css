@@ -1,16 +1,23 @@
 /* drugShapeSearchForm.css */
 
-/* input[type=checkbox]{
+input[type=checkbox]{
 	display:none;
+}
+
+#drugShapeSearchForm table {
+	width: 881px;
+	margin: 0 auto;
+	margin-bottom: 25px;
+}
+
+#drugShapeSearchForm form {
+    padding-top: 90px;
+}
+
+/* #drugShapeSearchForm th, #drugShapeSearchForm td{
+	border: 1px solid #00000000;
+    border-radius: 5px;
 } */
-
-#drugShaptSearchForm table {
-	width: 460px;	
-}
-
-#drugShaptSearchForm th, #drugShaptSearchForm td{
-	border: 1px solid black;
-}
 
 /* 모양 검색 */
 #search_shape td, #search_color td {
@@ -28,8 +35,8 @@
     line-height: 52px;
 }
 
-#drugShaptSearchForm th{
-	background-color: #dadada;
+#drugShapeSearchForm th{
+	background-color: #cfe5f7;
 }
 
 #shapeAlll, #shapeEtc, #drugLineEtc{
@@ -39,9 +46,10 @@
 .shapeBox, .typeBox, .lineBox{
 	display: inline-block;
     height: 51px;
-    border: 1px solid black;
+    border: 1px solid #d5d5d5;
     background-color: white;
     text-align: center;
+    border-radius: 10px;
 }
 
 .shapeBox {
@@ -49,7 +57,7 @@
 }
 
 .typeBox, .lineBox{
-    width: 133px;
+    width: 266px;
 }
 
 /* 색상 검색 */
@@ -66,6 +74,11 @@
 #search_color td label {
 	border-radius: 10px;
 	border: 1px solid #b0b0b0;
+}
+
+#search_color td label:hover {
+	border: 3px solid white;
+ 	box-shadow: 2px 2px 5px #bfbfbf;
 }
 
 label[for="cWhite"] {
@@ -132,7 +145,24 @@ label[for="cTrans"] {
 	background: #ffffff94;
 }
 
-/* 제형, 분할선 검색 */
-/* #search_type .typeBox, #search_line .lineBox {
-	margin: 0 1px;
-} */
+/* 분할선 검색 */
+#search_line td {
+	position: relative;
+}
+
+.lineNoneBox {
+	position: absolute;
+    right: 4px;
+}
+
+/* 버튼 */
+#DSSbtn {
+	width: 100%;
+    height: 42px;
+    border-radius: 8px;
+    background: #cfe5f7;
+    border: 1px solid #cdcdcd;
+    color: #515151;
+    font-weight: bold;
+    font-size: 16px;
+}

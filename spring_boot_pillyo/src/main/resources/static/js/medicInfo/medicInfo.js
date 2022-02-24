@@ -1,8 +1,8 @@
 /**
  * medicInfo.js
  */
- 
- function doDisplay(){
+
+/*function doDisplay(){
 	var infoBox = document.getElementsByClassName("info");
 	for( var i = 0; i < infoBox.length; i++ ){
 		var infoItem = infoBox.item(i);
@@ -13,7 +13,26 @@
 			infoItem.style.display = 'block';
 		}
 	}
-}
+}*/
+
+
+$(document).ready(function(){
+  
+  $('#GMIbox > h2').click(function(){
+    $(this).next($('div')).slideToggle('fast');
+  })
+  
+  $('#HTTMbox > h2').click(function(e){
+    e.stopPropagation();
+    $(this).next($('div')).slideToggle('fast');
+  })
+  
+  $('#MFEUbox > h2').click(function(e){
+    e.stopPropagation();
+    $(this).next($('div')).slideToggle('fast');
+  })
+  
+})
 
 /* [ 1. 일반 의약품 안내 ] 상자 열기 */
 function openGMIGroup() {

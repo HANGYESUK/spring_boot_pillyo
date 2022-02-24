@@ -27,13 +27,13 @@
 							<a href="javascript:openGMIGroup();">+</a>
 						</div>
 						<div id="GMIbox" class="infoBox">
-							<a href="javascript:doDisplay();">약이란?</a>
+							<h2>약이란?</h2>
 							<div id="aboutDrugBox" class="info">${aboutDrug }</div>
 							<br>
-							<a href="javascript:doDisplay();">일반의약품 | 전문의약품 | 안전 상비 의약품</a>
+							<h2>일반의약품 | 전문의약품 | 안전 상비 의약품</h2>
 							<div id="otcEtcStcBox" class="info">${OTCETC }</div>
 							<br>
-							<a href="javascript:doDisplay();">일반약의 종류</a>
+							<h2>일반약의 종류</h2>
 							<div id="typeOfDrugBox" class="info">${typeOfDrug }</div>
 						</div>
 						<hr>
@@ -46,10 +46,10 @@
 							<a href="javascript:openHTTMGroup();">+</a>
 						</div>
 						<div id="HTTMbox" class="infoBox">
-							<a href="javascript:doDisplay();">어린이 약복용시 필수 인지 사항</a>
+							<h2>어린이 약복용시 필수 인지 사항</h2>
 							<div id="howToTakeMBox" class="info">${childTake }</div>
 							<br>
-							<a href="javascript:doDisplay();">의약품 유효기간</a>
+							<h2>의약품 유효기간</h2>
 							<div id="drugExpirationBox" class="info">${drugExpiration }</div>
 						</div>
 					</div>
@@ -62,75 +62,72 @@
 							<a href="javascript:openMFEUGroup();">+</a>
 						</div>
 						<div id="MFEUbox" class="infoBox">
-							<a href="javascript:doDisplay();">가글제</a>
+							<h2>가글제</h2>
 							<div id="gargleBox" class="info">${gargle }</div>
 							<br>
-							<a href="javascript:doDisplay();">관장액</a>
+							<h2>관장액</h2>
 							<div id="enemaBox" class="info">${enema }</div>
 							<br>
-							<a href="javascript:doDisplay();">건조시럽제</a>
+							<h2>건조시럽제</h2>
 							<div id="drySyrupBox" class="info">${drySyrup }</div>
 							<br>
-							<a href="javascript:doDisplay();">구강붕해정</a>
+							<h2>구강붕해정</h2>
 							<div id="orodispersibleTabletsBox" class="info">${orodispersibleTablets }</div>
 							<br>
-							<a href="javascript:doDisplay();">박칼정</a>
+							<h2>박칼정</h2>
 							<div id="buccalTabletBox" class="info">${buccalTablet }</div>
 							<br>
-							<a href="javascript:doDisplay();">발포정</a>
+							<h2>발포정</h2>
 							<div id="effervescentTabletBox" class="info">${effervescentTablet }</div>
 							<br>
-							<a href="javascript:doDisplay();">비강분무제</a>
+							<h2>비강분무제</h2>
 							<div id="nasalSprayBox" class="info">${nasalSpray }</div>
 							<br>
 							
-							<a href="javascript:doDisplay();">산제</a>
+							<h2>산제</h2>
 							<div id="powderBox" class="info">${powder }</div>
 							<br>
-							<a href="javascript:doDisplay();">설하정</a>
+							<h2>설하정</h2>
 							<div id="sublingualTabletBox" class="info">${sublingualTablet }</div>
 							<br>
-							<a href="javascript:doDisplay();">액제</a>
+							<h2>액제</h2>
 							<div id="liquidBox" class="info">${liquid }</div>
 							<br>
-							<a href="javascript:doDisplay();">연고 | 크림 | 로션</a>
+							<h2>연고 | 크림 | 로션</h2>
 							<div id="oclBox" class="info">${OCL }</div>
 							<br>
-							<a href="javascript:doDisplay();">점비제 (코)</a>
+							<h2>점비제 (코)</h2>
 							<div id="nasalDropsBox" class="info">${nasalDrops }</div>
 							<br>
-							<a href="javascript:doDisplay();">점안제</a>
+							<h2>점안제</h2>
 							<div id="eyeDropsBox" class="info">${eyeDrops }</div>
 							<br>
-							<a href="javascript:doDisplay();">점이제 (귀)</a>
+							<h2>점이제 (귀)</h2>
 							<div id="earDropsBox" class="info">${earDrops }</div>
 							<br>
 							
-							<a href="javascript:doDisplay();">정제 및 캡슐제</a>
+							<h2>정제 및 캡슐제</h2>
 							<div id="tcBox" class="info">${TC }</div>
 							<br>
-							<a href="javascript:doDisplay();">질 좌제 (질정)</a>
+							<h2>질 좌제 (질정)</h2>
 							<div id="pessaryBox" class="info">${pessary }</div>
 							<br>
-							<a href="javascript:doDisplay();">츄어블정</a>
+							<h2>츄어블정</h2>
 							<div id="chewableTabletBox" class="info">${chewableTablet }</div>
 							<br>
-							<a href="javascript:doDisplay();">패취제</a>
+							<h2>패취제</h2>
 							<div id="patchBox" class="info">${patch }</div>
 							<br>
-							<a href="javascript:doDisplay();">정량식 흡입제 (Metered Dose Inhaler)</a>
+							<h2>정량식 흡입제 (Metered Dose Inhaler)</h2>
 							<div id="mdiBox" class="info">${MDI }</div>
 							<br>
-							<a href="javascript:doDisplay();">건조분말 흡입제 (Dry Powder Inhaler)</a>
+							<h2>건조분말 흡입제 (Dry Powder Inhaler)</h2>
 							<div id="dpiBox" class="info">${DPI }</div>
 							<br>
-							<a href="javascript:doDisplay();">항문 좌제 (좌약)</a>
+							<h2>항문 좌제 (좌약)</h2>
 							<div id="suppositoryBox" class="info">${suppository }</div>
 						</div>
 					</div>
-				</div>
-				<div>
-					
 				</div>
 			</section>
 	        

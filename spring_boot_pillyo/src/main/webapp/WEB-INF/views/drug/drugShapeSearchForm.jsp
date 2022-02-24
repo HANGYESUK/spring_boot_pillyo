@@ -18,14 +18,7 @@
 			<div id="navMargin"></div>
 			
 			<section id="section">
-				<div id="drugShapeSearchBox">
-					<form method="post" action="/drugShapeAPI">
-						<input type="text" name="itemName" id="itemName" placeholder="약모양API 검색"/>
-						<input type="submit" value="전송" />
-					</form>
-				</div>
-				
-				<div id="drugShaptSearchForm">
+				<div id="drugShapeSearchForm">
 					<form method="post" action="/drugShape">
 						<table>
 							<tr id="search_shape">
@@ -241,15 +234,15 @@
 										</label>
 									</div>
 									
-									<div class="lineBox">
-										<label for="drugLineEtc">없음
-											<input type="checkbox" id="drugLineEtc" name="line_front" value="" />
+									<div class="lineBox lineNoneBox">
+										<label for="drugLineEtc"><span class="textItem">없음</span>
+											<input type="checkbox" id="drugLineEtc" name="line_front" value="기타" />
 										</label>
 									</div>
 								</td>
 							</tr>
+							<tr><td colspan="2"><input type="submit" id="DSSbtn" value="검색" /></td></tr>
 						</table>
-						<input type="submit" value="검색" />
 					</form>
 				</div>
 			</section>
