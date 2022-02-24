@@ -18,7 +18,6 @@ public class APIController {
 	public void clovaOCR() {
 		ocrService.clovaOCRService();
 	}   -->  APIRestController에서 처리
-	
 	*/
 	
 	// 변경 ->

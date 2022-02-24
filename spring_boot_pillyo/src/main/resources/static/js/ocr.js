@@ -27,9 +27,13 @@
 				$('#hmName').val(result);  // 결과 텍스트 출력
 				
 				var test = $('#hmName').text();
+				
+				
+				
 				// 이미지 출력 : div에 append 시킴
 				$('#image').empty();
 				$('#image').append('<img src="/img/'+fileName+'"/>');
+				$('#ocrResult').append('<a href="/insertHmForm2/'+result+'">맞습니까?</a>');
 				// $('#image').append('<img src="/images/'+fileName+'"/>');
 			},
 			error:function(){
