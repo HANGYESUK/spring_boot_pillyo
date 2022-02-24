@@ -18,13 +18,6 @@
 			<div id="navMargin"></div>
 			
 			<section id="section">
-				<div id="drugShapeSearchBox">
-					<form method="post" action="/drugShapeAPI">
-						<input type="text" name="itemName" id="itemName" placeholder="약모양API 검색"/>
-						<input type="submit" value="전송" />
-					</form>
-				</div>
-				
 				<div id="drugShapeSearchForm">
 					<form method="post" action="/drugShape">
 						<table>
@@ -248,8 +241,8 @@
 									</div>
 								</td>
 							</tr>
+							<tr><td colspan="2"><input type="submit" id="DSSbtn" value="검색" /></td></tr>
 						</table>
-						<input type="submit" value="검색" />
 					</form>
 				</div>
 			</section>
