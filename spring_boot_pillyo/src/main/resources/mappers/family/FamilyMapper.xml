@@ -13,7 +13,12 @@
 	</resultMap>
 	
 	<!-- 조회 상세 등록 - auto -->
-  
+  		<!-- 회원가입시 본인 가족정보 등록 -->
+  		<insert id="famStart" parameterType="string">
+  			INSERT INTO family (userId, famMember)
+  			VALUES (#{userId}, "본인")
+  		</insert>
+  		
   		<!-- 가족 정보 등록  -->
   		<insert id="famInsert" parameterType="com.pillyo.pill.model.FamilyVO">
   			INSERT INTO family (userId, famMember, famBirth, famGender)

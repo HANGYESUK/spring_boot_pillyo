@@ -24,7 +24,10 @@ public class FamilyService implements IFamilyService {
 	public void famInsert(FamilyVO famVo) {
 		dao.famInsert(famVo);
 	}
-
+	@Override
+	public void famStart(String userId) {
+		dao.famStart(userId);
+	}
 	@Override
 	public void famUpdate(FamilyVO famVo) {
 		dao.famUpdate(famVo);
