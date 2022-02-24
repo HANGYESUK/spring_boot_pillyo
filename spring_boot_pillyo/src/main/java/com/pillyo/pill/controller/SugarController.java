@@ -27,7 +27,7 @@ public class SugarController {
 	public String insertSugar(SugarVO vo) {
 		service.insertSugar(vo);
 		//return "redirect:../listAllSugar";
-		return "sugar/sugarListView";  
+		return "redirect:/healthManageView";
 	}
 	//혈당 리스트 조회
 	@RequestMapping("/listAllSugar")
@@ -41,7 +41,7 @@ public class SugarController {
 	public String deleteSugar(@PathVariable int sugarNo) {
 		System.out.println(sugarNo);
 		service.deleteSugar(sugarNo);
-		return "redirect:/dashboard";
+		return "redirect:/healthManageView";
 	}
 	//혈당 업데이트 폼 이동
 	@RequestMapping("/updateSugarForm/{sugarNo}")
@@ -54,6 +54,6 @@ public class SugarController {
 	@RequestMapping("/updateSugar")
 	public String updateProduct(SugarVO vo) {
 		service.updateSugar(vo);
-		return "redirect:/listAllSugar";  
+		return "redirect:/healthManageView";
 	}
 }

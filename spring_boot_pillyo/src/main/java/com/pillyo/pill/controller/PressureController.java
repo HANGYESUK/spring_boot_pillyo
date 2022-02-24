@@ -26,7 +26,7 @@ public class PressureController {
 	public String insertPressure(PressureVO vo) {
 		service.insertPressure(vo);
 		//return "pressure/pressureListView";
-		return "Main/dashboard";
+		return "redirect:/healthManageView";
 	}
 	
 	@RequestMapping("/listAllPressure")
@@ -41,7 +41,7 @@ public class PressureController {
 	public String deletePressure(@PathVariable int pressureNo) {
 		System.out.println(pressureNo);
 		service.deletePressure(pressureNo);
-		return "redirect:/dashboard";
+		return "redirect:/healthManageView";
 	}
 	//혈압 업데이트 폼 이동
 	@RequestMapping("/updatePressureForm/{pressureNo}")

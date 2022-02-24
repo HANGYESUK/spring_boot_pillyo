@@ -71,9 +71,9 @@
 	               		<c:if test="${empty sessionScope.sid }">
 		                    <div class="menuBox">
 								<div class="menuItem"><a href="/loginForm"><h5>로그인</h5></a></div>
-								<div class="menuItem"><a href="/dashboard"><h5>건강관리</h5></a></div>
-								<div class="menuItem"><a href="/calendarView"><h5>복용관리</h5></a></div>
-								<div class="menuItem"><a href="#"><h5>우리집 약 관리</h5></a></div>
+								<div class="menuItem"><a href="/loginForm" onclick="alert('로그인을 진행해주세요.'); alert('로그인 페이지로 이동합니다.');"><h5>건강관리</h5></a></div>
+								<div class="menuItem"><a href="/loginForm" onclick="alert('로그인을 진행해주세요.'); alert('로그인 페이지로 이동합니다.');">복용관리</h5></a></div>
+								<div class="menuItem"><a href="/loginForm" onclick="alert('로그인을 진행해주세요.'); alert('로그인 페이지로 이동합니다.');"><h5>우리집 약 관리</h5></a></div>
 								<div class="menuItem"><a href="/listAllBoard"><h5>공지사항</h5></a></div>
 								<div class="menuItem"><a href="/medicInfo"><h5>의약정보</h5></a></div>
 								<div class="menuItem"><a href="/drugShapeSearchForm"><h5>낱알검색</h5></a></div>
@@ -85,7 +85,7 @@
 						<c:if test="${not empty sessionScope.sid}">
 							 <div class="menuBox">
 							 	<div class="menuItem"><a href="/updateMemberForm"><h5>마이페이지</h5></a></div>
-								<div class="menuItem"><a href="/dashboard"><h5>건강관리</h5></a></div>
+								<div class="menuItem"><a href="/healthManageView"><h5>건강관리</h5></a></div>
 								<div class="menuItem"><a href="/calendarView"><h5>복용관리</h5></a></div>
 								<div class="menuItem"><a href="/hmForm"><h5>우리집 약 관리</h5></a></div>
 								<div class="menuItem"><a href="/listAllBoard"><h5>공지사항</h5></a></div>
