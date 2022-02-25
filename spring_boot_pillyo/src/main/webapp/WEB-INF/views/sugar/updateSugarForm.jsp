@@ -24,9 +24,7 @@
 					<div class="basket-Item-Container colunm">
 							<h1>혈당관리 수정</h1>
 							<br><br>
-					<form id="updateBodyForm" method="post" action="<c:url value='/updateBody'/>">
-					  	<input type="hidden" id="bodyNo" name="bodyNo" value="${body.bodyNo}"/>
-					  	<input type="hidden" id="famNo" name="famNo" value="${body.famNo}"/>
+					<form id="updateSugarForm" method="post" action="<c:url value='/updateSugar'/>">
 					  	<div>
 							<h3>혈당관리번호 </h3><input type="text" id="sugarNo" name="sugarNo" value="${sugar.sugarNo}"/>
 						</div>
@@ -54,8 +52,8 @@
                          </div>
                          <div>
 							<h3>기록시간</h3><input type="time" id="sugarRecordTime" name="sugarRecordTime" value="${sugar.sugarRecordTime}"/>
+							<input type="hidden" id="famNo" name="famNo" value="${sugar.famNo}"/>
                          </div>
-                         <input type="hidden" name="famNo" value="${famNo}" />
 						 <div>
 							<input type="submit" id="send_btn" value="수정하기">
 						 </div>

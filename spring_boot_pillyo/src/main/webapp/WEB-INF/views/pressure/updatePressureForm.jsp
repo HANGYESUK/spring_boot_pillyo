@@ -25,9 +25,9 @@
 					<div class="basket-Item-Container colunm">
 							<h1>혈압관리 수정</h1>
 							<br><br>
-					<form id="updateBodyForm" method="post" action="<c:url value='/updateBody'/>">
-					  	<input type="hidden" id="bodyNo" name="bodyNo" value="${body.bodyNo}"/>
-					  	<input type="hidden" id="famNo" name="famNo" value="${body.famNo}"/>
+					<form id="updatePressureForm" method="post" action="<c:url value='/updatePressure'/>">
+					  	<input type="hidden" id="pressureNo" name="pressureNo" value="${pressure.pressureNo}"/>
+					  	<input type="hidden" id="famNo" name="famNo" value="${pressure.famNo}"/>
 					  	<div>
 							<h3>혈압관리번호 </h3><input type="text" id="pressureNo" name="pressureNo" value="${pressure.pressureNo}"/>
 						</div>
@@ -52,7 +52,6 @@
                          <div>
 							<h3>기록시간</h3><input type="time" id="pressureRecordTime" name="pressureRecordTime" value="${pressure.pressureRecordTime}"/>
                          </div>
-                         <input type="hidden" name="famNo" value="${famNo}" />
 						 <div>
 							<input type="submit" id="send_btn" value="수정하기">
 						 </div>

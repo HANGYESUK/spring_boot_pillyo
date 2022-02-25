@@ -25,9 +25,9 @@
 					<div class="basket-Item-Container colunm">
 							<h1>기분관리 수정</h1>
 							<br><br>
-					<form id="updateBodyForm" method="post" action="<c:url value='/updateBody'/>">
-					  	<input type="hidden" id="bodyNo" name="bodyNo" value="${body.bodyNo}"/>
-					  	<input type="hidden" id="famNo" name="famNo" value="${body.famNo}"/>
+					<form id="updateFeelForm" method="post" action="<c:url value='/updateFeel'/>">
+					  	<input type="hidden" id="feelNo" name="feelNo" value="${feel.feelNo}"/>
+					  	<input type="hidden" id="famNo" name="famNo" value="${feel.famNo}"/>
 					  	<div>
 							<h3>기분관리번호 </h3><input type="text" id="feelNo" name="feelNo" value="${feel.feelNo}"/>
 						</div>
@@ -40,10 +40,6 @@
                          <div>
 							<h3>기록날짜</h3><input type="text" id="feelRecordDate" name="feelRecordDate" value="${feel.feelRecordDate}"/>
                          </div>
-                         <div>
-							<h3>기록시간</h3><input type="date" id="bodyRecordDate" name="bodyRecordDate" value="${feel.feelRecordTime}"/>
-                         </div>
-                         <input type="hidden" name="famNo" value="${famNo}" />
 						 <div>
 							<input type="submit" id="send_btn" value="수정하기">
 						 </div>
