@@ -5,7 +5,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>우리집 상비약 메인 페이지</title>
+    <title>우리집 상비약 메인</title>
     <script src="<c:url value='/js/jquery-3.6.0.min.js'/>"></script>
 	<!-- <script src="/js/hmListView.js"></script> -->
 	<!-- 임시 css / script-->

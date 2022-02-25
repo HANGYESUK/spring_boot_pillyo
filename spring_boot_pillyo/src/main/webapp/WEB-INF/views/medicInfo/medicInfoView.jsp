@@ -5,7 +5,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>title</title>
+		<title>의약 정보 제공 페이지</title>
 		<link rel="stylesheet" href="/css/medicInfo/medicInfo.css" />
 		<script src="<c:url value='/js/jquery-3.6.0.min.js'/>"></script>
 		<script src="<c:url value='/js/medicInfo/medicInfo.js'/>"></script>

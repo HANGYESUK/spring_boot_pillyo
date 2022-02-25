@@ -8,7 +8,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>약리스트</title>
+		<title>약물 검색 결과</title>
 		<link rel="stylesheet" href="<c:url value='/css/drug/drug.css'/>">	
 <!-- 		<link rel="stylesheet" href="/css/test.css" />
  -->		<script

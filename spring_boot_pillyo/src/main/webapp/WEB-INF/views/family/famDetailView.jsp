@@ -5,7 +5,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>title</title>
+		<title>가족 상세 정보</title>
 		<script src="<c:url value='/js/jquery-3.6.0.min.js'/>"></script>
 	</head>
 	<body>

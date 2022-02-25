@@ -15,7 +15,7 @@
 		<link href="<c:url value='/css/board/board.css'/>" rel="stylesheet" type="text/css">	
 
 
-<title>Insert title here</title>
+<title>전체 게시글 목록</title>
 
 </head>
 

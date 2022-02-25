@@ -27,7 +27,7 @@
 
 
 	<script src="./jquery.fullPage.js"></script>
-    <title>Document</title>
+    <title>가족 목록</title>
 </head>
 <body>
 

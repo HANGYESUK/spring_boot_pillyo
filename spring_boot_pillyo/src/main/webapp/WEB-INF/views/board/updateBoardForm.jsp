@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>게시글 수정 폼</title>
 		<script src="<c:url value='/js/jquery-3.6.0.min.js'/>"></script>
 		<link href="<c:url value='/css/board/board.css'/>" rel="stylesheet" type="text/css">	
 	

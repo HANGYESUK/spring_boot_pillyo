@@ -27,7 +27,7 @@
 
 
 	<script src="./jquery.fullPage.js"></script>
-    <title>Document</title>
+    <title>가족 정보 등록 폼</title>
 </head>
 <body>
 

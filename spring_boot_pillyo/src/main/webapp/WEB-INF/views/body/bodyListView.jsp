@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>체형관리 전체 목록</title>
 		<script src="<c:url value='/js/jquery-3.6.0.min.js'/>"></script>
 
 </head>

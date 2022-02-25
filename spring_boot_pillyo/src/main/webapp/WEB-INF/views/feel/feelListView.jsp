@@ -5,7 +5,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>기분 관리 기록 페이지</title>
+		<title>기분 정보 목록</title>
 		<script src="<c:url value='/js/jquery-3.6.0.min.js'/>"></script>
 		
 	</head>

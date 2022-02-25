@@ -5,7 +5,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>약 모양 상세조회</title>
+		<title>약물 낱알 유형 상세 정보</title>
 	</head>
 	<body>
 		<div id="wrap">

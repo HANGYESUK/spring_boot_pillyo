@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>체형 관리 정보 등록</title>
+<title>체형 정보 등록 폼</title>
 		<script src="<c:url value='/js/jquery-3.6.0.min.js'/>"></script>
 		<script src="<c:url value='bodyForm.js'/>"></script>
 

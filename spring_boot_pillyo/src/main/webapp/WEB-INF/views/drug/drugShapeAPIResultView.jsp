@@ -8,7 +8,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>약리스트 API</title>
+		<title>낱알 약물 검색 결과</title>
 		<link rel="stylesheet" href="<c:url value='/css/drug/drugShape.css'/>">	
 	</head>
 	<body>

@@ -5,7 +5,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>우리집 상비약 등록 완료</title>
+		<title>우리집 상비약 목록</title>
 		<link rel="stylesheet" href="/css/hm/insertHmResult.css" />
 		
 		

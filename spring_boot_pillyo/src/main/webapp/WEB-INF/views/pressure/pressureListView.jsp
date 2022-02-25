@@ -5,7 +5,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>Insert title here</title>
+		<title>혈압 정보 전체 목록</title>
 	</head>
 	
 	<body>
