@@ -13,12 +13,16 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.pillyo.pill.model.UserVO;
+import com.pillyo.pill.service.FamilyService;
 import com.pillyo.pill.service.UserService;
 
 @Controller
 public class UserController {
 	@Autowired
 	UserService service;
+	@Autowired
+	FamilyService family_Service;
+	
 	
 	// 로그인 폼으로 이동
 	@RequestMapping("/loginForm")
@@ -88,6 +92,11 @@ public class UserController {
 		@RequestMapping("/userJoin")
 		public String userJoin(UserVO vo) {
 			service.userJoin(vo);
+			
+			//회원가입시 가족 번호 본인으로 자동 생성
+			String userId = vo.getUserId();
+			family_Service.famStart(userId);
+			
 			
 			return "redirect:/";
 		}
