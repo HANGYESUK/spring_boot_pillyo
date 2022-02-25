@@ -33,6 +33,10 @@
 				// 이미지 출력 : div에 append 시킴
 				$('#image').empty();
 				$('#image').append('<img src="/img/'+fileName+'"/>');
+				
+				$('#ocrResult').remove()
+				$('#check').remove()
+				
 				$('#ocrForm').append('<div id="ocrResult"></div>');
 				$('#ocrResult').append('<a id="check" href="/insertHmForm2/'+result+'">맞습니까?</a>');
 				// $('#image').append('<img src="/images/'+fileName+'"/>');
