@@ -55,6 +55,6 @@ public class BodyController {
 	@RequestMapping("/updateBody")
 	public String updateBody(BodyVO vo) {
 		service.updateBody(vo);
-		return "redirect:/listAllBody";  
+		return "redirect:/healthManageView";  
 	}
 }

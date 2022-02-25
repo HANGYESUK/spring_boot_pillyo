@@ -54,6 +54,6 @@ public class PressureController {
 	@RequestMapping("/updatePressure")
 	public String updatePressure(PressureVO vo) {
 		service.updatePressure(vo);
-		return "redirect:/listAllPressure";  
+		return "redirect:/healthManageView";
 	}
 }
