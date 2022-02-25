@@ -35,6 +35,9 @@ marquee {
 
 marquee a {
 	margin: 0 48px;
+    text-decoration: none;
+    color: #17318f;
+    font-weight: bold;
 }
 
 /* --------- pill-yo ------------ */
