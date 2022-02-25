@@ -34,7 +34,7 @@
 		
 		<!-- TOP -->
 		<jsp:include page="/WEB-INF/views/layout/top.jsp" flush='true' />
-		;
+		
 		<div id="navMargin"></div>
 		<section id="section">
 			<div class="main-Content-Body low">
@@ -72,7 +72,7 @@
 							<tr> <th id="hm">사용기한</th>	<td><input type="date" name="hmUseByDate"></td></tr>
 							<tr> <th id="hm">메모</th>	<td><textarea name="hmMemo" rows="10" cols="60" placeholder="내용을 입력하세요" style="resize: none;"></textarea></td></tr>
 							<tr> <th id="hm">사진</th>	<td>다시 한번 이미지를 올려주세요 >>  <input  id = "hmImg" type="file" name="hmImg" onchange="setThumbnail(event);"></td>
-							<tr> <th id="hm"></th>		<td id="img_box"> <div id="image_container"></div></td></tr>
+							<tr> <th id="hm"></th>		<td id="img_box"><img id="image" src="#" alt="이미지 미리보기" /></td></tr>
 							</table>
 							<input type="hidden" name="userId" value="${sessionScope.sid}" />
 							
