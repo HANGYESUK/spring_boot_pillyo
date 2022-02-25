@@ -26,7 +26,7 @@
 
 
 	<script src="./jquery.fullPage.js"></script>
-    <title>Document</title>
+    <title>약물 낱알 검색 결과</title>
 </head>
 <body>
 

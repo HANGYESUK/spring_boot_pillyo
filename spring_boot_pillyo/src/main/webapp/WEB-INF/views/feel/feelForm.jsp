@@ -5,7 +5,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>건강관리- feel Manage</title>
+		<title>기분 정보 등록 폼</title>
 		<script src="<c:url value='/js/jquery-3.6.0.min.js'/>"></script>
 	</head>
 	<body>

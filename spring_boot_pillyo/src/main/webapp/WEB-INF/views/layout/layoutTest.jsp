@@ -5,7 +5,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>title</title>
+		<title>layout</title>
 		<script src="<c:url value='/js/jquery-3.6.0.min.js'/>"></script>
 	</head>
 	<body>

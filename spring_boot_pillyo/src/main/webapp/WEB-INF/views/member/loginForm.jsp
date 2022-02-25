@@ -5,7 +5,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>로그인 페이지</title>
+		<title>Pill-Yo - 로그인</title>
 		<script src="<c:url value='/js/jquery-3.6.0.min.js'/>"></script>
 		<script src="<c:url value='/js/login.js'/>"></script>
 		<link rel="stylesheet" href="<c:url value='/css/member/loginForm.css'/>">

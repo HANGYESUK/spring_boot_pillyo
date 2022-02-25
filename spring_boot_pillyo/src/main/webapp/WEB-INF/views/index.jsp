@@ -8,7 +8,7 @@
 
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<title>fullPage.js A simple Demo</title>
+		<title>Pill-Yo - 통합 건강관리 서비스</title>
 		<meta name="author" content="Alvaro Trigo Lopez" />
 		<meta name="description" content="fullPage very simple demo." />
 		<meta name="keywords"  content="fullpage,jquery,demo,simple" />

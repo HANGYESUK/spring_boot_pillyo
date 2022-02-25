@@ -5,7 +5,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>약 상세 정보</title>
+		<title>약물 상세 정보</title>
 				<link rel="stylesheet" href="<c:url value='/css/drug/drug.css'/>">	
 		
 	</head>

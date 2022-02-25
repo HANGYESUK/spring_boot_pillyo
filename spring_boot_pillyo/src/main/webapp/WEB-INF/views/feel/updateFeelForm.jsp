@@ -5,7 +5,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>기분관리 수정 페이지</title>
+		<title>기분 정보 수정 폼</title>
 		<script src="<c:url value='/js/jquery-3.6.0.min.js'/>"></script>
 		<link rel="stylesheet" href="/css/dashboard/dashboard.css" />
 		<link rel="stylesheet" href="/css/dashboard/family/familyView.css" />

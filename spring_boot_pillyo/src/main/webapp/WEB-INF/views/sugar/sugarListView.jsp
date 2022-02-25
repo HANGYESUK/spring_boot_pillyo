@@ -5,7 +5,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>혈당 뷰</title>
+		<title>혈당 전체 정보 목록</title>
 	</head>
 	<body>
 		<div id="wrap">

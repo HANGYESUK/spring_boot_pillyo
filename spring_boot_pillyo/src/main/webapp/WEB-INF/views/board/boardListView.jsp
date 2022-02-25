@@ -13,7 +13,7 @@
 		<script src="<c:url value='/js/mainBanner.js'/>"></script>
 	    <link href="<c:url value='/css/mainBanner.css'/>" rel="stylesheet" type="text/css">	
 
-<title>Insert title here</title>
+<title>전체 게시글 목록</title>
 
 </head>
 

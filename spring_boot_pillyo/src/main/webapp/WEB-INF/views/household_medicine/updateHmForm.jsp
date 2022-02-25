@@ -5,7 +5,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>약 정보 수정 페이지</title>
+		<title>우리집 상비약 수정 폼</title>
 		<script src="<c:url value='/js/jquery-3.6.0.min.js'/>"></script>
 		
 		<!-- 이미지 불러오는 java Script -->

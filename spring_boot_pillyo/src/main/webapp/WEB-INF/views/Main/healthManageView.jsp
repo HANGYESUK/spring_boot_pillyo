@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>HealthList</title>
+<title>Pill-Yo 통합 건강 관리</title>
 		<script src="<c:url value='/js/jquery-3.6.0.min.js'/>"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
 	 	<link rel="stylesheet" href="<c:url value='/css/dashboard/dashboard.css'/>" />

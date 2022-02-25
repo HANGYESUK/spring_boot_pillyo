@@ -5,7 +5,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>약 낱알 식별 검색</title>
+		<title>약물 낱알 유형 식별 검색 폼</title>
 		<link rel="stylesheet" href="/css/drug/drugShapeSearchForm.css" />
 		<script src="<c:url value='/js/jquery-3.6.0.min.js'/>"></script>
 		<script src="<c:url value='/js/drugShapeSearchForm.js'/>"></script>

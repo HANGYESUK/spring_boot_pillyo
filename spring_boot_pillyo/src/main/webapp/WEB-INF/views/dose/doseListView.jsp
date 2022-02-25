@@ -5,7 +5,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>복용 목록 조회</title>
+		<title>복용 전체 목록 조회</title>
 		<script src="<c:url value='/js/jquery-3.6.0.min.js'/>"></script>
 		<link rel="stylesheet" href="/css/dose/doseListView.css" />
 		

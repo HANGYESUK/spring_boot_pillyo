@@ -5,7 +5,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>title</title>
+		<title>건강관리</title><!-- ??? 없어도 되는 페이지인가요?? -->
 		<script src="<c:url value='/js/jquery-3.6.0.min.js'/>"></script>
 	</head>
 	<body>

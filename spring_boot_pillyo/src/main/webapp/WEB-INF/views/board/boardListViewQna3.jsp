@@ -17,7 +17,7 @@
 		<script src="<c:url value='/js/jquery-3.6.0.min.js'/>"></script>
 
 
-<title>Insert title here</title>
+<title>전체 게시글 목록</title>
 
 </head>
 

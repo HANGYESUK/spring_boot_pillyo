@@ -5,7 +5,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>복용관리 - 등록 폼</title>
+		<title>복용 정보 등록 폼</title>
 		<script src="<c:url value='/js/jquery-3.6.0.min.js'/>"></script>
 	</head>
 	<body>

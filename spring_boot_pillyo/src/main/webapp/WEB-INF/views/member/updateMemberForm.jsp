@@ -5,7 +5,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>회원 정보 수정</title>
+		<title>회원 정보 수정 폼</title>
 		<!-- <link rel="stylesheet" href="/css/dashboard/dashboardContent.css" />
 		<link rel="stylesheet" href="/css/dashboard/dashboard.css" /> -->	
 		

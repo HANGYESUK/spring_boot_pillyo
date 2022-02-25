@@ -5,7 +5,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>OCR</title>
+		<title>우리집 상비약 등록 폼</title>
 		<script src="<c:url value='/js/jquery-3.6.0.min.js'/>"></script>
 		<script src="<c:url value='/js/ocr.js'/>"></script>
 		

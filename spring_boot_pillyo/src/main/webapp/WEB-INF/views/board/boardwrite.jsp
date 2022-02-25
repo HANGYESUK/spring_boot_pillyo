@@ -16,7 +16,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>게시물 작성</title>
+<title>게시글 작성</title>
 	<script src="<c:url value='/js/jquery-3.6.0.min.js'/>"></script>
 	<link href="<c:url value='/css/board/board.css'/>" rel="stylesheet" type="text/css">	
 <script src="<c:url value='/js/mainBanner.js'/>"></script>

@@ -5,7 +5,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>혈당 등록</title>
+		<title>혈당 정보 수정 폼</title>
 		<script src="<c:url value='/js/jquery-3.6.0.min.js'/>"></script>
 		<script src="<c:url value='sugarForm.js'/>"></script>
 		
