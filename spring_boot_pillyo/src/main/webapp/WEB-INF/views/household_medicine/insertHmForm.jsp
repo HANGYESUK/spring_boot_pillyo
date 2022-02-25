@@ -45,7 +45,7 @@
 							<input type="text" id="hmName" name="hmName"> 
 							
 							<!--다음페이지 이동 -->
-							<!-- <div id="ocrResult"></div> -->
+							 <div id="ocrResult"></div>
 							<!-- <input class = "in" type="submit" value="등록" ><br><br> -->
 	
 						</form>
