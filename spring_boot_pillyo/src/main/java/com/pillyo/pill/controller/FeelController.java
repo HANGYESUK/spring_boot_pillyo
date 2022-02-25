@@ -55,7 +55,7 @@ public class FeelController {
 	@RequestMapping("/updateFeel")
 	public String updateFeel(FeelVO vo) {
 		service.updateFeel(vo);
-		return "feel/feelListView";
+		return "redirect:/healthManageView";
 	}
 	
 	//기분 관리 정보 업데이트 폼 이동

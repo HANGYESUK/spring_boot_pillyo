@@ -38,7 +38,7 @@
 							<h3>몸무게 </h3><input type="text" id="weight" name="weight" onchange="change()">
 						</div>
 						<div>
-							<h3>BMI</h3><input type="text" name="bmi" id="bmi">
+							<h3>BMI</h3><input type="text" name="bmi" id="bmi" readonly>
                          </div>
                          <div>
 							<h3>기록날짜</h3><input type="date" id="bodyRecordDate" name="bodyRecordDate">

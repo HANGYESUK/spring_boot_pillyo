@@ -204,14 +204,14 @@
 	        	  month: 'Monthly',
 	        	  list: 'Weekly',
 	       	    },
-	          navLinks: false, // 달력 상의 날짜 클릭 가능 여부 : true 클릭 가능. 클릭 시 해당 날짜의 일정 나타남
+	          navLinks: true, // 달력 상의 날짜 클릭 가능 여부 : true 클릭 가능. 클릭 시 해당 날짜의 일정 나타남
 	          dayMaxEvents: true, // 셀 크기보다 일정이 많이 등록되어 있는 경우 more 표시
 	          timeZone: 'local', // 한국 시간으로 설정
 	          locale: 'ko', // 한국어 설정
 	          expandRows: true, // 화면에 맞게 높이 재설정
 	          // selectMirror: true, // 힌트?
-      		  editable: false, // 수정 가능
-			  selectable: false, // 달력 일자 드래그 설정 가능
+      		  editable: true, // 수정 가능
+			  selectable: true, // 달력 일자 드래그 설정 가능
 			  events: doseArr, // DB 복용 목록 추가
 			  
 	          eventAdd: function(obj) { // 이벤트가 추가되면 발생하는 이벤트
