@@ -9,7 +9,6 @@
 		<script src="<c:url value='/js/jquery-3.6.0.min.js'/>"></script>
 		<style type="text/css">
 		table{
-		border: 1px solid #444444;
     	border-collapse: collapse;
 		color : black;
 		text-align : center;
@@ -17,10 +16,9 @@
 
 		th,td{
 			width:250px;
-			border: 1px solid #444444;
 		}
 		img{
-			width:200px;
+			width:100px;
 		}
 		</style>
 		

@@ -1,0 +1,120 @@
+.low {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.colum {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-Content-Body {
+	height:100%;
+}
+
+.basket-Item-Container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 20px;
+    margin-right: 20px;
+    transition: all 0.5s;
+    flex-wrap: wrap;
+}
+
+h2{ color : black;}
+h3{ color : black;}
+	
+p{	color : black;}
+
+	
+#UserName{
+		color : #81B89A;
+	}
+	
+.hm{
+		width : 95%;
+		height : 600px;
+		margin:0 auto;
+		
+	}
+.hm_Category{
+		width: 100%;
+	    background-color: white;
+	    text-align: center;
+	    margin: 0 auto;
+	    border-radius: 20px;
+	    margin-bottom: 20px;
+	    padding: 10px;
+}
+.hm_List{
+		width : 100%;
+		height : 350px;
+		text-align : center;
+		margin-left:15px;
+		margin:0 auto;
+	}
+.hm_List_view{
+		widht : 100px;
+		height : 300px;
+		background-color : white;
+		overflow : auto;
+}
+
+table{
+		border: 1px solid #444444;
+    	border-collapse: collapse;
+		color : black;
+		
+		margin:0 auto;
+}
+
+td a {
+	text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    color: #1634a1;
+
+}
+
+th,td{
+		border: 1px solid #444444;
+}
+
+#hm_ctg{
+		width: 80px;
+	    height: 80px;
+	    margin-left: 5px;
+	    margin-right: 5px;
+	    margin-bottom: 10px;
+	    background-color: #eef2ff;
+	    border: none;
+	    border-radius: 50%;
+	    cursor: pointer;
+	}
+iframe{
+	width: 100%;
+    height: 350px;
+    background-color: white;
+    border-radius: 20px;
+    border: none;
+    padding: 10px;
+}
+
+.btn {
+	background-color: #82bbfd;
+    color: white;
+    border: none;
+    padding: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 30px;
+    cursor: pointer;
+}

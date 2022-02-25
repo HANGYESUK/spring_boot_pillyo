@@ -1,0 +1,119 @@
+.low {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.colum {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-Content-Body {
+	height:100%;
+}
+
+.basket-Item-Container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 20px;
+    margin-right: 20px;
+    transition: all 0.5s;
+    flex-wrap: wrap;
+}
+	
+th{
+width : 100px;
+}
+
+
+
+#hmName{
+	width : 800px;
+	height : 20px;
+	font-size : 14px;
+	font-weight : bold;
+}
+#hmCtgNo{
+	width : 400px;
+	height : 20px;
+	font-size : 14px;
+}
+#hmUseByDate{
+	width : 400px;
+	height : 20px;
+	font-size : 14px;
+}
+#pColor{
+	color : red;
+}
+.hm{ 
+	width : 100%;
+	display: inline-block;
+	text-align:center;
+	margin:auto;
+}
+#image{
+	width : 800px;
+	height : 400px;
+	background-color:#f5f5f5;
+	border: 3px solid darkblue;
+	margin:auto;
+	text-align:center;
+}
+
+#ocrResult {
+	background-color: #7fb9fe;
+    width: 300px;
+    margin: 0 auto;
+    padding: 5px;
+    margin-top: 20px;
+    border-radius: 30px;
+}
+
+#check {
+	text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+#ocr {
+	background-color: #84bcfd;
+    border: none;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 20px;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+#ocr:hover {
+	 transform: scale(1.05);
+}
+
+#reset {
+	background-color: #ff6c59;
+    border: none;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 20px;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+#reset:hover {
+	 transform: scale(1.05);
+}
+		

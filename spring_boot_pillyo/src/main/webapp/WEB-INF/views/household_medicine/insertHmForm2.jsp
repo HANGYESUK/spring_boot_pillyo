@@ -8,6 +8,7 @@
 		<title>OCR</title>
 		<script src="<c:url value='/js/jquery-3.6.0.min.js'/>"></script>
 		<script src="<c:url value='/js/ocr.js'/>"></script>
+		
 		<!-- 이미지 불러오는 java Script -->
 		<script type="text/javascript">
 		 function setThumbnail(event) { // 이미지 등록 버튼의 onchange
@@ -22,45 +23,11 @@
 				reader.readAsDataURL(event.target.files[0]);
 			}
 		 </script>
+
 		
-		<style type="text/css">
+		<link rel="stylesheet" href="/css/hm/inserthmForm2.css" />
 		
-		th{
-		width : 100px;
-		}
-		
-		#hmName{
-			width : 440px;
-			height : 20px;
-			font-size : 14px;
-			font-weight : bold;
-		}
-		#hmCtgNo{
-			width : 440px;
-			height : 20px;
-			font-size : 14px;
-		}
-		#hmUseByDate{
-			width : 440px;
-			height : 20px;
-			font-size : 14px;
-		}
-		
-		#img_box{
-			border : 1px solid #A0A0A0;
-			width: 400px;
-		}
-		#image_container{
-			width: 450px;
-			height: 450px;
-		}
-		#image_container img
-		{
-		  width: 450px;
-		  height: 450px;
-		}
-		</style>
-		
+
 	</head>
 	<body>
 		<div id="wrap">
@@ -70,52 +37,61 @@
 		;
 		<div id="navMargin"></div>
 		<section id="section">
-			<div class = "hm">
-				<h2>우리집 약관리</h2>
-				<hr><br>
-				<c:if test="${not empty sessionScope.sid}">
-					<h4 id="UserName">${sessionScope.sid} 님</h4>
-					<p>어떤 약을 등록하실건가요? </p><br><br>
-					<p>* 이미지 파일은 영문으로 1MB 이하로 올려주세요</p>
-				</c:if>
-				
-				<!-- 상비약 등록 -->
-				
-				<form id="hmForm" method="post" action="<c:url value ='/insertHm/'/>">
-					<table class="inputHm">
-					<tr> <th id="hm">약품명</th>	<td><input type="text" id="hmName" name="hmName" value="${ocrResult}"></td> </tr>
-					<tr> <th id="hm">카테고리</th>	<td><input type="text" id="hmCtgNo" name="hmCtgNo" list="hmCtgList">
-													<datalist id="hmCtgList">
-											            <option value="1">두통약</option>
-											            <option value="2">감기약</option>
-											            <option value="3">소화제</option>
-											            <option value="4">해열제</option>
-											            <option value="5">진통제</option>
-											            <option value="6">치통약</option>
-											            <option value="7">연고/파스</option>
-											            <option value="8">기타</option>
-										        	</datalist></td></tr>
-					<tr> <th id="hm">사용기한</th>	<td><input type="date" name="hmUseByDate"></td></tr>
-					<tr> <th id="hm">메모</th>	<td><textarea name="hmMemo" rows="10" cols="60" placeholder="내용을 입력하세요" style="resize: none;"></textarea></td></tr>
-					<tr> <th id="hm">사진</th>	<td>다시 한번 이미지를 올려주세요 >>  <input  id = "hmImg" type="file" name="hmImg" onchange="setThumbnail(event);"></td>
-					<tr> <th id="hm"></th>		<td id="img_box"> <div id="image_container"></div></td></tr>
-					</table>
-					<input type="hidden" name="userId" value="${sessionScope.sid}" />
-					
-					 <!-- 전송 버튼 / 취소 버튼 -->
-					 <input class = "in" type="submit" value="등록" >
-					 <input class = "in2" type="reset" value="취소">
-				</form>
-				<!-- <form id="ocrForm" enctype="multipart/form-data">
-				<table>
-					<tr> <th id="hm" rowspan="2">사진</th>	<td><input type="file" id="uploadFile" name="uploadFile">
-																<input type="submit" value="결과 확인"></td></tr>
-					<tr>									<td><div id="image"></div><td></tr>
-					</table>
-				</form> -->
-				
-				<br>
+			<div class="main-Content-Body low">
+				<div class="basket-Item-Container colunm">
 
+						<h2>우리집 약관리</h2>
+
+						<div class="colum">
+							<c:if test="${not empty sessionScope.sid}">
+								<div class="low">
+									<h4 id="UserName" style="color: #81B89A;">${sessionScope.sid} 님</h4>
+									<p>어떤 약을 등록하실건가요?</p><br>
+								</div>
+								<p style="color: red;">* 이미지 파일은 영문으로 1MB 이하로 올려주세요</p>
+
+							</c:if>
+						</div>
+						
+						<!-- 상비약 등록 -->
+						
+						<form id="hmForm" method="post" action="<c:url value ='/insertHm/'/>">
+							<table class="inputHm">
+							<tr> <th id="hm">약품명</th>	<td><input type="text" id="hmName" name="hmName" value="${ocrResult}"></td> </tr>
+							<tr> <th id="hm">카테고리</th>	<td><input type="text" id="hmCtgNo" name="hmCtgNo" list="hmCtgList">
+															<datalist id="hmCtgList">
+													            <option value="1">두통약</option>
+													            <option value="2">감기약</option>
+													            <option value="3">소화제</option>
+													            <option value="4">해열제</option>
+													            <option value="5">진통제</option>
+													            <option value="6">치통약</option>
+													            <option value="7">연고/파스</option>
+													            <option value="8">기타</option>
+												        	</datalist></td></tr>
+							<tr> <th id="hm">사용기한</th>	<td><input type="date" name="hmUseByDate"></td></tr>
+							<tr> <th id="hm">메모</th>	<td><textarea name="hmMemo" rows="10" cols="60" placeholder="내용을 입력하세요" style="resize: none;"></textarea></td></tr>
+							<tr> <th id="hm">사진</th>	<td>다시 한번 이미지를 올려주세요 >>  <input  id = "hmImg" type="file" name="hmImg" onchange="setThumbnail(event);"></td>
+							<tr> <th id="hm"></th>		<td id="img_box"> <div id="image_container"></div></td></tr>
+							</table>
+							<input type="hidden" name="userId" value="${sessionScope.sid}" />
+							
+							 <!-- 전송 버튼 / 취소 버튼 -->
+							 <div class="submitForm low">
+								 <input class="in subBtn" type="submit" value="등록" >
+								 <input class="in2 delBtn" type="reset" value="취소">
+							 </div>
+						</form>
+						<!-- <form id="ocrForm" enctype="multipart/form-data">
+						<table>
+							<tr> <th id="hm" rowspan="2">사진</th>	<td><input type="file" id="uploadFile" name="uploadFile">
+																		<input type="submit" value="결과 확인"></td></tr>
+							<tr>									<td><div id="image"></div><td></tr>
+							</table>
+						</form> -->
+
+			
+				</div>
 			</div>
 		</section>
 

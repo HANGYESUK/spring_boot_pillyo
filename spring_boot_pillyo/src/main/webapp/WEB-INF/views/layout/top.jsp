@@ -46,10 +46,10 @@
 				<!-- <div id="logo"><a href="/">Pill-yo</a></div> -->
 				<marquee>
 					<a href="<c:url value="/boardDetailView/1"/>">Pill-Yo 중요 공지</a>
-					<a href="<c:url value="/boardDetailView/1"/>">Pill-Yo 중요 공지</a>
-					<a href="<c:url value="/boardDetailView/1"/>">Pill-Yo 중요 공지</a>
-					<a href="<c:url value="/boardDetailView/1"/>">Pill-Yo 중요 공지</a>
-					<a href="<c:url value="/boardDetailView/1"/>">Pill-Yo 중요 공지</a>
+					<a href="<c:url value="/boardDetailView/1"/>">새로운 약정보  등록</a>
+					<a href="<c:url value="/boardDetailView/1"/>">건강관리 리뉴얼</a>
+					<a href="<c:url value="/boardDetailView/1"/>">복용관리 리뉴얼</a>
+					<a href="<c:url value="/boardDetailView/1"/>">공지사항을 확인해주세요</a>
 				</marquee>
 			</div>
 			<div class="mainHeader">
