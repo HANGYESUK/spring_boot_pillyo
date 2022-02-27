@@ -18,7 +18,7 @@
 
 <br><br>
 <h2 align="center">✔ Tech Stack ✔</h2>
-<h4 align="center">👆FE👆</h4>
+<h4 align="center">👆Front-End👆</h4>
 <p align="center">
   <img src="https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white"/></a>&nbsp 
   <img src="https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white"/></a>&nbsp 
@@ -26,14 +26,14 @@
   <img src="https://img.shields.io/badge/jQuery-0769AD?style=flat-square&logo=jqueryt&logoColor=white"/></a>&nbsp 
 <br><br>
 <br>
-<h4 align="center">BE</h4>
+<h4 align="center">👇Back-End👇</h4>
 <p align="center">
   <img src="https://img.shields.io/badge/Spring Boot-6DB33F?style=flat-square&logo=springboot&logoColor=white"/></a>&nbsp 
   <img src="https://img.shields.io/badge/Apache Tomcat-F8DC75?style=flat-square&logo=apachetomcat3&logoColor=white"/></a>&nbsp 
   <img src="https://img.shields.io/badge/MySQL-4479A1?style=flat-square&logo=mysqlt&logoColor=white"/></a>&nbsp 
 <br><br>
 <br>
-<h4 align="center">Design</h4>
+<h4 align="center">✍Design✍</h4>
 <p align="center">
   <img src="https://img.shields.io/badge/Figma-F24E1E?style=flat-square&logo=figma&logoColor=white"/></a>&nbsp 
   
