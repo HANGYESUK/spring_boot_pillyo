@@ -1,4 +1,4 @@
-![header](https://capsule-render.vercel.app/api?type=wave&color=gradient&height=200&section=header&text=Pill-Yo%20<br>통합건강관리&fontAlign=50&fontAlignY=70&fontSize=90&fontColor=white)
+![header](https://capsule-render.vercel.app/api?type=wave&color=gradient&height=200&section=header&text=Pill-Yo%20통합건강관리&fontAlign=50&fontAlignY=70&fontSize=90&fontColor=white)
 
 # 배포 -  
 
@@ -9,12 +9,10 @@
 - Figma 디자인 링크 : https://www.figma.com/file/1gsxq6gqpCfdQ11d7nDSlj/Untitled?node-id=0%3A1<br>
   (컨트롤키를 누르고 휠을 돌리면 확대 축소가 가능하고 휠을 클릭하면 화면을 움직일수 있습니다)
 # 기능
-- 금주의 인테리어 슬라이드 기능
-- 추천인테리어 자동 슬라이드
-- 베스트셀러 슬라이드
-- 장바구니(CRUD)
-- 회원가입(유효성검사)
-- 로그인
+- 올인원 건강관리 서비스
+- 약 검색, 낱알 검색
+- 가족들의 통합적인 건강관리
+- 우리집 약관리
 
 
 
