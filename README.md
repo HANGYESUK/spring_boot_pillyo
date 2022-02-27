@@ -1,4 +1,4 @@
-![header](https://capsule-render.vercel.app/api?type=wave&color=gradient&height=200&section=header&text=Pill-Yo%20건강관리 서비스&fontAlign=50&fontAlignY=70&fontSize=90&fontColor=white)
+![header](https://capsule-render.vercel.app/api?type=wave&color=gradient&height=200&section=header&text=Pill-Yo%20올인원건강관리&fontAlign=50&fontAlignY=70&fontSize=90&fontColor=white)
 
 # 배포 -  http://115.85.180.85:8080/ (현재는 닫힘)
 
