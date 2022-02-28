@@ -123,7 +123,7 @@ public class HealthController { // 건강관리 컨트롤러
 	
 	
 	//건강관리 메인
-	@RequestMapping("/healthManageView/{famNo}") //페이지 다중 매핑 -> 하나만 하기
+	@RequestMapping("/hhh/{famNo}") //페이지 다중 매핑 -> 하나만 하기
 	public String listAllHealth2(@PathVariable int famNo, Model model, HttpSession session) {
 		// 가족번호를 전달하고, 각각의 관리 정보 받아오기
 		//	 int famNo=1;
