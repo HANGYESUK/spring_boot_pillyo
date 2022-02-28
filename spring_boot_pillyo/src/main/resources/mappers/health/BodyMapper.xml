@@ -4,7 +4,7 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   <mapper namespace="com.pillyo.pill.dao.IBodyDAO">
   		<insert id="insertBody" parameterType="com.pillyo.pill.model.BodyVO">
-  			insert into bodymanage(
+  			insert into bodyManage(
 							height,
 							weight,
 							bmi,
@@ -24,11 +24,11 @@
   		</select> -->
   		
   		<select id="listAllBody" parameterType="int" resultType="com.pillyo.pill.model.BodyVO">
-  			select * from bodymanage where famNo=#{famNo}
+  			select * from bodyManage where famNo=#{famNo}
   		</select>
   		
   		<update id="updateBody" parameterType="com.pillyo.pill.model.BodyVO">
-  			update bodymanage set 
+  			update bodyManage set 
   				height =#{height},
 				weight =#{weight},
 				bmi =#{bmi},
@@ -38,12 +38,12 @@
   		</update>
 		
   		<delete id="deleteBody" parameterType="int">
-  			delete from bodymanage where bodyNo = #{bodyNo}
+  			delete from bodyManage where bodyNo = #{bodyNo}
   		</delete> 
   		
   		<select id="detailViewBody" parameterType="int" 
 			  	resultType="com.pillyo.pill.model.BodyVO">
-  			SELECT * FROM bodymanage WHERE bodyNo=#{bodyNo} 
+  			SELECT * FROM bodyManage WHERE bodyNo=#{bodyNo} 
   			<!--안됌 : SELECT * FROM bodyManage WHERE bodyNo=#{bodyNo} order by limit bodyNo desc -->
   			<!--안됌 : SELECT * FROM bodyNo, bodyManage WHERE bodyNo=#{bodyNo} order by bodyNo desc -->
   		</select>
