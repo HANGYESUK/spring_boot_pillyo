@@ -102,8 +102,6 @@
 		<div class="container2 row">
 			<div class="content-Box3">
 				<h2 class="content-Title">지금 바로 시작하세요</h2>
-				<h2 class="content-Title">서버 테스트</h2>
-				<h2 class="content-Title">서버 테스트</h2>
 				<a href="<c:url value = '/loginForm'/>"><button class="content-Box3-Btn">시작하기</button></a>
 			</div>
 		</div>
