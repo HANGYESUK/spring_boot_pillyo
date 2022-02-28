@@ -79,20 +79,13 @@ public class HealthController { // 건강관리 컨트롤러
 		ArrayList<FamilyVO> famList = family_service.famListView(userId);
 		model.addAttribute("famList", famList);
 		
-		//선택한 famNO의 famList 인덱스를 확인하여
-		int idx = 0;
-		//for(int i=0;i<famList.size();i++) {
-			
-		//	if(famList.get(i).getFamNo() == famNo) {
-		//		idx= i;
-		//	}
-		//}
-		System.out.println(idx);
-		//famMember 이름 model값으로 보냄.
-		String famMember =  famList.get(idx).getFamMember();
+	
+		//첫번째 팸넘버의 팸이름 가져오기
+		String famMember =  famList.get(0).getFamMember();
 		model.addAttribute("famMember", famMember);
-
-		int famNo = famList.get(idx).getFamNo();
+		
+		//user의 첫번째 팸넘버 가져오기
+		int famNo = famList.get(0).getFamNo();
 		
 		//매핑때 받은 @PathVariavle int famNo 다시 모델로 보냄.
 		// famNo 기준 다시 등록폼 이동하거나 할때 사용. 
