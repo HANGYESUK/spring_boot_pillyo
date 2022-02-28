@@ -80,19 +80,19 @@ public class HealthController { // 건강관리 컨트롤러
 		model.addAttribute("famList", famList);
 		
 		//선택한 famNO의 famList 인덱스를 확인하여
-//		int idx = 0;
+		int idx = 0;
 		//for(int i=0;i<famList.size();i++) {
 			
 		//	if(famList.get(i).getFamNo() == famNo) {
 		//		idx= i;
 		//	}
 		//}
-//		System.out.println(0);
+		System.out.println(idx);
 		//famMember 이름 model값으로 보냄.
-//		String famMember =  famList.get(0).getFamMember();
-//		model.addAttribute("famMember", famMember);
+		String famMember =  famList.get(idx).getFamMember();
+		model.addAttribute("famMember", famMember);
 
-		int famNo = famList.get(0).getFamNo();
+		int famNo = famList.get(idx).getFamNo();
 		
 		//매핑때 받은 @PathVariavle int famNo 다시 모델로 보냄.
 		// famNo 기준 다시 등록폼 이동하거나 할때 사용. 
@@ -118,12 +118,12 @@ public class HealthController { // 건강관리 컨트롤러
 		model.addAttribute("sugarList", sugarList);
 		//SugarVO sugar = sugar_service.detailViewSugar(famNo);				// 혈당관리
 		//model.addAttribute("sugar", sugar);
-		return "Main/healthManageView";
+		return "/Main/healthManageView";
 	}
 	
 	
 	//건강관리 메인
-	@RequestMapping("/hhh/{famNo}") //페이지 다중 매핑 -> 하나만 하기
+	@RequestMapping("/healthManageView/{famNo}") //페이지 다중 매핑 -> 하나만 하기
 	public String listAllHealth2(@PathVariable int famNo, Model model, HttpSession session) {
 		// 가족번호를 전달하고, 각각의 관리 정보 받아오기
 		//	 int famNo=1;
