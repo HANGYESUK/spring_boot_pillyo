@@ -7,12 +7,12 @@ import org.springframework.context.annotation.ComponentScan;
 
 import com.pillyo.pill.controller.BoardController;
 import com.pillyo.pill.controller.BodyController;
-import com.pillyo.pill.controller.CalendarController;
 import com.pillyo.pill.controller.DoseController;
 import com.pillyo.pill.controller.DrugController;
 import com.pillyo.pill.controller.DrugInfoController;
 import com.pillyo.pill.controller.FamilyController;
 import com.pillyo.pill.controller.FeelController;
+import com.pillyo.pill.controller.HealthController;
 import com.pillyo.pill.controller.HmController;
 import com.pillyo.pill.controller.MainController;
 import com.pillyo.pill.controller.SugarController;
@@ -24,6 +24,7 @@ import com.pillyo.pill.dao.IDrugDAO;
 import com.pillyo.pill.dao.IFamilyDAO;
 import com.pillyo.pill.dao.IFeelDAO;
 import com.pillyo.pill.dao.IHmDAO;
+import com.pillyo.pill.dao.IPressureDAO;
 import com.pillyo.pill.dao.ISugarDAO;
 import com.pillyo.pill.dao.IUserDAO;
 
@@ -39,10 +40,12 @@ import com.pillyo.pill.dao.IUserDAO;
 @ComponentScan(basePackageClasses = DoseController.class)
 @ComponentScan(basePackageClasses = BoardController.class)
 @ComponentScan(basePackageClasses = HmController.class) // 우리집 약관리
+@ComponentScan(basePackageClasses = HealthController.class)
 
 @MapperScan(basePackageClasses = IUserDAO.class)
 @MapperScan(basePackageClasses = IFamilyDAO.class)
 @MapperScan(basePackageClasses = ISugarDAO.class)
+@MapperScan(basePackageClasses = IPressureDAO.class)
 @MapperScan(basePackageClasses = IBodyDAO.class)
 @MapperScan(basePackageClasses = IFeelDAO.class)
 @MapperScan(basePackageClasses = IDrugDAO.class)
