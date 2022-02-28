@@ -118,7 +118,7 @@ public class HealthController { // 건강관리 컨트롤러
 		model.addAttribute("sugarList", sugarList);
 		//SugarVO sugar = sugar_service.detailViewSugar(famNo);				// 혈당관리
 		//model.addAttribute("sugar", sugar);
-		return "/Main/healthManageView";
+		return "Main/healthManageView";
 	}
 	
 	
