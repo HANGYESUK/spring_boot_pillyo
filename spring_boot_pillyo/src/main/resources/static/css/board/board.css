@@ -5,6 +5,7 @@
 	margin:0 auto; /* 양쪽 여백을 위아래는 0 좌우는 자동으로 잡아주겠다! */
 	margin-top : 40px;
 	}
+	
 	.ctgMenuItem {
 	border-radius: 28px 28px 0px 10px;
         font-size: 18px;
@@ -17,6 +18,7 @@
     cursor:pointer;
     transition: all 0.4s;
    }
+   
    .ctgMenuItem a {
 	text-decoration: none;
 	color: #3f63b5;
@@ -33,6 +35,8 @@
     cursor:pointer;
     transition: all 0.4s;
 	flex-direction: row;
+	text-align: center;
+    line-height: 45px;
    }
    .ctgMenuItemSub a {
 	text-decoration: none;
@@ -121,8 +125,17 @@ button:hover {
 	background:white;
  	box-shadow: 2px 2px 5px #0d3bb1;
 }
-	th{
-	background-color:#cfe2f6;
-	 text-align: center; width:90px;     font-size: 17px;
-    color: #3f63b5;
-	}
+
+th{
+background-color:#cfe2f6;
+ text-align: center; width:90px;     font-size: 17px;
+   color: #3f63b5;
+}
+
+#boardQnaContent {
+	display:none;
+}
+
+.ctgMenuItemSub {
+	display:none;
+} 

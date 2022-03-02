@@ -85,45 +85,22 @@ public class BoardController {
 		return "redirect:/listAllBoard";
 	}
 	
-//	// 게시판 등록 
-//		@RequestMapping("/insertboardQna")
-//		public String insertboardQna(BoardVO vo, HttpSession session) { 
-//									// title, content 매개변수 받기 
-//			String userId = (String)session.getAttribute("sid"); // session 받아오기
-//			service.insertboard(vo);
-//			System.out.println(vo.getTitle());
-//			return "redirect:/listAllBoard";
-//		}
 	
 	@RequestMapping("/listAllBoard")
 	public String listAllBoard(Model model) {
 
 		// Model은 하나의 객체로 컨트롤러에서 페이지로 넘길 값을 저장하는데 사용
-		ArrayList<BoardVO> boardList = service.listAllBoard();
-		model.addAttribute("boardList", boardList);
+		ArrayList<BoardVO> boardNewsList = service.listAllBoard();
+		model.addAttribute("boardNewsList", boardNewsList);
+		
+		ArrayList<BoardVO> boardQnaList = service.listAllBoardQna();
+		model.addAttribute("boardQnaList", boardQnaList);
 		// 이 구간은 model 객체를 파라미터로 받아서 view인 listAllBoard에 리턴해주는 역할
 		// model.addAttribute("변수 이름", 변수에 넣을 데이터); 라고 생각
 		// view 단계에서 ${변수 이름}, 즉 ${boardList} 이렇게 받아주면 됨
 
 		return "board/boardListView";
 	}
-	
-//	// 공지사항 : 카테고리별 조회
-//	@RequestMapping("/listAllBoard/{boardCtg}")
-//	public String listAllBoard(@PathVariable int boardCtg, Model model,
-//			 					HttpSession session) {
-//		HashMap<String, Object> map = new HashMap<String, Object>();
-//		
-//		String userId = (String)session.getAttribute("sid");
-//		System.out.println(userId);
-//		map.put("userId", userId);
-//		map.put("boardCtg", boardCtg);
-//		ArrayList<BoardVO> boardCtgList = service.listAllBoard(map);
-//		model.addAttribute("boardCtgList", boardCtgList);
-//		model.addAttribute("userId", userId);
-//		// DB에서 카테고리별 리스트 불러오기
-//		return "board/boardListView";
-//	}
 	
 	
 	@RequestMapping("/listAllBoardQna")
