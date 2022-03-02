@@ -44,138 +44,340 @@
 
 <body>
 
-<div id="wrap">
-			
-			<!-- TOP -->
-			<jsp:include page="/WEB-INF/views/layout/top.jsp" flush='true' />
-			<div id="navMargin"></div>
-			
-			
-			 <article>             
-	                <div class="slider-1">
-	                    <div class="slides">
-	                        <div class="active" style="background-image:url(image/slide_img_01.jpg);"></div>
-	                        <div style="background-image:url(image/slide_img_02.jpg);"></div>
-	                        <div style="background-image:url(image/slide_img_03.jpg);"></div>
-	                        <div style="background-image:url(image/slide_img_05.jpg);"></div>
-	                        <div style="background-image:url(image/slide_img_04.jpg);"></div>
-	                    </div>
-	                    <div class="page-btns">
-	                        <div class="active" ></div>
-	                        <div></div>
-	                        <div></div>
-	                        <div></div>
-	                    </div>
-	                    <div class="side-btns">
-	                        <div>
-	                            <span><i class="fas fa-angle-left"></i></span>
-	                        </div>
-	                        <div>
-	                            <span><i class="fas fa-angle-right"></i></span>
-	                        </div>
-	                    </div>
-	                </div>
-	            </article>
-	
-			
-			<section id="section" style="    padding-top: 1px;">
-			
-			
-
-	<div class="boardBody">
-	<br>
-	<div class="ctgMenuBox">
-		<div class="ctgMenuItem"><a href="<c:url value='/listAllBoard'/>">알약요 소식</a></div>
-		<div class="ctgMenuItem"><a href="<c:url value='/listAllBoardQna'/>">자주 묻는 질문</a></div>
-	</div>
-	<br><br>
-		<table class="table table-striped">
-			<thead>
-				<tr>
-					<th style="width:90px;">분류</th>
-					<th style="width:470px;">제목</th>
-					<!-- <th style="background-color: #eeeeee; text-align: center; width:100px;">작성자</th> -->
-					<th style="width:100px;">작성일</th>
-				</tr>
-			</thead>
-			<tbody>
-			
-			 
-			 <%-- 변수 하나 생성 (ctgName)
-			 
-					c : if 사용 => boardNo == 0일때
-					ctgName = 소실
-					else if boardNo == 1일때
-					ctgName == 카드뉴스		
-					
-					<%= =%> --%>
-					
-				<%-- <c:set var="boardNo" value="소식">
-					
-				</c:set> --%>
+	<div id="wrap">
 				
-				<%-- <c:if test="${board.boardCtgNo eq '0'}">
-			 	소식
-				</c:if>  --%>
-			
-			<c:forEach items="${boardList}" var="board">
-			    
-			  <tr class="drugBox">
-					<td>
-						<c:if test="${board.boardCtgNo eq '0'}">소식</c:if>
-						<c:if test="${board.boardCtgNo eq '1'}">카드뉴스</c:if>
-					</td> 
-					<!-- each는 반복 리스트에서 board가 없어질때 까지 반복 한다는 뜻  -->
-					<td><a href="<c:url value='/boardDetailView/${board.boardNo}'/>">${board.boardTitle }</a></td>
-			<%-- 		<td>${board.userId}</td>  --%>
-					<td>${board.boardWriteDate}</td> 
+				<!-- TOP -->
+				<jsp:include page="/WEB-INF/views/layout/top.jsp" flush='true' />
+				<div id="navMargin"></div>
+				
+				
+				 <article>             
+		                <div class="slider-1">
+		                    <div class="slides">
+		                        <div class="active" style="background-image:url(image/slide_img_01.jpg);"></div>
+		                        <div style="background-image:url(image/slide_img_02.jpg);"></div>
+		                        <div style="background-image:url(image/slide_img_03.jpg);"></div>
+		                        <div style="background-image:url(image/slide_img_05.jpg);"></div>
+		                        <div style="background-image:url(image/slide_img_04.jpg);"></div>
+		                    </div>
+		                    <div class="page-btns">
+		                        <div class="active" ></div>
+		                        <div></div>
+		                        <div></div>
+		                        <div></div>
+		                    </div>
+		                    <div class="side-btns">
+		                        <div>
+		                            <span><i class="fas fa-angle-left"></i></span>
+		                        </div>
+		                        <div>
+		                            <span><i class="fas fa-angle-right"></i></span>
+		                        </div>
+		                    </div>
+		                </div>
+		            </article>
+		
+				
+		<section id="section" style="    padding-top: 1px;">
+			<div class="boardBody">
+			<br>
+				<div class="ctgMenuBox">
+					<label for="boardNews">
+						<div class="ctgMenuItem">
+							<input type="radio" id="boardNews" name="boardCtg" value="boardNews" checked>알약요 소식
+						</div>
+					</label>
+					<label for="boardQna">
+						<div class="ctgMenuItem">
+							<input type="radio" id="boardQna" name="boardCtg" value="boardQna">자주 묻는 질문
+						</div>
+					</label>
+				</div>
+				<div id="ctgMenuItemtotalBox">
+					<div class="ctgMenuItemtotal">
+						<label for="orderPay">
+							<div class="ctgMenuItemSub">
+								<input type="radio" id="orderPay" name="boardCtg" value="orderPay">주문/결제
+							</div>
+						</label>
+						<label for="trade">
+							<div class="ctgMenuItemSub">
+								<input type="radio" id="trade" name="boardCtg" value="trade">교환/반품
+							</div>
+						</label>
+						<label for="product">
+							<div class="ctgMenuItemSub">
+								<input type="radio" id="product" name="boardCtg" value="product">제품
+							</div>
+						</label>
+						<label for="member">
+							<div class="ctgMenuItemSub">
+								<input type="radio" id="member" name="boardCtg" value="member">회원
+							</div>
+						</label>
+					</div>
+				</div>
+				<div id="boardContent">
+					<!-- 소식 -->
+					<div id="boardNewsContent">
+						<table class="table table-striped">
+							<thead>
+								<tr>
+									<th style="width:90px;">분류</th>
+									<th style="width:470px;">제목</th>
+									<!-- <th style="background-color: #eeeeee; text-align: center; width:100px;">작성자</th> -->
+									<th style="width:100px;">작성일</th>
+								</tr>
+							</thead>
+							<tbody>
+								<c:forEach items="${boardNewsList}" var="board">
+							  		<c:if test="${board.boardCtgNo eq '0'}">
+							  			<tr class="drugBox">
+							  				<td>소식</td>
+							  				<td><a href="<c:url value='/boardDetailView/${board.boardNo}'/>">${board.boardTitle }</a></td>
+											<td>${board.boardWriteDate}</td>
+										</tr>
+							  		</c:if>
+							  		<c:if test="${board.boardCtgNo eq '1'}">
+							  			<tr class="drugBox">
+							  				<td>카드뉴스</td>
+							  				<td><a href="<c:url value='/boardDetailView/${board.boardNo}'/>">${board.boardTitle }</a></td>
+											<td>${board.boardWriteDate}</td>
+										</tr>
+							  		</c:if>
+						   		</c:forEach>
+							</tbody>
+						</table>
+			   		</div>
 					
-				</tr>
-		   </c:forEach>
-			</tbody>
-		</table>
-		
-		<a href="<c:url value = '/boardForm'/>"><button>글쓰기</button></a>
-		
-		<div id="more-Btn" class="low" onclick="more()"><h3>더보기</h3><br>
-		
-		
-		
-		</div>
-		
-		
-		<script>
-					let count = 10;
-			        let drugBox = document.getElementsByClassName("drugBox")
-			        
-			        for(let i=count; i<drugBox.length; i++) {
-			        	drugBox[i].classList.add('displayNone')
-			        }
-			        
-			        function more() {
-			        	
-			        	console.log('string')
-				        for(let i=count; i<drugBox.length; i++) {
-				        	drugBox[i].classList.remove('displayNone')
-				        	if(i >= count + 9) {
-				        		break;
-				        	}
-				        }
-				        count += 10
-			        }
-			</script>
-		
-	
-		</div>
-		<br><br><br><br>
-		
-
-	</section>
-	        
-			<!-- BOTTOM  -->
-			<jsp:include page="/WEB-INF/views/layout/bottom.jsp" flush='true' />
-		
-      </div> <!-- wrap -->
+					<!-- 자주묻는질문 -->
+			   		<div id="boardQnaContent">
+			   			<table class="table table-striped">
+							<thead>
+								<tr>
+									<th style="width:90px;">분류</th>
+									<th style="width:470px;">제목</th>
+									<!-- <th style="background-color: #eeeeee; text-align: center; width:100px;">작성자</th> -->
+									<th style="width:100px;">작성일</th>
+								</tr>
+							</thead>
+							<tbody>
+								<c:forEach items="${boardQnaList}" var="board">
+							  		<c:if test="${board.boardCtgNo eq '2'}">
+							  			<tr class="drugBox">
+							  				<td>주문/결제</td>
+							  				<td><a href="<c:url value='/boardDetailView/${board.boardNo}'/>">${board.boardTitle }</a></td>
+											<td>${board.boardWriteDate}</td>
+										</tr>
+							  		</c:if>
+							  		<c:if test="${board.boardCtgNo eq '3'}">
+							  			<tr class="drugBox">
+							  				<td>교환/반품</td>
+							  				<td><a href="<c:url value='/boardDetailView/${board.boardNo}'/>">${board.boardTitle }</a></td>
+											<td>${board.boardWriteDate}</td>
+										</tr>
+							  		</c:if>
+							  		<c:if test="${board.boardCtgNo eq '4'}">
+							  			<tr class="drugBox">
+							  				<td>제품</td>
+							  				<td><a href="<c:url value='/boardDetailView/${board.boardNo}'/>">${board.boardTitle }</a></td>
+											<td>${board.boardWriteDate}</td>
+										</tr>
+							  		</c:if>
+							  		<c:if test="${board.boardCtgNo eq '5'}">
+							  			<tr class="drugBox">
+							  				<td>회원</td>
+							  				<td><a href="<c:url value='/boardDetailView/${board.boardNo}'/>">${board.boardTitle }</a></td>
+											<td>${board.boardWriteDate}</td>
+										</tr>
+							  		</c:if>
+						   		</c:forEach>
+					   		</tbody>
+						</table>
+			   		</div>
+			   		
+			   		<!-- 자문질 - 주문결제 -->
+			   		<div id="boardOrderPayContent">
+			   			<table class="table table-striped">
+							<thead>
+								<tr>
+									<th style="width:90px;">분류</th>
+									<th style="width:470px;">제목</th>
+									<!-- <th style="background-color: #eeeeee; text-align: center; width:100px;">작성자</th> -->
+									<th style="width:100px;">작성일</th>
+								</tr>
+							</thead>
+							<tbody>
+								<c:forEach items="${boardOrderPayList}" var="board">
+							  		<c:if test="${board.boardCtgNo eq '2'}">
+							  			<tr class="drugBox">
+							  				<td>주문/결제</td>
+							  				<td><a href="<c:url value='/boardDetailView/${board.boardNo}'/>">${board.boardTitle }</a></td>
+											<td>${board.boardWriteDate}</td>
+										</tr>
+							  		</c:if>
+						   		</c:forEach>
+					   		</tbody>
+						</table>
+			   		</div>
+			   		
+			   		<!-- 자묻질 - 교환반품 -->
+			   		<div id="boardTradeContent">
+			   			<table class="table table-striped">
+							<thead>
+								<tr>
+									<th style="width:90px;">분류</th>
+									<th style="width:470px;">제목</th>
+									<!-- <th style="background-color: #eeeeee; text-align: center; width:100px;">작성자</th> -->
+									<th style="width:100px;">작성일</th>
+								</tr>
+							</thead>
+							<tbody>
+								<c:forEach items="${boardTradeList}" var="board">
+							  		<c:if test="${board.boardCtgNo eq '3'}">
+							  			<tr class="drugBox">
+							  				<td>교환/반품</td>
+							  				<td><a href="<c:url value='/boardDetailView/${board.boardNo}'/>">${board.boardTitle }</a></td>
+											<td>${board.boardWriteDate}</td>
+										</tr>
+							  		</c:if>
+						   		</c:forEach>
+					   		</tbody>
+						</table>
+			   		</div>
+			   		
+			   		<!-- 자묻질 - 제품 -->
+			   		<div id="boardProductContent">
+			   			<table class="table table-striped">
+							<thead>
+								<tr>
+									<th style="width:90px;">분류</th>
+									<th style="width:470px;">제목</th>
+									<!-- <th style="background-color: #eeeeee; text-align: center; width:100px;">작성자</th> -->
+									<th style="width:100px;">작성일</th>
+								</tr>
+							</thead>
+							<tbody>
+								<c:forEach items="${boardProductList}" var="board">
+							  		<c:if test="${board.boardCtgNo eq '4'}">
+							  			<tr class="drugBox">
+							  				<td>교환/반품</td>
+							  				<td><a href="<c:url value='/boardDetailView/${board.boardNo}'/>">${board.boardTitle }</a></td>
+											<td>${board.boardWriteDate}</td>
+										</tr>
+							  		</c:if>
+						   		</c:forEach>
+					   		</tbody>
+						</table>
+			   		</div>
+			   		
+			   		<!-- 자묻질 - 회원 -->
+			   		<div id="boardMemberContent">
+			   			<table class="table table-striped">
+							<thead>
+								<tr>
+									<th style="width:90px;">분류</th>
+									<th style="width:470px;">제목</th>
+									<!-- <th style="background-color: #eeeeee; text-align: center; width:100px;">작성자</th> -->
+									<th style="width:100px;">작성일</th>
+								</tr>
+							</thead>
+							<tbody>
+								<c:forEach items="${boardMemberList}" var="board">
+							  		<c:if test="${board.boardCtgNo eq '5'}">
+							  			<tr class="drugBox">
+							  				<td>교환/반품</td>
+							  				<td><a href="<c:url value='/boardDetailView/${board.boardNo}'/>">${board.boardTitle }</a></td>
+											<td>${board.boardWriteDate}</td>
+										</tr>
+							  		</c:if>
+						   		</c:forEach>
+					   		</tbody>
+						</table>
+			   		</div>
+				
+					<a href="<c:url value = '/boardForm'/>"><button>글쓰기</button></a>
+					<div id="more-Btn" class="low" onclick="more()"><h3>더보기</h3><br></div>
+			</div>
+		</section>
+		        
+		<!-- BOTTOM  -->
+		<jsp:include page="/WEB-INF/views/layout/bottom.jsp" flush='true' />
+			
+	</div> <!-- wrap -->
 			
 </body>
+<script>
+	let count = 10;
+	let drugBox = document.getElementsByClassName("drugBox")
+	     
+    function more() {
+    	
+    	console.log('string')
+     for(let i=count; i<drugBox.length; i++) {
+     	drugBox[i].classList.remove('displayNone')
+     	if(i >= count + 9) {
+     		break;
+     	}
+     }
+     count += 10
+    }
+</script>
+<script type="text/javascript">
+	$('input[name="boardCtg"]').change(function(){
+			var radioId = $('input[name="boardCtg"]:checked').val();
+			console.log(radioId);
+			if (radioId == "boardNews") {
+				$(boardNewsContent).css('display', 'block');
+				$(boardQnaContent).css('display', 'none');
+				$(".ctgMenuItemSub").css('display', 'none');
+				$(boardOrderPayContent).css('display', 'none');
+				$(boardTradeContent).css('display', 'none');
+				$(boardProductContent).css('display', 'none');
+				$(boardMemberContent).css('display', 'none');
+			} else if (radioId == "boardQna") {
+				$(boardNewsContent).css('display', 'none');
+				$(boardQnaContent).css('display', 'block');
+				$(".ctgMenuItemSub").css('display', 'block');
+				$(boardOrderPayContent).css('display', 'none');
+				$(boardTradeContent).css('display', 'none');
+				$(boardProductContent).css('display', 'none');
+				$(boardMemberContent).css('display', 'none');
+			} 
+
+			else if (radioId == "orderPay") {
+				$(boardQnaContent).css('display', 'none');
+				$(boardNewsContent).css('display', 'none');
+				$(".ctgMenuItemSub").css('display', 'block');
+				$(boardOrderPayContent).css('display', 'block');
+				$(boardTradeContent).css('display', 'none');
+				$(boardProductContent).css('display', 'none');
+				$(boardMemberContent).css('display', 'none');
+			} else if (radioId == "trade") {
+				$(boardQnaContent).css('display', 'none');
+				$(boardNewsContent).css('display', 'none');
+				$(".ctgMenuItemSub").css('display', 'block');
+				$(boardOrderPayContent).css('display', 'none');
+				$(boardTradeContent).css('display', 'block');
+				$(boardProductContent).css('display', 'none');
+				$(boardMemberContent).css('display', 'none');
+			} else if (radioId == "product") {
+				$(boardQnaContent).css('display', 'none');
+				$(boardNewsContent).css('display', 'none');
+				$(".ctgMenuItemSub").css('display', 'block');
+				$(boardOrderPayContent).css('display', 'none');
+				$(boardTradeContent).css('display', 'none');
+				$(boardProductContent).css('display', 'block');
+				$(boardMemberContent).css('display', 'none');
+			} else if (radioId == "member") {
+				$(boardQnaContent).css('display', 'none');
+				$(boardNewsContent).css('display', 'none');
+				$(".ctgMenuItemSub").css('display', 'block');
+				$(boardOrderPayContent).css('display', 'none');
+				$(boardTradeContent).css('display', 'none');
+				$(boardProductContent).css('display', 'none');
+				$(boardMemberContent).css('display', 'block');
+			}
+	});
+</script>
 </html>
