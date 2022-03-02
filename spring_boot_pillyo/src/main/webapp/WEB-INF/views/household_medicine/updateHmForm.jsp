@@ -12,10 +12,10 @@
 		<script type="text/javascript">
 		 function setThumbnail(event) { // 이미지 등록 버튼의 onchange
 				var reader = new FileReader(); 	// 파일을 불러옴
-			    
+				$('#image_container').empty()
 				reader.onload = function(event) { // 불러온 파일을 읽어 div#image_container에 넣음
 					var image = document.createElement("img"); 
-					image.setAttribute("src", event.target.result); 
+					image.setAttribute("src", event.target.result);
 					document.getElementById("image_container").appendChild(image);
 					}
 					
@@ -50,17 +50,71 @@
 	.img_tr{
 		text-align: center;
 	}
+	#hmName{
+	width : 440px;
+	height : 20px;
+	font-size : 14px;
+	font-weight : bold;
+	}
+	#hmCtgNo{
+		width : 440px;
+		height : 20px;
+		font-size : 14px;
+	}
+	#hmUseByDate{
+		width : 440px;
+		height : 20px;
+		font-size : 14px;
+	}
 	#img_box{
 		border : 1px solid #A0A0A0;
+		width: 400px;
 	}
 	#image_container{
-		width: 300px;
-		height: 300px;
+		width: 450px;
+		height: 450px;
 	}
 	#image_container img
 	{
-	  width: 300px;
-	  height: 300px;
+	  width: 450px;
+	  height: 450px;
+	}
+	
+	.subBtn {
+		background-color: #82bbfd;
+	    color: white;
+	    border: none;
+	    padding: 10px;
+	    padding-left: 30px;
+	    padding-right: 30px;
+	    font-size: 20px;
+	    font-weight: bold;
+	    border-radius: 30px;
+	    cursor: pointer;
+	}
+	
+	.delBtn {
+		background-color: #ff5252;
+		color: white;
+	    border: none;
+	    padding: 10px;
+	    padding-left: 30px;
+	    padding-right: 30px;
+	    font-size: 20px;
+	    font-weight: bold;
+	    border-radius: 30px;
+	    cursor: pointer;
+	}
+	.low {
+	    display: flex;
+	    flex-direction: row;
+	    align-items: center;
+	    justify-content: center;
+	}
+	.submitForm {
+		justify-content: space-around;
+		margin-top: 20px;
+	    margin-left: 80px;
 	}
 	</style>
 	
@@ -80,12 +134,10 @@
 			</c:if>
 			
 			<!-- 상비약 등록 -->
-			<form id = "updateHmForm" method="post" action="<c:url value ='/updateHm'/>">
+			<form id = "updateHmForm" method="post" action="<c:url value ='/updateHm'/>" >
 				<table>
-					<!-- OCR로 이미지 넣어서 글씨 출력 -->
-					<tr class="hm_OCR_img"> <td rowspan="5" id="img_box"><div id="image_container"></div></td></tr>
-					<tr> <th id="hm">약품명</th>	<td><input type="text" id="hmName" name="hmName" value="${hm.hmName}"></td></tr>
-					<tr> <th id="hm">카테고리</th>	<td><input type="number" id="hmCtgNo" name="hmCtgNo" list="hmCtgList" value="${hm.hmCtgNo}">
+					<tr> <th>약품명</th> 		<td><input type="text" id="hmName" name="hmName" value="${hm.hmName}" required ></td></tr>
+					<tr> <th>카테고리</th> 	<td><input type="number" id="hmCtgNo" name="hmCtgNo" list="hmCtgList" value="${hm.hmCtgNo}" required >
 													<datalist id="hmCtgList">
 											            <option value="1">두통약</option>
 											            <option value="2">감기약</option>
@@ -93,21 +145,32 @@
 											            <option value="4">해열제</option>
 											            <option value="5">진통제</option>
 											            <option value="6">치통약</option>
-											            <option value="7">연고/파스</option>
-											            <option value="8">기타</option>
+											            <option value="7">알레르기약</option>
+											            <option value="8">연고/파스</option>
+											            <option value="9">기타</option>
 										        	</datalist></td></tr>
-					<tr> <th id="hm">사용기한</th>	<td><input type="date" name="hmUseByDate" value="${hm.hmUseByDate}"></td></tr>
-					<tr> <th id="hm">메모</th>	<td><textarea name="hmMemo" rows="10" cols="60" placeholder="내용을 입력하세요" style="resize: none;">${hm.hmMemo}</textarea></td>
-					<tr> <th id="hm" class="btn_box">
-	 							 <!-- 이미지 미리보기 : 올려진 이미지 파일을 화면에 띄워줌 -->
-	 							 <input  id = "uploadFile" type="file" name="uploadFile" onchange="setThumbnail(event);"></th> <td></td>
-	 							 <tr> <th id="hm" colspan="3"> <br>
-	 							 <!-- 전송 버튼 / 취소 버튼 -->
-	 							 <input class = "in" type="submit" value="등록" >
-	 							 <input class = "in2" type="reset" value="취소">&nbsp;</th></tr>
-				
+		        	<tr> <th>사용기한</th>		<td><input type="date" name="hmUseByDate" value="${hm.hmUseByDate}" required ></td></tr>
+					<tr> <th>메모</th>		<td><textarea name="hmMemo" rows="10" cols="60" placeholder="내용을 입력하세요" style="resize: none;" required >${hm.hmMemo}</textarea></td></tr>
+					
+					<tr> <th id="hm">사진</th>	<td><input id = "hmImg" type="file" name="hmImg" value="${hm.hmImg}" onchange="setThumbnail(event);"></td>
+					<tr> <th id="hm"></th>		<td id="img_box"> <div id="image_container"> <img src="<c:url value='/images/${hm.hmImg}'/>"></div>
+																  <div>
+																  <input type="text" value = "${hm.hmImg}">
+																  <input type="submit" id="hmImg" name="hmImg" value="${hm.hmImg}">
+																  </div>
+																  </td></tr>
+																  
+																  <!-- 이렇게 하면 될 것 같은데 왜 ,가 들어가는 걸까? 중복되게 들어가면 안되서??-->
+					
 				</table>
 				<input type="hidden" id="hmNo" name="hmNo" value="${hm.hmNo }">
+				
+				 <!-- 전송 버튼 / 취소 버튼 -->
+				 <div class="submitForm low">
+					 <input class = "in subBtn" type="submit" value="수정" >
+					 <input class = "in2 delBtn" type="reset" value="취소">
+				 </div>
+				 
 			</form>
 		</section>
 

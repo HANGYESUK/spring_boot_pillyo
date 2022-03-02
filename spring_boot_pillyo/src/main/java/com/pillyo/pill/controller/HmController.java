@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.multipart.MultipartFile;
 
 import com.pillyo.pill.model.HmVO;
 import com.pillyo.pill.service.HmService;
@@ -148,6 +147,7 @@ public class HmController{
 	@RequestMapping("/updateHm")
 	public String updateHm(HmVO vo) {
 		service.updateHm(vo);
+		System.out.println(vo.getHmName());
 		return"redirect:/insertHmResult";
 	}
 

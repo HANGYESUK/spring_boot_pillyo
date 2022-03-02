@@ -109,12 +109,16 @@
 								<button type="button" id="hm_ctg" value="6" onclick="go(this.value)">
 								<img src="./img/hm/치통.png" alt="" style="width:45px; height:45px;"><br>
 								<span>치통약</span></button>
-								 
+								
 								<button type="button" id="hm_ctg" value="7" onclick="go(this.value)">
+								<img src="./img/hm/알레르기.png" alt="" style="width:45px; height:45px;"><br>
+								<span>알레르기</span></button>
+								 
+								<button type="button" id="hm_ctg" value="8" onclick="go(this.value)">
 								<img src="./img/hm/연고.png" alt="" style="width:45px; height:45px;"><br>
 								<span>연고/파스</span></button>
 								
-								<button type="button" id="hm_ctg" value="8" onclick="go(this.value)">
+								<button type="button" id="hm_ctg" value="9" onclick="go(this.value)">
 								<img src="./img/hm/기타.png" alt="" style="width:45px; height:45px;"><br>
 								<span>기타</span></button>
 								
