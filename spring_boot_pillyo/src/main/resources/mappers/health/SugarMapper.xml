@@ -4,7 +4,7 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   <mapper namespace="com.pillyo.pill.dao.ISugarDAO">
   		<insert id="insertSugar" parameterType="com.pillyo.pill.model.SugarVO">
-  			insert into  sugarManage(
+  			insert into  sugarmanage(
 							situation,
 							sugarMedication,
 							acpc,
@@ -32,11 +32,11 @@
   		
   		<select id="listAllSugar" parameterType="int" resultType="com.pillyo.pill.model.SugarVO">
   			<!-- select * from sugarManage where famNo=#{famNo} -->
-  			select * from sugarManage where famNo=#{famNo} order by sugarRecordDate desc LIMIT 7
+  			select * from sugarmanage where famNo=#{famNo} order by sugarRecordDate desc LIMIT 7
   		</select>
   		
   		<update id="updateSugar" parameterType="com.pillyo.pill.model.SugarVO">
-  			update sugarManage set 
+  			update sugarmanage set 
   				situation =#{situation},
 				sugarMedication =#{sugarMedication},
 				acpc =#{acpc},
@@ -50,11 +50,11 @@
   		</update>
   		
   		<delete id="deleteSugar" parameterType="int">
-  			delete from sugarManage where sugarNo = #{sugarNo}
+  			delete from sugarmanage where sugarNo = #{sugarNo}
   		</delete>
   		
   		<select id="detailViewSugar" parameterType="int" 
   														  resultType="com.pillyo.pill.model.SugarVO">
-  			SELECT * FROM sugarManage WHERE sugarNo=#{sugarNo} 		
+  			SELECT * FROM sugarmanage WHERE sugarNo=#{sugarNo} 		
   		</select>
   </mapper>
