@@ -132,10 +132,10 @@ background-color:#cfe2f6;
    color: #3f63b5;
 }
 
-#boardQnaContent {
+#boardQnaContent, #boardMemberContent, #boardOrderPayContent, #boardTradeContent, #boardProductContent  {
 	display:none;
 }
 
 .ctgMenuItemSub {
 	display:none;
-} 
+}

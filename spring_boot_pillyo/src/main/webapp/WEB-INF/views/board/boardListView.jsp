@@ -95,17 +95,30 @@
 				</div>
 				<div id="ctgMenuItemtotalBox">
 					<div class="ctgMenuItemtotal">
-						<div class="ctgMenuItemSub">
-						<a href="<c:url value='/listAllBoardQna2'/>">주문/결제</a></div>
-						<div class="ctgMenuItemSub">
-						<a href="<c:url value='/listAllBoardQna3'/>">교환/반품</a></div>
-						<div class="ctgMenuItemSub">
-						<a href="<c:url value='/listAllBoardQna4'/>">제품</a></div>
-						<div class="ctgMenuItemSub">
-						<a href="<c:url value='/listAllBoardQna5'/>">회원</a>
+						<label for="orderPay">
+							<div class="ctgMenuItemSub">
+								<input type="radio" id="orderPay" name="boardCtg" value="orderPay">주문/결제
+							</div>
+						</label>
+						<label for="trade">
+							<div class="ctgMenuItemSub">
+								<input type="radio" id="trade" name="boardCtg" value="trade">교환/반품
+							</div>
+						</label>
+						<label for="product">
+							<div class="ctgMenuItemSub">
+								<input type="radio" id="product" name="boardCtg" value="product">제품
+							</div>
+						</label>
+						<label for="member">
+							<div class="ctgMenuItemSub">
+								<input type="radio" id="member" name="boardCtg" value="member">회원
+							</div>
+						</label>
 					</div>
 				</div>
 				<div id="boardContent">
+					<!-- 소식 -->
 					<div id="boardNewsContent">
 						<table class="table table-striped">
 							<thead>
@@ -136,7 +149,8 @@
 							</tbody>
 						</table>
 			   		</div>
-					   		
+					
+					<!-- 자주묻는질문 -->
 			   		<div id="boardQnaContent">
 			   			<table class="table table-striped">
 							<thead>
@@ -181,7 +195,106 @@
 					   		</tbody>
 						</table>
 			   		</div>
-
+			   		
+			   		<!-- 자문질 - 주문결제 -->
+			   		<div id="boardOrderPayContent">
+			   			<table class="table table-striped">
+							<thead>
+								<tr>
+									<th style="width:90px;">분류</th>
+									<th style="width:470px;">제목</th>
+									<!-- <th style="background-color: #eeeeee; text-align: center; width:100px;">작성자</th> -->
+									<th style="width:100px;">작성일</th>
+								</tr>
+							</thead>
+							<tbody>
+								<c:forEach items="${boardOrderPayList}" var="board">
+							  		<c:if test="${board.boardCtgNo eq '2'}">
+							  			<tr class="drugBox">
+							  				<td>주문/결제</td>
+							  				<td><a href="<c:url value='/boardDetailView/${board.boardNo}'/>">${board.boardTitle }</a></td>
+											<td>${board.boardWriteDate}</td>
+										</tr>
+							  		</c:if>
+						   		</c:forEach>
+					   		</tbody>
+						</table>
+			   		</div>
+			   		
+			   		<!-- 자묻질 - 교환반품 -->
+			   		<div id="boardTradeContent">
+			   			<table class="table table-striped">
+							<thead>
+								<tr>
+									<th style="width:90px;">분류</th>
+									<th style="width:470px;">제목</th>
+									<!-- <th style="background-color: #eeeeee; text-align: center; width:100px;">작성자</th> -->
+									<th style="width:100px;">작성일</th>
+								</tr>
+							</thead>
+							<tbody>
+								<c:forEach items="${boardTradeList}" var="board">
+							  		<c:if test="${board.boardCtgNo eq '3'}">
+							  			<tr class="drugBox">
+							  				<td>교환/반품</td>
+							  				<td><a href="<c:url value='/boardDetailView/${board.boardNo}'/>">${board.boardTitle }</a></td>
+											<td>${board.boardWriteDate}</td>
+										</tr>
+							  		</c:if>
+						   		</c:forEach>
+					   		</tbody>
+						</table>
+			   		</div>
+			   		
+			   		<!-- 자묻질 - 제품 -->
+			   		<div id="boardProductContent">
+			   			<table class="table table-striped">
+							<thead>
+								<tr>
+									<th style="width:90px;">분류</th>
+									<th style="width:470px;">제목</th>
+									<!-- <th style="background-color: #eeeeee; text-align: center; width:100px;">작성자</th> -->
+									<th style="width:100px;">작성일</th>
+								</tr>
+							</thead>
+							<tbody>
+								<c:forEach items="${boardProductList}" var="board">
+							  		<c:if test="${board.boardCtgNo eq '4'}">
+							  			<tr class="drugBox">
+							  				<td>교환/반품</td>
+							  				<td><a href="<c:url value='/boardDetailView/${board.boardNo}'/>">${board.boardTitle }</a></td>
+											<td>${board.boardWriteDate}</td>
+										</tr>
+							  		</c:if>
+						   		</c:forEach>
+					   		</tbody>
+						</table>
+			   		</div>
+			   		
+			   		<!-- 자묻질 - 회원 -->
+			   		<div id="boardMemberContent">
+			   			<table class="table table-striped">
+							<thead>
+								<tr>
+									<th style="width:90px;">분류</th>
+									<th style="width:470px;">제목</th>
+									<!-- <th style="background-color: #eeeeee; text-align: center; width:100px;">작성자</th> -->
+									<th style="width:100px;">작성일</th>
+								</tr>
+							</thead>
+							<tbody>
+								<c:forEach items="${boardMemberList}" var="board">
+							  		<c:if test="${board.boardCtgNo eq '5'}">
+							  			<tr class="drugBox">
+							  				<td>교환/반품</td>
+							  				<td><a href="<c:url value='/boardDetailView/${board.boardNo}'/>">${board.boardTitle }</a></td>
+											<td>${board.boardWriteDate}</td>
+										</tr>
+							  		</c:if>
+						   		</c:forEach>
+					   		</tbody>
+						</table>
+			   		</div>
 				
 					<a href="<c:url value = '/boardForm'/>"><button>글쓰기</button></a>
 					<div id="more-Btn" class="low" onclick="more()"><h3>더보기</h3><br></div>
@@ -196,36 +309,74 @@
 </body>
 <script>
 	let count = 10;
-       let drugBox = document.getElementsByClassName("drugBox")
-       
-       for(let i=count; i<drugBox.length; i++) {
-       	drugBox[i].classList.add('displayNone')
-       }
-       
-       function more() {
-       	
-       	console.log('string')
-        for(let i=count; i<drugBox.length; i++) {
-        	drugBox[i].classList.remove('displayNone')
-        	if(i >= count + 9) {
-        		break;
-        	}
-        }
-        count += 10
-       }
+	let drugBox = document.getElementsByClassName("drugBox")
+	     
+    function more() {
+    	
+    	console.log('string')
+     for(let i=count; i<drugBox.length; i++) {
+     	drugBox[i].classList.remove('displayNone')
+     	if(i >= count + 9) {
+     		break;
+     	}
+     }
+     count += 10
+    }
 </script>
 <script type="text/javascript">
-	$('input[type="radio"]').change(function(){
+	$('input[name="boardCtg"]').change(function(){
 			var radioId = $('input[name="boardCtg"]:checked').val();
 			console.log(radioId);
 			if (radioId == "boardNews") {
-				$(boardQnaContent).css('display', 'none');
 				$(boardNewsContent).css('display', 'block');
+				$(boardQnaContent).css('display', 'none');
 				$(".ctgMenuItemSub").css('display', 'none');
+				$(boardOrderPayContent).css('display', 'none');
+				$(boardTradeContent).css('display', 'none');
+				$(boardProductContent).css('display', 'none');
+				$(boardMemberContent).css('display', 'none');
 			} else if (radioId == "boardQna") {
+				$(boardNewsContent).css('display', 'none');
 				$(boardQnaContent).css('display', 'block');
+				$(".ctgMenuItemSub").css('display', 'block');
+				$(boardOrderPayContent).css('display', 'none');
+				$(boardTradeContent).css('display', 'none');
+				$(boardProductContent).css('display', 'none');
+				$(boardMemberContent).css('display', 'none');
+			} 
+
+			else if (radioId == "orderPay") {
+				$(boardQnaContent).css('display', 'none');
 				$(boardNewsContent).css('display', 'none');
 				$(".ctgMenuItemSub").css('display', 'block');
+				$(boardOrderPayContent).css('display', 'block');
+				$(boardTradeContent).css('display', 'none');
+				$(boardProductContent).css('display', 'none');
+				$(boardMemberContent).css('display', 'none');
+			} else if (radioId == "trade") {
+				$(boardQnaContent).css('display', 'none');
+				$(boardNewsContent).css('display', 'none');
+				$(".ctgMenuItemSub").css('display', 'block');
+				$(boardOrderPayContent).css('display', 'none');
+				$(boardTradeContent).css('display', 'block');
+				$(boardProductContent).css('display', 'none');
+				$(boardMemberContent).css('display', 'none');
+			} else if (radioId == "product") {
+				$(boardQnaContent).css('display', 'none');
+				$(boardNewsContent).css('display', 'none');
+				$(".ctgMenuItemSub").css('display', 'block');
+				$(boardOrderPayContent).css('display', 'none');
+				$(boardTradeContent).css('display', 'none');
+				$(boardProductContent).css('display', 'block');
+				$(boardMemberContent).css('display', 'none');
+			} else if (radioId == "member") {
+				$(boardQnaContent).css('display', 'none');
+				$(boardNewsContent).css('display', 'none');
+				$(".ctgMenuItemSub").css('display', 'block');
+				$(boardOrderPayContent).css('display', 'none');
+				$(boardTradeContent).css('display', 'none');
+				$(boardProductContent).css('display', 'none');
+				$(boardMemberContent).css('display', 'block');
 			}
 	});
 </script>
