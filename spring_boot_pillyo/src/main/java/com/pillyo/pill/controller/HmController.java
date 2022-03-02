@@ -94,7 +94,7 @@ public class HmController{
 	
 	
 	// 우리집 약관리 : 카테고리별 조회  --> http://localhost:8082/listCtgHm/1 리스트가 새로운 창에띄여짐
-	@RequestMapping("/listCtgHm/{hmCtgNo}")
+	@RequestMapping("/householde_medicine/hmListView")
 	public String listCtgHm(@PathVariable int hmCtgNo, Model model,
 			 					HttpSession session) {
 		HashMap<String, Object> map = new HashMap<String, Object>();
@@ -112,9 +112,11 @@ public class HmController{
 	}
 
 	@ResponseBody
-	@RequestMapping("/householde_medicine/hmListView")
-	public ArrayList<HmVO> hmListViewAjax(@RequestParam("formData") int hmCtgNo,
-											HttpSession session) {
+	@RequestMapping("/listCtgHm")
+	public ArrayList<HmVO> hmListViewAjax(@RequestParam("hmCtgNo") String hmCtgNo,
+			   					HttpSession session) {
+		
+		System.out.println(hmCtgNo);
 		// formData 값이 hmListView로 전달이 안됌. 
 		HashMap<String, Object> map = new HashMap<String, Object>();
 		String userId = (String)session.getAttribute("sid");

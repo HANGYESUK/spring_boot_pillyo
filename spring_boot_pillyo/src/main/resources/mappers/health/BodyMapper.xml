@@ -24,7 +24,8 @@
   		</select> -->
   		
   		<select id="listAllBody" parameterType="int" resultType="com.pillyo.pill.model.BodyVO">
-  			select * from bodyManage where famNo=#{famNo}
+  			<!-- select * from bodyManage where famNo=#{famNo} -->
+  			select * from bodyManage where famNo=#{famNo} order by bodyRecordDate desc LIMIT 7
   		</select>
   		
   		<update id="updateBody" parameterType="com.pillyo.pill.model.BodyVO">

@@ -10,11 +10,56 @@
 	<!-- <script src="/js/hmListView.js"></script> -->
 	<!-- 임시 css / script-->
 	
+	<style type="text/css">
+		table{
+    		border-collapse: collapse;
+			color : black;
+			text-align : center;
+		}
+
+		th,td{
+			width:250px;
+		}
+		img{
+			width:100px;
+		}
+	</style>
+	
 	<link rel="stylesheet" href="/css/hm/hmForm.css" />
 	
 
 </head>
 <body>
+
+	<script>
+		function go(a) {
+			
+			console.log(a)
+           		
+           		$.ajax({
+           			type:"post",
+           			url:"/listCtgHm",
+           			// url:"/listCtgHm/{hmCtgNo}",
+           			data:{"hmCtgNo" : a},  
+           			success:function(result){ 	
+           				console.log(result)	
+           				$('#list_table').empty()
+           				$('#list_table').append('<tr><th>사진</th> <th>제품명</th> <th>사용기한</th> </tr>')
+           				for(var i=0; i <result.length; i++){
+    						$('#list_table').append('<tr><td><img src="/images/' + result[i].hmImg + '"></td><td>' +
+    																						   '<a href="/householde_medicine/detailViewHm/' + result[i].hmName + '">' + result[i].hmName + '</a></td>' +
+    																						   '<td>' + result[i].hmUseByDate + '까지</td></tr>'
+    																						 	);
+    					}
+				
+           			},
+           			error:function(data, textStatus){
+           				alert("전송 실패");
+           			}
+           		});
+           	}
+           
+	</script>
 	<div id="wrap">
 			
 		<!-- TOP -->
@@ -77,27 +122,23 @@
 						</div><!-- hm_Category -->
 						
 						<!-- 선택한 카테고리의 약 목록 -->
-						<div class="hm_List">
-							<iframe id="iframeUrl" name="iframeUrl" src="http://localhost:8082/listCtgHm/1"></iframe>
-							<%-- <jsp:include page="/WEB-INF/views/household_medicine/hmListView.jsp" flush='true' /> --%>	
+						<div id="hm_list_view">
+							<!-- <iframe id="iframeUrl" name="iframeUrl" src="http://localhost:8082/listCtgHm/1"></iframe> -->
 							
-							<script>
-								function go(a) {
-					                console.log(a)
-					                let url = "http://localhost:8082/listCtgHm/"
-					                console.log(url + (a))
-					                document.getElementById('iframeUrl').src = url + (a)
-					            }
-							</script>
-							<div style="margin-top: 20px">
+								<table id="list_table">
+									<tr> <th>사진</th> <th>제품명</th> <th>사용기한</th> </tr>
+
+								</table>
+						</div>
+						
+						
+						<div style="margin-top: 20px" class="low">
 								<a href="/insertHmForm">
 								<input type="button" class="btn" value="등록하러가기"></a>
 								
 								<a href="/insertHmResult">
 								<input type="button" class="btn" value="등록된 전체 목록 보러가기"></a>
-							</div>
 						</div>
-						<br>
 					</div><!-- hm -->
 				</div>
 			</div>

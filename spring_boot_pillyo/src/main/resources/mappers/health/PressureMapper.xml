@@ -31,7 +31,8 @@
   		</select> -->
   		
   		<select id="listAllPressure" parameterType="int" resultType="com.pillyo.pill.model.PressureVO">
-  			select * from pressureManage where famNo=#{famNo}
+  			<!-- select * from pressureManage where famNo=#{famNo} -->
+  			select * from pressureManage where famNo=#{famNo} order by pressureRecordDate desc LIMIT 7
   		</select>
   		
   		<update id="updatePressure" parameterType="com.pillyo.pill.model.PressureVO">

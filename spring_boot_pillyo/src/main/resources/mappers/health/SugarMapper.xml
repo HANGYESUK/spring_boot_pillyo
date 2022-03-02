@@ -31,7 +31,8 @@
   		</select> -->
   		
   		<select id="listAllSugar" parameterType="int" resultType="com.pillyo.pill.model.SugarVO">
-  			select * from sugarManage where famNo=#{famNo}
+  			<!-- select * from sugarManage where famNo=#{famNo} -->
+  			select * from sugarManage where famNo=#{famNo} order by sugarRecordDate desc LIMIT 7
   		</select>
   		
   		<update id="updateSugar" parameterType="com.pillyo.pill.model.SugarVO">

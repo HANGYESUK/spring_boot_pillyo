@@ -78,6 +78,7 @@
 			        let height = []
 			        let weight = []
 			        let bmi = []
+			        let bodyRecord = []
 				</script>
 			  
 				<div class="health-Container calum">
@@ -122,11 +123,12 @@
 							<br>
 		 		 
 					 		 <script>
+
 						        height.push(${body.height})
 						        weight.push(${body.weight})
 						        bmi.push(${body.bmi})
+						        bodyRecord.push('${body.bodyRecordDate}')
 						        
-						        console.log(${body.bodyNo})
 					 		</script>
 						</div>
 						</c:forEach>
@@ -150,6 +152,7 @@
 	        let SBP = []
 	        let DBP = []
 	        let bpm = []
+	        let pressureRecord = []
 		</script>
 			
 					
@@ -204,6 +207,7 @@
 			 					SBP.push(${pressure.SBP})
 						        DBP.push(${pressure.DBP})
 						        bpm.push(${pressure.bpm})
+						        pressureRecord.push('${pressure.pressureRecordDate}')
 					 		</script>
 				 		
 						</div>
@@ -231,6 +235,7 @@
 				<!-- 기분 변수 -->
 				<script>
 			        let feelScale = []
+			        let feelRecord = []
 				</script>
 
 				
@@ -267,7 +272,7 @@
 		 		 
 							<script>
 								feelScale.push(${feel.feelScale})
-						        console.log(${feel.feelRecordDate})
+								feelRecord.push('${feel.feelRecordDate}')
 					 		</script>
 					 	
 							</div>
@@ -293,6 +298,7 @@
 				<!-- 혈당 변수 -->
 			<script>
 		        let sugarLevel = []
+		        let sugarRecord = []
 			</script>
 		
 		 		
@@ -356,6 +362,7 @@
 						
 						<script>
 					        sugarLevel.push(${sugar.sugarLevel})
+					        sugarRecord.push('${sugar.sugarRecordDate}')
 						</script>
 						
 				 	</c:forEach>
@@ -444,9 +451,9 @@
         - 두번째 argument로 그림을 그릴때 필요한 요소들을 모두 넘겨줍니다. 
         */
        
-       
+        bodyRecord.reverse()
      
-        let date = ['1일','2일','3일','4일','5일','6일','7일']
+        let date = bodyRecord
             new Chart(document.getElementById("myChart1"), {
             type: 'line',
             data: {
@@ -495,6 +502,10 @@
     - ctx를 첫번째 argument로 넘겨주고, 
     - 두번째 argument로 그림을 그릴때 필요한 요소들을 모두 넘겨줍니다. 
     */
+    
+    pressureRecord.reverse()
+    
+    date = pressureRecord
     
     new Chart(document.getElementById("myChart2"), {
         type: 'line',
@@ -545,6 +556,10 @@
     - 두번째 argument로 그림을 그릴때 필요한 요소들을 모두 넘겨줍니다. 
     */
     
+    feelRecord.reverse()
+    
+    date = feelRecord
+    
     new Chart(document.getElementById("myChart3"), {
         type: 'line',
         data: {
@@ -582,7 +597,10 @@
     - ctx를 첫번째 argument로 넘겨주고, 
     - 두번째 argument로 그림을 그릴때 필요한 요소들을 모두 넘겨줍니다. 
     */
-    console.log(sugarLevel)
+    
+    sugarRecord.reverse()
+    
+    date = sugarRecord
     
     new Chart(document.getElementById("myChart4"), {
         type: 'line',
