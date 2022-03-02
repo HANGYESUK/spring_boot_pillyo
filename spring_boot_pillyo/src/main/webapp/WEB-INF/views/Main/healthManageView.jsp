@@ -654,6 +654,7 @@
 	
 	        chart[a].classList.remove('display-none')
 	        healthContainer[a].classList.remove('display-none')
+	        
 	
 	    }
 
