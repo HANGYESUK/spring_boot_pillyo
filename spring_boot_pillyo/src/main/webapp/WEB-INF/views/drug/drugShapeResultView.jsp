@@ -52,7 +52,7 @@
 	
 		<div id="search_result_container">
 			
-				<h3>약모양 검색 결과</h3>
+				<h3>약모양 검색 결과 </h3>
 				<small>총 <fmt:formatNumber value="${fn:length(shapeList)}" pattern="#,###" /> 건</small>
 				<hr />
 				
