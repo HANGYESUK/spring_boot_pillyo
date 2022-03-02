@@ -9,7 +9,7 @@
 	</resultMap>
   		
   		<insert id="insertDrugList" parameterType="java.util.List">
-  			insert into drugInfo  (
+  			insert into druginfo  (
   				entpName,
 				itemName,
 				itemSeq,
@@ -42,7 +42,7 @@
   		<!-- 약 정보 검색  -->
   		<select id="drugSearch" parameterType="String" 
   												resultType="com.pillyo.pill.model.DrugInfoVO" >
-  			SELECT * FROM drugInfo 
+  			SELECT * FROM druginfo 
   			WHERE	itemName LIKE CONCAT('%', #{keyword}, '%') 
   			OR efcyQesitm LIKE CONCAT('%', #{keyword}, '%')
   		</select>
@@ -50,18 +50,18 @@
   		<!-- 약 상세 정보 조회  -->
   		<select id="detailViewDrug" parameterType="String"
   													resultType="com.pillyo.pill.model.DrugInfoVO">
-  			SELECT * FROM drugInfo WHERE drugInfoNo = #{drugInfoNo}
+  			SELECT * FROM druginfo WHERE drugInfoNo = #{drugInfoNo}
   		</select>	
   		
   		<!-- 검색 자동완성 -->
   		<select id="selectKeywordSearch" parameterType="String" 
   												resultType="com.pillyo.pill.model.DrugInfoVO" >
-  			SELECT * FROM drugInfo 
+  			SELECT * FROM druginfo 
   			WHERE	itemName LIKE CONCAT('%', #{keyword}, '%') 
   		</select>
   		
   		<!-- 약 전체 목록 조회 -->
 		<select id="drugListView" resultMap="AutoDrugInfoResult">
-			SELECT drugInfoNo, itemName FROM drugInfo ORDER BY drugInfoNo
+			SELECT drugInfoNo, itemName FROM druginfo ORDER BY drugInfoNo
 		</select>
   </mapper>

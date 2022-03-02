@@ -4,7 +4,7 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   <mapper namespace="com.pillyo.pill.dao.IPressureDAO">
   		<insert id="insertPressure" parameterType="com.pillyo.pill.model.PressureVO">
-  			insert into  pressureManage(
+  			insert into  pressuremanage(
 							Situation,
 							SBP,
 							DBP,
@@ -31,11 +31,12 @@
   		</select> -->
   		
   		<select id="listAllPressure" parameterType="int" resultType="com.pillyo.pill.model.PressureVO">
-  			select * from pressureManage where famNo=#{famNo}
+  			<!-- select * from pressureManage where famNo=#{famNo} -->
+  			select * from pressuremanage where famNo=#{famNo} order by pressureRecordDate desc LIMIT 7
   		</select>
   		
   		<update id="updatePressure" parameterType="com.pillyo.pill.model.PressureVO">
-  			update pressureManage set 
+  			update pressuremanage set 
   				Situation =#{situation},
 				SBP =#{SBP},
 				DBP =#{DBP},
@@ -49,11 +50,11 @@
   		</update>
   		
   		<delete id="deletePressure" parameterType="int">
-  			delete from pressureManage where pressureNo = #{pressureNo}
+  			delete from pressuremanage where pressureNo = #{pressureNo}
   		</delete>
   		
   		<select id="detailViewPressure" parameterType="int" 
   														  resultType="com.pillyo.pill.model.PressureVO">
-  			SELECT * FROM pressureManage WHERE pressureNo=#{pressureNo} 
+  			SELECT * FROM pressuremanage WHERE pressureNo=#{pressureNo} 
   		</select>
   </mapper>

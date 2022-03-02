@@ -16,30 +16,30 @@
 
 	<!-- 기분 전체 기록 조회 -->
 	<select id="listAllFeel" parameterType="int" resultType="com.pillyo.pill.model.FeelVO">
-	   SELECT * FROM feelManage where famNo=#{famNo}
+	   select * from feelmanage where famNo=#{famNo} order by feelRecordDate desc LIMIT 7
 	</select>
 	
     <!-- 기분 등록 완료  -->
 	<insert id="insertFeel" parameterType="com.pillyo.pill.model.FeelVO">
-		INSERT INTO feelManage ( feelScale, feelMemo, feelRecordDate, feelRecordTime, famNo)
+		INSERT INTO feelmanage ( feelScale, feelMemo, feelRecordDate, feelRecordTime, famNo)
 		VALUES ( #{feelScale}, #{feelMemo}, #{feelRecordDate}, #{feelRecordTime}, #{famNo})
 	</insert>
 	
     <!-- 기분 정보 수정 : 수정된 정보 DB에 저장 -->
 	<update id="updateFeel" parameterType="com.pillyo.pill.model.FeelVO">
-	   UPDATE feelManage SET feelNo=#{feelNo}, feelScale=#{feelScale}, feelMemo=#{feelMemo},
+	   UPDATE feelmanage SET feelNo=#{feelNo}, feelScale=#{feelScale}, feelMemo=#{feelMemo},
 	                         feelRecordDate=#{feelRecordDate}, feelRecordTime=#{feelRecordTime}, famNo=#{famNo}
 	   WHERE feelNo=#{feelNo}
 	</update>
 	
    <!-- 기분 정보 삭제 -->
    <delete id="deleteFeel"  parameterType="int">
-      DELETE FROM feelManage WHERE feelNo=#{feelNo}
+      DELETE FROM feelmanage WHERE feelNo=#{feelNo}
    </delete>
    
    <!-- 기분 상세 뷰 -->
    <select id="detailViewFeel" parameterType="int" 
       resultType="com.pillyo.pill.model.FeelVO">
-      SELECT * FROM feelManage WHERE feelNo=#{feelNo} 
+      SELECT * FROM feelmanage WHERE feelNo=#{feelNo} 
    </select>
   </mapper>
