@@ -186,6 +186,23 @@ window.onload = function() {
 			document.location.href='#userHp3';
 			return false;
 		}
+		//주소
+		var postcode = document.getElementById('userZipcode');
+		var address = document.getElementById('userAddress2');
+		
+		if(postcode.value == ""){
+			alert("주소를 입력하세요");
+			postcode.focus();
+			document.location.href='#searchZip';
+			return false;
+		}
+		//상세주소
+		if(address.value == ""){
+			alert("상세 주소를 입력하세요");
+			postcode.focus();
+			document.location.href='#userAddress2';
+			return false;
+		}
 		
 		var agreement1 = document.getElementById("userAgreement1");
 		var agreement2 = document.getElementById("userAgreement2");

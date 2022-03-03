@@ -143,7 +143,9 @@
 				<a href="<c:url value = '/boardList'/>">페이징 연습중</a>
 				<br><br><br><br>
 				
-				<br><br><br><br>
+				<br><br>
+				<a href="<c:url value = '/pharmacy'/>">약국지도</a><br>
+				<a href="<c:url value = '/pharmacySearch'/>">지역검색API</a><br>
 				<a href="<c:url value = '/insertDrugList'/>">API 약 정보 db 저장</a><br>
 				<a href="<c:url value = '/drugShape'/>"> 약 낱알정보 API 테스트</a><br>
 				<a href="<c:url value = '/drugShapeSearchForm'/>"> 약 낱알정보 검색폼</a><br>

@@ -79,6 +79,7 @@ public class UserController {
 		@RequestMapping("/userEmailCheck")
 		public String userEmailCheck(@RequestParam("userEmailId") String userEmailId, @RequestParam("userEmail") String userEmail) {
 			String email = userEmailId + '@' + userEmail;
+			System.out.println(email);
 			String userEmail_result = service.userEmailCheck(email);
 			
 			String result = "use";
