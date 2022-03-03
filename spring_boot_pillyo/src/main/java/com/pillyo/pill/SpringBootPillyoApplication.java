@@ -5,6 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
+import com.pillyo.pill.controller.AdminController;
 import com.pillyo.pill.controller.BoardController;
 import com.pillyo.pill.controller.BodyController;
 import com.pillyo.pill.controller.DoseController;
@@ -17,6 +18,7 @@ import com.pillyo.pill.controller.HmController;
 import com.pillyo.pill.controller.MainController;
 import com.pillyo.pill.controller.SugarController;
 import com.pillyo.pill.controller.UserController;
+import com.pillyo.pill.dao.IAdminDAO;
 import com.pillyo.pill.dao.IBoardDAO;
 import com.pillyo.pill.dao.IBodyDAO;
 import com.pillyo.pill.dao.IDoseDAO;
@@ -41,6 +43,7 @@ import com.pillyo.pill.dao.IUserDAO;
 @ComponentScan(basePackageClasses = BoardController.class)
 @ComponentScan(basePackageClasses = HmController.class) // 우리집 약관리
 @ComponentScan(basePackageClasses = HealthController.class)
+@ComponentScan(basePackageClasses = AdminController.class)
 
 @MapperScan(basePackageClasses = IUserDAO.class)
 @MapperScan(basePackageClasses = IFamilyDAO.class)
@@ -52,6 +55,7 @@ import com.pillyo.pill.dao.IUserDAO;
 @MapperScan(basePackageClasses = IDoseDAO.class)
 @MapperScan(basePackageClasses = IBoardDAO.class)
 @MapperScan(basePackageClasses = IHmDAO.class)
+@MapperScan(basePackageClasses = IAdminDAO.class)
 
 public class SpringBootPillyoApplication {
 
