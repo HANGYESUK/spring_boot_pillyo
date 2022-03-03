@@ -43,7 +43,8 @@
   				hmCtgNo =#{hmCtgNo},
   				hmName =#{hmName},
   				hmUseByDate =#{hmUseByDate},
-  				hmMemo =#{hmMemo}
+  				hmMemo =#{hmMemo},
+  				hmImg = #{hmImg}
   		WHERE hmNo =#{hmNo}
   	</update>
   	

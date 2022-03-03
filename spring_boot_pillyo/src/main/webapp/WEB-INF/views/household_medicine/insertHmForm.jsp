@@ -8,7 +8,6 @@
 		<title>우리집 상비약 : OCR</title>
 		<script src="<c:url value='/js/jquery-3.6.0.min.js'/>"></script>
 		<script src="<c:url value='/js/ocr.js'/>"></script>
-		
 		<link rel="stylesheet" href="/css/hm/insertHmForm.css" />
 		
 	</head>
