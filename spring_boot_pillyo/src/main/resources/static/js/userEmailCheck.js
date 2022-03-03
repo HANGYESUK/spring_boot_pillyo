@@ -6,12 +6,12 @@
 	$('#emailCheck').on('click', function(){		
 		event.preventDefault();
 	
-		let email = $('#userEmailId').val() + $('#userEmail').val()
+		//let email = $('#userEmailId').val() +'@' + $('#userEmailText').val()
 	
 		$.ajax({
 			type:"post",
 			url:"userEmailCheck",
-			data:{"userEmailId": $('#userEmailId').val(), "userEmail": $('#userEmail').val()},  
+			data:{"userEmailId": $('#userEmailId').val(), "userEmail": $('#userEmailText').val()},  
 			dataType:'text',
 			success:function(result){
 				if(result == "no_use"){
