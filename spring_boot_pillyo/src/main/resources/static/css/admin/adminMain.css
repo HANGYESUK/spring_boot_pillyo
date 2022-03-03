@@ -1,0 +1,34 @@
+/* adminMain.css */
+
+a{
+	text-decoration: none;
+	color: black;
+}
+
+#adminBox{
+	    background: linear-gradient( 139deg , #79b5ff, #b9e1f4);
+	width:210px;
+	border-radius: 30px;
+	text-align: center;
+}
+
+#adminItemMenu,
+#adminUserMenu{
+	padding: 0px;
+}
+
+.adminItemTitle{
+	font-size: 25px;
+	font-weight: bold;
+	color: white;
+	padding: 10px 0;
+}
+
+.adminItem{
+	padding: 10px 0;
+	box-sizing: border-box;
+}
+.adminItem:hover{
+	background-color: white;
+	
+}

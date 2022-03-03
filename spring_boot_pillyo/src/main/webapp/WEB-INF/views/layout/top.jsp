@@ -67,8 +67,36 @@
 				</div>
 				<div id="mainNavBox">
 					<div class="mainNav">
+						
+				<c:choose>
+					<c:when test="${not empty sessionScope.admin}">
+                  	<!-- 관리자 로그인 -->
+						 <div class="menuBox">
+							<div class="menuItem"><a href="/adminMain"><h5>관리자</h5></a></div>
+							<div class="menuItem"><a href="/listAllBoard"><h5>공지사항</h5></a></div>
+							<div class="menuItem"><a href="/medicInfo"><h5>의약정보</h5></a></div>
+							<div class="menuItem"><a href="/drugShapeSearchForm"><h5>낱알검색</h5></a></div>
+							<div class="menuItem"><a href="/logout"><h5>로그아웃</h5></a></div>
+						</div>
+					</c:when>	
+					<c:when test="${not empty sessionScope.sid}">
+					<!-- 로그인 성공한 경우 보여줄 메뉴 항목  -->	
+						
+						 <div class="outer-menu">
+						 	<div class="outer-menu-btn"><a href="/updateMemberForm"><h5>마이페이지</h5></a></div>
+							<div class="outer-menu-btn"><a href="/healthManageView"><h5>건강관리</h5></a></div>
+ 							<div class="outer-menu-btn" ><a href="/calendarView/${famNo}"><h5>복용관리</h5></a></div>
+ 							<!-- <div class="outer-menu-btn" ><a href="/calendarView"><h5>복용관리</h5></a></div> -->
+							<div class="outer-menu-btn"><a href="/hmForm"><h5>우리집 약관리</h5></a></div>
+							<div class="outer-menu-btn"><a href="/listAllBoard"><h5>공지사항</h5></a></div>
+							<div class="outer-menu-btn"><a href="/medicInfo"><h5>의약정보</h5></a></div>
+							<div class="outer-menu-btn"><a href="/drugShapeSearchForm"><h5>낱알검색</h5></a></div>
+							<div class="outer-menu-btn"><a href="/logout"><h5>로그아웃</h5></a></div>
+						</div>
+					</c:when>
+	               		<%-- <c:if test="${empty sessionScope.sid }"> --%>
+               			<c:otherwise>
 						<!-- 로그인 하지 않은 경우 보여줄 메뉴 항목  -->
-	               		<c:if test="${empty sessionScope.sid }">
 		                    <div class="menuBox">
 								<div class="menuItem"><a href="/loginForm"><h5>로그인</h5></a></div>
 								<div class="menuItem"><a href="/loginForm" onclick="alert('로그인을 진행해주세요.'); alert('로그인 페이지로 이동합니다.');"><h5>건강관리</h5></a></div>
@@ -79,22 +107,10 @@
 								<div class="menuItem"><a href="/drugShapeSearchForm"><h5>낱알검색</h5></a></div>
 								
 							</div>
-	                    </c:if>
-	                    
-						<!-- 로그인 성공한 경우 보여줄 메뉴 항목  -->	
-						<c:if test="${not empty sessionScope.sid}">
-							 <div class="menuBox">
-							 	<div class="menuItem"><a href="/updateMemberForm"><h5>마이페이지</h5></a></div>
-								<div class="menuItem"><a href="/healthManageView"><h5>건강관리</h5></a></div>
-								<div class="menuItem"><a href="/calendarView"><h5>복용관리</h5></a></div>
-								<div class="menuItem"><a href="/hmForm"><h5>우리집 약 관리</h5></a></div>
-								<div class="menuItem"><a href="/listAllBoard"><h5>공지사항</h5></a></div>
-								<div class="menuItem"><a href="/medicInfo"><h5>의약정보</h5></a></div>
-								<div class="menuItem"><a href="/drugShapeSearchForm"><h5>낱알검색</h5></a></div>
-								<div class="menuItem"><a href="/logout"><h5>로그아웃</h5></a></div>
-								
-							</div>
-						</c:if>
+                        </c:otherwise>
+                  </c:choose>
+                  
+	                
 					</div>
 		  
 					<div class="searchBar">

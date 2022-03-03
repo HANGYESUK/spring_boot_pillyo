@@ -57,5 +57,11 @@
 		</update>
 		
 		
+		<!-- 관리자메뉴 -->
+		<select id="listAllUser" resultType="com.pillyo.pill.model.UserVO">
+			SELECT * FROM user
+			ORDER BY userName
+		</select>
+		
   		
   </mapper>
