@@ -5,8 +5,8 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="/css/fa/css/all.css">
-    <link href="/css/chatBot.css" rel="stylesheet">
+    <link rel="stylesheet" href="/CSS/fa/css/all.css">
+    <link href="/CSS/chatBot.css" rel="stylesheet">
     <title>Document</title>
 </head>
 <body>
