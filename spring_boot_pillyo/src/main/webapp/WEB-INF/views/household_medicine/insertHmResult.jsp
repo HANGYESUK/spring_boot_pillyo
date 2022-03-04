@@ -28,8 +28,12 @@
 									<h4 id="UserName" style="color: #81B89A;">${sessionScope.sid} 님</h4>
 									<p>등록된 약 전체 리스트 입니다</p>
 								</div>
+								
+								<div style="margin-top: 20px" class="low">
+									<a href="/hmForm"><input type="button" class="btn" value="우리집 약관리 가기"></a>
+									<a href="/insertHmForm"><input type="button" class="btn" value="등록 하러 가기"></a>
+								</div>
 								<br><br>
-
 							</c:if>
 						</div>
 						

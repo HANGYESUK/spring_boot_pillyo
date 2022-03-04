@@ -8,7 +8,6 @@
 		<title>마이페이지 메뉴</title>
 		<link rel="stylesheet" href="/css/layout/myPage.css" />
 		<script src="<c:url value='/js/jquery-3.6.0.min.js'/>"></script>
-		<script src="<c:url value='/js/drugShapeSearchForm.js'/>"></script>
 	</head>
 	
 	<style>

@@ -310,7 +310,7 @@
 							</div>
 	
 							<div class="create">
-								<button type="submit" id="joinBtn" onclick="formCheck(this.form)">회원가입</button>
+								<button type="submit" id="joinBtn" >회원가입</button>
 								<button type="submit" id="cancelBtn" onclick="">취소</button>
 							</div>
 						</div>

@@ -1,5 +1,6 @@
 package com.pillyo.pill.service;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,5 +46,10 @@ public class UserService implements IUserService {
 	@Override
 	public void deleteUser(String userId) {	// 회원 정보 삭제
 		dao.deleteUser(userId);
+	}
+	
+	@Override
+	public ArrayList<UserVO> listAllUser(){
+		return dao.listAllUser();
 	}
 }

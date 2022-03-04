@@ -1,5 +1,6 @@
 package com.pillyo.pill.dao;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 import com.pillyo.pill.model.UserVO;
@@ -17,4 +18,8 @@ public interface IUserDAO {
 	UserVO detailUserView(String userId);	// 회원 상세 정보
 	void updateUser(UserVO vo);	// 회원 정보 수정
 	void deleteUser(String userId);	// 회원 정보 삭제
+	
+	
+	//관리자메뉴
+	ArrayList<UserVO> listAllUser();
 }

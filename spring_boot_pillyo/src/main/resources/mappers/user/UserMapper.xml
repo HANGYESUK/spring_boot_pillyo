@@ -23,7 +23,8 @@
 	
 	<!-- Email 중복 확인 -->
 	<select id="userEmailCheck" resultType="string" parameterType="string">
-		SELECT userEmail FROM user WHERE userEmail = #{email}
+		<!-- SELECT userEmail FROM user WHERE userEmail = #{email} -->
+		SELECT userEmail FROM user WHERE userEmail = #{email} LIMIT 1
 	</select>
 	
 	<!-- 회원가입 -->
@@ -55,6 +56,12 @@
 			WHERE userId =#{userId}
 		</update>
 		
+		
+		<!-- 관리자메뉴 -->
+		<select id="listAllUser" resultType="com.pillyo.pill.model.UserVO">
+			SELECT * FROM user
+			ORDER BY userName
+		</select>
 		
   		
   </mapper>

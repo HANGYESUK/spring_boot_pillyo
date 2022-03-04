@@ -3,13 +3,14 @@
  */
 
 
-function formCheck(frm) {
-		  		alert('회원가입이 완료되었습니다.');
-				location.href="/";
-		    return true; 
-		  } 
+//function formCheck(frm) {
+//		  		alert('회원가입이 완료되었습니다.');
+//				location.href="/";
+//		    return true; 
+//		  } 
 
 window.onload = function() {
+	
 	// 이메일 select
 	$('input[name=userEmailText]').change(function() {
 				var mailId = $('#userEmailId').val();
@@ -57,16 +58,17 @@ window.onload = function() {
 				$('#userHp').val(userHp1 + '-' + userHp2 + '-' + userHp3);
 	});
 	
+	//회원가입 submit 했을때
 	document.getElementById('joinForm').onsubmit = function() {
 		// name
 		var errMsgName = document.getElementById('nameError');
-		var name = document.getElementById('name');
+		var name = document.getElementById('userName');
 		if(name.value == ""){
 			alert("성명을 입력하세요.");
 			errMsgName.innerText = "성명을 입력하세요."
 			errMsgName.style.visibility = 'visible';
 			name.focus();
-			document.location.href='#name';
+			document.location.href='#userName';
 			return false;
 		}
 
@@ -81,7 +83,7 @@ window.onload = function() {
 			errMsgId.innerText = "아이디를 입력하세요."
 			errMsgId.style.visibility = 'visible';
 			id.focus();
-			document.location.href='#id';
+			document.location.href='#userId';
 			return false;	
 		}
 
@@ -105,18 +107,18 @@ window.onload = function() {
 
 		// 비밀번호
 		var errMsgPw = document.getElementById('pwError');
-		var password = document.getElementById('password');
-		var passwordCheck = document.getElementById('passwordCheck');
+		var password = document.getElementById('userPw');
+		var passwordCheck = document.getElementById('pwCheck');
 		if(password.value == "") {
 			alert("비밀번호를 입력하세요.");
 			password.focus();
-			document.location.href='#password';
+			document.location.href='#userPw';
 			return false;
 		}
 		if(passwordCheck.value == "") {
 			alert("비밀번호 확인을 입력하세요.");
 			passwordCheck.focus();
-			document.location.href='#passwordCheck';
+			document.location.href='#pwCheck';
 			return false
 		}
 		
@@ -125,7 +127,7 @@ window.onload = function() {
 			password.value = "";
 			passwordCheck.value = "";
 			password.focus();
-			document.location.href='#password';
+			document.location.href='#userPw';
 			return false;	  		
 		}
 
@@ -136,14 +138,22 @@ window.onload = function() {
 			errMsgPw.innerText = "비밀번호는 문자, 숫자, 특수문자(~!@#$%^&*)의 조합 10 ~ 16자리로 입력하세요."
 			errMsgPw.style.visibility = 'visible';
 			password.focus();
-			document.location.href='#password';
+			document.location.href='#userPw';
 			return false;	
 		}
 		
 		if(password.value != ""){
 			errMsgPw.style.visibility = 'hidden';
 		}
-
+		//이메일 
+		var userEmail = document.getElementById('userEmail');
+		if(userEmail.value == "") {
+			alert("Email을 입력 하세요.");
+			userEmail.focus();
+			document.location.href='#userEmailId';
+			return false;	
+		}
+		
 		// 이메일 수신 여부
 		var mailChk = false; 
 		for(var i=0; i<joinForm.emailRcv.length; i++){
@@ -157,35 +167,51 @@ window.onload = function() {
 		}
 		
 		// 핸드폰
-		var hp1= document.getElementById('hp1');
-		var hp2 = document.getElementById('hp2');
-		var hp3 = document.getElementById('hp3');
+		var hp1= document.getElementById('userHp1');
+		var hp2 = document.getElementById('userHp2');
+		var hp3 = document.getElementById('userHp3');
 		
 		if(hp1.value.length==0) {
 			alert("핸드폰 번호를 입력하세요");
-			document.location.href='#hp1';
+			document.location.href='#userHp1';
 			return false;
 		}
 		if(hp2.value.length==0) {
 			alert("핸드폰 번호를 입력하세요");
-			document.location.href='#hp2';
+			document.location.href='#userHp2';
 			return false;
 		}
 		if(hp3.value.length==0) {
 			alert("핸드폰 번호를 입력하세요");
-			document.location.href='#hp3';
+			document.location.href='#userHp3';
+			return false;
+		}
+		//주소
+		var postcode = document.getElementById('userZipcode');
+		var address = document.getElementById('userAddress2');
+		
+		if(postcode.value == ""){
+			alert("주소를 입력하세요");
+			postcode.focus();
+			document.location.href='#searchZip';
+			return false;
+		}
+		//상세주소
+		if(address.value == ""){
+			alert("상세 주소를 입력하세요");
+			postcode.focus();
+			document.location.href='#userAddress2';
 			return false;
 		}
 		
-		var agreement1 = document.getElementById("agreement1");
-		var agreement2 = document.getElementById("agreement2");
+		var agreement1 = document.getElementById("userAgreement1");
+		var agreement2 = document.getElementById("userAgreement2");
 		
 		if (agreement1.checked == false || agreement2.checked == false) {
-			alert("동의 여부를 체크하지 않았습니다.\n모든 약관에 동의하셔야 끼리끼리 서비스 이용이 가능합니다.");
+			alert("동의 여부를 체크하지 않았습니다.\n모든 약관에 동의하셔야 Pill-yo 서비스 이용이 가능합니다.");
 			document.location.href='#agreement1';
 			return false;
 		}
-		/*
-		alert(form.userId.value+'('+form.userName.value +") 님의 \n 회원가입이 완료되었습니다.");*/
+		alert(form.userId.value+'('+form.userName.value +") 님의 \n 회원가입이 완료되었습니다.");
 	};
 };

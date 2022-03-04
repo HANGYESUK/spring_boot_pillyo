@@ -85,22 +85,35 @@ public class BoardController {
 		return "redirect:/listAllBoard";
 	}
 	
-//	// 게시판 등록 
-//		@RequestMapping("/insertboardQna")
-//		public String insertboardQna(BoardVO vo, HttpSession session) { 
-//									// title, content 매개변수 받기 
-//			String userId = (String)session.getAttribute("sid"); // session 받아오기
-//			service.insertboard(vo);
-//			System.out.println(vo.getTitle());
-//			return "redirect:/listAllBoard";
-//		}
 	
 	@RequestMapping("/listAllBoard")
 	public String listAllBoard(Model model) {
 
 		// Model은 하나의 객체로 컨트롤러에서 페이지로 넘길 값을 저장하는데 사용
-		ArrayList<BoardVO> boardList = service.listAllBoard();
-		model.addAttribute("boardList", boardList);
+		// 소식
+		ArrayList<BoardVO> boardNewsList = service.listAllBoard();
+		model.addAttribute("boardNewsList", boardNewsList);
+		
+		// 자주묻는질문 전체
+		ArrayList<BoardVO> boardQnaList = service.listAllBoardQna();
+		model.addAttribute("boardQnaList", boardQnaList);
+		
+		// 주문결제
+		ArrayList<BoardVO> boardOrderPayList = service.listAllBoardQna2();
+		model.addAttribute("boardOrderPayList", boardOrderPayList);
+		
+		// 교환반품
+		ArrayList<BoardVO> boardTradeList = service.listAllBoardQna3();
+		model.addAttribute("boardTradeList", boardTradeList);
+		
+		// 제품
+		ArrayList<BoardVO> boardProductList = service.listAllBoardQna4();
+		model.addAttribute("boardProductList", boardProductList);
+		
+		// 회원
+		ArrayList<BoardVO> boardMemberList = service.listAllBoardQna5();
+		model.addAttribute("boardMemberList", boardMemberList);
+		
 		// 이 구간은 model 객체를 파라미터로 받아서 view인 listAllBoard에 리턴해주는 역할
 		// model.addAttribute("변수 이름", 변수에 넣을 데이터); 라고 생각
 		// view 단계에서 ${변수 이름}, 즉 ${boardList} 이렇게 받아주면 됨
@@ -108,72 +121,6 @@ public class BoardController {
 		return "board/boardListView";
 	}
 	
-//	// 공지사항 : 카테고리별 조회
-//	@RequestMapping("/listAllBoard/{boardCtg}")
-//	public String listAllBoard(@PathVariable int boardCtg, Model model,
-//			 					HttpSession session) {
-//		HashMap<String, Object> map = new HashMap<String, Object>();
-//		
-//		String userId = (String)session.getAttribute("sid");
-//		System.out.println(userId);
-//		map.put("userId", userId);
-//		map.put("boardCtg", boardCtg);
-//		ArrayList<BoardVO> boardCtgList = service.listAllBoard(map);
-//		model.addAttribute("boardCtgList", boardCtgList);
-//		model.addAttribute("userId", userId);
-//		// DB에서 카테고리별 리스트 불러오기
-//		return "board/boardListView";
-//	}
-	
-	
-	@RequestMapping("/listAllBoardQna")
-	public String listAllBoardQna(Model model) {
-		
-		// Model은 하나의 객체로 컨트롤러에서 페이지로 넘길 값을 저장하는데 사용
-		ArrayList<BoardVO> boardListQna = service.listAllBoardQna();
-		model.addAttribute("boardListQna", boardListQna);
-		// 이 구간은 model 객체를 파라미터로 받아서 view인 listAllBoard에 리턴해주는 역할
-		// model.addAttribute("변수 이름", 변수에 넣을 데이터); 라고 생각
-		// view 단계에서 ${변수 이름}, 즉 ${boardList} 이렇게 받아주면 됨
-	
-		return "board/boardListViewQna";
-	}
-	
-	@RequestMapping("/listAllBoardQna2")
-	public String listAllBoardQna2(Model model) {
-		
-		ArrayList<BoardVO> boardListQna = service.listAllBoardQna2();
-		model.addAttribute("boardListQna", boardListQna);
-		
-		return "board/boardListViewQna2";
-	}
-	
-	@RequestMapping("/listAllBoardQna3")
-	public String listAllBoardQna3(Model model) {
-		
-		ArrayList<BoardVO> boardListQna = service.listAllBoardQna3();
-		model.addAttribute("boardListQna", boardListQna);
-		
-		return "board/boardListViewQna3";
-	}
-	@RequestMapping("/listAllBoardQna4")
-	public String listAllBoardQna4(Model model) {
-		
-		ArrayList<BoardVO> boardListQna = service.listAllBoardQna4();
-		model.addAttribute("boardListQna", boardListQna);
-		
-		return "board/boardListViewQna4";
-	}
-	@RequestMapping("/listAllBoardQna5")
-	public String listAllBoardQna5(Model model) {
-		
-		ArrayList<BoardVO> boardListQna = service.listAllBoardQna5();
-		model.addAttribute("boardListQna", boardListQna);
-		
-		return "board/boardListViewQna5";
-	}
-	
-//	
 	// 상세 정보 조회
 	@RequestMapping("/boardDetailView/{boardNo}")
 	public String boardDetailView(@PathVariable int boardNo, Model model) {
@@ -204,22 +151,4 @@ public class BoardController {
 		service.updateBoard(vo);
 		return "redirect:/listAllBoard";  
 	}
-
-	
-//	@GetMapping("/board/write") // 어떤 url로 접근할건지 지정해주는! 어노테이션
-//	public String boardWriteFrom() {
-//		
-//		return "boardwrite"; // return 사이의 값은 어떤 뷰 파일로 보내줄 것인지!
-//	}
-//	
-//	@PostMapping("board/writepro")
-//	public String boardWritePro(String title, String content) { 
-//								// title, content 매개변수 받기 
-//		
-//		System.out.println("제목 : " + title);
-//		System.out.println("내옹 : " + content);
-//		
-//		return "";
-//	}
-	
 }
