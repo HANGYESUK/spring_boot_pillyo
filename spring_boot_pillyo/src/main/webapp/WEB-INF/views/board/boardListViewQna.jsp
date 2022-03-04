@@ -160,7 +160,7 @@ box-shadow: 0px 1px 4px #0d3bb1;   /*  height: 700px; */
 		
 
 	</section>
-	        
+
 			<!-- BOTTOM  -->
 			<jsp:include page="/WEB-INF/views/layout/bottom.jsp" flush='true' />
 		

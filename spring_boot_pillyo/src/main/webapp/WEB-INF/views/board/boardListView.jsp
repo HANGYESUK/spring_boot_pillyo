@@ -18,6 +18,10 @@
 </head>
 
 <style>
+	input[type="radio" i] {
+	display:none;
+	
+	}
 	.boardBody {
     width: fit-content; /* 태그의 넓이를 500px로 */
 	margin:0 auto; /* 양쪽 여백을 위아래는 0 좌우는 자동으로 잡아주겠다! */

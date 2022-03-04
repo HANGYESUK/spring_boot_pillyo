@@ -1,21 +1,25 @@
 package com.pillyo.pill.service;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
-import com.pillyo.pill.Criteria;
 import com.pillyo.pill.dao.IBoardDAO;
+import com.pillyo.pill.dao.ICommentDAO;
 import com.pillyo.pill.model.BoardVO;
+import com.pillyo.pill.model.CommentVO;
 
 @Service
 public class BoardService implements IBoardService {
 	@Autowired
 	@Qualifier("IBoardDAO")
 	IBoardDAO dao;
+	
+	@Autowired
+	@Qualifier("ICommentDAO")
+	ICommentDAO dao1;
 	
 	public ArrayList<BoardVO> listAllBoard() {
 		// TODO Auto-generated method stub
@@ -67,6 +71,11 @@ public class BoardService implements IBoardService {
 	public ArrayList<BoardVO> listAllBoardQna5() {
 		// TODO Auto-generated method stub
 		return dao.listAllBoardQna5();
+	}
+
+	public void insertcomment(CommentVO vo) {
+		// TODO Auto-generated method stub
+		dao1.insertcomment(vo);
 	}
 	
 //	@Override

@@ -143,7 +143,7 @@
 	
 		</tbody>
 		</table>
-		<input type="hidden" name="userId" value="${sessionScope.sid}">  <!-- 세션 아이디 받아오기 -->
+			<input type="hidden" name="userId" value="${sessionScope.sid}">  <!-- 세션 아이디 받아오기 -->
 			<input type="hidden" name="boardWriteDate" value="<%= sf.format(nowDate) %>"> 
 		<button type="submit" button style="float:right;">작성</button> <!-- submit -> 이 버튼의 역할은 데이터를 전송하는 것 -->
 				<a href="<c:url value='/boardDetailView/${boardCtgList.boardNo}'/>"><button>돌아가기</button></a>

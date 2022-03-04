@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import com.pillyo.pill.model.BoardVO;
+import com.pillyo.pill.model.CommentVO;
 
 public interface IBoardService {
 	ArrayList<BoardVO>listAllBoard();
@@ -18,4 +19,5 @@ public interface IBoardService {
 	ArrayList<BoardVO> listAllBoardQna3();
 	ArrayList<BoardVO> listAllBoardQna4();
 	ArrayList<BoardVO> listAllBoardQna5();
+	void insertcomment(CommentVO vo);
 }

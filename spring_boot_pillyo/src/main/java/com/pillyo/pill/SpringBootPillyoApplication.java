@@ -8,6 +8,7 @@ import org.springframework.context.annotation.ComponentScan;
 import com.pillyo.pill.controller.AdminController;
 import com.pillyo.pill.controller.BoardController;
 import com.pillyo.pill.controller.BodyController;
+import com.pillyo.pill.controller.CommentController;
 import com.pillyo.pill.controller.DoseController;
 import com.pillyo.pill.controller.DrugController;
 import com.pillyo.pill.controller.DrugInfoController;
@@ -21,6 +22,7 @@ import com.pillyo.pill.controller.UserController;
 import com.pillyo.pill.dao.IAdminDAO;
 import com.pillyo.pill.dao.IBoardDAO;
 import com.pillyo.pill.dao.IBodyDAO;
+import com.pillyo.pill.dao.ICommentDAO;
 import com.pillyo.pill.dao.IDoseDAO;
 import com.pillyo.pill.dao.IDrugDAO;
 import com.pillyo.pill.dao.IFamilyDAO;
@@ -44,6 +46,7 @@ import com.pillyo.pill.dao.IUserDAO;
 @ComponentScan(basePackageClasses = HmController.class) // 우리집 약관리
 @ComponentScan(basePackageClasses = HealthController.class)
 @ComponentScan(basePackageClasses = AdminController.class)
+@ComponentScan(basePackageClasses = CommentController.class)
 
 @MapperScan(basePackageClasses = IUserDAO.class)
 @MapperScan(basePackageClasses = IFamilyDAO.class)
@@ -56,7 +59,7 @@ import com.pillyo.pill.dao.IUserDAO;
 @MapperScan(basePackageClasses = IBoardDAO.class)
 @MapperScan(basePackageClasses = IHmDAO.class)
 @MapperScan(basePackageClasses = IAdminDAO.class)
-
+@MapperScan(basePackageClasses = ICommentDAO.class)
 public class SpringBootPillyoApplication {
 
 	public static void main(String[] args) {

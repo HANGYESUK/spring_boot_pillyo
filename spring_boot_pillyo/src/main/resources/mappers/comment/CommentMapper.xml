@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="com.pillyo.pill.dao.ICommentDAO">
+  
+	
+	<select id="listAllComment" parameterType="Hashmap" resultType="com.pillyo.pill.model.CommentVO">
+  			select * from comment
+  			<!-- ORDER BY id DESC
+            LIMIT #{pageStart}, #{perPageNum} -->
+  	</select>
+	
+	<insert id="insertcomment" parameterType="com.pillyo.pill.model.CommentVO">
+		insert into comment(
+							commentNo,
+							userId,
+							commentTitle,
+							commentContent,
+							commentWriteDate							
+  			) values(
+							#{commentNo},
+							#{userId},
+							#{commentTitle},
+							#{commentContent},
+							#{commentWriteDate}
+  			)
+	</insert>
+
+
+  </mapper>
