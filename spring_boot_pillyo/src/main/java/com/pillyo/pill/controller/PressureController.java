@@ -28,11 +28,9 @@ public class PressureController {
 		//return "pressure/pressureListView";
 		return "redirect:/healthManageView";
 	}
-	
+	// 혈압 리스트 조회
 	@RequestMapping("/listAllPressure")
 	public String listAllPressure(Model model){
-		ArrayList<PressureVO> pressureList = service.listAllPressure();
-		model.addAttribute("pressureList", pressureList);
 		return "pressure/pressureListView";
 	}
 	

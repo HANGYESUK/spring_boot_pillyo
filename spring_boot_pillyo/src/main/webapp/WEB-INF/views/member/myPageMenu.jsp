@@ -12,26 +12,23 @@
 	
 	<style>
 		li > a{
-		        font-size: 20px;
+		        font-size: 16px;
 			    color: #305ec7;
 			    font-weight: 49;
-			        line-height: 43px;
+			    line-height: 43px;
 		}
 	</style>
 	<body>
-		
-	
-			
 			<div id="myPageMenuBox">
 			
 			<c:forEach items="${sessionScope.SFamList}" var="fam">
-								 <a href="">${fam.famName}</a>
-							</c:forEach>
-			
+				 <a href="">${fam.famName}</a>
+			</c:forEach>
+
 			<ul id="myPageItemBox">
 				<li><a href="<c:url value='/updateMemberForm'/>">개인정보 수정</a></li>
-				<li><a>나의 건강정보</a></li>
-				<li><a href="">구매내역</a></li>
+				<li><a href="<c:url value='/MyPage/MyHealthList'/>">나의 건강정보</a></li>
+				<li><a href="">나의 게시글</a></li>
 				<li><a href="javascript:deleteCheck();">회원탈퇴</a></li>
 				<li><a href="">로그아웃</a></li>
 			</ul>
@@ -46,6 +43,5 @@
 				}
 			</script>
 		
-						
 	</body>
 </html>
