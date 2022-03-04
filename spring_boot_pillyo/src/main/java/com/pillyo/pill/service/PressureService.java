@@ -17,8 +17,8 @@ public class PressureService implements IPressureService {
 	IPressureDAO dao;
 	
 	@Override
-	public ArrayList<PressureVO> listAllPressure() {
-		return dao.listAllPressure();
+	public ArrayList<PressureVO> myListAllPressure(String userId) {
+		return dao.myListAllPressure(userId);
 	}
 
 	@Override

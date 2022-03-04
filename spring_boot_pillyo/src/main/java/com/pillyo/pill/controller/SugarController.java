@@ -1,7 +1,5 @@
 package com.pillyo.pill.controller;
 
-import java.util.ArrayList;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -32,8 +30,6 @@ public class SugarController {
 	//혈당 리스트 조회
 	@RequestMapping("/listAllSugar")
 	public String listAllSugar(Model model){
-		ArrayList<SugarVO> sugarList = service.listAllSugar();
-		model.addAttribute("sugarList", sugarList);
 		return "sugar/sugarListView";
 	}
 	//혈당 정보 삭제

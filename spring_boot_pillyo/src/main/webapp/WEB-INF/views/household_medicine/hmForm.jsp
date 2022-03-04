@@ -87,39 +87,39 @@
 								<input type="submit" value="전송"> -->
 								
 								<button type="button" id="hm_ctg" value="1" onclick="go(this.value)">
-								<img src="./img/hm/두통.png" alt="" style="width:45px; height:45px;"><br>
+								<img src="/img/hm/두통.png" alt="" style="width:45px; height:45px;"><br>
 								<span>두통약</span></button>
 								
 								<button type="button" id="hm_ctg" value="2" onclick="go(this.value)">
-								<img src="./img/hm/감기.png" alt="" style="width:45px; height:45px;"><br>
+								<img src="/img/hm/감기.png" alt="" style="width:45px; height:45px;"><br>
 								<span>감기약</span></button>
 								
 								<button type="button" id="hm_ctg" value="3" onclick="go(this.value)">
-								<img src="./img/hm/소화.png" alt="" style="width:45px; height:45px;"><br>
+								<img src="/img/hm/소화.png" alt="" style="width:45px; height:45px;"><br>
 								<span>소화제</span></button>
 								
 								<button type="button" id="hm_ctg" value="4" onclick="go(this.value)">
-								<img src="./img/hm/해열.png" alt="" style="width:45px; height:45px;"><br>
+								<img src="/img/hm/해열.png" alt="" style="width:45px; height:45px;"><br>
 								<span>해열제</span></button>
 								
 								<button type="button" id="hm_ctg" value="5" onclick="go(this.value)">
-								<img src="./img/hm/진통.png" alt="" style="width:45px; height:45px;"><br>
+								<img src="/img/hm/진통.png" alt="" style="width:45px; height:45px;"><br>
 								<span>진통제</span></button>
 								
 								<button type="button" id="hm_ctg" value="6" onclick="go(this.value)">
-								<img src="./img/hm/치통.png" alt="" style="width:45px; height:45px;"><br>
+								<img src="/img/hm/치통.png" alt="" style="width:45px; height:45px;"><br>
 								<span>치통약</span></button>
 								
 								<button type="button" id="hm_ctg" value="7" onclick="go(this.value)">
-								<img src="./img/hm/알레르기.png" alt="" style="width:45px; height:45px;"><br>
+								<img src="/img/hm/알레르기.png" alt="" style="width:45px; height:45px;"><br>
 								<span>알레르기</span></button>
 								 
 								<button type="button" id="hm_ctg" value="8" onclick="go(this.value)">
-								<img src="./img/hm/연고.png" alt="" style="width:45px; height:45px;"><br>
+								<img src="/img/hm/연고.png" alt="" style="width:45px; height:45px;"><br>
 								<span>연고/파스</span></button>
 								
 								<button type="button" id="hm_ctg" value="9" onclick="go(this.value)">
-								<img src="./img/hm/기타.png" alt="" style="width:45px; height:45px;"><br>
+								<img src="/img/hm/기타.png" alt="" style="width:45px; height:45px;"><br>
 								<span>기타</span></button>
 								
 							</form>

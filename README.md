@@ -1,6 +1,6 @@
 ![header](https://capsule-render.vercel.app/api?type=wave&color=gradient&height=200&section=header&text=Pill-Yo%20통합건강관리&fontAlign=50&fontAlignY=70&fontSize=90&fontColor=white)
 
-# 배포 -  
+# 배포 -  http://49.50.172.78:8080
 
 # 5인 프로젝트
 # 소개

@@ -17,7 +17,7 @@
 		 </style>
 </head>
 <body>
-
+<jsp:include page="/WEB-INF/views/chatBot.jsp"/>
 	<div id="wrap">
 			<!-- TOP -->
 			<jsp:include page="/WEB-INF/views/layout/top.jsp" flush='true' />
@@ -408,7 +408,7 @@
 			
 	
 			function toggle(a) {
-	
+				console.log(a)
 				let item = $(a).parent().parent().find('.health-Content')
 				
 				let updateBtnItem = $(a).parent().parent().find('.updateBtn')
@@ -432,10 +432,6 @@
 				}
 				
 				
-			}
-			
-			function go() {
-	
 			}
 			
 		 </script>   

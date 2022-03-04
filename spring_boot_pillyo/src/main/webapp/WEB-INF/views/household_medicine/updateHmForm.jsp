@@ -152,12 +152,12 @@
 		        	<tr> <th>사용기한</th>		<td><input type="date" name="hmUseByDate" value="${hm.hmUseByDate}" required ></td></tr>
 					<tr> <th>메모</th>		<td><textarea name="hmMemo" rows="10" cols="60" placeholder="내용을 입력하세요" style="resize: none;" required >${hm.hmMemo}</textarea></td></tr>
 					
-					<tr> <th id="hm">사진</th>	<td><input id = "hmImg" type="file" name="hmImg" value="${hm.hmImg}" onchange="setThumbnail(event);"></td>
+					<tr> <th id="hm">사진</th>	<td><input id = "hmImg" type="file" name="hmImg" value="${hm.hmImg}" onchange="setThumbnail(event);" required></td>
 					<tr> <th id="hm"></th>		<td id="img_box"> <div id="image_container"> <img src="<c:url value='/images/${hm.hmImg}'/>"></div>
-																  <div>
+																  <%-- <div>
 																  <input type="text" value = "${hm.hmImg}">
 																  <input type="submit" id="hmImg" name="hmImg" value="${hm.hmImg}">
-																  </div>
+																  </div> --%>
 																  </td></tr>
 																  
 																  <!-- 이렇게 하면 될 것 같은데 왜 ,가 들어가는 걸까? 중복되게 들어가면 안되서??-->

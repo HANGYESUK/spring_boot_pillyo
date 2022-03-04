@@ -12,6 +12,11 @@ public class PressureVO {
 	private String pressureRecordTime;
 	private int famNo;
 	
+	//테이블엔 없지만 사용할 정보
+	private String famMember;
+	private String userId;
+	
+	
 	public int getPressureNo() {
 		return pressureNo;
 	}
@@ -65,6 +70,18 @@ public class PressureVO {
 	}
 	public void setFamNo(int famNo) {
 		this.famNo = famNo;
+	}
+	public String getFamMember() {
+		return famMember;
+	}
+	public void setFamMember(String famMember) {
+		this.famMember = famMember;
+	}
+	public String getUserId() {
+		return userId;
+	}
+	public void setUserId(String userId) {
+		this.userId = userId;
 	}
 
 }
