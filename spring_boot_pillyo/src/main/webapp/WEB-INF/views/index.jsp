@@ -12,6 +12,7 @@
 		<meta name="author" content="Alvaro Trigo Lopez" />
 		<meta name="description" content="fullPage very simple demo." />
 		<meta name="keywords"  content="fullpage,jquery,demo,simple" />
+		
 		<meta name="Resource-type" content="Document" />
 	
 	
