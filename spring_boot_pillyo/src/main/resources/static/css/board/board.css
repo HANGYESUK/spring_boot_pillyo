@@ -17,6 +17,7 @@
     align-items: center;
     cursor:pointer;
     transition: all 0.4s;
+    font-size: 18px;
    }
    
    .ctgMenuItem a {
@@ -37,6 +38,7 @@
 	flex-direction: row;
 	text-align: center;
     line-height: 45px;
+    font-size: 18px;
    }
    .ctgMenuItemSub a {
 	text-decoration: none;
@@ -44,16 +46,21 @@
 }
    
 .ctgMenuItem:hover {
-    background-color:#cfe1f6;
-    color: white;
+    background-color: rgb(240 248 255);
+    color: rgb(0 67 255);
+        font-size: 25px;
+    font-weight: 600;
 }
 
 .ctgMenuItem:hover a{
     color: #133e9f;
+    
 }
 .ctgMenuItemSub:hover {
-    background-color: #cfe1f6;
-    color: white;
+    background-color: rgb(240 248 255);
+    color: rgb(0 67 255);
+        font-size: 25px;
+    font-weight: 600;
 }
 
 .ctgMenuItemSub:hover a{
@@ -72,8 +79,17 @@
     width: 100%;
     height: 50px;
 }
-.ctgMenuItemtotal{
-	    display: flex;
+.ctgMenuItemtotal {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-color: aliceblue;
+    color: rgb(94, 150, 255);
+    border-radius: 0 0 10px 10px;
+    overflow: hidden;
+    width: 100%;
+    height: 50px;
 }
 .table-striped{
 /* 	    margin-top: 15px;

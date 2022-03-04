@@ -29,31 +29,31 @@
 
 	
 	<select id="listAllBoard" parameterType="Hashmap" resultType="com.pillyo.pill.model.BoardVO">
-  			select * from board WHERE boardCtgNo=0 OR boardCtgNo=1
+  			select * from board WHERE boardCtgNo=0 OR boardCtgNo=1 order by boardWriteDate desc;
   			<!-- ORDER BY id DESC
             LIMIT #{pageStart}, #{perPageNum} -->
   	</select>
 
 	<select id="listAllBoardQna" parameterType="Hashmap" resultType="com.pillyo.pill.model.BoardVO">
-  			select * from board WHERE boardCtgNo=2 OR boardCtgNo=3 OR boardCtgNo=4 OR boardCtgNo=5
+  			select * from board WHERE boardCtgNo=2 OR boardCtgNo=3 OR boardCtgNo=4 OR boardCtgNo=5 order by boardWriteDate desc;
   			<!-- ORDER BY id DESC
             LIMIT #{pageStart}, #{perPageNum} -->
   	</select>
   	
   	<select id="listAllBoardQna2" parameterType="Hashmap" resultType="com.pillyo.pill.model.BoardVO">
-  			select * from board WHERE boardCtgNo=2
+  			select * from board WHERE boardCtgNo=2 order by boardWriteDate desc;
   	</select>
   	
   	<select id="listAllBoardQna3" parameterType="Hashmap" resultType="com.pillyo.pill.model.BoardVO">
-  			select * from board WHERE boardCtgNo=3
+  			select * from board WHERE boardCtgNo=3 order by boardWriteDate desc;
   	</select>
   	
   	<select id="listAllBoardQna4" parameterType="Hashmap" resultType="com.pillyo.pill.model.BoardVO">
-  			select * from board WHERE boardCtgNo=4
+  			select * from board WHERE boardCtgNo=4 order by boardWriteDate desc;
   	</select>
   	
   	<select id="listAllBoardQna5" parameterType="Hashmap" resultType="com.pillyo.pill.model.BoardVO">
-  			select * from board WHERE boardCtgNo=5
+  			select * from board WHERE boardCtgNo=5 order by boardWriteDate desc;
   	</select>
   	
 <!--   <select id="listAllBoardQna" parameterType="int" resultType="com.pillyo.pill.model.BoardVO">

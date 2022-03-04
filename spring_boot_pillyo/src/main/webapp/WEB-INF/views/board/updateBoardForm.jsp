@@ -55,6 +55,10 @@ top:-2px;
 	
  	box-shadow: 2px 2px 5px #0d3bb1;
 }
+
+.form-control{
+text-align:center;
+}
 </style>
 
 <body>

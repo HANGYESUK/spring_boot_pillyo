@@ -1,8 +1,6 @@
 package com.pillyo.pill.controller;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
@@ -11,12 +9,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.pillyo.pill.Criteria;
-import com.pillyo.pill.Paging;
 import com.pillyo.pill.model.BoardVO;
-import com.pillyo.pill.model.HmVO;
+import com.pillyo.pill.model.CommentVO;
 import com.pillyo.pill.service.BoardService;
+import com.pillyo.pill.service.CommentService;
 
 
 @Controller // @는 어노테이션
@@ -61,6 +59,9 @@ public class BoardController {
 	@Autowired
 	BoardService service; // 서비스 연결
 	
+	@Autowired
+	CommentService commentservice;
+	
 	// 게시판으로 이동
 	@RequestMapping("/boardForm")
 	public String boardWriteForm() {
@@ -68,6 +69,13 @@ public class BoardController {
 		return "board/boardwrite"; // return 사이의 값은 어떤 뷰 파일로 보내줄 것인지!
 	}
 	
+	// 게시판으로 이동
+	@RequestMapping("/commentForm")
+	public String commentWriteForm() {
+		
+		return "/board/boardDetailView";
+	}
+
 	// 게시판으로 이동
 	@RequestMapping("/boardFormQna")
 	public String boardWriteFormQna() {
@@ -85,6 +93,30 @@ public class BoardController {
 		return "redirect:/listAllBoard";
 	}
 	
+	//Ajax 컨트롤러
+	//평점 게시글 등록(ajax)
+	@ResponseBody
+	@RequestMapping("/insertboard2")
+	public String writeBoard(BoardVO vo,
+										HttpSession session) {
+		String userId = (String)session.getAttribute("sid"); // session 받아오기
+		service.insertboard(vo);
+		
+		return"success";
+	}
+	
+	
+	// 댓글 등록 
+	@RequestMapping("/insertcomment")
+	public String insertcomment(CommentVO vo, HttpSession session) { 
+								// title, content 매개변수 받기 
+		String userId = (String)session.getAttribute("sid"); // session 받아오기
+		service.insertcomment(vo);
+//			System.out.println(vo.getTitle());
+		return "redirect:/listAllBoard";
+	}
+	
+
 	
 	@RequestMapping("/listAllBoard")
 	public String listAllBoard(Model model) {
@@ -114,6 +146,9 @@ public class BoardController {
 		ArrayList<BoardVO> boardMemberList = service.listAllBoardQna5();
 		model.addAttribute("boardMemberList", boardMemberList);
 		
+		ArrayList<CommentVO> commentList = commentservice.listAllComment();
+		model.addAttribute("commentList", commentList);
+		
 		// 이 구간은 model 객체를 파라미터로 받아서 view인 listAllBoard에 리턴해주는 역할
 		// model.addAttribute("변수 이름", 변수에 넣을 데이터); 라고 생각
 		// view 단계에서 ${변수 이름}, 즉 ${boardList} 이렇게 받아주면 됨
@@ -126,6 +161,9 @@ public class BoardController {
 	public String boardDetailView(@PathVariable int boardNo, Model model) {
 		BoardVO board = service.boardDetailView(boardNo);
 		model.addAttribute("board", board);
+		
+		ArrayList<CommentVO> commentList = commentservice.listAllComment();
+		model.addAttribute("commentList", commentList);
 		
 		return "/board/boardDetailView";
 	}
@@ -151,4 +189,24 @@ public class BoardController {
 		service.updateBoard(vo);
 		return "redirect:/listAllBoard";  
 	}
+	
+	
+	
+	
+	
+	
+//	@RequestMapping("/listAllComment")
+//	public String listAllComment(Model model) {
+//
+//		// Model은 하나의 객체로 컨트롤러에서 페이지로 넘길 값을 저장하는데 사용
+//		ArrayList<CommentVO> commentList = commentservice.listAllComment();
+//		model.addAttribute("commentList", commentList);
+//		
+//
+//		// 이 구간은 model 객체를 파라미터로 받아서 view인 listAllBoard에 리턴해주는 역할
+//		// model.addAttribute("변수 이름", 변수에 넣을 데이터); 라고 생각
+//		// view 단계에서 ${변수 이름}, 즉 ${boardList} 이렇게 받아주면 됨
+//
+//		return "comment/commentListView";
+//	}
 }
