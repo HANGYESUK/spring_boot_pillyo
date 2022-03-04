@@ -29,7 +29,23 @@
   		<!-- <select id="listAllPressure" resultType="com.pillyo.pill.model.PressureVO">
   			select * from pressureManage
   		</select> -->
-  		
+   		<select id="myListAllPressure" parameterType="String" resultType="com.pillyo.pill.model.PressureVO">
+ 			<!-- select * from pressureManage where famNo=#{famNo} -->
+ 			select p.pressureNo,
+ 				   p.Situation, 
+ 				   p.SBP,
+ 				   p.DBP,
+ 				   p.bpm,
+ 				   p.pressureMemo,
+ 				   p.pressureRecordDate,
+ 				   p.pressureRecordTime,
+ 				   p.famNo,
+ 				   f.famMember,
+  			 	   u.userId
+ 			from pressuremanage p, user u, family f
+ 			where p.famNo = f.famNo and f.userId = #{userId}
+ 		</select>	
+ 			
   		<select id="listAllPressure" parameterType="int" resultType="com.pillyo.pill.model.PressureVO">
   			<!-- select * from pressureManage where famNo=#{famNo} -->
   			select * from pressuremanage where famNo=#{famNo} order by pressureRecordDate desc LIMIT 7

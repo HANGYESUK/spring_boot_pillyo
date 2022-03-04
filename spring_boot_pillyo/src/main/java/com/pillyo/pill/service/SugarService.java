@@ -16,8 +16,8 @@ public class SugarService implements ISugarService {
 	ISugarDAO dao;
 	
 	@Override
-	public ArrayList<SugarVO> listAllSugar() {
-		return dao.listAllSugar();
+	public ArrayList<SugarVO> myListAllSugar(String userId) {
+		return dao.myListAllSugar(userId);
 	}
 
 	@Override
