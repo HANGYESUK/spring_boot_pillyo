@@ -43,10 +43,9 @@
   			 	   f.famMember,
   			 	   u.userId
   			from sugarmanage s, user u, family f 
-  			where s.famNo=f.famNo and f.userId = #{userId} 
-  			<!-- 동일한 리스트가 4개 뜸. 여기 매퍼에서 손대는거 아님 -->
-  			<!-- where s.famNo=f.famNo and f.userId = #{userId}  --> 
-  			
+  			where s.famNo=f.famNo and
+  				  f.userId = u.userId and f.userId = #{userId}
+  			<!-- 2개인 테이블을 조인할 때 외래키 조건은 1개 / 3개인 테입르을 조인할 때 외래키 조건은 2개  -->
   		</select>
   		
   		<select id="listAllSugar" parameterType="int" resultType="com.pillyo.pill.model.SugarVO">

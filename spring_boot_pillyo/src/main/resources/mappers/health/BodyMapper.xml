@@ -19,9 +19,20 @@
   			)	
   		</insert>
   		
-  		<!-- <select id="listAllBody" resultType="com.pillyo.pill.model.BodyVO">
-  			select * from bodyManage
-  		</select> -->
+  		<select id="myListAllBody" parameterType="String" resultType="com.pillyo.pill.model.BodyVO">
+  			select b.bodyNo,
+  				   b.height,
+  				   b.weight,
+  				   b.bmi,
+  				   b.bodyRecordDate,
+  				   b.famNo,
+  				   f.famMember,
+  				   u.userId
+  			from bodymanage b, user u, family f
+  			where b.famNo = f.famNo and
+  				  f.userId = u.userId and f.userId = #{userId}
+  		</select>
+
   		
   		<select id="listAllBody" parameterType="int" resultType="com.pillyo.pill.model.BodyVO">
   			<!-- select * from bodyManage where famNo=#{famNo} -->

@@ -19,12 +19,10 @@
 			<div id="navMargin"></div>
 			
 			<section id="section">
-			<h3>체형관리 수정</h3>
-
-				
-				<div class="main-Content-Body low">
+			<div class="main-Content-Body low">
 					<div class="basket-Item-Container colunm">
-					
+						<h1>체형관리 수정</h1>
+						<br><br>
 					
 					<form id="updateBodyForm" method="post" action="<c:url value='/updateBody'/>">
 					  	<input type="hidden" id="bodyNo" name="bodyNo" value="${body.bodyNo}"/>
@@ -43,7 +41,10 @@
 							<input type="hidden" name="famNo" value="${famNo}" />
 						 </div>
 						 <div>
-							<input type="submit" value="수정">
+							<input type="submit" id="send_btn" value="수정하기">
+						 </div>
+						 <div>
+							<input type="reset" id="reset_btn" value="취소하기">
 						 </div>
 					  </form> 
 					</div>

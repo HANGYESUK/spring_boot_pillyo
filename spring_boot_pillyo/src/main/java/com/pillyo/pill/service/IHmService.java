@@ -11,5 +11,5 @@ public interface IHmService{
 	void insertHm(HmVO vo);									// 약 등록
 	void updateHm(HmVO vo);									// 등록 된 약 수정
 	void deleteHm(int hmNo);								// 등록 된 약 삭제
-	HmVO detailViewHm (int hmNo);							// 등록 된 약 상세정보
+	HmVO detailViewHm (int hmNo);						// 등록 된 약 상세정보
 }

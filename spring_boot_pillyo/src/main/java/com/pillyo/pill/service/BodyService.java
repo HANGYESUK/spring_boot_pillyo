@@ -17,9 +17,9 @@ public class BodyService implements IBodyService {
 	
 	
 	@Override
-	public ArrayList<BodyVO> listAllBody() {
+	public ArrayList<BodyVO> myListAllBody(String userId) {
 		// TODO Auto-generated method stub
-		return dao.listAllBody();
+		return dao.myListAllBody(userId);
 	}
 
 	@Override

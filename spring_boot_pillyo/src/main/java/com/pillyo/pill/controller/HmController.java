@@ -150,6 +150,5 @@ public class HmController{
 		System.out.println(vo.getHmName());
 		return"redirect:/insertHmResult";
 	}
-
 	
 }

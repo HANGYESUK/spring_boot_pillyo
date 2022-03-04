@@ -105,6 +105,19 @@
 	    border-radius: 30px;
 	    cursor: pointer;
 	}
+	.btn {
+		background-color: #7A7A7A;
+		color: white;
+	    border: none;
+	    padding: 10px;
+	    padding-left: 30px;
+	    padding-right: 30px;
+	    font-size: 20px;
+	    font-weight: bold;
+	    border-radius: 30px;
+	    cursor: pointer;
+	}
+	
 	.low {
 	    display: flex;
 	    flex-direction: row;
@@ -169,6 +182,8 @@
 				 <div class="submitForm low">
 					 <input class = "in subBtn" type="submit" value="수정" >
 					 <input class = "in2 delBtn" type="reset" value="취소">
+					 <a href="/hmForm">
+					 <input type="button" class="in3 btn" value="뒤로가기"></a>
 				 </div>
 				 
 			</form>
