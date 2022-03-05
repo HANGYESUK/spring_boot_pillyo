@@ -47,7 +47,7 @@ public class SENSService {
 		// ------ messages ------
 		
 		
-		// bodyJson.put("scheduleCode", "sens_after_dinner"); // 기본 메시지 내용 (필수) (SMS 80 byte 제한)
+		bodyJson.put("scheduleCode", "sens_after_dinner"); // 기본 메시지 내용 (필수) (SMS 80 byte 제한)
 		bodyJson.put("type", "SMS"); // 메시지 타입 (sms, lms)
 //		bodyJson.put("contentType", ""); // 메시지 내용 타입 (COMM: 일반메시지 | AD: 광고메시지 | (default: COMM))
 		bodyJson.put("countryCode", "82"); // 국가 번호 (default: 82))
