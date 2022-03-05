@@ -15,10 +15,12 @@ import javax.crypto.spec.SecretKeySpec;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
 import org.springframework.stereotype.Service;
 
 @Service
 public class SENSService {
+	// SMS 전송
 	public static void sendSMS(String[] args) {
 		String hostNameUrl = "https://sens.apigw.ntruss.com"; // 호스트 URL
 		String requestUrl = "/sms/v2/services/"; // 요청 URL
@@ -45,6 +47,7 @@ public class SENSService {
 		// ------ messages ------
 		
 		
+		// bodyJson.put("scheduleCode", "sens_after_dinner"); // 기본 메시지 내용 (필수) (SMS 80 byte 제한)
 		bodyJson.put("type", "SMS"); // 메시지 타입 (sms, lms)
 //		bodyJson.put("contentType", ""); // 메시지 내용 타입 (COMM: 일반메시지 | AD: 광고메시지 | (default: COMM))
 		bodyJson.put("countryCode", "82"); // 국가 번호 (default: 82))
@@ -53,9 +56,8 @@ public class SENSService {
 		bodyJson.put("content", "pillyo sms test"); // 기본 메시지 내용 (필수) (SMS 80 byte 제한)
 		bodyJson.put("messages", toArr); // 메시지 정보 (필수)
 		
-		
 		String body = bodyJson.toJSONString();
-		System.out.println(body);
+		System.out.println("메세지 body : " + body);
 		
 		try {
 			URL url = new URL(apiUrl);
@@ -78,7 +80,7 @@ public class SENSService {
 
             int responseCode = con.getResponseCode();
             BufferedReader br;
-            System.out.println("responseCode" +" " + responseCode);
+            System.out.println("메세지 전송 responseCode" +" " + responseCode);
             if(responseCode == 202) { // 정상 호출
                 br = new BufferedReader(new InputStreamReader(con.getInputStream()));
             } else { // 에러 발생
@@ -91,19 +93,25 @@ public class SENSService {
                 response.append(inputLine);
             }
             br.close();
-	            
-            System.out.println(response.toString());
+	        
+            // response 출력
+            System.out.println("메세지 전송 response : " + response.toString());
+            
+            // response에서 requestId 추출 -> string으로 변환 ********************************
+            String requestId = getRequestId(response.toString());
+            
+            // 메시지 발송 요청 조회 (오류)
+//            selectMsgSendRequest(hostNameUrl, requestUrl, timestamp, accessKey, secretKey, requestId);
+            
         } catch (Exception e) {
             System.out.println(e);
         }
 	}
 	
-	
-	// 시그니처 키
+	// 시그니처 키 얻는 함수
 	private static String makeSignature(String url, String timestamp, String method, String accessKey, String secretKey) throws NoSuchAlgorithmException, InvalidKeyException {
 	    String space = " ";                    // one space
 	    String newLine = "\n";                 // new line
-	    
 
 	    String message = new StringBuilder()
 	        .append(method)
@@ -127,7 +135,99 @@ public class SENSService {
 			// TODO Auto-generated catch block
 			encodeBase64String = e.toString();
 		}
-		
 	  return encodeBase64String;
-	}	
+	}
+	
+	// response에서 requestId 추출 -> string으로 변환하는 함수
+	public static String getRequestId(String jsonResponse){
+		String requestId = "";
+		
+		try {
+			// requestId 추출
+			JSONParser jsonParser = new JSONParser();
+			JSONObject jsonObj = (JSONObject) jsonParser.parse(jsonResponse);
+			requestId = (String) jsonObj.get("requestId");
+			System.out.println("메세지 전송 response에서 추출한 requestId : " + requestId);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}		
+		return requestId;
+	}
+
+// X --------------------------------------------------------------------------------------------
+/*
+	// 메시지 발송 요청 조회
+	private static void selectMsgSendRequest(String hostNameUrl, String requestUrl, String timestamp, String accessKey, String secretKey, String requestId) throws NoSuchAlgorithmException, InvalidKeyException {
+		
+		String requestIdUrl = "?" + requestId + "=";
+		String method = "GET";
+		
+		// 요청 URL
+		String sendRequestUrl = hostNameUrl + requestUrl + requestIdUrl;
+		System.out.println("메세지 발송 요청 조회 - 요청 url : " + sendRequestUrl);
+		
+		try {
+			URL url = new URL(sendRequestUrl);
+
+            HttpURLConnection con = (HttpURLConnection)url.openConnection();
+            con.setUseCaches(false);
+            con.setDoOutput(true);
+            con.setDoInput(true);
+            con.setRequestProperty("content-type", "application/json");
+            con.setRequestProperty("x-ncp-apigw-timestamp", timestamp);
+            con.setRequestProperty("x-ncp-iam-access-key", accessKey);
+            con.setRequestProperty("x-ncp-apigw-signature-v2", makeSignature(requestUrl, timestamp, method, accessKey, secretKey));
+            con.setRequestMethod(method);
+            con.setDoOutput(true);
+//            DataOutputStream wr = new DataOutputStream(con.getOutputStream());
+//            
+//            wr.write(body.getBytes());
+//            wr.flush();
+//            wr.close();
+
+            // 여기서부터 오류 발생하는듯
+            int responseCode = con.getResponseCode();
+            BufferedReader br;
+            System.out.println("메시지 발송 요청 조회 responseCode" +" " + responseCode);
+            if(responseCode == 202) { // 정상 호출
+                br = new BufferedReader(new InputStreamReader(con.getInputStream()));
+            } else { // 에러 발생
+                br = new BufferedReader(new InputStreamReader(con.getErrorStream()));
+            }
+
+            String inputLine;
+            StringBuffer response = new StringBuffer();
+            while ((inputLine = br.readLine()) != null) {
+                response.append(inputLine);
+            }
+            br.close();
+	        
+            // response 출력
+            System.out.println("메시지 발송 요청 결과 조회 response : " + response.toString());
+            
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+
+	}
+	
+	// '메시지 발송 요청 조회' 결과로 얻은 json형태 response에서 messageId 추출
+//	public static String getMessageId(String jsonResponse){
+//		String messageId = "";
+//		
+//		try {
+//			// JSON 형태의 문자열에서 JSON 오브젝트 "predictions" 추출해서 JSONArray에 저장
+//			JSONParser jsonParser = new JSONParser();
+//			JSONObject jsonObj = (JSONObject) jsonParser.parse(jsonResponse);
+//			requestId = (String) jsonObj.get("requestId");
+//			System.out.println("requestId : " + requestId);
+//		} catch (Exception e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}		
+//		return requestId;
+//	}
+
+*/
 }
