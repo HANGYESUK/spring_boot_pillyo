@@ -5,7 +5,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>약국 정보</title>
+		<title>내 주변 약국 및 편의점</title>
 		<link rel="stylesheet" href="/css/pharmacy/pharmacy.css" />
 		<script src="<c:url value='/js/jquery-3.6.0.min.js'/>"></script>
 		<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=b3bc39226c10ad1e0663733a444b7b1d&libraries=services,clusterer"></script>
@@ -21,16 +21,16 @@
 			<section id="section">
 				<div class="map_wrap">
 				    <div id="map" style="width:100%;height:100%;position:relative;overflow:hidden;"></div>
-				    <ul id="category"> 
-				        <li id="PM9" data-order="2"> 
-				            <span class="category_bg pharmacy"></span>
-				            약국
-				        </li>  
-				        <li id="CS2" data-order="5"> 
-				            <span class="category_bg store"></span>
-				            편의점
-				        </li>      
-				    </ul>
+				    <div id="category"> 
+				        <div id="PM9" class="ctgBtn" data-order="0">
+			            	<img id="pharmBtnImg" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fd8tiI8%2FbtrveKTW48o%2FhqxQYitUxsLXEL86byZpZ0%2Fimg.png" alt="약국" />
+				            <h3>약국</h3>
+				        </div>
+				        <div id="CS2" class="ctgBtn" data-order="1"> 
+			            	<img id="storeBtnImg" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FsWwKT%2Fbtru9Q8UsCU%2FDf4pdLj5Xt5cknb2PkBY10%2Fimg.png" alt="편의점" />
+				            <h3>편의점</h3>
+				        </div>      
+				    </div>
 				</div>
 				<input type="hidden" id="latitude" name="latitude"/>
 				<input type="hidden" id="longitude" name="longitude"/>

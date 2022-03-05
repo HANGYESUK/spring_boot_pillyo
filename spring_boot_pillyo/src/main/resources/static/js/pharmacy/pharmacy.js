@@ -54,14 +54,11 @@ window.onload = function() {
 			
 			
 			// ---------------------- 컨트롤 ------------------------
-			// 일반 지도와 스카이뷰로 지도 타입을 전환할 수 있는 지도타입 컨트롤을 생성합니다
+			// 일반 지도 / 스카이뷰 지도 타입 전환
 			var mapTypeControl = new kakao.maps.MapTypeControl();
-		
-			// 지도에 컨트롤을 추가해야 지도위에 표시됩니다
-			// kakao.maps.ControlPosition은 컨트롤이 표시될 위치를 정의하는데 TOPRIGHT는 오른쪽 위를 의미합니다
 			map.addControl(mapTypeControl, kakao.maps.ControlPosition.TOPRIGHT);
 		
-			// 지도 확대 축소를 제어할 수 있는  줌 컨트롤을 생성합니다
+			// 줌 컨트롤 생성
 			var zoomControl = new kakao.maps.ZoomControl();
 			map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
 			
@@ -152,7 +149,7 @@ window.onload = function() {
 			
 			// 마커 생성 및 표시 함수
 			function addMarker(position, order) {
-			    var imageSrc = 'https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/places_category.png', // 마커 이미지 url, 스프라이트 이미지 사용
+			    var imageSrc = 'https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FdEVYaV%2FbtrvhnDV0s3%2F3TQyPEqRRCU8thUfOE81F1%2Fimg.png', // 마커 이미지 url, 스프라이트 이미지 사용
 			        imageSize = new kakao.maps.Size(27, 28),  // 마커 이미지 크기
 			        imgOptions =  {
 			            spriteSize : new kakao.maps.Size(72, 208), // 스프라이트 이미지 크기
@@ -236,11 +233,11 @@ window.onload = function() {
 			        i;
 			
 			    for ( i=0; i<children.length; i++ ) {
-			        children[i].className = '';
+			        children[i].className = 'ctgBtn';
 			    }
 			
 			    if (el) {
-			        el.className = 'on';
+			        el.className = 'on ctgBtn';
 			    } 
 			}
 		}
