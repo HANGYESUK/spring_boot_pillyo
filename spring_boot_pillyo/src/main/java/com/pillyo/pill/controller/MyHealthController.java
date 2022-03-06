@@ -9,6 +9,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.pillyo.pill.model.BodyVO;
+import com.pillyo.pill.model.FeelVO;
 import com.pillyo.pill.model.PressureVO;
 import com.pillyo.pill.model.SugarVO;
 import com.pillyo.pill.service.BodyService;
@@ -46,9 +48,25 @@ public class MyHealthController {
 	}
 	
 	// 체형 리스트 조회
-	
+	@RequestMapping("/myListAllBody")
+	public String myListAllBody(HttpSession session, Model model){
+		String userId = (String)session.getAttribute("sid");
+		System.out.println("마이페이지" + userId);
+		ArrayList<BodyVO> bodyList = body_service.myListAllBody(userId);
+		model.addAttribute("bodyList", bodyList);
+		System.out.println(bodyList.get(0));
+		return "body/bodyListView";
+	}
 	// 기분 리스트 조회
-	
+	@RequestMapping("/myListAllFeel")
+	public String myListAllFeel(HttpSession session, Model model){
+		String userId = (String)session.getAttribute("sid");
+		System.out.println("마이페이지" + userId);
+		ArrayList<FeelVO> feelList = feel_service.myListAllFeel(userId);
+		model.addAttribute("feelList", feelList);
+		System.out.println(feelList.get(0));
+		return "feel/feelListView";
+	}
 	// 혈압 리스트 조회
 	@RequestMapping("/myListAllPressure")
 	public String myListAllPressure(HttpSession session, Model model){
@@ -66,7 +84,7 @@ public class MyHealthController {
 		System.out.println("마이페이지" + userId);
 		ArrayList<SugarVO> sugarList = sugar_service.myListAllSugar(userId);
 		model.addAttribute("sugarList", sugarList);
-		System.out.println(sugarList.get(0));
+		System.out.println("a : "+sugarList.get(0));
 		return "sugar/sugarListView";
 	}
 	

@@ -41,20 +41,10 @@
 			<div id="my_sugar">
 			<h3>전체 혈당 관리 목록</h3>
 				 
-			 <c:forEach items="${sugarList}" var="sugar">
-			 		<%-- 번호 ${sugar.sugarNo}
-			 		상황 ${sugar.situation}
-			 		투약 ${sugar.sugarMedication}
-			 		식전/식후 ${sugar.acpc}
-			 		수치 ${sugar.sugarLevel}
-			 		메모 ${sugar.acpcMemo}
-			 		기록날짜 ${sugar.sugarRecordDate}
-			 		기록시간 ${sugar.sugarRecordTime}
-			 		가족번호 ${sugar.famNo}
-			 		가족이름 ${sugar.famMember} --%>
 		 	<table>
 		 		<tr> <th>번호</th><th>날짜</th><th>시간</th><th>가족이름</th>
 		 			 <th>상황</th><th>투약</th><th>식전/식후</th><th>수치</th><th>메모</th><th>수정</th></tr>
+	 			<c:forEach items="${sugarList}" var="sugar">
 		 		<tr> <td>${sugar.sugarNo}</td>
 		 			 <td>${sugar.sugarRecordDate}</td>
 		 			 <td>${sugar.sugarRecordTime}</td>
@@ -65,7 +55,8 @@
 		 			 <td>${sugar.sugarLevel}</td>
 		 			 <td>${sugar.acpcMemo}</td>
 		 			 <td><a href="<c:url value='/updateSugarForm/${sugar.sugarNo}'/>">혈당 정보 수정</a><br>
-		 				 <a href="javascript:deleteCheck();">혈당 정보 삭제</a></td>
+		 				 <a href="javascript:deleteCheck();">혈당 정보 삭제</a></td></tr>
+				 </c:forEach>
 		 	</table>
 		 		
 			<script type="text/javascript">
@@ -77,9 +68,6 @@
 				}
 			</script>
 		 		
-		 </c:forEach>
-		
-		
 		</div>
 		</section>
 

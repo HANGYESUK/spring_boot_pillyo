@@ -43,7 +43,8 @@
  				   f.famMember,
   			 	   u.userId
  			from pressuremanage p, user u, family f
- 			where p.famNo = f.famNo and f.userId = #{userId}
+ 			where p.famNo = f.famNo and 
+ 				  f.userId = u.userId and f.userId = #{userId}
  		</select>	
  			
   		<select id="listAllPressure" parameterType="int" resultType="com.pillyo.pill.model.PressureVO">

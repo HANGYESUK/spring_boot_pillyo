@@ -32,8 +32,6 @@ public class BodyController {
 	// 체형 관리 정보 조회
 	@RequestMapping("/listAllBody")
 	public String listAllBody(Model model) {
-		ArrayList<BodyVO> bodyList = service.listAllBody();
-		model.addAttribute("bodyList", bodyList);
 		return "body/bodyListView";
 	}
 	// 체형 관리 정보 삭제

@@ -7,9 +7,14 @@ public class BodyVO {
 	private int bmi;
 	private String bodyRecordDate;
 	private int famNo;
+	
+	//테이블엔 없지만 사용할 정보
+	private String famMember;
+	private String userId;
+	
 	public int getBodyNo() {
 		return BodyNo;
-		
+	
 	}
 	public void setBodyNo(int bodyNo) {
 		BodyNo = bodyNo;
@@ -44,5 +49,18 @@ public class BodyVO {
 	public void setFamNo(int famNo) {
 		this.famNo = famNo;
 	}
+	public String getFamMember() {
+		return famMember;
+	}
+	public void setFamMember(String famMember) {
+		this.famMember = famMember;
+	}
+	public String getUserId() {
+		return userId;
+	}
+	public void setUserId(String userId) {
+		this.userId = userId;
+	}
 
+	
 }

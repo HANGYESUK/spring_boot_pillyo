@@ -39,8 +39,6 @@ public class FeelController {
 	// 전체 기분 관리 기록 조회
 	@RequestMapping("/listAllFeel")
 	public String listAllFeel(Model model) {
-		ArrayList<FeelVO> feelList = service.listAllFeel();
-		model.addAttribute("feelList", feelList);
 		return "feel/feelListView";
 	}
 

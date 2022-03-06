@@ -13,7 +13,23 @@
 		<result property="feelRecordTime" column="feelRecordTime" />
 		<result property="famNo" column="famNo" />  
 	</resultMap>
-
+	
+	<!-- 기분 전체 기록 조회 -->
+	<select id="myListAllFeel" parameterType="String" resultType="com.pillyo.pill.model.FeelVO">
+	   select feel.feelNo,
+	   		  feel.feelScale,
+	   		  feel.feelMemo,
+	   		  feel.feelRecordDate,
+	   		  feel.feelRecordTime,
+	   		  feel.famNo,
+ 			  f.famMember,
+  			  u.userId
+	   from feelmanage feel, user u, family f
+	   where feel.famNo= f.famNo and
+	   		 f.userId = u.userId and f.userId = #{userId}
+	   
+	</select>
+	
 	<!-- 기분 전체 기록 조회 -->
 	<select id="listAllFeel" parameterType="int" resultType="com.pillyo.pill.model.FeelVO">
 	   select * from feelmanage where famNo=#{famNo} order by feelRecordDate desc LIMIT 7
