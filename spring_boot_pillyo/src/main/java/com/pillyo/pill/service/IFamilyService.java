@@ -11,4 +11,6 @@ public interface IFamilyService {
 	void famUpdate(FamilyVO famVo); // 가족 정보 수정
 	void famDelete(int famNo); // 가족 정보 삭제
 	FamilyVO famDetailView(int famNo); // 가족 정보 상세 조회
+	
+	void deleteUserFam(String userId); //관리자메뉴 회원탈퇴시 가족정보 삭제
 }

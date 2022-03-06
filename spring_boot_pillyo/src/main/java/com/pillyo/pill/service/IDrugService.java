@@ -13,5 +13,8 @@ public interface IDrugService {
 	ArrayList<DrugInfoVO> selectItemBySearchWord(String keyWord);	//자동완성
 	ArrayList<DrugInfoVO> selectKeywordSearch(String keyWord); //자동완성 제목조회
 	
-	ArrayList<AutoDrugInfoVO>drugListView();
+	ArrayList<AutoDrugInfoVO>drugListView();	//복용정보 자동완성
+	
+	//관리자 메뉴
+	ArrayList<DrugInfoVO> listAllDrugView(); //관리자 메뉴- 전제조회
 }

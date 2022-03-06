@@ -4,11 +4,15 @@ a{
 	text-decoration: none;
 	color: black;
 }
+#adminContainer{
+	display: flex;
+	flex-wrap: nowrap;
+}
 
 #adminBox{
-	    background: linear-gradient( 139deg , #79b5ff, #b9e1f4);
+	background: linear-gradient( 139deg , #79b5ff, #b9e1f4);
 	width:210px;
-	border-radius: 30px;
+	height:100%;
 	text-align: center;
 }
 
@@ -30,5 +34,20 @@ a{
 }
 .adminItem:hover{
 	background-color: white;
+}
+
+#userCnt{
+	width:150px;
+	height:150px;
+	border-radius: 80px;
+	background: #79b5ff;
 	
+	
+}
+.adminDrugItem{
+	cursor: pointer;
+}
+.adminDrugItem ul{
+	list-style:none;
+	display: none;
 }

@@ -38,6 +38,8 @@ public class DrugService implements IDrugService {
 	public ArrayList<AutoDrugInfoVO>drugListView(){
 		return dao.drugListView();
 	}
-
-	
+	@Override
+	public ArrayList<DrugInfoVO> listAllDrugView(){ //관리자 메뉴- 전제조회
+		return dao.listAllDrugView();
+	}
 }

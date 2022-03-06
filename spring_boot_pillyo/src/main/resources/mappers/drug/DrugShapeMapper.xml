@@ -40,10 +40,12 @@
   				 맨앞에 항목이 NULL이거나 모두 널이어도 실행 될수 있도록
   				 결과에 영향이 없는 무조건 참인 조건을 추가함.  -->	
   				1=1
-  					
-  		
-  					
-  														
+  												
+		</select>
+		
+			<!-- 관리자 메뉴- 전체 조회 -->
+		<select id="listAllDrugShapeView" resultType="com.pillyo.pill.model.DrugShapeVO">
+			SELECT * FROM drugshape limit 20
 		</select>
   		
   </mapper>

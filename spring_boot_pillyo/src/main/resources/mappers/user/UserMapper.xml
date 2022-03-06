@@ -57,11 +57,14 @@
 		</update>
 		
 		
-		<!-- 관리자메뉴 -->
+		<!-- 관리자메뉴-회원조회 -->
 		<select id="listAllUser" resultType="com.pillyo.pill.model.UserVO">
 			SELECT * FROM user
 			ORDER BY userName
 		</select>
 		
+		<select id="userCount" resultType="int">
+			SELECT COUNT(*) FROM user
+		</select>
   		
   </mapper>

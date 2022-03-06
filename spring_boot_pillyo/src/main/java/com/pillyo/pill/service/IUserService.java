@@ -20,4 +20,5 @@ public interface IUserService {
 	
 	//관리자 메뉴
 	ArrayList<UserVO> listAllUser();
+	int userCount();
 }
