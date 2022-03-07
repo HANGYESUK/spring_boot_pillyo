@@ -3,13 +3,15 @@
 .map_wrap, .map_wrap * {
 	margin:0;
 	padding:0;
-	font-family:'Malgun Gothic',dotum,'µ¸¿ò',
+	font-family:'Malgun Gothic',dotum,'ï¿½ï¿½ï¿½ï¿½',
 	sans-serif;font-size:12px;
 }
 
 .map_wrap {
-	width:100%;
-	height:500px;
+    width: 1170px;
+    height: 566px;
+    display: inline-block;
+    margin: 13px;
 }
 
 #map {
@@ -17,7 +19,29 @@
     border: 1px solid #cecece;
 }
 
-/* ------------- Ä«Å×°í¸® ¹öÆ° -------------- */
+#mapHeader {
+	background: #fdfdfd;
+    border-bottom: 1px solid #cdcdcd;
+    padding: 8px 36px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+#mapHeader h1 {
+	display: inline-block;
+}
+
+#mapHeader h5 {
+	display: inline-block;
+	padding: 0px 15px;
+}
+
+#mapHeader h5 a {
+	text-decoration: none;
+    color: #989898;
+}
+
+/* ------------- Ä¿½ºÅÒ ¿À¹ö·¹ÀÌ -------------- */
 .placeinfo_wrap {
 	position:absolute;
 	bottom:28px;
@@ -88,33 +112,123 @@
 	margin-top:0;
 }
 
-/* ------------- Ä«Å×°í¸® ¹öÆ° -------------- */
+/* ------------- Ä«Å×°í¸® ¼±ÅÃ ¹öÆ° -------------- */
 #category {
-	border-radius: 5px;
-	border:1px solid #909090;
-	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
-	background: #fff;
-	overflow: hidden;
-	z-index: 2;
-}
-
-#pharmBtnImg, #storeBtnImg {
-	width: 65px;
-	margin-left: 17px;
+	display: inline-block;
+	position: absolute;
+	height: 580px;
 }
 
 .ctgBtn {
-	width: 200px;
-    height: 83px;
-    background: #ffffff;
-    border-radius: 5px;
-    box-shadow: rgb(0 0 0 / 15%) 0px 2px 8px;
     display: flex;
+    justify-content: center;
     align-items: center;
-    margin: 13px;
+    margin: 20px 0;
 }
 
-.ctgBtn h3 {
-    margin-left: 20px;
-    font-size: 20px;
+button.pharmBtn {
+    border: 0;
+    padding: 0;
+    border-radius: 15px;
+    background-color: hsl(248, 39%, 39.2%);
+    cursor: pointer;
+    outline-offset: 4px;
+    position: relative;
+    margin: 85px 0 20px 0;
+}
+button.pharmBtn:hover .front {
+    transform: translateY(-10px);
+    transition: transform 0.25s cubic-bezier(.3, .7, .4, 1.5);
+}
+button.pharmBtn:active .front {
+    transform: translateY(-2px);
+    transition: transform 0.2s;
+}
+button.pharmBtn:focus:not(:focus-visible) {
+    outline: none;
+}
+button.pharmBtn .front {
+    min-width: 168px;
+    height: 162px;
+    display: block;
+    border-radius: 15px;
+    line-height: 162px;
+    font-size: 1.625rem;
+    color: rgb(255, 255, 255);
+    background-color: hsl(127deg 45% 57%);
+    transform: translateY(-8px);
+    transition: transform 0.4s cubic-bezier(.3, .7, .4, 1);
+}
+button.pharmBtn .shadow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    background: hsl(0deg 0% 0% / 0.25);
+    transform: translateY(2px);
+    filter: blur(4px);
+}
+button.pharmBtn .edge {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    background: hsl(127deg 33% 49%);
+}
+
+button.storeBtn {
+    border: 0;
+    padding: 0;
+    border-radius: 15px;
+    background-color: hsl(248, 39%, 39.2%);
+    cursor: pointer;
+    outline-offset: 4px;
+    position: relative;
+}
+button.storeBtn:hover .front {
+    transform: translateY(-10px);
+    transition: transform 0.25s cubic-bezier(.3, .7, .4, 1.5);
+}
+button.storeBtn:active .front {
+    transform: translateY(-2px);
+    transition: transform 0.2s;
+}
+button.storeBtn:focus:not(:focus-visible) {
+    outline: none;
+}
+button.storeBtn .front {
+    min-width: 168px;
+    height: 162px;
+    display: block;
+    border-radius: 15px;
+    line-height: 162px;
+    font-size: 1.625rem;
+    color: rgb(255, 255, 255);
+    background-color: hsl(220deg 80% 63%);
+    transform: translateY(-8px);
+    transition: transform 0.4s cubic-bezier(.3, .7, .4, 1);
+}
+button.storeBtn .shadow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    background: hsl(0deg 0% 0% / 0.25);
+    transform: translateY(2px);
+    filter: blur(4px);
+}
+button.storeBtn .edge {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    background-color: hsl(220deg 48% 51%);
 }

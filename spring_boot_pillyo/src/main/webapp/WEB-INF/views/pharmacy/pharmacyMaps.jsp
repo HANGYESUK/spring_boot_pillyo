@@ -19,19 +19,32 @@
 			<div id="navMargin"></div>
 			
 			<section id="section">
+				<div id="mapHeader">
+					<h1>내 주변 약국 찾기</h1>
+					<h5><a href="https://www.pharm114.or.kr/common_files/sub1_page1.asp">> 휴일지킴이 약국 검색 바로가기</a></h5>
+				</div>
 				<div class="map_wrap">
 				    <div id="map" style="width:100%;height:100%;position:relative;overflow:hidden;"></div>
-				    <div id="category"> 
-				        <div id="PM9" class="ctgBtn" data-order="0">
-			            	<img id="pharmBtnImg" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fd8tiI8%2FbtrveKTW48o%2FhqxQYitUxsLXEL86byZpZ0%2Fimg.png" alt="약국" />
-				            <h3>약국</h3>
-				        </div>
-				        <div id="CS2" class="ctgBtn" data-order="1"> 
-			            	<img id="storeBtnImg" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FsWwKT%2Fbtru9Q8UsCU%2FDf4pdLj5Xt5cknb2PkBY10%2Fimg.png" alt="편의점" />
-				            <h3>편의점</h3>
-				        </div>      
-				    </div>
 				</div>
+				<div id="category"> 
+			        <div id="PM9" class="ctgBtn" data-order="0">
+		            	<!-- <img id="pharmBtnImg" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fd8tiI8%2FbtrveKTW48o%2FhqxQYitUxsLXEL86byZpZ0%2Fimg.png" alt="약국" /> -->
+			            <button class="pharmBtn" type="button">
+					        <span class="shadow"></span>
+					        <span class="edge"></span>
+					        <span class="front">약국</span>
+					    </button>
+			        </div>
+			        <div id="CS2" class="ctgBtn" data-order="1"> 
+		            	<!-- <img id="storeBtnImg" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FsWwKT%2Fbtru9Q8UsCU%2FDf4pdLj5Xt5cknb2PkBY10%2Fimg.png" alt="편의점" /> -->
+			            <button class="storeBtn" type="button">
+					        <span class="shadow"></span>
+					        <span class="edge"></span>
+					        <span class="front">편의점</span>
+					    </button>
+		        	</div> 
+			    </div>
+				
 				<input type="hidden" id="latitude" name="latitude"/>
 				<input type="hidden" id="longitude" name="longitude"/>
 			</section>

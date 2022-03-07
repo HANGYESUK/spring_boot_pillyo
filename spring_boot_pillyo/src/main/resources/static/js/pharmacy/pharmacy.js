@@ -1,7 +1,7 @@
 /**
  *  pharmacy.js
  */
- 
+ 		
 window.onload = function() {
 	
 		if (navigator.geolocation) { // GPS를 지원하면
@@ -55,12 +55,12 @@ window.onload = function() {
 			
 			// ---------------------- 컨트롤 ------------------------
 			// 일반 지도 / 스카이뷰 지도 타입 전환
-			var mapTypeControl = new kakao.maps.MapTypeControl();
+/*			var mapTypeControl = new kakao.maps.MapTypeControl();
 			map.addControl(mapTypeControl, kakao.maps.ControlPosition.TOPRIGHT);
 		
 			// 줌 컨트롤 생성
 			var zoomControl = new kakao.maps.ZoomControl();
-			map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
+			map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);*/
 			
 			
 			
