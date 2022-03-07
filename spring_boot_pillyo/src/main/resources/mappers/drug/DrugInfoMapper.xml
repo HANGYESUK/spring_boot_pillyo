@@ -67,7 +67,7 @@
 		
 		<!-- 관리자 메뉴- 전체 조회 -->
 		<select id="listAllDrugView" resultType="com.pillyo.pill.model.DrugInfoVO">
-			SELECT * FROM druginfo ORDER BY drugInfoNo limit 20
+			SELECT * FROM druginfo ORDER BY drugInfoNo 
 		</select>
 		
   </mapper>
