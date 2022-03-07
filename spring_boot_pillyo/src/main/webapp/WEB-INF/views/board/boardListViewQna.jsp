@@ -100,12 +100,13 @@ box-shadow: 0px 1px 4px #0d3bb1;   /*  height: 700px; */
 	</div>
 		<table class="table table-striped">
 			<thead>
-				<tr>
+			
+				<!-- <tr>
 					<th style="width:90px;">분류</th>
 					<th style="width:470px;">제목</th>
-					<!-- <th style="background-color: #eeeeee; text-align: center; width:100px;">작성자</th> -->
+					<th style="background-color: #eeeeee; text-align: center; width:100px;">작성자</th>
 					<th style="width:100px;">작성일</th>
- 				</tr>
+ 				</tr> -->
 			</thead>
 			<tbody>
 			<c:forEach items="${boardListQna}" var="board">

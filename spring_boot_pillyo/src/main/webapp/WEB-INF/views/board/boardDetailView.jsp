@@ -36,7 +36,7 @@
 		    height: 450px;
     width: 600px;
     border-color: #cfe2f6;
-    background: #cfe2f6;
+    background: #f4faff;
     color: #3f63b5;
     font-size: 16px;
     border: none;
@@ -48,13 +48,22 @@
 		}
 		
 	.commentText {
-	    height: 85px;
-	    width: 500px;
-	    float: right;
+	border-color: #5978bf;
+    border-radius: 2px;
+	      height: 45px;
+    width: 271px;
+    float: left;
+    /* border: none; */
+    resize: none;
+    outline: none;
+    color: #3f63b5;
+    font-size: 16px;
 	}
 	
 		#button2{
-	    background: #f2f9fb;
+		    margin-top: -7px;
+		    border: 0;
+	    background: white;
     color: #3f63b5;
     border-color: #f2f9fb;
     height: 38px;
@@ -62,11 +71,41 @@
     border-radius: 10px;
     font-size: 15px;
     
-    float: right;
+        float: left;
     margin-right: 127px;
+}
+
+#button2:hover{
+	font-size: 18px;
+	font-weight:600;
+}
+
+#commentAllForm{
+	    padding-top: 12px;
+	    float: right;
     
+    margin-right:-152px;
+}    
+		.commentName{
+		font-size: 23px;
+    color: #3f63b5;
+    font-weight: 400;
+    height: 10px;
+    padding-left: 33px;
+    padding-top: 15px;}
 		
-		
+		td{
+		    color: #5d5d5d;
+    height: 33px;
+    font-size: 18px;
+		}
+		hr{
+		    border: 0;
+    height: 1px;
+    box-shadow: 1px 7px 0px 0px #bababa;
+    border-bottom: 10px;
+    margin-bottom: 17px;
+		}
 	</style>
 	
 	
@@ -86,7 +125,7 @@
 			<table class="table table-stripedDetail">
 				<thead>
 					<tr>
-						<th width=600px; colspan="3" style="background-color: #f2f9fb; text-align: center; font-size:25px;">알약요
+						<th width=600px; colspan="3" style="text-align: center; font-size:25px;">알약요
 						<c:if test="${board.boardCtgNo eq '0'}">소식</c:if>
 						<c:if test="${board.boardCtgNo eq '1'}">카드뉴스</c:if>
 						<c:if test="${board.boardCtgNo eq '2'}">주문/결제</c:if>
@@ -127,21 +166,29 @@
 					</tr>
 					<tr>
 						<!-- <td>내용</td> -->
-						<td colspan="3" style="background:#cfe3f6; height: 500px; text-align:center;"><textarea readonly>${board.boardContent}</textarea></td>
+						<td colspan="3" style="    background: #ffffff; height: 500px; text-align:center;"><textarea readonly>${board.boardContent}</textarea></td>
 					</tr>
 				
 				</tbody>
 				
 			</table>
-				
+			<a href="javascript:deleteCheck();"><button>게시글 삭제</button></a>
+			<a href="<c:url value='/updateBoardForm/${board.boardNo}'/>"><button  >게시글 수정</button></a>
+			<a href="<c:url value='/listAllBoard'/>"><button>목록</button></a><br><br><br><br>
+			<a class="commentName">댓글</a><hr>
 			
-<form id= "/commentForm" name="/commentForm" enctype="multipart/form-data" method="post" action="<c:url value='/insertboard2'/>"> <!--  writedo로 넘겨주고 post방식으로 넘겨주겠다 -->
-		<textarea class="commentText" placeholder="댓글 내용" name="commentCotent">${comment.commentContent}</textarea>
-			<input type="submit" id="button2" class="btn btn-primary pull-right" value="댓글쓰기">
+			<div id="commentAllForm">
+			
+<form id= "/commentForm" name="/commentForm" enctype="multipart/form-data" method="post" action="<c:url value='/insertcomment'/>"> <!--  writedo로 넘겨주고 post방식으로 넘겨주겠다 -->
+		
+		<textarea class="commentText" placeholder="댓글 달기.." name="commentCotent">${comment.commentContent}</textarea>
+			<input type="submit" id="button2" class="btn btn-primary pull-right" value="게시">
 			<input type="hidden" name="userId" value="${sessionScope.sid}">  <!-- 세션 아이디 받아오기 -->
-			<input type="hidden" name="commentWriteDate" value="<%= sf.format(nowDate) %>"> 
+			<input type="hidden" name="commentWriteDate" value="<%= sf.format(nowDate) %>">
+			<input type="hidden" name="boardNo" value="${board.boardNo}">
 <!-- 		<button type="submit" button style="float:right;">작성</button>
  -->				</form>
+ </div>
 		
 			
 			
@@ -149,26 +196,34 @@
 			
 			<br><br><br><br><br><br><br>
 			
-			<table class="table table-striped2">
+			<table class="table table-striped2" style="margin-top: -128px;        width: 530px;
+    text-align: center;">
 						<thead>
-							<tr>
-								<th>작성자</th>
-								<!-- <th style="width:90px;">제목</th> -->	
-								<!-- <th style="background-color: #eeeeee; text-align: center; width:100px;">작성자</th> -->
-								<th>작성일</th>
-							</tr>
+						<!-- <tr>
+						<th>내용	</th>
+							<th>작성자</th>
+							<th style="width:90px;">제목</th>	
+							<th style="background-color: #eeeeee; text-align: center; width:100px;">작성자</th>
+							<th>작성일</th>
+							
+						</tr> -->
 							<!-- <tr>
 								<th style="width:180px;">내용	</th>
 							</tr> -->
 						</thead>
 						<tbody>
 				        	<c:forEach items="${commentList }" var="comment">
+				        		
 				        		<tr>
+				        		<td>${comment.userId}</td>
+								   	<td>${comment.commentContent}</td>
+				        		
 						   			<%-- <td>댓글 번호 ${comment.commentNo}</td> --%>
-						   			<td>${comment.userId}</td>
+						   			
 						   			<%-- <td>${comment.commentTitle}</td> --%>
 						   			
-						   			<td>${comment.commentWriteDate}</td>
+						   			<td style="font-size:10px; font-size: 13px;
+    padding-top: 5px;">${comment.commentWriteDate}</td>
 						   		</tr>	
 						   	<%-- 	<tr>
 						   			<td>${comment.commentContent}</td>
@@ -178,37 +233,40 @@
 						
 						<thead>
 							
-							<tr>
+							<!-- <tr>
 								<th colspan="2"">내용	</th>
-							</tr>
+							</tr> -->
 						</thead>
 						<tbody>
-				        	<c:forEach items="${commentList }" var="comment">
-				        	<%-- 	<tr class="drugBox">
+				        	<%-- <c:forEach items="${commentList }" var="comment">
+				        		<tr class="drugBox">
 						   			<td>댓글 번호 ${comment.commentNo}</td>
 						   			<td>${comment.userId}</td>
 						   			<td>${comment.commentTitle}</td>
 						   			
 						   			<td>${comment.commentWriteDate}</td>
-						   		</tr> --%>	
+						   		</tr>	
 						   		<tr>
 						   			<td>${comment.commentContent}</td>
 						   		</tr>
-							</c:forEach>
+							</c:forEach> --%>
 							
 								<tr>
-						<td style="float: left;">
+					<%-- 	<td style="float: left;">
 							<a href="<c:url value='/listAllBoard'/>"><button>목록</button></a></td>
 			
 			<!-- 해당 글의 작성자가 본인이라면 수정과 삭제가 가능하도록 코드 추가 -->
 			<td>
 			<a href="<c:url value='/updateBoardForm/${board.boardNo}'/>"><button  >게시글 수정</button></a>
-			<a href="javascript:deleteCheck();"><button>게시글 삭제</button></a>
+			<a href="javascript:deleteCheck();"><button>게시글 삭제</button></a><br><br><br><br>
 			
-						</td>
+						</td> --%>
 					</tr>
 						</tbody>
 			</table>	
+			
+			
+			
 			<br>
 			
 			

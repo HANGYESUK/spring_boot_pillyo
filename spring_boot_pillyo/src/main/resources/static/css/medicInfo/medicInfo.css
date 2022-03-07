@@ -15,11 +15,16 @@ ul li{
 }
 
 #dropdownInfoBox {
-    background: #f2f2f2;
+    background: #ffffff;
     font-size: 12px;
     padding: 11px 18px;
     border-radius: 10px;
+        box-shadow: 0px 0px 6px #dadada;
+        color: #6982b9;
 }
+
+    
+
 
 #dropdownInfoBox h1 {
 	display: inline;
@@ -46,10 +51,11 @@ ul li{
 .infoBox h2 {
 	font-size: 18px;
     margin: 0 12px;
+    color: #646464;
 }
 
 .info {
-	background: #c3ccd9;
+	background: #f6faff;
     border-radius: 15px;
     padding: 10px 20px;
 }
@@ -67,7 +73,7 @@ ul li{
 }
 
 #typeOfDrugBox > ul > li > ul {
-	    background: #aab6c7;
+	        background: #edf5ff;
     border-radius: 10px;
     padding: 18px;
 }
@@ -86,7 +92,7 @@ ul li{
 }
 
 #howToTakeMBox > ul > li:nth-child(5) > ul li {
-	background: #aab6c7;
+	background: #edf5ff;
     padding: 3px 13px;
     border-radius: 10px;
 }
@@ -100,15 +106,15 @@ ul li{
 }
 
 #howToTakeMBox > ul > li:nth-child(5) > ul > li > ul {
-	background: #aab6c7;
+	background: #edf5ff;
 }
 
 #howToTakeMBox > ul > li:nth-child(5) > ul > li > ul:nth-child(1) > li {
-	background: #8c9cb4;
+	background: #e2eeff;
 }
 
 #howToTakeMBox > ul > li:nth-child(5) > ul > li > ul > li:nth-child(1) * {
-	background: #8c9cb4;
+	background: #e2eeff;
 }
 
 #howToTakeMBox > ul > li:nth-child(5) > ul > li > ul > li {
@@ -116,7 +122,7 @@ ul li{
 }
 
 #howToTakeMBox > ul > li:nth-child(5) > ul > li > ul > li * {
-	background: #8c9cb4;
+	background: #e2eeff;
 }
 
 #howToTakeMBox > ul > li:nth-child(5) > ul > li > ul > li span {
@@ -130,4 +136,13 @@ ul li{
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     margin-bottom: 6px
+}
+
+ 	hr{
+/*    	background-color: blue;
+ */   	border:0;
+   	height: 1px;
+    /* background-color: #e6e6e6; */
+    box-shadow: 1px 7px 0px 0px #bababa;
+        margin-bottom: 20px;
 }

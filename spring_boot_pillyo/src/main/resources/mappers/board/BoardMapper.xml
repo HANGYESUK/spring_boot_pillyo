@@ -8,8 +8,8 @@
   	<insert id="insertboard" parameterType="com.pillyo.pill.model.BoardVO">
 		insert into board(
 							boardNo,
-							boardCtgNo,
 							userId,
+							boardCtgNo,
 							boardTitle,
 							boardContent,
 							boardWriteDate,
@@ -17,8 +17,8 @@
 							
   			) values(
 							#{boardNo},
-							#{boardCtgNo},
 							#{userId},
+							#{boardCtgNo},
 							#{boardTitle},
 							#{boardContent},
 							#{boardWriteDate},

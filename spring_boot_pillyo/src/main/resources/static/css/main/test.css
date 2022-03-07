@@ -27,38 +27,38 @@ i {
 }
 
 h1 {
-    color: white;
+    color: black;
     z-index: 5;
 }
 
 .container1 {
     width: 100%;
     height: 100vh;
-    background: #acb6e5;  /* fallback for old browsers */
-	background: -webkit-linear-gradient(to right, #86fde8, #acb6e5);  /* Chrome 10-25, Safari 5.1-6 */
-	background: linear-gradient(to right, #acb6e5, #86bbfd); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: white;  /* fallback for old browsers */
+	/* background: -webkit-linear-gradient(to right, #86fde8, #acb6e5);  Chrome 10-25, Safari 5.1-6
+	background: linear-gradient(to right, #acb6e5, #86bbfd); W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .container2 {
     width: 100%;
     height: 100vh;
-    background: #acb6e5;  /* fallback for old browsers */
-	background: -webkit-linear-gradient(to right, #86fde8, #acb6e5);  /* Chrome 10-25, Safari 5.1-6 */
-	background: linear-gradient(to right, #acaee5, #86bbfd); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    /* background: #acb6e5;  fallback for old browsers
+	background: -webkit-linear-gradient(to right, #86fde8, #acb6e5);  Chrome 10-25, Safari 5.1-6
+	background: linear-gradient(to right, #acaee5, #86bbfd); W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .container3 {
     width: 100%;
     height: 100vh;
-    background: #acb6e5;  /* fallback for old browsers */
-	background: -webkit-linear-gradient(to right, #86fde8, #acb6e5);  /* Chrome 10-25, Safari 5.1-6 */
-	background: linear-gradient(to right, #b7ace5, #86c1fd); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    /* background: #acb6e5;  fallback for old browsers
+	background: -webkit-linear-gradient(to right, #86fde8, #acb6e5);  Chrome 10-25, Safari 5.1-6
+	background: linear-gradient(to right, #b7ace5, #86c1fd); W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .content-Box {
-	width: 70%;
+    width: 100%;
 	height: 100%;
-	font-size: 5px;
+	font-size: 3.3px;
 }
 
 .content-Box3 {
@@ -71,19 +71,19 @@ h1 {
 .content-Title {
 	margin-top: 100px;
 	font-size: 100px;
-    color: white;
-    font-weight: bold;
+    color: black;
+    /* font-weight: bold; */
 }
 
 .content-Box3-Btn {
-	margin: 50px;
+	margin: 160px;
     width: 200px;
     height: 60px;
-    background: #338eff;
-    color: white;
+    background: #ffffff;
+    color: black;
     border: none;
-    font-size: 20px;
-    font-weight: bold;
+    font-size: 90px;
+    /* font-weight: bold; */
     border-radius: 15px;
     transition: all 0.3s;
     cursor: pointer;
@@ -91,9 +91,10 @@ h1 {
 
 .content-Box3-Btn:hover {
 	transform: scale(1.05);
+	font-size: 130px;
 }
 
-.Ellipse-1 {
+/* .Ellipse-1 {
 
     width: 612px;
     height: 612px;
@@ -125,7 +126,7 @@ h1 {
     background: rgb(138,209,146);
     border-radius: 200px;
     background: linear-gradient(61deg, rgba(138,209,146,0.10562499999999997) 0%, rgba(89,255,127,1) 100%);
-}
+} */
 
 .Union {
     min-width: 300px;
@@ -155,6 +156,7 @@ h1 {
 	color: #444;
     font-size: 25px;
     margin: 15px;
+        display: none;
 }
 
 .fp-tooltip {

@@ -6,6 +6,14 @@ public class CommentVO {
 	private String commentTitle;
 	private String commentContent;
 	private String commentWriteDate;
+	private int boardNo;
+	
+	public int getBoardNo() {
+		return boardNo;
+	}
+	public void setBoardNo(int boardNo) {
+		this.boardNo = boardNo;
+	}
 	public int getCommentNo() {
 		return commentNo;
 	}

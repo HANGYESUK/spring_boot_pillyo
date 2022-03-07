@@ -46,7 +46,7 @@
 				anchors:['first', 'second', 'third', 'fourth'],
 				navigation: true,
 				navigationPosition: 'right',
-				navigationTooltips: ['메인', '인사', '서비스 소개', '시작하기'],
+				navigationTooltips: ['메인', '인사', '서비스 소개'],
 				// sectionsColor : ['#fffa65', '#ff9f1a', '#7d5fff', '#17c0eb'],
 				showActiveTooltip: true,
 				sectionSelector: '.section',
@@ -56,7 +56,68 @@
 			});
 
 		</script>
-
+	
+	<style>
+		.back{
+	background-image: url(image/pillyo12.png);
+    width: 1920px;
+    height: 1200px;
+    background-repeat: no-repeat;
+    background-size: cover;
+			}
+		.back :hover{
+			
+		}
+		.back > img{
+			width:100px;
+		}
+		h2{
+			font-size: 53px;
+    height: 105px;
+    padding-top: 508px;
+    font-weight: 100;
+		}
+		
+		.Union-Text2{
+		    color: #444;
+    padding-top: 181px;
+    margin-top: -492px;
+    color: black;
+    border-top: 13px;
+    text-align: left;
+    font-size: 50px;
+    margin-left: -237px;
+		}
+		.Union-Text2 > a{
+		font-size: 21px;
+    opacity: 55%;
+		}
+		.Union-Text3{
+		color: #444;
+	       padding-top: 280px;
+    color: black;
+    border-top: 13px;
+    text-align: right;
+    font-size: 50px;
+    margin-right: -220px;
+    margin-top: -492px;
+		}
+		.Union-Text3 > a{
+		font-size: 21px;
+    opacity: 55%;
+		}
+		
+		.Union-Text4{
+		color: #444;
+		     padding-top: 900px;
+    color: black;
+    border-top: 13px;
+    text-align: right;
+    font-size: 50px;
+    margin-right: -330px;
+    margin-top: -435px;
+		}
+	</style>
 	</head>
 <body>
 
@@ -67,7 +128,14 @@
 			<div class="Ellipse-1"></div>
 			<div class="Ellipse-2"></div>
 			<div class="Ellipse-3"></div>
-			<h1 style="position: absolute">Pill-Yo</h1>
+	 		 <h1 style="position: absolute; ">Pill-Yo</h1>
+	 		 
+ 		<!-- 	<div style="background-image:url(image/pillyo3.jpg);"></div> -->
+ 		 
+			<div class="back">
+			<h2>건강의 모든 것<br>
+			알약요에서 쉽고 간편하게</h2>
+			</div> 
 		</div>
 	</div>
 	<div class="section" id="section1">
@@ -98,15 +166,135 @@
 			</div>
 		</div>
 	</div>
-	<div class="section" id="section3">
-		<div class="container2 row">
-			<div class="content-Box3">
-				<h2 class="content-Title">지금 바로 시작하세요</h2>
-				<a href="<c:url value = '/loginForm'/>"><button class="content-Box3-Btn">시작하기</button></a>
+	<div class="section low" id="section3">
+		<div class="container3 row"style="width: 100%; margin-left: -90px;">
+			<div class="content-Box row">
+				<div class="Union" style="    width: 700px;
+    margin-top: 130px;
+    height: 640px;">
+				<p class="Union-Text2">
+					건강관리,<br>
+					가족들의 건강까지<br>
+					간편하게
+										<br><a>가족들의 건강 이젠 한번에 관리하세요.</a>
+					
+					</p>
+					
+				</div>
+				
+				<div class="Union"  
+			
+	style="min-width: 200px;
+    width: 400px;
+    height: 400px;
+    margin-top: 360px;
+    background-image: url(image/pillyo6.png);
+    background-size: 400px 400px;
+        
+        ">
+					
+				</div>
 			</div>
 		</div>
 	</div>
-	<div class="section" id="section4">
+	
+	<div class="section low" id="section4" style="justify-content: right;">
+		<div class="container3 row"style="    width: 100%;
+    display: flex;
+    margin-left: -90px;
+    align-items: flex-end;
+    justify-content: flex-end;">
+			<div class="content-Box row" style="justify-content: right;">
+				<div class="Union"  
+			
+	style="min-width: 200px;
+    width: 400px;
+    height: 400px;
+        margin-top: 333px;
+        background-image:url(image/pillyo7.png);
+        background-size: 400px 400px;
+        
+        ">
+					
+				</div>
+				<div class="Union" style="    /* float: right; */
+    width: 700px;
+    /* margin-left: 20px; */
+    margin-top: 130px;
+    height: 650px;
+    margin-right: 90px;
+    ">
+				<p class="Union-Text3">
+					상비약 관리,<br>
+					우리집에 있는 상비약<br>
+					유통기한, 위치메모<br>
+					꼼꼼하게
+					
+					<br><a>집에 있는 상비약 <br>쉽고 간편하게 등록하고 관리할 수 있어요.</a>
+					
+					
+					</p>
+				</div>
+				
+				
+			</div>
+		</div>
+	</div>
+	
+	
+	
+	<div class="section low" id="section4" style="justify-content: right;">
+		<div class="container3 row"style="    width: 100%;
+    display: flex;
+    margin-left: -90px;
+    align-items: flex-end;
+    justify-content: flex-end;">
+			<div class="content-Box row" style="justify-content: center;">
+				<<!-- div class="Union"  
+			
+	style="min-width: 200px;
+    width: 300px;
+    height: 300px;
+        margin-top: 333px;
+        background-image:url(image/pillyo1.jpg);
+        background-size: 300px 300px;
+        
+        ">
+					
+				</div> -->
+				<div class="Union" style="    width: 900px;
+    margin-top: 90px;
+    height: 800px;">
+				<p class="Union-Text4">
+					복용관리,<br>
+					하루 복용하는 약 관리<br>
+					복용 습관 만들기까지<br>
+					매일매일
+					
+					
+					</p>
+				</div>
+				
+				
+			</div>
+		</div>
+	</div>		
+	
+	
+		
+	<div class="section" id="section5">
+		<div class="container2 row">
+			<div class="content-Box3">
+				<h2 class="content-Title" style="text-weight:100;     margin-top: -500px;">건강관리의 첫걸음,<br>지금 바로 시작하세요</h2>
+				<br><a href="<c:url value = '/loginForm'/>"><button class="content-Box3-Btn"><!-- ↪ -->
+<!-- &#10553; -->
+&#10551;
+</button></a>
+			</div>
+		</div>
+	</div>
+	
+	<div class="section" id="section6">
 					<section>
 				<a href="<c:url value = '/loginForm'/>">로그인</a>
 				<a href="<c:url value = '/join'/>">회원가입</a>
@@ -141,7 +329,9 @@
 				<a href="<c:url value = '/dashboardtest'/>">대쉬보드 연습중...2</a>
 
 				<a href="<c:url value = '/boardList'/>">페이징 연습중</a>
+				
 				<br><br><br><br>
+				<a href="<c:url value = '/listAllComment'/>">댓글 연습중</a>
 				
 				<br><br>
 				<a href="<c:url value = '/pharmacy'/>">약국지도</a><br>
@@ -166,7 +356,7 @@
 
 	let text = document.getElementsByClassName('text')[0];
 	
-	let textArr = ['안녕하세요', '당신의 건강관리를 위해 꼭 Pill-yo한 서비스, Pill-Yo 입니다!']
+	let textArr = ['내 건강관리, 가족의 건강관리', '당신의 건강관리를 위해 꼭 필요한 서비스, Pill-Yo<br>필요와 함께라면<br> 당신의 일상이 건강해질 거예요.']
 	
 	let typewriter = new Typewriter(text, {
 	    loop: true
