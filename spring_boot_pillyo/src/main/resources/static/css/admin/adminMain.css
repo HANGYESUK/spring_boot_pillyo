@@ -15,7 +15,10 @@ a{
 	height:100%;
 	text-align: center;
 }
-
+.tableBox{
+	display: flex;
+	flex-direction: column;
+}
 #adminItemMenu,
 #adminUserMenu{
 	padding: 0px;
