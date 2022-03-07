@@ -52,4 +52,8 @@ public class UserService implements IUserService {
 	public ArrayList<UserVO> listAllUser(){
 		return dao.listAllUser();
 	}
+	@Override
+	public int userCount() {
+		return dao.userCount();
+	}
 }

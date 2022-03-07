@@ -22,4 +22,5 @@ public interface IUserDAO {
 	
 	//관리자메뉴
 	ArrayList<UserVO> listAllUser();
+	int userCount();
 }

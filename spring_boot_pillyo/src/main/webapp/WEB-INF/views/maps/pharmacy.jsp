@@ -25,7 +25,7 @@
 				<div id="map" style="width:100%;height:400px;"></div>
 				 
 				<script>
-				// 마커를 클릭하면 장소명을 표출할 인포윈도우 입니다
+				/* // 마커를 클릭하면 장소명을 표출할 인포윈도우 입니다
 				var infowindow = new kakao.maps.InfoWindow({zIndex:1});
 
 				var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
@@ -89,7 +89,7 @@
 				// 장소 검색 객체를 생성합니다
 				var ps = new kakao.maps.services.Places(map); 
 
-				// 카테고리로 은행을 검색합니다
+				// 카테고리로 검색합니다
 				ps.categorySearch('PM9', placesSearchCB, {useMapBounds:true}); 
 				 
 				
@@ -116,9 +116,9 @@
 				        infowindow.setContent('<div style="padding:5px;font-size:12px;">' + place.place_name + '</div>');
 				        infowindow.open(map, marker);
 				    });
-				}
+				} */
 		
-				/* 	//네이버 지도 불러오기
+				 	//네이버 지도 불러오기
 					var map = new naver.maps.Map('map', {
 					    center: new naver.maps.LatLng(37.5666805, 126.9784147),
 					    zoom: 10,
@@ -239,7 +239,7 @@
 					    },[arr, nMap]);
 					    
 					});
-					    */
+					    
 				</script>
 
 			</section>

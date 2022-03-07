@@ -56,4 +56,9 @@
   		<select id="famDetailView" parameterType="int" resultType="com.pillyo.pill.model.FamilyVO">
   			SELECT * FROM family WHERE famNo=#{famNo}  		
   		</select>
+  		
+  		<!-- 관리자메뉴-회원 탈퇴시 가족정보 삭제 -->
+  		<delete id="deleteUserFam" parameterType="String">
+  			DELETE FROM family WHERE userId=#{userId}
+  		</delete>
   </mapper>

@@ -42,5 +42,8 @@ public class FamilyService implements IFamilyService {
 	public FamilyVO famDetailView(int famNo) {
 		return dao.famDetailView(famNo);
 	}
-
+	@Override
+	public void deleteUserFam(String userId) {
+		dao.deleteUserFam(userId);
+	}
 }

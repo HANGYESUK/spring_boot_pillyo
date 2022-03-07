@@ -20,5 +20,8 @@ IDrugShapeDAO dao;
 	public ArrayList<DrugShapeVO> drugShapeSearch(HashMap<String, Object> map) {
 		return dao.drugShapeSearch(map);
 	}
-
+	@Override
+	public ArrayList<DrugShapeVO>listAllDrugShapeView(){
+		return dao.listAllDrugShapeView();
+	}
 }

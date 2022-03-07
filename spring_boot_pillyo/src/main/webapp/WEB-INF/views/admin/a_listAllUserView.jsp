@@ -7,6 +7,7 @@
 		<meta charset="UTF-8">
 		<title>title</title>
 		<script src="<c:url value='/js/jquery-3.6.0.min.js'/>"></script>
+		<link rel="stylesheet" href="<c:url value='/css/admin/adminTable.css'/>">
 	</head>
 	<body>
 		<div id="wrap">
@@ -17,35 +18,49 @@
 			
 			<section id="section">
 			
-				 <table border="1">
+			<div id="adminContainer">
+			<jsp:include page="/WEB-INF/views/admin/adminMainMenu.jsp" flush='true' />
+			
+				 <table class="adminTable">
+				 <thead>
 				 	<tr>
-				 		<td>아이디</td>
-				 		<td>비밀번호</td>
-				 		<td>이름</td>
-				 		<td>이메일</td>
-				 		<td>휴대폰번호</td>
-				 		<td>우편번호</td>
-				 		<td>주소</td>
-				 		<td>상세주소</td>
-				 		<td>가입일</td>
+				 		<th>아이디</th>
+				 		<!-- <th>비밀번호</th> -->
+				 		<th>이름</th>
+				 		<th>이메일</th>
+				 		<th>휴대폰번호</th>
+				 		<th width="80px">우편번호</th>
+				 		<th>주소</th>
+				 		<th>상세주소</th>
+				 		<th>가입일</th>
+				 		<th width="40px">삭제</th>
 				 	</tr>
-				 	
+				 	</thead>
 				 	<c:forEach items="${userList}" var="user">
 				 		<tr>
-				 		<td>${user.userId }</td>
-				 		<td>${user.userPw }</td>
-				 		<td>${user.userName }</td>
-				 		<td>${user.userEmail }</td>
-				 		<td>${user.userHp }</td>
-				 		<td>${user.userZipcode }</td>
-				 		<td>${user.userAddress1 }</td>
-				 		<td>${user.userAddress2 }</td>
-				 		<td>${user.joinDate }</td>
-				 	</tr>
-				 	
+				 			<td><a href="/a_updateUserForm/${user.userId }">${user.userId }</a></td>
+					 		<%-- <td>${user.userPw }</td> --%>
+					 		<td>${user.userName }</td>
+					 		<td>${user.userEmail }</td>
+					 		<td>${user.userHp }</td>
+					 		<td>${user.userZipcode }</td>
+					 		<td>${user.userAddress1 }</td>
+					 		<td>${user.userAddress2 }</td>
+					 		<td>${user.joinDate }</td>
+					 		<td><a href="javascript:deleteCheck(${user.userId });">삭제</a></td>
+				 		</tr>
 				 	</c:forEach>
 				 </table>
-
+					<script type="text/javascript">
+							function deleteCheck(no){
+								var answer = confirm("선택한 회원 정보를 삭제하시겠습니까?");
+								if(answer == true){
+									location.href="<c:url value='/a_deleteUser/"+ no + "' />";
+								}
+							}
+					</script>
+					
+				</div>
 			</section>
 	        
 			<!-- BOTTOM  -->
