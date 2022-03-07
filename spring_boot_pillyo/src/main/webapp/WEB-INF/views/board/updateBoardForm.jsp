@@ -19,7 +19,7 @@
 	margin-top : 40px;
 	}
 	#button2{
-	    background: #f2f9fb;
+	     background: white;
     color: #3f63b5;
     border-color: #f2f9fb;
     height: 38px;
@@ -30,35 +30,52 @@
     float: right;
     margin-right: 127px;
     
+       /*  background: white;
+    color: #3f63b5;
+    border-color: #f2f9fb;
+    height: 38px;
+    width: 86px;
+    border-radius: 10px;
+    font-size: 15px;
+    border-bottom-color: white;
+    margin-left: 14px;
+    float: right;
+     */
+     font-weight: 600;
+    border: 0;
 	}
 	td > textarea{
 	    color: #3f63b5;
     height: 40px;
     font-size: 20px;
-    background: #cfe3f6;
+    background: #f4faff;
     border-color: aliceblue;
 
 	}
 	.button3{
 	float:right;
+	
 	}
 	.button3:hover {
-	top:-2px;
-	border: 1px solid white;
-	background:white;
- 	box-shadow: 2px 2px 5px #0d3bb1;
+	    top: -2px;
+    border: 1px solid white;
+    background: white;
+    box-shadow: 1px 1px 2px #d3d3d3;
+    font-size: 17px;
 }
 #button2:hover{
-top:-2px;
-	border: 1px solid white;
-	background:white;
-	
- 	box-shadow: 2px 2px 5px #0d3bb1;
+    top: -2px;
+    border: 1px solid white;
+    background: white;
+    box-shadow: 1px 1px 2px #d3d3d3;
+    font-size: 17px;
 }
 
 .form-control{
 text-align:center;
 }
+
+
 </style>
 
 <body>
@@ -79,7 +96,7 @@ text-align:center;
 					<thead>
 						<tr>
 							
-							<th width=600px; colspan="3" style="background-color: #f2f9fb; text-align: center;">알약요
+							<th width=600px; colspan="3" style="">알약요
 						<c:if test="${board.boardCtgNo eq '0'}">소식</c:if>
 						<c:if test="${board.boardCtgNo eq '1'}">카드뉴스</c:if>
 						<c:if test="${board.boardCtgNo eq '2'}">주문/결제</c:if>
@@ -100,10 +117,11 @@ text-align:center;
 					</thead>
 					<tbody>
 						<tr>
-							<td><textarea rows="1" cols="50" placeholder="글 제목"  name="boardTitle" maxlength="50">${board.boardTitle}</textarea></td>
+							<td><textarea rows="1" cols="50" placeholder="글 제목"  name="boardTitle" maxlength="50" style="    resize: none;">${board.boardTitle}</textarea></td>
 						</tr>
 						<tr>
-							<td><textarea class="form-control" placeholder="글 내용" rows="10" cols="50" name="boardContent" maxlength="2048" style="height: 350px;">${board.boardContent}</textarea>
+							<td><textarea class="form-control" placeholder="글 내용" rows="10" cols="50" name="boardContent" maxlength="2048" style="height: 350px; text-align: left;     resize: none;
+">${board.boardContent}</textarea>
 							</td>
 						</tr>
 					</tbody>

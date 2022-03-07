@@ -7,7 +7,7 @@
   
 	
 	<select id="listAllComment" parameterType="Hashmap" resultType="com.pillyo.pill.model.CommentVO">
-  			select * from comment
+  			select * from comment order by commentWriteDate desc;
   			<!-- ORDER BY id DESC
             LIMIT #{pageStart}, #{perPageNum} -->
   	</select>
@@ -16,12 +16,14 @@
 		insert into comment(
 							commentNo,
 							userId,
+							boardNo,
 							commentTitle,
 							commentContent,
 							commentWriteDate							
   			) values(
 							#{commentNo},
 							#{userId},
+							#{boardNo},
 							#{commentTitle},
 							#{commentContent},
 							#{commentWriteDate}

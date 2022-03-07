@@ -10,6 +10,7 @@
 		
 	</head>
 		<style>
+		
 		.useMethod {
 	    	text-decoration: none;
  	    color: #0d3bb1;
@@ -49,10 +50,10 @@
 		
 		.BoxAll{
 			    height: 654px;
-   				       background: #dfeefb;
+   				       background: white;
 		}
 		.h3{
-		    background: #dfeefb;
+		    background: white;
 		margin-bottom: 0px;
 		}
 		h3{
@@ -91,7 +92,8 @@
 		<div id="navMargin"></div>
 		
 		<section id="section2">
-			<div style="    background: #dfeefb;
+			<div style="    		background:#ffffff;
+;
 			">
 				<div class="h3">
 					<h3>약 정보 상세 조회</h3>

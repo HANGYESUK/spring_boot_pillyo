@@ -11,16 +11,17 @@
 }
 
 .profile-Family-Icon {
-    width: 50px;
+   width: 50px;
     height: 50px;
-    border-radius: 50%;
-    border: 3px solid #e9e9e9;
+    border-radius: 63%;
+    border: 3px solid #ffffff;
     overflow: hidden;
-    background-color: #80bafe;
+    background-color: #ffffff;
     display: flex;
-    flex-direction: column;
+    margin: 3px;
+    box-shadow: 1px 1px 5px 1px lightgrey;
     justify-content: center;
-    margin: 2px;
+    color: #746f6f;
 }
 
 

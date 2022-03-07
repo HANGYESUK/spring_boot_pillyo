@@ -13,31 +13,38 @@
 			    height: 22px;
 		    }
 			.submitBtn{
-			    color: #3f63b5;
+		
 	    		border: 0.3px solid white;
 			    background:white;
 			    border-radius: 40px 40px 40px 40px;
 			    width: 60px;
 			    height: 37px;
-			    font-size: 17px;
+			    font-size: 15px;
 			    font-weight: 600;
 			    border-color: white;
-			    box-shadow: 1px 1px 3px #0d3bb1;
-			}
+			    box-shadow: 2px 2px 2px #ccd7f3;
+			    color: #919191;
+			    font-weight: 400;
+}
+			
 			.submitBtn:hover{
-				background: #white;
-				border: 3px solid #F2F9FB;
-				box-shadow: 2px 2px 5px #0d3bb1;
+				
+				box-shadow: 2px 2px 2px #bbbbbb;
 			}
 			.inputSearch::placeholder{
-				color: #3f63b5;
+			color: #84868b;
+    font-weight: 400;
 			  	opacity: 1; 
 		      	text-align: center;
 			   	font-size: 14px;
 			}
 			.profileText > a{
-			    text-decoration: none;
-			    color: white;
+			    
+    text-decoration: none;
+        color: #747474;
+    /* color: #6d8ac7; */
+    /* font-weight: bolder; */
+    font-size: 30px;
 			}
 		</style>
 	<body>
@@ -62,7 +69,7 @@
 						<!-- <h3>홍길동</h3>
 						<h4>나이 : 26</h4> -->
 						
-						<a href="/">Pill-Yo</a>
+						<a href="/" style="color:#345cb5;">Pill-Yo</a>
 					</div>
 				</div>
 				<div id="mainNavBox">
@@ -113,12 +120,12 @@
 	                
 					</div>
 		  
-					<div class="searchBar">
+					<%-- <div class="searchBar">
 						<form method="post" action="<c:url value='/drugSearch'/>">
 							<input type="text" class="inputSearch" name="keyWord" placeholder="약에 대한 정보를 얻고 싶으시면 이곳에 입력해주세요">
 							<input type="submit" class="submitBtn" value="검색">
 						</form>
-					</div>
+					</div> --%>
 				</div>
 			</div>
 		</div>

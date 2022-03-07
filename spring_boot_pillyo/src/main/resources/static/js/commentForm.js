@@ -3,7 +3,7 @@
  */
  //코멘트 등록 ajax
   //function writeBoard(commentData){
-$(document).ready(function(){	
+/*$(document).ready(function(){	
 	$('#commentForm').on('submit', function(){
 		event.preventDefault();
 		
@@ -20,7 +20,7 @@ $(document).ready(function(){
 	            {
 				document.location.reload();
 				alert("등록완료")
-				
+				window.href.location='http://';
 	            }
 	        },
 	        error:function(data, textStatus){
@@ -31,4 +31,4 @@ $(document).ready(function(){
 	        
 	    });
     });
-});
+});*/

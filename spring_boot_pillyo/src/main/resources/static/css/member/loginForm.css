@@ -5,16 +5,16 @@
     padding: 0;
     list-style: none;
     text-align: center;
-    background: #fdecec;
-    height: 700px;
-    padding-top: 30px;
+/*     background: #fdecec;
+ */    height: 700px;
+    padding-top: 100px;
         position: relative;
     top: 32px;
 }
 #title{
 	text-align: center;
 	    margin-top: 0px;
-    color: #ca6464
+    color: #6278c9;
 }
 
  #loginTopBox{
@@ -23,6 +23,7 @@
     width: 400px;
     display: inline-block;
     border-radius: 82px 82px 0px 0px;
+        box-shadow: 0px 0px 6px #dadada;
 }
 /*
 #loginBottomBox{
@@ -69,7 +70,7 @@ button:hover{
     height:30px;
 }
 .socialLoginBox > h1{
-    color: #c96262;
+    color:#6278c9;
     margin-bottom: -6px;
     }
     
@@ -80,18 +81,20 @@ button:hover{
     margin-top: 13px;
     font-size: 18px;
    /*  font-weight: bold; */
-    background: #fff3f3;
-    color: #c65b5b;
+   	color:#6278c9;
+	background: #ffffff;
     border-radius: 15px;
     border-color: #ffffff;
     overflow: hidden;
     cursor: pointer;
     transition: all 0.3s;
+    border:0;
 }
 #login_btn:hover{
-	color:#c65b5b;
-	background: #ffffff;
-}
+
+	 background: #e1f0ff;
+    color: #6278c9;
+    border-color: #fdcbcb;}
 .forgetMsg{
     display: flex;
     flex-direction: row;
@@ -100,7 +103,7 @@ button:hover{
 }
 .forgetMsg > a{
 	text-decoration: none;
-    color: #c35151;
+    color: #6278c9;
 }
 
 .socialLoginBox{
@@ -108,11 +111,12 @@ button:hover{
     flex-direction: column;
     align-items: center;
     padding:0px;
-    background: #fdcbcb;
+    background: #deefff;
     height: 300px;
     display: inline-block;
     width: 400px;
     border-radius: 0px 0px 82px 82px;
+        box-shadow: 0px 0px 6px #dadada;
 }
 
 .socialLoginBox h2{
@@ -173,8 +177,9 @@ button:hover{
     color: black;
 }
 #section2{
-background: #fdecec;
+    /* background: linear-gradient(128deg, #f3f7ff, #f2f4ff); */
     border-radius: 80px;
+    height:960px;
 }
 
 #section3{

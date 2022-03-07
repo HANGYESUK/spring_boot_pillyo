@@ -65,7 +65,8 @@
 
 	}
 	
-	#boardCtgNo    {background: #f2f9fb;
+	#boardCtgNo    {/* background: #f2f9fb; */
+	border:0;
     float: left;
     height: 30px;
     text-align: center;
@@ -99,11 +100,11 @@
 	<div class="layout">
 		<form id= "/boardForm" name="/boardForm" enctype="multipart/form-data" method="post" action="<c:url value='/insertboard'/>"> <!--  writedo로 넘겨주고 post방식으로 넘겨주겠다 -->
 		<br>
-		<table class="table table-striped" style="text-align: center; border: 1px solid #f2f9fb; width:500px;">
+		<table class="table table-striped" style="width:500px;">
 		<!-- 실행시 form 안에 데이터가 writedo로 넘어간다 -->
 		<thead>
 			<tr>
-				<th colspan="2" style="background-color: #f2f9fb; text-align: center;">공지사항 글쓰기</th>
+				<th colspan="2" style="text-align: center;">공지사항 글쓰기</th>
 			</tr>	
 		</thead>
 		<tbody>
@@ -145,11 +146,14 @@
 		</table>
 			<input type="hidden" name="userId" value="${sessionScope.sid}">  <!-- 세션 아이디 받아오기 -->
 			<input type="hidden" name="boardWriteDate" value="<%= sf.format(nowDate) %>"> 
-		<button type="submit" button style="float:right;">작성</button> <!-- submit -> 이 버튼의 역할은 데이터를 전송하는 것 -->
-				<a href="<c:url value='/boardDetailView/${boardCtgList.boardNo}'/>"><button>돌아가기</button></a>
+		
+		
 		
 		
 		</form>
+		<button type="submit" button style="float:right;">작성</button> <!-- submit -> 이 버튼의 역할은 데이터를 전송하는 것 -->
+				<%-- <a href="<c:url value='/boardDetailView/${boardCtgList.boardNo}'/>"><button>돌아가기</button></a> --%>
+				<a href="<c:url value='/'/>"><button>목록</button></a>
 		<br>
 		<form action="<c:url value='boardDetailView'/>" enctype="multipart/form-data" method="post">
 <!-- <input type="file" name="profile">

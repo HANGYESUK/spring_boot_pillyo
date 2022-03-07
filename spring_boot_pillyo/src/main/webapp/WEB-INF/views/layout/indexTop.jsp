@@ -10,7 +10,9 @@
 	</head>
 	<body>
 		<nav id="main-navigation">
-				<div class="pull-right fix low">
+			<div class="background">
+				<div class="pull-right fix low" style="    width: 100%;
+    background: white;">
 				
 				 <%--  <!-- 로그인 하지 않은 경우 보여줄 메뉴 항목  -->
 				  <c:forEach items="${famList }" var="fam">
@@ -73,6 +75,7 @@
 						</form>
 					</div>
 				</div>
+			</div>
 		</nav>
 		
 		<script>

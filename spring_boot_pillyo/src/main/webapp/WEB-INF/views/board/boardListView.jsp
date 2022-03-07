@@ -18,6 +18,11 @@
 </head>
 
 <style>
+	#section{
+	    padding-top: 1px;
+    padding-left: 115px;
+	}
+
 	input[type="radio" i] {
 	display:none;
 	
@@ -25,9 +30,9 @@
 	.boardBody {
     width: fit-content; /* 태그의 넓이를 500px로 */
 	margin:0 auto; /* 양쪽 여백을 위아래는 0 좌우는 자동으로 잡아주겠다! */
-	margin-top : 40px;
-	box-shadow: 0px 1px 4px #0d3bb1;   /*  height: 700px; */
-    border-radius: 11px;
+	/* margin-top : 40px; */
+/* 	box-shadow: 0px 1px 4px #c4c4c4;   /*  height: 700px; */
+ */    border-radius: 11px;
     
 	}
 	
@@ -43,6 +48,23 @@
 		text-align:center;
    	    margin: 10px 10px 10px 0px;
    	}
+   	
+   	.b{
+   	font-size: 30px;
+    padding-left: 14px;
+    color: #3f63b4;
+    font-weight: 500;
+   	}
+   	
+   	hr{
+/*    	background-color: blue;
+ */   	border:0;
+   	height: 1px;
+    /* background-color: #e6e6e6; */
+    box-shadow: 1px 7px 0px 0px #bababa;
+}
+   	
+   	}
 	
 </style>
 
@@ -55,7 +77,7 @@
 				<div id="navMargin"></div>
 				
 				
-				 <article>             
+				  <article>             
 		                <div class="slider-1">
 		                    <div class="slides">
 		                        <div class="active" style="background-image:url(image/slide_img_01.jpg);"></div>
@@ -64,7 +86,7 @@
 		                        <div style="background-image:url(image/slide_img_05.jpg);"></div>
 		                        <div style="background-image:url(image/slide_img_04.jpg);"></div>
 		                    </div>
-		                    <div class="page-btns">
+		                    <div class="page-btns" style="display:none;">
 		                        <div class="active" ></div>
 		                        <div></div>
 		                        <div></div>
@@ -79,23 +101,79 @@
 		                        </div>
 		                    </div>
 		                </div>
-		            </article>
+		            </article> 
+
+
+
 		
-				
+		
 		<section id="section" style="    padding-top: 1px;">
+				            <jsp:include page="/WEB-INF/views/member/myPageMenu2.jsp" flush='true' />
+		
+		
+<!-- 		<div id="sidemenu">		
+		<div>
+				<label for="boardNews">
+			<div class="ctgMenuItem">
+				<input type="radio" id="boardNews" name="boardCtg" value="boardNews" checked>알약요 소식
+			</div>
+		</label>
+		<label for="boardQna">
+			<div class="ctgMenuItem">
+				<input type="radio" id="boardQna" name="boardCtg" value="boardQna">자주 묻는 질문
+			</div>
+		</label>
+		</div>
+		
+	
+	<div>
+	<label for="orderPay">
+						<div class="ctgMenuItemSub">
+							<input type="radio" id="orderPay" name="boardCtg" value="orderPay">주문/결제
+						</div>
+					</label>
+					<label for="trade">
+						<div class="ctgMenuItemSub">
+							<input type="radio" id="trade" name="boardCtg" value="trade">교환/반품
+						</div>
+					</label>
+					<label for="product">
+						<div class="ctgMenuItemSub">
+							<input type="radio" id="product" name="boardCtg" value="product">제품
+						</div>
+					</label>
+					<label for="member">
+						<div class="ctgMenuItemSub">
+							<input type="radio" id="member" name="boardCtg" value="member">회원
+						</div>
+					</label>
+	</div>
+</div>
+		 -->
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 			<div class="boardBody">
-			<br>
-				<div class="ctgMenuBox">
-					<label for="boardNews">
+			<br>		
+				<!-- <div class="ctgMenuBox">
+					<ul><label for="boardNews">
 						<div class="ctgMenuItem">
 							<input type="radio" id="boardNews" name="boardCtg" value="boardNews" checked>알약요 소식
 						</div>
-					</label>
-					<label for="boardQna">
+					</label></ul>
+					<ul><label for="boardQna">
 						<div class="ctgMenuItem">
 							<input type="radio" id="boardQna" name="boardCtg" value="boardQna">자주 묻는 질문
 						</div>
-					</label>
+					</label></ul>
 				</div>
 				<div id="ctgMenuItemtotalBox">
 					<div class="ctgMenuItemtotal">
@@ -120,18 +198,20 @@
 							</div>
 						</label>
 					</div>
-				</div>
+				</div> -->
 				<div id="boardContent">
 					<!-- 소식 -->
 					<div id="boardNewsContent">
 						<table class="table table-striped">
 							<thead>
-								<tr>
+							<a class="b">알약요 소식</a> <hr>
+								<!-- <tr>
+									공지사항 
 									<th style="width:90px;">분류</th>
 									<th style="width:470px;">제목</th>
-									<!-- <th style="background-color: #eeeeee; text-align: center; width:100px;">작성자</th> -->
+									<th style="background-color: #eeeeee; text-align: center; width:100px;">작성자</th>
 									<th style="width:100px;">작성일</th>
-								</tr>
+								</tr> -->
 							</thead>
 							<tbody>
 								<c:forEach items="${boardNewsList}" var="board">
@@ -152,18 +232,20 @@
 						   		</c:forEach>
 							</tbody>
 						</table>
+						<br><br>
 			   		</div>
 					
 					<!-- 자주묻는질문 -->
 			   		<div id="boardQnaContent">
 			   			<table class="table table-striped">
 							<thead>
-								<tr>
+							<a class="b">자주묻는질문</a> <hr>
+								<!-- <tr>
 									<th style="width:90px;">분류</th>
 									<th style="width:470px;">제목</th>
-									<!-- <th style="background-color: #eeeeee; text-align: center; width:100px;">작성자</th> -->
+									<th style="background-color: #eeeeee; text-align: center; width:100px;">작성자</th>
 									<th style="width:100px;">작성일</th>
-								</tr>
+								</tr> -->
 							</thead>
 							<tbody>
 								<c:forEach items="${boardQnaList}" var="board">
@@ -171,45 +253,46 @@
 							  			<tr class="drugBox">
 							  				<td>주문/결제</td>
 							  				<td><a href="<c:url value='/boardDetailView/${board.boardNo}'/>">${board.boardTitle }</a></td>
-											<td>${board.boardWriteDate}</td>
-										</tr>
+<%-- 											<td>${board.boardWriteDate}</td>
+ --%>										</tr>
 							  		</c:if>
 							  		<c:if test="${board.boardCtgNo eq '3'}">
 							  			<tr class="drugBox">
 							  				<td>교환/반품</td>
 							  				<td><a href="<c:url value='/boardDetailView/${board.boardNo}'/>">${board.boardTitle }</a></td>
-											<td>${board.boardWriteDate}</td>
-										</tr>
+<%-- 											<td>${board.boardWriteDate}</td>
+ --%>										</tr>
 							  		</c:if>
 							  		<c:if test="${board.boardCtgNo eq '4'}">
 							  			<tr class="drugBox">
 							  				<td>제품</td>
 							  				<td><a href="<c:url value='/boardDetailView/${board.boardNo}'/>">${board.boardTitle }</a></td>
-											<td>${board.boardWriteDate}</td>
-										</tr>
+<%-- 											<td>${board.boardWriteDate}</td>
+ --%>										</tr>
 							  		</c:if>
 							  		<c:if test="${board.boardCtgNo eq '5'}">
 							  			<tr class="drugBox">
 							  				<td>회원</td>
 							  				<td><a href="<c:url value='/boardDetailView/${board.boardNo}'/>">${board.boardTitle }</a></td>
-											<td>${board.boardWriteDate}</td>
-										</tr>
+<%-- 											<td>${board.boardWriteDate}</td>
+ --%>										</tr>
 							  		</c:if>
 						   		</c:forEach>
 					   		</tbody>
-						</table>
+						</table><br><br>
 			   		</div>
 			   		
 			   		<!-- 자문질 - 주문결제 -->
 			   		<div id="boardOrderPayContent">
 			   			<table class="table table-striped">
 							<thead>
-								<tr>
+							<a class="b">자주묻는질문</a> <hr>
+								<!-- <tr>
 									<th style="width:90px;">분류</th>
 									<th style="width:470px;">제목</th>
-									<!-- <th style="background-color: #eeeeee; text-align: center; width:100px;">작성자</th> -->
+									<th style="background-color: #eeeeee; text-align: center; width:100px;">작성자</th>
 									<th style="width:100px;">작성일</th>
-								</tr>
+								</tr> -->
 							</thead>
 							<tbody>
 								<c:forEach items="${boardOrderPayList}" var="board">
@@ -217,24 +300,25 @@
 							  			<tr class="drugBox">
 							  				<td>주문/결제</td>
 							  				<td><a href="<c:url value='/boardDetailView/${board.boardNo}'/>">${board.boardTitle }</a></td>
-											<td>${board.boardWriteDate}</td>
-										</tr>
+<%-- 											<td>${board.boardWriteDate}</td>
+ --%>										</tr>
 							  		</c:if>
 						   		</c:forEach>
 					   		</tbody>
-						</table>
+						</table><br><br>
 			   		</div>
 			   		
 			   		<!-- 자묻질 - 교환반품 -->
 			   		<div id="boardTradeContent">
 			   			<table class="table table-striped">
 							<thead>
-								<tr>
+							<a class="b">자주묻는질문</a> <hr>
+								<!-- <tr>
 									<th style="width:90px;">분류</th>
 									<th style="width:470px;">제목</th>
-									<!-- <th style="background-color: #eeeeee; text-align: center; width:100px;">작성자</th> -->
+									<th style="background-color: #eeeeee; text-align: center; width:100px;">작성자</th>
 									<th style="width:100px;">작성일</th>
-								</tr>
+								</tr> -->
 							</thead>
 							<tbody>
 								<c:forEach items="${boardTradeList}" var="board">
@@ -242,68 +326,95 @@
 							  			<tr class="drugBox">
 							  				<td>교환/반품</td>
 							  				<td><a href="<c:url value='/boardDetailView/${board.boardNo}'/>">${board.boardTitle }</a></td>
-											<td>${board.boardWriteDate}</td>
-										</tr>
+<%-- 											<td>${board.boardWriteDate}</td>
+ --%>										</tr>
 							  		</c:if>
 						   		</c:forEach>
 					   		</tbody>
-						</table>
+						</table><br><br>
 			   		</div>
 			   		
 			   		<!-- 자묻질 - 제품 -->
 			   		<div id="boardProductContent">
 			   			<table class="table table-striped">
 							<thead>
-								<tr>
+							<a class="b">자주묻는질문</a> <hr>
+								<!-- <tr>
 									<th style="width:90px;">분류</th>
 									<th style="width:470px;">제목</th>
-									<!-- <th style="background-color: #eeeeee; text-align: center; width:100px;">작성자</th> -->
+									<th style="background-color: #eeeeee; text-align: center; width:100px;">작성자</th>
 									<th style="width:100px;">작성일</th>
-								</tr>
+								</tr> -->
 							</thead>
 							<tbody>
 								<c:forEach items="${boardProductList}" var="board">
 							  		<c:if test="${board.boardCtgNo eq '4'}">
 							  			<tr class="drugBox">
-							  				<td>교환/반품</td>
+							  				<td>제품</td>
 							  				<td><a href="<c:url value='/boardDetailView/${board.boardNo}'/>">${board.boardTitle }</a></td>
-											<td>${board.boardWriteDate}</td>
-										</tr>
+<%-- 											<td>${board.boardWriteDate}</td>
+ --%>										</tr>
 							  		</c:if>
 						   		</c:forEach>
 					   		</tbody>
-						</table>
+						</table><br><br>
 			   		</div>
 			   		
 			   		<!-- 자묻질 - 회원 -->
 			   		<div id="boardMemberContent">
 			   			<table class="table table-striped">
 							<thead>
-								<tr>
+							<a class="b">자주묻는질문</a> <hr>
+								<!-- <tr>
 									<th style="width:90px;">분류</th>
 									<th style="width:470px;">제목</th>
-									<!-- <th style="background-color: #eeeeee; text-align: center; width:100px;">작성자</th> -->
+									<th style="background-color: #eeeeee; text-align: center; width:100px;">작성자</th>
 									<th style="width:100px;">작성일</th>
-								</tr>
+								</tr> -->
 							</thead>
 							<tbody>
 								<c:forEach items="${boardMemberList}" var="board">
 							  		<c:if test="${board.boardCtgNo eq '5'}">
 							  			<tr class="drugBox">
-							  				<td>교환/반품</td>
+							  				<td>회원</td>
 							  				<td><a href="<c:url value='/boardDetailView/${board.boardNo}'/>">${board.boardTitle }</a></td>
-											<td>${board.boardWriteDate}</td>
-										</tr>
+<%-- 											<td>${board.boardWriteDate}</td>
+ --%>										</tr>
 							  		</c:if>
 						   		</c:forEach>
 					   		</tbody>
-						</table>
+						</table><br><br>
 			   		</div>
 				
 					<a href="<c:url value = '/boardForm'/>"><button>글쓰기</button></a>
 					<div id="more-Btn" class="low" onclick="more()"><h3>더보기</h3><br></div>
 			</div>
 		</section>
+		<!-- <article>             
+		                <div class="slider-1">
+		                    <div class="slides">
+		                        <div class="active" style="background-image:url(image/slide_img_01.jpg);"></div>
+		                        <div style="background-image:url(image/slide_img_02.jpg);"></div>
+		                        <div style="background-image:url(image/slide_img_03.jpg);"></div>
+		                        <div style="background-image:url(image/slide_img_05.jpg);"></div>
+		                        <div style="background-image:url(image/slide_img_04.jpg);"></div>
+		                    </div>
+		                    <div class="page-btns" style="    display: none;">
+		                        <div class="active" ></div>
+		                        <div></div>
+		                        <div></div>
+		                        <div></div>
+		                    </div>
+		                    <div class="side-btns">
+		                        <div>
+		                            <span><i class="fas fa-angle-left"></i></span>
+		                        </div>
+		                        <div>
+		                            <span><i class="fas fa-angle-right"></i></span>
+		                        </div>
+		                    </div>
+		                </div>
+		            </article> -->
 		        
 		<!-- BOTTOM  -->
 		<jsp:include page="/WEB-INF/views/layout/bottom.jsp" flush='true' />

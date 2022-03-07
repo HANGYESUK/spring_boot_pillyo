@@ -26,7 +26,7 @@
 		
 	<div id="section2">
 			<!-- TOP -->
-		<jsp:include page="/WEB-INF/views/layout/top.jsp" flush='true' />
+		<%-- <jsp:include page="/WEB-INF/views/layout/top.jsp" flush='true' /> --%>
 			
 			<div id="navMargin"></div>
 			
@@ -69,8 +69,8 @@
         </section>
         </div>
 		<!-- BOTTOM  -->
-		<jsp:include page="/WEB-INF/views/layout/bottom.jsp" flush='true' />
-		
+<%-- 		<jsp:include page="/WEB-INF/views/layout/bottom.jsp" flush='true' />
+ --%>		
       </div> <!-- wrap -->
 	</body>
 </html>

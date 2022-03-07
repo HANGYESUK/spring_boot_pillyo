@@ -20,43 +20,51 @@
 	
 	<style>
 	.col2 > input {
+	    padding-left: 9px;
 		height: 17px;
     margin-top: 11px;
-    background: white;
-    border-color: white;
-    border-radius: 2px;
-    color: black;
+/*     background: white;
+ */    border-color: white;
+/*     border-radius: 2px;
+ */    color: black;
+    
+        border: 0;
+    background: whitesmoke;
+    height: 30px;
+    border-radius: 8px;
+    font-weight: 400;
     }
     
     #emailCheck, #searchZip{
-        color: #0033a7;
+        color: #242424;
     background: white;
     border-radius: 5px;
     border-color: white;
     height: 28px;
-    width: 100px;}
+    width: 130px;}
     
+    #emailCheck:hover, #searchZip:hover{
+	font-size:15px;
+}    
     #memberEdit{
-        text-align: center;
+    text-align: center;
     padding-left: 5px;
     margin-left: 301px;
     margin-top: 27px;
-   height: 34px;
+    height: 34px;
     font-size: 14.5px;
     width: 105px;
-     color: #0033a7;
+    color: #484848;
     background: white;
     border-radius: 24px;
-   
-    border: 3px solid white;
-    box-shadow: 2px 2px 5px #0d3bb1;
-    
+    border: 1px solid white;
+    box-shadow: 1px 1px 0px #c9c9c9;
     }
     
     #memberEdit:hover {
 	top:-2px;
 	border: 3px solid white;
- 	box-shadow: 4px 4px 7px #0d3bb1;
+    box-shadow: 1px 1px 4px #ababab;
 }
     #memberEdit2{
        text-align: center;
@@ -66,18 +74,19 @@
     height: 34px;
     font-size: 14.5px;
     width: 105px;
-    color: #0033a7;
+    color: #484848;
     background: white;
     border-radius: 24px;
    
-    border: 3px solid white;
-    box-shadow: 2px 2px 5px #0d3bb1;
+   border: 1px solid white;
+   box-shadow: 1px 1px 0px #c9c9c9;
     }
+    
     
     #memberEdit2:hover {
 	top:-2px;
 	border: 3px solid white;
- 	box-shadow: 4px 4px 7px #0d3bb1;
+    box-shadow: 1px 1px 4px #ababab;
 }
 
 .insert{
@@ -99,9 +108,9 @@
 			<jsp:include page="/WEB-INF/views/member/myPageMenu.jsp" flush='true' />
 		
 				<div id="updateUserBox">
-					<h2 align="center">회원 정보수정</h2>
-					<br>
-					<hr>
+					<h2 align="center" style="font-weight: 500;">회원 정보수정</h2>
+					<br><br>
+					<!-- <hr "styl> -->
 					<form name="updateUserForm" id="updateUserForm" method="post" action="<c:url value='/updateUser'/>">
 						<div class="container">
 							<div class="insert">
@@ -136,7 +145,7 @@
 										<td class="col1">이메일</td>
 										<td class="col2"><input type="text" name="userEmailId" id="userEmailId" value="${emailId}">
 											<span class="a">@</span> <input type="text" name="userEmailText" id="userEmailText" value="${email}">
-											<select id=selectEmail name="selectEmail">
+											<select id=selectEmail name="selectEmail" style="    border: 0; font-weight: 400;">
 												<option value="self" selected>직접입력</option>
 												<option value="naver.com">naver.com</option>
 												<option value="gmail.com">gmail.com</option>
@@ -149,7 +158,7 @@
 									<tr>
 										<td class="col1">이메일 수신 여부</td>
 										<td class="col2">
-											<input type="radio" name="emailRcv" value="yes" style="margin-left:10px;" checked>예&nbsp;&nbsp;
+											<input type="radio" name="emailRcv" value="yes" style="margin-left:10px; color:red;" checked>예&nbsp;&nbsp;&nbsp;&nbsp;
 											<input type="radio" name="emailRcv" value="no">아니오
 										</td>
 									</tr>
@@ -182,7 +191,7 @@
 					</form>
 				</div>
 			</section>
-		<br><br><br>
+		<br><br><br><br><br><br>
 		
 		<!-- BOTTOM  -->
 		<jsp:include page="/WEB-INF/views/layout/bottom.jsp" flush='true' />

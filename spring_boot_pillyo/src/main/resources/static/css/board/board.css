@@ -18,6 +18,9 @@
     cursor:pointer;
     transition: all 0.4s;
     font-size: 18px;
+        margin-bottom: 5px;
+    font-weight: 700;
+   
    }
    
    .ctgMenuItem a {
@@ -46,10 +49,11 @@
 }
    
 .ctgMenuItem:hover {
-    background-color: rgb(240 248 255);
-    color: rgb(0 67 255);
-        font-size: 25px;
+/*        background-color: rgb(240 248 255);
+ */    color: #636363;
+    font-size: 23px;
     font-weight: 600;
+    
 }
 
 .ctgMenuItem:hover a{
@@ -57,14 +61,13 @@
     
 }
 .ctgMenuItemSub:hover {
-    background-color: rgb(240 248 255);
-    color: rgb(0 67 255);
-        font-size: 25px;
+    color: #636363;
+    font-size: 23px;
     font-weight: 600;
 }
 
 .ctgMenuItemSub:hover a{
-    color: #133e9f;
+   color: #636363;
 }
     
     .ctgMenuBox {
@@ -95,6 +98,8 @@
 /* 	    margin-top: 15px;
 
  */
+ border:0;
+     margin-top: 20px;
  text-align: center;  width:880px;
  
  }
@@ -111,41 +116,48 @@ tr{
     font-size: 17px;
 }
 td {
-	color:#3f63b5;
-	height: 40px;
+	color:#5d5d5d;
+	height: 50px;
     font-size: 18px;
     
 }
 
 td > a {
 	text-decoration: none;
-	color:#3f63b5;
+	color:#5d5d5d;
 }
 
 button {
-	background: #f2f9fb;
+	background: white;
     color: #3f63b5;
     border-color: #f2f9fb;
     height: 38px;
-    width: 86px;
+    width: 93px;
     border-radius: 10px;
     font-size: 15px;
     border-bottom-color: white;
     margin-left: 14px;
+    float: right;
+    font-weight: 600;
+    border: 0;
     
     
 }
 button:hover {
-	top:-2px;
-	border: 1px solid white;
-	background:white;
- 	box-shadow: 2px 2px 5px #0d3bb1;
+	top: -2px;
+    border: 1px solid white;
+    background: white;
+    box-shadow: 1px 1px 2px #d3d3d3;
+    font-size: 17px;
 }
 
+
 th{
-background-color:#cfe2f6;
- text-align: center; width:90px;     font-size: 17px;
+    background-color: #ffffff;
+    text-align: center;
+     width:90px;     font-size: 17px;
    color: #3f63b5;
+   
 }
 
 #boardQnaContent, #boardMemberContent, #boardOrderPayContent, #boardTradeContent, #boardProductContent  {
@@ -154,4 +166,8 @@ background-color:#cfe2f6;
 
 .ctgMenuItemSub {
 	display:none;
+	
+    color: rgb(96 122 179);
+    font-weight: 400;
+	
 }
