@@ -2,6 +2,7 @@
 	text-align: center;
     font-size: 28px;
     padding-top: 30px;
+    color: #60605b;
 }
 
 #doseItemBox {
@@ -12,12 +13,14 @@
 
 #doseItemBox a {
 	text-decoration: none;
+	
 }
 
 .doseItem {
 	width: 300px;
-    height: 350px;
-    background: #dfeefb;
+    box-shadow: 0px 0px 19px #dadada;
+    height: 370px;
+    background: #f5f5df;
     margin: 10px 10px 23px 10px;
     border-radius: 85px;
 }
@@ -31,5 +34,15 @@
     line-height: 180px;
     font-size: 30px;
     font-weight: 900;
-    color: #6f82ae;
+   
+    color: #60605b;
+}
+
+#doseItemBigBox{
+	      background: #f9f9f4;
+    box-shadow: 0px 0px 4px #dadada;
+    border-radius: 17px;
+    margin-left: 80px;
+    margin-top: -122px;
+	
 }

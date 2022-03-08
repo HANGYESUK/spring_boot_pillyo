@@ -19,7 +19,7 @@
   /* layout of immediate children */
   display: flex;
   flex-direction: column;
-  background-color: #eeedd5; /* header »ö»ó */
+  background-color: #eeedd5; /* header ï¿½ï¿½ï¿½ï¿½ */
   font-size: 1em
   
 }
@@ -60,6 +60,8 @@
   .fc-theme-standard th {
     border: 1px solid #ddd;
     border: 1px solid var(--fc-border-color, #ddd);
+    
+   
   }
 /* for FF, which doesn't expand a 100% div within a table cell. use absolute positioning */
 /* inner-wrappers are responsible for being absolute */
@@ -232,7 +234,7 @@ When it's NOT activated, the fc-button classes won't even be in the DOM.
     background-color: #1a252f;
     background-color: var(--fc-button-active-bg-color, #1a252f);
     border-color: #cccccc;
-    background-color: #c8c8c8; /* ¹öÆ° »ö»ó */
+    background-color: #c8c8c8; /* ï¿½ï¿½Æ° ï¿½ï¿½ï¿½ï¿½ */
   }
 .fc .fc-button-primary:not(:disabled):active:focus,
   .fc .fc-button-primary:not(:disabled).fc-button-active:focus {
@@ -296,10 +298,11 @@ When it's NOT activated, the fc-button classes won't even be in the DOM.
 .fc .fc-toolbar-title {
     font-size: 22px;
     margin: 0;
+    font-weight: 500;
   }
 .fc-direction-ltr .fc-toolbar > * > :not(:first-child) {
     margin-left: .75em; /* space between */
-    background-color: #c8c8c8; /* ¹öÆ° »ö»ó */
+    background-color: #c8c8c8; /* ï¿½ï¿½Æ° ï¿½ï¿½ï¿½ï¿½ */
     border-color: #cccccc;
   }
 .fc-direction-rtl .fc-toolbar > * > :not(:first-child) {
@@ -313,9 +316,18 @@ When it's NOT activated, the fc-button classes won't even be in the DOM.
     position: relative; /* for abs-positioned elements within */
   }
 .fc .fc-scroller-liquid {
+	    background: #fffff8;
+  
     height: 100%;
   }
+ .fc .fc-scroller-liquid-absolute::-webkit-scrollbar {
+     background: #c89969;
+  display: none; }
+
+
 .fc .fc-scroller-liquid-absolute {
+    background: #ffffff;
+    border-radius: 12px 12px 12px 12px;
     position: absolute;
     top: 0;
     right: 0;
@@ -368,6 +380,7 @@ When it's NOT activated, the fc-button classes won't even be in the DOM.
       height: 1px; /* needs a height so inner div within grow. better than 0, for firefox */
     }
 .fc .fc-scrollgrid-section table {
+	    width: 990px;
       height: 1px;
         /* for most browsers, if a height isn't set on the table, can't do liquid-height within cells */
         /* serves as a min-height. harmless */
@@ -383,11 +396,15 @@ When it's NOT activated, the fc-button classes won't even be in the DOM.
 .fc .fc-scrollgrid-section-header > *,
   .fc .fc-scrollgrid-section-footer > * {
     border-bottom-width: 0;
+        background: #f3f3f3;
   }
 .fc .fc-scrollgrid-section-body table,
   .fc .fc-scrollgrid-section-footer table {
     border-bottom-style: hidden; /* head keeps its bottom border tho */
-    height: 390px;
+    width: 999px;
+    height: 550px
+px
+;
   }
 .fc {
 
@@ -418,7 +435,7 @@ When it's NOT activated, the fc-button classes won't even be in the DOM.
 .fc .fc-view-harness {
     flex-grow: 1; /* because this harness is WITHIN the .fc's flexbox */
     position: relative;
-    background-color: #f2f9fb; /* Ä¶¸°´õ ¹è°æ »ö»ó */
+    background-color: #f2f9fb; /* Ä¶ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ */
     border-radius: 15px;
   }
 .fc {
@@ -437,6 +454,8 @@ When it's NOT activated, the fc-button classes won't even be in the DOM.
 .fc .fc-col-header-cell-cushion {
     display: inline-block; /* x-browser for when sticky (when multi-tier header) */
     padding: 2px 4px;
+    font-size: 19px;
+    font-weight: 500;
   }
 .fc .fc-bg-event,
   .fc .fc-non-business,
@@ -694,7 +713,7 @@ A HORIZONTAL event
     border: 1px solid var(--fc-border-color, #ddd);
     background: #fff;
     background: var(--fc-page-bg-color, #fff);
-    /* Ä¶¸°´õ description ¹Ù±ùÂÊ ¹Ú½º */
+    /* Ä¶ï¿½ï¿½ï¿½ï¿½ description ï¿½Ù±ï¿½ï¿½ï¿½ ï¿½Ú½ï¿½ */
     border-radius: 3px;
     padding: 20px;
     background-color: #acc1d2;
@@ -703,7 +722,7 @@ A HORIZONTAL event
     /* background: rgba(208, 208, 208, 0.3);
     background: var(--fc-neutral-bg-color, rgba(208, 208, 208, 0.3)); */
     background-color: #acc1d2;
-    /* Ä¶¸°´õ description Çì´õ ¹è°æ »ö»ó */
+    /* Ä¶ï¿½ï¿½ï¿½ï¿½ description ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ */
   }
 
 
@@ -728,12 +747,16 @@ A HORIZONTAL event
     z-index: 1; /* container inner z-index's because <tr>s can't do it */
   }
 .fc .fc-daygrid-day.fc-day-today {
-      background-color: #eeedd5;
-      border: none;
+          background-color: #f5f5df;
+    height: 97px;
+    border: none;
+      
     }
 .fc .fc-daygrid-day-frame {
     position: relative;
     min-height: 93%; /* seems to work better than `height` because sets height after rows/cells naturally do it */
+  	width: 112px;
+    height: 106px;
   }
 .fc {
 
@@ -866,7 +889,7 @@ A HORIZONTAL event
 .fc .fc-more-popover .fc-popover-body {
     min-width: 220px;
     padding: 10px;
-    background-color: #acc1d2; /* Ä¶¸°´õ description ¾ÈÂÊ ¹è°æ »ö»ó */
+    background-color: #acc1d2; /* Ä¶ï¿½ï¿½ï¿½ï¿½ description ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ */
   }
 .fc-direction-ltr .fc-daygrid-event.fc-event-start,
 .fc-direction-rtl .fc-daygrid-event.fc-event-end {
@@ -875,6 +898,7 @@ A HORIZONTAL event
 .fc-direction-ltr .fc-daygrid-event.fc-event-end,
 .fc-direction-rtl .fc-daygrid-event.fc-event-start {
   margin-right: 2px;
+      width: 500px;
 }
 .fc-direction-ltr .fc-daygrid-week-number {
     left: 0;
@@ -931,7 +955,7 @@ A HORIZONTAL event
   width: 0;
   height: 0;
   border: 4px solid #3788d8;
-  border: calc(var(--fc-daygrid-event-dot-width, 8px) / 2) solid var(--fc-event-border-color, #c89969);
+  border: calc(var(--fc-daygrid-event-dot-width, 8px) / 2) solid #dddd27;
   border-radius: 4px;
   border-radius: calc(var(--fc-daygrid-event-dot-width, 8px) / 2);
 }
@@ -1418,7 +1442,7 @@ A VERTICAL event
   display: table; /* clear floating */
     }
 .fc-theme-standard .fc-list-day-cushion {
-    background-color: #d9d9d9;
+        background-color: #f9f9f4;
     /* background-color: var(--fc-neutral-bg-color, rgba(208, 208, 208, 0.3)); */
   }
 .fc-direction-ltr .fc-list-day-text,
@@ -1455,7 +1479,7 @@ A VERTICAL event
     width: 0;
     height: 0;
     border: 5px solid #3788d8;
-    border: calc(var(--fc-list-event-dot-width, 10px) / 2) solid var(--fc-event-border-color, #3788d8);
+        border: calc(var(--fc-list-event-dot-width, 10px) / 2) solid #dddd27;
     border-radius: 5px;
     border-radius: calc(var(--fc-list-event-dot-width, 10px) / 2);
   }

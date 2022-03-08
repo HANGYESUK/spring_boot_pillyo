@@ -26,23 +26,29 @@
 
 
 .health-Container {
-    width: 80%;
+       width: 50%;
+    font-size: 9px;
     background-color: white;
     border-radius: 20px;
     padding-bottom: 5%;
+    
 }
 
 .health-Container-Box {
-    width: 90%;
-    border: 2px solid rgb(46, 46, 46);
+      border: 1px solid rgb(245 245 245);
+
     border-radius: 10px;
     justify-content: space-around;
     margin: 10px;
-}
+    width: 70%;
+/*     height: 220px;
+ */}
+
 
 .health-Content-Title {
-    width: 100%;
-    height: 100%;
+   width: 100%;
+    height: 11px;
+    padding-left: 30px;
     border-radius: 10px;
     justify-content: space-around;
     margin: 10px;
@@ -80,32 +86,38 @@
 }
 
 .moreBtn {
-    width: 50px;
-    height: 50px;
-    background-color: rgb(86, 176, 255);
+	    padding-right: 10px;
+    margin-right: -15px;
+       width: 50px;
+    height: 20px;
+    background-color: rgb(255 255 255);
     border: none;
     border-radius: 50%;
-    color: white;
+    color: #315aab;
+    font-weight: 700;
     font-size: 10px;
     justify-content: center;
     cursor: pointer;
 }
 
 .delBtn {
+	    padding-left: 0px;
     width: 50px;
-    height: 50px;
-    background-color: rgb(255, 61, 61);
+    height: 20px;
+    background-color: rgb(255 255 255);
     border: none;
     border-radius: 50%;
-    color: white;
+    color: rgb(255, 61, 61);
+    font-weight: 700;
     font-size: 10px;
     justify-content: center;
     cursor: pointer;
 }
 
 .border {
-    border: 2px solid rgb(32, 32, 32);
+    border: 1px solid rgb(245 245 245);
     width: 90%;
+    height: 10px;
 }
 
 .display-none {
@@ -117,8 +129,9 @@
 }
 
 .healthTitle {
-    width: 90%;
+    width: 425px;
     justify-content: space-between;
+    margin-left: 28px;
 }
 
 .health-Btn-Container {
@@ -141,19 +154,25 @@
 }
 
 .insertBtn {
-	width: 200px;
+	    width: 50px;
     border-radius: 30px;
-    font-size: 20px;
+    font-size: 17px;
     height: 40px;
     font-weight: bold;
+    color: #4f72b7;
+    background: white;
 }
 
 .updateBtn {
-	width: 200px;
+	    width: 66px;
     border-radius: 30px;
-    font-size: 20px;
-    height: 40px;
+    font-size: 17px;
+    height: 0px;
     font-weight: bold;
+    color: #4c70b6;
+    font-weight: 500;
+    padding-top: -8px;
+    background: white;
 }
 
 .fam-List {

@@ -43,36 +43,24 @@
 			
 			<h3>${famMember} 님의 건강관리 입니다.</h3><br><br>
 			
-				
-		
-				<div class="chart">
+			
+				<div class="chart" style="margin-left: -400px; margin-top: -10px;">
 			        <canvas id="myChart1"></canvas>
 			    </div>
 			    
-			    <div class="chart">
+			    <div class="chart" style="margin-left: -400px; margin-top: -10px;">
 			        <canvas id="myChart2"></canvas>
 			    </div>
 			    
-			    <div class="chart">
+			    <div class="chart" style="margin-left: -400px; margin-top: -10px;">
 			        <canvas id="myChart3"></canvas>
 			    </div>
 			    
-			    <div class="chart">
+			    <div class="chart" style="margin-left: -400px; margin-top: -10px;">
 			        <canvas id="myChart4"></canvas>
 			    </div>
-			    
-			    
-			    <div class="health-Btn-Container low">
-			  		<button class="health-Btn" id="body-Btn" value=0 onclick="change(this.value)">체형</button>
-				    <button class="health-Btn" id="pressure-Btn" value=1 onclick="change(this.value)">혈압</button>
-				    <button class="health-Btn" id="feel-Btn" value=2 onclick="change(this.value)">기분</button>
-				    <button class="health-Btn" id="sugur-Btn" value=3 onclick="change(this.value)">혈당</button>
-			    </div>
-
 			
-		
-		 
-		 
+			
 			 	<!-- 체형 변수 -->
 				<script>
 			        let height = []
@@ -377,7 +365,324 @@
 						</script>	
 					</div>
 				</div>
+			
+			    
+			    <div class="health-Btn-Container low">
+			  		<button class="health-Btn" id="body-Btn" value=0 onclick="change(this.value)">체형</button>
+				    <button class="health-Btn" id="pressure-Btn" value=1 onclick="change(this.value)">혈압</button>
+				    <button class="health-Btn" id="feel-Btn" value=2 onclick="change(this.value)">기분</button>
+				    <button class="health-Btn" id="sugur-Btn" value=3 onclick="change(this.value)">혈당</button>
+			    </div>
 
+			
+		
+		 
+		 
+			 	<%-- <!-- 체형 변수 -->
+				<script>
+			        let height = []
+			        let weight = []
+			        let bmi = []
+			        let bodyRecord = []
+				</script>
+			  
+				<div class="health-Container calum">
+					<div class="healthTitle low">
+						<h2>체형 리스트</h2>
+						<a href="<c:url value='/bodyForm/${famNo}'/>"><button value="0" class="insertBtn btn low">등록</button></a>
+					</div>
+					<div class="calum" style="width: 90%;">
+					 <c:forEach items="${bodyList }" var="body">
+						<div class="health-Container-Box calum">
+							<div class="health-Content-Title low">
+									<div class="health-Box1 low">
+										<h2>BMI ${body.bmi}</h2>
+									</div>
+									<div class="health-Box2 low">
+										<h2>기록일 : ${body.bodyRecordDate}</h2>
+									</div>
+									<button value="${body.bodyNo}" class="moreBtn low"  onclick="toggle(this)">더보기</button>
+									<a href="javascript:deleteBodyCheck(${body.bodyNo});"><button class="delBtn low">삭제</button></a>
+										
+									
+
+							</div>
+							<div class="health-Content low border">
+								<div class="health-Box1 low">
+									<h2>키</h2>
+								</div>
+								<div class="health-Box2 low">
+									<h2>${body.height}</h2>
+								</div>
+							</div>
+							<div class="health-Content low border">
+								<div class="health-Box1 low">
+									<h2>몸무게</h2>
+								</div>
+								<div class="health-Box2 low">
+									<h2>${body.weight}</h2>
+								</div>
+							</div>
+								<a href="<c:url value='/updateBodyForm/${body.bodyNo}'/>"><button class="updateBtn btn low">수정</button></a>
+							
+							<br>
+		 		 
+					 		 <script>
+
+						        height.push(${body.height})
+						        weight.push(${body.weight})
+						        bmi.push(${body.bmi})
+						        bodyRecord.push('${body.bodyRecordDate}')
+						        
+					 		</script>
+						</div>
+						</c:forEach>
+							<script type="text/javascript">
+								function deleteBodyCheck(no){
+									var answer = confirm("선택한 체형 정보를 삭제하시겠습니까?");
+									if(answer == true){
+										location.href="<c:url value='/deleteBody/"+no+ "' />";
+									}
+								}
+								
+							</script>	
+					</div>
+				</div>
+
+
+
+
+		<!-- 혈압 변수 -->
+		<script>
+	        let SBP = []
+	        let DBP = []
+	        let bpm = []
+	        let pressureRecord = []
+		</script>
+			
+					
+					<div class="health-Container calum">
+					<div class="healthTitle low">
+						<h2>혈압 리스트</h2>
+						<a href="<c:url value='/pressureForm/${famNo}'/>"><button value="0" class="insertBtn btn low">등록</button></a>
+					</div>
+					<div class="calum" style="width: 90%;">
+					 <c:forEach items="${pressureList }" var="pressure">
+						<div class="health-Container-Box calum">
+							<div class="health-Content-Title low">
+									<div class="health-Box1 low">
+										<h2>상황 : ${pressure.situation}</h2>
+									</div>
+									<div class="health-Box2 low">
+										<h2>기록일 : ${pressure.pressureRecordDate}</h2>
+									</div>
+									<button value="1" class="moreBtn low"  onclick="toggle(this)">더보기</button>
+									<a href="javascript:deletePressureCheck(${pressure.pressureNo});"><button class="delBtn low">삭제</button></a>
+										
+							</div>
+							<div class="health-Content low border">
+								<div class="health-Box1 low">
+									<h2>최고혈압</h2>
+								</div>
+								<div class="health-Box2 low">
+									<h2>${pressure.SBP}</h2>
+								</div>
+							</div>
+							<div class="health-Content low border">
+								<div class="health-Box1 low">
+									<h2>최저혈압</h2>
+								</div>
+								<div class="health-Box2 low">
+									<h2>${pressure.DBP}</h2>
+								</div>
+							</div>
+							<div class="health-Content low border">
+								<div class="health-Box1 low">
+									<h2>심박수</h2>
+								</div>
+								<div class="health-Box2 low">
+									<h2>${pressure.bpm}</h2>
+								</div>
+							</div>
+								<a href="<c:url value='/updatePressureForm/${pressure.pressureNo}'/>"><button class="updateBtn btn low">수정</button></a>
+							
+		 		 
+						 	<script>
+						 		//
+			 					SBP.push(${pressure.SBP})
+						        DBP.push(${pressure.DBP})
+						        bpm.push(${pressure.bpm})
+						        pressureRecord.push('${pressure.pressureRecordDate}')
+					 		</script>
+				 		
+						</div>
+						</c:forEach>
+							<script type="text/javascript">
+									function deletePressureCheck(no){
+										var answer = confirm("선택한 혈압 정보를 삭제하시겠습니까?");
+										if(answer == true){
+											location.href="<c:url value='/deletePressure/"+no+ "' />";
+										}
+									}
+							</script>
+							
+					</div>
+				</div>
+					
+				<script>
+
+			        console.log("${pressure.pressureRecordDate}")
+		 		</script>
+ 				
+
+ 			
+			
+				<!-- 기분 변수 -->
+				<script>
+			        let feelScale = []
+			        let feelRecord = []
+				</script>
+
+				
+				
+			<div class="health-Container calum">
+					<div class="healthTitle low">
+						<h2>기분 리스트</h2>
+						<a href="<c:url value='/feelForm/${famNo}'/>"><button value="0" class="insertBtn btn low">등록</button></a>
+					</div>
+					<div class="calum" style="width: 90%;">
+					 <c:forEach var="feel" items="${feelList}">
+						<div class="health-Container-Box calum">
+							<div class="health-Content-Title low">
+									<div class="health-Box1 low">
+										<h2>기분점수 ${feel.feelScale}</h2>
+									</div>
+									<div class="health-Box2 low">
+										<h2>기록일 : ${feel.feelRecordDate}</h2>
+									</div>
+									<button value="1" class="moreBtn low"  onclick="toggle(this)">더보기</button>
+									<a href="javascript:deleteFeelCheck(${feel.feelNo});"><button class="delBtn low">삭제</button></a>
+
+							</div>
+							<div class="health-Content calum border">
+								<div class="feel-Box1 low">
+									<h2>기분일기</h2>
+								</div>
+								<div class="feel-Box2 low">
+									<h2>${feel.feelMemo}</h2>
+								</div>
+							</div>
+								<a href="<c:url value='/updateFeelForm/${feel.feelNo}'/>"><button class="updateBtn btn low">수정</button></a>
+							
+		 		 
+							<script>
+								feelScale.push(${feel.feelScale})
+								feelRecord.push('${feel.feelRecordDate}')
+					 		</script>
+					 	
+							</div>
+						</c:forEach>
+					 		<script type="text/javascript">
+								function deleteFeelCheck(no){
+									var answer = confirm("선택한 기분 정보를 삭제하시겠습니까?");
+									if(answer == true){
+										location.href="<c:url value='/deleteFeel/"+no+ "' />";
+									}
+								}
+							</script>
+						</div>
+					</div>
+
+
+			
+			
+
+				
+				
+				
+				<!-- 혈당 변수 -->
+			<script>
+		        let sugarLevel = []
+		        let sugarRecord = []
+			</script>
+		
+		 		
+		 	<div class="health-Container calum">
+					<div class="healthTitle low">
+						<h2>혈당 리스트</h2>
+						<a href="<c:url value='/sugarForm/${famNo}'/>"><button value="0" class="insertBtn btn low">등록</button></a>
+					</div>
+					<div class="calum" style="width: 90%;">
+					 <c:forEach items="${sugarList}" var="sugar">
+						<div class="health-Container-Box calum">
+							<div class="health-Content-Title low">
+									<div class="health-Box1 low">
+										<h2>식사여부 : ${sugar.acpc}</h2>
+									</div>
+									<div class="health-Box2 low">
+										<h2>기록일 : ${sugar.sugarRecordDate}</h2>
+									</div>
+									<button value="1" class="moreBtn low"  onclick="toggle(this)">더보기</button>
+									<a href="javascript:deleteSugarCheck(${sugar.sugarNo});"><button class="delBtn low">삭제</button>
+										
+									</a>
+
+							</div>
+							<div class="health-Content low border">
+								<div class="health-Box1 low">
+									<h2>상황</h2>
+								</div>
+								<div class="health-Box2 low">
+									<h2>${sugar.situation}</h2>
+								</div>
+							</div>
+							<div class="health-Content low border">
+								<div class="health-Box1 low">
+									<h2>투약</h2>
+								</div>
+								<div class="health-Box2 low">
+									<h2>${sugar.sugarMedication}</h2>
+								</div>
+							</div>
+							<div class="health-Content low border">
+								<div class="health-Box1 low">
+									<h2>수치</h2>
+								</div>
+								<div class="health-Box2 low">
+									<h2>${sugar.sugarLevel}</h2>
+								</div>
+							</div>
+							<div class="health-Content low border">
+								<div class="health-Box1 low">
+									<h2>메모</h2>
+								</div>
+								<div class="health-Box2 low">
+									<h2>${sugar.acpcMemo}</h2>
+								</div>
+							</div>
+			
+								<a href="<c:url value='/updateSugarForm/${sugar.sugarNo}'/>"><button class="updateBtn btn low">수정</button></a>
+		 
+						</div>
+						
+						<script>
+					        sugarLevel.push(${sugar.sugarLevel})
+					        sugarRecord.push('${sugar.sugarRecordDate}')
+						</script>
+						
+				 	</c:forEach>
+						<script type="text/javascript">
+							function deleteSugarCheck(no){
+								console.log(no);
+								var answer = confirm("선택한 혈당 정보를 삭제하시겠습니까?");
+								if(answer == true){
+									location.href="<c:url value='/deleteSugar/"+no+ "' />";
+								}
+							}
+						</script>	
+					</div>
+				</div>
+ --%>
 				
 			
 			</section>

@@ -59,10 +59,13 @@
 		</script>
 	
 	<style>
+	/* .back > background-image {
+		opacity:50%;
+	} */
 		.back{
-	background-image: url(image/pillyo12.png);
-    width: 1920px;
-    height: 1200px;
+	background-image: url(image/pillyo13.png);opacity:90%;
+    width: 1200px;
+    height: 730px;
     background-repeat: no-repeat;
     background-size: cover;
 			}
@@ -129,12 +132,18 @@
 			<div class="Ellipse-1"></div>
 			<div class="Ellipse-2"></div>
 			<div class="Ellipse-3"></div>
-	 		 <h1 style="position: absolute; ">Pill-Yo</h1>
+	 		 <h1 style="    position: absolute;
+    color: #5b639b;
+    font-weight: 300;
+    font-size: 189px;
+    border-top: 14px;
+    padding-top: 39px;
+	 		  ">Pill-Yo</h1>
 	 		 
  		<!-- 	<div style="background-image:url(image/pillyo3.jpg);"></div> -->
  		 
 			<div class="back">
-			<h2>건강의 모든 것<br>
+			<h2><br><br>건강의 모든 것<br>
 			알약요에서 쉽고 간편하게</h2>
 			</div> 
 		</div>
