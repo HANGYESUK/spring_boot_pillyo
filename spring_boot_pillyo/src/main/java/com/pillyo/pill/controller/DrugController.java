@@ -116,7 +116,9 @@ public class DrugController {
 	 */
 	
 	@RequestMapping("/drugShapeSearchForm")
-	public String drugShapeSearchForm() {
+	public String drugShapeSearchForm(Model model) {
+		 ArrayList<DrugShapeVO> shapeList = shapeService.listAllDrugShapeView();
+		 model.addAttribute("shapeList", shapeList);
 		return "drug/drugShapeSearchForm";
 	}
 	

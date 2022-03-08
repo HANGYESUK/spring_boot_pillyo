@@ -7,10 +7,12 @@ a{
 #adminContainer{
 	display: flex;
 	flex-wrap: nowrap;
+	justify-content: space-between;
 }
 
 #adminBox{
-	background: linear-gradient( 139deg , #79b5ff, #b9e1f4);
+	border-radius: 8px;
+    border: 2px solid #cdcdcd;
 	width:210px;
 	height:100%;
 	text-align: center;
@@ -25,9 +27,10 @@ a{
 }
 
 .adminItemTitle{
-	font-size: 25px;
+	font-size: 20px;
 	font-weight: bold;
-	color: white;
+	border-bottom: 1px solid #cdcdcd;
+	background: #d9eafe;
 	padding: 10px 0;
 }
 
@@ -36,13 +39,13 @@ a{
 	box-sizing: border-box;
 }
 .adminItem:hover{
-	background-color: white;
+	background-color:#d9eafe;
 }
 
 #userCnt{
 	width:150px;
 	height:150px;
-	border-radius: 80px;
+	/* border-radius: 80px; */
 	background: #79b5ff;
 	
 	
@@ -53,4 +56,19 @@ a{
 .adminDrugItem ul{
 	list-style:none;
 	display: none;
+}
+#adminArticle{
+	width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.adminInfoBox{
+	display: flex;
+	
+	width:300px;
+	height: 500px;
+	border: 2px solid #cdcdcd;
+	border-radius: 10px;
 }

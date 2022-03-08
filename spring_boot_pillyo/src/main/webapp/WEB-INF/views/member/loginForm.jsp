@@ -14,7 +14,10 @@
 	<style>
 		hr{
 		background-color: #fff2f2;
-    height: 1px
+    	height: 1px
+		}
+		#adminLogin{
+		position: absolute;	
 		}
 	</style>
 	
@@ -23,7 +26,7 @@
 	
 	<body>
 		<div id="wrap">
-		
+		<div id="adminLogin"><a href="/adminloginForm">관리자 로그인</a></div>
 	<div id="section2">
 			<!-- TOP -->
 		<%-- <jsp:include page="/WEB-INF/views/layout/top.jsp" flush='true' /> --%>

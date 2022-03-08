@@ -13,8 +13,9 @@
 	</head>
 	<style>
 		#search_result_container{
-		background: white;
+			background: white;
 		    padding-top: 1px;
+		    margin: 0 auto;
 		}
 		
 		#search_result_container > h3{
@@ -49,7 +50,10 @@
 			<div id="navMargin"></div>
 			
 	<section id="section">
-	
+		<div id="drugSearchContainer">
+			
+			<jsp:include page="/WEB-INF/views/drug/drugShapeSearchBox.jsp" flush='true' />
+			
 		<div id="search_result_container">
 			
 				<h3>약모양 검색 결과 </h3>
@@ -86,11 +90,11 @@
 				</div>
 				
 				<div id="more-Btn" class="low" onclick="more()"><h3>더보기</h3></div><br>
-			</div>
 			   </c:otherwise> 
 			</c:choose>
+			</div>
 			
-			
+			</div>
 			</section>
 			
 		<!-- BOTTOM  -->
@@ -99,7 +103,7 @@
     	</div> <!-- wrap -->
     	
     	<script>
-	        let count = 10;
+	        let count = 9;
 	        let drugBox = document.getElementsByClassName("drugBox")
 	        
 	        for(let i=count; i<drugBox.length; i++) {
@@ -109,11 +113,11 @@
 	        function more() {
 		        for(let i=count; i<drugBox.length; i++) {
 		        	drugBox[i].classList.remove('displayNone')
-		        	if(i >= count + 9) {
+		        	if(i >= count + 8) {
 		        		break;
 		        	}
 		        }
-		        count += 10
+		        count += 9
 	        }
 	   
 	        
