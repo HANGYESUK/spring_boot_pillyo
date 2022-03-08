@@ -30,6 +30,7 @@
 	    <link rel="stylesheet" href="/css/dose/doseCalendar.css" />
 	    <link rel="stylesheet" href="/css/main/familyProfile.css" />
 	    <link rel="stylesheet" href="<c:url value='/css/health/healthManage.css'/>" />
+	    <link rel="stylesheet" href="/css/dose/doseListView.css" />
 	</head>
 	<body>
 		<div id="wrap">
@@ -38,7 +39,7 @@
 			<jsp:include page="/WEB-INF/views/layout/top.jsp" flush='true' />
 			<div id="navMargin"></div>
 			
-			<section id="section" class="calum">
+			<section id="section" class="calum" style="    margin-bottom: -93px;">
 			<div class="fam-List calum">
 				 <c:forEach items="${famList }" var="fam">
 				   	<a href="<c:url value='/calendarView/${fam.famNo}'/>">
@@ -56,7 +57,7 @@
 			
 
 			
-			<h3>${famMember} 님의 복용관리 입니다.</h3><br><br>
+			<%-- <h3>${famMember} 님의 복용관리 입니다.</h3><br><br> --%>
 			
 			
 				<div id="doseBox">
@@ -64,20 +65,58 @@
 						<div id='calendar'></div>
 					</div>
 					<div id="doseListAndBtnBox">
-						<div id="doseListBox">
+						<!-- <div id="doseListBox"> -->
+						<h3 style="
+						       width: 162px;
+							   height: 36px;
+							   padding-top: 18px;
+							   border-radius: 19px;
+							   margin-left: 172px;
+							   text-align: center;
+							   font-size: 17px;
+							   font-weight: 480;
+							   margin-bottom: 29px;
+							   box-shadow: 0px 1px 4px 3px #f3f3f3;
+
+						">${famMember}의 복용관리</h3><br><br>
 							<div id='doseListCal'></div>
-						</div>
+							
+						<!-- </div> -->
 						
-						<div id="btnBoxParent">
+						 <div id="btnBoxParent">
 							<div id="btnBox">
 								<label><button id="doseAddBtn" class="calBtn">복용 정보 추가하기</button></label>
-								<label><button id="doseMngBtn" class="calBtn"><a href="<c:url value='/doseListView/${famNo}'/>">복용 목록 관리</a></button></label>
 							</div>
-						</div>
+						</div> 
 					</div>
 				</div>
+				
 			</section>
-	        
+			<br><br><br><br>
+			 <div id="btnBoxParent">
+							<div id="btnBox">
+								<label><button id="doseMngBtn" class="calBtn" style="     margin-left: 65px;   margin-top: -25px;"><a href="<c:url value='/doseListView/${famNo}'/>">복용 목록 관리</a></button></label>
+							</div>
+						</div>
+						
+			<div id="doseItemBigBox">
+							<div id="doseListHeader">
+					<h3>복용 목록 조회</h3>
+				</div>
+			
+				<div id="doseItemBox">
+			  		 <c:forEach items="${doseList }" var="dose">
+			   			<a href="<c:url value='/doseDetailView/${dose.ddNo}'/>">
+			   				<div class="doseItem">
+			   					<div class="itemBottom">
+			   						${dose.ddTitle }
+			   					</div>
+		   					</div>
+	   					</a>
+			   		</c:forEach>
+				</div>
+			</div>
+	       <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 			<!-- BOTTOM  -->
 			<jsp:include page="/WEB-INF/views/layout/bottom.jsp" flush='true' />
 		

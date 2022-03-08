@@ -1,25 +1,32 @@
 #doseBox {
+
+    margin-left: 110px;
+
 	display:flex;
     justify-content: flex-start;
 }
 
 #doseListAndBtnBox {
-	display: flex;
-    flex-direction: column;
+	    padding-left: 0px;
+    margin-left: -76px;
 }
 
 /* ---------- Ķ���� ------------ */
 #calendarBox {
+	/*     margin-left: 160px; */
 	display: inline-block;
     margin: 20px;
     padding: 20px 20px 0 20px;
-    background: #eeedd5;
+    background: #f9f9f4;
     border-radius: 20px;
+    margin-top: -20px;
+    box-shadow: 0px 0px 4px #dadada;
 }
 
 #calendar {
-    height: 610px;
-    width: 650px;
+        height: 690px;
+    width: 890px;
+    background:#f9f9f4;
 }
 
 .modal-dialog {
@@ -31,15 +38,19 @@
     display: inline-block;
     margin: 20px 0;
     padding: 20px 20px 0 20px;
-    background: #eeedd5;
-    border-radius: 20px;
+/*     background: #eeedd5;
+ */    border-radius: 20px;
     height: 445px;
 }
 
 #doseListCal {
-	width: 490px;
-    height: 410px;
+	 margin-top: -40px;
+    width: 341px;
+    height: 106px;
     font-size: 24px;
+    margin-left: 85px;
+    border-radius: 20px;
+    background: white;
 }
 
 #doseListCal #fc-dom-86 {
@@ -163,27 +174,37 @@
 }
 
 #btnBox {
-    display: flex;
+       display: flex;
     flex-direction: column;
     align-items: flex-start;
-    height: 145px;
+    height: 115px;
     justify-content: space-between;
     border-radius: 5px;
     margin-left: 12px;
+    width: 100px;
 }
-
+ 
 .calBtn {
+   font-weight: 600;
+    border-color: #f2f9fb;
     margin: 2px;
-    background: #f6f6f6;
-    width: 497px;
-    height: 64px;
-    border-radius: 10px;
+    background: #f9f9f4;
+    width: 145px;
+    height: 43px;
+    border-radius: 15px;
     border: 1px solid #c8c8c8;
     font-size: 17px;
-    font-weight: 800;
+    font-weight: 600;
     color: #626262;
+    margin-left: 234px;
+    margin-top: 150px;
+    border: 0;
 }
-
+.calBtn:hover {
+	box-shadow: 1px 1px 2px #d3d3d3;
+    font-size: 17px;
+	
+}
 .calBtn a {
 	text-decoration: none;
     color: #626262;

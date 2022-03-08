@@ -269,14 +269,14 @@ li {
     justify-content: center;
 }
 
-/* ±âº» Å¬·¡½º */
+/* ï¿½âº» Å¬ï¿½ï¿½ï¿½ï¿½ */
 
-/* searchbar °Ë»ö ¿À¸¥ÂÊÀ¸·Î ÀÌµ¿ */
+/* searchbar ï¿½Ë»ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½ */
 
 
 
 .master-title {
-    font-size: 30px; /* Example Preview ±Û¾¾ Å©±â ÁÙÀÌ±â */
+    font-size: 30px; /* Example Preview ï¿½Û¾ï¿½ Å©ï¿½ï¿½ ï¿½ï¿½ï¿½Ì±ï¿½ */
     color: #181818;
 }
 
@@ -286,7 +286,7 @@ li {
 }
 
 #main-navigation {
-    border-top: 1px solid #7eb66d; /* navbar À§¿¡ ÇÑÁÙ ±ß±â */
+    border-top: 1px solid #7eb66d; /* navbar ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ß±ï¿½ */
     margin-bottom: 20px;
     height: 40px;
     width: 90%;
@@ -329,13 +329,13 @@ li {
 }
 
 .outer-menu-item {
-    float: left; /* ¸Þ´º¹Ù ¿ÞÂÊ HTML5 CSS3 JavaScript */
-    position: relative; /* static À§Ä¡¸¦ ±âÁØÀ¸·Î °è»ê */
+    float: left; /* ï¿½Þ´ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ HTML5 CSS3 JavaScript */
+    position: relative; /* static ï¿½ï¿½Ä¡ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ */
     transition: all 0.5s;
     cursor: pointer;
 }
 .outer-menu-item:hover{
-    background: rgb(94, 150, 255); /* ¸Þ´º¹Ù Å¬¸¯½Ã °ËÁ¤»ö */
+    background: rgb(94, 150, 255); /* ï¿½Þ´ï¿½ï¿½ï¿½ Å¬ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ */
     color: white;
 }
 .menu-title {
@@ -362,12 +362,12 @@ li {
     font-size: 12px;
     color: #555555;
 }
-.input-search:focus { /* °Ë»öÃ¢ Å¬¸¯ÇßÀ» ¶§ »ö º¯°æ */
+.input-search:focus { /* ï¿½Ë»ï¿½Ã¢ Å¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ */
     border-color: rgba(133, 196, 148, 0.8);
     outline: 0;
     box-shadow: inset 0 1px 1px rgba(133, 196, 148, 0.8);
 }
-.input-search-submit { /* °Ë»ö ¸ð¾ç */
+.input-search-submit { /* ï¿½Ë»ï¿½ ï¿½ï¿½ï¿½ */
     display: block;
     float: left;
     width: 7%; 
@@ -382,9 +382,9 @@ li {
 
 
 .chart {
-    width: 80%;
+      width: 60%;
     height: 500px;
-    border: 3px solid black;
+    border: 1px solid #f1f1f1;
     background-color: rgb(255, 255, 255);
     border-radius: 10px;
     margin: 15px;
