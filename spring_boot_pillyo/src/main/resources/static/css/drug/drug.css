@@ -13,7 +13,7 @@ body{
   display: none;
 }
 #searchResult{
-	width: 1000px;
+	width: 1050px;
 	display:flex;
 	flex-wrap: wrap; /* 諛뺤뒪 �겕湲곗븞�뿉�꽌 以꾨컮轅� */
 	justify-content: start;

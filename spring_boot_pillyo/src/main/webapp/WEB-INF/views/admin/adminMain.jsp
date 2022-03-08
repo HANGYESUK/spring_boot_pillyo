@@ -1,5 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8" session="true"%>
+<%
+	if (application.getAttribute("Counter") != null) {
+		String strCounter = String.valueOf(application.getAttribute("Counter"));
+		int counter = Integer.parseInt(strCounter) + 1; 
+		// 페이지에 새로운 접속이 시도될때 application 변수에 Counter를 1씩 증가시킨다. 
+		application.setAttribute("Counter", counter);
+		} else {
+			application.setAttribute("Counter", 1); } %>
+
+
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
@@ -32,7 +42,9 @@
 						</div>
 						
 						<div class="adminInfoBox">
-						
+								방문자수 : <%=application.getAttribute("Counter")%>
+
+
 						</div>
 						
 						<div class="adminInfoBox">

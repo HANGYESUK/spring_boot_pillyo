@@ -91,16 +91,16 @@ font-size: 20px;
 				<div id="searchResult">
 				
 					<c:forEach items="${druglist}" var="drug" varStatus="status">
-							
+							<a href=href="<c:url value='/drugDetailView/${drug.drugInfoNo}'/>">
 							<div class="drugBox">
 								<img src="${drug.itemImage}" onerror="this.src='/img/fill_null.png'">
 								<div class="drugBoxText">
-								<a class="itemName" href="<c:url value='/drugDetailView/${drug.drugInfoNo}'/>">${drug.itemName}</a><br>
-								<a class="shapeInfo">${drug.entpName}</a>
-								
+								<p class="itemName">${drug.itemName}</p>
+								<p class="shapeInfo">${drug.entpName}</p>
 								<%-- <c:if test="${drug.itemName eq '('}"><br></c:if> --%>
 								</div>
 							</div>
+							</a>
 							
 					</c:forEach>
 					
@@ -118,7 +118,7 @@ font-size: 20px;
     	</div> <!-- wrap -->
     	
     	<script>
-	        let count = 10;
+	        let count = 9;
 	        let drugBox = document.getElementsByClassName("drugBox")
 	        
 	        for(let i=count; i<drugBox.length; i++) {
@@ -128,11 +128,11 @@ font-size: 20px;
 	        function more() {
 		        for(let i=count; i<drugBox.length; i++) {
 		        	drugBox[i].classList.remove('displayNone')
-		        	if(i >= count + 9) {
+		        	if(i >= count + 8) {
 		        		break;
 		        	}
 		        }
-		        count += 10
+		        count += 9
 	        }
 	   
 	        

@@ -18,6 +18,6 @@ table.adminTable td {
 	padding: 10px;
 	vertical-align: top;
 	border-bottom: 1px solid #ccc;
-	background: #eee;
+	/* background: #eee; */
 	/* font-size: 11px; */
 }
