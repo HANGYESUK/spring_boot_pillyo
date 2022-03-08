@@ -40,11 +40,24 @@
 		display:none;
 	}
 	
+	.displayNone2 {
+		display:none;
+	}
+	
 	#more-Btn{
 		color: #3f63b5;
    	}
 	
 	#more-Btn h3{
+		text-align:center;
+   	    margin: 10px 10px 10px 0px;
+   	}
+   		#more-Btn2{
+		color: #3f63b5;
+		display:none;
+   	}
+	
+	#more-Btn2 h3{
 		text-align:center;
    	    margin: 10px 10px 10px 0px;
    	}
@@ -233,7 +246,7 @@
 							</tbody>
 						</table>
 						<br><br>
-			   		</div>
+			   		</div><div id="more-Btn" class="low" onclick="more()"><h3>더보기</h3><br></div>
 					
 					<!-- 자주묻는질문 -->
 			   		<div id="boardQnaContent">
@@ -250,28 +263,28 @@
 							<tbody>
 								<c:forEach items="${boardQnaList}" var="board">
 							  		<c:if test="${board.boardCtgNo eq '2'}">
-							  			<tr class="drugBox">
+							  			<tr class="drugBox2">
 							  				<td>주문/결제</td>
 							  				<td><a href="<c:url value='/boardDetailView/${board.boardNo}'/>">${board.boardTitle }</a></td>
 <%-- 											<td>${board.boardWriteDate}</td>
  --%>										</tr>
 							  		</c:if>
 							  		<c:if test="${board.boardCtgNo eq '3'}">
-							  			<tr class="drugBox">
+							  			<tr class="drugBox2">
 							  				<td>교환/반품</td>
 							  				<td><a href="<c:url value='/boardDetailView/${board.boardNo}'/>">${board.boardTitle }</a></td>
 <%-- 											<td>${board.boardWriteDate}</td>
  --%>										</tr>
 							  		</c:if>
 							  		<c:if test="${board.boardCtgNo eq '4'}">
-							  			<tr class="drugBox">
+							  			<tr class="drugBox2">
 							  				<td>제품</td>
 							  				<td><a href="<c:url value='/boardDetailView/${board.boardNo}'/>">${board.boardTitle }</a></td>
 <%-- 											<td>${board.boardWriteDate}</td>
  --%>										</tr>
 							  		</c:if>
 							  		<c:if test="${board.boardCtgNo eq '5'}">
-							  			<tr class="drugBox">
+							  			<tr class="drugBox2">
 							  				<td>회원</td>
 							  				<td><a href="<c:url value='/boardDetailView/${board.boardNo}'/>">${board.boardTitle }</a></td>
 <%-- 											<td>${board.boardWriteDate}</td>
@@ -280,7 +293,7 @@
 						   		</c:forEach>
 					   		</tbody>
 						</table><br><br>
-			   		</div>
+			   		</div><div id="more-Btn2" class="low" onclick="more1()"><h3>더보기</h3><br></div>
 			   		
 			   		<!-- 자문질 - 주문결제 -->
 			   		<div id="boardOrderPayContent">
@@ -297,7 +310,7 @@
 							<tbody>
 								<c:forEach items="${boardOrderPayList}" var="board">
 							  		<c:if test="${board.boardCtgNo eq '2'}">
-							  			<tr class="drugBox">
+							  			<tr class="drugBox3">
 							  				<td>주문/결제</td>
 							  				<td><a href="<c:url value='/boardDetailView/${board.boardNo}'/>">${board.boardTitle }</a></td>
 <%-- 											<td>${board.boardWriteDate}</td>
@@ -323,7 +336,7 @@
 							<tbody>
 								<c:forEach items="${boardTradeList}" var="board">
 							  		<c:if test="${board.boardCtgNo eq '3'}">
-							  			<tr class="drugBox">
+							  			<tr class="drugBox3">
 							  				<td>교환/반품</td>
 							  				<td><a href="<c:url value='/boardDetailView/${board.boardNo}'/>">${board.boardTitle }</a></td>
 <%-- 											<td>${board.boardWriteDate}</td>
@@ -349,7 +362,7 @@
 							<tbody>
 								<c:forEach items="${boardProductList}" var="board">
 							  		<c:if test="${board.boardCtgNo eq '4'}">
-							  			<tr class="drugBox">
+							  			<tr class="drugBox3">
 							  				<td>제품</td>
 							  				<td><a href="<c:url value='/boardDetailView/${board.boardNo}'/>">${board.boardTitle }</a></td>
 <%-- 											<td>${board.boardWriteDate}</td>
@@ -375,7 +388,7 @@
 							<tbody>
 								<c:forEach items="${boardMemberList}" var="board">
 							  		<c:if test="${board.boardCtgNo eq '5'}">
-							  			<tr class="drugBox">
+							  			<tr class="drugBox3">
 							  				<td>회원</td>
 							  				<td><a href="<c:url value='/boardDetailView/${board.boardNo}'/>">${board.boardTitle }</a></td>
 <%-- 											<td>${board.boardWriteDate}</td>
@@ -387,7 +400,7 @@
 			   		</div>
 				
 					<a href="<c:url value = '/boardForm'/>"><button>글쓰기</button></a>
-					<div id="more-Btn" class="low" onclick="more()"><h3>더보기</h3><br></div>
+					<!-- <div id="more-Btn" class="low" onclick="more()"><h3>더보기</h3><br></div> -->
 			</div>
 		</section>
 		<!-- <article>             
@@ -423,21 +436,46 @@
 			
 </body>
 <script>
-	let count = 10;
-	let drugBox = document.getElementsByClassName("drugBox")
-	     
-    function more() {
+	        let count = 10;
+	        let drugBox = document.getElementsByClassName("drugBox")
+	        
+	        for(let i=count; i<drugBox.length; i++) {
+	        	drugBox[i].classList.add('displayNone')
+	        }
+	        
+	        function more() {
+		        for(let i=count; i<drugBox.length; i++) {
+		        	drugBox[i].classList.remove('displayNone')
+		        	if(i >= count + 9) {
+		        		break;
+		        	}
+		        }
+		        count += 10
+	        }
+	   
+	        
+    	</script>
     	
-    	console.log('string')
-     for(let i=count; i<drugBox.length; i++) {
-     	drugBox[i].classList.remove('displayNone')
-     	if(i >= count + 9) {
-     		break;
-     	}
-     }
-     count += 10
-    }
-</script>
+    	<script>
+	        let count = 10;
+	        let drugBox2 = document.getElementsByClassName("drugBox2")
+	        
+	        for(let i=count; i<drugBox2.length; i++) {
+	        	drugBox2[i].classList.add('displayNone2')
+	        }
+	        
+	        function more1() {
+		        for(let i=count; i<drugBox2.length; i++) {
+		        	drugBox2[i].classList.remove('displayNone2')
+		        	if(i >= count + 9) {
+		        		break;
+		        	}
+		        }
+		        count += 10
+	        }
+	   
+	        
+    	</script>
 <script type="text/javascript">
 	$('input[name="boardCtg"]').change(function(){
 			var radioId = $('input[name="boardCtg"]:checked').val();
@@ -450,6 +488,8 @@
 				$(boardTradeContent).css('display', 'none');
 				$(boardProductContent).css('display', 'none');
 				$(boardMemberContent).css('display', 'none');
+				$("#more-Btn").css('display', 'block');
+				$("#more-Btn2").css('display', 'none');
 			} else if (radioId == "boardQna") {
 				$(boardNewsContent).css('display', 'none');
 				$(boardQnaContent).css('display', 'block');
@@ -458,6 +498,8 @@
 				$(boardTradeContent).css('display', 'none');
 				$(boardProductContent).css('display', 'none');
 				$(boardMemberContent).css('display', 'none');
+				$("#more-Btn").css('display', 'none');
+				$("#more-Btn2").css('display', 'block');
 			} 
 
 			else if (radioId == "orderPay") {
@@ -468,6 +510,8 @@
 				$(boardTradeContent).css('display', 'none');
 				$(boardProductContent).css('display', 'none');
 				$(boardMemberContent).css('display', 'none');
+				$("#more-Btn").css('display', 'none');
+				$("#more-Btn2").css('display', 'none');
 			} else if (radioId == "trade") {
 				$(boardQnaContent).css('display', 'none');
 				$(boardNewsContent).css('display', 'none');
@@ -476,6 +520,8 @@
 				$(boardTradeContent).css('display', 'block');
 				$(boardProductContent).css('display', 'none');
 				$(boardMemberContent).css('display', 'none');
+				$("#more-Btn").css('display', 'none');
+				$("#more-Btn2").css('display', 'none');
 			} else if (radioId == "product") {
 				$(boardQnaContent).css('display', 'none');
 				$(boardNewsContent).css('display', 'none');
@@ -484,6 +530,8 @@
 				$(boardTradeContent).css('display', 'none');
 				$(boardProductContent).css('display', 'block');
 				$(boardMemberContent).css('display', 'none');
+				$("#more-Btn").css('display', 'none');
+				$("#more-Btn2").css('display', 'none');
 			} else if (radioId == "member") {
 				$(boardQnaContent).css('display', 'none');
 				$(boardNewsContent).css('display', 'none');
@@ -492,6 +540,8 @@
 				$(boardTradeContent).css('display', 'none');
 				$(boardProductContent).css('display', 'none');
 				$(boardMemberContent).css('display', 'block');
+				$("#more-Btn").css('display', 'none');
+				$("#more-Btn2").css('display', 'none');
 			}
 	});
 </script>
