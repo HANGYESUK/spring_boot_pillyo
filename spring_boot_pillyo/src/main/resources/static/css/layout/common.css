@@ -1,241 +1,25 @@
 body {
-/* 	background: linear-gradient(196deg, rgb(176 219 246) 0%, rgb(220 233 247) 100%);
- */
-     background: white;
- }
+	background: white;
+}
+
 #wrap {
 	position: relative;
     width: 1373px;
     margin: 0 auto;
 }
 
-#headerBox {
-    position: fixed;
-    width: 1373px;
-    top: 0px;
-    z-index: 999;
-   /*  box-shadow: 1px 1px 2px #acb2c1; */
-	border-bottom: 0.1px solid #2222221c;
-    background: white;
-    height: 83px;
-}
-
-.mainHeader {
-	position: relative;
-	margin:0 auto;
-    width: 93%;
-   /*      height: 94px; */
-    /* background: linear-gradient(6deg, #f1f8fe, #edf5fe); */
-    background:white;
-    /* border-bottom-right-radius: 10px;
-    border-bottom-left-radius: 10px; */
-    border-radius: 0px 0px 40px 40px
-}
-
-marquee {
-	width: 1000px;
-    font-size: 12px;
-    scrolldelay:10;
-}
-
-marquee a {
-	margin: 0 48px;
-    text-decoration: none;
-    color: #565656;
-    /* font-weight: bold; */
-}
-
-/* --------- pill-yo ------------ */
-#logoBox {
-	position: relative;
-    margin: 0 auto;
-    width: 1257px;
-    padding: 10px 0 13px 20px;
-    font-size: 24px;
-    background: #fbfbfb;
-    height: 9px;
-    /* color:darkblue; */
-    line-height: 13px;
-}
-
-#logo {
-    display: inline-block;
-    width: 230px;
-}
-
-/* --------- proflie ------------ */
-.profileBox {
-	position: absolute;
-    width: 197px;
-    height: 24px;
-    margin-left: -40px;
-   /*  background: linear-gradient(
-139deg
-, #79b5ff, #b9e1f4); */
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    border-radius: 0px 0px 27px 27px;
-    padding: 10px;
-}
-
-.proflieImg {
-	position:relative;
-/*     border-radius: 50%;
- */    overflow: hidden;
-}
-
-.proflieImg img{
-	width: 80px;
-    height: 80px;
-}
-
-.profileText {
-	position:relative;
-	   font-size: 51px;
-    color: white;
-        font-weight: 576;
-}
-/* --------- nav bar ------------ */
-#mainNavBox {
-        position: absolute;
-    height: 100px;
-    left: 245px;
-    width: 79%;
-}
-
-.mainNav {
-    width: 98%;
-}
-
-
-.menuBox {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    background-color: white;
-    color: rgb(94, 150, 255);
-    border-radius: 0 0 10px 10px;
-    overflow: hidden;
-    width: 100%;
-    height: 50px;
-}
-
-.menuBox {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    background-color: white;
-    color: rgb(94, 150, 255);
-    border-radius: 0 0 10px 10px;
-    overflow: hidden;
-    width: 100%;
-    height: 50px;
-}
-
-.menuItem {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    cursor:pointer;
-    transition: all 0.4s;
-    padding-bottom: 0px;
-    margin-bottom: 0px
-px
-;
-}
-
-.menuItem a {
-	text-decoration: none;
-}
-
-.menuItem h5 {
-	color: #84868b;
-    font-weight: 400;
-    font-size:14px;
-}
-
-.menuItem:hover {
-    /* background-color: rgb(94, 150, 255); */
-    
-    font-weight: 500;
-}
-
-.menuItem:hover h5{
-    color: #84868b;
-    font-size:15px;
-}
-
-
-#navMargin {
-    margin-top: 153px;
-}
-
-/* --------- search bar ------------ */
-.searchBar {
-    width: 100%;
-    height: 25px;
-    padding: 7px 0 0 0;
-}
-.inputSearch {
-	/* /*
-   rgb(232, 255, 238) left;
-    background-color: #FFFFFF;
-    border: 1px solid #CCCCCC;
-    border-radius: 7px 0 0 7px;
-    width: 95%;
-    height: 40px;
-    padding: 0 0 0 10px;
-    font-size: 12px;
-    color: #555555; */ 
-   
-    display: block;
-    float: left;
-    background-color: #FFFFFF;
-    border: none;
-        border-radius: 7px 7px 7px 7px;
-    width: 90%;
-    height: 40px;
-    padding: 0 0 0 10px;
-    font-size: 15px;
-    color: #3f63b5;
-    font-weight: 800;
-
-}
-.inputSearch:focus { /* �뜝�떙�궪�삕李� �겢�뜝�룞�삕�뜝�룞�삕�뜝�룞�삕 �뜝�룞�삕 �뜝�룞�삕 �뜝�룞�삕�뜝�룞�삕 */
-    border-color: white;
-    outline: 0;
-    box-shadow: inset 0 1px 1px white;
-}
-
-#submitBtn { /* �뜝�떙�궪�삕 �뜝�룞�삕�뜝占� */
-    display: block;
-    
-    float: left;
-    width: 7%; 
-    height: 42px;
-    border-radius: 0 7px 7px 0;
-    border: 1px solid #CCCCCC;
-    background-color: #ffffff;
-    margin-left: -1px;
-    vertical-align: top;
-    display: inline-block;
-}
-
 /* --------- section ------------ */
+#navMargin {
+    margin-top: 20px;
+}
+
 #section {
-	width: 93%;
+	width: 100%;
     margin: 0 auto;
     opacity: 100%;
-/*     background-color: #f2f6fb;
- */    border-radius: 10px;
-    padding-bottom: 10%;
-        background-color: #ffffff;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding-bottom: 1%;
 }
 
 /* --------- Footer ------------ */
@@ -263,4 +47,3 @@ px
 #info4 {
   line-height: 28px;
 }
-

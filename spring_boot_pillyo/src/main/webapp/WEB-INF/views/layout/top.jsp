@@ -7,50 +7,11 @@
 		<meta charset="UTF-8">
 		<title>top</title>
 		<link rel="stylesheet" href="/css/layout/common.css" />
+		<link rel="stylesheet" href="/css/layout/top.css" />
+		<script src="https://kit.fontawesome.com/2d323a629b.js" crossorigin="anonymous"></script>
 	</head>
-		<style>
-			marquee{
-			    height: 22px;
-		    }
-			.submitBtn{
-		
-	    		border: 0.3px solid white;
-			    background:white;
-			    border-radius: 40px 40px 40px 40px;
-			    width: 60px;
-			    height: 37px;
-			    font-size: 15px;
-			    font-weight: 600;
-			    border-color: white;
-			    box-shadow: 2px 2px 2px #ccd7f3;
-			    color: #919191;
-			    font-weight: 400;
-}
-			
-			.submitBtn:hover{
-				
-				box-shadow: 2px 2px 2px #bbbbbb;
-			}
-			.inputSearch::placeholder{
-			color: #84868b;
-    font-weight: 400;
-			  	opacity: 1; 
-		      	text-align: center;
-			   	font-size: 14px;
-			}
-			.profileText > a{
-			    
-    text-decoration: none;
-        color: #747474;
-    /* color: #6d8ac7; */
-    /* font-weight: bolder; */
-    font-size: 30px;
-			}
-		</style>
 	<body>
-		<div id="headerBox">
-			<div id="logoBox">
-				<!-- <div id="logo"><a href="/">Pill-yo</a></div> -->
+		<div id="marqueeBox">
 				<marquee>
 					<a href="<c:url value="/boardDetailView/1"/>">Pill-Yo 중요 공지</a>
 					<a href="<c:url value="/boardDetailView/1"/>">새로운 약정보  등록</a>
@@ -59,75 +20,139 @@
 					<a href="<c:url value="/boardDetailView/1"/>">공지사항을 확인해주세요</a>
 				</marquee>
 			</div>
-			<div class="mainHeader">
-				<div class="profileBox">
-					<!-- <div class="proflieImg">
-						<img src="./img/루피.jpg" class="loopy">
-					
-					</div> -->
-					<div class="profileText">
-						<!-- <h3>홍길동</h3>
-						<h4>나이 : 26</h4> -->
-						
-						<a href="/" style="color:#345cb5;">Pill-Yo</a>
-					</div>
-				</div>
-				<div id="mainNavBox">
-					<div class="mainNav">
-						
-				<c:choose>
-					<c:when test="${not empty sessionScope.admin}">
-                  	<!-- 관리자 로그인 -->
-						 <div class="menuBox">
-							<div class="menuItem"><a href="/adminMain"><h5>관리자</h5></a></div>
-							<div class="menuItem"><a href="/listAllBoard"><h5>공지사항</h5></a></div>
-							<div class="menuItem"><a href="/medicInfo"><h5>의약정보</h5></a></div>
-							<div class="menuItem"><a href="/drugShapeSearchForm"><h5>낱알검색</h5></a></div>
-							<div class="menuItem"><a href="/logout"><h5>로그아웃</h5></a></div>
+			<div id="headerBox">
+				<div id="logoBox">
+					<a href="/"><img src="/img/mainLogo.jpg"></a>
+				</div><!-- logoBox -->
+				
+				<div id="navBox">
+					<nav id="topMenu" >
+						<c:choose>
+							<c:when test="${not empty sessionScope.admin}">
+								<ul> 
+									<li class="topMenuLi"> 
+						                <a class="menuLink" href="/adminMain">통합관리</a>
+						            </li>
+						    
+						            <li class="topMenuLi"> 
+						                <a class="menuLink" href="/listAllBoard">공지사항</a>
+						            </li>
+						    
+						            <li class="topMenuLi"> 
+						                <span class="menuLink">정보제공</span>
+						                <ul class="submenu">
+						                    <li><a href="/medicInfo" class="submenuLink longLink">의약정보</a></li> 
+						                    <li><a href="/drugShapeSearchForm" class="submenuLink longLink">낱알검색</a></li> 
+						                    <li><a href="/pharmacyMaps" class="submenuLink longLink">주변 약국 및 편의점</a></li> 
+						                </ul> 
+						            </li>
+						            
+						            <li class="topMenuLi"> 
+						                <a class="menuLink" href="/logout">로그아웃</a>
+						            </li>
+						            
+						        </ul>
+							</c:when>
+							
+							<c:when test="${not empty sessionScope.sid}">
+								<ul> 
+									<li class="topMenuLi"> 
+						                <a class="menuLink" href="/updateMemberForm">마이페이지</a>
+						            </li>
+						            
+						            <li class="topMenuLi"> 
+						                <a class="menuLink" href="/listAllBoard">공지사항</a>
+						            </li>
+						    
+						            <li class="topMenuLi"> 
+						                <span class="menuLink">서비스</span> 
+						                <ul class="submenu">
+						                    <li><a href="/famListView" class="submenuLink longLink">가족관리</a></li>
+						                    <li><a href="/healthManageView" class="submenuLink longLink">건강관리</a></li>
+						                    <li><a href="/calendarView/${famNo}" class="submenuLink longLink">복용관리</a></li> 
+						                    <li><a href="/hmForm" class="submenuLink longLink">우리집 약 관리</a></li> 
+						                </ul> 
+						            </li>
+						    
+						            <li class="topMenuLi"> 
+						                <span class="menuLink">정보제공</span>
+						                <ul class="submenu">
+						                    <li><a href="/medicInfo" class="submenuLink longLink">의약정보</a></li> 
+						                    <li><a href="/drugShapeSearchForm" class="submenuLink longLink">낱알검색</a></li> 
+						                    <li><a href="/pharmacyMaps" class="submenuLink longLink">주변 약국 및 편의점</a></li> 
+						                </ul> 
+						            </li>
+						            
+						            <li class="topMenuLi"> 
+						                <a class="menuLink" href="/logout">로그아웃</a>
+						            </li>
+						            
+						        </ul>
+							</c:when>
+							
+							<c:otherwise>
+								<ul> 
+						            <li class="topMenuLi"> 
+						                <span class="menuLink">회원</span>
+						                <ul class="submenu"> 
+						                    <li><a href="/loginForm" class="submenuLink longLink">로그인</a></li> 
+						                    <li><a href="/join" class="submenuLink longLink">회원가입</a></li> 
+						                </ul> 
+						            </li>
+						    
+						            <li class="topMenuLi"> 
+						                <a class="menuLink" href="/listAllBoard">공지사항</a>
+						            </li>
+						    
+						            <li class="topMenuLi"> 
+						                <span class="menuLink">서비스</span> 
+						                <ul class="submenu">
+						                    <li><a href="/loginForm" class="submenuLink longLink" onclick="alert('로그인 후 이용 가능한 기능입니다.');">가족관리</a></li>
+						                    <li><a href="/loginForm" class="submenuLink longLink" onclick="alert('로그인 후 이용 가능한 기능입니다.');">건강관리</a></li>
+						                    <li><a href="/loginForm" class="submenuLink longLink" onclick="alert('로그인 후 이용 가능한 기능입니다.');">복용관리</a></li> 
+						                    <li><a href="/loginForm" class="submenuLink longLink" onclick="alert('로그인 후 이용 가능한 기능입니다.');">우리집 약 관리</a></li> 
+						                </ul> 
+						            </li>
+						    
+						            <li class="topMenuLi"> 
+						                <span class="menuLink">정보제공</span>
+						                <ul class="submenu">
+						                    <li><a href="/medicInfo" class="submenuLink longLink">의약정보</a></li> 
+						                    <li><a href="/drugShapeSearchForm" class="submenuLink longLink">낱알검색</a></li> 
+						                    <li><a href="/pharmacyMaps" class="submenuLink longLink">주변 약국 및 편의점</a></li> 
+						                </ul> 
+						            </li>
+						        </ul>
+							</c:otherwise>
+						</c:choose>
+					</nav>
+				</div><!-- navBox -->
+				
+				<div id="searchBox">
+					<form method="post" id="searchForm" action="<c:url value='/drugSearch'/>">
+						<div id="searchBar">
+							<span><i class="fas fa-search searchIcon"></i></span>
+							<input type="search" id="inputSearch" class="inputSearch" name="keyWord" placeholder="약 이름 및 효능으로 검색하세요.">
+							<input type="submit" id="submitBtn">
 						</div>
-					</c:when>	
-					<c:when test="${not empty sessionScope.sid}">
-					<!-- 로그인 성공한 경우 보여줄 메뉴 항목  -->	
-						
-						 <div class="menuBox">
-						 	<div class="menuItem"><a href="/updateMemberForm"><h5>마이페이지</h5></a></div>
-							<div class="menuItem"><a href="/healthManageView"><h5>건강관리</h5></a></div>
- 							<div class="menuItem" ><a href="/calendarView/${famNo}"><h5>복용관리</h5></a></div>
- 							<!-- <div class="outer-menu-btn" ><a href="/calendarView"><h5>복용관리</h5></a></div> -->
-							<div class="menuItem"><a href="/hmForm"><h5>우리집 약관리</h5></a></div>
-							<div class="menuItem"><a href="/listAllBoard"><h5>공지사항</h5></a></div>
-							<div class="menuItem"><a href="/medicInfo"><h5>의약정보</h5></a></div>
-							<div class="menuItem"><a href="/drugShapeSearchForm"><h5>낱알검색</h5></a></div>
-							<div class="menuItem"><a href="/logout"><h5>로그아웃</h5></a></div>
-						</div>
-					</c:when>
-	               		<%-- <c:if test="${empty sessionScope.sid }"> --%>
-               			<c:otherwise>
-						<!-- 로그인 하지 않은 경우 보여줄 메뉴 항목  -->
-		                    <div class="menuBox">
-								<div class="menuItem"><a href="/loginForm"><h5>로그인</h5></a></div>
-								<div class="menuItem"><a href="/loginForm" onclick="alert('로그인을 진행해주세요.'); alert('로그인 페이지로 이동합니다.');"><h5>건강관리</h5></a></div>
-								<div class="menuItem"><a href="/loginForm" onclick="alert('로그인을 진행해주세요.'); alert('로그인 페이지로 이동합니다.');"><h5>복용관리</h5></a></div>
-								<div class="menuItem"><a href="/loginForm" onclick="alert('로그인을 진행해주세요.'); alert('로그인 페이지로 이동합니다.');"><h5>우리집 약 관리</h5></a></div>
-								<div class="menuItem"><a href="/listAllBoard"><h5>공지사항</h5></a></div>
-								<div class="menuItem"><a href="/medicInfo"><h5>의약정보</h5></a></div>
-								<div class="menuItem"><a href="/drugShapeSearchForm"><h5>낱알검색</h5></a></div>
-								
-							</div>
-                        </c:otherwise>
-                  </c:choose>
-                  
-	                
-					</div>
-		  
-					<%-- <div class="searchBar">
-						<form method="post" action="<c:url value='/drugSearch'/>">
-							<input type="text" class="inputSearch" name="keyWord" placeholder="약에 대한 정보를 얻고 싶으시면 이곳에 입력해주세요">
-							<input type="submit" class="submitBtn" value="검색">
-						</form>
-					</div> --%>
-				</div>
-			</div>
-		</div>
+					</form>
+				</div><!-- searchBar -->	
+			</div><!-- headerBox -->
 	</body>
+	<script>
+        var inputSearch = document.getElementById('inputSearch')
+
+        var searchForm = document.getElementById('searchForm')
+
+        searchForm.addEventListener("submit", (e)=>{
+            if(inputSearch.value == "") {
+                e.preventDefault()
+                alert("검색어를 입력해주세요")
+                console.log("검색어를 입력해주세요")
+            }
+            else {
+            	console.log("검색")
+            }
+        })
+	</script>
 </html>
