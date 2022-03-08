@@ -14,11 +14,13 @@
 			dataType:'text',
 			success:function(result){
 				if(result == "success"){
-					alert("login ok");
+					alert("환영합니다! Pill-Yo입니다 :)");
 					location.href="/";
-				}else{
-				    alert("login fail");
-			 }
+				} else if (result == "kakao") {
+					alert("카카오 게정으로 가입된 아이디입니다.\n카카오로그인을 통해 로그인 해주세요.")
+				} else{
+				    alert("로그인에 실패하였습니다.");
+			 	}
 			},
 			error:function(data, textStatus){
 /*				let id = $('#id').val()

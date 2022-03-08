@@ -67,7 +67,9 @@
                         	console.log("아이디 추출 : " + k_idFromEmail);
                         	
                         	// 추출한 아이디를 user 테이블에 넣기 위한 카카오회원용 아이디로 가공
-                        	var k_id = k_idFromEmail + "_K"
+                        	var emailArr = k_email.split("@");
+                        	var emailInitial = (emailArr[1].charAt(0)).toUpperCase();
+                        	var k_id = k_idFromEmail + "_kakao" + emailInitial;
                         	document.getElementById("k_id").value=(k_id);
                         	
                         	// 카카오 회원가입 폼으로 값 넘기기

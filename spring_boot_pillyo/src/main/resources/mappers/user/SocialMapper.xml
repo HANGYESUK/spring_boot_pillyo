@@ -18,7 +18,25 @@
 	
 	<!-- 서비스 이용을 위해 user 테이블에도 추가 -->
 	<insert id="kakaoJoinUser" parameterType="com.pillyo.pill.model.social.KakaoVO">
-		INSERT INTO user(userId, userName, userHp, userEmail, userAddress1, userAddress2, userZipcode, joinDate)
-		VALUES (#{k_id}, #{k_name}, #{k_hp}, #{k_email}, #{k_address1}, #{k_address2},#{k_zipcode}, default )
+		INSERT INTO user(userId, userName, userHp, userEmail, userAddress1, userAddress2, userZipcode, joinDate, joinPath)
+		VALUES (#{k_id}, #{k_name}, #{k_hp}, #{k_email}, #{k_address1}, #{k_address2},#{k_zipcode}, default, 1 )
 	</insert>
-  </mapper>
+	
+	<!-- 로그인 시 소셜 로그인 회원인지 체크 -->
+	<select id="joinPathCheck" resultType="int" parameterType="String">
+		SELECT joinPath FROM user WHERE userId = #{id}
+	</select>
+	
+	<!-- 카카오 로그인 시 : 카카오 회원가입 되어있는 회원인지 아닌지 체크 -->
+	<select id="kakaoUserCheck" resultType="String" parameterType="hashmap">
+		SELECT k_email FROM kakao_user
+		WHERE k_name = #{k_name} AND k_email = #{k_email} AND k_bday = #{k_bday} AND k_gender = #{k_gender}
+	</select>
+	
+	<!-- 카카오 로그인 -->
+	<select id="kakaoLogin" resultType="String" parameterType="hashmap">
+		SELECT userId FROM user
+		WHERE userEmail = ( SELECT k_email FROM kakao_user
+							 WHERE k_name = #{k_name} AND k_email = #{k_email} AND k_bday = #{k_bday} AND k_gender = #{k_gender} )
+	</select>
+</mapper>

@@ -12,6 +12,7 @@ public class UserVO {
 	private String userZipcode;
 	private String userAddress1;
 	private String userAddress2;
+	private int joinPath;
 	
 	//update때 사용할 변수
 	private String userEmailId;
@@ -103,6 +104,12 @@ public class UserVO {
 	}
 	public void setUserHp3(String userHp3) {
 		this.userHp3 = userHp3;
+	}
+	public int getJoinPath() {
+		return joinPath;
+	}
+	public void setJoinPath(int joinPath) {
+		this.joinPath = joinPath;
 	}
 		
 }

@@ -36,7 +36,7 @@
 	        			success:function(result){
 	        				if(result == "no_use"){
 	        					alert("같은 이메일로 가입된 계정이 존재합니다.\n기존 계정으로 로그인 해주세요.");
-	        					$(location).attr('href', '/loginForm')
+	        					$(location).attr('href', '/loginForm');
 	        				} else {
 	        					alert("가입 가능");
 	        				}
@@ -90,4 +90,32 @@
 		
       </div> <!-- wrap -->
 	</body>
+	<script>
+		$(document).ready(function(){
+			$('#kakaoJoinForm').on('submit', function(){		
+				event.preventDefault();
+			
+				$.ajax({
+					type:"post",
+					url:"kakaoUserCheck",
+					data: { "k_name": $('#k_name').val(),
+							"k_email": $('#k_email').val(),
+							"k_bday": $('#k_bday').val(),
+							"k_gender": $('#k_gender').val()
+						},  
+					dataType:'text',
+					success:function(result){
+						if(result == "in"){
+							$(location).attr('href', '/kakaoLogin');
+						}else{
+							$(location).attr('href', '/kakaoJoinForm');
+					 }
+					},
+					error:function(data, textStatus){
+						alert("전송 실패");
+					}
+				});
+			});
+		});
+	</script>
 </html>
