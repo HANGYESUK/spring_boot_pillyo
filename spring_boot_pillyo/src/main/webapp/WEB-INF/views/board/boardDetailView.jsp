@@ -168,6 +168,11 @@
 						<!-- <td>내용</td> -->
 						<td colspan="3" style="    background: #ffffff; height: 500px; text-align:center;"><textarea readonly>${board.boardContent}</textarea></td>
 					</tr>
+					<tr>
+						<td colspan="3" style="    background: #ffffff; text-align:center;">
+						<img src="<c:url value='/images/${board.boardImg}'/>" style = "width : 604px;" >
+						<br> </td>
+					</tr>
 				
 				</tbody>
 				

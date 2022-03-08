@@ -60,9 +60,9 @@
 	
 	<style>
 		.back{
-	background-image: url(image/pillyo12.png);
-    width: 1920px;
-    height: 1200px;
+	background-image: url(image/pillyo13.png);
+    width: 900px;
+    height: 700px;
     background-repeat: no-repeat;
     background-size: cover;
 			}
