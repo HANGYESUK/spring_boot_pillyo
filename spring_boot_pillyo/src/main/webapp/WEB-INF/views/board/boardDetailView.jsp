@@ -106,6 +106,13 @@
     border-bottom: 10px;
     margin-bottom: 17px;
 		}
+		
+		#commentAllForm{
+		/*     height: 307px;
+    margin-top: -128px;
+    width: 530px;
+    text-align: center;
+    overflow: scroll; */}
 	</style>
 	
 	
@@ -184,9 +191,9 @@
 			
 			<div id="commentAllForm">
 			
-<form id= "/commentForm" name="/commentForm" enctype="multipart/form-data" method="post" action="<c:url value='/insertcomment'/>"> <!--  writedo로 넘겨주고 post방식으로 넘겨주겠다 -->
+<form id= "/commentForm" name="/commentForm" enctype="multipart/form-data" method="post" action="<c:url value='/insertcomment/${board.boardNo}'/>"> <!--  writedo로 넘겨주고 post방식으로 넘겨주겠다 -->
 		
-		<textarea class="commentText" placeholder="댓글 달기.." name="commentCotent">${comment.commentContent}</textarea>
+		<textarea class="commentText" placeholder="댓글 달기.." name="commentContent">${comment.commentContent}</textarea>
 			<input type="submit" id="button2" class="btn btn-primary pull-right" value="게시">
 			<input type="hidden" name="userId" value="${sessionScope.sid}">  <!-- 세션 아이디 받아오기 -->
 			<input type="hidden" name="commentWriteDate" value="<%= sf.format(nowDate) %>">
@@ -200,7 +207,7 @@
 			
 			
 			<br><br><br><br><br><br><br>
-			
+			<div id=commentAllForm>
 			<table class="table table-striped2" style="margin-top: -128px;        width: 530px;
     text-align: center;">
 						<thead>
@@ -216,7 +223,7 @@
 								<th style="width:180px;">내용	</th>
 							</tr> -->
 						</thead>
-						<tbody>
+						<tbody style="overflow:scroll;">
 				        	<c:forEach items="${commentList }" var="comment">
 				        		
 				        		<tr>
@@ -269,7 +276,7 @@
 					</tr>
 						</tbody>
 			</table>	
-			
+			</div>
 			
 			
 			<br>

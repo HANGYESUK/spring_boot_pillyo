@@ -84,16 +84,16 @@ public class BoardController {
 	}
 	
 	// 게시판 등록 
-	@RequestMapping("/insertboard/{boardNo}")
-	public String insertboard(BoardVO vo, HttpSession session) { 
-								// title, content 매개변수 받기 
-		String userId = (String)session.getAttribute("sid"); // session 받아오기
-		service.insertboard(vo);
-		
-		
-//		System.out.println(vo.getTitle());
-		return "redirect:/listAllBoard";
-	}
+		@RequestMapping("/insertboard")
+		public String insertboard(BoardVO vo, HttpSession session) { 
+									// title, content 매개변수 받기 
+			String userId = (String)session.getAttribute("sid"); // session 받아오기
+			service.insertboard(vo);
+			
+			
+//			System.out.println(vo.getTitle());
+			return "redirect:/listAllBoard";  
+		}
 	
 
 //	//Ajax 컨트롤러
@@ -108,20 +108,19 @@ public class BoardController {
 //		return"success";
 //	}
 	
-	
-	// 댓글 등록 
-	@RequestMapping("/insertcomment/{boardNo}")
-	public String insertcomment(CommentVO vo, HttpSession session,@PathVariable("boardNo") int boardNo, Model model) { 
-								// title, content 매개변수 받기 
-		String userId = (String)session.getAttribute("sid"); // session 받아오기
-		commentservice.insertcomment(vo);
-		System.out.println(boardNo);
-//			System.out.println(vo.getTitle());
-		BoardVO board = service.boardDetailView(boardNo);
-		model.addAttribute("boardNo", boardNo);
-		return "redirect:/boardDetailView";
-	}
-	
+		// 댓글 등록 
+		@RequestMapping("/insertcomment/{boardNo}")
+		public String insertcomment(CommentVO vo, HttpSession session,@PathVariable("boardNo") int boardNo, Model model) { 
+									// title, content 매개변수 받기 
+			String userId = (String)session.getAttribute("sid"); // session 받아오기
+			commentservice.insertcomment(vo);
+			System.out.println(boardNo);
+//				System.out.println(vo.getTitle());
+			BoardVO board = service.boardDetailView(boardNo);
+			model.addAttribute("boardNo", boardNo);
+			
+			return "redirect:/boardDetailView/{boardNo}";
+		}
 
 	
 	@RequestMapping("/listAllBoard")
