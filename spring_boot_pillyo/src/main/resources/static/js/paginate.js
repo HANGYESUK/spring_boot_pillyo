@@ -1,21 +1,5 @@
 /**
- * Ligne Paginatejs
- *
- * Autor: Albert Eduardo Hidalgo Taveras
- * Github: https://github.com/itsalb3rt
- *
- * El propósito de esta liberia es proporcionar una herramienta sin
- * dependencias de Frameworks o otras dependencias molestas.
- *
- * Con unas pocas configuraciones esto es capaz de arrancar y liberarlo de mucho trabajo.
- *
- * *
- * Ejemplo:
- * let options = {
- *       numberPerPage:5,
- *       goBar:false,
- *       pageCounter:false,
- * };
+ * paginate.js
  *
  * let filterOptions = {
  *      el:'#searchBox'
@@ -46,7 +30,7 @@
             launchPaginate();
         }
         /**
-         * Configuraciones de la paginacion
+         * 페이징 설정
          **/
         var settings = {
             el:null,
@@ -188,20 +172,14 @@
             document.querySelector('.paginate_controls').style.visibility = 'unset';
         }
 
-        // (numberOfPage): número de páginas, (currentPage): página actual, la página seleccionada ..
+        // (numberOfPage):페이지수 , (currentPage):현재 페이지, 선택된 페이지 ..
         var pageButtons = function(numberOfPage,currentPage) {
-            /** Estas variables deshabilitarán el botón "Prev" en la
-             * primera página y el botón "siguiente" en la ultima
-             **/
+            /* 첫페이지 이전, 다음 비활성화 설정 */
             let	prevDisabled = (currentPage == 1)?"disabled":"";
             let nextDisabled = (currentPage == numberOfPage)?"disabled":"";
 
-            /** Este (botones) creara todos los botones necesarios
-             * creará cada botón y establece el atributo onclick
-             * a la función "order" con un número especial (currentPage)
-             *
-             * Tambien se encarga de agregar el boton de "gotopage" y "pagecounter"
-             **/
+            /* 버튼 설정
+             */
             let buttons = "<input type='button' value='← prev' class='paginate_control_prev' onclick='paginate.sort("+(currentPage - 1)+")' "+prevDisabled+">";
             let buttonNumberOfPage = "<input type='button' value='" + currentPage + ' - ' + numberOfPage + "' disabled>";
 
@@ -224,15 +202,9 @@
 
             return buttons;
         }
-        /**
-         * Cuando el numero de paginas supera las 10 se crea un mecanismo que oculta
-         * todas las paginas con numero superior a 4 y inferior a las ultima pagina
-         *
-         * Cuando se navega por la paginación solo se mostrara el numero actual
-         * Inicial
-         *      <- prev  (1)    2   3   4   ... 41 next ->
-         * Después
-         *      <- prev  1    2   3   4  (22)   ... 41 next ->
+        /*
+         * 
+         * 
          **/
         var paginationMoreThatTenPage = function(iterator,numberOfPage){
 
@@ -268,13 +240,13 @@
             table = settings.table;
             numberPerPage = settings.numberPerPage;
             let rowCount = table.rows.length;
-            // obtener el nombre de la etiqueta de la primera celda (en la primera fila)
+            //첫 번째 셀 이름 가져오기
             let firstRow = table.rows[0].firstElementChild.tagName;
-            // Verificando si la tabla tiene encaebzado
+            // 테이블에 헤더 있는지 확인
             let hasHead = (firstRow === "TH");
-            // contadores de bucles, para comenzar a contar desde las filas [1] (2da fila) si la primera fila tiene una etiqueta de encabezado
+            // 1행 헤더 있는 경우, 두번째 행 부터 계산
             let $i,$ii,$j = (hasHead)?1:0;
-            // contiene la primera fila si tiene un (<th>) y nada si (<td>)
+            // <th>있으면 첫 번째 행 포함, <td>있으면 아무것도 포함하지 않음
             th = (hasHead?table.rows[(0)].outerHTML:"");
             pageCount = Math.ceil(rowCount / numberPerPage);
             settings.numberOfPages = pageCount;
@@ -283,9 +255,9 @@
                 settings.hasPagination = true;
                 for ($i = $j,$ii = 0; $i < rowCount; $i++, $ii++)
                     tr[$ii] = table.rows[$i].outerHTML;
-                // Contenedor de los botones "paginate_controls"
+                // 페이징 버튼관련
                 table.insertAdjacentHTML("afterend","<div id='buttons' class='paginate paginate_controls'></div");
-                // Inicializando la tabla en la pagina 1
+                // 1페이지 초기화
                 _lignePaginate.sort(1);
             }else{
                 settings.hasPagination = false;
@@ -293,10 +265,7 @@
         };
 
         _lignePaginate.sort = function(selectedPageNumber) {
-            /** crea (filas) una variable para contener el grupo de filas
-             * para ser mostrado en la página seleccionada,
-             * startPoint: la primera fila en cada página, Do The Math
-             **/
+            /* */
             let rows = th,startPoint = ((settings.numberPerPage * selectedPageNumber)-settings.numberPerPage);
             for (let $i = startPoint; $i < (startPoint+settings.numberPerPage) && $i < tr.length; $i++)
                 rows += tr[$i];
@@ -305,16 +274,13 @@
             document.getElementById("buttons").innerHTML = pageButtons(pageCount,selectedPageNumber);
             document.getElementById("id"+selectedPageNumber).classList.add('active');
             /**
-             * Esto se utiliza para mostrar el numero de la pagina en la que se encuentra
-             * generalmente se usa cuando las paginas son mayor a 10
+             *현재 잇는 페이지 번호 표시 
              **/
             document.getElementById("id"+selectedPageNumber).style.display = 'unset';
         }
 
         /**
-         * Esto se encarga de filtrar la informacion segun una caja de texto
-         * tambien llama al metodo que oculta la parte de los botones de la
-         * paginacion
+         * 정보 필터링
          **/
         _lignePaginate.filter = function() {
             if(settings.hasPagination){

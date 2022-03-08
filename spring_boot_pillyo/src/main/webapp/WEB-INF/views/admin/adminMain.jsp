@@ -23,10 +23,24 @@
 				<jsp:include page="/WEB-INF/views/admin/adminMainMenu.jsp" flush='true' />
 			
 					<div id="adminArticle">
-						<div id="userCnt">
-						 	<p>  회원수
-							${userCnt}</p>
+						
+						<div class="adminInfoBox">
+							<div id="userCnt">
+							 	<p>  회원수
+								${userCnt}</p>
+							</div>
 						</div>
+						
+						<div class="adminInfoBox">
+						
+						</div>
+						
+						<div class="adminInfoBox">
+						
+						</div>	
+							
+							
+							
 							
 					</div>					
 				
