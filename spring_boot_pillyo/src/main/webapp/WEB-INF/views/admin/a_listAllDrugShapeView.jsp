@@ -7,6 +7,9 @@
 		<meta charset="UTF-8">
 		<title>약모양 리스트</title>
 		<script src="<c:url value='/js/jquery-3.6.0.min.js'/>"></script>
+		<link rel="stylesheet" href="/css/paging/paginate.css">
+	    <link rel="stylesheet" href="/css/paging/ligne.css">
+	    <script type="text/javascript" src="js/paginate.js"></script>
 		<%-- <link rel="stylesheet" href="<c:url value='/css/admin/a_listAllDrugInfoView.css'/>"> --%>
 		<link rel="stylesheet" href="<c:url value='/css/admin/adminTable.css'/>">
 	</head>
@@ -22,6 +25,16 @@
 			<div id="adminContainer">
 			
 			<jsp:include page="/WEB-INF/views/admin/adminMainMenu.jsp" flush='true' />
+				<!-- 페이징-서치 -->
+				<div class="tableBox">
+				
+				<div class="body">
+		            <div class="input-group">
+		                <label for="searchBox">검색</label>
+		                <input type="search" id="searchBox" placeholder="검색">
+		            </div>
+		        </div>
+				<!-- 페이징-서치 -->
 			
 				 <table class="adminTable">
 				 	<thead>
@@ -45,8 +58,22 @@
 				 	
 				 	</c:forEach>
 				 </table>
-
 			</div>
+			</div>
+				<!-- 페이징 스크립트 -->
+			<script>
+			    let options = {
+			        numberPerPage:10, //한페이지 보여지는 갯수
+			        goBar:true, // 이동 페이지 입력바
+			        pageCounter:true, // 몇페이지에 있는지
+			    };
+			
+			    let filterOptions = {
+			        el:'#searchBox' //필터링 박스 id
+			    };
+			
+			    paginate.init('.adminTable',options,filterOptions);
+			</script>
 			</section>
 	        
 			<!-- BOTTOM  -->

@@ -6,7 +6,8 @@
   		
   		<!-- 약모양 다중 검색 -->
   		<select id="drugShapeSearch" parameterType="HashMap"
-  														resultType="com.pillyo.pill.model.DrugShapeVO">
+  														resultType="com.pillyo.pill.model.DrugShapeVO"
+  														fetchSize="400">
   			SELECT * FROM drugshape 
   			WHERE 
   				
@@ -43,9 +44,22 @@
   												
 		</select>
 		
+			<!-- 약 상세 정보 조회  -->
+  		<select id="detailViewDrugShape" parameterType="String"
+  													resultType="com.pillyo.pill.model.DrugShapeVO">
+  			SELECT * FROM drugshape WHERE drugshapeNo = #{drugshapeNo}
+  		</select>	
+		
+		
 			<!-- 관리자 메뉴- 전체 조회 -->
 		<select id="listAllDrugShapeView" resultType="com.pillyo.pill.model.DrugShapeVO">
-			SELECT * FROM drugshape limit 20
+			SELECT * FROM drugshape limit 40
 		</select>
+  		
+  		
+  		
+  		
+  		
+  		
   		
   </mapper>

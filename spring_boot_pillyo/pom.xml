@@ -46,7 +46,7 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
+			<scope>test</scope>	
 		</dependency>
 		
 		<!--  JSP 뷰 사용하기 위한 의존성 추가 -->

@@ -63,9 +63,6 @@
 		opacity:50%;
 	} */
 		.back{
-	background-image: url(image/pillyo13.png);opacity:90%;
-    width: 1200px;
-    height: 730px;
     background-repeat: no-repeat;
     background-size: cover;
 			}
