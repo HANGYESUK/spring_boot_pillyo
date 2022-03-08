@@ -5,9 +5,20 @@
   
   <mapper namespace="com.pillyo.pill.dao.ISocialDAO">
   
-	<!-- 회원가입 -->
+  	<!-- Email 중복 확인 -->
+	<select id="kakaoEmailCheck" resultType="string" parameterType="string">
+		SELECT userEmail FROM user WHERE userEmail = #{k_email}
+	</select>
+		
+	<!-- 카카오 회원가입 -->
 	<insert id="kakaoJoin" parameterType="com.pillyo.pill.model.social.KakaoVO">
 		INSERT INTO kakao_user (k_name, k_email, k_bday, k_gender)
 		VALUES (#{k_name}, #{k_email}, #{k_bday}, #{k_gender})
+	</insert>
+	
+	<!-- 서비스 이용을 위해 user 테이블에도 추가 -->
+	<insert id="kakaoJoinUser" parameterType="com.pillyo.pill.model.social.KakaoVO">
+		INSERT INTO user(userId, userName, userHp, userEmail, userAddress1, userAddress2, userZipcode, joinDate)
+		VALUES (#{k_id}, #{k_name}, #{k_hp}, #{k_email}, #{k_address1}, #{k_address2},#{k_zipcode}, default )
 	</insert>
   </mapper>

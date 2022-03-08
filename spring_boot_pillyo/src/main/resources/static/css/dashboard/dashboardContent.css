@@ -13,9 +13,6 @@ hr {margin: 5px;}
 i {
     cursor: pointer;
     z-index: 2;
-    float: right;
-    margin-right: 10px;
-    margin-top: 10px;
 }
 
 i:hover {

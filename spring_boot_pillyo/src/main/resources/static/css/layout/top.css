@@ -1,18 +1,47 @@
+/* --------- marquee ------------ */
+#marqueeBox {
+	position: relative;
+    margin: 0 auto;
+    width: 100%;
+    padding: 10px 0 13px 0;
+    font-size: 24px;
+    background: #fbfbfb;
+    height: 9px;
+    line-height: 13px;
+}
+
+marquee {
+	width: 100%;
+    font-size: 12px;
+}
+
+marquee a {
+	margin: 0 48px;
+    text-decoration: none;
+    color: #565656;
+}
+
 /* --------- header ------------ */
 #headerBox {
     position: relative;
-    height: 90px;
+    height: 75px;
     background: white;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
-    z-index: 999;
+}
+
+#logoBox {
+    display: inline-block;
+    position: absolute;
+    top: 12px;
+    left: 40px;
 }
 
 #navBox {
 	display: inline-block;
     position: absolute;
-    top: 25%;
-    left: 6%;
+    top: 21px;
+    left: 200px;
 }
 
 #topMenu {
@@ -54,7 +83,7 @@
 }
 
 .menuLink {
-  font-size: 20px;
+  font-size: 17px;
   color: black;
 }
 
@@ -72,7 +101,7 @@
   -moz-transition: opacity 0.8s;
   -o-transition: opacity 0.8s;
   width: 612px;
-  left: -8px;
+  left: -45px;
 }
 
 .submenu li {
@@ -80,7 +109,7 @@
 }
 
 .submenuLink {
-  font-size: 16px;
+  font-size: 13px;
   margin: 0 10px;
   color: #000000;
   font-weight: normal;
@@ -111,16 +140,16 @@
 /* --------- search bar ------------ */
 #searchBox {
 	position: absolute;
-    right: 6%;
-    top: 17%;
+    right: 60px;
+    top: 17px;
 }
 
 #searchBar {
     background: white;
     border: 1px solid #8a8a8a;
-    width: 580px;
-    height: 50px;
-    line-height: 50px;
+    width: 500px;
+    height: 40px;
+    line-height: 40px;
     border-radius: 50px;
     padding: 0 20px;
 }
@@ -132,8 +161,8 @@
 .inputSearch {
 	background: white;
     margin-left: 13px;
-    width: 540px;
-    font-size: 15px;
+    width: 460px;
+    font-size: 14px;
     height: 37px;
     border: none;
 }

@@ -51,16 +51,18 @@
 											<h3>${fam.famMember }</h3>
 										</div>
 										<p>${fam.famBirth }</p>
-										<a href="<c:url value='/famUpdateForm/${fam.famNo}'/>">
-											<div class="update-Btn low">
-												<h3>수   정</h3>
-											</div>
-										</a>
-										<a href="javascript:deleteCheck();">
-											<div class="delete-Btn low">
-												<h3>삭   제</h3>
-											</div>
-										</a>
+										<div id="famBtnBox">
+											<a href="<c:url value='/famUpdateForm/${fam.famNo}'/>">
+												<div class="update-Btn low">
+													<h3>수정</h3>
+												</div>
+											</a>
+											<a href="javascript:deleteCheck();">
+												<div class="delete-Btn low">
+													<h3>삭제</h3>
+												</div>
+											</a>
+										</div>
 									</div>
 								</div>
 								<script>
