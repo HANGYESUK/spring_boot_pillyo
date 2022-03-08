@@ -59,18 +59,11 @@ p{	color : black;}
 		margin-left:15px;
 		margin:0 auto;
 	}
-.hm_List_view{
-		width : 100px;
-		height : 300px;
-		background-color : white;
-		overflow : auto;
-}
 
 table{
 		border: 1px solid #444444;
     	border-collapse: collapse;
 		color : black;
-		
 		margin:0 auto;
 }
 
@@ -99,15 +92,17 @@ th,td{
 	}
 #hm_list_view{
 	width: 100%;
-    height: 350px;
+    height: 400px;
     background-color: white;
     border-radius: 20px;
     border: none;
     padding: 10px;
+    padding-top: 100px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+	overflow : auto;
 }
 
 .btn {

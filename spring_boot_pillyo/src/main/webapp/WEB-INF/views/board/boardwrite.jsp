@@ -26,13 +26,13 @@
 
 <!-- 이미지 불러오는 java Script -->
 	<script type="text/javascript">
-	 function setThumbnail(event) { // 이미지 등록 버튼의 onchange
+		function setThumbnail(event) { // 이미지 등록 버튼의 onchange
 			var reader = new FileReader(); 	// 파일을 불러옴
-		    
+			$('#image_container').empty()
 			reader.onload = function(event) { // 불러온 파일을 읽어 div#image_container에 넣음
 				var image = document.createElement("img"); 
 				image.setAttribute("src", event.target.result); 
-				document.querySelector("div#image_container").appendChild(image);
+				document.getElementById("image_container").appendChild(image);
 				}
 				
 			reader.readAsDataURL(event.target.files[0]);
@@ -81,7 +81,20 @@
 	input file-upload-button{
 	color:red;
 	}
-
+	
+	#img_box{
+		border : 1px solid #A0A0A0;
+		width: 400px;
+	}
+	#image_container{
+		width: 506px;
+		height: 400px;
+	}
+	#image_container img
+	{
+	  width: 506px;
+	  height: 360px;
+	}
 </style>
 
 
@@ -124,17 +137,17 @@
 		    </tr>
 		    <tr>
 			<td><textarea class="form-control" placeholder="글 내용" rows="10" cols="50" name="boardContent" maxlength="2048" style="height: 350px; width: 500px;" >${boardCtgList.boardContent}</textarea>
-			
+				
 			</td>
 			
 			</tr>
 			<tr>
-				<td><input type="file" name="fileName" 
+				<td><input type="file" name="fileName" onchange="setThumbnail(event);" 
 				
 				style="color: #3f63b5;
 					    width: 160px;
 					    float: left;">
-				
+					<div id="image_container"><img id="image" src="#" alt="이미지 미리보기" /></div>
 				</td>
 			</tr>
 			<!-- <tr>
