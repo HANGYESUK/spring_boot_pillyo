@@ -14,14 +14,19 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.pillyo.pill.model.UserVO;
 import com.pillyo.pill.service.FamilyService;
+import com.pillyo.pill.service.SocialService;
 import com.pillyo.pill.service.UserService;
 
 @Controller
 public class UserController {
 	@Autowired
-	UserService service;
+	UserService user_service;
+	
 	@Autowired
 	FamilyService family_Service;
+	
+	@Autowired
+	SocialService social_Service;
 	
 	
 	// 로그인 폼으로 이동
@@ -37,14 +42,22 @@ public class UserController {
 											   HttpSession session) {
 		
 		// 로그인 체크 결과
-		UserVO vo = service.loginCheck(param);
+		UserVO vo = user_service.loginCheck(param);
 		String result = "fail";
 		
+		// 소셜 로그인 회원인지 체크 (가입경로 0 : pillyo 회원 | 1 : 카카오)
+		int joinPath = social_Service.joinPathCheck(vo.getUserId());
+		
 		if(vo != null) {
-			//로그인 성공하면 세션 변수 지정
-			session.setAttribute("sid", vo.getUserId());
-			System.out.println(vo.getUserId());
-			result = "success";
+			if (joinPath == 0) {
+				// 일반 회원으로 로그인 성공하면 세션 변수 지정
+				session.setAttribute("sid", vo.getUserId());
+				// System.out.println(vo.getUserId());
+				result = "success";
+			} else if (joinPath == 1) {
+				return "kakao";
+			}
+			
 		}
 		
 		return result;
@@ -54,7 +67,7 @@ public class UserController {
 	@RequestMapping("/logout")
 	public String logout(HttpSession session) {
 		
-		// DB에서 아이디 패승워드 확인
+		// DB에서 아이디 패스워드 확인
 
 		session.invalidate();
 
@@ -65,7 +78,7 @@ public class UserController {
 		@ResponseBody
 		@RequestMapping("/userIdCheck")
 		public String userIdCheck(@RequestParam("userId") String userId) {
-			String userId_result = service.userIdCheck(userId);
+			String userId_result = user_service.userIdCheck(userId);
 			
 			String result = "use";
 			if(userId_result != null)
@@ -80,7 +93,7 @@ public class UserController {
 		public String userEmailCheck(@RequestParam("userEmailId") String userEmailId, @RequestParam("userEmail") String userEmail) {
 			String email = userEmailId + '@' + userEmail;
 			System.out.println(email);
-			String userEmail_result = service.userEmailCheck(email);
+			String userEmail_result = user_service.userEmailCheck(email);
 			
 			String result = "use";
 			if(userEmail_result != null)
@@ -92,7 +105,7 @@ public class UserController {
 		// 회원가입
 		@RequestMapping("/userJoin")
 		public String userJoin(UserVO vo) {
-			service.userJoin(vo);
+			user_service.userJoin(vo);
 			
 			//회원가입시 가족 번호 본인으로 자동 생성
 			String userId = vo.getUserId();
@@ -112,7 +125,7 @@ public class UserController {
 		@RequestMapping("/updateMemberForm")
 		public String updateMemberForm(HttpSession session, Model model) {
 			String userId = (String)session.getAttribute("sid");
-			UserVO vo = service.detailUserView(userId);
+			UserVO vo = user_service.detailUserView(userId);
 			
 			//이메일 분리
 			String emailStr = vo.getUserEmail();
@@ -155,14 +168,14 @@ public class UserController {
 			String userHp = userHp1 + "-" + userHp2 +"-" +userHp3;
 			vo.setUserHp(userHp);
 			
-			service.updateUser(vo);
+			user_service.updateUser(vo);
 			return "redirect:/myPage";
 		}
 		
 		//회원탈퇴
 		@RequestMapping("/deleteUser/{userId}")
 		public String deleteUser(@PathVariable("userId") String userId, HttpSession session) {
-			service.deleteUser(userId);
+			user_service.deleteUser(userId);
 			session.invalidate();
 			return "index";
 		}
