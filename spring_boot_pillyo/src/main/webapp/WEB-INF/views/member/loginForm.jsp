@@ -19,6 +19,9 @@
 		#adminLogin{
 		position: absolute;	
 		}
+		#adminLogin a{
+		color: white;
+		}
 	</style>
 	
 	

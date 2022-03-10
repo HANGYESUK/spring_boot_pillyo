@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
+import javax.servlet.http.HttpSessionListener;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -69,9 +70,10 @@ public class AdminController {
 			
 			return result;
 		}
-		
+		//관리자 메인화면 이동
 		@RequestMapping("/adminMain")
 		public String adminMain(Model model) {
+			
 			int userCnt = uservice.userCount();
 			model.addAttribute("userCnt", userCnt);
 			return "admin/adminMain";
