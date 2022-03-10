@@ -95,6 +95,8 @@
 			
 			<section id="section">
 		
+			<div id="adminContainer">
+			<jsp:include page="/WEB-INF/views/admin/adminMainMenu.jsp" flush='true' />
 			
 				<div id="updateUserBox">
 					<h2 align="center">(관리자)회원 정보수정</h2>
@@ -178,6 +180,7 @@
 							</div>
 						</div>
 					</form>
+				</div>
 				</div>
 			</section>
 		<br><br><br>
