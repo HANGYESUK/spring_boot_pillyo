@@ -21,26 +21,41 @@
 			<div id="navMargin"></div>
 				
 			<section id="section">
-				<div id="doseTblBox">
-					<table id="doseTbl">
-						<tr><th colspan="2">복용 타이틀</th></tr>
-						<tr><td colspan="2">${doseVo.ddTitle }</td></tr>
-						<tr><th colspan="2">약 번호</th></tr>
-						<tr><td colspan="2">${doseVo.drugInfoNo }</td></tr>
-						<tr><th>복용 시작 날짜</th><th>복용 종료 날짜</th></tr>
-						<tr><td>${doseVo.ddStartDate }</td><td>${doseVo.ddEndDate }</td></tr>
-						<tr><th>복용 시기</th><th>복용 상세 시간</th></tr>
-						<tr><td>${doseVo.ddTimeSlot }</td><td>${doseVo.ddTime }</td></tr>
-						<tr><th>복용 주기</th><th>1회 복용량</th></tr>
-						<tr><td>${doseVo.ddCycle }</td><td>${doseVo.ddAmount }</td></tr>
-						<tr><th><a href="<c:url value='/doseUpdateForm/${doseVo.ddNo}'/>">수정하기</a></th><th><a href="javascript:deleteCheck();">삭제하기</a></th></tr>
-						<tr><th colspan="2"><label><button id="doseShareBtn" class="calBtn" onClick="sendLinkDefault();"></button>공유하기</label></th></tr>
-					</table>
+				<div id="doseDetailBox">
+					<div id="doseTblBox">
+						<table id="doseTbl">
+							<tr><th colspan="2">복용 타이틀</th></tr>
+							<tr><td colspan="2">${doseVo.ddTitle }</td></tr>
+							<tr><th colspan="2">약 번호</th></tr>
+							<tr><td colspan="2">${doseVo.drugInfoNo }</td></tr>
+							<tr><th>복용 시작 날짜</th><th>복용 종료 날짜</th></tr>
+							<tr><td>${doseVo.ddStartDate }</td><td>${doseVo.ddEndDate }</td></tr>
+							<tr><th>복용 시기</th><th>복용 상세 시간</th></tr>
+							<tr><td>${doseVo.ddTimeSlot }</td><td>${doseVo.ddTime }</td></tr>
+							<tr><th>복용 주기</th><th>1회 복용량</th></tr>
+							<tr><td>${doseVo.ddCycle }</td><td>${doseVo.ddAmount }</td></tr>
+						</table>
+					</div>
+					<div id="btnBox">
+						<div id="updateBtn">
+							<a href="<c:url value='/doseUpdateForm/${doseVo.ddNo}'/>">수정하기</a>
+						</div>
+						<div id="removeBtn">
+							<a href="javascript:deleteCheck();">삭제하기</a>
+						</div>
+						<div id="shareBtn">
+							<label><button id="doseShareBtn" class="calBtn" onClick="sendLinkDefault();"></button>공유하기</label>
+						</div>
+					</div>
 				</div>
 			</section>
 			
 			<!-- BOTTOM  -->
 			<jsp:include page="/WEB-INF/views/layout/bottom.jsp" flush='true' />
+			
+			<!-- chatbot -->
+			<jsp:include page="/WEB-INF/views/chatBot.jsp"/>
+			
 		
       </div> <!-- wrap -->
 	</body>

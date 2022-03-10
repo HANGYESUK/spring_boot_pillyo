@@ -13,7 +13,8 @@
 
 #doseItemBox a {
 	text-decoration: none;
-	
+	color: #365eb0;
+    font-weight: bold;
 }
 
 .doseItem {
@@ -25,24 +26,43 @@
     border-radius: 85px;
 }
 
-.itemBottom {
-	width: 300px;
-    height: 180px;
-    border-radius: 85px 85px 0 0;
-    background: white;
-    text-align: center;
-    line-height: 180px;
-    font-size: 30px;
-    font-weight: 900;
-   
-    color: #60605b;
-}
-
 #doseItemBigBox{
-	      background: #f9f9f4;
+	      background: #f4f4f6;
     box-shadow: 0px 0px 4px #dadada;
     border-radius: 17px;
     margin-left: 80px;
-    margin-top: -122px;
+    margin-top: 70px;
+    width: 100%;
 	
+}
+
+#doseItemBox {
+    margin-top: 30px;
+    padding-bottom: 60px;
+}
+
+#doseItemTbl {
+    width: 1000px;
+    font-size: 19px;
+    text-align: center;
+    line-height: 28px;
+    border: solid 1px #dbdbdb;
+    border-radius: 16px;
+}
+
+#doseItemTbl th {
+    padding: 20px 0;
+    background: #dfe9f5;
+}
+
+#doseItemTbl tr {
+	line-height: 38px;
+}
+
+#firstTh {
+	border-top-left-radius: 12px;
+}
+
+#lastTh {
+	border-top-right-radius: 12px;
 }
