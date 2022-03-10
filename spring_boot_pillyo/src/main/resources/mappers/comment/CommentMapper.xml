@@ -6,8 +6,8 @@
   <mapper namespace="com.pillyo.pill.dao.ICommentDAO">
   
 	
-	<select id="listAllComment" parameterType="Hashmap" resultType="com.pillyo.pill.model.CommentVO">
-  			select * from comment order by commentWriteDate desc;
+	<select id="listAllComment" parameterType="int" resultType="com.pillyo.pill.model.CommentVO">
+  			select * from comment WHERE boardNo=#{boardNo}  order by commentWriteDate desc;
   			<!-- ORDER BY id DESC
             LIMIT #{pageStart}, #{perPageNum} -->
   	</select>
@@ -29,6 +29,11 @@
 							#{commentWriteDate}
   			)
 	</insert>
+	
+	<!-- 댓글 정보 삭제 -->
+	<delete id="deleteComment"  parameterType="int">
+		DELETE FROM comment WHERE commentNo=#{commentNo}
+	</delete>
 
 
   </mapper>

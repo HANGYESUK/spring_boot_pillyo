@@ -1,11 +1,13 @@
 /* --------- header ------------ */
 #headerBox {
-    position: relative;
-    height: 90px;
+        position: relative;
+    height: 65px;
     background: white;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     z-index: 999;
+    
+    
 }
 
 #navBox {
@@ -49,7 +51,7 @@
 .submenuLink {
   text-decoration: none;
   display: block;
-  font-weight: bold;
+  font-weight: 400;
   margin: 0 13px;
 }
 
@@ -116,13 +118,15 @@
 }
 
 #searchBar {
+	   
+    margin-top: 3px;
     background: white;
-    border: 1px solid #8a8a8a;
+    border: 2px solid #f5f5f5;
     width: 580px;
-    height: 50px;
-    line-height: 50px;
+    height: 46px;
+    line-height: 47px;
     border-radius: 50px;
-    padding: 0 20px;
+    padding: 0px 20px;
 }
 
 .searchIcon {
@@ -140,12 +144,14 @@
 
 .inputSearch:focus {
 	outline: 0;
-    background: #f7f7f7;
+    background: #fbfbfb;
+   	color:#3d3b3a;
 }
 
 #searchBar:focus-within {
-    background: #f7f7f7;
-    border: 1px solid #8a8a8a;
+    background: #fbfbfb;
+    
+     
 }
 
 #submitBtn {

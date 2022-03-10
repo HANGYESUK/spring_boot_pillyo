@@ -107,12 +107,41 @@
     margin-bottom: 17px;
 		}
 		
-		#commentAllForm{
-		/*     height: 307px;
-    margin-top: -128px;
-    width: 530px;
+		#commentAllListForm{
+    border-radius: 5px;
+    margin-left: 10px;
+    padding-left: 23px;
+
+		 height: 307px;
+    margin-top: -121px;
+    width: 510px;
     text-align: center;
-    overflow: scroll; */}
+    overflow-y: scroll;
+    border-color: #f7f7f7;
+    box-shadow: 0 4px 5px rgb(0 0 0 / 20%);
+    background: white;}
+    
+    #commentAllListForm::-webkit-scrollbar {
+    /* display: none;  *//* Chrome, Safari, Opera*/
+}
+
+
+/* 스크롤바 설정*/
+#commentAllListForm::-webkit-scrollbar{
+    width: 6px;
+}
+
+/* 스크롤바 막대 설정*/
+#commentAllListForm::-webkit-scrollbar-thumb{
+    height: 17%;
+    background-color: #3f63b5;
+    border-radius: 10px;  
+}
+
+/* 스크롤바 뒷 배경 설정*/
+#commentAllListForm::-webkit-scrollbar-track{
+    background-color: #becae6;
+}
 	</style>
 	
 	
@@ -187,6 +216,7 @@
 			<a href="javascript:deleteCheck();"><button>게시글 삭제</button></a>
 			<a href="<c:url value='/updateBoardForm/${board.boardNo}'/>"><button  >게시글 수정</button></a>
 			<a href="<c:url value='/listAllBoard'/>"><button>목록</button></a><br><br><br><br>
+			
 			<a class="commentName">댓글</a><hr>
 			
 			<div id="commentAllForm">
@@ -199,7 +229,10 @@
 			<input type="hidden" name="commentWriteDate" value="<%= sf.format(nowDate) %>">
 			<input type="hidden" name="boardNo" value="${board.boardNo}">
 <!-- 		<button type="submit" button style="float:right;">작성</button>
- -->				</form>
+
+ -->
+ 					
+ </form>
  </div>
 		
 			
@@ -207,9 +240,8 @@
 			
 			
 			<br><br><br><br><br><br><br>
-			<div id=commentAllForm>
-			<table class="table table-striped2" style="margin-top: -128px;        width: 530px;
-    text-align: center;">
+			<div id=commentAllListForm>
+			<table class="table table-striped2">
 						<thead>
 						<!-- <tr>
 						<th>내용	</th>
@@ -230,13 +262,18 @@
 				        		<td>${comment.userId}</td>
 								   	<td>${comment.commentContent}</td>
 				        		
-						   			<%-- <td>댓글 번호 ${comment.commentNo}</td> --%>
+						   			 <td>댓글 번호 ${comment.commentNo}</td> 
 						   			
 						   			<%-- <td>${comment.commentTitle}</td> --%>
 						   			
 						   			<td style="font-size:10px; font-size: 13px;
     padding-top: 5px;">${comment.commentWriteDate}</td>
-						   		</tr>	
+						   		<td><a href="javascript:deleteCheck2();"><button>댓글 삭제</button></a>	
+						   				
+						   		</td>
+						   		
+						   		</tr>
+						   		
 						   	<%-- 	<tr>
 						   			<td>${comment.commentContent}</td>
 						   		</tr> --%>
@@ -291,6 +328,15 @@
 					var answer = confirm("게시글을 삭제하시겠습니까?");
 					if(answer == true){
 						location.href="<c:url value='/deleteBoard/${board.boardNo}' />";
+					}
+				}
+			</script>
+			
+			<script type="text/javascript">
+				function deleteCheck2(){
+					var answer = confirm("댓글을 삭제하시겠습니까?");
+					if(answer == true){
+						location.href="<c:url value='/deleteComment/${comment.commentNo}' />";
 					}
 				}
 			</script>
