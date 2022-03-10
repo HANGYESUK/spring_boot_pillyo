@@ -89,7 +89,16 @@ th,td{
 	    border: none;
 	    border-radius: 50%;
 	    cursor: pointer;
+	    box-shadow: 1px 1px 5px 1px lightgrey;
 	}
+	
+#hm_ctg:hover{	
+	width: 80px;
+    height: 80px;
+    box-shadow: 1px 1px 5px 1px #7088ff;
+}
+
+	
 #hm_list_view{
 	width: 100%;
     height: 400px;
@@ -102,8 +111,10 @@ th,td{
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-	overflow : auto;
+	overflow : auto;border: 0;
+    box-shadow: 1px 1px 5px 1px lightgrey;
 }
+
 
 .btn {
 	background-color: #82bbfd;
