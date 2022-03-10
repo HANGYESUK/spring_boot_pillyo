@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.pillyo.pill.service.ChatbotService;
 import com.pillyo.pill.service.OCRService;;
 
 @RestController
@@ -15,6 +16,9 @@ public class APIRestController {
 
 	@Autowired
 	private OCRService ocrService;
+	
+	@Autowired
+	private ChatbotService chatbotService;
 	
 	// OCR 요청 받아서 서비스 호출하고 결과 받아서 반환
 	@RequestMapping("/clovaOCR")
@@ -45,6 +49,13 @@ public class APIRestController {
 			e.printStackTrace();
 		}
 		
+		return result;
+	}
+	
+	@RequestMapping("/clovaChatbot")
+	public String clovaChatbot(@RequestParam("message") String message) {
+		String result= chatbotService.main(message);
+		//System.out.println(message);
 		return result;
 	}
 }

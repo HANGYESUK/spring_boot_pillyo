@@ -11,7 +11,7 @@
 </head>
 <body>
     <div class="chatBot-Container colum" style="justify-content: center;">
-        <div class="chatBot-TextBox">
+        <div class="chatBot-TextBox chatBot-Text-Position visibility-hidden">
 
             <div class="header">
                 <div class="header-profile flex-row">
@@ -30,6 +30,8 @@
                     <div class="text-box">
                         안녕하세요!
                     </div>
+                </div>
+                <div class="you-chat">
                     <div class="text-box">
                         무엇을 알려드릴까요??
                     </div>
@@ -52,7 +54,7 @@
                 </div>
             </div>
         </div>
-        <div class="chatBot-Icon flex-row" onclick="toggleChatBot()">
+        <div class="chatBot-Icon flex-row chatBot-Position" onclick="toggleChatBot()">
             <img id="icon" src="./img/Group 66.png">
         </div>
     </div>
@@ -73,12 +75,9 @@
 		 // });
 		
 		 // let my_chat = document.getElementsByClassName("my-chat")[0]
-		
 		 
-		$(document).ready(()=>{
-            let chatBot = document.getElementsByClassName("chatBot-TextBox")[0]
-		    chatBot.classList.add('visibility-hidden')
-        });
+		 
+
         
         $("#chating-container").on('scroll', function(e) {
         	
@@ -106,7 +105,36 @@
 		         text_box.classList.add("text-box")
 		         my_chat.appendChild(text_box)
 		         chatingContainer.appendChild(my_chat)
-		         text.value = null;
+		         
+		         event.preventDefault();
+				 
+					 
+				$.ajax({
+					url:"clovaChatbot",
+					type:"post",
+					//data:formData,
+					data: {message: $('#text-input').val()},
+					success:function(result){
+						let you_chat = document.createElement("div")
+						you_chat.classList.add("you-chat")
+					    let you_text_box = document.createElement("div")
+			            you_text_box.innerHTML = result
+			            you_text_box.classList.add("text-box")
+			            you_chat.append(you_text_box)
+			            chatingContainer.append(you_chat)
+			            
+			            $("#chating-container").scrollTop($("#chating-container").prop("scrollHeight"));
+
+					
+						console.log(result)
+					},
+					error:function(){
+						alert("오류가 발생했습니다.")
+					}
+				});
+				
+				text.value = null;
+				
 		         // let text_input = document.getElementsByClassName("text-input")[0]
 		         // text_input.innerHTML = null
 		         // text.innerHTML = null
