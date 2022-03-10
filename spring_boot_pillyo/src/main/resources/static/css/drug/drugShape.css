@@ -7,17 +7,17 @@
 #searchResult{
 	width: 1000px;
 	display:flex;
-	flex-wrap: wrap; /* 박스 크기안에서 줄바꿈 */
+	flex-wrap: wrap; /* 諛뺤뒪 �겕湲곗븞�뿉�꽌 以꾨컮轅� */
 	justify-content: start;
 	
 }
 #search_result_container{
-    color: #dd5303;;
+    color: #4260a8;
     font-size: 24px;
 }
 #search_result_container > small{
     font-size: 20px;
-    color: #d95000;
+    color: #4260a8;
 }
 body{
 	    text-align: -webkit-center;

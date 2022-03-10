@@ -37,6 +37,9 @@
     justify-content: center;
         align-items: center;
 }
+#feelRecodeForm {
+    padding-bottom: 41px;
+   }
 input {
    
     height: 40px;

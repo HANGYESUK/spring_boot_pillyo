@@ -17,23 +17,9 @@
 		    padding-top: 1px;
 		    margin: 0 auto;
 		}
-		
-		#search_result_container > h3{
-			color: #e75500;
-		    font-size: 24px;
-		}
-		
-		#search_result_container > small{
-			font-size: 20px;
-		    color: #e75500;
-		}
 .displayNone {
 		display:none;
 	}
-	
-	#more-Btn > h3{
-	color: #e75500;
-    font-size: 35px;
     
     width: 200px;
     height: 50px;

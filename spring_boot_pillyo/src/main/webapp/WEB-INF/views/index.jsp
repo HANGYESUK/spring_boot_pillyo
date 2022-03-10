@@ -60,7 +60,7 @@
 	
 	<style>
 		.back{
-			background-image: url(image/pillyo12.png);
+			background-image: url(image/mainImg.png);
 		    width: 1920px;
 		    height: 1200px;
 		    background-repeat: no-repeat;
@@ -80,14 +80,13 @@
 		}
 		
 		.Union-Text2{
-		    color: #444;
-    padding-top: 181px;
+		    padding-top: 313px;
     margin-top: -492px;
     color: black;
     border-top: 13px;
     text-align: left;
     font-size: 50px;
-    margin-left: -237px;
+    margin-left: -94px;
 		}
 		.Union-Text2 > a{
 		font-size: 21px;
@@ -173,7 +172,10 @@
 					건강관리,<br>
 					가족들의 건강까지<br>
 					간편하게
-				<br><a>가족들의 건강 이젠 한번에 관리하세요.</a></p>	
+				<br><a>체형부터 혈압, 혈당, 기분까지
+				<br>가족 구성원을 추가하고
+				<br>우리 가족의 건강정보를 그래프로 보기 쉽게 관리하세요.
+</a></p>	
 				</div>
 				
 				<div class="Union"  
@@ -220,10 +222,10 @@
 				<p class="Union-Text3">
 					상비약 관리,<br>
 					우리집에 있는 상비약<br>
-					유통기한, 위치메모<br>
+					사용기한, 위치메모<br>
 					꼼꼼하게
 					
-					<br><a>집에 있는 상비약 <br>쉽고 간편하게 등록하고 관리할 수 있어요.</a>
+					<br><a>텍스트 자동 추출 기능을 통해<br>이미지를 업로드하여 편리하게 등록할 수 있어요.<br></a>
 					
 					
 					</p>
@@ -259,12 +261,13 @@
     margin-top: 90px;
     height: 800px;">
 				<p class="Union-Text4">
-					복용관리,<br>
-					하루 복용하는 약 관리<br>
-					복용 습관 만들기까지<br>
-					매일매일
+					먹고 있는 약 등록하고<br>
+					매일매일 복용 습관 만들기<br>
 					
-					
+					<!-- 작은글씨 -->
+					<a>캘린더를 통해 복용하는 약과
+					<br>복용 주기를 매일 체크해보세요.
+					<br>복용 알림도 카카오톡 공유 가능!</a>
 					</p>
 				</div>
 				
@@ -287,57 +290,7 @@
 		</div>
 	</div>
 	
-	<div class="section" id="section6">
-					<section>
-				<a href="<c:url value = '/loginForm'/>">로그인</a>
-				<a href="<c:url value = '/join'/>">회원가입</a>
-				<a href="<c:url value = '/famInsertForm'/>">가족 등록 폼</a>
-				<a href="<c:url value = '/famListView'/>">가족 목록 리스트</a>
-				
-				<br><br><br><br><br><br>
-				<a href="<c:url value = '/feelManageForm'/>">기분관리</a>
-				<a href="<c:url value = '/hmForm'/>">우리집 약관리</a>	
-				<a href="<c:url value = '/clovaOCRForm'/>">OCR테스트</a>	
-				
-				<br><br><br><br><br><br>
-				혈당관리
-				<a href="<c:url value = '/sugarForm'/>">혈당등록</a>
-				<a href="<c:url value = '/listAllSugar'/>">혈당리스트</a>
-				
-				<br><br><br><br><br><br>
-				혈압관리
-				<a href="<c:url value = '/pressureForm'/>">혈압등록</a>
-				<a href="<c:url value = '/listAllPressure'/>">혈압리스트</a>
-				
-				<br><br>
-				<a href="<c:url value = '/join'/>">회원가입</a>
 	
-				<a href="<c:url value = '/bodyForm'/>">체형관리정보 등록 </a>
-				<a href="<c:url value = '/listAllBody'/>">체형 관리 정보 리스트</a>
-				
-				<br><br><br><br>
-				<a href="<c:url value = '/dashboard'/>">대쉬보드</a><br>
-				<a href="<c:url value = '/dashboard2'/>">대쉬보드 연습중...</a>
-				<a href="<c:url value = '/dashboardtest'/>">대쉬보드 연습중...2</a>
-				<a href="<c:url value = '/dashboardtest'/>">대쉬보드 연습중...2</a>
-
-				<a href="<c:url value = '/boardList'/>">페이징 연습중</a>
-				
-				<br><br><br><br>
-				<a href="<c:url value = '/listAllComment'/>">댓글 연습중</a>
-				
-				<br><br>
-				<a href="<c:url value = '/pharmacy'/>">약국지도</a><br>
-				<a href="<c:url value = '/pharmacySearch'/>">지역검색API</a><br>
-				<a href="<c:url value = '/insertDrugList'/>">API 약 정보 db 저장</a><br>
-				<a href="<c:url value = '/drugShape'/>"> 약 낱알정보 API 테스트</a><br>
-				<a href="<c:url value = '/drugShapeSearchForm'/>"> 약 낱알정보 검색폼</a><br>
-				<br><br><br><br>
-				
-				<a href="<c:url value = '/doseInsertForm'/>">복용 관리 - 등록 폼</a>
-				<a href="<c:url value = '/doseListView'/>">복용 목록 조회</a>
-			</section>
-	</div>
 </div>
 
 

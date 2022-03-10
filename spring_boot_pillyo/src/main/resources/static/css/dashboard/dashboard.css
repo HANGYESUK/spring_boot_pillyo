@@ -201,6 +201,7 @@ select {
 .main-Content-Body {
 	overflow: hidden;
 	height:100%;
+	padding-bottom: 53px;
 }
 
 .main-Content-Header {
@@ -283,14 +284,14 @@ li {
     justify-content: center;
 }
 
-/* 占썩본 클占쏙옙占쏙옙 */
+/* �뜝�뜦蹂� �겢�뜝�룞�삕�뜝�룞�삕 */
 
-/* searchbar 占싯삼옙 占쏙옙占쏙옙占쏙옙占쏙옙占쏙옙 占싱듸옙 */
+/* searchbar �뜝�떙�궪�삕 �뜝�룞�삕�뜝�룞�삕�뜝�룞�삕�뜝�룞�삕�뜝�룞�삕 �뜝�떛�벝�삕 */
 
 
 
 .master-title {
-    font-size: 30px; /* Example Preview 占쌜억옙 크占쏙옙 占쏙옙占싱깍옙 */
+    font-size: 30px; /* Example Preview �뜝�뙗�뼲�삕 �겕�뜝�룞�삕 �뜝�룞�삕�뜝�떛源띿삕 */
     color: #181818;
 }
 
@@ -300,7 +301,7 @@ li {
 }
 
 #main-navigation {
-    border-top: 1px solid #7eb66d; /* navbar 占쏙옙占쏙옙 占쏙옙占쏙옙 占쌩깍옙 */
+    border-top: 1px solid #7eb66d; /* navbar �뜝�룞�삕�뜝�룞�삕 �뜝�룞�삕�뜝�룞�삕 �뜝�뙥源띿삕 */
     margin-bottom: 20px;
     height: 40px;
     width: 90%;
@@ -343,13 +344,13 @@ li {
 }
 
 .outer-menu-item {
-    float: left; /* 占쌨댐옙占쏙옙 占쏙옙占쏙옙 HTML5 CSS3 JavaScript */
-    position: relative; /* static 占쏙옙치占쏙옙 占쏙옙占쏙옙占쏙옙占쏙옙 占쏙옙占� */
+    float: left; /* �뜝�뙣�뙋�삕�뜝�룞�삕 �뜝�룞�삕�뜝�룞�삕 HTML5 CSS3 JavaScript */
+    position: relative; /* static �뜝�룞�삕移섇뜝�룞�삕 �뜝�룞�삕�뜝�룞�삕�뜝�룞�삕�뜝�룞�삕 �뜝�룞�삕�뜝占� */
     transition: all 0.5s;
     cursor: pointer;
 }
 .outer-menu-item:hover{
-    background: rgb(94, 150, 255); /* 占쌨댐옙占쏙옙 클占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙 */
+    background: rgb(94, 150, 255); /* �뜝�뙣�뙋�삕�뜝�룞�삕 �겢�뜝�룞�삕�뜝�룞�삕 �뜝�룞�삕�뜝�룞�삕�뜝�룞�삕 */
     color: white;
 }
 .menu-title {
@@ -376,12 +377,12 @@ li {
     font-size: 12px;
     color: #555555;
 }
-.input-search:focus { /* 占싯삼옙창 클占쏙옙占쏙옙占쏙옙 占쏙옙 占쏙옙 占쏙옙占쏙옙 */
+.input-search:focus { /* �뜝�떙�궪�삕李� �겢�뜝�룞�삕�뜝�룞�삕�뜝�룞�삕 �뜝�룞�삕 �뜝�룞�삕 �뜝�룞�삕�뜝�룞�삕 */
     border-color: rgba(133, 196, 148, 0.8);
     outline: 0;
     box-shadow: inset 0 1px 1px rgba(133, 196, 148, 0.8);
 }
-.input-search-submit { /* 占싯삼옙 占쏙옙占� */
+.input-search-submit { /* �뜝�떙�궪�삕 �뜝�룞�삕�뜝占� */
     display: block;
     float: left;
     width: 7%; 
@@ -444,11 +445,12 @@ li {
 }
 
 #pressureForm{
-	    display: flex;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     padding-left: 145px;
-        color: #525252;
+    color: #525252;
+    padding-bottom: 41px;
 }
 
 #sugarForm{
@@ -457,12 +459,14 @@ li {
     justify-content: center;
     padding-left: 145px;
         color: #525252;
+    padding-bottom: 41px;
 }
 
 #send_btn,#reset_btn {
 	color: #525252;
      font-size: 17px;
      font-weight:500;
+     background: #f9f9f9;
 }
 
 
