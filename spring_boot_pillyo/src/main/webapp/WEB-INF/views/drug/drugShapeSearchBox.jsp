@@ -16,8 +16,8 @@
 	<body>
 	
 				<div id="drugShapeSearchForm">
-					 <div id="drugShapeSearchTitle"> 낱알 검색 </div>
-					<form method="post" action="/drugShape">
+					 <div id="drugShapeSearchTitle"><a href="drugShapeSearchForm">낱알 검색</a></div>
+					<form method="get" action="/drugShape">
 						<table>
 							<tr id="search_shape">
 								<th>모양</th>

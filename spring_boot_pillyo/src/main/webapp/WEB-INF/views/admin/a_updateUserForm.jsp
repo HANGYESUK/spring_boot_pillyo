@@ -97,7 +97,7 @@
 		
 			
 				<div id="updateUserBox">
-					<h2 align="center">회원 정보수정</h2>
+					<h2 align="center">(관리자)회원 정보수정</h2>
 					<br>
 					<hr>
 					<form name="updateUserForm" id="updateUserForm" method="post" action="<c:url value='/updateUser'/>">

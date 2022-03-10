@@ -1,6 +1,7 @@
 package com.pillyo.pill.service;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -9,6 +10,8 @@ import org.springframework.stereotype.Service;
 import com.pillyo.pill.dao.IDrugDAO;
 import com.pillyo.pill.model.AutoDrugInfoVO;
 import com.pillyo.pill.model.DrugInfoVO;
+import com.pillyo.pill.model.DrugShapeVO;
+import com.pillyo.pill.paging.Criteria;
 
 @Service
 public class DrugService implements IDrugService {
@@ -42,4 +45,15 @@ public class DrugService implements IDrugService {
 	public ArrayList<DrugInfoVO> listAllDrugView(){ //관리자 메뉴- 전제조회
 		return dao.listAllDrugView();
 	}
+	/* 페이징 */
+	@Override
+	public int getTotal(Criteria cri) {
+		// TODO Auto-generated method stub
+		return dao.getTotal(cri);
+	}
+	@Override
+	public List<DrugInfoVO> getDrugListPaging(Criteria cri) throws Exception {
+		return dao.getDrugListPaging(cri);
+	}
+	
 }

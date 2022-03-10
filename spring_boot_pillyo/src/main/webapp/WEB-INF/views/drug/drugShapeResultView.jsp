@@ -57,7 +57,15 @@
 		<div id="search_result_container">
 			
 				<h3>약모양 검색 결과 </h3>
-				<small>총 <fmt:formatNumber value="${fn:length(shapeList)}" pattern="#,###" /> 건</small>
+				<c:choose>
+					<c:when test="${fn:length(shapeList) >=  100}">
+						<small>100건 이상이 검색되었습니다.</small>
+					</c:when>
+					<c:otherwise>
+						<small>총 ${fn:length(shapeList)}건</small>
+					</c:otherwise>
+				</c:choose>
+				
 				<hr />
 				
 		<c:choose>
@@ -93,8 +101,8 @@
 			   </c:otherwise> 
 			</c:choose>
 			</div>
-			
-			</div>
+						
+			</div> <!-- searchResult_container -->
 			</section>
 			
 		<!-- BOTTOM  -->
@@ -102,7 +110,7 @@
 		
     	</div> <!-- wrap -->
     	
-    	<script>
+    	 <script>
 	        let count = 9;
 	        let drugBox = document.getElementsByClassName("drugBox")
 	        
@@ -123,6 +131,6 @@
 	        
 	        
     	</script>
-    	</div> <!-- searchResult_container -->
+    	
 	</body>
 </html>

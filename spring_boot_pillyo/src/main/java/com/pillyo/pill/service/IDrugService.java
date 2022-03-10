@@ -1,9 +1,12 @@
 package com.pillyo.pill.service;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import com.pillyo.pill.model.AutoDrugInfoVO;
 import com.pillyo.pill.model.DrugInfoVO;
+import com.pillyo.pill.model.DrugShapeVO;
+import com.pillyo.pill.paging.Criteria;
 
 public interface IDrugService {
 	
@@ -17,4 +20,11 @@ public interface IDrugService {
 	
 	//관리자 메뉴
 	ArrayList<DrugInfoVO> listAllDrugView(); //관리자 메뉴- 전제조회
+	
+	/* 페이징처리 */
+	// 게시물 총 갯수
+	public int getTotal(Criteria cri);
+
+	// 페이징 처리 게시글 조회
+	public List<DrugInfoVO> getDrugListPaging(Criteria cri) throws Exception;
 }

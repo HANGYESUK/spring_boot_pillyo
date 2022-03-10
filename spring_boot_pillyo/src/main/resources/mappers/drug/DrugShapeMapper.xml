@@ -7,7 +7,7 @@
   		<!-- 약모양 다중 검색 -->
   		<select id="drugShapeSearch" parameterType="HashMap"
   														resultType="com.pillyo.pill.model.DrugShapeVO"
-  														fetchSize="400">
+  														>
   			SELECT * FROM drugshape 
   			WHERE 
   				
@@ -41,6 +41,9 @@
   				 맨앞에 항목이 NULL이거나 모두 널이어도 실행 될수 있도록
   				 결과에 영향이 없는 무조건 참인 조건을 추가함.  -->	
   				1=1
+		
+  				
+  				 limit 100
   												
 		</select>
 		
@@ -56,9 +59,54 @@
 			SELECT * FROM drugshape limit 200
 		</select>
   		
+  			<!-- 페이징위한 쿼리 -->
+  			
+			<!-- 검색 조건문 -->
+			<sql id="criteria">
+				<trim prefix="where (" suffix=")" prefixOverrides="OR">
+					<foreach collection="typeArr" item="type">
+						<trim prefix="OR">
+							<choose>
+								<when test="type == 'N'.toString()">
+									itemName like concat('%',#{keyword},'%') 
+								</when>
+								<when test="type == 'P'.toString()">
+									entpName like concat('%',#{keyword},'%') 
+								</when>
+						
+							</choose>
+						</trim>
+					</foreach>
+				</trim>
+			
+			</sql>
+  			
+  		<!-- 게시물 목록(페이징) -->
+	    <select id="getShapeListPaging" resultType="com.pillyo.pill.model.DrugShapeVO">
+	    
+	        select * from drugshape 
+	        
+	         <if test="keyword != null">
+				<include refid="criteria"></include>
+			</if>
+	                	                
+	        limit #{skip},#{amount}
+	    
+	    </select>
   		
   		
+  		<!-- 총 게시글 갯수 출력 -->
+		<select id="getTotal" resultType="int">
+			SELECT COUNT(*) FROM drugshape
+			
+			<if test="keyword != null">
+				<include refid="criteria"></include>
+			</if>	
+			
+		</select>
   		
+  		
+		  		
   		
   		
   		
