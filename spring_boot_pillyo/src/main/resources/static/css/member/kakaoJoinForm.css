@@ -1,0 +1,67 @@
+/* loginForm.css */
+
+#kakaoJoinFormBox {
+	text-align: center;
+}
+
+#kakaoJoinFormBox h2 {
+    font-size: 23px;
+    color: #474747;
+}
+
+#kakaoJoinFormBox h3 {
+    font-size: 20px;
+    color: #f0cd52;
+}
+
+#kakaoJoinForm {
+    margin: 0 auto;
+    width: 580px;
+    box-shadow: 0px 0px 6px #dadada;
+    border-radius: 42px;
+    padding: 22px;
+    margin-top: 37px;
+}
+
+#kakaoJoinForm table {
+	margin-left: auto;
+    margin-right: auto;
+}
+
+#kakaoJoinForm th {
+	text-align: center;
+    font-size: 17px;
+    line-height: 50px;
+    font-weight: lighter;
+    width: 160px;
+}
+
+#kakaoJoinForm td {
+	text-align: left;
+    width: 400px;
+}
+
+#kakaoJoinForm input {
+    height: 30px;
+    background: #ebebeb;
+    border: none;
+    border-radius: 5px;
+}
+
+.searchZipBtn {
+	color: #4d4d4d;
+}
+
+#joinBtn, #cancelBtn {
+	border: none;
+    width: 96px;
+    height: 41px;
+    border-radius: 13px;
+    margin: 0 10px;
+    background: #ffffff;
+    box-shadow: 0px 0px 6px #dadada;
+}
+
+#btnTd {
+	height: 80px;
+}
