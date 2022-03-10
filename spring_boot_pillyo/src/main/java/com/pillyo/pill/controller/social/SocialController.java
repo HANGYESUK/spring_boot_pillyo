@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.pillyo.pill.model.social.KakaoVO;
 import com.pillyo.pill.service.FamilyService;
+import com.pillyo.pill.service.notification.NotificationService;
 import com.pillyo.pill.service.social.SocialService;
 
 @Controller
@@ -19,6 +20,9 @@ public class SocialController {
 	
 	@Autowired
 	FamilyService familyService;
+	
+	@Autowired
+	NotificationService notification_Service;
 	
 	// 테스트용 페이지
 	@RequestMapping("/kakaoSocial")
@@ -79,6 +83,7 @@ public class SocialController {
 		socialService.kakaoJoin(vo); // 카카오 DB에 추가
 		socialService.kakaoJoinUser(vo); // user DB에 추가
 		familyService.famStart(vo.getK_id()); // 가족 테이블에 본인으로 추가
+		notification_Service.joinNotiDefault(vo.getK_id()); // 복용 알림 정보 default 추가
 		session.setAttribute("sid", vo.getK_id());
 		System.out.println("회원가입 후 자동 세션 부여 확인");//
 		return "success";
