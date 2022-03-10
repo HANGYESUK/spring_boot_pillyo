@@ -48,7 +48,7 @@
 		}
 		
 	.commentText {
-	border-color: #5978bf;
+	
     border-radius: 2px;
 	      height: 45px;
     width: 271px;
@@ -58,6 +58,10 @@
     outline: none;
     color: #3f63b5;
     font-size: 16px;
+	}
+	.commentText:hover {
+	placeholder-color:red;
+	border-color: #5978bf;
 	}
 	
 		#button2{
@@ -78,6 +82,9 @@
 #button2:hover{
 	font-size: 18px;
 	font-weight:600;
+}
+
+#commentAllForm >td {
 }
 
 #commentAllForm{
@@ -108,18 +115,22 @@
 		}
 		
 		#commentAllListForm{
-    border-radius: 5px;
+	border-radius: 5px;
     margin-left: 10px;
     padding-left: 23px;
-
-		 height: 307px;
+    height: 307px;
     margin-top: -121px;
-    width: 510px;
+    width: 833px;
     text-align: center;
     overflow-y: scroll;
     border-color: #f7f7f7;
-    box-shadow: 0 4px 5px rgb(0 0 0 / 20%);
-    background: white;}
+    box-shadow: 1px 1px 3px 1px rgb(0 0 0 / 20%);
+    background: white;
+    margin-left: 23px;
+    margin-top: -57px;
+    /* padding-bottom: 0px; */
+    margin-bottom: 50px;
+    }
     
     #commentAllListForm::-webkit-scrollbar {
     /* display: none;  *//* Chrome, Safari, Opera*/
@@ -221,8 +232,13 @@
 			
 			<div id="commentAllForm">
 			
-<form id= "/commentForm" name="/commentForm" enctype="multipart/form-data" method="post" action="<c:url value='/insertcomment/${board.boardNo}'/>"> <!--  writedo로 넘겨주고 post방식으로 넘겨주겠다 -->
-		
+<%-- <form id= "/commentForm" name="/commentForm" enctype="multipart/form-data" method="post" action="<c:url value='/insertcomment/${board.boardNo}'/>"> <!--  writedo로 넘겨주고 post방식으로 넘겨주겠다 -->
+ --%>		
+ 
+ 
+ <form id= "commentInsert" name="commentInsert"> <!--  writedo로 넘겨주고 post방식으로 넘겨주겠다 -->
+ 
+ 
 		<textarea class="commentText" placeholder="댓글 달기.." name="commentContent">${comment.commentContent}</textarea>
 			<input type="submit" id="button2" class="btn btn-primary pull-right" value="게시">
 			<input type="hidden" name="userId" value="${sessionScope.sid}">  <!-- 세션 아이디 받아오기 -->
@@ -240,7 +256,7 @@
 			
 			
 			<br><br><br><br><br><br><br>
-			<div id=commentAllListForm>
+			<div id=commentAllListForm >
 			<table class="table table-striped2">
 						<thead>
 						<!-- <tr>
@@ -259,24 +275,30 @@
 				        	<c:forEach items="${commentList }" var="comment">
 				        		
 				        		<tr>
-				        		<td>${comment.userId}</td>
-								   	<td>${comment.commentContent}</td>
+				        		<td >	
+&#128138;&nbsp;${comment.userId}</td>
+								   	<td style="width: 535px; padding-right: 35px; padding-left: 35px; 
+">${comment.commentContent}</td>
 				        		
-						   			 <td>댓글 번호 ${comment.commentNo}</td> 
+						   			<%--  <td>댓글 번호 ${comment.commentNo}</td>  --%>
 						   			
 						   			<%-- <td>${comment.commentTitle}</td> --%>
 						   			
-						   			<td style="font-size:10px; font-size: 13px;
-    padding-top: 5px;">${comment.commentWriteDate}</td>
-						   		<td><a href="javascript:deleteCheck2();"><button>댓글 삭제</button></a>	
+						   			<td style="font-size:10px; font-size: 14px;     height: 47px;
+    								padding-top: 5px;">${comment.commentWriteDate}</td>
+						   		<td style="padding-left: 14px; font-size: 15px;color:#345193; ">
+						   		
+						   		<a href="javascript:deleteCheck2(${comment.commentNo});">&#10060;</a> 
+						   		
+						   		<%-- <button class="deleteBtn" onclick="deletereply/${comment.commentNo}">댓글 삭제</button> --%>
 						   				
 						   		</td>
 						   		
 						   		</tr>
 						   		
-						   	<%-- 	<tr>
-						   			<td>${comment.commentContent}</td>
-						   		</tr> --%>
+						   	<%-- 	<tr>		<td>${comment.commentContent}</td>
+						   		</
+						   	tr> --%>
 							</c:forEach>
 						</tbody>
 						
@@ -332,15 +354,74 @@
 				}
 			</script>
 			
-			<script type="text/javascript">
-				function deleteCheck2(){
+			<!--  <script type="text/javascript">
+				function deleteCheck2(n){ /* foreach문 써서 댓글 삭제버튼 하나 클릭시 계속 돌기때문에 변수 n 설정 후 하나만 선택해서 삭제되게 !!! */ 
 					var answer = confirm("댓글을 삭제하시겠습니까?");
 					if(answer == true){
-						location.href="<c:url value='/deleteComment/${comment.commentNo}' />";
+						location.href="<c:url value='/deletecomment/"+n+" ' />";
+					}
+				}
+			</script> -->
+			
+			
+			
+			<script type="text/javascript">
+				function deleteCheck2(n){ /* foreach문 써서 댓글 삭제버튼 하나 클릭시 계속 돌기때문에 변수 n 설정 후 하나만 선택해서 삭제되게 !!! */ 
+					var answer = confirm("댓글을 삭제하시겠습니까?");
+					if(answer == true){	
+				    	$.ajax({
+					        type:'post',
+					        url : "/deletereply",
+					        data: {commentNo:n},
+					        dataType:'text',
+					        success : function(result){
+					            if(result=="success")
+					            {
+								document.location.reload();
+								
+								/* window.href.location='http://'; */
+					            }
+					        },
+					        error:function(data, textStatus){
+								alert("전송 실패! 로그인 상태 확인 바랍니다.");
+								
+								
+					       }
+					        
+					    });
 					}
 				}
 			</script>
-		
+			
+
+		 
+	<!-- 	<script>
+		 /* $('#deleteBtn').on('click', function(){ */
+	 	 function deleteCheck2(commentNo){  /* foreach문 써서 댓글 삭제버튼 하나 클릭시 계속 돌기때문에 변수 n 설정 후 하나만 선택해서 삭제되게 !!! */ 
+					var answer = confirm("댓글을 삭제하시겠습니까?");
+					if(answer == true){
+						$.ajax({
+							type:'post',
+							url  : "/deletereply"+commentNo,
+							/* data: commentNo, */
+						  	success : function(result){
+					            if(result=="success")
+					            {
+								document.location.reload();
+								alert("등록완료")
+								/* window.href.location='http://'; */
+ 				            }
+					        },
+					        error:function(data, textStatus){
+								alert("전송 실패! 로그인 상태 확인 바랍니다.");
+								
+								
+					       }
+					        
+					    });
+				    });
+				});
+						</script> -->
 		</div>
 	</div>
 	<!-- 게시판 글 보기 양식 영역 끝 -->

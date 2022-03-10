@@ -3,16 +3,16 @@
  */
  //코멘트 등록 ajax
   //function writeBoard(commentData){
-/*$(document).ready(function(){	
-	$('#commentForm').on('submit', function(){
+$(document).ready(function(){	
+	$('#commentInsert').on('submit', function(){
 		event.preventDefault();
 		
-		var commentData = $("#commentForm").serialize();
+		var commentData = $("#commentInsert").serialize();
 		// serialize() : 폼에 입력한 값을 쿼리 스트링 방식의 데이터로 변환
 		
     	$.ajax({
 	        type:'post',
-	        url : "/insertboard2",
+	        url : "/insertreply",
 	        data: commentData,
 	        dataType:'text',
 	        success : function(result){
@@ -31,4 +31,5 @@
 	        
 	    });
     });
-});*/
+});
+

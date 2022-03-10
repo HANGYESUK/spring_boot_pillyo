@@ -9,7 +9,8 @@ public interface ICommentDAO {
 
 	void insertcomment(CommentVO commentvo);
 
-	void deleteComment(int commentNo);
+
+	void deletecomment(int commentNo);
 
 
 }

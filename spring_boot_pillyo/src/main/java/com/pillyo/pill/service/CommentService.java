@@ -25,9 +25,9 @@ public class CommentService implements ICommentService {
 	}
 
 	@Override
-	public void deleteComment(int commentNo) {
+	public void deletecomment(int commentNo) {
 		// TODO Auto-generated method stub
-		dao.deleteComment(commentNo);
+		dao.deletecomment(commentNo);
 		
 	}
 

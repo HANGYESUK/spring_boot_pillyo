@@ -184,28 +184,58 @@ public class BoardController {
 	}
 	
 	
-	// 댓글 등록 
-	@RequestMapping("/insertcomment/{boardNo}")
-	public String insertcomment(CommentVO vo, HttpSession session,@PathVariable("boardNo") int boardNo, Model model) { 
-								// title, content 매개변수 받기 
-		String userId = (String)session.getAttribute("sid"); // session 받아오기
-		commentservice.insertcomment(vo);
-		System.out.println(boardNo);
-//			System.out.println(vo.getTitle());
-		BoardVO board = service.boardDetailView(boardNo);
-		model.addAttribute("boardNo", boardNo);
+//	// 댓글 등록 
+//	@RequestMapping("/insertcomment/{boardNo}")
+//	public String insertcomment(CommentVO vo, HttpSession session,@PathVariable("boardNo") int boardNo, Model model) { 
+//								// title, content 매개변수 받기 
+//		String userId = (String)session.getAttribute("sid"); // session 받아오기
+//		commentservice.insertcomment(vo);
+//		System.out.println(boardNo);
+////			System.out.println(vo.getTitle());
+//		BoardVO board = service.boardDetailView(boardNo);
+//		model.addAttribute("boardNo", boardNo);
+//		
+//		return "redirect:/boardDetailView/{boardNo}";
+//	}
+	
+	@ResponseBody
+	@RequestMapping("/insertreply")
+	public String insertreply(CommentVO vo, HttpSession session) {
 		
-		return "redirect:/boardDetailView/{boardNo}";
+		String userId = (String)session.getAttribute("sid"); // session 받아오기
+		String result="";
+		
+		if (vo!=null){
+		commentservice.insertcomment(vo);
+		result = "success";
+		}
+		
+		return result;
 	}
 	
+	@ResponseBody
+	@RequestMapping("/deletereply")
+	public String deletereply(int commentNo, HttpSession session) {
+		
+		String userId = (String)session.getAttribute("sid"); // session 받아오기
+		String result="";
+		
+		if (commentNo != 0) {
+			commentservice.deletecomment(commentNo);
+			result = "success";
+		}
+		
+		return result;
+	}
+	
+	
 	// 댓글 삭제
-	@RequestMapping("/deleteComment/{commentNo}")
-	public String deleteComment(@PathVariable int commentNo) {
+	@RequestMapping("/deletecomment/{commentNo}")
+	public String deletecomment(@PathVariable int commentNo) {
 		System.out.println(commentNo);
-		commentservice.deleteComment(commentNo);
+		commentservice.deletecomment(commentNo);
 		
-		
-		return "redirect:../listAllBoard";
+		return "redirect:../boardDetailView/{boardNo}";
 	}
 	
 	
