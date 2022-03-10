@@ -19,13 +19,13 @@
 		}
 		
 		#search_result_container > h3{
-			color: #e75500;
+			color: #2a4885;
 		    font-size: 24px;
 		}
 		
 		#search_result_container > small{
 			font-size: 20px;
-		    color: #e75500;
+		    color: #29509f;
 		}
 		.displayNone {
 				display:none;
@@ -47,7 +47,7 @@
 		 .pageInfo{
 		  	list-style : none;
 		  	display: inline-block;
-		    margin: 50px 0 0 100px;  	
+		    margin: 50px 0 0 -50px; 	
 		  }
 		  .pageInfo li{
 		  	float: left;

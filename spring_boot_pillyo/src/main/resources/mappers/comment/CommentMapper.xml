@@ -31,7 +31,7 @@
 	</insert>
 	
 	<!-- 댓글 정보 삭제 -->
-	<delete id="deleteComment"  parameterType="int">
+	<delete id="deletecomment"  parameterType="int" >
 		DELETE FROM comment WHERE commentNo=#{commentNo}
 	</delete>
 
