@@ -170,28 +170,25 @@
 	<div class="section low" id="section3">
 		<div class="container3 row"style="width: 100%; margin-left: -90px;">
 			<div class="content-Box row">
-				<div class="Union" style="    width: 700px;
-    margin-top: 130px;
-    height: 640px;">
+				<div class="Union" style="   
+					width: 700px;
+				    margin-top: 130px;
+				    height: 640px;">
 				<p class="Union-Text2">
 					건강관리,<br>
 					가족들의 건강까지<br>
 					간편하게
-										<br><a>가족들의 건강 이젠 한번에 관리하세요.</a>
-					
-					</p>
-					
+				<br><a>가족들의 건강 이젠 한번에 관리하세요.</a></p>	
 				</div>
 				
 				<div class="Union"  
 			
-	style="min-width: 200px;
-    width: 400px;
-    height: 400px;
-    margin-top: 360px;
-    background-image: url(image/pillyo6.png);
-    background-size: 400px 400px;
-        
+				style="min-width: 200px;
+			    width: 400px;
+			    height: 400px;
+			    background-image: url(image/pillyo6.png);
+			    background-size: 400px 400px;
+			        
         ">
 					
 				</div>

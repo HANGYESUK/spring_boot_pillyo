@@ -269,14 +269,14 @@ li {
     justify-content: center;
 }
 
-/* �⺻ Ŭ���� */
+/* 占썩본 클占쏙옙占쏙옙 */
 
-/* searchbar �˻� ���������� �̵� */
+/* searchbar 占싯삼옙 占쏙옙占쏙옙占쏙옙占쏙옙占쏙옙 占싱듸옙 */
 
 
 
 .master-title {
-    font-size: 30px; /* Example Preview �۾� ũ�� ���̱� */
+    font-size: 30px; /* Example Preview 占쌜억옙 크占쏙옙 占쏙옙占싱깍옙 */
     color: #181818;
 }
 
@@ -286,7 +286,7 @@ li {
 }
 
 #main-navigation {
-    border-top: 1px solid #7eb66d; /* navbar ���� ���� �߱� */
+    border-top: 1px solid #7eb66d; /* navbar 占쏙옙占쏙옙 占쏙옙占쏙옙 占쌩깍옙 */
     margin-bottom: 20px;
     height: 40px;
     width: 90%;
@@ -329,13 +329,13 @@ li {
 }
 
 .outer-menu-item {
-    float: left; /* �޴��� ���� HTML5 CSS3 JavaScript */
-    position: relative; /* static ��ġ�� �������� ��� */
+    float: left; /* 占쌨댐옙占쏙옙 占쏙옙占쏙옙 HTML5 CSS3 JavaScript */
+    position: relative; /* static 占쏙옙치占쏙옙 占쏙옙占쏙옙占쏙옙占쏙옙 占쏙옙占� */
     transition: all 0.5s;
     cursor: pointer;
 }
 .outer-menu-item:hover{
-    background: rgb(94, 150, 255); /* �޴��� Ŭ���� ������ */
+    background: rgb(94, 150, 255); /* 占쌨댐옙占쏙옙 클占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙 */
     color: white;
 }
 .menu-title {
@@ -362,12 +362,12 @@ li {
     font-size: 12px;
     color: #555555;
 }
-.input-search:focus { /* �˻�â Ŭ������ �� �� ���� */
+.input-search:focus { /* 占싯삼옙창 클占쏙옙占쏙옙占쏙옙 占쏙옙 占쏙옙 占쏙옙占쏙옙 */
     border-color: rgba(133, 196, 148, 0.8);
     outline: 0;
     box-shadow: inset 0 1px 1px rgba(133, 196, 148, 0.8);
 }
-.input-search-submit { /* �˻� ��� */
+.input-search-submit { /* 占싯삼옙 占쏙옙占� */
     display: block;
     float: left;
     width: 7%; 
@@ -382,9 +382,9 @@ li {
 
 
 .chart {
-      width: 60%;
+    width: 65%;
     height: 500px;
-    border: 1px solid #f1f1f1;
+    border: 3px solid #0b1634;
     background-color: rgb(255, 255, 255);
     border-radius: 10px;
     margin: 15px;
