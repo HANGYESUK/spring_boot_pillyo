@@ -44,10 +44,10 @@
 				autoScrolling: true,
 				scrollHorizontally: true,
 				lockAnchors: false,
-				anchors:['first', 'second', 'third', 'fourth'],
+				anchors:['first', 'second', 'third', 'fourth', 'five'],
 				navigation: true,
 				navigationPosition: 'right',
-				navigationTooltips: ['메인', '인사', '서비스 소개'],
+				navigationTooltips: ['메인', '인사', '건강관리', '상비약 관리', '복용관리', '시작하기'],
 				// sectionsColor : ['#fffa65', '#ff9f1a', '#7d5fff', '#17c0eb'],
 				showActiveTooltip: true,
 				sectionSelector: '.section',
@@ -57,67 +57,59 @@
 			});
 
 		</script>
-	
-	<style>
-		.back{
-			background-image: url(image/mainImg.png);
-		    width: 1920px;
-		    height: 1200px;
-		    background-repeat: no-repeat;
-		    background-size: cover;
+		<style>
+			.main-Content {
+				margin: 15px;
+			    padding: 10px;
+			    display: flex;
+			    color: black;
+			    border-radius: 30px;
+			    cursor: pointer;
+			    text-align: center;
 			}
-		.back :hover{
 			
-		}
-		.back > img{
-			width:100px;
-		}
-		h2{
-			font-size: 53px;
-    height: 105px;
-    padding-top: 508px;
-    font-weight: 100;
-		}
-		
-		.Union-Text2{
-		    padding-top: 313px;
-    margin-top: -492px;
-    color: black;
-    border-top: 13px;
-    text-align: left;
-    font-size: 50px;
-    margin-left: -94px;
-		}
-		.Union-Text2 > a{
-		font-size: 21px;
-    opacity: 55%;
-		}
-		.Union-Text3{
-		color: #444;
-	       padding-top: 280px;
-    color: black;
-    border-top: 13px;
-    text-align: right;
-    font-size: 50px;
-    margin-right: -220px;
-    margin-top: -492px;
-		}
-		.Union-Text3 > a{
-		font-size: 21px;
-    opacity: 55%;
-		}
-		
-		.Union-Text4{
-		color: #444;
-		     padding-top: 900px;
-    color: black;
-    border-top: 13px;
-    text-align: right;
-    font-size: 50px;
-    margin-right: -330px;
-    margin-top: -435px;
-		}
-	</style>
+			.main-Text {
+			    font-size: 25px;
+			    text-align: left;
+			    line-height: 60px;
+			    color: #464646;
+			}
+			
+			.main-Text h3 {
+				font-size: 65px;
+			    text-align: left;
+			    font-weight: bold;
+			    line-height: 75px;
+			    color: black;
+			}
+			
+			.content-Img {
+			    width: 640px;
+			    margin-top: 130px;
+			    height: 640px;
+			    margin: 15px;
+			    padding: 10px;
+			    display: flex;
+			    color: black;
+			    background-color: white;
+			    box-shadow: 0 8px 32px 0 rgb(56 117 255 / 37%);
+			    border-radius: 30px;
+			    cursor: pointer;
+			    text-align: center;
+			    margin-top: 20px;
+			    display: flex;
+			    flex-direction: row;
+			    justify-content: center;
+			    align-items: center;
+			}
+			
+			.content-Img img {
+			    width: 100%;
+			    height: 70%;
+			}
+			
+		</style>
+	
 	</head>
 <body>
 
@@ -125,167 +117,96 @@
 <div id="fullpage">
 	<div class="section active" id="section0">
 		<div class="container1 row">
-	 		 <h1 style="position: absolute; ">Pill-Yo</h1>
-	 		 
- 		<!-- 	<div style="background-image:url(image/pillyo3.jpg);"></div> -->
- 		 
-			<h2>건강의 모든 것<br>
-			알약요에서 쉽고 간편하게</h2>
+			<div class="Main">
+	 		 	<h1>Pill-Yo</h1>
+	 		 </div>
 		</div>
 	</div>
 	<div class="section" id="section1">
 		<div class="container2 row">
 			<div class="content-Box calum">
-				<h1 class="text">가족들의 건강관리를 한번에</h1>
+					<h1 class="text">가족들의 건강관리를 한번에</h1>
 			</div>
 		</div>
 	</div>
+	
 	<div class="section low" id="section2">
 		<div class="container3 row">
 			<div class="content-Box row">
-				<div class="Union">
-					<i class="fa-solid fa-house-chimney-medical"style="color:#444"></i>
-					<h2 class="Union-Title">건강관리</h2>
-					<p class="Union-Text">가족들의 건강관리를 대쉬보드로 한번에</p>
+				<div class="main-Content calum">
+					<div class="main-Text" style="margin-bottom: 200px;">
+						<h3>건강관리,<br>
+						가족들의 건강까지<br>
+						간편하게</h3><br>
+						체형부터 혈압, 혈당, 기분까지<br>
+						가족 구성원을 추가하고<br>
+						우리 가족의 건강정보를 그래프로 보기 쉽게 관리하세요.<br>
+					</div>
+
 				</div>
-				<div class="Union">
-					<i class="fa-solid fa-suitcase-medical" style="color:#444"></i>
-					<h2 class="Union-Title">상비약 관리</h2>
-					<p class="Union-Text">우리집에 있는 상비약의 유통기한과 위치메모</p>
-				</div>
-				<div class="Union">
-					<i class="fa-solid fa-pills" style="color:#444"></i>
-					<h2 class="Union-Title">복용관리</h2>
-					<p class="Union-Text">하루의 섭취하는 약들을 관리하고 매일매일 복용 습관 만들기 </p>
+				
+				<div class="content-Img">
+					<img src="/img/HealthMg.jpg"/>
 				</div>
 			</div>
 		</div>
 	</div>
-	<div class="section low" id="section3">
-		<div class="container3 row"style="width: 100%; margin-left: -90px;">
+	
+	<div class="section low" id="section3" style="justify-content: right;">
+		<div class="container3 row">
+		
+			<div class="content-Img">
+					
+			</div>
+			
+			<div class="main-Content calum">
+					<div class="main-Text" style="text-align:right">
+						<h3  style="text-align:right; margin-top: 230px;">상비약 관리,<br>
+						우리집에 있는 상비약<br>
+						사용기한, 위치메모<br>
+						꼼꼼하게</h3><br>
+						텍스트 자동 추출 기능을 통해<br>
+						이미지를 업로드하여 편리하게 등록할 수 있어요.
+					</div>
+
+				</div>
+				
+			</div>
+	
+		</div>
+	
+	
+	<div class="section low" id="section4" style="justify-content: right;">
+		<div class="container3 row">
 			<div class="content-Box row">
-				<div class="Union" style="   
-					width: 700px;
-				    margin-top: 130px;
-				    height: 640px;">
-				<p class="Union-Text2">
-					건강관리,<br>
-					가족들의 건강까지<br>
-					간편하게
-				<br><a>체형부터 혈압, 혈당, 기분까지
-				<br>가족 구성원을 추가하고
-				<br>우리 가족의 건강정보를 그래프로 보기 쉽게 관리하세요.
-</a></p>	
+				<div class="main-Content calum">
+					<div class="main-Text" style="margin-bottom: 250px;">
+						<h3>먹고 있는 약 등록하고<br>
+						매일매일 복용 습관 만들기<br></h3>
+						<br>
+						캘린더를 통해 복용하는 약과
+						<br>복용 주기를 매일 체크해보세요.
+						<br>복용 알림도 카카오톡 공유 가능!
+					</div>
+
 				</div>
 				
-				<div class="Union"  
-			
-				style="min-width: 200px;
-			    width: 400px;
-			    height: 400px;
-			    background-image: url(image/pillyo6.png);
-			    background-size: 400px 400px;
-			        
-        ">
+				<div class="content-Img">
 					
 				</div>
+				
+			</div> 
+	
 			</div>
 		</div>
-	</div>
-	
-	<div class="section low" id="section4" style="justify-content: right;">
-		<div class="container3 row"style="    width: 100%;
-    display: flex;
-    margin-left: -90px;
-    align-items: flex-end;
-    justify-content: flex-end;">
-			<div class="content-Box row" style="justify-content: right;">
-				<div class="Union"  
-			
-	style="min-width: 200px;
-    width: 400px;
-    height: 400px;
-        margin-top: 333px;
-        background-image:url(image/pillyo7.png);
-        background-size: 400px 400px;
-        
-        ">
-					
-				</div>
-				<div class="Union" style="    /* float: right; */
-    width: 700px;
-    /* margin-left: 20px; */
-    margin-top: 130px;
-    height: 650px;
-    margin-right: 90px;
-    ">
-				<p class="Union-Text3">
-					상비약 관리,<br>
-					우리집에 있는 상비약<br>
-					사용기한, 위치메모<br>
-					꼼꼼하게
-					
-					<br><a>텍스트 자동 추출 기능을 통해<br>이미지를 업로드하여 편리하게 등록할 수 있어요.<br></a>
-					
-					
-					</p>
-				</div>
-				
-				
-			</div>
-		</div>
-	</div>
-	
-	
-	
-	<div class="section low" id="section4" style="justify-content: right;">
-		<div class="container3 row"style="    width: 100%;
-    display: flex;
-    margin-left: -90px;
-    align-items: flex-end;
-    justify-content: flex-end;">
-			<div class="content-Box row" style="justify-content: center;">
-				<<!-- div class="Union"  
-			
-	style="min-width: 200px;
-    width: 300px;
-    height: 300px;
-        margin-top: 333px;
-        background-image:url(image/pillyo1.jpg);
-        background-size: 300px 300px;
-        
-        ">
-					
-				</div> -->
-				<div class="Union" style="    width: 900px;
-    margin-top: 90px;
-    height: 800px;">
-				<p class="Union-Text4">
-					먹고 있는 약 등록하고<br>
-					매일매일 복용 습관 만들기<br>
-					
-					<!-- 작은글씨 -->
-					<a>캘린더를 통해 복용하는 약과
-					<br>복용 주기를 매일 체크해보세요.
-					<br>복용 알림도 카카오톡 공유 가능!</a>
-					</p>
-				</div>
-				
-				
-			</div>
-		</div>
-	</div>		
 	
 	
 		
 	<div class="section" id="section5">
 		<div class="container2 row">
 			<div class="content-Box3">
-				<h2 class="content-Title" style="text-weight:100;     margin-top: -500px;">건강관리의 첫걸음,<br>지금 바로 시작하세요</h2>
-				<br><a href="<c:url value = '/loginForm'/>"><button class="content-Box3-Btn"><!-- ↪ -->
-<!-- &#10553; -->
-&#10551;
-</button></a>
+				<h2 class="content-Title">건강관리의 첫걸음,<br>지금 바로 시작하세요</h2>
+				<br><a href="<c:url value = '/loginForm'/>"><button class="content-Box3-Btn">시작하기</button></a>
 			</div>
 		</div>
 	</div>
@@ -302,7 +223,7 @@
 
 	let text = document.getElementsByClassName('text')[0];
 	
-	let textArr = ['내 건강관리, 가족의 건강관리', '당신의 건강관리를 위해 꼭 필요한 서비스, Pill-Yo<br>필요와 함께라면<br> 당신의 일상이 건강해질 거예요.']
+	let textArr = ['내 건강관리, 가족의 건강관리', '우리의 건강관리를 위해 꼭 필요한 서비스, Pill-Yo<br>필요와 함께라면<br> 당신의 일상이 건강해질 거예요.']
 	
 	let typewriter = new Typewriter(text, {
 	    loop: true
