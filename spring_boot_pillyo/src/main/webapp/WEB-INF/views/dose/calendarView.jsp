@@ -66,21 +66,9 @@
 					</div>
 					<div id="doseListAndBtnBox">
 						<!-- <div id="doseListBox"> -->
-						<h3 style="
-						       width: 162px;
-							   height: 36px;
-							   padding-top: 18px;
-							   border-radius: 19px;
-							   margin-left: 172px;
-							   text-align: center;
-							   font-size: 17px;
-							   font-weight: 480;
-							   margin-bottom: 29px;
-							   box-shadow: 0px 1px 4px 3px #f3f3f3;
-						">${famMember}의 복용관리</h3><br><br>
+						<h3>오늘의 복용 목록&nbsp;(${famMember})</h3>
 							<div id='doseListCal'></div>
 							
-						<!-- </div> -->
 						
 						 <div id="btnBoxParent">
 							<div id="btnBox">
@@ -90,35 +78,44 @@
 					</div>
 				</div>
 				
+				<div id="doseItemBigBox">
+					<div id="doseListHeader">
+						<h3>복용 목록 관리</h3>
+					</div>
+				
+					<div id="doseItemBox">
+			  		 	<table id="doseItemTbl">
+			  		 		<tr>
+			  		 			<th id="firstTh">복용 타이틀</th>
+			  		 			<th>약 이름</th>
+			  		 			<th>복용 기간</th>
+			  		 			<th>복용 주기</th>
+			  		 			<th>복용 시기</th>
+			  		 			<th>복용 시간</th>
+			  		 			<th id="lastTh">1회 복용량</th>
+		  		 			</tr>
+				  		 	<c:forEach items="${doseList }" var="dose">
+				  		 		<tr>
+				  		 			<td><a href="<c:url value='/doseDetailView/${dose.ddNo}'/>">${dose.ddTitle }</a></td>
+				  		 			<td>약이름</td>
+				  		 			<td>${dose.ddStartDate } ~ ${dose.ddEndDate }</td>
+				  		 			<td>${dose.ddCycle }일</td>
+				  		 			<td>${dose.ddTimeSlot }</td>
+				  		 			<td>${dose.ddTime }</td>
+				  		 			<td>${dose.ddAmount }정</td>
+			  		 			</tr>
+				   			</c:forEach>
+				   		</table>
+					</div>
+				</div>
 			</section>
-			<br><br><br><br>
-			 <div id="btnBoxParent">
-							<div id="btnBox">
-								<label><button id="doseMngBtn" class="calBtn" style="     margin-left: 65px;   margin-top: -25px;"><a href="<c:url value='/doseListView/${famNo}'/>">복용 목록 관리</a></button></label>
-							</div>
-						</div>
 						
-			<div id="doseItemBigBox">
-							<div id="doseListHeader">
-					<h3>복용 목록 조회</h3>
-				</div>
-			
-				<div id="doseItemBox">
-			  		 <c:forEach items="${doseList }" var="dose">
-			   			<a href="<c:url value='/doseDetailView/${dose.ddNo}'/>">
-			   				<div class="doseItem">
-			   					<div class="itemBottom">
-			   						${dose.ddTitle }
-			   					</div>
-		   					</div>
-	   					</a>
-			   		</c:forEach>
-				</div>
-			</div>
-	       <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 			<!-- BOTTOM  -->
 			<jsp:include page="/WEB-INF/views/layout/bottom.jsp" flush='true' />
 		
+			<!-- chatbot -->
+			<jsp:include page="/WEB-INF/views/chatBot.jsp"/>
+			
       </div> <!-- wrap -->
 	</body>
 	<script>
