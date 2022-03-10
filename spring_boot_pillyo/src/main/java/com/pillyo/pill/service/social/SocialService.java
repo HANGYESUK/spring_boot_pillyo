@@ -1,12 +1,10 @@
-package com.pillyo.pill.service;
-
-import java.util.HashMap;
+package com.pillyo.pill.service.social;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
-import com.pillyo.pill.dao.ISocialDAO;
+import com.pillyo.pill.dao.social.ISocialDAO;
 import com.pillyo.pill.model.social.KakaoVO;
 
 @Service
@@ -16,20 +14,26 @@ public class SocialService implements ISocialService {
 	ISocialDAO dao;
 	
 	@Override
-	public String kakaoEmailCheck(String k_email) {
-		// 중복회원인지 이메일 체크
-		return dao.kakaoEmailCheck(k_email);
+	public String kakaoJoinCheck(String k_email) {
+		// 카카오 회원가입 여부 체크
+		return dao.kakaoJoinCheck(k_email);
+	}
+	
+	@Override
+	public String kakaoLoginCheck(String k_email) {
+		// 로그인 유효성 검사
+		return dao.kakaoLoginCheck(k_email);
 	}
 	
 	@Override
 	public void kakaoJoin(KakaoVO vo) {
-		// 카카오 회원가입
+		// 회원가입 : kakao_user 테이블에 회원정보 추가
 		dao.kakaoJoin(vo);
 	}
 	
 	@Override
 	public void kakaoJoinUser(KakaoVO vo) {
-		// 서비스 이용 위해 user 테이블에 추가
+		// 회원가입 : 서비스 이용 위해 user 테이블에 회원정보 추가
 		dao.kakaoJoinUser(vo);
 	}
 	
@@ -37,17 +41,5 @@ public class SocialService implements ISocialService {
 	public int joinPathCheck(String id) {
 		// 로그인 시 소셜 로그인 회원인지 체크
 		return dao.joinPathCheck(id);
-	}
-	
-	@Override
-	public String kakaoUserCheck(HashMap<String, Object> map) {
-		// 카카오 로그인 시 : 카카오 회원가입 되어있는 회원인지 아닌지 체크
-		return dao.kakaoUserCheck(map);
-	}
-	
-	@Override
-	public String kakaoLogin(HashMap<String, Object> map) {
-		// 카카오 로그인
-		return dao.kakaoLogin(map);
 	}
 }

@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.pillyo.pill.model.UserVO;
 import com.pillyo.pill.service.FamilyService;
-import com.pillyo.pill.service.SocialService;
 import com.pillyo.pill.service.UserService;
+import com.pillyo.pill.service.social.SocialService;
 
 @Controller
 public class UserController {
@@ -38,27 +38,23 @@ public class UserController {
 	// 로그인 처리 : id와 pw 전달 받아서 로그인 체크
 	@ResponseBody
 	@RequestMapping("/login")
-	public String loginCheck(@RequestParam HashMap<String, Object> param,
-											   HttpSession session) {
-		
-		// 로그인 체크 결과
-		UserVO vo = user_service.loginCheck(param);
+	public String loginCheck(@RequestParam HashMap<String, Object> param, HttpSession session) {
+
 		String result = "fail";
-		
-		// 소셜 로그인 회원인지 체크 (가입경로 0 : pillyo 회원 | 1 : 카카오)
+		UserVO vo = user_service.loginCheck(param);
 		int joinPath = social_Service.joinPathCheck(vo.getUserId());
 		
-		if(vo != null) {
-			if (joinPath == 0) {
-				// 일반 회원으로 로그인 성공하면 세션 변수 지정
+		if (joinPath==0) {
+			if(vo != null) {
 				session.setAttribute("sid", vo.getUserId());
-				// System.out.println(vo.getUserId());
 				result = "success";
-			} else if (joinPath == 1) {
-				return "kakao";
 			}
-			
+		} else if (joinPath==1) {
+			result = "kakao";
+		} else {
+			result = "fail";
 		}
+		
 		
 		return result;
 	}
