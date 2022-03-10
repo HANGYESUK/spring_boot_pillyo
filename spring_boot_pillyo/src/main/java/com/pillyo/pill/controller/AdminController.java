@@ -2,12 +2,16 @@ package com.pillyo.pill.controller;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -17,6 +21,8 @@ import com.pillyo.pill.model.AdminVO;
 import com.pillyo.pill.model.DrugInfoVO;
 import com.pillyo.pill.model.DrugShapeVO;
 import com.pillyo.pill.model.UserVO;
+import com.pillyo.pill.paging.Criteria;
+import com.pillyo.pill.paging.PageMakerDTO;
 import com.pillyo.pill.service.AdminService;
 import com.pillyo.pill.service.DrugService;
 import com.pillyo.pill.service.DrugShapeService;
@@ -25,6 +31,9 @@ import com.pillyo.pill.service.UserService;
 
 @Controller
 public class AdminController {
+	
+	 private static final Logger log = LoggerFactory.getLogger(AdminController.class);
+	
 	@Autowired
 	AdminService aservice;
 	@Autowired
@@ -134,17 +143,45 @@ public class AdminController {
 		}
 				
 		//관리자 메뉴- 약정보 전체 조회
-		@RequestMapping("/listAllDrug")
-		public String listAllDrug(Model model) {
-			ArrayList<DrugInfoVO> drugList = dservice.listAllDrugView();
+		@GetMapping("/listAllDrug")
+		public String listAllDrug(Model model, Criteria cri) throws Exception {
+			
+			log.info("boardListGET");
+			log.info("cri : " + cri);
+			
+			List<DrugInfoVO> drugList = dservice.getDrugListPaging(cri);
 			model.addAttribute("drugList", drugList);
+			
+			int total = dservice.getTotal(cri);
+			PageMakerDTO pageMake = new PageMakerDTO(cri, total);
+			
+			model.addAttribute("pageMaker", pageMake);
+			
 			return "admin/a_listAllDrugInfoView";
 				}
-		//관리자 메뉴- 약정보 전체 조회
-		@RequestMapping("/listAllDrugShpae")
-		public String listAllDrugShpae(Model model) {
-			ArrayList<DrugShapeVO> shapeList = sservice.listAllDrugShapeView();
+		//약 정보 상세조회
+		@RequestMapping("/a_drugDetailView/{drugInfoNo}")
+		public String drugDetailView(@PathVariable String drugInfoNo, Model model) {
+			DrugInfoVO vo = dservice.detailViewDrug(drugInfoNo);
+			model.addAttribute("drug", vo);
+			return "admin/a_drugDetailView";
+		}
+		
+		//관리자 메뉴- 약모양 전체 조회
+		@GetMapping("/listAllDrugShpae")
+		public String listAllDrugShpae(Model model, Criteria cri) throws Exception {
+			
+			log.info("boardListGET");
+			log.info("cri : " + cri);
+			
+			List<DrugShapeVO> shapeList = sservice.getShapeListPaging(cri);
 			model.addAttribute("shapeList", shapeList);
+			
+			int total = sservice.getTotal(cri);
+			PageMakerDTO pageMake = new PageMakerDTO(cri, total);
+			
+			model.addAttribute("pageMaker", pageMake);
+			
 			return "admin/a_listAllDrugShapeView";
 		}
 		

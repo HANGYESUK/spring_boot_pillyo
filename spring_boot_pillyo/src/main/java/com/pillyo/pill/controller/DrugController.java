@@ -6,9 +6,12 @@ import java.util.HashMap;
 import java.util.List;
 
 import org.json.JSONObject;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -17,12 +20,17 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.pillyo.pill.model.DrugInfoVO;
 import com.pillyo.pill.model.DrugShapeAPIVO;
 import com.pillyo.pill.model.DrugShapeVO;
+import com.pillyo.pill.paging.Criteria;
+import com.pillyo.pill.paging.PageMakerDTO;
 import com.pillyo.pill.service.DrugService;
 import com.pillyo.pill.service.DrugShapeAPIService;
 import com.pillyo.pill.service.DrugShapeService;
 
 @Controller
 public class DrugController {
+	
+	private static final Logger log = LoggerFactory.getLogger(DrugController.class);
+	
 	@Autowired
 	DrugService service;
 	@Autowired
@@ -101,12 +109,25 @@ public class DrugController {
 	
 	
 	
-	  @RequestMapping("/drugShape") 
-	  public String drugShape(@RequestParam HashMap<String, Object> map , Model model) {
-		  System.out.println(map);
+	  @GetMapping("/drugShape") 
+	  public String drugShape(@RequestParam HashMap<String, Object> map , Model model) throws Exception{
+		  
+			/*
+			 * log.info("drugShape"); log.info("cri : " + cri);
+			 */
+		  		  
 		  //{keyWord=베아제, DRUG_SHAPE=타원형, FORM_CODE_NAME=경질} 이렇게 폼 결과 받아옴.
-		  ArrayList<DrugShapeVO> shapeList = shapeService.drugShapeSearch(map);
+		 System.out.println(map);
+		  List<DrugShapeVO> shapeList = shapeService.drugShapeSearch(map);
 		 model.addAttribute("shapeList", shapeList);
+		 
+			/*
+			 * int total = shapeService.getTotal(cri); PageMakerDTO pageMake = new
+			 * PageMakerDTO(cri, total);
+			 * 
+			 * model.addAttribute("pageMaker", pageMake);
+			 */
+			
 		  return "drug/drugShapeResultView";
 	  }
 	  
@@ -115,10 +136,21 @@ public class DrugController {
 	 * System.out.println(shapeList.get(0)); return "drug/drugShapeResultView"; }
 	 */
 	
-	@RequestMapping("/drugShapeSearchForm")
-	public String drugShapeSearchForm(Model model) {
-		 ArrayList<DrugShapeVO> shapeList = shapeService.listAllDrugShapeView();
-		 model.addAttribute("shapeList", shapeList);
+	@GetMapping("/drugShapeSearchForm")
+	public String drugShapeSearchForm(Model model, Criteria cri) throws Exception {
+		
+
+		log.info("drugShapeSearchForm");
+		log.info("cri : " + cri);
+		
+		cri.setAmount(9);
+		List<DrugShapeVO> shapeList = shapeService.getShapeListPaging(cri);
+		model.addAttribute("shapeList", shapeList);
+		int total = shapeService.getTotal(cri);
+		PageMakerDTO pageMake = new PageMakerDTO(cri, total);
+		model.addAttribute("total", total);
+		model.addAttribute("pageMaker", pageMake);
+		
 		return "drug/drugShapeSearchForm";
 	}
 	

@@ -1,6 +1,6 @@
 
 table.adminTable {
-	width:1000px;
+	width:90%;
 	border-collapse: separate;
 	border-spacing: 1px;
 	text-align: center;
@@ -20,4 +20,9 @@ table.adminTable td {
 	border-bottom: 1px solid #ccc;
 	/* background: #eee; */
 	/* font-size: 11px; */
+}
+
+#adminTableBox{
+	display: flex;
+	flex-direction: column;
 }

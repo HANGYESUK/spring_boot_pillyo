@@ -81,6 +81,10 @@
     color: #213670;
     margin-left: 18px;
     }
+    
+    .drugBox2{
+    	width: 450px;
+    }
 	</style>
 		
 	<body>
@@ -92,6 +96,11 @@
 		<div id="navMargin"></div>
 		
 		<section id="section2">
+		
+		<div id="adminContainer">
+			<jsp:include page="/WEB-INF/views/admin/adminMainMenu.jsp" flush='true' />
+			
+		
 			<div style="    		background:#ffffff;
 ;
 			">
@@ -101,7 +110,7 @@
 			
 		<div class="BoxAll">		
 			<div class="Box1">
-				<div class="drugBox2">
+				<div class="drugBox2" >
 							<img src="${drug.itemImage}" alt="약정보" onerror="this.src='/img/fill_null.png'">
 									<div class="drugBoxText">
 										<a class="itemName">${drug.itemName}<br></a>
@@ -136,7 +145,7 @@
 					</div>
 				</div>
 			</div>
-				
+			</div>
 			</div>
 		</section>
 	

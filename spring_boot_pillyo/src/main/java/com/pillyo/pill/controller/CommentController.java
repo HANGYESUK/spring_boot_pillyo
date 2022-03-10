@@ -5,13 +5,14 @@ import java.util.ArrayList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.pillyo.pill.model.CommentVO;
 import com.pillyo.pill.service.CommentService;
 
-@Controller
-public class CommentController {
+//@Controller
+//public class CommentController {
 //	@Autowired
 //	CommentService service;
 //	
@@ -29,6 +30,14 @@ public class CommentController {
 //
 //		return "comment/commentListView";
 //	}
-	
-	
-}
+//	@Autowired
+////	CommentService service;
+//	// 댓글 삭제
+//		@RequestMapping("/deleteComment/{commentNo}")
+//		public String deleteComment(@PathVariable int commentNo) {
+//			System.out.println(commentNo);
+//			service.deleteComment(commentNo);
+//			return "redirect:../listAllBoard";
+//		}
+//	
+//}

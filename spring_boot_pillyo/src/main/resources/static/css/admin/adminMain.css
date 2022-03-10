@@ -7,7 +7,6 @@ a{
 #adminContainer{
 	display: flex;
 	flex-wrap: nowrap;
-	justify-content: space-between;
 }
 
 #adminBox{
@@ -42,14 +41,6 @@ a{
 	background-color:#d9eafe;
 }
 
-#userCnt{
-	width:150px;
-	height:150px;
-	/* border-radius: 80px; */
-	background: #79b5ff;
-	
-	
-}
 .adminDrugItem{
 	cursor: pointer;
 }
@@ -57,18 +48,37 @@ a{
 	list-style:none;
 	display: none;
 }
+#adminSection{
+	width: 100%;
+	display: flex;
+	flex-direction: column; 
+	align-items: center;
+}
+
 #adminArticle{
-	width: 90%;
-    display: flex;
+	display: flex;
     flex-direction: row;
-    justify-content: space-around;
 }
 
 .adminInfoBox{
 	display: flex;
-	
+	margin: 0 20px;
 	width:300px;
-	height: 500px;
+	height: 100px;
 	border: 2px solid #cdcdcd;
 	border-radius: 10px;
+	line-height: 100px;
+	justify-content: center;
+}
+.adminInfoBox div span{
+	font-weight: bold;
+	}
+
+#adminbottomArticle{
+	display: flex;
+	width: 85%;
+	border: 2px solid #cdcdcd;
+	border-radius: 10px;
+	margin-top: 20px;
+	justify-content: space-around;
 }

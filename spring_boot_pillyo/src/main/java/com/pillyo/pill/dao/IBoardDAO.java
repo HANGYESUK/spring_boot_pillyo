@@ -19,6 +19,7 @@ public interface IBoardDAO {
 	ArrayList<BoardVO> listAllBoardQna4();
 	ArrayList<BoardVO> listAllBoardQna5();
 	void insertcomment(CommentVO vo);
+	void deleteComment(int commentNo);
 	
 	
 

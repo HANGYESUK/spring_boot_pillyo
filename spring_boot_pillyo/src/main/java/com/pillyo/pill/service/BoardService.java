@@ -77,6 +77,11 @@ public class BoardService implements IBoardService {
 		// TODO Auto-generated method stub
 		dao1.insertcomment(vo);
 	}
+
+	public void deleteComment(int commentNo) {
+		// TODO Auto-generated method stub
+		dao.deleteComment(commentNo);
+	}
 	
 //	@Override
 //	public static int boardListCnt() {
