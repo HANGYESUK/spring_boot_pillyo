@@ -49,11 +49,11 @@
 					 		<%-- <td>${user.userAddress2 }</td> --%>
 					 		<td>${user.joinDate }</td>
 					 		<td><button onclick="location.href='/a_updateUserForm/${user.userId }'">수정</button></td>
-					 		<td><button onclick="location.href='javascript:deleteCheck(${user.userId });'">삭제</button></td>
+					 		<td><button onclick="deleteCheck('${user.userId}');">삭제</button></td>
+					 		<%-- <td><button onclick="location.href='javascript:deleteCheck(${user.userId })'">삭제</button></td> --%>
 				 		</tr>
 				 	</c:forEach>
-				 </table>
-					<script type="text/javascript">
+					<script>
 							function deleteCheck(no){
 								var answer = confirm("선택한 회원 정보를 삭제하시겠습니까?");
 								if(answer == true){
@@ -61,6 +61,7 @@
 								}
 							}
 					</script>
+				 </table>
 					
 				</div>
 			</section>
