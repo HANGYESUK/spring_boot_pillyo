@@ -68,15 +68,13 @@
 					</div>					
 				
 				<div id="adminbottomArticle" >
-					<div class="admininfoChart">
-					d
-					</div>
-					<div class="admininfoChart">
-					d
-					</div>
+					<img src="" alt="" onerror="this.src='/img/medicap.jpg'" width="1000px" height="500px"/>
+					
+				</div>
+					
 				</div>
 				
-				</div>
+				
 				</div> <!-- adminContainer -->
 			</section>
 	        
