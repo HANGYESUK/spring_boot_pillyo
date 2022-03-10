@@ -18,7 +18,7 @@
          processData: false,  // 필수
          contentType: false,  // 필수
          success:function(result){
-			alert(result);
+			//alert(result);
             // 이미지 출력 : div에 append 시킴
             $('#image').empty();
             $('#image').append('<img src="/images/'+fileName+'" width="604px;"/>');

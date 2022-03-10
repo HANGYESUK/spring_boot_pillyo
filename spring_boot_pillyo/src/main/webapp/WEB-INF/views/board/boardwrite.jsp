@@ -182,7 +182,9 @@
 			</td>
 		</tbody>
 		</table>
-		<input type="hidden" name="boardImg" value="">  <!-- 세션 아이디 받아오기 -->
+
+			<input type="hidden" name="boardImg" value="">  <!-- 세션 아이디 받아오기 -->
+
 			<input type="hidden" name="userId" value="${sessionScope.sid}">  <!-- 세션 아이디 받아오기 -->
 			<input type="hidden" name="boardWriteDate" value="<%= sf.format(nowDate) %>"> 
 			<input type="submit" name="submit" id="pagego" value="등록하기">
@@ -191,6 +193,7 @@
 		
 			
 		
+		</form>
 		<!-- <button type="submit" button style="float:right;">작성</button> --> <!-- submit -> 이 버튼의 역할은 데이터를 전송하는 것 -->
 		
 		<form id="OCRForm" >
