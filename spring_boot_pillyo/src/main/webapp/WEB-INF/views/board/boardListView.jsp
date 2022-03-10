@@ -105,7 +105,7 @@
 		                        <div></div>
 		                        <div></div>
 		                    </div>
-		                    <div class="side-btns">
+		                    <div class="side-btns" style="opacity: 0%;">
 		                        <div>
 		                            <span><i class="fas fa-angle-left"></i></span>
 		                        </div>

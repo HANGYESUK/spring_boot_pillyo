@@ -2,10 +2,12 @@
 
 #joinBox{
 	margin: 0 auto;
-	text-align: center;
-	background: #fdecec;;
-    color: #912929;
-        border-radius: 100px;
+    text-align: center;
+    font-weight: 400;
+    background: white;
+    box-shadow: 0px 0px 6px #dadada;
+    border-radius: 100px;
+    color: #3e3e3e;
 }
 
 Table#joinTable{
@@ -36,7 +38,7 @@ Table#joinTable{
     padding-left: 95px;
 }
 #joinBtn, #cancelBtn{
-	width: 300px;
+    width: 300px;
     height: 40px;
     margin-top: 13px;
     font-size: 18px;
@@ -44,27 +46,33 @@ Table#joinTable{
     border-radius: 20px;
     overflow: hidden;
     cursor: pointer;
-    background: #b76a6a;
-    border-color: #ffe4e4;
-    color: antiquewhite;
+    background: #6a88b7;
+    /* border-color: #e4e4ff; */
+    border: 0;
+    box-shadow: 0px 0px 6px #dadada;
+    color: white;
     border-radius: 16px;
 }
 
 
 
+
 .btn1{
 	
-	background: #b76a6a;
-    border-color: #ffe4e4;
-    color: antiquewhite;
+	 background: #5076b1;
+    /* border-color: #ffe4e4; */
+    border: 0;
+    color: white;
     border-radius: 5px;
 }
 
+
 .btn2{
 	
-	background: #b76a6a;
-    border-color: #ffe4e4;
-    color: antiquewhite;
+    background: #5076b1;
+    /* border-color: #ffe4e4; */
+    border: 0;
+    color: white;
     border-radius: 5px;
 }
 
@@ -84,7 +92,7 @@ label{
 width: 93%;
     margin: 0 auto;
     opacity: 100%;
-    background-color: #fdecec;
+    background-color:white;
     border-radius: 100px;
     padding-bottom: 5%;
 }

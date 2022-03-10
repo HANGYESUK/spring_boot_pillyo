@@ -94,6 +94,7 @@ public class BoardController {
 //			System.out.println(vo.getTitle());
 			return "redirect:/listAllBoard";  
 		}
+		
 	
 
 //	//Ajax 컨트롤러
@@ -107,20 +108,6 @@ public class BoardController {
 //		
 //		return"success";
 //	}
-	
-		// 댓글 등록 
-		@RequestMapping("/insertcomment/{boardNo}")
-		public String insertcomment(CommentVO vo, HttpSession session,@PathVariable("boardNo") int boardNo, Model model) { 
-									// title, content 매개변수 받기 
-			String userId = (String)session.getAttribute("sid"); // session 받아오기
-			commentservice.insertcomment(vo);
-			System.out.println(boardNo);
-//				System.out.println(vo.getTitle());
-			BoardVO board = service.boardDetailView(boardNo);
-			model.addAttribute("boardNo", boardNo);
-			
-			return "redirect:/boardDetailView/{boardNo}";
-		}
 
 	
 	@RequestMapping("/listAllBoard")
@@ -151,8 +138,7 @@ public class BoardController {
 		ArrayList<BoardVO> boardMemberList = service.listAllBoardQna5();
 		model.addAttribute("boardMemberList", boardMemberList);
 		
-		ArrayList<CommentVO> commentList = commentservice.listAllComment();
-		model.addAttribute("commentList", commentList);
+
 		
 		// 이 구간은 model 객체를 파라미터로 받아서 view인 listAllBoard에 리턴해주는 역할
 		// model.addAttribute("변수 이름", 변수에 넣을 데이터); 라고 생각
@@ -167,7 +153,7 @@ public class BoardController {
 		BoardVO board = service.boardDetailView(boardNo);
 		model.addAttribute("board", board);
 		
-		ArrayList<CommentVO> commentList = commentservice.listAllComment();
+		ArrayList<CommentVO> commentList = commentservice.listAllComment(boardNo);
 		model.addAttribute("commentList", commentList);
 		
 		return "/board/boardDetailView";
@@ -180,6 +166,8 @@ public class BoardController {
 		service.deleteBoard(boardNo);
 		return "redirect:../listAllBoard";
 	}
+	
+	
 	// 업데이트 폼 이동
 		@RequestMapping("/updateBoardForm/{boardNo}")
 		public String updateBoardForm(@PathVariable int boardNo, Model model) {
@@ -195,6 +183,30 @@ public class BoardController {
 		return "redirect:/listAllBoard";  
 	}
 	
+	
+	// 댓글 등록 
+	@RequestMapping("/insertcomment/{boardNo}")
+	public String insertcomment(CommentVO vo, HttpSession session,@PathVariable("boardNo") int boardNo, Model model) { 
+								// title, content 매개변수 받기 
+		String userId = (String)session.getAttribute("sid"); // session 받아오기
+		commentservice.insertcomment(vo);
+		System.out.println(boardNo);
+//			System.out.println(vo.getTitle());
+		BoardVO board = service.boardDetailView(boardNo);
+		model.addAttribute("boardNo", boardNo);
+		
+		return "redirect:/boardDetailView/{boardNo}";
+	}
+	
+	// 댓글 삭제
+	@RequestMapping("/deleteComment/{commentNo}")
+	public String deleteComment(@PathVariable int commentNo) {
+		System.out.println(commentNo);
+		commentservice.deleteComment(commentNo);
+		
+		
+		return "redirect:../listAllBoard";
+	}
 	
 	
 	

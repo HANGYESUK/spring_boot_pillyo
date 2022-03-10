@@ -15,13 +15,20 @@ public class CommentService implements ICommentService {
 	@Qualifier("ICommentDAO")
 	ICommentDAO dao;
 	
-	public ArrayList<CommentVO> listAllComment(){
-		return dao.listAllComment();
+	public ArrayList<CommentVO> listAllComment(int boardNo){
+		return dao.listAllComment(boardNo);
 	}
 
 	public void insertcomment(CommentVO commentvo) {
 		// TODO Auto-generated method stub
 		dao.insertcomment(commentvo);
+	}
+
+	@Override
+	public void deleteComment(int commentNo) {
+		// TODO Auto-generated method stub
+		dao.deleteComment(commentNo);
+		
 	}
 
 	
