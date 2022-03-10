@@ -8,6 +8,7 @@
 		<title>top</title>
 		<link rel="stylesheet" href="/css/layout/common.css" />
 		<link rel="stylesheet" href="/css/layout/top.css" />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<script src="https://kit.fontawesome.com/2d323a629b.js" crossorigin="anonymous"></script>
 	</head>
 	<body>

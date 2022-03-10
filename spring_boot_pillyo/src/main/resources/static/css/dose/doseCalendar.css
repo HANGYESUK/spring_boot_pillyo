@@ -1,7 +1,7 @@
 #doseBox {
 
     margin-left: 110px;
-
+    margin-top: 50px;
 	display:flex;
     justify-content: flex-start;
 }
@@ -11,7 +11,7 @@
     margin-left: -76px;
 }
 
-/* ---------- Ķ���� ------------ */
+/* ---------- 캘占쏙옙占쏙옙 ------------ */
 #calendarBox {
 	/*     margin-left: 160px; */
 	display: inline-block;
@@ -33,7 +33,7 @@
 	max-width:680px;
 }
 
-/* ---------- ������ ���� ��� ------------ */
+/* ---------- 占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙 占쏙옙占� ------------ */
 #doseListBox {
     display: inline-block;
     margin: 20px 0;
@@ -61,7 +61,7 @@
 	display:none;
 }
 
-/* ---------- ���� ��� �� ------------ */
+/* ---------- 占쏙옙占쏙옙 占쏙옙占� 占쏙옙 ------------ */
 #calendarModal {
 	display: flex;
     flex-wrap: nowrap;
@@ -152,7 +152,7 @@
 	background: red;
 } */
 
-/* ----------  �ڵ� �ϼ� ��� ------------ */
+/* ----------  占쌘듸옙 占싹쇽옙 占쏙옙占� ------------ */
 #doseInsertFormBox {
 	float: left;
 }
