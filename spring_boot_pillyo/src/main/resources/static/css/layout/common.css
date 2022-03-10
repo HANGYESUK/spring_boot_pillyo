@@ -15,6 +15,11 @@ body {
     margin: 0 auto;
 }
 
+#logoBox > a > img {
+	width: 147px;
+    height: 56px;
+}
+
 /* --------- section ------------ */
 #navMargin {
     margin-top: 20px;
