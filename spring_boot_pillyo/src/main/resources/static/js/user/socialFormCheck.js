@@ -18,8 +18,8 @@ $('input[name=k_hp2]').change(function() {
 });
 
 $('input[name=k_hp3]').change(function() {
-			var k_hp1 = $('#k_hp1').val();
-			var k_hp2 = $('#k_hp2').val();
+			var k_hp1 = $('#userHp1').val();
+			var k_hp2 = $('#userHp2').val();
 			var k_hp3 = $(this).val();
 			$('#k_hp').val(k_hp1 + '-' + k_hp2 + '-' + k_hp3);
 });
