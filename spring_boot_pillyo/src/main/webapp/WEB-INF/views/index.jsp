@@ -180,7 +180,7 @@
 		<div class="container3 row">
 			<div class="content-Box row">
 				<div class="main-Content calum">
-					<div class="main-Text" style="margin-bottom: 250px;">
+					<div class="main-Text" style="margin-bottom: 220px;">
 						<h3>먹고 있는 약 등록하고<br>
 						매일매일 복용 습관 만들기<br></h3>
 						<br>
