@@ -93,7 +93,7 @@ font-size: 20px;
 					<c:forEach items="${druglist}" var="drug" varStatus="status">
 							<a href="<c:url value='/drugDetailView/${drug.drugInfoNo}'/>">
 							<div class="drugBox">
-								<img src="${drug.itemImage}" onerror="this.src='/img/fill_null.png'">
+								<img src="${drug.itemImage}" onerror="this.src='/image/drugImg.png'">
 								<div class="drugBoxText">
 								<p class="itemName">${drug.itemName}</p>
 								<p class="shapeInfo">${drug.entpName}</p>
