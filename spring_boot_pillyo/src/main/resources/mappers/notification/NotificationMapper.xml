@@ -14,6 +14,13 @@
 	</insert>
 	
 	<!-- 알림 상세 정보 -->
+	<select id="notiRcvMember" resultType="com.pillyo.pill.model.UserVO">
+		SELECT * FROM user WHERE notification=1
+	</select>
+	
+	
+	<!-- ************************************************************************ -->
+	<!-- 알림 상세 정보 -->
 	<select id="detailNoti" parameterType="String" resultType="com.pillyo.pill.model.notification.notificationVO">
 		SELECT * FROM dose_notification WHERE userId =#{userId}
 	</select>

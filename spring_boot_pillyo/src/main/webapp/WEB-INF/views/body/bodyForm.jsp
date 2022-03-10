@@ -14,6 +14,7 @@
 		<link rel="stylesheet" href="/css/dashboard/family/familyView.css" />
 		
 </head>
+
 <body>
 <div id="wrap">
 		
@@ -22,9 +23,10 @@
 
 		<div id="navMargin"></div>
 			
-			<section id="section">
-			<h3>체형 등록</h3>	
-			<hr>
+			
+			<section id="section3">
+			<h3 class="formName">체형 등록</h3>	
+			
 			
 			<div class="main-Content-Body low">
 					<div class="basket-Item-Container colunm">

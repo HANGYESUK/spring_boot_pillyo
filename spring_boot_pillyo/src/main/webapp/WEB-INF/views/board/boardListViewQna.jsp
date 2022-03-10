@@ -89,11 +89,11 @@ box-shadow: 0px 1px 4px #0d3bb1;   /*  height: 700px; */
 		</div>
 	<div class="ctgMenuItemtotal">
 		<div class="ctgMenuItemSub">
-		<a href="<c:url value='/listAllBoardQna2'/>">주문/결제</a></div>
+		<a href="<c:url value='/listAllBoardQna2'/>">건강관리</a></div>
 		<div class="ctgMenuItemSub">
-		<a href="<c:url value='/listAllBoardQna3'/>">교환/반품</a></div>
+		<a href="<c:url value='/listAllBoardQna3'/>">우리집약관리</a></div>
 		<div class="ctgMenuItemSub">
-		<a href="<c:url value='/listAllBoardQna4'/>">제품</a></div>
+		<a href="<c:url value='/listAllBoardQna4'/>">복용관리</a></div>
 		<div class="ctgMenuItemSub">
 		<a href="<c:url value='/listAllBoardQna5'/>">회원</a>
 	</div>	
@@ -112,9 +112,9 @@ box-shadow: 0px 1px 4px #0d3bb1;   /*  height: 700px; */
 			<c:forEach items="${boardListQna}" var="board">
 			   <tr class="drugBox">
 					<td>
-						<c:if test="${board.boardCtgNo eq '2'}">주문/결제</c:if>
-						<c:if test="${board.boardCtgNo eq '3'}">교환/반품</c:if>
-						<c:if test="${board.boardCtgNo eq '4'}">제품</c:if>
+						<c:if test="${board.boardCtgNo eq '2'}">건강관리</c:if>
+						<c:if test="${board.boardCtgNo eq '3'}">우리집약관리</c:if>
+						<c:if test="${board.boardCtgNo eq '4'}">복용관리</c:if>
 						<c:if test="${board.boardCtgNo eq '5'}">회원</c:if>
 					</td> 
 					<!-- each는 반복 리스트에서 board가 없어질때 까지 반복 한다는 뜻  -->

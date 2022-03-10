@@ -5,10 +5,11 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>title</title>
+		<title>카카오 회원가입</title>
 		<script src="<c:url value='/js/jquery-3.6.0.min.js'/>"></script>
 		<script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 		<script src="https://kit.fontawesome.com/2d323a629b.js"crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="<c:url value='/css/member/kakaoJoinForm.css'/>">
 		<script>
 			window.onload = function(){
 				// 카카오 회원 정보 받아오기
@@ -31,30 +32,28 @@
 			<div id="navMargin"></div>
 			
 			<section id="section">
-				<form name="kakaoJoinForm" id="kakaoJoinForm" method="post" action="<c:url value='/kakaoJoin'/>">
-					<input type="hidden" id="k_name" name="k_name"><br><!-- 이름 -->
-					<input type="hidden" id="k_email" name="k_email"><br><!-- 이메일 -->
-					<input type="hidden" id="k_bday" name="k_bday"><br><!-- 생일 -->
-					<input type="hidden" id="k_gender" name="k_gender"><br><!-- 성별 -->
-					<input type="hidden" id="k_id" name="k_id"><br><!-- 추출한 아이디로부터 변환한 카카오 회원용 아이디 -->
-					
-					Pill-Yo 서비스 이용을 위해 필요한 추가 정보를 입력해주세요.<br>
-					핸드폰 번호<input type="text" name="k_hp1" id="k_hp1" size="3" maxlength="3">
-							- <input type="text" name="k_hp2" id="k_hp2" size="4" maxlength="4">
-							- <input type="text" name="k_hp3" id="k_hp3" size="4" maxlength="4"><br>
-					DB에 저장할 합친 폰번호 : hidden으로 숨기기<input type="text" id="k_hp" name="k_hp"><br>
-					우편번호<input type="text" id="k_zipcode" name="k_zipcode" readonly>
-						  <input type="button" class="searchZipBtn" id="searchZip" name="searchZip" value="우편번호찾기" readonly><br>
-					주소<input type="text" id="k_address1" name="k_address1" size="40"><br>
-					상세주소<input type="text" id="k_address2" name="k_address2" size="40" placeholder="상세 주소 입력"><br>
-					<hr>
-					전체 input form으로 묶고 -> 상단 input들은 hidden으로 숨기기 -> sumbit 시 회원가입
-					(아이디 검사를 이 페이지 넘어오면서 할지 / 이 페이지에서 다음으로 넘어갈 때 할지)
-					<div class="create">
-						<button type="submit" id="joinBtn" >회원가입</button>
-						<button type="submit" id="cancelBtn" onclick="">취소</button>
-					</div>
-				</form>
+				<div id="kakaoJoinFormBox">
+					<h2>카카오 회원가입</h2>
+					<h3>Pill-Yo 서비스 이용을 위해 필요한 추가 정보를 입력해주세요.</h3>
+					<form name="kakaoJoinForm" id="kakaoJoinForm" method="post" action="<c:url value='/kakaoJoin'/>">
+						<input type="hidden" id="k_name" name="k_name">
+						<input type="hidden" id="k_email" name="k_email">
+						<input type="hidden" id="k_bday" name="k_bday">
+						<input type="hidden" id="k_gender" name="k_gender">
+						<input type="hidden" id="k_id" name="k_id">
+						<table>
+							<tr><th>핸드폰 번호</th><td><input type="text" name="k_hp1" id="k_hp1" size="3" maxlength="3">
+													- <input type="text" name="k_hp2" id="k_hp2" size="4" maxlength="4">
+													- <input type="text" name="k_hp3" id="k_hp3" size="4" maxlength="4">
+													<input type="hidden" id="k_hp" name="k_hp"></td></tr>
+							<tr><th>우편번호</th><td><input type="text" id="k_zipcode" name="k_zipcode" readonly>
+													<input type="button" class="searchZipBtn" id="searchZip" name="searchZip" value="우편번호찾기" readonly></td></tr>
+							<tr><th>주소</th><td><input type="text" id="k_address1" name="k_address1" size="40"></td></tr>
+							<tr><th>상세 주소</th><td><input type="text" id="k_address2" name="k_address2" size="40" placeholder="상세 주소 입력"></td></tr>
+							<tr><th colspan="2" id="btnTd"><button type="submit" id="joinBtn" >회원가입</button><button type="submit" id="cancelBtn" onclick="">취소</button></th></tr>
+						</table>
+					</form>
+				</div>
 			</section>
 	        
 			<!-- BOTTOM  -->
@@ -81,8 +80,8 @@
 			});
 			
 			$('input[name=k_hp3]').change(function() {
-						var k_hp1 = $('#userHp1').val();
-						var k_hp2 = $('#userHp2').val();
+						var k_hp1 = $('#k_hp1').val();
+						var k_hp2 = $('#k_hp2').val();
 						var k_hp3 = $(this).val();
 						$('#k_hp').val(k_hp1 + '-' + k_hp2 + '-' + k_hp3);
 			});

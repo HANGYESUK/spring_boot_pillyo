@@ -19,10 +19,10 @@
 		<jsp:include page="/WEB-INF/views/layout/top.jsp" flush='true' />
 		<div id="navMargin"></div>
 		
-		<section id="section">
+		<section id="section3">
 			<div class="main-Content-Body low">
 					<div class="basket-Item-Container colunm">
-							<h1>혈당관리 수정</h1>
+							<h1 class="formName">혈당관리 수정</h1>
 							<br><br>
 					<form id="updateSugarForm" method="post" action="<c:url value='/updateSugar'/>">
 					  	<div>

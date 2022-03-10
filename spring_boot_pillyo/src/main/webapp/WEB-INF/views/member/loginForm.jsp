@@ -61,16 +61,13 @@
 			                 </div>
 			               </div>
 			         </div>
-			         
-					<hr>카카오 로그인 기능구현용 : 후에 hidden으로 수정 예정   |  위에 a 태그 css도 수정<hr>
 					<form id="kakaoLoginForm" name="kakaoLoginForm" method="post" action="<c:url value='kakaoJoinForm'/>">
-						이름<input type="text" id="k_name" name="k_name"><br>
-						이메일<input type="text" id="k_email" name="k_email"><br>
-						생일<input type="text" id="k_bday" name="k_bday"><br>
-						성별<input type="text" id="k_gender" name="k_gender"><br>
-						<hr>
-						이메일로부터 아이디 추출<input type="text" id="k_idFromEmail" name="k_idFromEmail"><br>
-						추출한 아이디를 카카오회원 구분용 아이디로 변환<input type="text" id="k_id" name="k_id"><br>
+						<input type="hidden" id="k_name" name="k_name">
+						<input type="hidden" id="k_email" name="k_email">
+						<input type="hidden" id="k_bday" name="k_bday">
+						<input type="hidden" id="k_gender" name="k_gender">
+						<input type="hidden" id="k_idFromEmail" name="k_idFromEmail">
+						<input type="hidden" id="k_id" name="k_id">
 					</form>
        			</section>
        		</div>		

@@ -264,21 +264,21 @@
 								<c:forEach items="${boardQnaList}" var="board">
 							  		<c:if test="${board.boardCtgNo eq '2'}">
 							  			<tr class="drugBox2">
-							  				<td>주문/결제</td>
+							  				<td>건강관리</td>
 							  				<td><a href="<c:url value='/boardDetailView/${board.boardNo}'/>">${board.boardTitle }</a></td>
 <%-- 											<td>${board.boardWriteDate}</td>
  --%>										</tr>
 							  		</c:if>
 							  		<c:if test="${board.boardCtgNo eq '3'}">
 							  			<tr class="drugBox2">
-							  				<td>교환/반품</td>
+							  				<td>우리집약관리</td>
 							  				<td><a href="<c:url value='/boardDetailView/${board.boardNo}'/>">${board.boardTitle }</a></td>
 <%-- 											<td>${board.boardWriteDate}</td>
  --%>										</tr>
 							  		</c:if>
 							  		<c:if test="${board.boardCtgNo eq '4'}">
 							  			<tr class="drugBox2">
-							  				<td>제품</td>
+							  				<td>복용관리</td>
 							  				<td><a href="<c:url value='/boardDetailView/${board.boardNo}'/>">${board.boardTitle }</a></td>
 <%-- 											<td>${board.boardWriteDate}</td>
  --%>										</tr>
@@ -311,7 +311,7 @@
 								<c:forEach items="${boardOrderPayList}" var="board">
 							  		<c:if test="${board.boardCtgNo eq '2'}">
 							  			<tr class="drugBox3">
-							  				<td>주문/결제</td>
+							  				<td>건강관리</td>
 							  				<td><a href="<c:url value='/boardDetailView/${board.boardNo}'/>">${board.boardTitle }</a></td>
 <%-- 											<td>${board.boardWriteDate}</td>
  --%>										</tr>
@@ -337,7 +337,7 @@
 								<c:forEach items="${boardTradeList}" var="board">
 							  		<c:if test="${board.boardCtgNo eq '3'}">
 							  			<tr class="drugBox3">
-							  				<td>교환/반품</td>
+							  				<td>우리집약관리</td>
 							  				<td><a href="<c:url value='/boardDetailView/${board.boardNo}'/>">${board.boardTitle }</a></td>
 <%-- 											<td>${board.boardWriteDate}</td>
  --%>										</tr>
@@ -363,7 +363,7 @@
 								<c:forEach items="${boardProductList}" var="board">
 							  		<c:if test="${board.boardCtgNo eq '4'}">
 							  			<tr class="drugBox3">
-							  				<td>제품</td>
+							  				<td>복용관리</td>
 							  				<td><a href="<c:url value='/boardDetailView/${board.boardNo}'/>">${board.boardTitle }</a></td>
 <%-- 											<td>${board.boardWriteDate}</td>
  --%>										</tr>
