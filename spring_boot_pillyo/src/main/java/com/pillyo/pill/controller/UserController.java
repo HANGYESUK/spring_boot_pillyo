@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.pillyo.pill.model.UserVO;
 import com.pillyo.pill.service.FamilyService;
 import com.pillyo.pill.service.UserService;
+import com.pillyo.pill.service.notification.NotificationService;
 import com.pillyo.pill.service.social.SocialService;
 
 @Controller
@@ -27,6 +28,9 @@ public class UserController {
 	
 	@Autowired
 	SocialService social_Service;
+	
+	@Autowired
+	NotificationService notification_Service;
 	
 	
 	// 로그인 폼으로 이동
@@ -42,19 +46,22 @@ public class UserController {
 
 		String result = "fail";
 		UserVO vo = user_service.loginCheck(param);
-		int joinPath = social_Service.joinPathCheck(vo.getUserId());
 		
-		if (joinPath==0) {
-			if(vo != null) {
+		if(vo != null) {
+			// 소셜 로그인 회원인지 체크 (가입경로 0 : pillyo 회원 | 1 : 카카오)
+			int joinPath = social_Service.joinPathCheck(vo.getUserId());
+			
+			if (joinPath==0) {
+				// 일반 회원으로 로그인 성공하면 세션 변수 지정
 				session.setAttribute("sid", vo.getUserId());
+				// System.out.println(vo.getUserId());
 				result = "success";
+			} else if (joinPath==1) {
+				result = "kakao";
+			} else {
+				result = "fail";
 			}
-		} else if (joinPath==1) {
-			result = "kakao";
-		} else {
-			result = "fail";
 		}
-		
 		
 		return result;
 	}
@@ -107,6 +114,8 @@ public class UserController {
 		String userId = vo.getUserId();
 		family_Service.famStart(userId);
 		
+		// 복용 알림 정보 default 추가
+		notification_Service.joinNotiDefault(userId);
 		
 		return "redirect:/";
 	}
