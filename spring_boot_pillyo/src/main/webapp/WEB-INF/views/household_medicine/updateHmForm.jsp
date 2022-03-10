@@ -129,6 +129,32 @@
 		margin-top: 20px;
 	    margin-left: 80px;
 	}
+	
+	#section3{
+	box-shadow: 1px 1px 5px 1px #d1d1d1;
+    padding-top: 15px;
+    padding-bottom: 45px;
+    width: 60%;
+    margin: 0 auto;
+    opacity: 100%;
+    background-color: #ffffff;
+    border-radius: 119px;
+
+	}
+	
+	h3{
+	padding-top: 0px;
+    text-align: center;
+    font-size: 25px;
+    }
+    
+    td input,textarea,#img_box{
+        box-shadow: 0px 0px 0px 1px #c7c7c7;
+    border: 0;
+    }
+    
+    #image_container{
+    border:0;}
 	</style>
 	
 	</head>
@@ -139,7 +165,7 @@
 		<jsp:include page="/WEB-INF/views/layout/top.jsp" flush='true' />
 		
 		<div id="navMargin"></div>
-		<section id="section">
+		<section id="section3">
 			<h3>약관리 뷰페이지</h3>
 			
 			<c:if test="${not empty sessionScope.sid}">

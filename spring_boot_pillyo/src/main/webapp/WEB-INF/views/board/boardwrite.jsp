@@ -96,6 +96,29 @@
 	  width: 506px;
 	  height: 360px;
 	}
+	
+	#pagego:hover{
+	top: -2px;
+    border: 1px solid white;
+    background: white;
+    box-shadow: 1px 1px 2px #d3d3d3;
+    font-size: 15px;}
+    
+    #pagego{
+    background: white;
+    color: #3f63b5;
+    border-color: #f2f9fb;
+    height: 38px;
+    width: 93px;
+    border-radius: 10px;
+    font-size: 15px;
+    border-bottom-color: white;
+    margin-left: 14px;
+    float: right;
+    font-weight: 600;
+    border: 0;
+        margin-right: -110px;
+    }
 </style>
 
 
@@ -159,25 +182,31 @@
 			</td>
 		</tbody>
 		</table>
-		</form>
-		
+
 			<input type="hidden" name="boardImg" value="">  <!-- 세션 아이디 받아오기 -->
+
 			<input type="hidden" name="userId" value="${sessionScope.sid}">  <!-- 세션 아이디 받아오기 -->
 			<input type="hidden" name="boardWriteDate" value="<%= sf.format(nowDate) %>"> 
-			<input type="submit" name="submit" value="등록하기">
+			<input type="submit" name="submit" id="pagego" value="등록하기">
+			<a href="<c:url value='/listAllBoard'/>"><button>목록</button></a>
+		</form>
 		
+			
+		
+		</form>
 		<!-- <button type="submit" button style="float:right;">작성</button> --> <!-- submit -> 이 버튼의 역할은 데이터를 전송하는 것 -->
 		
 		<form id="OCRForm" >
 			<table>
 			<tr> <td><input type="file" id="uploadFile" name="uploadFile">
-					 <input type="submit" id="ocr" value="이미지 가져오기"></td></tr>
+					 <input type="submit" id="ocr" value="이미지 가져오기" style="    border: 0;
+    width: 111px;"></td></tr>
 			
 			<tr> <td><div id="image"></div></td></tr>
 			</table>
 		</form>
 				<%-- <a href="<c:url value='/boardDetailView/${boardCtgList.boardNo}'/>"><button>돌아가기</button></a> --%>
-				<a href="<c:url value='/listAllBoard'/>"><button>목록</button></a>
+				
 
 		<br>
 		<%-- <form action="<c:url value='boardDetailView'/>" enctype="multipart/form-data" method="post">

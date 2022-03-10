@@ -43,12 +43,14 @@
 						<div id="table_tab">
 						<table>
 							<tr> <td colspan ='2'> <img src="<c:url value='/images/${hm.hmImg}'/>" id = "hmImg"></td></tr>
-							<tr> <th>약품명</th> <td>${hm.hmName}</td></tr>
+							<tr> <th>약품명</th> <td  style="width: 120px;">${hm.hmName}</td></tr>
 							<tr> <th>사용기한</th> <td>${hm.hmUseByDate}</td></tr>
 							<tr> <th>메모</th> <td>${hm.hmMemo}</td></tr>
 							<tr> <tH>카테고리</th> <td>${hm.hmCtgNo}</td></tr>
-							<tr> <td><a href="<c:url value='/updateHmForm/${hm.hmNo}'/>">정보 수정</a></td>
-								 <td><a href="javascript:deleteCheck(${hm.hmNo});">등록 삭제</a></td></tr>
+							<tr> <td><a style="    text-decoration-line: none;
+    color: #4f58c9;" href="<c:url value='/updateHmForm/${hm.hmNo}'/>">정보 수정</a></td>
+								 <td><a style="    text-decoration-line: none;
+    color: #c94f5a;" href="javascript:deleteCheck(${hm.hmNo});">등록 삭제</a></td></tr>
 						</table>
 						</div>
 					</c:forEach>
