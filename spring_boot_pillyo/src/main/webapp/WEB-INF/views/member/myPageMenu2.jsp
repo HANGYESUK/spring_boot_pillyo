@@ -41,17 +41,17 @@
 		</label></li>
 				<li><label for="orderPay">
 						<div class="ctgMenuItemSub">
-							<input type="radio" id="orderPay" name="boardCtg" value="orderPay">주문/결제
+							<input type="radio" id="orderPay" name="boardCtg" value="orderPay">건강관리
 						</div>
 					</label></li>
 				<li><label for="trade">
 						<div class="ctgMenuItemSub">
-							<input type="radio" id="trade" name="boardCtg" value="trade">교환/반품
+							<input type="radio" id="trade" name="boardCtg" value="trade">우리집약관리
 						</div>
 					</label></li>
 				<li><label for="product">
 						<div class="ctgMenuItemSub">
-							<input type="radio" id="product" name="boardCtg" value="product">제품
+							<input type="radio" id="product" name="boardCtg" value="product">복용관리
 						</div>
 					</label></li>
 				<li><label for="member">
