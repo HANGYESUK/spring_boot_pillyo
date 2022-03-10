@@ -18,7 +18,11 @@ public interface IUserService {
 	void userJoin(UserVO vo); // 회원가입
 	
 	
-	//관리자 메뉴
+	// 관리자 메뉴
 	ArrayList<UserVO> listAllUser();
 	int userCount();
+	
+	// 아이디, 비밀번호 찾기
+	UserVO findUserId(HashMap<String, Object> map); // 아이디
+	UserVO findUserPw(HashMap<String, Object> map); // 비밀번호
 }

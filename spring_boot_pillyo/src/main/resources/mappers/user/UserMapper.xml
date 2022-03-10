@@ -33,38 +33,52 @@
 		VALUES (#{userId}, #{userPw}, #{userName}, #{userHp}, #{userEmail}, #{userAddress1}, #{userAddress2},#{userZipcode}, default, 0 )
 	</insert>
   	
-		<!-- 회원 상세 정보 -->
+	<!-- 회원 상세 정보 -->
 	<select id="detailUserView" parameterType="String" resultType="com.pillyo.pill.model.UserVO">
 		SELECT * FROM user WHERE userId =#{userId}
 	</select>
 		
-		<!-- 회원 정보 삭제 -->
+	<!-- 회원 정보 삭제 -->
 	<delete id="deleteUser" parameterType="String">
 		DELETE FROM user WHERE userId =#{userId}
 	</delete>
   		
-  		<!-- 회원 정보 수정 -->
-		<update id="updateUser" parameterType="com.pillyo.pill.model.UserVO">
-			UPDATE user SET
- 			userPw=#{userPw}, 
- 			userName=#{userName}, 
- 			userHp=#{userHp}, 
- 			userEmail=#{userEmail}, 
- 			userAddress1=#{userAddress1}, 
- 			userAddress2=#{userAddress2}, 
- 			userZipcode=#{userZipcode}
-			WHERE userId =#{userId}
-		</update>
-		
-		
-		<!-- 관리자메뉴-회원조회 -->
-		<select id="listAllUser" resultType="com.pillyo.pill.model.UserVO">
-			SELECT * FROM user
-			ORDER BY userName
-		</select>
-		
-		<select id="userCount" resultType="int">
-			SELECT COUNT(*) FROM user
-		</select>
-  		
+ 	<!-- 회원 정보 수정 -->
+	<update id="updateUser" parameterType="com.pillyo.pill.model.UserVO">
+		UPDATE user SET
+			userPw=#{userPw}, 
+			userName=#{userName}, 
+			userHp=#{userHp}, 
+			userEmail=#{userEmail}, 
+			userAddress1=#{userAddress1}, 
+			userAddress2=#{userAddress2}, 
+			userZipcode=#{userZipcode}
+		WHERE userId =#{userId}
+	</update>
+	
+	<!-- 관리자메뉴-회원조회 -->
+	<select id="listAllUser" resultType="com.pillyo.pill.model.UserVO">
+		SELECT * FROM user
+		ORDER BY userName
+	</select>
+	
+	<select id="userCount" resultType="int">
+		SELECT COUNT(*) FROM user
+	</select>
+	
+	
+	<!-- 아이디 찾기 -->
+	<select id="findUserId" resultType="string" parameterType="string">
+		SELECT * FROM user WHERE
+			userName=#{userName} AND <!-- 유저 이름 -->
+			userEmail=#{userEmail}	 <!-- 유저 이메일로 아이디 확인 -->
+	</select>
+	
+	<!-- 비밀번호 찾기 -->
+	<select id="findUserPw" resultType="string" parameterType="string">
+		SELECT * FROM user WHERE
+			userId=#{userId} AND 	<!-- 유저 아이디 -->
+			userEmail=#{userEmail}	<!-- 유저 이메일로 비밀번호 확인 -->
+	</select>
+	
   </mapper>

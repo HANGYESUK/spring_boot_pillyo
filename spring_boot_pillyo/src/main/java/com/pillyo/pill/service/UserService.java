@@ -56,4 +56,16 @@ public class UserService implements IUserService {
 	public int userCount() {
 		return dao.userCount();
 	}
+	
+	// 아이디 찾기
+	@Override
+	public UserVO findUserId(HashMap<String, Object> map) {		
+		return dao.findUserId(map);
+	}
+	
+	// 비밀번호 찾기
+	@Override
+	public UserVO findUserPw(HashMap<String, Object> map) {		
+		return dao.findUserPw(map);
+	}
 }
