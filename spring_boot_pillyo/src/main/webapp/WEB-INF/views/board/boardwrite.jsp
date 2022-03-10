@@ -19,13 +19,14 @@
 <title>게시글 작성</title>
 	<script src="<c:url value='/js/jquery-3.6.0.min.js'/>"></script>
 	<link href="<c:url value='/css/board/board.css'/>" rel="stylesheet" type="text/css">	
-<script src="<c:url value='/js/mainBanner.js'/>"></script>
-	    <link href="<c:url value='/css/mainBanner.css'/>" rel="stylesheet" type="text/css">	
+	<script src="<c:url value='/js/mainBanner.js'/>"></script>
+	<script src="<c:url value='/js/boardImg.js'/>"></script>
+	<link href="<c:url value='/css/mainBanner.css'/>" rel="stylesheet" type="text/css">	
 </head>
 
 
 <!-- 이미지 불러오는 java Script -->
-	<script type="text/javascript">
+<!-- 	<script type="text/javascript">
 		function setThumbnail(event) { // 이미지 등록 버튼의 onchange
 			var reader = new FileReader(); 	// 파일을 불러옴
 			$('#image_container').empty()
@@ -37,7 +38,7 @@
 				
 			reader.readAsDataURL(event.target.files[0]);
 		}
-	 </script>
+	 </script> -->
 	 
 
 <style>
@@ -111,8 +112,8 @@
 
 
 	<div class="layout">
-		<form id= "/boardForm" name="/boardForm" enctype="multipart/form-data" method="post" action="<c:url value='/insertboard'/>"> <!--  writedo로 넘겨주고 post방식으로 넘겨주겠다 -->
-		<br>
+		<form id= "boardForm" name="boardForm" enctype="multipart/form-data" method="post" action="<c:url value='/insertboard'/>"> <!--  writedo로 넘겨주고 post방식으로 넘겨주겠다 -->
+		<br>															<%-- method="post" action="<c:url value='/insertboard'/>" --%>
 		<table class="table table-striped" style="width:500px;">
 		<!-- 실행시 form 안에 데이터가 writedo로 넘어간다 -->
 		<thead>
@@ -156,30 +157,24 @@
     outline: none;" >${boardCtgList.boardContent}</textarea>
 				
 			</td>
-			
-			</tr>
-			<tr>
-				<td><input type="file" name="fileName" onchange="setThumbnail(event);" 
-				
-				style="color: #3f63b5;
-					    width: 160px;
-					    float: left;">
-					<div id="image_container"><img id="image" src="#" alt="이미지 미리보기" /></div>
-				</td>
-			</tr>
-			<!-- <tr>
-			<td><input  id = "img_btn" type="file" name="hmImg" accept="image/*" onchange="setThumbnail(event);"></td>
-			</tr> -->
-		
-	
 		</tbody>
 		</table>
+		</form>
+		
+			<input type="hidden" name="boardImg" value="">  <!-- 세션 아이디 받아오기 -->
 			<input type="hidden" name="userId" value="${sessionScope.sid}">  <!-- 세션 아이디 받아오기 -->
 			<input type="hidden" name="boardWriteDate" value="<%= sf.format(nowDate) %>"> 
+			<input type="submit" name="submit" value="등록하기">
 		
+		<!-- <button type="submit" button style="float:right;">작성</button> --> <!-- submit -> 이 버튼의 역할은 데이터를 전송하는 것 -->
 		
-		<button type="submit" button style="float:right;">작성</button> <!-- submit -> 이 버튼의 역할은 데이터를 전송하는 것 -->
-		
+		<form id="OCRForm" >
+			<table>
+			<tr> <td><input type="file" id="uploadFile" name="uploadFile">
+					 <input type="submit" id="ocr" value="이미지 가져오기"></td></tr>
+			
+			<tr> <td><div id="image"></div></td></tr>
+			</table>
 		</form>
 				<%-- <a href="<c:url value='/boardDetailView/${boardCtgList.boardNo}'/>"><button>돌아가기</button></a> --%>
 				<a href="<c:url value='/listAllBoard'/>"><button>목록</button></a>
