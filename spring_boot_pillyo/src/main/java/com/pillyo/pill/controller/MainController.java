@@ -68,4 +68,10 @@ public class MainController {
 		
 		return "redirect:/member/sessionTest";
 	}
+	
+	// 테스트 페이지
+	@RequestMapping("/djqpswutm")
+	public String ourTestPage() {
+		return "djqpswutm";
+	}
 }

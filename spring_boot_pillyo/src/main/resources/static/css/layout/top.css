@@ -18,7 +18,7 @@ marquee {
 marquee a {
 	margin: 0 48px;
     text-decoration: none;
-    color: #565656;
+    color: #3c5cb1;
 }
 
 /* --------- header ------------ */
@@ -147,7 +147,7 @@ marquee a {
 
 #searchBar {
     background: white;
-    border: 2px solid #f5f5f5;
+    border: 2.4px solid #355cb1;
     width: 500px;
     height: 40px;
     line-height: 40px;
@@ -165,7 +165,7 @@ marquee a {
     margin-left: 13px;
     width: 460px;
     font-size: 14px;
-    height: 37px;
+    height: 20px;
     border: none;
 }
 

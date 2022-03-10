@@ -14,7 +14,7 @@
 #title{
 	text-align: center;
 	    margin-top: 0px;
-    color: #ca6464
+    color: #8e5ab7;
 }
 
  #loginTopBox{
@@ -80,8 +80,8 @@ button:hover{
     margin-top: 13px;
     font-size: 18px;
    /*  font-weight: bold; */
-    background: #fff3f3;
-    color: #c65b5b;
+    background: #f9f3ff;
+    color: #1e1e1e;
     border-radius: 15px;
     border-color: #ffffff;
     overflow: hidden;

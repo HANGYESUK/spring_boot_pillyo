@@ -40,7 +40,7 @@ input[type=checkbox]{
     border-radius: 5px;
 } */
 
-/* ��� �˻� */
+/* 占쏙옙占� 占싯삼옙 */
 #search_shape td, #search_color td {
 	display: flex;
     flex-wrap: wrap;
@@ -106,11 +106,11 @@ input[type=checkbox]{
 }
 
 
-/* ���� �˻� */
+/* 占쏙옙占쏙옙 占싯삼옙 */
 .colorBox {
-    width: 45px;
+    width: 62px;
     margin: 0 2px;
-    height: 45px;
+    height: 62px;
 }
 
 #search_color td { 
@@ -192,7 +192,7 @@ label[for="cTrans"] {
 	background: #ffffff94;
 }
 
-/* ���Ҽ� �˻� */
+/* 占쏙옙占쌀쇽옙 占싯삼옙 */
 #search_line td {
 	position: relative;
 	width:280px;
@@ -203,7 +203,7 @@ label[for="cTrans"] {
     right: 2px;
 }
 
-/* ���� �˻� */
+/* 占쏙옙占쏙옙 占싯삼옙 */
 #search_type td {
 	display: flex;
     justify-content: space-between;
@@ -211,7 +211,7 @@ label[for="cTrans"] {
     width:280px;
 }
 
-/* ��ư */
+/* 占쏙옙튼 */
 #DSSbtn {
 	background-color: #5e7cbf;
     color: white;

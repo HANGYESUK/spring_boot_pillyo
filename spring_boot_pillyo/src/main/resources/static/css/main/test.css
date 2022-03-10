@@ -35,7 +35,7 @@ h1 {
     width: 100%;
     height: 100vh;
     background: white;  /* fallback for old browsers */
-    background-image: url('/image/pillyo12.png');
+    background-image: url('/image/mainImg.png');
     background-repeat: no-repeat;
     background-size: cover;
 }

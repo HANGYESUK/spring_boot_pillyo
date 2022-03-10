@@ -42,9 +42,6 @@
        	<div id="loginBottomBox">	
 	     		 <div class="box">
                    	<div class="socialLoginBox">
-                   			<p>test 계정</p>
-                   			<p>id: admin</p>
-                   			<p>pw: 1234</p>
                    		
                    		<!-- <h1>소셜 로그인</h1>
                         <ul class="socialLoginList">

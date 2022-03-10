@@ -15,7 +15,6 @@
                     <div id="info1">
                         <h2>Pill-yo 고객센터</h2>
                         <h3>1588-7575</h3>
-                        <a href="/adminloginForm" >관리자로그인</a>
                     </div>
                     <div id="info2">
                         상담시간&nbsp;|&nbsp;
