@@ -29,8 +29,8 @@
 	
 	<!-- 회원가입 -->
 	<insert id="userJoin" parameterType="com.pillyo.pill.model.UserVO">
-		INSERT INTO user(userId, userPw, userName, userHp, userEmail, userAddress1, userAddress2, userZipcode, joinDate, joinPath)
-		VALUES (#{userId}, #{userPw}, #{userName}, #{userHp}, #{userEmail}, #{userAddress1}, #{userAddress2},#{userZipcode}, default, 0 )
+		INSERT INTO user(userId, userPw, userName, userHp, userEmail, userAddress1, userAddress2, userZipcode, joinDate, joinPath, notification)
+		VALUES (#{userId}, #{userPw}, #{userName}, #{userHp}, #{userEmail}, #{userAddress1}, #{userAddress2},#{userZipcode}, default, 0, #{notification} )
 	</insert>
   	
 	<!-- 회원 상세 정보 -->
@@ -52,7 +52,8 @@
 			userEmail=#{userEmail}, 
 			userAddress1=#{userAddress1}, 
 			userAddress2=#{userAddress2}, 
-			userZipcode=#{userZipcode}
+			userZipcode=#{userZipcode},
+			notification=#{notification}
 		WHERE userId =#{userId}
 	</update>
 	

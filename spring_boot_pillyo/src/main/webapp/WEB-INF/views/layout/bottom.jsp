@@ -6,6 +6,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>bottom</title>
+		<script src="<c:url value='/js/toTop.js'/>"></script>
 	</head>
 	<body>
 		<footer>
@@ -42,9 +43,6 @@
                 </div>
                 <div id="toTop">
                     <i id="toTopBtn" class="far fa-hand-point-up"></i>
-                </div>
-                <div id="chat">
-                    <i id="chatbot" class="far fa-comment-alt"></i>
                 </div>
             </div>
         </footer>

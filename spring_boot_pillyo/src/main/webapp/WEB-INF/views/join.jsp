@@ -89,10 +89,10 @@
 										</td>
 									</tr>
 									<tr>
-										<td class="col1">이메일 수신 여부</td>
+										<td class="col1">복용 알림 수신 여부</td>
 										<td class="col2">
-											<input type="radio" name="emailRcv" id="emailRcv" value="yes" checked>예&nbsp;&nbsp;
-											<input type="radio" name="emailRcv" value="no">아니오
+											<input type="radio" name="notification" id="notification" value="1" checked>수신&nbsp;&nbsp;
+											<input type="radio" name="notification" value="0">비수신
 										</td>
 									</tr>
 									<tr>
@@ -236,7 +236,7 @@
 	적용 일자: 2021년 12월 24일
 	Pill-Yo 서비스와 관련하여 궁금하신 사항이 있으시면 고객센터(대표번호: 1588 – 7272/ 평일 10:00~17:00)로 문의 주시기 바랍니다.
 										</div>
-										<label><input type="checkbox" id="userAgreement1" value="모든약관" > 모든 약관에 동의</label>
+										<label><input type="checkbox" id="userAgreement1" value="서비스약관" > 서비스 약관 동의</label>
 										<br><br><br>
 										<div class="agreebox" >					
 	개인정보보호법에 따라 Pill-Yo에 회원가입 신청하시는 분께 수집하는 개인정보의 항목, 개인정보의 수집 및 이용목적, 개인정보의 보유 및 이용기간, 동의 거부권 및 동의 거부 시 불이익에 관한 사항을 안내 드리오니 자세히 읽은 후 동의하여 주시기 바랍니다.

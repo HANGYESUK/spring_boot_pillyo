@@ -1,10 +1,10 @@
 package com.pillyo.pill.controller.notification;
 
+import java.util.ArrayList;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.scheduling.annotation.EnableScheduling;
-import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,7 +15,6 @@ import com.pillyo.pill.service.UserService;
 import com.pillyo.pill.service.notification.NotificationService;
 import com.pillyo.pill.service.notification.SENSService;
 
-@EnableScheduling
 @Controller
 public class NotificationController {
 	@Autowired
@@ -29,11 +28,32 @@ public class NotificationController {
 	
 	// 메시지 전송
 	@RequestMapping("/sendSMS")
-	@Scheduled(cron="0 0 15 * * *")
 	public void sendSMS(){
-		SENSservice.sendSMS();
+		ArrayList<UserVO> notiRcvMemList = notiService.notiRcvMember();
+		String[] notiMemHpArr = new String[50];
+		System.out.println(notiRcvMemList);
+		
+		for (int i=0; i<notiRcvMemList.size(); i++) {
+			UserVO notiMem = notiRcvMemList.get(i);
+			
+			String notiMemHpBefore = notiMem.getUserHp();
+			String hpArr[] = notiMemHpBefore.split("-");
+			String notiMemHp = "";
+			
+			for (int j=0; j<hpArr.length; j++) {
+				notiMemHp+=hpArr[j];
+			}
+			System.out.println(notiMemHp);
+
+			notiMemHpArr[i] = notiMemHp;
+//			SENSservice.sendSMS5(notiMemHp);
+//			SENSservice.sendSMS6(notiMemHp);
+		}
 	}
 	
+	
+	
+	// --------------------------------------------------------------------------
 	// 복용 알림 테스트 페이지
 	@RequestMapping("/doseNotificationView")
 	public String doseNotificationView(HttpSession session, Model model){

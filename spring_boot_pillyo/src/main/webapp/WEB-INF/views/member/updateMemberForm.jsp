@@ -156,10 +156,10 @@
 										</td>
 									</tr>
 									<tr>
-										<td class="col1">이메일 수신 여부</td>
+										<td class="col1">복용 알림 수신 여부</td>
 										<td class="col2">
-											<input type="radio" name="emailRcv" value="yes" style="margin-left:10px; color:red;" checked>예&nbsp;&nbsp;&nbsp;&nbsp;
-											<input type="radio" name="emailRcv" value="no">아니오
+											<input type="radio" name="notification" value="1" style="margin-left:10px; color:red;" checked>수신&nbsp;&nbsp;&nbsp;&nbsp;
+											<input type="radio" name="notification" value="0">비수신
 										</td>
 									</tr>
 									<tr>

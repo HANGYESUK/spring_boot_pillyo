@@ -13,6 +13,7 @@ public class UserVO {
 	private String userAddress1;
 	private String userAddress2;
 	private int joinPath;
+	private int notification;
 	
 	//update때 사용할 변수
 	private String userEmailId;
@@ -110,6 +111,12 @@ public class UserVO {
 	}
 	public void setJoinPath(int joinPath) {
 		this.joinPath = joinPath;
+	}
+	public int getNotification() {
+		return notification;
+	}
+	public void setNotification(int notification) {
+		this.notification = notification;
 	}
 		
 }

@@ -1,10 +1,13 @@
 package com.pillyo.pill.service.notification;
 
+import java.util.ArrayList;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import com.pillyo.pill.dao.notification.INotificationDAO;
+import com.pillyo.pill.model.UserVO;
 import com.pillyo.pill.model.notification.notificationVO;
 
 @Service
@@ -19,6 +22,13 @@ public class NotificationService implements INotificationService {
 		dao.joinNotiDefault(userId);
 	}
 	
+	@Override
+	public ArrayList<UserVO> notiRcvMember() {
+		// 알림 수신 회원 목록
+		return dao.notiRcvMember();
+	}
+	
+	//-----------------------------------------------------------
 	@Override
 	public void updateNoti(notificationVO notificationVO) {
 		// 알림 정보 수정
