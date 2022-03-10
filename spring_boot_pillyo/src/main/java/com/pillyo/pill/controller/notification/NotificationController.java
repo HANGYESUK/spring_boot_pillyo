@@ -46,8 +46,11 @@ public class NotificationController {
 			System.out.println(notiMemHp);
 
 			notiMemHpArr[i] = notiMemHp;
-//			SENSservice.sendSMS5(notiMemHp);
-//			SENSservice.sendSMS6(notiMemHp);
+//			SENSservice.sendSMS_getup(notiMemHp);
+//			SENSservice.sendSMS_morning(notiMemHp);
+//			SENSservice.sendSMS_lunch(notiMemHp);
+//			SENSservice.sendSMS_dinner(notiMemHp);
+//			SENSservice.sendSMS_beforeBed(notiMemHp);
 		}
 	}
 	
