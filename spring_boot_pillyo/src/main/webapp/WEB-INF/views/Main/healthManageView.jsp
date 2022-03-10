@@ -318,7 +318,7 @@
 										<h2>기록일 : ${sugar.sugarRecordDate}</h2>
 									</div>
 									<button value="1" class="moreBtn low"  onclick="toggle(this)">더보기</button>
-									<a href="javascript:deleteSugarCheck(${sugar.sugarNo});"><button class="delBtn low">삭제</button>
+									<a href="javascript:deleteSugarCheck(${sugar.sugarNo});"><button class="delBtn low">&#10060;</button>
 										
 									</a>
 

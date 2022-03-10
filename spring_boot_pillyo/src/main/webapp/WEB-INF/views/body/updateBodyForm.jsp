@@ -12,16 +12,17 @@
 		<link rel="stylesheet" href="/css/dashboard/family/familyView.css" />
  
 </head>
+
 <body>
 		<div id="wrap">
 			<!-- TOP -->
 			<jsp:include page="/WEB-INF/views/layout/top.jsp" flush='true' />
 			<div id="navMargin"></div>
 			
-			<section id="section">
+			<section id="section3">
 			<div class="main-Content-Body low">
 					<div class="basket-Item-Container colunm">
-						<h1>체형관리 수정</h1>
+						<h1 class="formName">체형관리 수정</h1>
 						<br><br>
 					
 					<form id="updateBodyForm" method="post" action="<c:url value='/updateBody'/>">

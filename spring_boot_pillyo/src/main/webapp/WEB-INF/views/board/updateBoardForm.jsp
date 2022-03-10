@@ -99,9 +99,9 @@ text-align:center;
 							<th width=600px; colspan="3" style="">알약요
 						<c:if test="${board.boardCtgNo eq '0'}">소식</c:if>
 						<c:if test="${board.boardCtgNo eq '1'}">카드뉴스</c:if>
-						<c:if test="${board.boardCtgNo eq '2'}">주문/결제</c:if>
-						<c:if test="${board.boardCtgNo eq '3'}">교환/반품</c:if>
-						<c:if test="${board.boardCtgNo eq '4'}">제품</c:if>
+						<c:if test="${board.boardCtgNo eq '2'}">건강관리</c:if>
+						<c:if test="${board.boardCtgNo eq '3'}">우리집약관리</c:if>
+						<c:if test="${board.boardCtgNo eq '4'}">복용관리</c:if>
 						<c:if test="${board.boardCtgNo eq '5'}">회원</c:if>
 						Q&A
 						</th>

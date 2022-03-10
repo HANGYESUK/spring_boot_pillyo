@@ -7,7 +7,59 @@
 		<meta charset="UTF-8">
 		<title>기분 정보 등록 폼</title>
 		<script src="<c:url value='/js/jquery-3.6.0.min.js'/>"></script>
+		
 	</head>
+	<style>
+		#section3 {
+    margin: 0 auto;
+    opacity: 100%;
+    background-color: #ffffff;
+    border-radius: 114px;
+    padding-bottom: 1%;
+    box-shadow: 0px 0px 6px #e3e3e3;
+    height: 95%;
+    width: 50%;
+  
+	    display: flex;
+    flex-direction: column;
+    justify-content: center;
+   
+        color: #525252;
+
+}
+.formName{
+	color: #3d5ca7;
+    text-align: center;
+    padding-top: 37px;
+}
+.center{ display: flex;
+    flex-direction: column;
+    justify-content: center;
+        align-items: center;
+}
+input {
+   
+    height: 40px;
+    font-size: 15px;
+    border: 3 solid black;
+    border-radius: 15px;
+    outline: none;
+    background-color: white;
+    
+    
+  
+    /* background: white; */
+    border-color: white;
+    /* border-radius: 2px; */
+    color: black;
+       border: 0;
+    background: #f9f9f9;
+    /* height: 30px; */
+    border-radius: 8px;
+    font-weight: 400;
+}
+
+	</style>
 	<body>
 		<div id="wrap">
 		
@@ -18,9 +70,9 @@
 		<!-- Section -- 기분관리 : 기분척도, 메모, 기록날짜, 기록시간, 가족번호 -->
 		<div id="navMargin"></div>
 			
-			<section id="section">
-			<h1>기분관리</h1>
-			<hr>
+			<section id="section3">
+			<h1 class="formName">기분관리</h1>
+		<div class="center">
 			<c:if test="${not empty sessionScope.sid}">
 				<h3 id="UserName">${sessionScope.sid}님</h3>
 			</c:if>
@@ -54,9 +106,11 @@
 				
 				<h4>기록자</h4>
 				<input type="hidden" name="famNo" value="${famNo}" />
-				<input type="submit" id="send_btn" value="저장하기">
-				<input type="reset" id="reset_btn" value="취소하기">
+				<input type="submit" id="send_btn" value="저장하기" style="width:250px;">
+				<input type="reset" id="reset_btn" value="취소하기" style="width:250px;">
 			</form>
+			
+		</div>
 		</section>
 		
 		
