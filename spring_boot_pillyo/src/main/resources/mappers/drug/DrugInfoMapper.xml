@@ -70,4 +70,22 @@
 			SELECT * FROM druginfo ORDER BY drugInfoNo 
 		</select>
 		
+					<!-- 페이징위한 쿼리 -->
+  		<!-- 게시물 목록(페이징) -->
+	    <select id="getDrugListPaging" resultType="com.pillyo.pill.model.DrugInfoVO">
+	    
+	        select * from druginfo 
+	                	                
+	        limit #{skip},#{amount}
+	    
+	    </select>
+  		
+  		
+  		<!-- 총 게시글 갯수 출력 -->
+		<select id="getTotal" resultType="int">
+			SELECT COUNT(*) FROM druginfo
+			
+		</select>
+  		
+		
   </mapper>

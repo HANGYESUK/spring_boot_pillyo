@@ -1,13 +1,28 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" session="true"%>
-<%
+<%-- <%
 	if (application.getAttribute("Counter") != null) {
 		String strCounter = String.valueOf(application.getAttribute("Counter"));
 		int counter = Integer.parseInt(strCounter) + 1; 
 		// 페이지에 새로운 접속이 시도될때 application 변수에 Counter를 1씩 증가시킨다. 
 		application.setAttribute("Counter", counter);
 		} else {
-			application.setAttribute("Counter", 1); } %>
+			application.setAttribute("Counter", 1); } %> --%>
+<% 
+	 Integer count = (Integer)application.getAttribute("count");
+	 Integer newCount = null;
+	 
+	 if(count == null) {
+	  application.setAttribute("count", 1);
+	  
+	 } else {
+	  
+		  if(session.isNew()) {
+		   newCount = count + 1;
+		   application.setAttribute("count", newCount);
+		  } 
+	 }
+%>
 
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -32,30 +47,36 @@
 			
 				<jsp:include page="/WEB-INF/views/admin/adminMainMenu.jsp" flush='true' />
 			
+				<div id="adminSection">			
 					<div id="adminArticle">
 						
 						<div class="adminInfoBox">
 							<div id="userCnt">
-							 	<p>  회원수
-								${userCnt}</p>
+							 	회원수:
+								<span>${userCnt}명</span>
 							</div>
 						</div>
 						
 						<div class="adminInfoBox">
-								방문자수 : <%=application.getAttribute("Counter")%>
-
-
+								방문자수 : 
+								<span><%=application.getAttribute("count")%>명</span>
 						</div>
 						
 						<div class="adminInfoBox">
-						
+								문자 건수: 건
 						</div>	
-							
-							
-							
-							
 					</div>					
 				
+				<div id="adminbottomArticle" >
+					<div class="admininfoChart">
+					d
+					</div>
+					<div class="admininfoChart">
+					d
+					</div>
+				</div>
+				
+				</div>
 				</div> <!-- adminContainer -->
 			</section>
 	        

@@ -42,6 +42,32 @@
 		    border-radius: 25px;
 		}
 	
+	 /* 페이징 css */
+		
+		 .pageInfo{
+		  	list-style : none;
+		  	display: inline-block;
+		    margin: 50px 0 0 100px;  	
+		  }
+		  .pageInfo li{
+		  	float: left;
+		    font-size: 20px;
+		    margin-left: 18px;
+		    padding: 7px;
+		    font-weight: 500;
+		  }
+		#pagingBox a:link {color:black; text-decoration: none;}
+		#pagingBox a:visited {color:black; text-decoration: none;}
+		#pagingBox a:hover {color:black; text-decoration: underline;}
+				  	.active{
+		  					background-color: #cdd5ec;
+		  					}
+
+		/* 페이징 css */ 
+		#searchResultBox{
+		 	display: flex;
+		 	flex-direction: column;
+		}
 	</style>
 	</head>
 	
@@ -60,7 +86,8 @@
 				<div id="search_result_container">
 			
 					<h3>약모양 리스트 </h3>
-					<small>총 <fmt:formatNumber value="${fn:length(shapeList)}" pattern="#,###" /> 건</small>
+					
+					<small>총 <fmt:formatNumber value="${total}" pattern="#,###" /> 건</small>
 					<hr />
 					
 			<c:choose>
@@ -68,8 +95,10 @@
 		       		 조회결과가 없습니다.
 				 </c:when>
 		    	 <c:otherwise>
-				<div id="searchResult">
 				
+				<div id="searchResultBox">
+					<div id="searchResult">
+					
 					<c:forEach items="${shapeList}" var="shape" >
 						<div class="drugBox">
 							<div class="drugShapeBox">
@@ -89,11 +118,118 @@
 							</div>
 						</div>
 					</c:forEach>
+					</div>
+					
+					<div id="pagingBox">
+					 <div class="search_wrap">
+						<div class="search_area">
+							<select name="type">
+								<option value="" <c:out value="${pageMaker.cri.type == null?'selected':'' }"/>>--</option>
+								<option value="N" <c:out value="${pageMaker.cri.type eq 'N'?'selected':'' }"/>>제품명</option>
+								<option value="P" <c:out value="${pageMaker.cri.type eq 'P'?'selected':'' }"/>>업체명</option>
+								
+							</select>		
+							<input type="text" name="keyword" value="${pageMaker.cri.keyword }">
+							<button>검색</button>
+						</div>
+					</div>	
+					
+						 <!-- 페이징 처리   -->
+					 <div class="pageInfo_wrap" >
+						<div class="pageInfo_area">
+							<ul id="pageInfo" class="pageInfo">
+							
+								<!-- 이전페이지 버튼 -->
+								<c:if test="${pageMaker.prev}">
+									<li class="pageInfo_btn previous"><a href="${pageMaker.startPage-1}">Previous</a></li>
+								</c:if>
+								
+								<!-- 각 번호 페이지 버튼 -->
+								<c:forEach var="num" begin="${pageMaker.startPage}" end="${pageMaker.endPage}">
+									<li class="pageInfo_btn ${pageMaker.cri.pageNum == num ? "active":"" }"><a href="${num}">${num}</a></li>
+								</c:forEach>
+								
+								<!-- 다음페이지 버튼 -->
+								<c:if test="${pageMaker.next}">
+									<li class="pageInfo_btn next"><a href="${pageMaker.endPage + 1 }">Next</a></li>
+								</c:if>	
+								
+							</ul>
+						</div>
+					</div>
+					
+					<form id="moveForm" method="get">	
+						<input type="hidden" name="pageNum" value="${pageMaker.cri.pageNum }">
+						<input type="hidden" name="amount" value="${pageMaker.cri.amount }">
+						<input type="hidden" name="keyword" value="${pageMaker.cri.keyword }">	
+						<input type="hidden" name="type" value="${pageMaker.cri.type }">	
+					</form>
+					 <!-- 페이징 처리   -->
+					</div>
+					
+					
 				</div>
 			   </c:otherwise> 
 			</c:choose>
-			
-			<div id="more-Btn" class="low" onclick="more()"><h3>더보기</h3></div><br>
+		</div>
+		
+			<!-- 페이징 스크립트 -->
+			<script>
+			$(document).ready(function(){
+				
+
+				let result = '<c:out value="${result}"/>';
+				
+				checkAlert(result);
+				console.log(result);
+				
+				
+			});
+
+				
+				let moveForm = $("#moveForm");
+					$(".move").on("click", function(e){
+						e.preventDefault();
+						
+						/* 검색했을때  */
+						moveForm.append("<input type='hidden' name='itemName' value='"+ $(this).attr("href")+ "'>");
+						moveForm.attr("action", "/drugShapeSearchForm");
+						moveForm.submit();
+					});
+					$(".pageInfo a").on("click", function(e){
+						e.preventDefault();
+						moveForm.find("input[name='pageNum']").val($(this).attr("href"));
+						/* 목록 매핑 주소 입력  */
+						moveForm.attr("action", "/drugShapeSearchForm");
+						moveForm.submit();
+						
+					});	
+					
+					
+					$(".search_area button").on("click", function(e){
+						e.preventDefault();
+						
+						let type = $(".search_area select").val();
+						let keyword = $(".search_area input[name='keyword']").val();
+						
+						if(!type){
+							alert("검색 종류를 선택하세요.");
+							return false;
+						}
+						
+						if(!keyword){
+							alert("키워드를 입력하세요.");
+							return false;
+						}		
+						
+						moveForm.find("input[name='type']").val(type);
+						moveForm.find("input[name='keyword']").val(keyword);
+						moveForm.find("input[name='pageNum']").val(1);
+						moveForm.submit();
+				});
+		</script>
+		
+		<!-- 	<div id="more-Btn" class="low" onclick="more()"><h3>더보기</h3></div><br>
 			<script>
 			        let count = 9;
 			        let drugBox = document.getElementsByClassName("drugBox")
@@ -111,8 +247,9 @@
 				        }
 				        count += 9
 			        }
-	    	</script>
-			</div>
+	    	</script> -->
+		
+					
 					
 		
 			</div>	
