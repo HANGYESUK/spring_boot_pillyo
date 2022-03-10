@@ -139,9 +139,8 @@ public class AdminController {
 		//회원탈퇴
 		@RequestMapping("/a_deleteUser/{userId}")
 		public String deleteUser(@PathVariable("userId") String userId) {
-			famservice.deleteUserFam(userId);
 			uservice.deleteUser(userId);
-			return "admin/a_listAllUserView";
+			return "redirect:../a_listAllUserView";
 		}
 				
 		//관리자 메뉴- 약정보 전체 조회
