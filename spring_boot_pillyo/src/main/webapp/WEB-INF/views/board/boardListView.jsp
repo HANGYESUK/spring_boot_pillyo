@@ -435,9 +435,12 @@
 	</div> <!-- wrap -->
 			
 </body>
-<script>
+		
+		<script>
 	        let count = 10;
 	        let drugBox = document.getElementsByClassName("drugBox")
+	        /* c:foreach */
+	        /* class = drugBox */
 	        
 	        for(let i=count; i<drugBox.length; i++) {
 	        	drugBox[i].classList.add('displayNone')
