@@ -3,25 +3,27 @@ package com.pillyo.pill.service.notification;
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
 import java.io.InputStreamReader;
-import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 import java.util.Base64;
+
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
+import org.springframework.scheduling.annotation.EnableScheduling;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
 @Service
 public class SENSService {
-	// SMS 전송
-	public static void sendSMS(String[] args) {
+	// SMS 전송 : 기상 직후
+	public static void sendSMS() {
 		String hostNameUrl = "https://sens.apigw.ntruss.com"; // 호스트 URL
 		String requestUrl = "/sms/v2/services/"; // 요청 URL
 		String requestUrlType = "/messages"; // 요청 URL
@@ -47,7 +49,7 @@ public class SENSService {
 		// ------ messages ------
 		
 		
-		bodyJson.put("scheduleCode", "sens_after_dinner"); // 기본 메시지 내용 (필수) (SMS 80 byte 제한)
+		bodyJson.put("scheduleCode", "Pill-Yo 복용 알림 서비스입니다. 오늘 복용해야 하는 약을 잊지는 않았는지 확인해주세요!"); // 기본 메시지 내용 (필수) (SMS 80 byte 제한)
 		bodyJson.put("type", "SMS"); // 메시지 타입 (sms, lms)
 //		bodyJson.put("contentType", ""); // 메시지 내용 타입 (COMM: 일반메시지 | AD: 광고메시지 | (default: COMM))
 		bodyJson.put("countryCode", "82"); // 국가 번호 (default: 82))
