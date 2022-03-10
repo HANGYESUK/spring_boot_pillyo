@@ -51,7 +51,7 @@
 .ctgMenuItem:hover {
 /*        background-color: rgb(240 248 255);
  */    color: #636363;
-    font-size: 23px;
+    font-size: 20px;
     font-weight: 600;
     
 }
@@ -62,7 +62,7 @@
 }
 .ctgMenuItemSub:hover {
     color: #636363;
-    font-size: 23px;
+    font-size: 20px;
     font-weight: 600;
 }
 

@@ -20,10 +20,10 @@
 		<!-- Section -- 기분관리 : 기분척도, 메모, 기록날짜, 기록시간, 가족번호 -->
 		<div id="navMargin"></div>
 			
-	<section id="section">
+	<section id="section3">
 			<div class="main-Content-Body low">
 					<div class="basket-Item-Container colunm">
-							<h1>기분관리 수정</h1>
+							<h1 class="formName">기분관리 수정</h1>
 							<br><br>
 					<form id="updateFeelForm" method="post" action="<c:url value='/updateFeel'/>">
 					  	<input type="hidden" id="feelNo" name="feelNo" value="${feel.feelNo}"/>

@@ -77,7 +77,6 @@
 							   font-weight: 480;
 							   margin-bottom: 29px;
 							   box-shadow: 0px 1px 4px 3px #f3f3f3;
-
 						">${famMember}의 복용관리</h3><br><br>
 							<div id='doseListCal'></div>
 							

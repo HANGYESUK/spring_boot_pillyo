@@ -6,6 +6,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>bottom</title>
+		<script src="<c:url value='/js/toTop.js'/>"></script>
 	</head>
 	<body>
 		<footer>
@@ -14,7 +15,6 @@
                     <div id="info1">
                         <h2>Pill-yo 고객센터</h2>
                         <h3>1588-7575</h3>
-                        <a href="/adminloginForm" >관리자로그인</a>
                     </div>
                     <div id="info2">
                         상담시간&nbsp;|&nbsp;
@@ -42,9 +42,6 @@
                 </div>
                 <div id="toTop">
                     <i id="toTopBtn" class="far fa-hand-point-up"></i>
-                </div>
-                <div id="chat">
-                    <i id="chatbot" class="far fa-comment-alt"></i>
                 </div>
             </div>
         </footer>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="com.pillyo.pill.dao.notification.INotificationDAO">
+<!--   	<resultMap  id="doseResult" type="com.pillyo.pill.model.notification.NotificationVO">
+  		
+	</resultMap> -->
+	
+	<!-- 회원가입 시 default 데이터 추가 -->
+	<insert id="joinNotiDefault" parameterType="string">
+		INSERT INTO dose_notification(userId) VALUES (#{userId})
+	</insert>
+	
+	<!-- 알림 상세 정보 -->
+	<select id="notiRcvMember" resultType="com.pillyo.pill.model.UserVO">
+		SELECT * FROM user WHERE notification=1
+	</select>
+	
+	
+	<!-- ************************************************************************ -->
+	<!-- 알림 상세 정보 -->
+	<select id="detailNoti" parameterType="String" resultType="com.pillyo.pill.model.notification.notificationVO">
+		SELECT * FROM dose_notification WHERE userId =#{userId}
+	</select>
+	
+	<!-- 알림 정보 수정 -->
+	<update id="updateNoti" parameterType="com.pillyo.pill.model.notification.notificationVO">
+		UPDATE dose_notification
+		SET afterGetup=#{afterGetup},
+			morning=#{morning},
+			lunch=#{lunch},
+			dinner=#{dinner},
+			beforeBed=#{beforeBed}
+		WHERE userId=#{userId}
+	</update>
+  </mapper>

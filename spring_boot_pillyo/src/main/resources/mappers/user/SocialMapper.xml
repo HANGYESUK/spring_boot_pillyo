@@ -3,13 +3,9 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
-  <mapper namespace="com.pillyo.pill.dao.ISocialDAO">
+  <mapper namespace="com.pillyo.pill.dao.social.ISocialDAO">
   
-  	<!-- Email 중복 확인 -->
-	<select id="kakaoEmailCheck" resultType="string" parameterType="string">
-		SELECT userEmail FROM user WHERE userEmail = #{k_email}
-	</select>
-		
+	<!-- ******************** DB에 추가 ******************** -->
 	<!-- 카카오 회원가입 -->
 	<insert id="kakaoJoin" parameterType="com.pillyo.pill.model.social.KakaoVO">
 		INSERT INTO kakao_user (k_name, k_email, k_bday, k_gender)
@@ -22,21 +18,26 @@
 		VALUES (#{k_id}, #{k_name}, #{k_hp}, #{k_email}, #{k_address1}, #{k_address2},#{k_zipcode}, default, 1 )
 	</insert>
 	
+	<!-- 회원가입시 본인 가족정보 등록 -->
+	<insert id="famStart" parameterType="String">
+		INSERT INTO family (userId, famMember)
+		VALUES (#{userId}, "본인")
+	</insert>
+	
+	
+	<!-- ******************** 유효성 검사 ******************** -->
+	<!-- 카카오 로그인 : 이전에 카카오 회원가입을 한 적이 있는 사용자라면 바로 로그인 진행하고, 그렇지 않은 사용자라면 카카오 회원가입으로 이동하기 위한 유효성 검사 -->
+	<select id="kakaoJoinCheck" resultType="String" parameterType="String">
+		SELECT k_email FROM kakao_user WHERE k_email=#{k_email}
+	</select>
+	
+	<!-- 카카오 로그인 유효성 검사 : 카카오에서 불러온 데이터가 카카오 DB의 항목과 일치하는지 체크 -> 일치하면 user 테이블에 등록된 카카오회원용 아이디 반환하여 sid로 지정 -->
+	<select id="kakaoLoginCheck" resultType="String" parameterType="String">
+		SELECT userId FROM user WHERE userEmail = (SELECT k_email FROM kakao_user WHERE k_email = #{k_email})
+	</select>
+	
 	<!-- 로그인 시 소셜 로그인 회원인지 체크 -->
 	<select id="joinPathCheck" resultType="int" parameterType="String">
 		SELECT joinPath FROM user WHERE userId = #{id}
-	</select>
-	
-	<!-- 카카오 로그인 시 : 카카오 회원가입 되어있는 회원인지 아닌지 체크 -->
-	<select id="kakaoUserCheck" resultType="String" parameterType="hashmap">
-		SELECT k_email FROM kakao_user
-		WHERE k_name = #{k_name} AND k_email = #{k_email} AND k_bday = #{k_bday} AND k_gender = #{k_gender}
-	</select>
-	
-	<!-- 카카오 로그인 -->
-	<select id="kakaoLogin" resultType="String" parameterType="hashmap">
-		SELECT userId FROM user
-		WHERE userEmail = ( SELECT k_email FROM kakao_user
-							 WHERE k_name = #{k_name} AND k_email = #{k_email} AND k_bday = #{k_bday} AND k_gender = #{k_gender} )
 	</select>
 </mapper>

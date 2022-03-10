@@ -15,7 +15,7 @@
 
             <div class="header">
                 <div class="header-profile flex-row">
-                    <img id="logo" src="./img/Group 66.png">
+                    <img id="logo" src="<c:url value='/img/Group66.png'/>">
                     <div class="flex-colunm icon-box">
                         <div id="chatBot-Title"><h2>Pill-Yo</h2></div>
                     </div>
@@ -55,7 +55,7 @@
             </div>
         </div>
         <div class="chatBot-Icon flex-row chatBot-Position" onclick="toggleChatBot()">
-            <img id="icon" src="./img/Group 66.png">
+            <img id="icon" src="/img/Group66.png">
         </div>
     </div>
 
@@ -114,11 +114,13 @@
 					type:"post",
 					//data:formData,
 					data: {message: $('#text-input').val()},
+					
 					success:function(result){
+						alert(result)
 						let you_chat = document.createElement("div")
 						you_chat.classList.add("you-chat")
 					    let you_text_box = document.createElement("div")
-			            you_text_box.innerHTML = result
+			            you_text_box.append(result)
 			            you_text_box.classList.add("text-box")
 			            you_chat.append(you_text_box)
 			            chatingContainer.append(you_chat)

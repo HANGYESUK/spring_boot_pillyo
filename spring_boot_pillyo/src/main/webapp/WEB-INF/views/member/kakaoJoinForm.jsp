@@ -5,10 +5,11 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>title</title>
+		<title>카카오 회원가입</title>
 		<script src="<c:url value='/js/jquery-3.6.0.min.js'/>"></script>
-		<script src="<c:url value='/js/user/socialSearchZip.js'/>"></script>
-		<script src="<c:url value='/js/user/socialFormCheck.js'/>"></script>
+		<script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
+		<script src="https://kit.fontawesome.com/2d323a629b.js"crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="<c:url value='/css/member/kakaoJoinForm.css'/>">
 		<script>
 			window.onload = function(){
 				// 카카오 회원 정보 받아오기
@@ -19,36 +20,8 @@
                 document.getElementById("k_email").value=(k_userInfo.k_email);
                 document.getElementById("k_gender").value=(k_userInfo.k_gender);
                 document.getElementById("k_id").value=(k_userInfo.k_id);
-                
-                emailCheckFnc();
 			}
 			
-			emailCheckFnc = null;
-	    	
-	    	$(function() {
-	        	function kEmailCheck() {
-	        		// 중복회원인지 이메일 체크
-	        		$.ajax({
-	        			type:"post",
-	        			url:"kakaoEmailCheck",
-	        			data:{"k_email": $('#k_email').val()},  
-	        			dataType:'text',
-	        			success:function(result){
-	        				if(result == "no_use"){
-	        					alert("같은 이메일로 가입된 계정이 존재합니다.\n기존 계정으로 로그인 해주세요.");
-	        					$(location).attr('href', '/loginForm');
-	        				} else {
-	        					alert("가입 가능");
-	        				}
-	        			},
-	        			error:function(data, textStatus){
-	        				alert("전송 실패");
-	        			}
-	        		});
-	        	}
-	        	
-	        	emailCheckFnc = kEmailCheck;
-	        })
 		</script>
 	</head>
 	<body>
@@ -59,30 +32,28 @@
 			<div id="navMargin"></div>
 			
 			<section id="section">
-				<form name="kakaoJoinForm" id="kakaoJoinForm" method="post" action="<c:url value='/kakaoJoin'/>">
-					<input type="hidden" id="k_name" name="k_name"><br><!-- 이름 -->
-					<input type="hidden" id="k_email" name="k_email"><br><!-- 이메일 -->
-					<input type="hidden" id="k_bday" name="k_bday"><br><!-- 생일 -->
-					<input type="hidden" id="k_gender" name="k_gender"><br><!-- 성별 -->
-					<input type="hidden" id="k_id" name="k_id"><br><!-- 추출한 아이디로부터 변환한 카카오 회원용 아이디 -->
-					
-					Pill-Yo 서비스 이용을 위해 필요한 추가 정보를 입력해주세요.<br>
-					핸드폰 번호<input type="text" name="k_hp1" id="k_hp1" size="3" maxlength="3">
-							- <input type="text" name="k_hp2" id="k_hp2" size="4" maxlength="4">
-							- <input type="text" name="k_hp3" id="k_hp3" size="4" maxlength="4"><br>
-					DB에 저장할 합친 폰번호<input type="text" id="k_hp" name="k_hp"><br>
-					우편번호<input type="text" id="k_zipcode" name="k_zipcode" readonly>
-						  <input type="button" class="searchZipBtn" id="searchZip" name="searchZip" value="우편번호찾기" readonly><br>
-					주소<input type="text" id="k_address1" name="k_address1" size="40"><br>
-					상세주소<input type="text" id="k_address2" name="k_address2" size="40" placeholder="상세 주소 입력"><br>
-					<hr>
-					전체 input form으로 묶고 -> 상단 input들은 hidden으로 숨기기 -> sumbit 시 회원가입
-					(아이디 검사를 이 페이지 넘어오면서 할지 / 이 페이지에서 다음으로 넘어갈 때 할지)
-					<div class="create">
-						<button type="submit" id="joinBtn" >회원가입</button>
-						<button type="submit" id="cancelBtn" onclick="">취소</button>
-					</div>
-				</form>
+				<div id="kakaoJoinFormBox">
+					<h2>카카오 회원가입</h2>
+					<h3>Pill-Yo 서비스 이용을 위해 필요한 추가 정보를 입력해주세요.</h3>
+					<form name="kakaoJoinForm" id="kakaoJoinForm" method="post" action="<c:url value='/kakaoJoin'/>">
+						<input type="hidden" id="k_name" name="k_name">
+						<input type="hidden" id="k_email" name="k_email">
+						<input type="hidden" id="k_bday" name="k_bday">
+						<input type="hidden" id="k_gender" name="k_gender">
+						<input type="hidden" id="k_id" name="k_id">
+						<table>
+							<tr><th>핸드폰 번호</th><td><input type="text" name="k_hp1" id="k_hp1" size="3" maxlength="3">
+													- <input type="text" name="k_hp2" id="k_hp2" size="4" maxlength="4">
+													- <input type="text" name="k_hp3" id="k_hp3" size="4" maxlength="4">
+													<input type="hidden" id="k_hp" name="k_hp"></td></tr>
+							<tr><th>우편번호</th><td><input type="text" id="k_zipcode" name="k_zipcode" readonly>
+													<input type="button" class="searchZipBtn" id="searchZip" name="searchZip" value="우편번호찾기" readonly></td></tr>
+							<tr><th>주소</th><td><input type="text" id="k_address1" name="k_address1" size="40"></td></tr>
+							<tr><th>상세 주소</th><td><input type="text" id="k_address2" name="k_address2" size="40" placeholder="상세 주소 입력"></td></tr>
+							<tr><th colspan="2" id="btnTd"><button type="submit" id="joinBtn" >회원가입</button><button type="submit" id="cancelBtn" onclick="">취소</button></th></tr>
+						</table>
+					</form>
+				</div>
 			</section>
 	        
 			<!-- BOTTOM  -->
@@ -92,24 +63,120 @@
 	</body>
 	<script>
 		$(document).ready(function(){
+			// ---------------- 데이터 변경 이벤트 ----------------
+			// 핸드폰 번호
+			$('input[name=k_hp1]').change(function() {
+						var k_hp1 = $(this).val();
+						var k_hp2 = $('#k_hp2').val();
+						var k_hp3 = $('#k_hp3').val();
+						$('#k_hp').val(k_hp1 + '-' + k_hp2 + '-' + k_hp3);
+			});
+			
+			$('input[name=k_hp2]').change(function() {
+						var k_hp1 = $('#k_hp1').val();
+						var k_hp2 = $(this).val();
+						var k_hp3 = $('#k_hp3').val();
+						$('#k_hp').val(k_hp1 + '-' + k_hp2 + '-' + k_hp3);
+			});
+			
+			$('input[name=k_hp3]').change(function() {
+						var k_hp1 = $('#k_hp1').val();
+						var k_hp2 = $('#k_hp2').val();
+						var k_hp3 = $(this).val();
+						$('#k_hp').val(k_hp1 + '-' + k_hp2 + '-' + k_hp3);
+			});
+			
+			
+			// ---------------- 주소 검색 ----------------
+			$('#searchZip').on('click', function(){	
+				new daum.Postcode({
+					oncomplete:function(data){
+						// 팝업 창에서 검색 결과 클릭했을 때 
+						var k_address1 = '';
+						//법정명과 건물명 : (~동, ~건물) (~동, ~아파트)
+						//var dong_building='';
+						
+						//도로명 주소인 경우
+						if(data.userSelectedType == 'R'){
+							k_address1 = data.roadAddress + "(" + data.bname + data.buildingName + ")";
+						}else { //지번 주소인 경우
+							k_address1 = data.jibunAddress;
+						}
+						
+						// 우편번호와 주소1 출력
+						document.getElementById('k_zipcode').value = data.zonecode;
+						document.getElementById('k_address1').value = k_address1;
+						
+						// 상세주소 입력하도록 입력되어 있는 값 삭제하고 포커스
+						var k_address2 = document.getElementById('k_address2');
+						k_address2.value = "";
+						k_address2.focus();
+						
+					}
+				}).open();		
+			});
+			
+			
 			$('#kakaoJoinForm').on('submit', function(){		
 				event.preventDefault();
-			
+				// ---------------- 유효성검사 ----------------
+				var hp1= document.getElementById('k_hp1');
+				var hp2 = document.getElementById('k_hp2');
+				var hp3 = document.getElementById('k_hp3');
+				
+				if(hp1.value.length==0) {
+					alert("핸드폰 번호를 입력하세요");
+					document.location.href='#k_hp1';
+					return false;
+				}
+				if(hp2.value.length==0) {
+					alert("핸드폰 번호를 입력하세요");
+					document.location.href='#k_hp2';
+					return false;
+				}
+				if(hp3.value.length==0) {
+					alert("핸드폰 번호를 입력하세요");
+					document.location.href='#k_hp3';
+					return false;
+				}
+				
+				//주소
+				var postcode = document.getElementById('k_zipcode');
+				var address = document.getElementById('k_address2');
+				
+				if(postcode.value == ""){
+					alert("주소를 입력하세요");
+					postcode.focus();
+					document.location.href='#k_zipcode';
+					return false;
+				}
+				
+				//상세주소
+				if(address.value == ""){
+					alert("상세 주소를 입력하세요");
+					postcode.focus();
+					document.location.href='#k_address2';
+					return false;
+				}
+				
+				// DB에 회원 정보 추가
 				$.ajax({
 					type:"post",
-					url:"kakaoUserCheck",
-					data: { "k_name": $('#k_name').val(),
+					url:"kakaoDBInsert",
+					data: { "k_id": $('#k_id').val(),
+							"k_name": $('#k_name').val(),
 							"k_email": $('#k_email').val(),
 							"k_bday": $('#k_bday').val(),
-							"k_gender": $('#k_gender').val()
-						},  
+							"k_gender": $('#k_gender').val(),
+							"k_hp": $('#k_hp').val(),
+							"k_zipcode": $('#k_zipcode').val(),
+							"k_address1": $('#k_address1').val(),
+							"k_address2": $('#k_address2').val()
+						},
 					dataType:'text',
 					success:function(result){
-						if(result == "in"){
-							$(location).attr('href', '/kakaoLogin');
-						}else{
-							$(location).attr('href', '/kakaoJoinForm');
-					 }
+						alert("Pill-Yo 회원이 되신 것을 환영합니다. :)");
+						$(location).attr('href', '/');
 					},
 					error:function(data, textStatus){
 						alert("전송 실패");

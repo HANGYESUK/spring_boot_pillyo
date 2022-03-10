@@ -19,11 +19,11 @@
 		<!-- TOP -->
 		<jsp:include page="/WEB-INF/views/layout/top.jsp" flush='true' />
 		
-		<section id="section">
+		<section id="section3">
 			<div id="navMargin"></div>
 			<div class="main-Content-Body low">
 					<div class="basket-Item-Container colunm">
-							<h1>혈압관리 수정</h1>
+							<h1 class="formName">혈압관리 수정</h1>
 							<br><br>
 					<form id="updatePressureForm" method="post" action="<c:url value='/updatePressure'/>">
 					  	<input type="hidden" id="pressureNo" name="pressureNo" value="${pressure.pressureNo}"/>

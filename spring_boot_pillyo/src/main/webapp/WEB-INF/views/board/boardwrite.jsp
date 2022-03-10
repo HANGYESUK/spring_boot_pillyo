@@ -126,9 +126,9 @@
 			<td><select id="boardCtgNo" name="boardCtgNo">
 				<option value="0" selected>소식</option>
 				<option value="1">카드뉴스</option>
-				<option value="2">주문/결제</option>
-				<option value="3">교환/반품</option>
-				<option value="4">제품</option>
+				<option value="2">건강관리</option>
+				<option value="3">우리집약관리</option>
+				<option value="4">복용관리</option>
 				<option value="5">회원</option>
 				
 			</select></td>

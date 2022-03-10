@@ -34,11 +34,13 @@
 }
 
 .health-Container-Box {
-    width: 90%;
+       width: 90%;
     border: 2px solid rgb(46, 46, 46);
     border-radius: 10px;
     justify-content: space-around;
     margin: 10px;
+        box-shadow: 0px 0px 6px #e3e3e3;
+        border:0;
 }
 
 .health-Content-Title {
@@ -80,8 +82,13 @@
     cursor: pointer;
 }
 
+.btn:hover {
+	
+	box-shadow: 1px 1px 5px 1px lightgrey;
+}
+
 .moreBtn {
-    width: 50px;
+       /* width: 50px;
     height: 50px;
     background-color: rgb(86, 176, 255);
     border: none;
@@ -90,24 +97,61 @@
     font-size: 10px;
     justify-content: center;
     cursor: pointer;
-    margin-left: 40px;
+    margin-left: 40px; */
+        width: 50px;
+    height: 50px;
+    border-radius: 63%;
+    border: 0;
+    /* border: 1px solid #508bff; */
+    overflow: hidden;
+    background-color: #ffffff;
+    display: flex;
+    margin: 3px;
+    box-shadow: 1px 1px 5px 1px lightgrey;
+    justify-content: center;
+    color: #3965bd;
+    font-size: 11px;
+    background: #ffffff;
+    font-weight: 500;
+    margin: 7px;
 }
-
+.moreBtn:hover{
+	font-size:13px;
+	 width: 55px;
+    height: 55px;
+        
+    opacity:80%;
+    
+	
+}
 .delBtn {
+     box-shadow: 1px 1px 5px 1px lightgrey;
     width: 50px;
     height: 50px;
-    background-color: rgb(255, 61, 61);
+    background-color: rgb(255 255 255);
     border: none;
     border-radius: 50%;
-    color: white;
+    color: #ff6565;
     font-size: 10px;
     justify-content: center;
     cursor: pointer;
+    font-size: 11px;
 }
 
+.delBtn:hover {
+	font-size:13px;
+	 width: 55px;
+    height: 55px;
+        color: white;
+    background-color: rgb(255, 61, 61);
+    opacity:80%;
+	}
+
 .border {
-    border: 2px solid rgb(32, 32, 32);
+     border: 2px solid rgb(32, 32, 32);
     width: 90%;
+    box-shadow: 0px 0px 6px #e3e3e3;
+    border: 0;
 }
 
 .display-none {
@@ -160,7 +204,7 @@
 
 .fam-List {
 	position: fixed;
-	margin-right: 1360px;
+	left: 5%;
     background-color: white;
     padding: 5px;
     border-radius: 10px;
@@ -183,7 +227,7 @@
 .active {
 	background-color: #508BFF;
     color: white;
-    box-shadow: 0 0 50px 0 rgb(92 160 255 / 37%);
+   /*  box-shadow: 0 0 50px 0 rgb(92 160 255 / 37%); */
 }
 
 

@@ -140,6 +140,11 @@ button:hover{
     background-color: #fae100;
     color: black;
 }
+
+.kakaoLoginButton a {
+	text-decoration: none;
+    color: white;
+}
 .googleLoginButton{
     background-color: #ff7368;;
     color: white;

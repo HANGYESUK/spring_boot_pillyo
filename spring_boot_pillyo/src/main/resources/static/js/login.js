@@ -14,10 +14,10 @@
 			dataType:'text',
 			success:function(result){
 				if(result == "success"){
-					alert("환영합니다! Pill-Yo입니다 :)");
+					alert("로그인 성공");
 					location.href="/";
 				} else if (result == "kakao") {
-					alert("카카오 게정으로 가입된 아이디입니다.\n카카오로그인을 통해 로그인 해주세요.")
+					alert("카카오 계정으로 가입된 아이디입니다.\n카카오 로그인을 통해 로그인 해주세요.")
 				} else{
 				    alert("로그인에 실패하였습니다.");
 			 	}
