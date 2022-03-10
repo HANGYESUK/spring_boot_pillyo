@@ -23,7 +23,7 @@
 			</div>
 			<div id="headerBox">
 				<div id="logoBox">
-					<a href="/"><img src="/img/mainLogo.jpg"></a>
+					<a href="/"><img src="/img/mainLogo.png"></a>
 				</div><!-- logoBox -->
 				
 				<div id="navBox">

@@ -202,23 +202,23 @@ When it's NOT activated, the fc-button classes won't even be in the DOM.
 }
 .fc .fc-button-primary {
     color: #fff;
-    color: var(--fc-button-text-color, #5c5c5c);
-    background-color: #2C3E50;
-    background-color: var(--fc-button-bg-color, #2C3E50);
-    border-color: #ffffff00;
-    background-color: #c8c8c800;
+    color: var(--fc-button-text-color, #828282);
+    border-color: #e1e1e1;
+    background-color: #d4deeb;
+    border-radius: 20px;
+    box-shadow: 1px 1px 2px 1px silver;
   }
 .fc .fc-button-primary:hover {
     color: #fff;
-    color: var(--fc-button-text-color, #fff);
-    background-color: #1e2b37;
-    background-color: var(--fc-button-hover-bg-color, #c8c8c8);
-    border-color: #1a252f;
-    border-color: var(--fc-button-hover-border-color, #1a252f);
+    color: var(--fc-button-text-color, #828282);
+    border-color: #e1e1e1;
+    background-color: #ccd5e1;
+    border-radius: 20px;
+    box-shadow: 1px 1px 2px 1px silver;
   }
 .fc .fc-button-primary:disabled { /* not DRY */
     color: #fff;
-    color: var(--fc-button-text-color, #fff);
+    color: var(--fc-button-text-color, #828282);
     background-color: #2C3E50;
     background-color: var(--fc-button-bg-color, #2C3E50);
     border-color: #2C3E50;
@@ -230,11 +230,13 @@ When it's NOT activated, the fc-button classes won't even be in the DOM.
 .fc .fc-button-primary:not(:disabled):active,
   .fc .fc-button-primary:not(:disabled).fc-button-active {
     color: #fff;
-    color: var(--fc-button-text-color, #fff);
+    color: var(--fc-button-text-color, #828282);
     background-color: #1a252f;
     background-color: var(--fc-button-active-bg-color, #1a252f);
-    border-color: #cccccc;
-    background-color: #c8c8c8; /* 占쏙옙튼 占쏙옙占쏙옙 */
+    border-color: #e1e1e1;
+    background-color: #d4deeb; /* 占쏙옙튼 占쏙옙占쏙옙 */
+    box-shadow: 1px 1px 2px 1px silver;
+    border-radius: 20px;
   }
 .fc .fc-button-primary:not(:disabled):active:focus,
   .fc .fc-button-primary:not(:disabled).fc-button-active:focus {
@@ -247,7 +249,7 @@ When it's NOT activated, the fc-button classes won't even be in the DOM.
 }
 .fc .fc-button .fc-icon {
     vertical-align: middle;
-    font-size: 1.5em; /* bump up the size (but don't make it bigger than line-height of button, which is 1.5em also) */
+    font-size: 35px; /* bump up the size (but don't make it bigger than line-height of button, which is 1.5em also) */
   }
 .fc .fc-button-group {
     position: relative;
@@ -298,13 +300,16 @@ When it's NOT activated, the fc-button classes won't even be in the DOM.
 .fc .fc-toolbar-title {
     font-size: 22px;
     margin: 0;
-    font-weight: 500;
+    font-weight: bolder;
   }
 .fc-direction-ltr .fc-toolbar > * > :not(:first-child) {
     margin-left: .75em; /* space between */
-    background-color: #c8c8c8; /* 占쏙옙튼 占쏙옙占쏙옙 */
-    border-color: #cccccc;
-  }
+    background-color: #d4deeb; /* 占쏙옙튼 占쏙옙占쏙옙 */
+    border-color: #e1e1e1;
+    border-radius: 20px;
+    box-shadow: 1px 1px 2px 1px silver;
+}
+
 .fc-direction-rtl .fc-toolbar > * > :not(:first-child) {
     margin-right: .75em; /* space between */
   }
@@ -316,8 +321,8 @@ When it's NOT activated, the fc-button classes won't even be in the DOM.
     position: relative; /* for abs-positioned elements within */
   }
 .fc .fc-scroller-liquid {
-	    background: #fffff8;
-  
+    background: #f4f4f6;
+    border-radius: 20px;
     height: 100%;
   }
  .fc .fc-scroller-liquid-absolute::-webkit-scrollbar {
@@ -344,6 +349,7 @@ When it's NOT activated, the fc-button classes won't even be in the DOM.
 .fc .fc-scroller-harness-liquid {
     height: 100%;
   }
+  
 .fc-direction-rtl .fc-scroller-harness > .fc-scroller { /* undo above hack */
     direction: rtl;
   }
@@ -435,7 +441,7 @@ px
 .fc .fc-view-harness {
     flex-grow: 1; /* because this harness is WITHIN the .fc's flexbox */
     position: relative;
-    background-color: #f2f9fb; /* 캘占쏙옙占쏙옙 占쏙옙占� 占쏙옙占쏙옙 */
+    background-color: #f4f4f6; /* 캘占쏙옙占쏙옙 占쏙옙占� 占쏙옙占쏙옙 */
     border-radius: 15px;
   }
 .fc {
@@ -692,6 +698,7 @@ A HORIZONTAL event
     position: absolute;
     z-index: 9999;
     box-shadow: 0 2px 6px rgba(0,0,0,.15);
+    width: 275px;
   }
 .fc .fc-popover-header {
     display: flex;
@@ -716,12 +723,12 @@ A HORIZONTAL event
     /* 캘占쏙옙占쏙옙 description 占쌕깍옙占쏙옙 占쌘쏙옙 */
     border-radius: 3px;
     padding: 20px;
-    background-color: #acc1d2;
+    background-color: #dfe9f5;
   }
 .fc-theme-standard .fc-popover-header {
     /* background: rgba(208, 208, 208, 0.3);
     background: var(--fc-neutral-bg-color, rgba(208, 208, 208, 0.3)); */
-    background-color: #acc1d2;
+    background-color: #dfe9f5;
     /* 캘占쏙옙占쏙옙 description 占쏙옙占� 占쏙옙占� 占쏙옙占쏙옙 */
   }
 
@@ -747,16 +754,17 @@ A HORIZONTAL event
     z-index: 1; /* container inner z-index's because <tr>s can't do it */
   }
 .fc .fc-daygrid-day.fc-day-today {
-          background-color: #f5f5df;
-    height: 97px;
+    background-color: #dfe9f5;
+    height: 120px;
     border: none;
+    width: 338px;
       
     }
 .fc .fc-daygrid-day-frame {
     position: relative;
     min-height: 93%; /* seems to work better than `height` because sets height after rows/cells naturally do it */
   	width: 112px;
-    height: 106px;
+    height: 100%;
   }
 .fc {
 
@@ -889,7 +897,7 @@ A HORIZONTAL event
 .fc .fc-more-popover .fc-popover-body {
     min-width: 220px;
     padding: 10px;
-    background-color: #acc1d2; /* 캘占쏙옙占쏙옙 description 占쏙옙占쏙옙 占쏙옙占� 占쏙옙占쏙옙 */
+    background-color: #dfe9f5; /* 캘占쏙옙占쏙옙 description 占쏙옙占쏙옙 占쏙옙占� 占쏙옙占쏙옙 */
   }
 .fc-direction-ltr .fc-daygrid-event.fc-event-start,
 .fc-direction-rtl .fc-daygrid-event.fc-event-end {
@@ -955,7 +963,7 @@ A HORIZONTAL event
   width: 0;
   height: 0;
   border: 4px solid #3788d8;
-  border: calc(var(--fc-daygrid-event-dot-width, 8px) / 2) solid #dddd27;
+  border: calc(var(--fc-daygrid-event-dot-width, 8px) / 2) solid #537cdf;
   border-radius: 4px;
   border-radius: calc(var(--fc-daygrid-event-dot-width, 8px) / 2);
 }
@@ -1442,7 +1450,7 @@ A VERTICAL event
   display: table; /* clear floating */
     }
 .fc-theme-standard .fc-list-day-cushion {
-        background-color: #f9f9f4;
+        background-color: #dfe9f5;
     /* background-color: var(--fc-neutral-bg-color, rgba(208, 208, 208, 0.3)); */
   }
 .fc-direction-ltr .fc-list-day-text,
@@ -1479,7 +1487,7 @@ A VERTICAL event
     width: 0;
     height: 0;
     border: 5px solid #3788d8;
-        border: calc(var(--fc-list-event-dot-width, 10px) / 2) solid #dddd27;
+    border: calc(var(--fc-list-event-dot-width, 10px) / 2) solid #537cdf;
     border-radius: 5px;
     border-radius: calc(var(--fc-list-event-dot-width, 10px) / 2);
   }
