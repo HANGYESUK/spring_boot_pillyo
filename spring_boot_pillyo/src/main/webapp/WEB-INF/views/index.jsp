@@ -146,7 +146,7 @@
 				</div>
 				
 				<div class="content-Img">
-					<img src="<c:url value='/image/HealthMg.jpg'/>"/>
+					<img src="<c:url value='/img/MainHealth.gif'/>"/>
 				</div>
 			</div>
 		</div>
@@ -156,7 +156,7 @@
 		<div class="container3 row">
 		
 			<div class="content-Img">
-					
+				<img src="<c:url value='/img/MainHm.gif'/>"/>
 			</div>
 			
 			<div class="main-Content calum">
