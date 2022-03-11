@@ -146,7 +146,7 @@
 				</div>
 				
 				<div class="content-Img">
-					<img src="/image/HealthMg.jpg"/>
+					<img src="<c:url value='/image/HealthMg.jpg'/>"/>
 				</div>
 			</div>
 		</div>
