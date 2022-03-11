@@ -192,7 +192,7 @@
 				</div>
 				
 				<div class="content-Img">
-					
+					<img src="<c:url value='/img/MainDoes.gif'/>"/>
 				</div>
 				
 			</div> 
