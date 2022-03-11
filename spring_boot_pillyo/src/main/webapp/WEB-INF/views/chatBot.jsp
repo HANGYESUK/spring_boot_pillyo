@@ -36,6 +36,7 @@
                         무엇을 알려드릴까요??
                     </div>
                 </div>
+
             </div>
             <div class="chat-box">
                 <div class="chat-input">
@@ -116,7 +117,6 @@
 					data: {message: $('#text-input').val()},
 					
 					success:function(result){
-						alert(result)
 						let you_chat = document.createElement("div")
 						you_chat.classList.add("you-chat")
 					    let you_text_box = document.createElement("div")
