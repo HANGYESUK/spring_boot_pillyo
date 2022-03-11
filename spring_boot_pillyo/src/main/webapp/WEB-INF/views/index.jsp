@@ -146,7 +146,7 @@
 				</div>
 				
 				<div class="content-Img">
-					<img src="/img/HealthMg.jpg"/>
+					<img src="/image/HealthMg.jpg"/>
 				</div>
 			</div>
 		</div>
