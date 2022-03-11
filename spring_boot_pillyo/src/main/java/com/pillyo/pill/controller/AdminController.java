@@ -80,9 +80,19 @@ public class AdminController {
 		}
 		//관리자 메뉴- 회원 전체 조회
 		@RequestMapping("/listAllUser")
-		public String listAllUser(Model model) {
-			ArrayList<UserVO> userList = uservice.listAllUser();
+		public String listAllUser(Model model, Criteria cri) throws Exception {
+			
+			log.info("userListGET");
+			log.info("cri : " + cri);
+			
+			List<UserVO> userList = uservice.getUserListPaging(cri);
 			model.addAttribute("userList", userList);
+			
+			int total = dservice.getTotal(cri);
+			PageMakerDTO pageMake = new PageMakerDTO(cri, total);
+			
+			model.addAttribute("pageMaker", pageMake);
+			
 			return "admin/a_listAllUserView";
 		}
 		//관리자 유저 업데이트폼 이동
@@ -147,7 +157,7 @@ public class AdminController {
 		@GetMapping("/listAllDrug")
 		public String listAllDrug(Model model, Criteria cri) throws Exception {
 			
-			log.info("boardListGET");
+			log.info("drugListGET");
 			log.info("cri : " + cri);
 			
 			List<DrugInfoVO> drugList = dservice.getDrugListPaging(cri);
@@ -172,7 +182,7 @@ public class AdminController {
 		@GetMapping("/listAllDrugShpae")
 		public String listAllDrugShpae(Model model, Criteria cri) throws Exception {
 			
-			log.info("boardListGET");
+			log.info("shapeListGET");
 			log.info("cri : " + cri);
 			
 			List<DrugShapeVO> shapeList = sservice.getShapeListPaging(cri);

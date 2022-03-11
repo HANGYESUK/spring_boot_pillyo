@@ -2,8 +2,10 @@ package com.pillyo.pill.dao;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 import com.pillyo.pill.model.UserVO;
+import com.pillyo.pill.paging.Criteria;
 
 public interface IUserDAO {
 
@@ -27,4 +29,11 @@ public interface IUserDAO {
 	// 아이디, 비밀번호 찾기
 	UserVO findUserId(HashMap<String, Object> map); // 아이디
 	UserVO findUserPw(HashMap<String, Object> map); // 비밀번호
+	
+	/* 페이징처리 */
+	// 게시물 총 갯수
+	int getTotal(Criteria cri);
+
+	// 페이징 처리 게시글 조회
+	List<UserVO> getUserListPaging(Criteria cri) throws Exception;
 }
