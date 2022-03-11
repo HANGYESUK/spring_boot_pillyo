@@ -25,7 +25,7 @@
 				</div>
 			</section>
 		<!-- BOTTOM  -->
-		<jsp:include page="/WEB-INF/views/layout/bottom.jsp" flush='true' />
+		<jsp:include page="/WEB-INF/views/layout/mypageFooter.jsp" flush='true' />
 		
     	</div> <!-- wrap -->
 	</body>
