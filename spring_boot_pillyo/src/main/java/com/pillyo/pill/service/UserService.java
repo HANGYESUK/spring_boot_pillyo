@@ -2,13 +2,16 @@ package com.pillyo.pill.service;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import com.pillyo.pill.dao.IUserDAO;
+import com.pillyo.pill.model.DrugInfoVO;
 import com.pillyo.pill.model.UserVO;
+import com.pillyo.pill.paging.Criteria;
 
 @Service
 public class UserService implements IUserService {
@@ -68,4 +71,16 @@ public class UserService implements IUserService {
 	public UserVO findUserPw(HashMap<String, Object> map) {		
 		return dao.findUserPw(map);
 	}
+	
+	/* 페이징 */
+	@Override
+	public int getTotal(Criteria cri) {
+		// TODO Auto-generated method stub
+		return dao.getTotal(cri);
+	}
+	@Override
+	public List<UserVO> getUserListPaging(Criteria cri) throws Exception {
+		return dao.getUserListPaging(cri);
+	}
+	
 }

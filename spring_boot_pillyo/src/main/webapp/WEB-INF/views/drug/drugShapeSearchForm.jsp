@@ -102,7 +102,7 @@
 					<c:forEach items="${shapeList}" var="shape" >
 						<div class="drugBox">
 							<div class="drugShapeBox">
-								<a href="<c:url value='/drugDetailView/${shape.itemSeq}'/>">
+								<%-- <a href="<c:url value='/drugDetailView/${shape.itemSeq}'/>"> --%>
 									<img src="${shape.itemImage}" class="drugShapeImg" onerror="this.src='/img/fill_null.png'">
 									<div class="drugShapeInfo">
 										<span class="itemName">${shape.itemName}</span>
@@ -114,7 +114,7 @@
 										<span class="shapeInfo">${shape.form_code_name}</span>
 										<span class="shapeInfo">${shape.class_name}</span>
 									</div>
-								</a>
+								<!-- </a> -->
 							</div>
 						</div>
 					</c:forEach>

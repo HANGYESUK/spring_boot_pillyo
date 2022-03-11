@@ -130,7 +130,7 @@
 									</tr>
 									<tr>
 										<td class="col1">비밀번호</td>
-										<td class="col2"><input type="password" name="userPw" maxlength="16" id="userPw" placeholder="비밀번호">
+										<td class="col2"><input type="password" name="userPw" maxlength="16" id="userPw" value="${user.userPw}" placeholder="비밀번호">
 											<p id="pwError" class="errMsg">
 												※ 비밀번호는 <span class="num">문자, 숫자, 특수문자(~!@#$%^&*)의 조합
 													10 ~ 16자리</span>로 입력하세요.
@@ -139,7 +139,7 @@
 									</tr>
 									<tr>
 										<td class="col1">비밀번호 확인</td>
-										<td class="col2"><input type="password" name="pwCheck" maxlength="16" id="pwCheck" placeholder="비밀번호 확인"></td>
+										<td class="col2"><input type="password" name="pwCheck" maxlength="16" id="pwCheck" value="${user.userPw}" placeholder="비밀번호 확인"></td>
 									</tr>
 									<tr>
 										<td class="col1">이메일</td>

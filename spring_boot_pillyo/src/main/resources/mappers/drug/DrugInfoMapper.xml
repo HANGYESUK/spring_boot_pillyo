@@ -70,7 +70,7 @@
 			SELECT * FROM druginfo ORDER BY drugInfoNo 
 		</select>
 		
-					<!-- 페이징위한 쿼리 -->
+		<!-- 페이징위한 쿼리 -->
   		<!-- 게시물 목록(페이징) -->
 	    <select id="getDrugListPaging" resultType="com.pillyo.pill.model.DrugInfoVO">
 	    
