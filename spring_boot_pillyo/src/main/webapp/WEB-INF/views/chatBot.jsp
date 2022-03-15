@@ -119,8 +119,8 @@
 					success:function(result){
 						let you_chat = document.createElement("div")
 						you_chat.classList.add("you-chat")
-					    let you_text_box = document.createElement("div")
-			            you_text_box.append(result)
+					    let you_text_box = document.createElement("p")
+			            you_text_box.innerText = result
 			            you_text_box.classList.add("text-box")
 			            you_chat.append(you_text_box)
 			            chatingContainer.append(you_chat)
