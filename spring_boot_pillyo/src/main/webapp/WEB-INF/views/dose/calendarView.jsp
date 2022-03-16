@@ -87,7 +87,6 @@
 			  		 	<table id="doseItemTbl">
 			  		 		<tr>
 			  		 			<th id="firstTh">복용 타이틀</th>
-			  		 			<th>약 이름</th>
 			  		 			<th>복용 기간</th>
 			  		 			<th>복용 주기</th>
 			  		 			<th>복용 시기</th>
@@ -97,7 +96,6 @@
 				  		 	<c:forEach items="${doseList }" var="dose">
 				  		 		<tr>
 				  		 			<td><a href="<c:url value='/doseDetailView/${dose.ddNo}'/>">${dose.ddTitle }</a></td>
-				  		 			<td>약이름</td>
 				  		 			<td>${dose.ddStartDate } ~ ${dose.ddEndDate }</td>
 				  		 			<td>${dose.ddCycle }일</td>
 				  		 			<td>${dose.ddTimeSlot }</td>

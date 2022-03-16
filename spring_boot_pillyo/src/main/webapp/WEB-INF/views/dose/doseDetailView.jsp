@@ -26,8 +26,8 @@
 						<table id="doseTbl">
 							<tr><th colspan="2">복용 타이틀</th></tr>
 							<tr><td colspan="2">${doseVo.ddTitle }</td></tr>
-							<tr><th colspan="2">약 번호</th></tr>
-							<tr><td colspan="2">${doseVo.drugInfoNo }</td></tr>
+							<tr><th colspan="2">약 이름</th></tr>
+							<tr><td colspan="2">${doseDrugName }</td></tr>
 							<tr><th>복용 시작 날짜</th><th>복용 종료 날짜</th></tr>
 							<tr><td>${doseVo.ddStartDate }</td><td>${doseVo.ddEndDate }</td></tr>
 							<tr><th>복용 시기</th><th>복용 상세 시간</th></tr>

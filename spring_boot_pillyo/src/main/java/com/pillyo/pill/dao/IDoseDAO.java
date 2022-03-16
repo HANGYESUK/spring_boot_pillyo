@@ -10,4 +10,5 @@ public interface IDoseDAO {
 	void doseUpdate(DoseVO doseVo); // 복용 정보 수정
 	void doseDelete(int ddNo); // 복용 정보 삭제
 	DoseVO doseDetailView(int ddNo); // 복용 정보 상세 조회
+	String doseDetailName(int ddNo); // 복용 정보 상세 조회 : 약물 이름
 }
