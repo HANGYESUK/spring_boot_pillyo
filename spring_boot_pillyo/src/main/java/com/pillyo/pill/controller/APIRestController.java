@@ -27,8 +27,8 @@ public class APIRestController {
 		
 		try {
 			// 1. 파일 저장 경로 설정 : 실제 서비스되는 위치 (프로젝트 외부에 저장)
-			//String uploadPath = "C:/upload/"; // 절대경로 어떻게 할것인가?
-			String uploadPath = "/upload/"; // 절대경로 어떻게 할것인가?
+			//String uploadPath = "C:/upload/"; // 로칼에서 사용할때 
+			String uploadPath = "/upload/"; // 배포 서버에서 사용할때
 			
 			// 2. 원본 파일 이름 알아오기
 			String originalFileName = file.getOriginalFilename();
