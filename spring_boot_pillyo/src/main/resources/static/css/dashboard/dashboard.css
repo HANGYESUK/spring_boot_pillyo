@@ -440,10 +440,6 @@ li {
     padding-top: 37px;
 }
 
-.basket-Item-Container h3 {
-	color:#525252;	
-}
-
 #pressureForm{
     display: flex;
     flex-direction: column;

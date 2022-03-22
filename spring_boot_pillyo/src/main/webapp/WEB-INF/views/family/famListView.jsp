@@ -30,7 +30,7 @@
     <title>가족 목록</title>
 </head>
 <body>
-
+<jsp:include page="/WEB-INF/views/chatBot.jsp"/>
 	<div id="wrap">
 			<!-- TOP -->
 			<jsp:include page="/WEB-INF/views/layout/top.jsp" flush='true' />
@@ -38,7 +38,6 @@
 			
 			<section id="section" class="calum">
 			<h2>가족관리</h2>
-			<hr>
 			
 			
 				<div class="main-Content-Body low">
