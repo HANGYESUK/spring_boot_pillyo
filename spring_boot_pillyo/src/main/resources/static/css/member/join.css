@@ -46,7 +46,7 @@ Table#joinTable{
     border-radius: 20px;
     overflow: hidden;
     cursor: pointer;
-    background: #6a88b7;
+    background: #388a6b;
     /* border-color: #e4e4ff; */
     border: 0;
     box-shadow: 0px 0px 6px #dadada;
@@ -59,7 +59,7 @@ Table#joinTable{
 
 .btn1{
 	
-	 background: #5076b1;
+	 background: #388a6b;
     /* border-color: #ffe4e4; */
     border: 0;
     color: white;
@@ -69,7 +69,7 @@ Table#joinTable{
 
 .btn2{
 	
-    background: #5076b1;
+    background: #388a6b;
     /* border-color: #ffe4e4; */
     border: 0;
     color: white;
@@ -92,7 +92,8 @@ label{
 width: 93%;
     margin: 0 auto;
     opacity: 100%;
-    background-color:white;
+    background-color:#fdfaf8;
     border-radius: 100px;
     padding-bottom: 5%;
+    
 }
