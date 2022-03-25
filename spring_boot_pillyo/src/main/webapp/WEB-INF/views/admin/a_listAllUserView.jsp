@@ -51,11 +51,12 @@
 				 		<!-- <th>비밀번호</th> -->
 				 		<th width="70px">이름</th>
 				 		<th>이메일</th>
-				 		<th>휴대폰번호</th>
+				 		<th width="130px">휴대폰번호</th>
 				 		<th width="80px">우편번호</th>
-				 		<th>주소</th>
+				 		<!-- <th>주소</th> -->
 				 		<!-- <th>상세주소</th> -->
 				 		<th>가입일</th>
+				 		<th width="50px">가족</th>
 				 		<th width="50px">수정</th>
 				 		<th width="50px">삭제</th>
 				 	</tr>
@@ -68,9 +69,10 @@
 					 		<td>${user.userEmail }</td>
 					 		<td>${user.userHp }</td>
 					 		<td>${user.userZipcode }</td>
-					 		<td>${user.userAddress1 }</td>
+					 		<%-- <td>${user.userAddress1 }</td> --%>
 					 		<%-- <td>${user.userAddress2 }</td> --%>
 					 		<td>${user.joinDate }</td>
+					 		<td><button onclick="location.href='/a_listUserFamview/${user.userId }'">수정</button></td>
 					 		<td><button onclick="location.href='/a_updateUserForm/${user.userId }'">수정</button></td>
 					 		<td><button onclick="deleteCheck('${user.userId}');">삭제</button></td>
 					 		<%-- <td><button onclick="location.href='javascript:deleteCheck(${user.userId })'">삭제</button></td> --%>

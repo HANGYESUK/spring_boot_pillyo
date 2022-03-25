@@ -19,7 +19,7 @@
   /* layout of immediate children */
   display: flex;
   flex-direction: column;
-  background-color: #eeedd5; /* header 占쏙옙占쏙옙 */
+  background-color: #eeedd5; /* header �뜝�룞�삕�뜝�룞�삕 */
   font-size: 1em
   
 }
@@ -234,7 +234,7 @@ When it's NOT activated, the fc-button classes won't even be in the DOM.
     background-color: #1a252f;
     background-color: var(--fc-button-active-bg-color, #1a252f);
     border-color: #e1e1e1;
-    background-color: #d4deeb; /* 占쏙옙튼 占쏙옙占쏙옙 */
+    background-color: #d4deeb; /* �뜝�룞�삕�듉 �뜝�룞�삕�뜝�룞�삕 */
     box-shadow: 1px 1px 2px 1px silver;
     border-radius: 20px;
   }
@@ -304,7 +304,7 @@ When it's NOT activated, the fc-button classes won't even be in the DOM.
   }
 .fc-direction-ltr .fc-toolbar > * > :not(:first-child) {
     margin-left: .75em; /* space between */
-    background-color: #d4deeb; /* 占쏙옙튼 占쏙옙占쏙옙 */
+    background-color: #d4deeb; /* �뜝�룞�삕�듉 �뜝�룞�삕�뜝�룞�삕 */
     border-color: #e1e1e1;
     border-radius: 20px;
     box-shadow: 1px 1px 2px 1px silver;
@@ -441,7 +441,7 @@ px
 .fc .fc-view-harness {
     flex-grow: 1; /* because this harness is WITHIN the .fc's flexbox */
     position: relative;
-    background-color: #f4f4f6; /* 캘占쏙옙占쏙옙 占쏙옙占� 占쏙옙占쏙옙 */
+    background-color: #f4f4f6; /* 罹섇뜝�룞�삕�뜝�룞�삕 �뜝�룞�삕�뜝占� �뜝�룞�삕�뜝�룞�삕 */
     border-radius: 15px;
   }
 .fc {
@@ -720,7 +720,7 @@ A HORIZONTAL event
     border: 1px solid var(--fc-border-color, #ddd);
     background: #fff;
     background: var(--fc-page-bg-color, #fff);
-    /* 캘占쏙옙占쏙옙 description 占쌕깍옙占쏙옙 占쌘쏙옙 */
+    /* 罹섇뜝�룞�삕�뜝�룞�삕 description �뜝�뙐源띿삕�뜝�룞�삕 �뜝�뙓�룞�삕 */
     border-radius: 3px;
     padding: 20px;
     background-color: #dfe9f5;
@@ -729,7 +729,7 @@ A HORIZONTAL event
     /* background: rgba(208, 208, 208, 0.3);
     background: var(--fc-neutral-bg-color, rgba(208, 208, 208, 0.3)); */
     background-color: #dfe9f5;
-    /* 캘占쏙옙占쏙옙 description 占쏙옙占� 占쏙옙占� 占쏙옙占쏙옙 */
+    /* 罹섇뜝�룞�삕�뜝�룞�삕 description �뜝�룞�삕�뜝占� �뜝�룞�삕�뜝占� �뜝�룞�삕�뜝�룞�삕 */
   }
 
 
@@ -897,7 +897,7 @@ A HORIZONTAL event
 .fc .fc-more-popover .fc-popover-body {
     min-width: 220px;
     padding: 10px;
-    background-color: #dfe9f5; /* 캘占쏙옙占쏙옙 description 占쏙옙占쏙옙 占쏙옙占� 占쏙옙占쏙옙 */
+    background-color: #dfe9f5; /* 罹섇뜝�룞�삕�뜝�룞�삕 description �뜝�룞�삕�뜝�룞�삕 �뜝�룞�삕�뜝占� �뜝�룞�삕�뜝�룞�삕 */
   }
 .fc-direction-ltr .fc-daygrid-event.fc-event-start,
 .fc-direction-rtl .fc-daygrid-event.fc-event-end {
@@ -906,7 +906,7 @@ A HORIZONTAL event
 .fc-direction-ltr .fc-daygrid-event.fc-event-end,
 .fc-direction-rtl .fc-daygrid-event.fc-event-start {
   margin-right: 2px;
-      width: 500px;
+      width: 122px;
 }
 .fc-direction-ltr .fc-daygrid-week-number {
     left: 0;

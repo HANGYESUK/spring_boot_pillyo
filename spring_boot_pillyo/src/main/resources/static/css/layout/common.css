@@ -11,7 +11,7 @@ body {
 
 #wrap {
 	position: relative;
-    width: 1373px;
+    width: 100%;
     margin: 0 auto;
 }
 
@@ -26,12 +26,11 @@ body {
 }
 
 #section {
-	width: 100%;
     margin: 0 auto;
     opacity: 100%;
     background-color: #ffffff;
     border-radius: 10px;
-    padding-bottom: 6%;
+    padding: 0 150px 6% 150px;
 }
 
 /* --------- Footer ------------ */

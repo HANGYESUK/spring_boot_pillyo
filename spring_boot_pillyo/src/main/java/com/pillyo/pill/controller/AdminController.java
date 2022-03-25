@@ -5,7 +5,6 @@ import java.util.HashMap;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
-import javax.servlet.http.HttpSessionListener;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -21,6 +20,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.pillyo.pill.model.AdminVO;
 import com.pillyo.pill.model.DrugInfoVO;
 import com.pillyo.pill.model.DrugShapeVO;
+import com.pillyo.pill.model.FamilyVO;
 import com.pillyo.pill.model.UserVO;
 import com.pillyo.pill.paging.Criteria;
 import com.pillyo.pill.paging.PageMakerDTO;
@@ -146,6 +146,21 @@ public class AdminController {
 			
 			return "redirect:/a_listAllUserView";
 		}
+		//유저 가족정보
+		@RequestMapping("/a_listUserFamview/{userId}")
+		public String a_listAllUserView(@PathVariable("userId") String userId, Model model) {
+			ArrayList<FamilyVO> famList = famservice.famListView(userId);
+			model.addAttribute("famList", famList);
+			model.addAttribute("userId", userId);
+			return "admin/a_listUserFamview";
+		}
+		//(관리자) 가족 정보 삭제
+		@RequestMapping("/a_famDelete/{famNo}")
+		public String famDelete(@PathVariable int famNo) {
+			famservice.famDelete(famNo);
+			return "redirect:../a_listUserFamview";
+		}
+		
 		//회원탈퇴
 		@RequestMapping("/a_deleteUser/{userId}")
 		public String deleteUser(@PathVariable("userId") String userId) {
