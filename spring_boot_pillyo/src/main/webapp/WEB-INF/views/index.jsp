@@ -47,8 +47,8 @@
 				anchors:['first', 'second', 'third', 'fourth', 'five'],
 				navigation: true,
 				navigationPosition: 'right',
-				navigationTooltips: ['메인', '인사', '건강관리', '상비약 관리', '복용관리', '시작하기'],
-				// sectionsColor : ['#fffa65', '#ff9f1a', '#7d5fff', '#17c0eb'],
+				navigationTooltips: ['메인', '건강관리', '상비약 관리', '복용관리', '시작하기'],
+				/* sectionsColor : ['#e94848', '#F4EEE7', '#F4EEE7', '#F4EEE7'], */
 				showActiveTooltip: true,
 				sectionSelector: '.section',
 				slideSelector: '.slide',
@@ -84,7 +84,7 @@
 			}
 			
 			.content-Img {
-			    width: 640px;
+			    width: 637px;
 			    margin-top: 130px;
 			    height: 640px;
 			    margin: 15px;
@@ -92,7 +92,7 @@
 			    display: flex;
 			    color: black;
 			    background-color: white;
-			    box-shadow: 0 8px 32px 0 rgb(56 117 255 / 37%);
+			    box-shadow: 0 2px 23px 0 rgb(172 172 172 / 37%);
 			    border-radius: 30px;
 			    cursor: pointer;
 			    text-align: center;
@@ -122,31 +122,31 @@
 	 		 </div>
 		</div>
 	</div>
-	<div class="section" id="section1">
+<!-- 	<div class="section" id="section1">
 		<div class="container2 row">
 			<div class="content-Box calum">
 					<h1 class="text">가족들의 건강관리를 한번에</h1>
 			</div>
 		</div>
-	</div>
+	</div> -->
 	
 	<div class="section low" id="section2">
 		<div class="container3 row">
 			<div class="content-Box row">
 				<div class="main-Content calum">
 					<div class="main-Text" style="margin-bottom: 200px;">
-						<h3>건강관리,<br>
-						가족들의 건강까지<br>
-						간편하게</h3><br>
-						체형부터 혈압, 혈당, 기분까지<br>
-						가족 구성원을 추가하고<br>
-						우리 가족의 건강정보를 그래프로 보기 쉽게 관리하세요.<br>
+						<h3>가족 구성원의 건강까지<br>
+						한 계정에서 한번에,<br>
+						그래프로 간편하게</h3>
+						<p>체형부터 혈압, 혈당, 기분까지<br>
+						가족 구성원을 추가하고 우리 가족의 건강정보를<br>
+						그래프로 보기 쉽게 관리하세요.</p>
 					</div>
 
 				</div>
 				
 				<div class="content-Img">
-					<img src="<c:url value='/img/MainHealth.gif'/>"/>
+					<%-- <img src="<c:url value='/img/MainHealth.gif'/>"/> --%>
 				</div>
 			</div>
 		</div>
@@ -156,17 +156,17 @@
 		<div class="container3 row">
 		
 			<div class="content-Img">
-				<img src="<c:url value='/img/MainHm.gif'/>"/>
+				<%-- <img src="<c:url value='/img/MainHm.gif'/>"/> --%>
 			</div>
 			
 			<div class="main-Content calum">
 					<div class="main-Text" style="text-align:right">
-						<h3  style="text-align:right; margin-top: 230px;">상비약 관리,<br>
+						<h3  style="text-align:right; margin-top: 250px;">
 						우리집에 있는 상비약<br>
 						사용기한, 위치메모<br>
-						꼼꼼하게</h3><br>
-						텍스트 자동 추출 기능을 통해<br>
-						이미지를 업로드하여 편리하게 등록할 수 있어요.
+						꼼꼼하게</h3>
+						<p>텍스트 자동 추출 기능을 통해<br>
+						이미지를 업로드하여 편리하게 등록할 수 있어요.</p>
 					</div>
 
 				</div>
@@ -180,19 +180,17 @@
 		<div class="container3 row">
 			<div class="content-Box row">
 				<div class="main-Content calum">
-					<div class="main-Text" style="margin-bottom: 220px;">
+					<div class="main-Text">
 						<h3>먹고 있는 약 등록하고<br>
 						매일매일 복용 습관 만들기<br></h3>
-						<br>
-						캘린더를 통해 복용하는 약과
-						<br>복용 주기를 매일 체크해보세요.
-						<br>복용 알림도 카카오톡 공유 가능!
+						<p>캘린더를 통해 복용하는 약과 주기를 매일 체크해보세요.
+						<br>카카오톡으로 복용 정보 공유도 가능해요.</p>
 					</div>
 
 				</div>
 				
 				<div class="content-Img">
-					<img src="<c:url value='/img/MainDoes.gif'/>"/>
+					<%-- <img src="<c:url value='/img/MainDoes.gif'/>"/> --%>
 				</div>
 				
 			</div> 
@@ -205,7 +203,7 @@
 	<div class="section" id="section5">
 		<div class="container2 row">
 			<div class="content-Box3">
-				<h2 class="content-Title">건강관리의 첫걸음,<br>지금 바로 시작하세요</h2>
+				<h2 class="content-Title">건강관리의 첫 걸음,<br>Pill-Yo 와 함께 시작하세요</h2>
 				<br><a href="<c:url value = '/loginForm'/>"><button class="content-Box3-Btn">시작하기</button></a>
 			</div>
 		</div>
@@ -215,7 +213,7 @@
 </div>
 
 
-<script>
+<!-- <script>
 // 타이핑 함수
 	window.addEventListener('scroll', function(){
 	 	console.log(window.scrollY)
@@ -237,7 +235,7 @@
 	}
 	
 
-</script>
+</script> -->
 
 </body>
 </html>

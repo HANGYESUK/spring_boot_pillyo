@@ -62,7 +62,7 @@ h1{
 	font-size: 15em;
 }
 p{
-	font-size: 2em;
+	/* font-size: 2em; */
 }
 .intro p{
 	width: 50%;
