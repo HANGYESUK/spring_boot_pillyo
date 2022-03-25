@@ -12,29 +12,7 @@
 	    <script type="text/javascript" src="js/paginate.js"></script> -->
 		<%-- <link rel="stylesheet" href="<c:url value='/css/admin/a_listAllDrugInfoView.css'/>"> --%>
 		<link rel="stylesheet" href="<c:url value='/css/admin/adminTable.css'/>">
-		<!-- 페이징 css  -->
-		<style>
-			 .pageInfo{
-			  	list-style : none;
-			  	display: inline-block;
-			    margin: 50px 0 0 100px;  	
-			  }
-			  .pageInfo li{
-			  	float: left;
-			    font-size: 20px;
-			    margin-left: 18px;
-			    padding: 7px;
-			    font-weight: 500;
-			  }
-			#outter a:link {color:black; text-decoration: none;}
-			#outter a:visited {color:black; text-decoration: none;}
-			#outter a:hover {color:black; text-decoration: underline;}
-					  	.active{
-			  					background-color: #cdd5ec;
-			  					}
-		</style>
-		<!-- 페이징 css  -->
-		
+	
 	</head>
 	<body>
 		<div id="wrap">
@@ -50,6 +28,9 @@
 				<jsp:include page="/WEB-INF/views/admin/adminMainMenu.jsp" flush='true' />
 
 				<div id="adminTableBox">
+				<div id="adminTitle">
+				<h1>약 모양 관리</h1>
+			</div>
 					 <table class="adminTable">
 					 	<thead>
 					 	<tr>
@@ -73,6 +54,7 @@
 					 	</c:forEach>
 					 </table>
 					 
+					 
 					 <div class="search_wrap">
 						<div class="search_area">
 							<select name="type">
@@ -85,7 +67,6 @@
 							<button>검색</button>
 						</div>
 					</div>	
-					 
 					 <!-- 페이징 처리   -->
 					 <div class="pageInfo_wrap" >
 						<div class="pageInfo_area">

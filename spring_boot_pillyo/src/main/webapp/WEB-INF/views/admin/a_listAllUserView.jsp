@@ -8,28 +8,7 @@
 		<title>title</title>
 		<script src="<c:url value='/js/jquery-3.6.0.min.js'/>"></script>
 		<link rel="stylesheet" href="<c:url value='/css/admin/adminTable.css'/>">
-			<!-- 페이징 css  -->
-		<style>
-			 .pageInfo{
-			  	list-style : none;
-			  	display: inline-block;
-			    margin: 50px 0 0 100px;  	
-			  }
-			  .pageInfo li{
-			  	float: left;
-			    font-size: 20px;
-			    margin-left: 18px;
-			    padding: 7px;
-			    font-weight: 500;
-			  }
-			#outter a:link {color:black; text-decoration: none;}
-			#outter a:visited {color:black; text-decoration: none;}
-			#outter a:hover {color:black; text-decoration: underline;}
-					  	.active{
-			  					background-color: #cdd5ec;
-			  					}
-		</style>
-		<!-- 페이징 css  -->
+	
 	</head>
 	<body>
 		<div id="wrap">
@@ -44,6 +23,9 @@
 			<jsp:include page="/WEB-INF/views/admin/adminMainMenu.jsp" flush='true' />
 			
 			<div id="adminTableBox">
+			<div id="adminTitle">
+				<h1>회원 관리</h1>
+			</div>
 				 <table class="adminTable">
 				 <thead>
 				 	<tr>
