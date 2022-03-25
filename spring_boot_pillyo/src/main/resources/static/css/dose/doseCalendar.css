@@ -236,7 +236,7 @@
     border: 1px solid #c8c8c8;
     font-size: 18px;
     font-weight: 600;
-    color: #efefef;
+    color: #ffffff;
     margin-left: 4px;
     margin-top: 73px;
     border: 0;
@@ -253,4 +253,18 @@
 
 #calendar > div:nth-child(2) > div > table > thead > tr > th > div > div > table > thead > tr > th {
 	background: #c5dac7;
+}
+
+#doseTitleBox {
+	font: bold 36px Avenir, Arial, georgia;
+    color: #222222;
+    /* padding-top: 30px; */
+    position: relative;
+    /* padding-bottom: 18px; */
+    border-bottom: 1px solid #6d6d6d82;
+    margin-bottom: 35px;
+}
+
+#doseTitleBox > h2 {
+	font-size: 30px;
 }

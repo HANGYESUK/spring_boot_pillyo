@@ -54,12 +54,9 @@
 			 		<div class="profile-Family-Icon"><p id="plus">+</p></div>
 			   </a>
 			 </div>
-			
-
-			
-			<%-- <h3>${famMember} 님의 복용관리 입니다.</h3><br><br> --%>
-			
-			
+			 <div id="doseTitleBox">
+					<h2>복 용 관 리</h2>
+				</div>
 				<div id="doseBox">
 					<div id="calendarBox">
 						<div id='calendar'></div>
