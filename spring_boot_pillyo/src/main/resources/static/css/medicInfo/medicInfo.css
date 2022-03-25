@@ -11,7 +11,7 @@ ul li{
 }
 
 #GMIbox, #HTTMbox, #MFEUbox {
-	display:none;
+	display: block;
 }
 
 #dropdownInfoBox {
@@ -22,12 +22,8 @@ ul li{
     box-shadow: 0px 0px 6px #dadada;
     color: #333;
     padding-top: 30px;
-    
     padding-bottom: 30px;
 }
-
-    
-
 
 #dropdownInfoBox h1 {
 	display: inline;
@@ -49,6 +45,7 @@ ul li{
     padding: 10px;
     font-size: 16px;
     color: #1c1c1c;
+    margin-top: 15px;
 }
 
 .infoBox h2 {
@@ -61,7 +58,8 @@ ul li{
 	background: #fafafa;
     border-radius: 15px;
     padding: 10px 20px;
-        margin-top: 11px;
+    margin-top: 11px;
+    line-height: 30px;
 }
 
 .info > ul {
@@ -80,6 +78,7 @@ ul li{
 	    background: #efefef;
     border-radius: 10px;
     padding: 18px;
+        line-height: 30px;
 }
 
 #drugExpirationBox > ul > li {

@@ -104,7 +104,7 @@
 											<input type="hidden" name="userHp" id="userHp" />
 									</td>
 									</tr>
-								<tr>
+								<tr id="addTr">
 									<td class="col1">주소 </td>
 									<td class="col2"><input type="text" name="userZipcode" id="userZipcode" readonly> 
 									<input type="button" class="btn2" id="searchZip" name="searchZip" value="우편번호찾기" readonly><br>

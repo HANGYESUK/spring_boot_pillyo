@@ -21,7 +21,7 @@
 			<section id="section">
 				<div id="mapHeader">
 					<h1>내 주변 약국 찾기</h1>
-					<h5><a href="https://www.pharm114.or.kr/common_files/sub1_page1.asp">> 휴일지킴이 약국 검색 바로가기</a></h5>
+					<h5><a href="https://www.pharm114.or.kr/common_files/sub1_page1.asp" target="_blank">> 휴일지킴이 약국 검색 바로가기</a></h5>
 				</div>
 				<div class="map_wrap">
 				    <div id="map" style="width:100%;height:100%;position:relative;overflow:hidden;"></div>

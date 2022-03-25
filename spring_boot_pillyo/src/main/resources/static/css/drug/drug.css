@@ -4,7 +4,7 @@
  	    color: #333;
  	 margin-left: 11px;
  }
- /* �뒪�겕濡ㅻ컮 �뾾�븷湲� */
+ /* 占쎈뮞占쎄쾿嚥▲끇而� 占쎈씨占쎈막疫뀐옙 */
 body{
  -ms-overflow-style: none;
  }
@@ -15,7 +15,7 @@ body{
 #searchResult{
 	width: 1050px;
 	display:flex;
-	flex-wrap: wrap; /* 諛뺤뒪 �겕湲곗븞�뿉�꽌 以꾨컮轅� */
+	flex-wrap: wrap; /* 獄쏅벡�뮞 占쎄쾿疫꿸퀣釉욑옙肉됵옙苑� 餓κ쑬而�饔낉옙 */
 	justify-content: start;
 	
 }
@@ -68,7 +68,7 @@ body{
 }
 .itemName{
     margin-left: 11px;
-   	    font-size: 22px;
+   	    font-size: 19px;
 	font-weight: bold;
 }
 .entpName{
@@ -93,4 +93,8 @@ body{
     background: #fdfaf8;
     border-radius: 10px;
     padding-bottom: 5%;
+}
+
+#footer {
+	padding: 25px 0;
 }

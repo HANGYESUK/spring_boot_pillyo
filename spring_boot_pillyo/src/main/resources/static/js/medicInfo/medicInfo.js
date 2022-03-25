@@ -37,30 +37,30 @@ $(document).ready(function(){
 /* [ 1. 일반 의약품 안내 ] 상자 열기 */
 function openGMIGroup() {
 	var GMIbox = document.getElementById("GMIbox");
-	if(GMIbox.style.display=='block'){
-		GMIbox.style.display = 'none';
-	} else {
+	if(GMIbox.style.display=='none'){
 		GMIbox.style.display = 'block';
+	} else {
+		GMIbox.style.display = 'none';
 	}
 }
 
 /* [ 2. 의약품 복용법 ] 상자 열기 */
 function openHTTMGroup() {
 	var HTTMbox = document.getElementById("HTTMbox");
-	if(HTTMbox.style.display=='block'){
-		HTTMbox.style.display = 'none';
-	} else {
+	if(HTTMbox.style.display=='none'){
 		HTTMbox.style.display = 'block';
+	} else {
+		HTTMbox.style.display = 'none';
 	}
 }
 
 /* [ 3. 외용약 사용법 ] 상자 열기 */
 function openMFEUGroup() {
 	var MFEUbox = document.getElementById("MFEUbox");
-	if(MFEUbox.style.display=='block'){
-		MFEUbox.style.display = 'none';
-	} else {
+	if(MFEUbox.style.display=='none'){
 		MFEUbox.style.display = 'block';
+	} else {
+		MFEUbox.style.display = 'none';
 	}
 }
 

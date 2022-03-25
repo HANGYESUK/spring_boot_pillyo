@@ -92,7 +92,9 @@
     position: relative;
     /* padding-bottom: 18px; */
     border-bottom: 1px solid #6d6d6d82;
-    margin-bottom: 35px;
+    margin: 0 auto 35px auto;
+    text-align: center;
+    width: 300px;
 }
 
 #doseTitleBox > h2 {
