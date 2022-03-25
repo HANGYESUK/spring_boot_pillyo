@@ -21,6 +21,7 @@ public interface IBoardDAO {
 	void insertcomment(CommentVO vo);
 	void deleteComment(int commentNo);
 	
-	
+	//관리자메뉴
+	ArrayList<BoardVO> a_listAllBoard();
 
 }

@@ -32,7 +32,7 @@
 		<meta charset="UTF-8">
 		<title>관리자 메인</title>
 		<script src="<c:url value='/js/jquery-3.6.0.min.js'/>"></script>
-		
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	</head>
 	<body>
 		<div id="wrap">
@@ -52,23 +52,26 @@
 						
 						<div class="adminInfoBox">
 							<div id="userCnt">
-							 	회원수:
+							<i class="material-icons">account_circle</i> &nbsp;
+								회원수:
 								<span>${userCnt}명</span>
 							</div>
 						</div>
 						
 						<div class="adminInfoBox">
-								방문자수 : 
+						<i class="material-icons">groups</i>&nbsp;
+							 방문자수 : 
 								<span><%=application.getAttribute("count")%>명</span>
 						</div>
 						
 						<div class="adminInfoBox">
+						<i class="material-icons">sms</i>&nbsp;
 								문자 건수: 건
 						</div>	
 					</div>					
 				
 				<div id="adminbottomArticle" >
-					<img src="" alt="" onerror="this.src='/img/medicap.jpg'" width="1000px" height="500px"/>
+					<img src="" alt="" onerror="this.src='/img/medicap.jpg'" width="100%" height="500px"/>
 					
 				</div>
 					

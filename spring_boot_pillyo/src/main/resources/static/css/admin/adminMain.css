@@ -110,6 +110,9 @@ ul,li{
 	list-style:none;
 	display: none;
 }
+
+/* 관리자 메인  */
+
 #adminSection{
 	width: 100%;
 	display: flex;
@@ -121,16 +124,25 @@ ul,li{
 	display: flex;
     flex-direction: row;
 }
+.adminInfoBox i{
+	line-height: 100px;
+}
 
 .adminInfoBox{
 	display: flex;
+	flex-direction:row;
+	justify-content: center;
 	margin: 0 20px;
 	width:300px;
 	height: 100px;
-	border: 2px solid #cdcdcd;
-	border-radius: 10px;
+	/* border: 2px solid #cdcdcd; */
+	border-bottom: 2px solid black;
+	/* border-radius: 10px; */
 	line-height: 100px;
-	justify-content: center;
+	background: fffcf8;
+	
+	font-size: 20px;
+	font-weight: 600;
 }
 .adminInfoBox div span{
 	font-weight: bold;
@@ -143,4 +155,5 @@ ul,li{
 	border-radius: 10px;
 	margin-top: 20px;
 	justify-content: space-around;
+	overflow: hidden;
 }

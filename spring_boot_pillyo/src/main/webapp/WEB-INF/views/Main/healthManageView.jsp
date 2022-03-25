@@ -25,6 +25,8 @@
 			
 			<section id="section" class="calum">
 			
+			<jsp:include page="/WEB-INF/views/Main/subSideMenu.jsp" flush='true' />
+			
 			<div class="fam-List calum">
 				 <c:forEach items="${famList }" var="fam">
 				   	<a href="<c:url value='/healthManageView/${fam.famNo}'/>">

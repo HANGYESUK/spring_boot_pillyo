@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.pillyo.pill.model.AdminVO;
+import com.pillyo.pill.model.BoardVO;
 import com.pillyo.pill.model.DrugInfoVO;
 import com.pillyo.pill.model.DrugShapeVO;
 import com.pillyo.pill.model.FamilyVO;
@@ -25,6 +26,7 @@ import com.pillyo.pill.model.UserVO;
 import com.pillyo.pill.paging.Criteria;
 import com.pillyo.pill.paging.PageMakerDTO;
 import com.pillyo.pill.service.AdminService;
+import com.pillyo.pill.service.BoardService;
 import com.pillyo.pill.service.DrugService;
 import com.pillyo.pill.service.DrugShapeService;
 import com.pillyo.pill.service.FamilyService;
@@ -45,6 +47,8 @@ public class AdminController {
 	DrugShapeService sservice;
 	@Autowired
 	FamilyService famservice;
+	@Autowired
+	BoardService bservice;
 	
 	// 로그인 폼으로 이동
 		@RequestMapping("/adminloginForm")
@@ -211,6 +215,13 @@ public class AdminController {
 			return "admin/a_listAllDrugShapeView";
 		}
 		
+		//관리자 메뉴 - 게시판
+		@RequestMapping("/a_listAllBoard")
+		public String a_listAllBoard(Model model) {
+			ArrayList<BoardVO> boardList = bservice.a_listAllBoard();
+			model.addAttribute("boardList", boardList);
+			return "admin/a_listAllBoardView";
+		}
 		
 		
 }

@@ -43,7 +43,7 @@
 					 	</thead>
 					 	<c:forEach items="${shapeList}" var="shape">
 					 		<tr>
-					 		<td><img src="${shape.itemImage }" alt="약정보" onerror="this.src='/img/fill_null.png'" width="50px" height="25px"/></td>
+					 		<td><img src="${shape.itemImage }" alt="약정보" onerror="this.src='/img/fill_null.png'" width="80px" /></td>
 					 		<td>${shape.itemName }</td>
 					 		<td>${shape.entpName }</td>
 					 		<td>${shape.itemSeq }</td>

@@ -40,7 +40,7 @@
 						<li ><a href="/listAllDrug">약 정보 관리</a></li>
 						<li><a href="/listAllDrugShpae">약 모양 관리</a></li>
 						<li><a href="">알림 관리</a></li>
-						<li><a href="">게시판 관리</a></li>
+						<li><a href="/a_listAllBoard">게시판 관리</a></li>
 					</ul>
 					</li>
 				</ul>

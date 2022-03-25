@@ -20,4 +20,7 @@ public interface IBoardService {
 	ArrayList<BoardVO> listAllBoardQna4();
 	ArrayList<BoardVO> listAllBoardQna5();
 	void insertcomment(CommentVO vo);
+	
+	//관리자메뉴
+	ArrayList<BoardVO> a_listAllBoard();
 }
