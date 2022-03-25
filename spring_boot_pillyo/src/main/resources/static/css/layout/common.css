@@ -8,6 +8,7 @@ font-family: 'Nanum Gothic', sans-serif;
 
 body {
 	background:#fcf8f4a1;
+	margin:0;
 }
 
 #wrap {
@@ -19,7 +20,8 @@ body {
 #logoBox > a > img {
 	width: 161px;
     height: 62px;
-    margin-left: 68px;
+        margin-left: 13px;
+    margin-top: 13px;
 }
 
 /* --------- section ------------ */
@@ -30,7 +32,7 @@ body {
 #section {
     margin: 0 auto;
     opacity: 100%;
-    background-color: #fcf8f4a1;
+    background-color: #fdfaf8;
     border-radius: 10px;
     padding: 0 150px 6% 150px;
 }

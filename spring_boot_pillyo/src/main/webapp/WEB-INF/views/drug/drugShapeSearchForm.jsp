@@ -14,7 +14,7 @@
 		<script src="<c:url value='/js/drugShapeSearchForm.js'/>"></script>
 		<style>
 		#search_result_container{
-			background: #fcf9f5;
+			/* background: #fcf9f5; */
 			    padding-top: 1px;
 			    
 		}

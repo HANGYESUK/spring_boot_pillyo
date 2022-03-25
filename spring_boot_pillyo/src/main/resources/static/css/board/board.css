@@ -167,8 +167,7 @@ th{
 
 .ctgMenuItemSub {
 	display:none;
-	
-    color: rgb(96 122 179);
+	color: rgb(73 73 73 / 71%);
     font-weight: 400;
 	
 }
@@ -184,7 +183,7 @@ th{
     position: relative;
     /* padding-bottom: 18px; */
     border-bottom: 1px solid #6d6d6d82;
-    margin-bottom: 35px;
+    margin-bottom: 7px;
 }
 
 #subTitle2 {

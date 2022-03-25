@@ -24,8 +24,8 @@
 			<div id="headerBox">
 				<div id="logoBox">
 					<a href="/">
-					<!-- <img src="/image/drugImg.png">  -->
-					알약요
+					 <img src="/image/pillyotitle2.png"> 
+					
 					</a>
 				</div><!-- logoBox -->
 				

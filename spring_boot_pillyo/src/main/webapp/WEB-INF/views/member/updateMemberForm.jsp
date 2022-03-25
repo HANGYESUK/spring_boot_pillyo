@@ -92,6 +92,21 @@
 .insert{
     padding-left: 112px;
 }
+
+#subTitle {
+	font: bold 36px Avenir, Arial, georgia;
+    color: #222222;
+    /* padding-top: 30px; */
+    position: relative;
+    /* padding-bottom: 18px; */
+    border-bottom: 1px solid #6d6d6d82;
+    margin-bottom: 35px;
+}
+
+#subTitle > h2 {
+	    font-size: 30px;
+}
+
 	</style>
 	
 	<body>
@@ -106,10 +121,10 @@
 		
 			<!-- 마이 페이지 메뉴 -->
 			<jsp:include page="/WEB-INF/views/member/myPageMenu.jsp" flush='true' />
-		
+		 <div id="subTitle"><h2>개인 정보수정</h2></div>
 				<div id="updateUserBox">
-					<h2 align="center" style="font-weight: 500;">회원 정보수정</h2>
-					<br><br>
+					<!-- <h2 align="center" style="font-weight: 500;">회원 정보수정</h2> -->
+					
 					<!-- <hr "styl> -->
 					<form name="updateUserForm" id="updateUserForm" method="post" action="<c:url value='/updateUser'/>">
 						<div class="container">

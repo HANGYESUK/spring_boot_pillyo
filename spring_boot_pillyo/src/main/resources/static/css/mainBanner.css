@@ -36,12 +36,12 @@ a {
 
 /* 占쎈뮩占쎌뵬占쎌뵠占쎈쐭 1 占쎈뻻占쎌삂 */
 .slider-1 {
- height: 215px;
+     height: 255px;
     position: relative;
-    width: 1046px;
+    width: 100%;
 }
 article{
-	padding-left: 85px;
+	/* padding-left: 85px; */
 	margin-bottom: 50px;
 	
 }

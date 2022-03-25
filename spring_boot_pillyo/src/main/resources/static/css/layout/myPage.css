@@ -2,22 +2,20 @@
 
 
 #myPageItemBox{
-	     margin-top: 11px;
+	  margin-top: 100px;
     /* background-color: #f6f9ff; */
-    width: 10.8%;
+    width: 143px;
     border-radius: 42px 42px 42px 42px;
     height: 242px;
     padding-top: 20px;
-    margin: 0 auto;
+    /* margin: 0 auto; */
     float: left;
     padding-left: 6px;
     padding-right: 0px;
-    
     border: 1px solid white;
     background: white;
     box-shadow: 0px 0px 6px #dadada;
-    
-    color: #3f63b3;
+    color: #606060;
     font-weight: normal;
 }
 #myPageItemBox li{
@@ -30,13 +28,13 @@ text-decoration:none;
         font-size: 18px;
     margin-bottom: 5px;
     
-        color: #3f63b4;
+        color: #333;
 }
 
 #myPageItemBox li a:hover{
-	color: #3f63b3;
+	color: #333;
     
-	 color: #3f63b3;
+	 /* color: #3f63b3; */
 	 font-size:20px;
 	 font-weight: 700;
 	}
