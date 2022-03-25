@@ -10,6 +10,7 @@
     padding-top: 100px;
         position: relative;
     top: 32px;
+    
 }
 #title{
 	text-align: center;
@@ -185,6 +186,7 @@ button:hover{
     /* background: linear-gradient(128deg, #f3f7ff, #f2f4ff); */
     border-radius: 80px;
     height:960px;
+    margin-top: -35px;
 }
 
 #section3{

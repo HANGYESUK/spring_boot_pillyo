@@ -269,7 +269,7 @@
 							  		<c:if test="${board.boardCtgNo eq '2'}">
 							  			<tr class="drugBox2">
 							  				<td>건강관리</td>
-							  				<td><a href="<c:url value='/boardDetailView/${board.boardNo}'/>">${board.boardTitle }</a></td>
+							  				<td style="width: 70%;"><a href="<c:url value='/boardDetailView/${board.boardNo}'/>">${board.boardTitle }</a></td>
 <%-- 											<td>${board.boardWriteDate}</td>
  --%>										</tr>
 							  		</c:if>
@@ -316,7 +316,7 @@
 							  		<c:if test="${board.boardCtgNo eq '2'}">
 							  			<tr class="drugBox3">
 							  				<td>건강관리</td>
-							  				<td><a href="<c:url value='/boardDetailView/${board.boardNo}'/>">${board.boardTitle }</a></td>
+							  				<td style="width: 70%;"><a href="<c:url value='/boardDetailView/${board.boardNo}'/>">${board.boardTitle }</a></td>
 <%-- 											<td>${board.boardWriteDate}</td>
  --%>										</tr>
 							  		</c:if>
@@ -342,7 +342,7 @@
 							  		<c:if test="${board.boardCtgNo eq '3'}">
 							  			<tr class="drugBox3">
 							  				<td>우리집약관리</td>
-							  				<td><a href="<c:url value='/boardDetailView/${board.boardNo}'/>">${board.boardTitle }</a></td>
+							  				<td style="width: 70%;"><a href="<c:url value='/boardDetailView/${board.boardNo}'/>">${board.boardTitle }</a></td>
 <%-- 											<td>${board.boardWriteDate}</td>
  --%>										</tr>
 							  		</c:if>
@@ -368,7 +368,7 @@
 							  		<c:if test="${board.boardCtgNo eq '4'}">
 							  			<tr class="drugBox3">
 							  				<td>복용관리</td>
-							  				<td><a href="<c:url value='/boardDetailView/${board.boardNo}'/>">${board.boardTitle }</a></td>
+							  				<td style="width: 70%;"><a href="<c:url value='/boardDetailView/${board.boardNo}'/>">${board.boardTitle }</a></td>
 <%-- 											<td>${board.boardWriteDate}</td>
  --%>										</tr>
 							  		</c:if>
@@ -394,7 +394,7 @@
 							  		<c:if test="${board.boardCtgNo eq '5'}">
 							  			<tr class="drugBox3">
 							  				<td>회원</td>
-							  				<td><a href="<c:url value='/boardDetailView/${board.boardNo}'/>">${board.boardTitle }</a></td>
+							  				<td style="width: 70%;"><a href="<c:url value='/boardDetailView/${board.boardNo}'/>">${board.boardTitle }</a></td>
 <%-- 											<td>${board.boardWriteDate}</td>
  --%>										</tr>
 							  		</c:if>

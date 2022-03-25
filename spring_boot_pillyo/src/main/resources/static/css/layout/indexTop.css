@@ -10,28 +10,29 @@ font-family: 'Nanum Gothic', sans-serif;
 #headerBox {
 	position: fixed;
     width: 100%;
-    height: 42px;
-    background: white;
+    height: 47px;
+    background: #388a6b;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
     padding: 5px;
     z-index: 999;
+    height: 95px;
 }
 
 #navBox {
 	display: inline-block;
     position: absolute;
     top: 10%;
-    left: 6%;
+    left: 13%;
 }
 
 #topMenu {
   height: 30px;
   width: 550px;
   position: relative;
-  background-color: white;
+  background: #388a6b;
 }
 
 #topMenu ul {
@@ -43,14 +44,17 @@ font-family: 'Nanum Gothic', sans-serif;
 #topMenu ul li {
   color: white;
   float: left;
-  line-height: 34px;
+  line-height: 37px;
   vertical-align: middle;
   text-align: center;
   position: relative;
+  
 }
 
 .topMenuLi:hover .menuLink {
-  color: #257f59;
+  color: white;
+  font-size:18px;
+  border-bottom: 1px solid #ffffff;
 }
 
 .topMenuLi:hover .submenu {
@@ -68,9 +72,13 @@ font-family: 'Nanum Gothic', sans-serif;
 
 .menuLink {
   font-size: 18px;
-  color: #333;
+  color: white;
   font-weight: 600;
+  
 }
+
+
+
 
 .submenu {
   position: absolute;
@@ -96,19 +104,19 @@ font-family: 'Nanum Gothic', sans-serif;
 .submenuLink {
   font-size: 15px;
   margin: 0 10px;
-  color: #000000;
+  color: #e8e8e8;
   font-weight: normal;
 }
 
 .submenuLink:hover {
-  color: rgb(0, 0, 0);
+  color: #ffffff;
 }
 
 .submenuLink:after {
   display: block;
   width: 100%;
   content: "";
-  border-bottom: solid 2px #257f59;
+  border-bottom: solid 2px #05a96b;
   transform: scaleX(0);
   transition: transform 250ms ease-in-out;
 }
@@ -130,13 +138,16 @@ font-family: 'Nanum Gothic', sans-serif;
 }
 
 #searchBar {
-    margin-top: 3px;
+        margin-top: 11px;
     background: white;
-    border: 2px solid #e6e6e6;
-    width: 580px;
-    height: 38px;
-    line-height: 38px;
-    border-radius: 50px;
+    border: none;
+    /* border: 1px solid #ffffff; */
+    /* width: 575px; */
+    width: 450px;
+    box-shadow: 1px 1px 1px 1px #white;
+    height: 39px;
+    line-height: 39px;
+    border-radius: 16px;
     padding: 0px 20px;
 }
 
@@ -147,7 +158,8 @@ font-family: 'Nanum Gothic', sans-serif;
 .inputSearch {
 	background: white;
     margin-left: 13px;
-    width: 540px;
+    /* width: 540px; */
+    width: 408px;
     font-size: 15px;
     height: 28px;
     border: none;
