@@ -22,7 +22,7 @@ input[type=checkbox]{
 }
 #drugShapeSearchTitle a{
 	text-decoration: none;
-	color: #2a4885;
+	    color: #333;
 }
 
 #drugShapeSearchForm table {
@@ -55,13 +55,14 @@ input[type=checkbox]{
     height: 100%;
     text-align: center;
     line-height: 52px;
+        color: #333;
 }
 
 #drugShapeSearchForm th{
 	
     background-color: #ffffff;
     /* box-shadow: 1px 1px 5px 1px #5e7cbf; */
-    color: #5e7cbf;
+  	color: #333;
     box-shadow: 0 4px 5px rgb(122 122 122 / 20%);
     border-radius: 10px;
 }
@@ -91,7 +92,7 @@ input[type=checkbox]{
 	    width: 65px;
     background-color: #ffffff;
     /* box-shadow: 1px 1px 5px 1px #5e7cbf; */
-    color: #5e7cbf;
+   color: #388a6b;
     box-shadow: 0 4px 5px rgb(122 122 122 / 20%);
     border-radius: 10px;
 }
@@ -100,7 +101,7 @@ input[type=checkbox]{
     width: 274px;
     background-color: #ffffff;
     /* box-shadow: 1px 1px 5px 1px #5e7cbf; */
-    color: #5e7cbf;
+    color: #388a6b;
     box-shadow: 0 4px 5px rgb(122 122 122 / 20%);
     border-radius: 10px;
 }
@@ -213,7 +214,7 @@ label[for="cTrans"] {
 
 /* 占쏙옙튼 */
 #DSSbtn {
-	background-color: #5e7cbf;
+	background-color: #579c82;
     color: white;
 	width: 100%;
     height: 42px;
@@ -227,4 +228,5 @@ label[for="cTrans"] {
 
 img {
 	cursor: pointer;
+	margin-bottom: 10px;
 }

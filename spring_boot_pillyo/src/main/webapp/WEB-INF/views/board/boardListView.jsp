@@ -51,21 +51,23 @@
 	#more-Btn h3{
 		text-align:center;
    	    margin: 10px 10px 10px 0px;
+   	    color: #388a6b;
    	}
    		#more-Btn2{
-		color: #3f63b5;
+		color: #388a6b;
 		display:none;
    	}
 	
 	#more-Btn2 h3{
 		text-align:center;
    	    margin: 10px 10px 10px 0px;
+   	    color: #388a6b;
    	}
    	
    	.b{
    	font-size: 30px;
     padding-left: 14px;
-    color: #3f63b4;
+    color: #388a6b;
     font-weight: 500;
    	}
    	
@@ -90,7 +92,15 @@
 				<div id="navMargin"></div>
 				
 				
-				  <article>             
+				 
+
+
+		
+		
+		<section id="section" style="    padding-top: 1px;">
+				            <jsp:include page="/WEB-INF/views/member/myPageMenu2.jsp" flush='true' />
+				            <div id="subTitle"><h2>공지사항</h2></div>
+		 <article>             
 		                <div class="slider-1">
 		                    <div class="slides">
 		                        <div class="active" style="background-image:url(image/slide_img_01.jpg);"></div>
@@ -115,13 +125,6 @@
 		                    </div>
 		                </div>
 		            </article> 
-
-
-
-		
-		
-		<section id="section" style="    padding-top: 1px;">
-				            <jsp:include page="/WEB-INF/views/member/myPageMenu2.jsp" flush='true' />
 		
 		
 <!-- 		<div id="sidemenu">		

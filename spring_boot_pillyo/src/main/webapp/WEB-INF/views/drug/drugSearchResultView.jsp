@@ -32,30 +32,28 @@
 		}
 		#searchBody{
 		
-		background: linear-gradient(
-0deg
-, #f7f9fb, #ffffff);
+		    background: linear-gradient( 0deg , #fcf9f5, #fcf9f5);
 }
 #search_result_container{
-background: white;
+    background: linear-gradient( 0deg , #fcf9f5, #fcf9f5);
     padding-top: 1px;
 }
 
 #search_result_container > h3{
-color: #0d3bb1;
+color: #3c3c3c;;
     font-size: 24px;
 }
 
 #search_result_container > small{
 font-size: 20px;
-    color: #3d61c0;
+    color: #333;
 }
 .displayNone {
 		display:none;
 	}
 	
 	#more-Btn > h3{
-	color: #0d3bb1;
+	    color: #388a6b;
     font-size: 35px;
     
     width: 200px;

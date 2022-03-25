@@ -20,7 +20,7 @@
 	}
 	#button2{
 	     background: white;
-    color: #3f63b5;
+        color: #388a6b;
     border-color: #f2f9fb;
     height: 38px;
     width: 70px;
@@ -28,7 +28,7 @@
     font-size: 15px;
     
     float: right;
-    margin-right: 127px;
+    /* margin-right: 127px; */
     
        /*  background: white;
     color: #3f63b5;
@@ -45,7 +45,7 @@
     border: 0;
 	}
 	td > textarea{
-	    color: #3f63b5;
+	color: #388a6b;
     height: 40px;
     font-size: 20px;
     background: #f4faff;
@@ -92,9 +92,18 @@ text-align:center;
 
 		<section>		
 			<form id="updateBoardForm" method="post" action="<c:url value='/updateBoard/${board.boardNo}'/>">					
+				<div id="subTitle2"><h2>알약요
+		<c:if test="${board.boardCtgNo eq '0'}">소식</c:if>
+						<c:if test="${board.boardCtgNo eq '1'}">카드뉴스</c:if>
+						<c:if test="${board.boardCtgNo eq '2'}">건강관리</c:if>
+						<c:if test="${board.boardCtgNo eq '3'}">우리집약관리</c:if>
+						<c:if test="${board.boardCtgNo eq '4'}">복용관리</c:if>
+						<c:if test="${board.boardCtgNo eq '5'}">회원</c:if>
+		Q&A</h2></div>
+				
 				<table class="table table-striped">
 					<thead>
-						<tr>
+						<%-- <tr>
 							
 							<th width=600px; colspan="3" style="">알약요
 						<c:if test="${board.boardCtgNo eq '0'}">소식</c:if>
@@ -105,7 +114,7 @@ text-align:center;
 						<c:if test="${board.boardCtgNo eq '5'}">회원</c:if>
 						Q&A
 						</th>
-						</tr>
+						</tr> --%>
 						
 						<tr>
 						<!-- <td style="width: 20%;">글 제목</td> -->
@@ -117,10 +126,10 @@ text-align:center;
 					</thead>
 					<tbody>
 						<tr>
-							<td><textarea rows="1" cols="50" placeholder="글 제목"  name="boardTitle" maxlength="50" style="    resize: none;">${board.boardTitle}</textarea></td>
+							<td><textarea rows="1" cols="50" placeholder="글 제목"  name="boardTitle" maxlength="50" style="      background: #ffffff;  resize: none; color:">${board.boardTitle}</textarea></td>
 						</tr>
 						<tr>
-							<td><textarea class="form-control" placeholder="글 내용" rows="10" cols="50" name="boardContent" maxlength="2048" style="height: 350px; text-align: left;     resize: none;
+							<td><textarea class="form-control" placeholder="글 내용" rows="10" cols="50" name="boardContent" maxlength="2048" style="height: 650px; text-align: left;      background: white;   resize: none;
 ">${board.boardContent}</textarea>
 							</td>
 						</tr>

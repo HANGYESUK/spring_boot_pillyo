@@ -58,11 +58,12 @@
 	    float: left;
 	}
 	td > textarea{
-	    color: #3f63b5;
+	    /* color: #3f63b5;
     height: 40px;
     font-size: 20px;
     background: #cfe3f6;
-    border-color: aliceblue;
+    border-color: aliceblue; */
+    
 
 	}
 	
@@ -73,7 +74,7 @@
     text-align: center;
     font-size: 19px;
 	width: 95px;
-    color: #3f63b5;
+    color: #388a6b;
     border-radius: 10px;
     border-color: #f2f9fb;
     font-weight: 400;
@@ -106,7 +107,7 @@
     
     #pagego{
     background: white;
-    color: #3f63b5;
+    color: #388a6b;
     border-color: #f2f9fb;
     height: 38px;
     width: 93px;
@@ -137,12 +138,13 @@
 	<div class="layout">
 		<form id= "boardForm" name="boardForm" enctype="multipart/form-data" method="post" action="<c:url value='/insertboard'/>"> <!--  writedo로 넘겨주고 post방식으로 넘겨주겠다 -->
 		<br>															<%-- method="post" action="<c:url value='/insertboard'/>" --%>
+		<div id="subTitle2"><h2>글쓰기</h2></div>
 		<table class="table table-striped" style="width:500px;">
 		<!-- 실행시 form 안에 데이터가 writedo로 넘어간다 -->
 		<thead>
-			<tr>
+			<!-- <tr>
 				<th colspan="2" style="text-align: center;">공지사항 글쓰기</th>
-			</tr>	
+			</tr> -->	
 		</thead>
 		<tbody>
 		<tr>
@@ -157,27 +159,30 @@
 			</select></td>
 			</tr>
 			<tr>
-		    <td><textarea rows="1" cols="50" placeholder="글 제목"  name="boardTitle" maxlength="50" style="width: 600px;
-    border-color: #cfe2f6;
-    background: #f4faff;
-    color: #3f63b5;
-    font-size: 16px;
+		    <td><textarea rows="1" cols="50" placeholder="글 제목"  name="boardTitle" maxlength="50" style="
+    width: 1000px;
+    line-height: 75px;
+    height: 76px;
+    /* font-weight: 500; */
+    font-size: 30px;
+    padding-left: 27px;
     border: none;
+    outline: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    /* width: 600px; */
+    /* border-color: #cfe2f6; */
+    /* background: #f4faff; */
+    /* color: #3f63b5; */
+    /* font-size: 16px; */
+    /* border: none; */
     resize: none;
+    background: #ffffffa6;
     border: 1px soild #cfe2f6;
     outline: none;"></textarea></td>
 		    </tr>
 		    <tr>
-			<td><textarea class="form-control" placeholder="글 내용" rows="10" cols="50" name="boardContent" maxlength="2048" style="height: 450px;
-    width: 600px;
-    border-color: #cfe2f6;
-    background: #f4faff;
-    color: #3f63b5;
-    font-size: 16px;
-    border: none;
-    resize: none;
-    border: 1px soild #cfe2f6;
-    outline: none;" >${boardCtgList.boardContent}</textarea>
+			<td><textarea class="form-control" placeholder="글 내용" rows="10" cols="50" name="boardContent" maxlength="2048" 
+    >${boardCtgList.boardContent}</textarea>
 				
 			</td>
 		</tbody>

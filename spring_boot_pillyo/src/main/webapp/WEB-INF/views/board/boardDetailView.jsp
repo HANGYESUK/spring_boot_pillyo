@@ -33,17 +33,16 @@
 		}
 		
 		td > textarea {
-		    height: 450px;
+		      height: 450px;
     width: 600px;
     border-color: #cfe2f6;
-    background: #f4faff;
-    color: #3f63b5;
+    background: #ffffff;
+    color: #388a6b;
     font-size: 16px;
     border: none;
     resize: none;
-    border:1px soild #cfe2f6;
-    outline:none;
-    
+    border: 1px soild #cfe2f6;
+    outline: none;
     
 		}
 		
@@ -56,7 +55,7 @@
     /* border: none; */
     resize: none;
     outline: none;
-    color: #3f63b5;
+    color:  #388a6b;
     font-size: 16px;
 	}
 	.commentText:hover {
@@ -65,18 +64,18 @@
 	}
 	
 		#button2{
-		    margin-top: -7px;
-		    border: 0;
-	    background: white;
-    color: #3f63b5;
+		margin-top: 0px;
+    border: 0;
+    background: white;
+    color: #388a6b;
     border-color: #f2f9fb;
     height: 38px;
     width: 70px;
     border-radius: 10px;
     font-size: 15px;
-    
-        float: left;
+    float: left;
     margin-right: 127px;
+    margin-left: 5px;
 }
 
 #button2:hover{
@@ -90,12 +89,12 @@
 #commentAllForm{
 	    padding-top: 12px;
 	    float: right;
-    
-    margin-right:-152px;
+        margin-right: -128px;
+ 
 }    
 		.commentName{
 		font-size: 23px;
-    color: #3f63b5;
+    color:  #388a6b;
     font-weight: 400;
     height: 10px;
     padding-left: 33px;
@@ -120,7 +119,6 @@
     padding-left: 23px;
     height: 307px;
     margin-top: -121px;
-    width: 833px;
     text-align: center;
     overflow-y: scroll;
     border-color: #f7f7f7;
@@ -145,13 +143,13 @@
 /* 스크롤바 막대 설정*/
 #commentAllListForm::-webkit-scrollbar-thumb{
     height: 17%;
-    background-color: #3f63b5;
+    background-color:  #388a6b;
     border-radius: 10px;  
 }
 
 /* 스크롤바 뒷 배경 설정*/
 #commentAllListForm::-webkit-scrollbar-track{
-    background-color: #becae6;
+    background-color:   #388a6b;
 }
 	</style>
 	
@@ -169,10 +167,19 @@
 		<!-- 게시판 글 보기 양식 영역 시작 -->
 	<div class="container">
 		<div class="row">
+		<div id="subTitle2"><h2>알약요
+		<c:if test="${board.boardCtgNo eq '0'}">소식</c:if>
+						<c:if test="${board.boardCtgNo eq '1'}">카드뉴스</c:if>
+						<c:if test="${board.boardCtgNo eq '2'}">건강관리</c:if>
+						<c:if test="${board.boardCtgNo eq '3'}">우리집약관리</c:if>
+						<c:if test="${board.boardCtgNo eq '4'}">복용관리</c:if>
+						<c:if test="${board.boardCtgNo eq '5'}">회원</c:if>
+		Q&A</h2></div>
+		
 			<table class="table table-stripedDetail">
-				<thead>
-					<tr>
-						<th width=600px; colspan="3" style="text-align: center; font-size:25px;">알약요
+				<%-- <thead>
+<!-- 					<tr>
+ -->						<th width=600px; colspan="3" style="text-align: center; font-size:25px;">알약요
 						<c:if test="${board.boardCtgNo eq '0'}">소식</c:if>
 						<c:if test="${board.boardCtgNo eq '1'}">카드뉴스</c:if>
 						<c:if test="${board.boardCtgNo eq '2'}">건강관리</c:if>
@@ -182,34 +189,37 @@
 						Q&A
 						</th>
 						
-					</tr>
+					<!-- </tr> -->
+					
 					<tr>
-					</tr>
-					<tr>
-					<th style="width:90px;">분류</th>
-					<th style="width:470px;">제목</th>
-					<!-- <th style="background-color: #eeeeee; text-align: center; width:100px;">작성자</th> -->
-					<th style="width:100px;">작성일</th>
+
+					<!-- <th style="width:470px;"></th>
+					<th style="background-color: #eeeeee; text-align: center; width:100px;">작성자</th>
+					<th style="width:100px;"></th> -->
 				</tr>
-				</thead>
+				</thead> --%>
 				<tbody>
 				<tr>
-						<!-- <td style="width: 20%;">글 제목</td> -->
+						<%-- <!-- <td style="width: 20%;">글 제목</td> -->
 						<td><c:if test="${board.boardCtgNo eq '0'}">소식</c:if>
 						<c:if test="${board.boardCtgNo eq '1'}">카드뉴스</c:if>
 						<c:if test="${board.boardCtgNo eq '2'}">건강관리</c:if>
 						<c:if test="${board.boardCtgNo eq '3'}">우리집약관리</c:if>
 						<c:if test="${board.boardCtgNo eq '4'}">복용관리</c:if>
-						<c:if test="${board.boardCtgNo eq '5'}">회원</c:if></td>
+						<c:if test="${board.boardCtgNo eq '5'}">회원</c:if></td> --%>
 					
 						<!-- <td style="width: 20%;">글 제목</td> -->
-						<td>${board.boardTitle}</td>
+						<td style="    width: 470px;
+    padding-left: 40px;  text-align: center;
+    ">${board.boardTitle}</td>
 					
 						<%-- <!-- <td>작성자</td> -->
 						<td>${board.userId}</td> --%>
 					
 						
-						<td>${board.boardWriteDate}</td>
+						<td style="    width: 100px;
+    text-align: right;
+    padding-right: 20px;">${board.boardWriteDate}</td>
 					</tr>
 					<tr>
 						<!-- <td>내용</td> -->
