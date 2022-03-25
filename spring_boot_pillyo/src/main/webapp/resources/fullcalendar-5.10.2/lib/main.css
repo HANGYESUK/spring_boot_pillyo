@@ -234,8 +234,8 @@ When it's NOT activated, the fc-button classes won't even be in the DOM.
     background-color: #1a252f;
     background-color: var(--fc-button-active-bg-color, #1a252f);
     border-color: #e1e1e1;
-    background-color: #d4deeb; /* �뜝�룞�삕�듉 �뜝�룞�삕�뜝�룞�삕 */
-    box-shadow: 1px 1px 2px 1px silver;
+    background-color: #c5dac7; /* �뜝�룞�삕�듉 �뜝�룞�삕�뜝�룞�삕 */
+    box-shadow: 1px 1px 2px 1px #e1e1e1;
     border-radius: 20px;
   }
 .fc .fc-button-primary:not(:disabled):active:focus,
@@ -304,10 +304,10 @@ When it's NOT activated, the fc-button classes won't even be in the DOM.
   }
 .fc-direction-ltr .fc-toolbar > * > :not(:first-child) {
     margin-left: .75em; /* space between */
-    background-color: #d4deeb; /* �뜝�룞�삕�듉 �뜝�룞�삕�뜝�룞�삕 */
+    background-color: #c5dac7; /* �뜝�룞�삕�듉 �뜝�룞�삕�뜝�룞�삕 */
     border-color: #e1e1e1;
     border-radius: 20px;
-    box-shadow: 1px 1px 2px 1px silver;
+    box-shadow: 1px 1px 2px 1px #e1e1e1;
 }
 
 .fc-direction-rtl .fc-toolbar > * > :not(:first-child) {
@@ -331,7 +331,7 @@ When it's NOT activated, the fc-button classes won't even be in the DOM.
 
 
 .fc .fc-scroller-liquid-absolute {
-    background: #ffffff;
+    background: #fcf9f5;
     border-radius: 12px 12px 12px 12px;
     position: absolute;
     top: 0;
@@ -754,7 +754,7 @@ A HORIZONTAL event
     z-index: 1; /* container inner z-index's because <tr>s can't do it */
   }
 .fc .fc-daygrid-day.fc-day-today {
-    background-color: #b7d2c6;
+    background-color: #c5dac7;
     height: 120px;
     border: none;
     width: 338px;

@@ -44,5 +44,9 @@ public class DoseService implements IDoseService {
 	public String doseDetailName(int ddNo) {
 		return dao.doseDetailName(ddNo);
 	}
-
+	
+	@Override
+	public String doseDetailFamName(int famNo) {
+		return dao.doseDetailFamName(famNo);
+	}
 }

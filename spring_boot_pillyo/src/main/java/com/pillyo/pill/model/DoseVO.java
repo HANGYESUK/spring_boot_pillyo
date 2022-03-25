@@ -12,6 +12,7 @@ public class DoseVO {
 	private String ddTime;
 	private int ddAmount;
 	private String doseDrugName; // 복용 상세 정보 : 약 이름
+	private String doseFamName; // 복용 상세 정보 : 약 이름
 
 	public DoseVO() { }
 
@@ -102,4 +103,13 @@ public class DoseVO {
 	public void setDoseDrugName(String doseDrugName) {
 		this.doseDrugName = doseDrugName;
 	}
+
+	public String getDoseFamName() {
+		return doseFamName;
+	}
+
+	public void setDoseFamName(String doseFamName) {
+		this.doseFamName = doseFamName;
+	}
+	
 }

@@ -86,9 +86,14 @@ public class DoseController {
 		doseVo.setDoseDrugName(doseDrugName);
 		model.addAttribute("doseVo", doseVo);
 		
+		int doseFamNo = doseVo.getFamNo();
+		String doseFamName = doseService.doseDetailFamName(doseFamNo);
+		doseVo.setDoseFamName(doseFamName);
+		
 		
 		
 		model.addAttribute("doseDrugName", doseDrugName);
+		model.addAttribute("doseFamName", doseFamName);
 		
 		return "/dose/doseDetailView";
 	}
