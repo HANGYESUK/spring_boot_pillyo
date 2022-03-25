@@ -1,21 +1,80 @@
 /* adminMain.css */
 
+
 a{
 	text-decoration: none;
 	color: black;
 }
+
 #adminContainer{
 	display: flex;
 	flex-wrap: nowrap;
 }
-
-#adminBox{
-	border-radius: 8px;
-    border: 2px solid #cdcdcd;
-	width:210px;
-	height:100%;
-	text-align: center;
+#updateUserBox{
+	width: 90%;
 }
+#adminBox{
+	/* border: 2px solid #cdcdcd;
+	width:210px;
+	height:100vh;
+	text-align: center; */
+	
+	  		/* position: fixed; */
+           /*  top: 170px; */
+            /* width: 200px; */
+            /* z-index: 10; */
+            /* left: 45px; */
+            width: 300px;
+            background: white;
+            border-right: 1px solid rgba(0, 0, 0, 0.07);
+            bottom: 50px;
+            height: 100%;
+            margin-bottom: -70px;
+            margin-top: 0px;
+            padding-bottom: 0px;
+            box-shadow: 0 0px 24px 0 rgb(0 0 0 / 6%), 0 1px 0px 0 rgb(0 0 0 / 2%);
+            color: black;
+}
+#adminItemMenu h2{
+	   padding-bottom: 4px;
+        border-bottom: 3px solid #797979;
+        margin-top: 30px;
+        font-size: 21px;
+        font-weight: 600;
+        color: #333;
+        margin-left: 10px;
+        margin-right: 10px;
+        font-family: 'NotoKrB';
+        line-height: 35px;
+
+	
+}
+#adminItemMenu ul,li{
+	list-style: none;
+}
+ul,li{
+	margin-bottom: 10px;
+}
+.adminItem-big{
+	 cursor: pointer;
+}
+.adminItem-big>li>a{
+	font-size: 17px;
+	font-weight: bold;
+	
+}
+.adminItem-big>li{
+	border-bottom: 1px solid black;
+}
+.adminItem li{
+	color: #333;
+    font-size: 14px;
+    /* font-weight: 600; */
+    border-bottom: 0px solid #e1e1e1;
+    margin-left: 14px;
+    padding-top: 8px;
+}
+
 .tableBox{
 	display: flex;
 	flex-direction: column;
@@ -23,6 +82,7 @@ a{
 #adminItemMenu,
 #adminUserMenu{
 	padding: 0px;
+	
 }
 
 .adminItemTitle{
@@ -37,8 +97,10 @@ a{
 	padding: 10px 0;
 	box-sizing: border-box;
 }
-.adminItem:hover{
-	background-color:#d9eafe;
+.adminItem li:hover{
+	/* background-color:#d9eafe; */
+	   color: ff5858;
+            background-color: #e1e1e1;
 }
 
 .adminDrugItem{

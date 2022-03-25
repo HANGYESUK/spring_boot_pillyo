@@ -1,3 +1,13 @@
+#adminTableBox{
+	width: 1280px;	
+	display: flex;
+	flex-direction: column;
+}
+#adminTitle{
+	width: 90%;
+	 margin-left: 10px;
+	border-bottom: 2px solid black;
+}
 
 table.adminTable {
 	width:90%;
@@ -22,8 +32,28 @@ table.adminTable td {
 	/* font-size: 11px; */
 }
 
-#adminTableBox{
-	width: 1280px;	
-	display: flex;
-	flex-direction: column;
-}
+	.search_area{
+				text-align: center;
+				}
+			 .pageInfo{
+				 display: table;
+    			margin: 0 auto;
+			 	text-align:center;
+			  	list-style : none;
+			  	/* display: inline-block; */
+			    /* margin: 50px 0 0 100px; */  	
+			  }
+			  
+			  .pageInfo li{
+			  	float: left;
+			    font-size: 20px;
+			    margin-left: 18px;
+			    padding: 7px;
+			    font-weight: 500;
+			  }
+			#outter a:link {color:black; text-decoration: none;}
+			#outter a:visited {color:black; text-decoration: none;}
+			#outter a:hover {color:black; text-decoration: underline;}
+					  	.active{
+			  					background-color: #cdd5ec;
+			  					}

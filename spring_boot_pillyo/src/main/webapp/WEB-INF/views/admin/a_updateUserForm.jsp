@@ -6,9 +6,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>회원 정보 수정 폼</title>
-		<!-- <link rel="stylesheet" href="/css/dashboard/dashboardContent.css" />
-		<link rel="stylesheet" href="/css/dashboard/dashboard.css" /> -->	
-		
+		<link rel="stylesheet" href="<c:url value='/css/admin/adminUpdateUser.css'/>">
 		<script src="<c:url value='/js/jquery-3.6.0.min.js'/>"></script>
 		<script src="<c:url value='/js/formCheck.js'/>"></script>
 		<script src="<c:url value='/js/userIdCheck.js'/>"></script>
