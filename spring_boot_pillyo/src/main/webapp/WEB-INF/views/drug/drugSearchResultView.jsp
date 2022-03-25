@@ -76,6 +76,7 @@ font-size: 20px;
 		<div id="search_result_container">
 			
 				<h3>약 검색 결과</h3>
+					<h4> " ${keyWord} "에 대한 결과 입니다.</h4>
 				<small>총 <fmt:formatNumber value="${fn:length(druglist)}" pattern="#,###" /> 건</small>
 				<hr />
 				

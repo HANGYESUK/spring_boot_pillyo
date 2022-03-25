@@ -42,6 +42,7 @@ public class DrugController {
 	@RequestMapping("/drugSearch")
 	public String drugSearch(@RequestParam("keyWord") String keyWord, Model model) {
 		ArrayList<DrugInfoVO> drugList = service.drugSearch(keyWord);
+		model.addAttribute("keyWord", keyWord);
 		model.addAttribute("druglist", drugList);
 		return "drug/drugSearchResultView";
 		//return "drug/dashboard_drugSearchResultTest";
@@ -118,6 +119,7 @@ public class DrugController {
 		  		  
 		  //{keyWord=베아제, DRUG_SHAPE=타원형, FORM_CODE_NAME=경질} 이렇게 폼 결과 받아옴.
 		 System.out.println(map);
+		 model.addAttribute("param", map);
 		  List<DrugShapeVO> shapeList = shapeService.drugShapeSearch(map);
 		 model.addAttribute("shapeList", shapeList);
 		 
