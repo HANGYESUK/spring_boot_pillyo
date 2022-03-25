@@ -30,7 +30,7 @@
            				$('#list_table').empty()
            				$('#list_table').append('<tr><th>사진</th> <th>제품명</th> <th>사용기한</th> </tr>')
            				for(var i=0; i <result.length; i++){
-    						$('#list_table').append('<tr><td><img src="/images/' + result[i].hmImg + '"></td><td>' +
+    						$('#list_table').append('<tr><td id="tbimg"><img src="/images/' + result[i].hmImg + '"></td><td>' +
     																						   '<a href="/updateHmForm/' + result[i].hmNo + '">' + result[i].hmName + '</a></td>' +
     																						   '<td>' + result[i].hmUseByDate + '까지</td></tr>'
     																						 	);
@@ -109,13 +109,12 @@
 							<!-- <iframe id="iframeUrl" name="iframeUrl" src="http://localhost:8082/listCtgHm/1"></iframe> -->
 							
 								<table id="list_table">
-									<tr> <th>사진</th> <th>제품명</th> <th>사용기한</th> </tr>
-
+								
 								</table>
 						</div>
 						
 						
-						<div style="margin-top: 20px" class="low">
+						<div style="margin-top: 40px" class="low">
 								<a href="/insertHmForm">
 								<input type="button" class="btn" value="등록하러가기"></a>
 								
