@@ -5,7 +5,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>회원관리</title>
+		<title>게시판관리</title>
 		<script src="<c:url value='/js/jquery-3.6.0.min.js'/>"></script>
 		<link rel="stylesheet" href="<c:url value='/css/admin/adminTable.css'/>">
 	
@@ -24,50 +24,41 @@
 			
 			<div id="adminTableBox">
 			<div id="adminTitle">
-				<h1>회원 관리</h1>
+				<h1>게시판 관리</h1>
 			</div>
 				 <table class="adminTable">
 				 <thead>
 				 	<tr>
+				 		<th>게시판번호</th>
 				 		<th>아이디</th>
-				 		<!-- <th>비밀번호</th> -->
-				 		<th width="70px">이름</th>
-				 		<th>이메일</th>
-				 		<th width="130px">휴대폰번호</th>
-				 		<th width="80px">우편번호</th>
-				 		<!-- <th>주소</th> -->
-				 		<!-- <th>상세주소</th> -->
-				 		<th>가입일</th>
-				 		<th width="50px">가족</th>
-				 		<th width="50px">수정</th>
-				 		<th width="50px">삭제</th>
+				 		<th>카테고리</th>
+				 		<th >제 목</th>
+				 		<th>내 용</th>
+				 		<th>작성일</th>
 				 	</tr>
 				 	</thead>
-				 	<c:forEach items="${userList}" var="user">
+				 	<c:forEach items="${boardList}" var="b">
 				 		<tr>
-				 			<td>${user.userId }</td>
-					 		<%-- <td>${user.userPw }</td> --%>
-					 		<td>${user.userName }</td>
-					 		<td>${user.userEmail }</td>
-					 		<td>${user.userHp }</td>
-					 		<td>${user.userZipcode }</td>
-					 		<%-- <td>${user.userAddress1 }</td> --%>
-					 		<%-- <td>${user.userAddress2 }</td> --%>
-					 		<td>${user.joinDate }</td>
-					 		<td><button onclick="location.href='/a_listUserFamview/${user.userId }'">수정</button></td>
-					 		<td><button onclick="location.href='/a_updateUserForm/${user.userId }'">수정</button></td>
-					 		<td><button onclick="deleteCheck('${user.userId}');">삭제</button></td>
-					 		<%-- <td><button onclick="location.href='javascript:deleteCheck(${user.userId })'">삭제</button></td> --%>
+				 			<td>${b.boardNo}</td>
+					 		<td>${b.userId }</td>
+					 		<td>${b.boardCtgNo }</td>
+					 		<td>${b.boardTitle}</td>
+					 		<td>${b.boardContent }</td>
+					 		<td>${b.boardWriteDate }</td>
+					 		
+					 		<%-- <td><button onclick="location.href='/a_updateBoardForm/${b.boardNo}'">수정</button></td> --%>
+					 		<%-- <td><button onclick="deleteCheck('${user.userId}');">삭제</button></td> --%>
+					 		
 				 		</tr>
 				 	</c:forEach>
-					<script>
+					<!-- <script>
 							function deleteCheck(no){
 								var answer = confirm("선택한 회원 정보를 삭제하시겠습니까?");
 								if(answer == true){
 									location.href="<c:url value='/a_deleteUser/"+ no + "' />";
 								}
 							}
-					</script>
+					</script> -->
 				 </table>
 						 
 					 <div class="search_wrap">
@@ -138,14 +129,14 @@
 						
 						/* 검색했을때  */
 						moveForm.append("<input type='hidden' name='itemName' value='"+ $(this).attr("href")+ "'>");
-						moveForm.attr("action", "/listAllUser");
+						moveForm.attr("action", "/a_listAllBoard");
 						moveForm.submit();
 					});
 					$(".pageInfo a").on("click", function(e){
 						e.preventDefault();
 						moveForm.find("input[name='pageNum']").val($(this).attr("href"));
 						/* 목록 매핑 주소 입력  */
-						moveForm.attr("action", "/listAllUser");
+						moveForm.attr("action", "/a_listAllBoard");
 						moveForm.submit();
 						
 					});	

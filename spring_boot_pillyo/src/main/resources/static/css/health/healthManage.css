@@ -188,12 +188,14 @@
 
 .fam-List {
 	position: fixed;
-	left: 5%;
-    background-color: white;
+	/* left: 5%; */
+    /* background-color: white; */
     padding: 5px;
     border-radius: 10px;
     text-align: center;
     margin-top: 100px;
+	left:3%;
+	top:43%;
 }
 
 .fam-List a {

@@ -96,5 +96,9 @@ public class BoardService implements IBoardService {
 //		return dao.listAllBoard(map);
 //	}
 
+	//관리자메뉴
+	public ArrayList<BoardVO> a_listAllBoard(){
+		return dao.a_listAllBoard();
+	}
 
 }

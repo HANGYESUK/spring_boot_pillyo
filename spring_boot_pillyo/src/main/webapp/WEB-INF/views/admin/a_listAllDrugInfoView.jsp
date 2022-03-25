@@ -45,7 +45,7 @@
 
 				 	<c:forEach items="${drugList}" var="drug">
 				 		<tr>
-					 		<td><img src="${drug.itemImage }" alt="약정보" onerror="this.src='/img/fill_null.png'" width="50px" height="25px"/></td>
+					 		<td><img src="${drug.itemImage }" alt="약정보" onerror="this.src='/img/fill_null.png'"  width="80px"/></td>
 					 		<td>${drug.drugInfoNo }</td>
 					 		<td>${drug.itemName }</td>
 					 		<td>${drug.entpName }</td>

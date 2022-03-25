@@ -96,5 +96,11 @@
 		        FROM hello_board
 		</select>
  -->
+ 
+ <!-- 관리자 메뉴 보드리스트  -->
+	<select id="a_listAllBoard" resultType="com.pillyo.pill.model.BoardVO">
+		SELECT  * FROM board ORDER BY boardWriteDate DESC
+	</select>
+
 
   </mapper>
