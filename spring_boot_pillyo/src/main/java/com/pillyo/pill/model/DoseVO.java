@@ -11,6 +11,7 @@ public class DoseVO {
 	private String ddTimeSlot;
 	private String ddTime;
 	private int ddAmount;
+	private String doseDrugName; // 복용 상세 정보 : 약 이름
 
 	public DoseVO() { }
 
@@ -92,5 +93,13 @@ public class DoseVO {
 
 	public void setDdAmount(int ddAmount) {
 		this.ddAmount = ddAmount;
+	}
+	
+	public String getDoseDrugName() {
+		return doseDrugName;
+	}
+
+	public void setDoseDrugName(String doseDrugName) {
+		this.doseDrugName = doseDrugName;
 	}
 }

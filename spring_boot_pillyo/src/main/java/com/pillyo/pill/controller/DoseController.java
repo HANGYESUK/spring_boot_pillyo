@@ -64,6 +64,14 @@ public class DoseController {
 		model.addAttribute("famNo", famNo);
 		
 		ArrayList<DoseVO> doseList = doseService.doseListView(famNo);
+		
+		for (int i=0; i<doseList.size(); i++) {
+			DoseVO doseItem = doseList.get(i);
+			int drugInfoNo = doseItem.getDrugInfoNo();
+			String doseDrugName = doseService.doseDetailName(drugInfoNo);
+			doseItem.setDoseDrugName(doseDrugName);
+		}
+		
 		model.addAttribute("doseList", doseList);		
 		return "/dose/doseListView";
 	}
@@ -72,7 +80,15 @@ public class DoseController {
 	@RequestMapping("/doseDetailView/{ddNo}")
 	public String doseDetailView(@PathVariable int ddNo, Model model) {
 		DoseVO doseVo = doseService.doseDetailView(ddNo);
+		
+		int drugInfoNo = doseVo.getDrugInfoNo();
+		String doseDrugName = doseService.doseDetailName(drugInfoNo);
+		doseVo.setDoseDrugName(doseDrugName);
 		model.addAttribute("doseVo", doseVo);
+		
+		
+		
+		model.addAttribute("doseDrugName", doseDrugName);
 		
 		return "/dose/doseDetailView";
 	}

@@ -48,5 +48,8 @@
 			SELECT * FROM doseinfo WHERE ddNo=#{ddNo}
 		</select>
 		
-		<!-- 복용 날짜 포맷 변경 UPDATE doseInfo SET ddStartDate = DATE_FORMAT(STR_TO_DATE(start,'%Y-%m-%dT%H:%i:%s'),'%Y-%m-%d %H:%i:%s'); -->
+		<!-- 복용 정보 상세 조히 : 약 이름 -->
+		<select id="doseDetailName" parameterType="int" resultType="string">
+			SELECT itemName FROM druginfo WHERE drugInfoNo=#{drugInfoNo}
+		</select>
   </mapper>

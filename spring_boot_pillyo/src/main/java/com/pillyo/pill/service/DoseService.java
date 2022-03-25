@@ -39,5 +39,10 @@ public class DoseService implements IDoseService {
 	public DoseVO doseDetailView(int ddNo) {
 		return dao.doseDetailView(ddNo);
 	}
+	
+	@Override
+	public String doseDetailName(int ddNo) {
+		return dao.doseDetailName(ddNo);
+	}
 
 }
