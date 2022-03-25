@@ -50,7 +50,7 @@
 	
 	#more-Btn h3{
 		text-align:center;
-   	    margin: 10px 10px 10px 0px;
+   	    margin: 10px 10px 10px 10px;
    	    color: #388a6b;
    	}
    		#more-Btn2{
@@ -60,12 +60,12 @@
 	
 	#more-Btn2 h3{
 		text-align:center;
-   	    margin: 10px 10px 10px 0px;
+   	    margin: 10px 10px 10px 10px;
    	    color: #388a6b;
    	}
    	
    	.b{
-   	font-size: 30px;
+   	font-size: 25px;
     padding-left: 14px;
     color: #388a6b;
     font-weight: 500;
@@ -99,7 +99,7 @@
 		
 		<section id="section" style="    padding-top: 1px;">
 				            <jsp:include page="/WEB-INF/views/member/myPageMenu2.jsp" flush='true' />
-				            <div id="subTitle"><h2>공지사항</h2></div>
+				            
 		 <article>             
 		                <div class="slider-1">
 		                    <div class="slides">
@@ -125,6 +125,7 @@
 		                    </div>
 		                </div>
 		            </article> 
+		            <div id="subTitle"><h2>공지사항</h2></div>
 		
 		
 <!-- 		<div id="sidemenu">		
@@ -220,7 +221,7 @@
 					<div id="boardNewsContent">
 						<table class="table table-striped">
 							<thead>
-							<a class="b">알약요 소식</a> <hr>
+							<a class="b">알약요 소식</a> 
 								<!-- <tr>
 									공지사항 
 									<th style="width:90px;">분류</th>
@@ -233,8 +234,8 @@
 								<c:forEach items="${boardNewsList}" var="board">
 							  		<c:if test="${board.boardCtgNo eq '0'}">
 							  			<tr class="drugBox">
-							  				<td>소식</td>
-							  				<td><a href="<c:url value='/boardDetailView/${board.boardNo}'/>">${board.boardTitle }</a></td>
+							  				<td style="width:15%;">소식</td>
+							  				<td style="width:70%;"><a href="<c:url value='/boardDetailView/${board.boardNo}'/>">${board.boardTitle }</a></td>
 											<td>${board.boardWriteDate}</td>
 										</tr>
 							  		</c:if>
@@ -255,7 +256,7 @@
 			   		<div id="boardQnaContent">
 			   			<table class="table table-striped">
 							<thead>
-							<a class="b">자주묻는질문</a> <hr>
+							<a class="b">자주묻는질문</a> 
 								<!-- <tr>
 									<th style="width:90px;">분류</th>
 									<th style="width:470px;">제목</th>
@@ -302,7 +303,7 @@
 			   		<div id="boardOrderPayContent">
 			   			<table class="table table-striped">
 							<thead>
-							<a class="b">자주묻는질문</a> <hr>
+							<a class="b">자주묻는질문</a> 
 								<!-- <tr>
 									<th style="width:90px;">분류</th>
 									<th style="width:470px;">제목</th>
@@ -328,7 +329,7 @@
 			   		<div id="boardTradeContent">
 			   			<table class="table table-striped">
 							<thead>
-							<a class="b">자주묻는질문</a> <hr>
+							<a class="b">자주묻는질문</a> 
 								<!-- <tr>
 									<th style="width:90px;">분류</th>
 									<th style="width:470px;">제목</th>
@@ -354,7 +355,7 @@
 			   		<div id="boardProductContent">
 			   			<table class="table table-striped">
 							<thead>
-							<a class="b">자주묻는질문</a> <hr>
+							<a class="b">자주묻는질문</a> 
 								<!-- <tr>
 									<th style="width:90px;">분류</th>
 									<th style="width:470px;">제목</th>
@@ -380,7 +381,7 @@
 			   		<div id="boardMemberContent">
 			   			<table class="table table-striped">
 							<thead>
-							<a class="b">자주묻는질문</a> <hr>
+							<a class="b">자주묻는질문</a>
 								<!-- <tr>
 									<th style="width:90px;">분류</th>
 									<th style="width:470px;">제목</th>

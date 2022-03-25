@@ -1,8 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=League+Gothic&family=Nanum+Gothic&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Gowun+Batang&display=swap');
+ */
+
+
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&display=swap');
 
 	*{
-	font-family: 'League Gothic', sans-serif;
-font-family: 'Nanum Gothic', sans-serif;
+	
+/* font-family: 'Gamja Flower', cursive;
+font-family: 'Gowun Batang', serif; */
+
+font-family: 'Nanum Gothic Coding', monospace;
+
 
 }
 
