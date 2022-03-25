@@ -27,20 +27,14 @@
     flex-wrap: wrap;
 }
 
+
+
 h1{ color : #90734E;
 	font-size: xx-large;
 	text-align: left;}
-h4{ color : 81B89A;}
-	
-.low > p{ color : #90734E;}
-
-	
-#UserName{
-		color : #81B89A;
-	}
 	
 .hm{
-		width : 95%;
+		width : 100%;
 		height : 600px;
 		margin-top : 50px;
 		margin:0 auto;
@@ -67,6 +61,7 @@ table{
 	    border-spacing: 1px;
 	    text-align: left;
 	    line-height: 1.5;
+        width: 100%;
 	    border-top: 1px solid #ccc;
 }
 
@@ -78,16 +73,22 @@ th,td{
 		border-bottom: 1px solid #ccc;
 	    background-color: #efe9e1;
 }
-img{
-	width:250px;	
+td{
+	 background-color: #ffffff;
 }
+
+#tbimg > img{
+	width:280px;
+	object-fit: cover;
+}
+
+
 
 td a {
 	text-decoration: none;
     font-size: 20px;
     font-weight: bold;
     color: #1634a1;
-   	background-color: #ffffff;
 
 }
 
@@ -120,15 +121,12 @@ td a {
 	
 #hm_list_view{
 	width: 100%;
-    height: 400px;
+    height: 600px;
     background-color: white;
     border-radius: 20px;
     border: none;
-    padding: 10px;
-    padding-top: 100px;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
     align-items: center;
 	overflow : auto;border: 0;
     box-shadow: 1px 1px 5px 1px lightgrey;
