@@ -366,7 +366,8 @@
 			
 			
 			<script type="text/javascript">
-				function deleteCheck2(n){ /* foreach문 써서 댓글 삭제버튼 하나 클릭시 계속 돌기때문에 변수 n 설정 후 하나만 선택해서 삭제되게 !!! */ 
+				function deleteCheck2(n){ 
+					/* foreach문 써서 댓글 삭제버튼 하나 클릭시 계속 돌기때문에 변수 n 설정 후 하나만 선택해서 삭제되게 !!! */ 
 					var answer = confirm("댓글을 삭제하시겠습니까?");
 					if(answer == true){	
 				    	$.ajax({
@@ -392,6 +393,7 @@
 					}
 				}
 			</script>
+			
 			
 
 		 

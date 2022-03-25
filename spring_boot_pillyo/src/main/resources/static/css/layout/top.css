@@ -5,9 +5,10 @@
     width: 100%;
     padding: 10px 0 13px 0;
     font-size: 24px;
-    background: #fbfbfb;
+    background: #f6f5ef;
     height: 9px;
     line-height: 13px;
+    border-top: 2px solid #6d6d6d82;
 }
 
 marquee {
@@ -18,17 +19,20 @@ marquee {
 marquee a {
 	margin: 0 48px;
     text-decoration: none;
-    color: #3c5cb1;
+
+        color: #646464;
+        font: normal 13px Avenir, Arial, georgia;
 }
 
 /* --------- header ------------ */
 #headerBox {
     position: relative;
-    height: 75px;
-    background: white;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-        margin-bottom: 50px;
+    height: 115px;
+    background: #f6f5ef;
+    /* border-bottom-left-radius: 10px; */
+    /* border-bottom-right-radius: 10px; */
+    border-bottom: 1px solid #e2e0e0;
+    margin-bottom: 50px;
 }
 
 #logoBox {
@@ -42,14 +46,14 @@ marquee a {
 	display: inline-block;
     position: absolute;
     top: 21px;
-    left: 200px;
+    left: 300px;
 }
 
 #topMenu {
-  height: 30px;
-  width: 550px;
-  position: relative;
-  background-color: white;
+      height: 30px;
+    width: 550px;
+    position: relative;
+    background: #f6f5ef;
 }
 
 #topMenu ul {
@@ -67,7 +71,8 @@ marquee a {
 }
 
 .topMenuLi:hover .menuLink {
-  color: #345CB5;
+  color: #388a6b;
+  
 }
 
 .topMenuLi:hover .submenu {
@@ -80,12 +85,14 @@ marquee a {
   text-decoration: none;
   display: block;
   font-weight: 500;
-  margin: 0 13px;
+  margin: 0 15px;
 }
 
 .menuLink {
-  font-size: 17px;
-  color: black;
+  font-size: 18px;
+    line-height: 28px;
+    color: #333;
+    margin-top: 24px;
 }
 
 .submenu {
@@ -110,9 +117,9 @@ marquee a {
 }
 
 .submenuLink {
-  font-size: 15px;
+  font-size: 14px;
   margin: 0 10px;
-  color: #000000;
+  color: #333;
   font-weight: normal;
 }
 
@@ -124,7 +131,7 @@ marquee a {
   display: block;
   width: 100%;
   content: "";
-  border-bottom: solid 2px #345cb5ba;
+  border-bottom: solid 2px #388a6b;
   transform: scaleX(0);
   transition: transform 250ms ease-in-out;
 }
@@ -146,14 +153,14 @@ marquee a {
 }
 
 #searchBar {
-    background: white;
-    border: 2.4px solid #355cb1;
-    width: 500px;
-    height: 40px;
-    line-height: 40px;
-    border-radius: 50px;
+    background: #ffffff;
+    border: 1.8px solid #ffffff;
+    width: 510px;
+    height: 42px;
+    line-height: 42px;
+    border-radius: 25px;
     padding: 0 20px;
-    margin-top: 2px;
+    margin-top: 19px;
 }
 
 .searchIcon {
@@ -161,10 +168,10 @@ marquee a {
 }
 
 .inputSearch {
-	background: white;
+	background: #ffffff;
     margin-left: 13px;
     width: 460px;
-    font-size: 14px;
+    font-size: 14.5px;
     height: 20px;
     border: none;
 }
@@ -193,4 +200,12 @@ input::-webkit-search-cancel-button,
 input::-webkit-search-results-button,
 input::-webkit-search-results-decoration{
 	display:none;
+}
+
+#logoBox > a {
+	    line-height: 95px;
+	    font-size: 53px;
+    margin-left: 61px;
+    color: #388a6b;
+    margin-bottom: 12px;
 }
