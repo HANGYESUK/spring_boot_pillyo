@@ -23,7 +23,10 @@
 			</div>
 			<div id="headerBox">
 				<div id="logoBox">
-					<a href="/"><img src="/img/mainLogo.png"></a>
+					<a href="/">
+					<!-- <img src="/image/drugImg.png">  -->
+					알약요
+					</a>
 				</div><!-- logoBox -->
 				
 				<div id="navBox">
