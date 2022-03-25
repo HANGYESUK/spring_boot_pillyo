@@ -6,6 +6,8 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>상세페이지</title>
+		<jsp:include page="/WEB-INF/views/chatBot.jsp"/>
+		
 	</head>
 	<body>
 	<div id="wrap">

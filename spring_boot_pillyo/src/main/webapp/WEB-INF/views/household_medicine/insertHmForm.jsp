@@ -10,6 +10,7 @@
 		<script src="<c:url value='/js/ocr.js'/>"></script>
 		<link rel="stylesheet" href="/css/hm/insertHmForm.css" />
 		
+		
 	</head>
 	<body>
 		<div id="wrap">
