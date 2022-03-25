@@ -13,4 +13,5 @@ public interface IFamilyService {
 	FamilyVO famDetailView(int famNo); // 가족 정보 상세 조회
 	
 	void deleteUserFam(String userId); //관리자메뉴 회원탈퇴시 가족정보 삭제
+	int nextFamNo(); //다음 가족번호 받아오기
 }

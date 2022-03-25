@@ -61,4 +61,8 @@
   		<delete id="deleteUserFam" parameterType="String">
   			DELETE FROM family WHERE userId=#{userId}
   		</delete>
+  		
+  		<select id="nextFamNo" resultType="int">
+  			select Auto_increment from information_schema.tables where table_schema = 'pillyodb' and table_name = 'family';
+  		</select>
   </mapper>
