@@ -38,6 +38,7 @@ h1 {
     background-image: url('/image/mainImg4.jpg');
     background-repeat: no-repeat;
     background-size: cover;
+    margin-top: -47px;
 }
 
 .container2 {

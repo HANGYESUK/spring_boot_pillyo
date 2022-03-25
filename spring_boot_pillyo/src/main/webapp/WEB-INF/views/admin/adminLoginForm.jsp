@@ -15,8 +15,8 @@
 			
 			<div id="section2">
 				<!-- TOP -->
-				<jsp:include page="/WEB-INF/views/layout/top.jsp" flush='true' />
-					
+<%-- 				<jsp:include page="/WEB-INF/views/layout/top.jsp" flush='true' />
+ --%>					
 			<div id="navMargin"></div>
 				
 		<section id="section3">
@@ -43,12 +43,12 @@
 	     		 <div class="box">
                    	<div class="socialLoginBox">
                    		
-                   		<!-- <h1>소셜 로그인</h1>
+                   		<h1>소셜 로그인</h1>
                         <ul class="socialLoginList">
                             <li><button class="kakaoLoginButton"><span>KakaoTalk ID 로그인</span></button></li>
                             <li><button class="googleLoginButton"><span>Google ID 로그인</span></button></li>  
                             <li><button class="naverLoginButton"><span>Naver ID 로그인</span></button></li>  
-                        </ul> -->
+                        </ul> 
                    	</div>
                  </div>
                </div>
@@ -59,8 +59,8 @@
 			
 	        
 			<!-- BOTTOM  -->
-			<jsp:include page="/WEB-INF/views/layout/bottom.jsp" flush='true' />
-		
+<%-- 			<jsp:include page="/WEB-INF/views/layout/bottom.jsp" flush='true' />
+ --%>		
       </div> <!-- wrap -->
 	</body>
 </html>

@@ -42,6 +42,9 @@
 						
 						<c:when test="${not empty sessionScope.sid}">
 							<ul>
+							<!-- <li class="topMenuLi"> 
+					                <a class="menuLink" href="/updateMemberForm">Pill-Yo</a>
+					            </li> -->
 								<li class="topMenuLi"> 
 					                <a class="menuLink" href="/updateMemberForm">마이페이지</a>
 					            </li>

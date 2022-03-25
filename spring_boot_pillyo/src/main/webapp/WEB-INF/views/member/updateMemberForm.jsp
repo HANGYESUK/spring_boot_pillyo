@@ -52,13 +52,14 @@
     margin-left: 301px;
     margin-top: 27px;
     height: 34px;
-    font-size: 14.5px;
+    font-size: 12.5px;
     width: 105px;
     color: #484848;
     background: white;
     border-radius: 24px;
     border: 1px solid white;
     box-shadow: 1px 1px 0px #c9c9c9;
+    
     }
     
     #memberEdit:hover {
@@ -72,7 +73,7 @@
     margin-left: 10px;
     margin-top: 27px;
     height: 34px;
-    font-size: 14.5px;
+    font-size: 12.5px;
     width: 105px;
     color: #484848;
     background: white;

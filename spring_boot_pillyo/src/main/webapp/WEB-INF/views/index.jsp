@@ -76,27 +76,27 @@
 			}
 			
 			.main-Text h3 {
-				font-size: 48px;
-			    text-align: left;
-			    font-weight: bold;
-			    line-height: 75px;
-			    color: black;
+				    font-size: 40px;
+    text-align: left;
+    font-weight: 500;
+    line-height: 75px;
+    color: #333;
 			}
 			
 			.content-Img {
 			    width: 637px;
 			    margin-top: 130px;
-			    height: 640px;
+			    height: 585px;
 			    margin: 15px;
 			    padding: 10px;
 			    display: flex;
 			    color: black;
 			    background-color: #ffffffcf;
-			    box-shadow: 0 2px 23px 0 rgb(172 172 172 / 37%);
+			    box-shadow: 0 2px 23px 0 rgb(211 211 211 / 52%);
 			    border-radius: 30px;
 			    cursor: pointer;
 			    text-align: center;
-			    margin-top: 20px;
+			    margin-top: 55px;
 			    display: flex;
 			    flex-direction: row;
 			    justify-content: center;
@@ -133,7 +133,7 @@
 	<div class="section low" id="section2">
 		<div class="container3 row">
 			<div class="content-Box row">
-				<div class="main-Content calum">
+				<div class="main-Content calum" style="margin-right: 40px;">
 					<div class="main-Text" style="margin-bottom: 200px;">
 						<h3>가족 구성원의 건강까지<br>
 						한 계정에서 한번에,<br>
@@ -153,7 +153,7 @@
 	</div>
 	
 	<div class="section low" id="section3" style="justify-content: right;">
-		<div class="container3 row">
+		<div class="container3 row" style="    background: #fdfaf8;">
 		
 			<div class="content-Img">
 				<%-- <img src="<c:url value='/img/MainHm.gif'/>"/> --%>
@@ -201,7 +201,7 @@
 	
 		
 	<div class="section" id="section5">
-		<div class="container2 row">
+		<div class="container2 row" style="    background: #fdfaf8;">
 			<div class="content-Box3">
 				<h2 class="content-Title">건강관리의 첫 걸음,<br>Pill-Yo 와 함께 시작하세요</h2>
 				<a href="<c:url value = '/loginForm'/>"><button class="content-Box3-Btn">시작하기</button></a>
