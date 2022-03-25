@@ -11,4 +11,5 @@ public interface IDoseService {
 	void doseDelete(int ddNo); // 복용 정보 삭제
 	DoseVO doseDetailView(int ddNo); // 복용 정보 상세 조회
 	String doseDetailName(int ddNo); // 복용 정보 상세 조회 : 약물 이름
+	String doseDetailFamName(int famNo); // 복용 정보 상세 조회 : 복용자 이름
 }

@@ -14,25 +14,26 @@
 		<script src="<c:url value='/js/drugShapeSearchForm.js'/>"></script>
 		<style>
 		#search_result_container{
-			background: white;
+			background: #fcf9f5;
 			    padding-top: 1px;
+			    
 		}
 		
 		#search_result_container > h3{
-			color: #2a4885;
+			    color: #388a6b;
 		    font-size: 24px;
 		}
 		
 		#search_result_container > small{
 			font-size: 20px;
-		    color: #29509f;
+		    color: #388a6bcc;
 		}
 		.displayNone {
 				display:none;
 		}
 			
 		#more-Btn > h3{
-			color: #e75500;
+			color: #388a6b;
 		    font-size: 35px;
 		    
 		    width: 200px;

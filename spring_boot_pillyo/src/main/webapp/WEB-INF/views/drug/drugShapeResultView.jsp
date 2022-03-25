@@ -13,9 +13,9 @@
 	</head>
 	<style>
 		#search_result_container{
-			background: white;
-		    padding-top: 1px;
-		    margin: 0 auto;
+			background: #fcf9f5;
+    padding-top: 1px;
+    margin: 0 auto;
 		}
 .displayNone {
 		display:none;
@@ -27,7 +27,7 @@
     padding-top: 10px;
     border-radius: 25px;
 	}
-	
+
 	</style>
 	<body>
 		<div id="wrap">
@@ -42,7 +42,7 @@
 			
 		<div id="search_result_container">
 			
-				<h3>약모양 검색 결과 </h3>
+				<h3 style="color: #388a6b;">약모양 검색 결과 </h3>
 				<c:choose>
 					<c:when test="${fn:length(shapeList) >=  100}">
 						<small>100건 이상이 검색되었습니다.</small>

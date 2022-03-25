@@ -108,8 +108,9 @@
 /* 	    margin-top: 15px;
 
  */
- text-align: center; border: 1px solid #f1fff1; width:880px;
- 
+    background: white;
+    width: 1000px;
+        margin-bottom: 13px;
  }
 tr{
 	height: 40px;
@@ -129,7 +130,7 @@ td > a {
 
 button {
 	background: white;
-    color: #3f63b5;
+    color: #388a6b;
     border-color: #f2f9fb;
     height: 38px;
     width: 93px;
@@ -156,7 +157,7 @@ th{
     background-color: #ffffff;
     text-align: center;
      width:90px;     font-size: 17px;
-   color: #3f63b5;
+   color: #333;
    
 }
 
@@ -170,4 +171,52 @@ th{
     color: rgb(96 122 179);
     font-weight: 400;
 	
+}
+
+.slider-1 {
+	    margin: 0 auto;
+}
+
+#subTitle {
+	font: bold 36px Avenir, Arial, georgia;
+    color: #222222;
+    /* padding-top: 30px; */
+    position: relative;
+    /* padding-bottom: 18px; */
+    border-bottom: 1px solid #6d6d6d82;
+    margin-bottom: 35px;
+}
+
+#subTitle2 {
+	width: 1000px;
+	font: bold 36px Avenir, Arial, georgia;
+    color: #222222;
+    /* padding-top: 30px; */
+    position: relative;
+    /* padding-bottom: 18px; */
+    border-bottom: 1px solid #6d6d6d82;
+   margin-bottom: 35px;
+}
+
+#subTitle > h2 {
+	    font-size: 30px;
+}
+
+#subTitle2 > h2 {
+	    font-size: 30px;
+}
+
+#boardCtgNo{
+	    border-top: 1px solid #6d6d6d82;
+}
+
+.form-control{
+	width: 1000px;
+    height: 700px;
+    border: none;
+    outline: none;
+    resize: none;
+    padding-top: 33px;
+    padding-left: 27px;
+    font-size: 27px;	
 }

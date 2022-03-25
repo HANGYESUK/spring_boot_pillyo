@@ -76,7 +76,7 @@
 			}
 			
 			.main-Text h3 {
-				font-size: 65px;
+				font-size: 48px;
 			    text-align: left;
 			    font-weight: bold;
 			    line-height: 75px;
@@ -91,7 +91,7 @@
 			    padding: 10px;
 			    display: flex;
 			    color: black;
-			    background-color: white;
+			    background-color: #ffffffcf;
 			    box-shadow: 0 2px 23px 0 rgb(172 172 172 / 37%);
 			    border-radius: 30px;
 			    cursor: pointer;
@@ -118,11 +118,11 @@
 	<div class="section active" id="section0">
 		<div class="container1 row">
 			<div class="Main">
-	 		 	<h1>Pill-Yo</h1>
+	 		 	
 	 		 </div>
 		</div>
 	</div>
-<!-- 	<div class="section" id="section1">
+<!--  	<div class="section" id="section1">
 		<div class="container2 row">
 			<div class="content-Box calum">
 					<h1 class="text">가족들의 건강관리를 한번에</h1>
@@ -204,7 +204,7 @@
 		<div class="container2 row">
 			<div class="content-Box3">
 				<h2 class="content-Title">건강관리의 첫 걸음,<br>Pill-Yo 와 함께 시작하세요</h2>
-				<br><a href="<c:url value = '/loginForm'/>"><button class="content-Box3-Btn">시작하기</button></a>
+				<a href="<c:url value = '/loginForm'/>"><button class="content-Box3-Btn">시작하기</button></a>
 			</div>
 		</div>
 	</div>

@@ -21,20 +21,26 @@
 			<div id="navMargin"></div>
 				
 			<section id="section">
+				<div id="doseTitleBox">
+					<h2>복 용 상 세 정 보</h2>
+				</div>
 				<div id="doseDetailBox">
-					<div id="doseTblBox">
-						<table id="doseTbl">
-							<tr><th colspan="2">복용 타이틀</th></tr>
-							<tr><td colspan="2">${doseVo.ddTitle }</td></tr>
-							<tr><th colspan="2">약 이름</th></tr>
-							<tr><td colspan="2">${doseDrugName }</td></tr>
-							<tr><th>복용 시작 날짜</th><th>복용 종료 날짜</th></tr>
-							<tr><td>${doseVo.ddStartDate }</td><td>${doseVo.ddEndDate }</td></tr>
-							<tr><th>복용 시기</th><th>복용 상세 시간</th></tr>
-							<tr><td>${doseVo.ddTimeSlot }</td><td>${doseVo.ddTime }</td></tr>
-							<tr><th>복용 주기</th><th>1회 복용량</th></tr>
-							<tr><td>${doseVo.ddCycle }</td><td>${doseVo.ddAmount }</td></tr>
-						</table>
+					<div id="doseLineBox">
+						<div id="doseTblBox">
+							<div id="doseInfoHeader">
+								<img src="/image/doseDetail.png"/>
+							</div>
+							<div id="doseInfoBox">
+								<table id="doseTbl">
+									<tr><th>${doseFamName }</th></tr>
+									<tr><th>${doseDrugName }</th></tr>
+									<tr><td>${doseVo.ddStartDate } ~ ${doseVo.ddEndDate }</td></tr>
+									<tr><td>${doseVo.ddTimeSlot } ${doseVo.ddTime }</td></tr>
+									<tr><td>${doseVo.ddCycle }일 간격</td></tr>
+									<tr><td>1회 ${doseVo.ddAmount }정 복용</td></tr>
+								</table>
+							</div>
+						</div>
 					</div>
 					<div id="btnBox">
 						<div id="updateBtn">

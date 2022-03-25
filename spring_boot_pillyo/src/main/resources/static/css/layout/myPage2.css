@@ -2,13 +2,14 @@
 
 
 #myPageItemBox2{
-	  margin-top: 11px;
+	    margin-right: -100px;
+	margin-top: 410px;
     /* background-color: #f6f9ff; */
-    width: 10.8%;
+       width: 150px;
     border-radius: 42px 42px 42px 42px;
     height: 242px;
     padding-top: 20px;
-    margin: 0 auto;
+    /* margin: 0 auto; */
     float: left;
     padding-left: 6px;
     padding-right: 0px;
@@ -17,7 +18,7 @@
     background: white;
     box-shadow: 0px 0px 6px #dadada;
     
-    color: #3f63b3;
+    color: #333;
     font-weight: normal;
     
 }
