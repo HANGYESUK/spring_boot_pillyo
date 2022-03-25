@@ -25,7 +25,7 @@
     height: 38px;
     width: 70px;
     border-radius: 10px;
-    font-size: 15px;
+    font-size: 14px;
     
     float: right;
     /* margin-right: 127px; */
@@ -61,7 +61,7 @@
     border: 1px solid white;
     background: white;
     box-shadow: 1px 1px 2px #d3d3d3;
-    font-size: 17px;
+    font-size: 15px;
 }
 #button2:hover{
     top: -2px;

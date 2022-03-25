@@ -99,7 +99,7 @@
 
  */
  border:0;
-     margin-top: 20px;
+     margin-top: 40px;
  text-align: center;  width:880px;
  
  }
@@ -119,7 +119,7 @@ tr{
 td {
 	color:#5d5d5d;
 	height: 50px;
-    font-size: 18px;
+    font-size: 20px;
     
 }
 
@@ -135,7 +135,7 @@ button {
     height: 38px;
     width: 93px;
     border-radius: 10px;
-    font-size: 15px;
+    font-size: 13px;
     border-bottom-color: white;
     margin-left: 14px;
     float: right;
@@ -149,7 +149,7 @@ button:hover {
     border: 1px solid white;
     background: white;
     box-shadow: 1px 1px 2px #d3d3d3;
-    font-size: 15px;
+    font-size: 14px;
 }
 
 
@@ -183,7 +183,7 @@ th{
     position: relative;
     /* padding-bottom: 18px; */
     border-bottom: 1px solid #6d6d6d82;
-    margin-bottom: 7px;
+    margin-bottom: 30px;
 }
 
 #subTitle2 {
@@ -217,5 +217,5 @@ th{
     resize: none;
     padding-top: 33px;
     padding-left: 27px;
-    font-size: 27px;	
+    font-size: 20px;	
 }

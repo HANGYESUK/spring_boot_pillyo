@@ -33,12 +33,13 @@
 		}
 		
 		td > textarea {
-		      height: 450px;
-    width: 600px;
+	height: 430px;
+    width: 900px;
+
     border-color: #cfe2f6;
-    background: #ffffff;
-    color: #388a6b;
-    font-size: 16px;
+    background: #fdfaf8;
+    color: #605f5f;
+    font-size: 18px;
     border: none;
     resize: none;
     border: 1px soild #cfe2f6;
@@ -55,12 +56,13 @@
     /* border: none; */
     resize: none;
     outline: none;
-    color:  #388a6b;
+    color:  #333;
     font-size: 16px;
+    border-color: #388a6b;
 	}
 	.commentText:hover {
 	placeholder-color:red;
-	border-color: #5978bf;
+	border-color: #388a6b;
 	}
 	
 		#button2{
@@ -104,6 +106,7 @@
 		    color: #5d5d5d;
     height: 33px;
     font-size: 18px;
+    background:#fdfaf8;
 		}
 		hr{
 		    border: 0;
@@ -125,7 +128,7 @@
     box-shadow: 1px 1px 3px 1px rgb(0 0 0 / 20%);
     background: white;
     margin-left: 23px;
-    margin-top: -57px;
+    margin-top: -28px;
     /* padding-bottom: 0px; */
     margin-bottom: 50px;
     }
@@ -223,10 +226,10 @@
 					</tr>
 					<tr>
 						<!-- <td>내용</td> -->
-						<td colspan="3" style="    background: #ffffff; height: 500px; text-align:center;"><textarea readonly>${board.boardContent}</textarea></td>
+						<td colspan="3" style="    background: #fdfaf8; height: 500px; text-align:center;"><textarea readonly>${board.boardContent}</textarea></td>
 					</tr>
 					<tr>
-						<td colspan="3" style="    background: #ffffff; text-align:center;">
+						<td colspan="3" style="    background:#fdfaf8; text-align:center;">
 						<img src="<c:url value='/images/${board.boardImg}'/>" style = "width : 604px;" >
 						<br> </td>
 					</tr>

@@ -118,8 +118,12 @@
     float: right;
     font-weight: 600;
     border: 0;
-        margin-right: -110px;
+        margin-right: 208px;
     }
+    
+    #boardForm{
+        margin-left: 60px;
+        }
 </style>
 
 
@@ -164,7 +168,7 @@
     line-height: 75px;
     height: 76px;
     /* font-weight: 500; */
-    font-size: 30px;
+    font-size: 25px;
     padding-left: 27px;
     border: none;
     outline: none;
@@ -201,7 +205,7 @@
 		</form>
 		<!-- <button type="submit" button style="float:right;">작성</button> --> <!-- submit -> 이 버튼의 역할은 데이터를 전송하는 것 -->
 		
-		<form id="OCRForm" >
+		<form id="OCRForm" style="    margin-left: 60px;">
 			<table>
 			<tr> <td><input type="file" id="uploadFile" name="uploadFile">
 					 <input type="submit" id="ocr" value="이미지 가져오기" style="    border: 0;
