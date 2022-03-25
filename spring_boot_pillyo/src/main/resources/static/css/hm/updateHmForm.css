@@ -1,0 +1,172 @@
+@charset "UTF-8";
+
+/* 제목 */
+
+h3{
+   padding-top: 45px;
+   text-align: center;
+   font-size: 25px;
+   color: #388a6b;
+}
+
+hr{
+	width : 50%;
+	border:thin solid #b9a891;
+}
+
+/* 수정 폼 */
+table{
+	color : black;
+	margin:0 auto;
+	margin-top: 50px;
+    margin-bottom: 50px;
+    border-radius: 25px;
+}
+th{
+	width : 100px;
+	height : 40px; 
+	background-color : #efe9e1;
+}
+td{
+	box-shadow: 0px 2px 0px 0px #ebe9e8;
+}
+.img_tr{
+	text-align: center;
+}
+
+#hmName{
+    width: 460px;
+    height: 40px;
+    font-size: 15px;
+    font-weight: bold;
+}
+#hmCtgNo{
+	width : 460px;
+	height : 40px;
+	font-size : 15px;
+}
+#hmUseByDate{
+	width : 460px;
+	height : 40px;
+	font-size : 15px;
+}
+textarea{
+	resize: none;
+	border: solid 0px;
+	height : 145px;
+    width: 460px;
+}
+#hmImg{
+	display:none;
+}
+
+.input-file-button{
+	padding: 6px 25px;
+	background-color:#388a6b;
+	border-radius: 4px;
+	color: white;
+	cursor: pointer;
+}
+label{
+	margin-top:10px;
+}
+
+
+#img_box{
+	border : 1px solid #A0A0A0;
+	width: 400px;
+}
+#image_container{
+	width: 465px;
+	height: 465px;
+}
+#image_container img
+{
+  width: 465px;
+  height: 465px;
+}
+
+#section3{
+	box-shadow: 1px 1px 5px 1px #d1d1d1;
+   padding-top: 15px;
+   padding-bottom: 45px;
+   width: 60%;
+   margin: 0 auto;
+   opacity: 100%;
+   background-color: #ffffff;
+   border-radius: 35px;
+
+}
+
+td > h6{
+	font-size: 10px;
+	display:inline;
+	color : gray;
+}   
+   
+td input,#img_box{
+    border: 0;
+    width: 463px;
+   	height : 40px;
+	font-size : 15px;
+}
+
+
+
+#image_container{
+	border:0;
+}
+
+.subBtn {
+	background-color: #4cb38c;
+    color: white;
+    border: none;
+    padding: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 30px;
+    cursor: pointer;
+    margin: 10px;
+}
+
+.delBtn {
+	background-color: #b9a891;
+	color: white;
+    border: none;
+    padding: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 30px;
+    cursor: pointer;
+	margin: 10px;
+}
+.btn {
+	background-color: #c5c1c1;
+	color: white;
+    border: none;
+    padding: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 30px;
+    cursor: pointer;
+    margin: 10px;
+}
+
+.low {
+    /* display: flex; */
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.submitForm {
+	justify-content: space-around;
+	margin-top: 20px;
+	display: flex;
+  	justify-content: center;
+}
