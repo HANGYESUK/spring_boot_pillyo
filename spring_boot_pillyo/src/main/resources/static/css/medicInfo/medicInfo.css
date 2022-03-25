@@ -150,3 +150,6 @@ ul li{
     box-shadow: 1px 7px 0px 0px #bababa;
         margin-bottom: 20px;
 }
+
+#dropdownInfoBox p {
+    line-height: 30px;}
