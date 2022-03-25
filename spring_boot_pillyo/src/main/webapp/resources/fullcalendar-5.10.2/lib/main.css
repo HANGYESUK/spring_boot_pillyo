@@ -204,17 +204,17 @@ When it's NOT activated, the fc-button classes won't even be in the DOM.
     color: #fff;
     color: var(--fc-button-text-color, #828282);
     border-color: #e1e1e1;
-    background-color: #d4deeb;
+    background-color: #c5dac7;
     border-radius: 20px;
     box-shadow: 1px 1px 2px 1px silver;
   }
 .fc .fc-button-primary:hover {
     color: #fff;
     color: var(--fc-button-text-color, #828282);
-    border-color: #e1e1e1;
-    background-color: #ccd5e1;
+    border-color: #d8d8d8;
+    background-color: #c5dac7;
     border-radius: 20px;
-    box-shadow: 1px 1px 2px 1px silver;
+    box-shadow: 1px 1px 2px 1px #d3d3d3;
   }
 .fc .fc-button-primary:disabled { /* not DRY */
     color: #fff;
@@ -240,7 +240,7 @@ When it's NOT activated, the fc-button classes won't even be in the DOM.
   }
 .fc .fc-button-primary:not(:disabled):active:focus,
   .fc .fc-button-primary:not(:disabled).fc-button-active:focus {
-    box-shadow: 0 0 0 0.2rem rgba(76, 91, 106, 0.5);
+    box-shadow: 0 0 0 0.2rem rgb(155 194 159);
   }
 .fc {
 
@@ -321,8 +321,8 @@ When it's NOT activated, the fc-button classes won't even be in the DOM.
     position: relative; /* for abs-positioned elements within */
   }
 .fc .fc-scroller-liquid {
-    background: #f4f4f6;
-    border-radius: 20px;
+    background: #fcf9f5;
+    border-radius: 13px;
     height: 100%;
   }
  .fc .fc-scroller-liquid-absolute::-webkit-scrollbar {
@@ -1450,7 +1450,7 @@ A VERTICAL event
   display: table; /* clear floating */
     }
 .fc-theme-standard .fc-list-day-cushion {
-        background-color: #dfe9f5;
+        background-color: #c5dac7;
     /* background-color: var(--fc-neutral-bg-color, rgba(208, 208, 208, 0.3)); */
   }
 .fc-direction-ltr .fc-list-day-text,
@@ -1486,8 +1486,8 @@ A VERTICAL event
     box-sizing: content-box;
     width: 0;
     height: 0;
-    border: 5px solid #3788d8;
-    border: calc(var(--fc-list-event-dot-width, 10px) / 2) solid #537cdf;
+    border: 5px solid #538971;
+    border: calc(var(--fc-list-event-dot-width, 10px) / 2) solid #538971;
     border-radius: 5px;
     border-radius: calc(var(--fc-list-event-dot-width, 10px) / 2);
   }

@@ -8,13 +8,14 @@
 #searchResult{
 	width: 1000px;
 	display:flex;
-	flex-wrap: wrap; /* 諛뺤뒪 �겕湲곗븞�뿉�꽌 以꾨컮轅� */
+	flex-wrap: wrap; /* 獄쏅벡�뮞 占쎄쾿疫꿸퀣釉욑옙肉됵옙苑� 餓κ쑬而�饔낉옙 */
 	justify-content: start;
 	
 }
 #search_result_container{
       color: #333;
-    font-size: 24px;
+      font-size: 24px;
+      width: 100%;
 }
 #search_result_container > small{
     font-size: 20px;

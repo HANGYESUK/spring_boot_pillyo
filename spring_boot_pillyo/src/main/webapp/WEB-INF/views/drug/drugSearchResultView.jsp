@@ -107,14 +107,8 @@ font-size: 20px;
 			</div>
 			   </c:otherwise> 
 			</c:choose>
-			
-		
-
-		<!-- BOTTOM  -->
-		<jsp:include page="/WEB-INF/views/layout/bottom.jsp" flush='true' />
-		
     	</div> <!-- wrap -->
-    	
+		
     	<script>
 	        let count = 9;
 	        let drugBox = document.getElementsByClassName("drugBox")
@@ -137,6 +131,8 @@ font-size: 20px;
     	</script>
 			
 		
-    	</div> <!— searchResult_container —>
+    	</div>
+    	<!-- BOTTOM  -->
+		<jsp:include page="/WEB-INF/views/layout/bottom.jsp" flush='true' />
 	</body>
 </html>

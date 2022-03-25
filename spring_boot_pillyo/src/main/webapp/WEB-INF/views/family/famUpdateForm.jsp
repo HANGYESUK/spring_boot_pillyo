@@ -57,4 +57,14 @@
 		
       </div> <!-- wrap -->
 	</body>
+	<script>
+		window.onload = function() {
+			var checkedRadio = document.getElementsByName('famGender');
+			if (${famVo.famGender} == 0) {
+				checkedRadio[0].checked = true;
+		    } else {
+		    	checkedRadio[1].checked = true;
+		    }
+		}
+	</script>
 </html>

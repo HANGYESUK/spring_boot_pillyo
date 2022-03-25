@@ -11,8 +11,15 @@
 }
 
 Table#joinTable{
-	margin:auto; 
-    
+	margin:auto;  
+}
+
+#pwError {
+	margin-top: 7px;
+}
+
+#addTr > .col2 > input {
+	margin: 7px 0;
 }
 .col1{
 	font-weight: bold;

@@ -68,6 +68,11 @@
 		#searchResultBox{
 		 	display: flex;
 		 	flex-direction: column;
+		 	width: 100%;
+    align-items: center;
+}
+
+		 	
 		}
 	</style>
 	</head>
@@ -276,7 +281,7 @@
 			$('.sBox').parent().parent().css('border', 'none');
 			
 			if($(this).is(':checked')){
-				$(this).parent().parent().css('border', '4px solid #697fba');
+				$(this).parent().parent().css('border', '4px solid rgb(56 138 107)');
 			}
 		    else{
 				$(this).parent().parent().css('border', 'none');
@@ -288,7 +293,7 @@
 			$('.cBox').parent().parent().css('border', 'none');
 			
 			if($(this).is(':checked')){
-				$(this).parent().parent().css('border', '4px solid #697fba');
+				$(this).parent().parent().css('border', '4px solid rgb(56 138 107)');
 			}
 		    else{
 				$(this).parent().parent().css('border', 'none');
@@ -300,7 +305,7 @@
 			$('.tBox').parent().parent().css('border', 'none');
 			
 			if($(this).is(':checked')){
-				$(this).parent().parent().css('border', '4px solid #697fba');
+				$(this).parent().parent().css('border', '4px solid rgb(56 138 107)');
 			}
 		    else{
 				$(this).parent().parent().css('border', 'none');
@@ -312,7 +317,7 @@
 			$('.lBox').parent().parent().css('border', 'none');
 			
 			if($(this).is(':checked')){
-				$(this).parent().parent().css('border', '4px solid #697fba');
+				$(this).parent().parent().css('border', '4px solid rgb(56 138 107)');
 			}
 		    else{
 				$(this).parent().parent().css('border', 'none');

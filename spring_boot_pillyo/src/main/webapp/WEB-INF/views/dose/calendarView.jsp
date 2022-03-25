@@ -338,13 +338,13 @@
 	</script>
 	<script type="text/javascript">
 		$('input[type="radio"]').change(function(){
-			$('input[type="radio"]').prev('label').css('background-color', '#d0deea');
+			$('input[type="radio"]').prev('label').css('background-color', '#c5dac7');
 			
 			if($(this).is(':checked')){
-				$(this).prev('label').css('background-color', '#b7cee2');
+				$(this).prev('label').css('background-color', '#9bc29f');
 			}
 		    else{
-				$(this).prev('label').css('background-color', '#d0deea');
+				$(this).prev('label').css('background-color', '#c5dac7');
 			}
 		});
 	</script>

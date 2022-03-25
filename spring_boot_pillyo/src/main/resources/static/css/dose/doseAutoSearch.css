@@ -15,9 +15,9 @@
 }
 
 #autoResultScroll {
-    height: 360px;
+    height: 343px;
     overflow-y: scroll;
-    width: 530px;
+    width: 487px;
     background: #f1f1f1;
     position: absolute;
     left: 13px;

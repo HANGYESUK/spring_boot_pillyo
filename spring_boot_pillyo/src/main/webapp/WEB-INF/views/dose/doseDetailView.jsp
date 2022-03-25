@@ -96,7 +96,7 @@
 		        title: '${doseVo.ddTitle }',
 		        description: '${doseVo.ddStartDate }~${doseVo.ddEndDate } (${doseVo.ddCycle }일 주기)\n${doseVo.ddTime }시 ${doseVo.ddAmount }정 복용',
 		        imageUrl:
-		          'https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbgzsMC%2Fbtrt7qKB89C%2FOFby4PY9iEE6a6Uzqjc5kK%2Fimg.png',
+		          'https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbdrK0s%2FbtrxeKeYY5R%2FyfA6UYBHaoO2pwKCevDvY0%2Fimg.png',
 		        link: {
 		          mobileWebUrl: 'https://developers.kakao.com',
 		          webUrl: 'https://developers.kakao.com',
