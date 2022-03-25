@@ -9,7 +9,7 @@
 		<script src="<c:url value='/js/toTop.js'/>"></script>
 	</head>
 	<body>
-		<jsp:include page="/WEB-INF/views/chatBot.jsp"/>
+		<%-- <jsp:include page="/WEB-INF/views/chatBot.jsp"/> --%>
 		<footer>
             <div id="footer">
                 <div id="footerInfo">

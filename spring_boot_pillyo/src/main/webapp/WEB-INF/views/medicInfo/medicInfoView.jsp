@@ -10,6 +10,38 @@
 		<script src="<c:url value='/js/jquery-3.6.0.min.js'/>"></script>
 		<script src="<c:url value='/js/medicInfo/medicInfo.js'/>"></script>
 	</head>
+	
+<style>
+#subTitle {
+	font: bold 36px Avenir, Arial, georgia;
+    color: #222222;
+    /* padding-top: 30px; */
+    position: relative;
+    /* padding-bottom: 18px; */
+    border-bottom: 1px solid #6d6d6d82;
+    margin-bottom: 35px;
+}
+
+#subTitle2 {
+	width: 1000px;
+	font: bold 36px Avenir, Arial, georgia;
+    color: #222222;
+    /* padding-top: 30px; */
+    position: relative;
+    /* padding-bottom: 18px; */
+    border-bottom: 1px solid #6d6d6d82;
+   margin-bottom: 35px;
+}
+
+#subTitle > h2 {
+	    font-size: 30px;
+}
+
+#subTitle2 > h2 {
+	    font-size: 30px;
+}
+
+</style>
 	<body>
 		<div id="wrap">
 			
@@ -17,7 +49,9 @@
 			<jsp:include page="/WEB-INF/views/layout/top.jsp" flush='true' />
 			<div id="navMargin"></div>
 			
+			
 			<section id="section">
+			 <div id="subTitle"><h2>의약정보</h2></div>
 				<div id="dropdownInfoBox">
 			
 					<!-- 1 -->

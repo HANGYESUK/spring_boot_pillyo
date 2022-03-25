@@ -19,7 +19,7 @@
 		
 		p {
 			text-decoration: none;
- 	    color: #0d3bb1;
+ 	    color: #333;
  	 	    margin-left: 27px;
  	 	margin-bottom: -7px;
  	 	    margin-right: 15px;
@@ -50,15 +50,14 @@
 		
 		.BoxAll{
 			    height: 654px;
-   				       background: white;
+background: #fdfaf8;
 		}
 		.h3{
-		    background: white;
+		   background: #fdfaf8;
 		margin-bottom: 0px;
+	
 		}
-		h3{
-		margin-bottom: 0px;
-		}
+		
 		
 		.drugBox2 > h4{
 		    text-decoration: none;
@@ -69,7 +68,7 @@
     }
     h4{
         text-decoration: none;
-    color: #0d3bb1;
+    color: #327c60;
     margin-left: 14px;
     font-size: 20px;
     margin-bottom: -20px;}
@@ -78,7 +77,7 @@
     text-align: left;
     height: 39px;
     font-size: 23px;
-    color: #213670;
+    color: #327c60;
     margin-left: 18px;
     }
 	</style>
@@ -92,11 +91,11 @@
 		<div id="navMargin"></div>
 		
 		<section id="section2">
-			<div style="    		background:#ffffff;
+			<div style="    		
 ;
 			">
 				<div class="h3">
-					<h3>약 정보 상세 조회</h3>
+					<h3 style="color:#333;">약 정보 상세 조회</h3>
 				</div>
 			
 		<div class="BoxAll">		

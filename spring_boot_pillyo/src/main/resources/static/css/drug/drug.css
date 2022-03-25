@@ -1,7 +1,7 @@
 /* drug.css */
  a{
  	text-decoration: none;
- 	    color: #0d3bb1;
+ 	    color: #333;
  	 margin-left: 11px;
  }
  /* �뒪�겕濡ㅻ컮 �뾾�븷湲� */
@@ -77,12 +77,12 @@ body{
 }
 .drugBox:hover {
 	border: 3px solid white;
- 	box-shadow: 5px 5px 5px #0d3bb1;
+ 	box-shadow: 5px 5px 5px #8d8c8c;
 }
 
 .drugBox2:hover {
 	border: 3px solid white;
- 	box-shadow: 5px 5px 5px #0d3bb1;
+ 	box-shadow: 5px 5px 5px #388a6b;
 }
 
 
@@ -90,7 +90,7 @@ body{
     width: 93%;
     margin: 0 auto;
     opacity: 100%;
-        background: white;
+    background: #fdfaf8;
     border-radius: 10px;
     padding-bottom: 5%;
 }
