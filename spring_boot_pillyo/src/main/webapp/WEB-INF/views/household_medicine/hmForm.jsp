@@ -50,6 +50,9 @@
 		
 		<div id="navMargin"></div>
 		<section id="section">
+		
+			<jsp:include page="/WEB-INF/views/Main/subSideMenu.jsp" flush='true' />
+		
 			<div class="main-Content-Body low">
 				<div class="basket-Item-Container colunm">
 					<h1 id ="hmName">우리집 약관리</h1>

@@ -40,6 +40,9 @@
 			<div id="navMargin"></div>
 			
 			<section id="section" class="calum" style="    margin-bottom: -93px;">
+			
+				<jsp:include page="/WEB-INF/views/Main/subSideMenu.jsp" flush='true' />
+			
 			<div class="fam-List calum">
 				 <c:forEach items="${famList }" var="fam">
 				   	<a href="<c:url value='/calendarView/${fam.famNo}'/>">

@@ -219,6 +219,8 @@ public class AdminController {
 		@RequestMapping("/a_listAllBoard")
 		public String a_listAllBoard(Model model) {
 			ArrayList<BoardVO> boardList = bservice.a_listAllBoard();
+			int aiNo = bservice.board_ai();
+			System.out.println(aiNo);
 			model.addAttribute("boardList", boardList);
 			return "admin/a_listAllBoardView";
 		}

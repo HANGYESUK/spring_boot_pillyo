@@ -47,37 +47,36 @@ public class BoardService implements IBoardService {
 	public void deleteBoard(int boardNo) {
 		dao.deleteBoard(boardNo);
 	}
-
+	@Override
 	public ArrayList<BoardVO> listAllBoardQna() {
 		// TODO Auto-generated method stub
 		return dao.listAllBoardQna();
 	}
-
+	@Override
 	public ArrayList<BoardVO> listAllBoardQna2() {
 		// TODO Auto-generated method stub
 		return dao.listAllBoardQna2(); 
 	}
-
+	@Override
 	public ArrayList<BoardVO> listAllBoardQna3() {
 		// TODO Auto-generated method stub
 		return dao.listAllBoardQna3();
 	}
-	
+	@Override
 	public ArrayList<BoardVO> listAllBoardQna4() {
 		// TODO Auto-generated method stub
 		return dao.listAllBoardQna4();
 	}
-	
+	@Override
 	public ArrayList<BoardVO> listAllBoardQna5() {
 		// TODO Auto-generated method stub
 		return dao.listAllBoardQna5();
 	}
-
+	@Override
 	public void insertcomment(CommentVO vo) {
 		// TODO Auto-generated method stub
 		dao1.insertcomment(vo);
 	}
-
 	public void deleteComment(int commentNo) {
 		// TODO Auto-generated method stub
 		dao.deleteComment(commentNo);
@@ -97,8 +96,12 @@ public class BoardService implements IBoardService {
 //	}
 
 	//관리자메뉴
+	@Override
 	public ArrayList<BoardVO> a_listAllBoard(){
 		return dao.a_listAllBoard();
 	}
-
+	@Override
+	public int board_ai() {
+		return dao.board_ai();
+	}
 }

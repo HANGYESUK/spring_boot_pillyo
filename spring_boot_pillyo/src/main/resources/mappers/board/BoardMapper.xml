@@ -102,5 +102,8 @@
 		SELECT  * FROM board ORDER BY boardWriteDate DESC
 	</select>
 
+	<select id="board_ai" resultType="int">
+		select Auto_increment from information_schema.tables where table_schema = 'pillyodb' and table_name = 'board';
+	</select>
 
   </mapper>

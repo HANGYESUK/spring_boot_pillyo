@@ -23,5 +23,5 @@ public interface IBoardDAO {
 	
 	//관리자메뉴
 	ArrayList<BoardVO> a_listAllBoard();
-
+	int board_ai();
 }
