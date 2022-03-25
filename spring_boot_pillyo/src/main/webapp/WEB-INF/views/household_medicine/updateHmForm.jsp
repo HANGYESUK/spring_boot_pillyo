@@ -7,6 +7,7 @@
 		<meta charset="UTF-8">
 		<title>우리집 상비약 수정 폼</title>
 		<script src="<c:url value='/js/jquery-3.6.0.min.js'/>"></script>
+		<link rel="stylesheet" href="/css/hm/updateHmForm.css" />
 		
 		<!-- 이미지 불러오는 java Script -->
 		<script type="text/javascript">
@@ -22,142 +23,8 @@
 				reader.readAsDataURL(event.target.files[0]);
 			}
 		 </script>
-		 
-		 <!-- 임시 Css -->
-	<style type="text/css">
-	
-	h2{ color : black;}
-	h3{ color : black;}
-	
-	p{	color : black;}
-	
-	#UserName{
-		color : #81B89A;
-	}
-	
-	.hm{
-		width : 95%;
-		margin:0 auto;
-		
-	}
-	table{
-		color : black;
-		margin:0 auto;
-	}
-	th{
-		width : 100px;
-	}
-	.img_tr{
-		text-align: center;
-	}
-	#hmName{
-	width : 440px;
-	height : 20px;
-	font-size : 14px;
-	font-weight : bold;
-	}
-	#hmCtgNo{
-		width : 440px;
-		height : 20px;
-		font-size : 14px;
-	}
-	#hmUseByDate{
-		width : 440px;
-		height : 20px;
-		font-size : 14px;
-	}
-	#img_box{
-		border : 1px solid #A0A0A0;
-		width: 400px;
-	}
-	#image_container{
-		width: 450px;
-		height: 450px;
-	}
-	#image_container img
-	{
-	  width: 450px;
-	  height: 450px;
-	}
-	
-	.subBtn {
-		background-color: #82bbfd;
-	    color: white;
-	    border: none;
-	    padding: 10px;
-	    padding-left: 30px;
-	    padding-right: 30px;
-	    font-size: 20px;
-	    font-weight: bold;
-	    border-radius: 30px;
-	    cursor: pointer;
-	}
-	
-	.delBtn {
-		background-color: #ff5252;
-		color: white;
-	    border: none;
-	    padding: 10px;
-	    padding-left: 30px;
-	    padding-right: 30px;
-	    font-size: 20px;
-	    font-weight: bold;
-	    border-radius: 30px;
-	    cursor: pointer;
-	}
-	.btn {
-		background-color: #7A7A7A;
-		color: white;
-	    border: none;
-	    padding: 10px;
-	    padding-left: 30px;
-	    padding-right: 30px;
-	    font-size: 20px;
-	    font-weight: bold;
-	    border-radius: 30px;
-	    cursor: pointer;
-	}
-	
-	.low {
-	    display: flex;
-	    flex-direction: row;
-	    align-items: center;
-	    justify-content: center;
-	}
-	.submitForm {
-		justify-content: space-around;
-		margin-top: 20px;
-	    margin-left: 80px;
-	}
-	
-	#section3{
-	box-shadow: 1px 1px 5px 1px #d1d1d1;
-    padding-top: 15px;
-    padding-bottom: 45px;
-    width: 60%;
-    margin: 0 auto;
-    opacity: 100%;
-    background-color: #ffffff;
-    border-radius: 119px;
-
-	}
-	
-	h3{
-	padding-top: 0px;
-    text-align: center;
-    font-size: 25px;
-    }
-    
-    td input,textarea,#img_box{
-        box-shadow: 0px 0px 0px 1px #c7c7c7;
-    border: 0;
-    }
-    
-    #image_container{
-    border:0;}
-	</style>
-	
 	</head>
+
 	<body>
 		<div id="wrap">
 		
@@ -166,13 +33,9 @@
 		
 		<div id="navMargin"></div>
 		<section id="section3">
-			<h3>약관리 뷰페이지</h3>
-			
-			<c:if test="${not empty sessionScope.sid}">
-				<h3 id="UserName">${sessionScope.sid}님</h3>
-			</c:if>
-			
-			<!-- 상비약 등록 -->
+			<h3>등록하신 약을 수정하시겠습니까?</h3> <hr>
+
+			<!-- 상비약 내용 수정 -->
 			<form id = "updateHmForm" method="post" action="<c:url value ='/updateHm'/>" >
 				<table>
 					<tr> <th>약품명</th> 		<td><input type="text" id="hmName" name="hmName" value="${hm.hmName}" required ></td></tr>
@@ -189,9 +52,11 @@
 											            <option value="9">기타</option>
 										        	</datalist></td></tr>
 		        	<tr> <th>사용기한</th>		<td><input type="date" name="hmUseByDate" value="${hm.hmUseByDate}" required ></td></tr>
-					<tr> <th>메모</th>		<td><textarea name="hmMemo" rows="10" cols="60" placeholder="내용을 입력하세요" style="resize: none;" required >${hm.hmMemo}</textarea></td></tr>
+					<tr> <th>메모</th>		<td><textarea name="hmMemo" rows="10" cols="60" placeholder="내용을 입력하세요" required >${hm.hmMemo}</textarea></td></tr>
 					
-					<tr> <th id="hm">사진</th>	<td><input id = "hmImg" type="file" name="hmImg" value="${hm.hmImg}" onchange="setThumbnail(event);" required></td>
+					<tr> <th id="hm">사진</th>	<td><label class="input-file-button" for="hmImg"> Image Upload</label>&nbsp;
+													<h6>* 이미지를 새로 등록할 경우 위에 있는 버튼을 눌러주세요</h6>
+													<input id = "hmImg" type="file" name="hmImg" value="${hm.hmImg}" onchange="setThumbnail(event);" required></td>
 					<tr> <th id="hm"></th>		<td id="img_box"> <div id="image_container"> <img src="<c:url value='/images/${hm.hmImg}'/>"></div>
 																  <%-- <div>
 																  <input type="text" value = "${hm.hmImg}">
@@ -206,8 +71,8 @@
 				
 				 <!-- 전송 버튼 / 취소 버튼 -->
 				 <div class="submitForm low">
-					 <input class = "in subBtn" type="submit" value="수정" >
-					 <input class = "in2 delBtn" type="reset" value="취소">
+					 <input class = "in subBtn" type="submit" value="수정내용 저장하기" >
+					 <input class = "in2 delBtn" type="reset" value="내용 지우기">
 					 <a href="/hmForm">
 					 <input type="button" class="in3 btn" value="뒤로가기"></a>
 				 </div>

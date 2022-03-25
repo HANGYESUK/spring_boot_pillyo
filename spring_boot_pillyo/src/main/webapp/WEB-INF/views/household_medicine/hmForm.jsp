@@ -7,11 +7,10 @@
     <meta charset="UTF-8">
     <title>우리집 상비약 메인</title>
     <script src="<c:url value='/js/jquery-3.6.0.min.js'/>"></script>
+    <link rel="stylesheet" href="/css/hm/hmForm.css" />
     <%-- <jsp:include page="/WEB-INF/views/chatBot.jsp"/> --%>
     
 	<!-- <script src="/js/hmListView.js"></script> -->
-	<link rel="stylesheet" href="/css/hm/hmForm.css" />
-
 </head>
 <body>
 
@@ -107,10 +106,8 @@
 						<!-- 선택한 카테고리의 약 목록 -->
 						<div id="hm_list_view">
 							<!-- <iframe id="iframeUrl" name="iframeUrl" src="http://localhost:8082/listCtgHm/1"></iframe> -->
-							
-								<table id="list_table">
+								<table id="list_table"></table>
 								
-								</table>
 						</div>
 						
 						

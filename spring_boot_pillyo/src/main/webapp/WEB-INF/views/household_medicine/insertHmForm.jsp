@@ -19,15 +19,16 @@
 		<jsp:include page="/WEB-INF/views/layout/top.jsp" flush='true' />
 		
 		<div id="navMargin"></div>
-		<section id="section">
+		<section id="section1">
 		
 		<div class="main-Content-Body low">
 				<div class="basket-Item-Container colunm">
-				<h2>우리집 약관리</h2>
-					<c:if test="${not empty sessionScope.sid}">
-						<p>먼저 이미지 파일을 올려주세요</p>
-						<p id="pColor">* 이미지 파일은 영문으로 1MB 이하로 올려주세요</p>
-					</c:if> <br><br>
+				<h2>우리집 상비약 등록</h2> <hr>
+					
+					<div id="txt">
+						<h4>등록하실 약 사진을 올려주세요 </h4>
+						<h6>* 이미지 파일은 영문으로 1MB 이하로 올려주세요</h6>
+					</div>
 					
 					<div class = "hm">
 					<!-- 1. OCR로 이미지 보여지고 텍스트 출력-->

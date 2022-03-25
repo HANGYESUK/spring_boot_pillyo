@@ -26,32 +26,49 @@
     transition: all 0.5s;
     flex-wrap: wrap;
 }
-	
-th{
-width : 100px;
+
+/* 폼 내용 */
+
+#section1{
+   box-shadow: 1px 1px 5px 1px #d1d1d1;
+   padding-top: 15px;
+   padding-bottom: 45px;
+   width: 80%;
+   margin: 0 auto;
+   opacity: 100%;
+   background-color: #ffffff;
+   border-radius: 35px;
+
 }
 
+h2{
+	 padding-top: 45px;
+   text-align: center;
+   font-size: 25px;
+   color: #388a6b;
+}
 
+hr{
+	width : 100%;
+	border:thin solid #b9a891;
+}
 
-#hmName{
-	width : 800px;
-	height : 20px;
-	font-size : 14px;
-	font-weight : bold;
+#txt{
+	margin-top:20px;
+	margin-bottom:20px;
 }
-#hmCtgNo{
-	width : 400px;
-	height : 20px;
-	font-size : 14px;
+
+h4{
+	display:inline;
+    margin-right: 335px;
 }
-#hmUseByDate{
-	width : 400px;
-	height : 20px;
-	font-size : 14px;
-}
-#pColor{
-	color : red;
-}
+
+h6{
+	font-size: 10px;
+	display:inline;
+	color : gray;
+}   
+
 .hm{ 
 	width : 100%;
 	display: inline-block;
