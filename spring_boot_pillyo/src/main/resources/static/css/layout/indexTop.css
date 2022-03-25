@@ -10,7 +10,7 @@ font-family: 'Nanum Gothic', sans-serif;
 #headerBox {
 	position: fixed;
     width: 100%;
-    height: 55px;
+    height: 42px;
     background: white;
     display: flex;
     flex-direction: row;
@@ -37,14 +37,13 @@ font-family: 'Nanum Gothic', sans-serif;
 #topMenu ul {
   	list-style-type: none;
     margin: 0px;
-    background: white;
     padding: 5px;
 }
 
 #topMenu ul li {
   color: white;
   float: left;
-  line-height: 41px;
+  line-height: 34px;
   vertical-align: middle;
   text-align: center;
   position: relative;
@@ -68,8 +67,8 @@ font-family: 'Nanum Gothic', sans-serif;
 }
 
 .menuLink {
-  font-size: 20px;
-  color: #272727;
+  font-size: 18px;
+  color: #333;
   font-weight: 600;
 }
 
@@ -95,7 +94,7 @@ font-family: 'Nanum Gothic', sans-serif;
 }
 
 .submenuLink {
-  font-size: 16px;
+  font-size: 15px;
   margin: 0 10px;
   color: #000000;
   font-weight: normal;
@@ -131,13 +130,12 @@ font-family: 'Nanum Gothic', sans-serif;
 }
 
 #searchBar {
-	   
     margin-top: 3px;
     background: white;
     border: 2px solid #e6e6e6;
     width: 580px;
-    height: 46px;
-    line-height: 47px;
+    height: 38px;
+    line-height: 38px;
     border-radius: 50px;
     padding: 0px 20px;
 }
@@ -151,7 +149,7 @@ font-family: 'Nanum Gothic', sans-serif;
     margin-left: 13px;
     width: 540px;
     font-size: 15px;
-    height: 37px;
+    height: 28px;
     border: none;
 }
 
