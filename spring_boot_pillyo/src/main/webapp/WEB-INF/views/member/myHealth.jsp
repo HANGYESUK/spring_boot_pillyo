@@ -64,6 +64,22 @@
    			font-size:14px;
    		}
    		
+   		#subTitle {
+	font: bold 36px Avenir, Arial, georgia;
+    color: #222222;
+    /* padding-top: 30px; */
+    position: relative;
+    /* padding-bottom: 18px; */
+    border-bottom: 1px solid #6d6d6d82;
+    margin-bottom: 35px;
+}
+
+#subTitle > h2 {
+	    font-size: 30px;
+	        padding-left: 150px;
+}
+
+   		
    		</style>
     
 	</head>
@@ -72,13 +88,15 @@
 			
 		<!-- TOP -->
 		<jsp:include page="/WEB-INF/views/layout/top.jsp" flush='true' />
-
 		<div id="navMargin"></div>
 			
 			<section id="section">
-				<div id="myPageBox">
-					<!-- 마이 페이지 메뉴 -->
+			<!-- 마이 페이지 메뉴 -->
 					<jsp:include page="/WEB-INF/views/member/myPageMenu.jsp" flush='true' />
+					<div id="subTitle"><h2>나의 건강정보</h2></div>
+			
+				<div id="myPageBox">
+					
 					
 					<div id="myHealthBox">
 						<c:if test="${not empty sessionScope.sid}">

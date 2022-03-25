@@ -12,7 +12,7 @@
     transition: all 0.8s;
     cursor: pointer;
     border: 1px solid #dddddd;
-    box-shadow: 0 8px 32px 0 rgb(56 117 255 / 37%);
+   /*  box-shadow: 0 8px 32px 0 rgb(56 117 255 / 37%); */
 }
 
 
@@ -72,8 +72,8 @@
     font-weight: lighter;
     background-color: #ffffff;
     color: #9d9d9d;
-    box-shadow: 0 8px 32px 0 rgb(56 117 255 / 37%);
-    transition: all 0.3s;
+/*     box-shadow: 0 8px 32px 0 rgb(56 117 255 / 37%);
+ */    transition: all 0.3s;
 }
 
 #famPlusBtn:hover {
