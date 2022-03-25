@@ -7,24 +7,9 @@
     <meta charset="UTF-8">
     <title>우리집 상비약 메인</title>
     <script src="<c:url value='/js/jquery-3.6.0.min.js'/>"></script>
+    <%-- <jsp:include page="/WEB-INF/views/chatBot.jsp"/> --%>
+    
 	<!-- <script src="/js/hmListView.js"></script> -->
-	<!-- 임시 css / script-->
-	
-	<style type="text/css">
-		table{
-    		border-collapse: collapse;
-			color : black;
-			text-align : center;
-		}
-
-		th,td{
-			width:250px;
-		}
-		img{
-			width:100px;
-		}
-	</style>
-	
 	<link rel="stylesheet" href="/css/hm/hmForm.css" />
 
 </head>
@@ -68,19 +53,14 @@
 		<section id="section">
 			<div class="main-Content-Body low">
 				<div class="basket-Item-Container colunm">
-					<h2 id ="hmName">우리집 약관리</h2>
-					<div class="low">
-						<c:if test="${not empty sessionScope.sid}">
-							<h4 id="UserName" style="color: #81B89A;">${sessionScope.sid} 님</h4>
-							<p>등록하신 우리집 상비약 목록 입니다 </p><br>
-						</c:if>
-					</div>
-						
+					<h1 id ="hmName">우리집 약관리</h1>
+
+					<hr>
+
 					<div id="hm">
 						<!-- 약 카테고리 -->
 						<div class="hm_Category colum"> 
 							<form id="hmCtg_ListView low">
-								<br> <h3> 약 카테고리</h3> <br>
 								<!-- <button type="button" id="hm_ctg" value="1" onclick="go(this.value)"> -->
 								<!-- <input type="text" id="hmCtgInput">
 								<input type="submit" value="전송"> -->

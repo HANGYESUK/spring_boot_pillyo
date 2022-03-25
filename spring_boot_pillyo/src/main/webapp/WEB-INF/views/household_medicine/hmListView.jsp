@@ -7,6 +7,8 @@
 		<meta charset="UTF-8">
 		<title>우리집 상비약 목록</title>
 		<script src="<c:url value='/js/jquery-3.6.0.min.js'/>"></script>
+		<jsp:include page="/WEB-INF/views/chatBot.jsp"/>
+		
 		<style type="text/css">
 		table{
     	border-collapse: collapse;

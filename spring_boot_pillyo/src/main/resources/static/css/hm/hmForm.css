@@ -27,10 +27,12 @@
     flex-wrap: wrap;
 }
 
-h2{ color : black;}
-h3{ color : black;}
+h1{ color : #90734E;
+	font-size: xx-large;
+	text-align: left;}
+h4{ color : 81B89A;}
 	
-p{	color : black;}
+.low > p{ color : #90734E;}
 
 	
 #UserName{
@@ -40,12 +42,12 @@ p{	color : black;}
 .hm{
 		width : 95%;
 		height : 600px;
+		margin-top : 50px;
 		margin:0 auto;
 		
 	}
 .hm_Category{
 		width: 100%;
-	    background-color: white;
 	    text-align: center;
 	    margin: 0 auto;
 	    border-radius: 20px;
@@ -61,10 +63,23 @@ p{	color : black;}
 	}
 
 table{
-		border: 1px solid #444444;
-    	border-collapse: collapse;
-		color : black;
-		margin:0 auto;
+		border-collapse: separate;
+	    border-spacing: 1px;
+	    text-align: left;
+	    line-height: 1.5;
+	    border-top: 1px solid #ccc;
+}
+
+th,td{
+		width:250px;
+		padding: 10px;
+		font-weight: bold;
+		vertical-align: top;
+		border-bottom: 1px solid #ccc;
+	    background-color: #efe9e1;
+}
+img{
+	width:250px;	
 }
 
 td a {
@@ -72,30 +87,34 @@ td a {
     font-size: 20px;
     font-weight: bold;
     color: #1634a1;
+   	background-color: #ffffff;
 
-}
-
-th,td{
-		border: 1px solid #444444;
 }
 
 #hm_ctg{
-		width: 80px;
-	    height: 80px;
+		width: 90px;
+	    height: 110px;
 	    margin-left: 5px;
 	    margin-right: 5px;
 	    margin-bottom: 10px;
-	    background-color: #eef2ff;
+	    background-color: #388a6b;
+	    font-weight: bold;
+	    color : #dbcab2;
 	    border: none;
-	    border-radius: 50%;
+	    border-radius: 5%;
 	    cursor: pointer;
 	    box-shadow: 1px 1px 5px 1px lightgrey;
 	}
 	
+#hm_ctg > img {
+	padding-bottom : 10px;
+}
+	
 #hm_ctg:hover{	
-	width: 80px;
-    height: 80px;
-    box-shadow: 1px 1px 5px 1px #7088ff;
+	width: 92px;
+    height: 112px;
+    background-color: #027042;
+    box-shadow: 1px 1px 5px 1px #CECECE;
 }
 
 	
@@ -117,7 +136,7 @@ th,td{
 
 
 .btn {
-	background-color: #82bbfd;
+	background-color: #388a6b;
     color: white;
     border: none;
     padding: 10px;
