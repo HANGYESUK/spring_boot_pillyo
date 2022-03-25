@@ -43,7 +43,7 @@
 
 <style>
 	.layout {
-	width:500px; /* 태그의 넓이를 500px로 */
+	width:1300px; /* 태그의 넓이를 500px로 */
 	margin:0 auto; /* 양쪽 여백을 위아래는 0 좌우는 자동으로 잡아주겠다! */
 	margin-top : 40px;
 	}

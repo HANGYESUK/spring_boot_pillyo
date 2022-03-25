@@ -30,27 +30,32 @@
 							<div id="doseInfoHeader">
 								<img src="/image/doseDetail.png"/>
 							</div>
+							
 							<div id="doseInfoBox">
-								<table id="doseTbl">
-									<tr><th>${doseFamName }</th></tr>
-									<tr><th>${doseDrugName }</th></tr>
-									<tr><td>${doseVo.ddStartDate } ~ ${doseVo.ddEndDate }</td></tr>
-									<tr><td>${doseVo.ddTimeSlot } ${doseVo.ddTime }</td></tr>
-									<tr><td>${doseVo.ddCycle }일 간격</td></tr>
-									<tr><td>1회 ${doseVo.ddAmount }정 복용</td></tr>
-								</table>
+								<div id="doseMemBox">
+									<h3>${doseVo.doseFamName }</h3><span>님</span>
+								</div>
+								<div id="doseInfoTblBox">
+									<table id="doseTbl">
+										<tr><th>${doseDrugName }</th></tr>
+										<tr><td>${doseVo.ddStartDate } ~ ${doseVo.ddEndDate }</td></tr>
+										<tr><td>${doseVo.ddTimeSlot } ${doseVo.ddTime }</td></tr>
+										<tr><td>${doseVo.ddCycle }일 간격</td></tr>
+										<tr><td>1회 ${doseVo.ddAmount }정 복용</td></tr>
+									</table>
+								</div>
 							</div>
-						</div>
-					</div>
-					<div id="btnBox">
-						<div id="updateBtn">
-							<a href="<c:url value='/doseUpdateForm/${doseVo.ddNo}'/>">수정하기</a>
-						</div>
-						<div id="removeBtn">
-							<a href="javascript:deleteCheck();">삭제하기</a>
-						</div>
-						<div id="shareBtn">
-							<label><button id="doseShareBtn" class="calBtn" onClick="sendLinkDefault();"></button>공유하기</label>
+							<div id="btnBox">
+								<div id="updateBtn">
+									<a href="<c:url value='/doseUpdateForm/${doseVo.ddNo}'/>">수정하기</a>
+								</div>
+								<div id="removeBtn">
+									<a href="javascript:deleteCheck();">삭제하기</a>
+								</div>
+								<div id="shareBtn">
+									<label><button id="doseShareBtn" class="calBtn" onClick="sendLinkDefault();"></button>공유하기</label>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>

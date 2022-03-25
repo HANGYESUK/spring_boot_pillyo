@@ -723,12 +723,12 @@ A HORIZONTAL event
     /* 罹섇뜝�룞�삕�뜝�룞�삕 description �뜝�뙐源띿삕�뜝�룞�삕 �뜝�뙓�룞�삕 */
     border-radius: 3px;
     padding: 20px;
-    background-color: #dfe9f5;
+    background-color: #9bc29f;
   }
 .fc-theme-standard .fc-popover-header {
     /* background: rgba(208, 208, 208, 0.3);
     background: var(--fc-neutral-bg-color, rgba(208, 208, 208, 0.3)); */
-    background-color: #dfe9f5;
+    background-color: #9bc29f;
     /* 罹섇뜝�룞�삕�뜝�룞�삕 description �뜝�룞�삕�뜝占� �뜝�룞�삕�뜝占� �뜝�룞�삕�뜝�룞�삕 */
   }
 
@@ -897,7 +897,7 @@ A HORIZONTAL event
 .fc .fc-more-popover .fc-popover-body {
     min-width: 220px;
     padding: 10px;
-    background-color: #dfe9f5; /* 罹섇뜝�룞�삕�뜝�룞�삕 description �뜝�룞�삕�뜝�룞�삕 �뜝�룞�삕�뜝占� �뜝�룞�삕�뜝�룞�삕 */
+    background-color: #9bc29f; /* 罹섇뜝�룞�삕�뜝�룞�삕 description �뜝�룞�삕�뜝�룞�삕 �뜝�룞�삕�뜝占� �뜝�룞�삕�뜝�룞�삕 */
   }
 .fc-direction-ltr .fc-daygrid-event.fc-event-start,
 .fc-direction-rtl .fc-daygrid-event.fc-event-end {
