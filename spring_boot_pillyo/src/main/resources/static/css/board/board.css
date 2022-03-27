@@ -108,6 +108,7 @@
 /* 	    margin-top: 15px;
 
  */
+ border-radius: 7px;
     background: white;
     width: 1000px;
         margin-bottom: 13px;
@@ -203,6 +204,7 @@ th{
 
 #subTitle2 > h2 {
 	    font-size: 30px;
+	        color: #333;
 }
 
 #boardCtgNo{

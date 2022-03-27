@@ -1,0 +1,77 @@
+@charset "UTF-8";
+
+/* div 폼 */
+ #my_List{
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 100px;
+    width: 85%;
+    margin: auto;
+    opacity: 100%;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 1px 1px 5px 1px #d1d1d1;
+ }
+ 
+ 
+h3{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+    font-size: 25px;
+    color: #388a6b;
+}
+ 
+ 
+ /* 리스트 */
+ table {
+    width: 80%;
+	text-align: center;
+    border-top: 1px solid #444444;
+    border-collapse: collapse;
+    margin-left:auto; 
+	margin-right:auto;
+ }
+ th, td {
+    border-bottom: 1px solid #dbd2c6;
+    padding: 14px;
+ }
+ th{
+	background-color: #388a6b;
+    color: #fdfaf8;
+ }
+ td{
+  	background-color : #fffefe;
+ }
+ 
+ /* 수정, 삭제 버튼 */
+ #btn1{
+    background-color: #9ac3b3;
+    padding: 6px 12px;
+    
+    border: none;
+    border-radius: 5px;
+    color: darkgreen;
+}
+  #btn2{
+	background-color: #d9d9d9;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 5px;
+    color: #5a5a5a;
+ }
+ button:hover{	
+	padding:7px 13px;
+    box-shadow: 0px 1px 3px 0px #424242;
+}
+
+/* 각 건강리스트 폼별로 수정할 것 */
+#feelMemo{
+	width: 40%;
+}
+#pressureMemo{
+    width: 15%;
+}
+#acpcMemo{
+	    width: 15%;
+}

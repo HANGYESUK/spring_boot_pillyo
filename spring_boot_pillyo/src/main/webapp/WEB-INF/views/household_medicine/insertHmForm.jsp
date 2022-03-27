@@ -35,9 +35,10 @@
 						<form id="ocrForm" enctype="multipart/form-data" style="display:inline-block;">
 						
 							<table>
-								<tr> <th id="hm">사진</th>	<td><input type="file" id="uploadFile" name="uploadFile"></td>
-															<td><input type="submit" id="ocr" value="OCR로 약품명 가져오기"></td>
-															<td><input class="in2" id="reset" type="reset" value="취소"></td></tr>
+								<tr> <td><label class="input-file-button" for="uploadFile">Image Upload</label>
+										 <input type="file" id="uploadFile" name="uploadFile">
+									 <input type="submit" id="ocr" value="OCR로 약품명 가져오기">
+									 <input class="in2" id="reset" type="reset" value="취소"></td></tr>
 							</table>
 							
 							<!-- 업로드한 이미지  -->

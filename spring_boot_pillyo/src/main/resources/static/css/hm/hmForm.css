@@ -110,10 +110,13 @@ td a {
 #hm_ctg > img {
 	padding-bottom : 10px;
 }
+
+#hm_ctg:focus{
+	background-color: #027042;
+}
+
 	
 #hm_ctg:hover{	
-	width: 92px;
-    height: 112px;
     background-color: #027042;
     box-shadow: 1px 1px 5px 1px #CECECE;
 }

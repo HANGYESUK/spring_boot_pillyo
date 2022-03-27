@@ -7,28 +7,8 @@
 		<meta charset="UTF-8">
 		<title>체형관리 전체 목록</title>
 		<script src="<c:url value='/js/jquery-3.6.0.min.js'/>"></script>
-		<style type="text/css">
+		<link rel="stylesheet" href="/css/member/myList.css" />
 		
-		 #my_body{
-   			text-align: center;
-   			padding-top : 20px;
-		 }
-		 table {
-		    width: 80%;
-   			text-align: center;
-		    border-top: 1px solid #444444;
-		    border-collapse: collapse;
-		    margin-left:auto; 
-    		margin-right:auto;
-		 }
-		 th, td {
-		    border-bottom: 1px solid #444444;
-		    padding: 10px;
-		 }
-		 td{
-		  	background-color : #ffffff;
-		 }
-		</style>
 	</head>
 	<body>
 		<div id="wrap">
@@ -39,11 +19,11 @@
 		<div id="navMargin"></div>
 			
 			<section id="section">
-			<div id="my_body">
+			<div id="my_List">
 			<h3>전체 체형 관리 목록</h3>
 				<table>
 		 		<tr> <th>번호</th><th>날짜</th><th>가족이름</th>
-		 			 <th>키</th><th>몸무게</th><th>BMI</th><th>수정</th></tr>
+		 			 <th>키</th><th>몸무게</th><th>BMI</th><th>수정/삭제</th></tr>
 			   <c:forEach items="${bodyList }" var="body">
 			   <tr> <td>${body.bodyNo}</td>
 			   		<td>${body.bodyRecordDate}</td>
@@ -52,8 +32,10 @@
 			   		<td>${body.weight}</td>
 			   		<td>${body.bmi}</td>
 			   		<td>
-				   	<a href="<c:url value='/updateBodyForm/${body.bodyNo}'/>">체형 관리 정보 수정</a>
-				   	<a href="javascript:deleteCheck();">체형 관리 정보 삭제</a><br></td></tr>
+				   	<a href="<c:url value='/updateBodyForm/${body.bodyNo}'/>">
+				   		<button id="btn1">수정</button></a>
+				   	<a href="javascript:deleteCheck();">
+				   		<button id="btn2">삭제</button></a></td></tr>
 			   </c:forEach>
 			   </table>
 			   	<script type="text/javascript">

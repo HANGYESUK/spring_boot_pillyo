@@ -7,28 +7,8 @@
 		<meta charset="UTF-8">
 		<title>기분 정보 목록</title>
 		<script src="<c:url value='/js/jquery-3.6.0.min.js'/>"></script>
-		<style type="text/css">
+		<link rel="stylesheet" href="/css/member/myList.css" />
 		
-		 #my_feel{
-   			text-align: center;
-   			padding-top : 20px;
-		 }
-		 table {
-		    width: 80%;
-   			text-align: center;
-		    border-top: 1px solid #444444;
-		    border-collapse: collapse;
-		    margin-left:auto; 
-    		margin-right:auto;
-		 }
-		 th, td {
-		    border-bottom: 1px solid #444444;
-		    padding: 10px;
-		 }
-		 td{
-		  	background-color : #ffffff;
-		 }
-		</style>
 	</head>
 	<body>
 		<div id="wrap">
@@ -41,12 +21,12 @@
 		<div id="navMargin"></div>
 			
 			<section id="section">
-			<div id="my_feel">
+			<div id="my_List">
 			<h3>전체 기분 관리 목록</h3>
 			
 			<table>
 		 		<tr> <th>번호</th><th>날짜</th><th>시간</th><th>기록자</th>
-		 			 <th>기분점수</th><th>일기</th><th>수정</th></tr>
+		 			 <th>기분점수</th><th id="feelMemo">일기</th><th>수정</th></tr>
 				<c:forEach var="feel" items="${feelList}">
 				<tr> <td>${feel.feelNo}</td>
 		 			 <td>${feel.feelRecordDate}</td>
@@ -55,8 +35,10 @@
 		 			 <td>${feel.feelScale}</td>
 		 			 <td>${feel.feelMemo}</td>
 		 			 <td>
-						<a href="<c:url value='/updateFeelForm/${feel.feelNo}'/>">혈당 정보 수정</a>
-					 	<a href="javascript:deleteCheck();">기분 정보 삭제</a></td></tr>
+						<a href="<c:url value='/updateFeelForm/${feel.feelNo}'/>">
+							<button id="btn1">수정</button></a>
+					 	<a href="javascript:deleteCheck();">
+					 		<button id="btn2">삭제</button></a></td></tr>
 				</c:forEach>
 		 			 
 	 		</table>
