@@ -13,9 +13,14 @@
 		<div id="headerBox">
 			<div id="navBox">
 				<nav id="topMenu" >
+				<div class=pillyomainlogo">
+	                <a style="float:left; width: 161px; height: 62px; margin-left: 13px; margin-top: 10px; margin-right: 20px;" 
+    					class="menuLink" href="/"><img src="<c:url value='/image/pillyomainlogo3.png'/>"/></a>
+                </div>
 					<c:choose>
 						<c:when test="${not empty sessionScope.admin}">
 							<ul> 
+							
 								<li class="topMenuLi"> 
 					                <a class="menuLink" href="/adminMain">통합관리</a>
 					            </li>
@@ -80,7 +85,7 @@
 						</c:when>
 						
 						<c:otherwise>
-							<ul> 
+							<ul>
 					            <li class="topMenuLi"> 
 					                <span class="menuLink">회원</span>
 					                <ul class="submenu"> 

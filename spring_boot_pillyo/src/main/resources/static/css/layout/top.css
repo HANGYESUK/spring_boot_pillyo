@@ -27,7 +27,7 @@ marquee a {
 /* --------- header ------------ */
 #headerBox {
     position: relative;
-    height: 115px;
+    height: 95px;
     background: #f6f5ef;
     /* border-bottom-left-radius: 10px; */
     /* border-bottom-right-radius: 10px; */
@@ -45,8 +45,8 @@ marquee a {
 #navBox {
 	display: inline-block;
     position: absolute;
-    top: 21px;
-    left: 280px;
+/*     top: 21px;
+ */    left: 280px;
 }
 
 #topMenu {
@@ -149,18 +149,18 @@ marquee a {
 #searchBox {
 	position: absolute;
     right: 60px;
-    top: 17px;
-}
+/*     top: 17px;
+ */}
 
 #searchBar {
     background: #ffffff;
     border: 1.8px solid #ffffff;
-    width: 510px;
+    width: 450px;
     height: 42px;
     line-height: 42px;
     border-radius: 25px;
     padding: 0 20px;
-    margin-top: 19px;
+    margin-top: 14px;
 }
 
 .searchIcon {
@@ -170,7 +170,7 @@ marquee a {
 .inputSearch {
 	background: #ffffff;
     margin-left: 13px;
-    width: 460px;
+    width: 400px;
     font-size: 14.5px;
     height: 20px;
     border: none;
