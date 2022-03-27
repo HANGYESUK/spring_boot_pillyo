@@ -187,8 +187,8 @@
 }
 
 .fam-List {
-	position: fixed;
-	/* left: 5%; */
+	/* position: fixed;
+	left: 5%;
 	height: 280px;
     background-color: white; 
     padding: 5px;
@@ -197,7 +197,18 @@
     margin-top: 100px;
 	right: 50px;
 	top: 5%;
-	overflow: scroll;
+	overflow: scroll; */
+	position: fixed;
+    /* left: 5%; */
+    height: 280px;
+    background-color: 0;
+    padding: 5px;
+    border-radius: 10px;
+    text-align: center;
+    margin-top: 100px;
+    right: 1px;
+    top: 5%;
+    overflow: scroll;
 }
 
 .fam-List { 
