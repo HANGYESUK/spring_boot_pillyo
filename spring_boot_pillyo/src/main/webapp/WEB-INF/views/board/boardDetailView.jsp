@@ -106,7 +106,7 @@
 		    color: #5d5d5d;
     height: 33px;
     font-size: 18px;
-    background:#fdfaf8;
+    background:#ffffff;
 		}
 		hr{
 		    border: 0;
@@ -119,7 +119,7 @@
 		#commentAllListForm{
 	border-radius: 5px;
     margin-left: 10px;
-    padding-left: 23px;
+  
     height: 307px;
     margin-top: -121px;
     text-align: center;
@@ -127,7 +127,7 @@
     border-color: #f7f7f7;
     box-shadow: 1px 1px 3px 1px rgb(0 0 0 / 20%);
     background: white;
-    margin-left: 23px;
+   /*  margin-left: 23px; */
     margin-top: -28px;
     /* padding-bottom: 0px; */
     margin-bottom: 50px;
@@ -168,7 +168,10 @@
 	
 	<br>
 		<!-- 게시판 글 보기 양식 영역 시작 -->
-	<div class="container">
+	<div class="container" style="    box-shadow: 0px 0px 3px 2px #eeeeee;
+    padding: 98px;
+    background: #f6f5ef9c;
+    border-radius: 8px;">
 		<div class="row">
 		<div id="subTitle2"><h2>알약요
 		<c:if test="${board.boardCtgNo eq '0'}">소식</c:if>
@@ -237,8 +240,11 @@
 				</tbody>
 				
 			</table>
+	 <%-- <c:if test="${sessionScope.sid == board.userId }"> --%>
+	 <c:if test="${sessionScope.admin != console.log(admin) or sessionScope.sid == '' }">
 			<a href="javascript:deleteCheck();"><button>게시글 삭제</button></a>
 			<a href="<c:url value='/updateBoardForm/${board.boardNo}'/>"><button  >게시글 수정</button></a>
+	 </c:if>
 			<a href="<c:url value='/listAllBoard'/>"><button>목록</button></a><br><br><br><br>
 			
 			<a class="commentName">댓글</a><hr>
@@ -250,17 +256,17 @@
  
  
  <form id= "commentInsert" name="commentInsert"> <!--  writedo로 넘겨주고 post방식으로 넘겨주겠다 -->
- 
- 
+
+ <c:if test="${sessionScope.admin != board.userId and sessionScope.sid != null or sessionScope.admin != null }">
 		<textarea class="commentText" placeholder="댓글 달기.." name="commentContent">${comment.commentContent}</textarea>
 			<input type="submit" id="button2" class="btn btn-primary pull-right" value="게시">
 			<input type="hidden" name="userId" value="${sessionScope.sid}">  <!-- 세션 아이디 받아오기 -->
 			<input type="hidden" name="commentWriteDate" value="<%= sf.format(nowDate) %>">
 			<input type="hidden" name="boardNo" value="${board.boardNo}">
-<!-- 		<button type="submit" button style="float:right;">작성</button>
-
- -->
- 					
+<!-- 		<button type="submit" button style="float:right;">작성</button> -->
+ 	</c:if>			
+ 	
+ 		
  </form>
  </div>
 		
@@ -270,7 +276,8 @@
 			
 			<br><br><br><br><br><br><br>
 			<div id=commentAllListForm >
-			<table class="table table-striped2">
+			<table class="table table-striped2" style="    width: 100%;
+    background: #ffffff;">
 						<thead>
 						<!-- <tr>
 						<th>내용	</th>
@@ -299,10 +306,10 @@
 						   			
 						   			<td style="font-size:10px; font-size: 14px;     height: 47px;
     								padding-top: 5px;">${comment.commentWriteDate}</td>
-						   		<td style="padding-left: 14px; font-size: 15px;color:#345193; ">
-						   		
+						   		<td style="padding-left: 14px; font-size: 15px;color:#345193;width: 10%; ">
+			   			 <c:if test="${sessionScope.sid == comment.userId }">
 						   		<a href="javascript:deleteCheck2(${comment.commentNo});">&#10060;</a> 
-						   		
+				   		</c:if>
 						   		<%-- <button class="deleteBtn" onclick="deletereply/${comment.commentNo}">댓글 삭제</button> --%>
 						   				
 						   		</td>
@@ -448,4 +455,13 @@
 		
       </div> <!-- wrap -->
 	</body>
+	<script>
+	console.log('${board.userId}');
+	console.log('${board.writer}');
+	console.log('${sessionScope.sid}');
+	console.log('${sessionScope.admin}');
+	console.log('${sessionScope.AdminId}');
+	console.log('${dmin.adminId}');
+	console.log('${board.boardCtgNo}');
+</script>
 </html>

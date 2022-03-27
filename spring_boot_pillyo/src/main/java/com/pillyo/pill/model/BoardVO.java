@@ -8,6 +8,8 @@ public class BoardVO {
 	private String boardWriteDate;
 	private String boardCtgNo;
 	private String boardImg;
+	private String writer;
+	
 	public int getBoardNo() {
 		return boardNo;
 	}
@@ -49,6 +51,12 @@ public class BoardVO {
 	}
 	public void setBoardImg(String boardImg) {
 		this.boardImg = boardImg;
+	}
+	public String getWriter() {
+		return writer;
+	}
+	public void setWriter(String writer) {
+		this.writer = writer;
 	}
 	
 
