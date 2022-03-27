@@ -9,6 +9,7 @@ import java.net.URL;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 import java.util.Base64;
+import java.util.HashMap;
 
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
@@ -21,7 +22,11 @@ import org.springframework.stereotype.Service;
 @Service
 public class SENSService {
 	// SMS 전송 : 기상 직후
-	public static void sendSMS_getup(String notiMemHp) {
+	//public static void sendSMS_getup(String notiMemHp) {
+		public static void sendSMS_getup(HashMap<String, String> memInfo) {
+			String notiMemHp = memInfo.get("notiMemHp");
+			String reserveTime = memInfo.get("reserveTime");
+			
 		String hostNameUrl = "https://sens.apigw.ntruss.com"; // 호스트 URL
 		String requestUrl = "/sms/v2/services/"; // 요청 URL
 		String requestUrlType = "/messages"; // 요청 URL
@@ -55,6 +60,8 @@ public class SENSService {
 //			bodyJson.put("subject", ""); // 기본 메시지 제목 (lms)
 		bodyJson.put("content", "[Pill-Yo 복용 알림 서비스] 상쾌한 아침입니다! 잊은 약은 없는지 확인하세요 : )"); // 기본 메시지 내용 (필수) (SMS 80 byte 제한)
 		bodyJson.put("messages", toArr); // 메시지 정보 (필수)
+		bodyJson.put("reserveTime", reserveTime); // 예약시간 , "yyyy-MM-dd HH:mm" 형식
+		
 		
 		String body = bodyJson.toJSONString();
 		System.out.println("메세지 body : " + body);

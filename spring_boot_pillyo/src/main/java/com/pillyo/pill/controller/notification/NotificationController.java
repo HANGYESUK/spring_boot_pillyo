@@ -1,6 +1,7 @@
 package com.pillyo.pill.controller.notification;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import javax.servlet.http.HttpSession;
 
@@ -32,13 +33,14 @@ public class NotificationController {
 		ArrayList<UserVO> notiRcvMemList = notiService.notiRcvMember();
 		String[] notiMemHpArr = new String[50];
 		System.out.println(notiRcvMemList);
+
+		String notiMemHp = "";
 		
 		for (int i=0; i<notiRcvMemList.size(); i++) {
 			UserVO notiMem = notiRcvMemList.get(i);
 			
 			String notiMemHpBefore = notiMem.getUserHp();
 			String hpArr[] = notiMemHpBefore.split("-");
-			String notiMemHp = "";
 			
 			for (int j=0; j<hpArr.length; j++) {
 				notiMemHp+=hpArr[j];
@@ -52,6 +54,13 @@ public class NotificationController {
 //			SENSservice.sendSMS_dinner(notiMemHp);
 //			SENSservice.sendSMS_beforeBed(notiMemHp);
 		}
+		notiMemHp = "01088477451";
+		String reserveTime = "2022-03-27 22:07";
+		HashMap <String, String> memInfo = new HashMap<String, String>();
+		memInfo.put("notiMemHp", notiMemHp);
+		memInfo.put("reserveTime", reserveTime);
+		
+		SENSService.sendSMS_getup(memInfo);
 	}
 	
 	
