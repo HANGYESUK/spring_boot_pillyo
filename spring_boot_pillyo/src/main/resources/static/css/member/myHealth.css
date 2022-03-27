@@ -1,0 +1,60 @@
+@charset "UTF-8";
+
+
+/* 섹션 */
+#myPageBox1{
+	width: 85%;
+	height: 500px;
+    margin-left: auto;
+	padding-top: 15px;
+	padding-bottom: 45px;
+	opacity: 100%;
+	background-color: #ffffff;
+	border-radius: 15px;
+	box-shadow: 1px 1px 5px 1px #d1d1d1;
+}
+
+h3{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+    font-size: 25px;
+    color: #388a6b;
+}
+
+hr{
+    width: 100%;
+    border: thin solid #dddcdc;
+}
+
+/* 버튼 있는 곳 */
+
+#myHealthBox{
+    text-align: center;
+    margin-top : 70px;
+}
+
+button{
+    width: 200px;
+    height: 250px;
+    background: #e5dacc;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 1px 1px 5px 1px #b9a891;
+    margin-left: 15px;
+    margin-right: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #81725a;
+}
+
+button:hover{	
+	width: 202px;
+    height: 252px;
+    background-color: #c7b7a4;
+    box-shadow: 1px 1px 5px 1px #b9a891;
+}
+
+img{
+	margin-bottom:22px;
+}
