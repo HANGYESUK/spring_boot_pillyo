@@ -68,14 +68,15 @@
 	}
 	
 	#boardCtgNo    {/* background: #f2f9fb; */
-	border:0;
+    background: #ffffff;
+    border: 0;
     float: left;
     height: 30px;
     text-align: center;
     font-size: 19px;
-	width: 95px;
+    width: 137px;
     color: #388a6b;
-    border-radius: 10px;
+    border-radius: 5px;
     border-color: #f2f9fb;
     font-weight: 400;
 	}
@@ -168,7 +169,7 @@
     line-height: 75px;
     height: 76px;
     /* font-weight: 500; */
-    font-size: 25px;
+    font-size: 23px;
     padding-left: 27px;
     border: none;
     outline: none;

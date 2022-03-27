@@ -65,10 +65,13 @@
    	}
    	
    	.b{
-   	font-size: 25px;
-    padding-left: 14px;
+
+        font-size: 25px;
+    padding-left: -1px;
     color: #388a6b;
+    border-bottom: 3px solid;
     font-weight: 500;
+    padding-bottom: 6px;
    	}
    	
    	hr{
@@ -103,10 +106,10 @@
 		 <article>             
 		                <div class="slider-1">
 		                    <div class="slides">
-		                        <div class="active" style="background-image:url(image/slide_img_01.jpg);"></div>
+		                        <div class="active" style="background-image:url(image/slide_img_05.jpg);"></div>
+		                        <div style="background-image:url(image/slide_img_01.jpg);"></div>
 		                        <div style="background-image:url(image/slide_img_02.jpg);"></div>
 		                        <div style="background-image:url(image/slide_img_03.jpg);"></div>
-		                        <div style="background-image:url(image/slide_img_05.jpg);"></div>
 		                        <div style="background-image:url(image/slide_img_04.jpg);"></div>
 		                    </div>
 		                    <div class="page-btns" style="display:none;">
@@ -178,7 +181,10 @@
 		
 		
 		
-			<div class="boardBody">
+			<div class="boardBody" style="    box-shadow: 0px 0px 3px 2px #eeeeee;
+        padding: 50px 100px 100px 100px;
+    background: #f6f5ef9c;
+    border-radius: 8px;">
 			<br>		
 				<!-- <div class="ctgMenuBox">
 					<ul><label for="boardNews">
@@ -218,7 +224,7 @@
 				</div> -->
 				<div id="boardContent">
 					<!-- 소식 -->
-					<div id="boardNewsContent">
+					<div id="boardNewsContent">						
 						<table class="table table-striped">
 							<thead>
 							<a class="b">알약요 소식</a> 
@@ -234,14 +240,14 @@
 								<c:forEach items="${boardNewsList}" var="board">
 							  		<c:if test="${board.boardCtgNo eq '0'}">
 							  			<tr class="drugBox">
-							  				<td style="width:15%;">소식</td>
+							  				<td style="width:15%;"><a href="<c:url value='/boardDetailView/${board.boardNo}'/>">소식</td>
 							  				<td style="width:70%;"><a href="<c:url value='/boardDetailView/${board.boardNo}'/>">${board.boardTitle }</a></td>
 											<td>${board.boardWriteDate}</td>
 										</tr>
 							  		</c:if>
 							  		<c:if test="${board.boardCtgNo eq '1'}">
 							  			<tr class="drugBox">
-							  				<td>카드뉴스</td>
+							  				<td><a href="<c:url value='/boardDetailView/${board.boardNo}'/>">카드뉴스</td>
 							  				<td><a href="<c:url value='/boardDetailView/${board.boardNo}'/>">${board.boardTitle }</a></td>
 											<td>${board.boardWriteDate}</td>
 										</tr>
@@ -268,28 +274,28 @@
 								<c:forEach items="${boardQnaList}" var="board">
 							  		<c:if test="${board.boardCtgNo eq '2'}">
 							  			<tr class="drugBox2">
-							  				<td>건강관리</td>
+							  				<td><a href="<c:url value='/boardDetailView/${board.boardNo}'/>">건강관리</td>
 							  				<td style="width: 70%;"><a href="<c:url value='/boardDetailView/${board.boardNo}'/>">${board.boardTitle }</a></td>
 <%-- 											<td>${board.boardWriteDate}</td>
  --%>										</tr>
 							  		</c:if>
 							  		<c:if test="${board.boardCtgNo eq '3'}">
 							  			<tr class="drugBox2">
-							  				<td>우리집약관리</td>
+							  				<td><a href="<c:url value='/boardDetailView/${board.boardNo}'/>">우리집약관리</td>
 							  				<td><a href="<c:url value='/boardDetailView/${board.boardNo}'/>">${board.boardTitle }</a></td>
 <%-- 											<td>${board.boardWriteDate}</td>
  --%>										</tr>
 							  		</c:if>
 							  		<c:if test="${board.boardCtgNo eq '4'}">
 							  			<tr class="drugBox2">
-							  				<td>복용관리</td>
+							  				<td><a href="<c:url value='/boardDetailView/${board.boardNo}'/>">복용관리</td>
 							  				<td><a href="<c:url value='/boardDetailView/${board.boardNo}'/>">${board.boardTitle }</a></td>
 <%-- 											<td>${board.boardWriteDate}</td>
  --%>										</tr>
 							  		</c:if>
 							  		<c:if test="${board.boardCtgNo eq '5'}">
 							  			<tr class="drugBox2">
-							  				<td>회원</td>
+							  				<td><a href="<c:url value='/boardDetailView/${board.boardNo}'/>">회원</td>
 							  				<td><a href="<c:url value='/boardDetailView/${board.boardNo}'/>">${board.boardTitle }</a></td>
 <%-- 											<td>${board.boardWriteDate}</td>
  --%>										</tr>
@@ -315,7 +321,7 @@
 								<c:forEach items="${boardOrderPayList}" var="board">
 							  		<c:if test="${board.boardCtgNo eq '2'}">
 							  			<tr class="drugBox3">
-							  				<td>건강관리</td>
+							  				<td><a href="<c:url value='/boardDetailView/${board.boardNo}'/>">건강관리</td>
 							  				<td style="width: 70%;"><a href="<c:url value='/boardDetailView/${board.boardNo}'/>">${board.boardTitle }</a></td>
 <%-- 											<td>${board.boardWriteDate}</td>
  --%>										</tr>
@@ -341,7 +347,7 @@
 								<c:forEach items="${boardTradeList}" var="board">
 							  		<c:if test="${board.boardCtgNo eq '3'}">
 							  			<tr class="drugBox3">
-							  				<td>우리집약관리</td>
+							  				<td><a href="<c:url value='/boardDetailView/${board.boardNo}'/>">우리집약관리</td>
 							  				<td style="width: 70%;"><a href="<c:url value='/boardDetailView/${board.boardNo}'/>">${board.boardTitle }</a></td>
 <%-- 											<td>${board.boardWriteDate}</td>
  --%>										</tr>
@@ -367,7 +373,7 @@
 								<c:forEach items="${boardProductList}" var="board">
 							  		<c:if test="${board.boardCtgNo eq '4'}">
 							  			<tr class="drugBox3">
-							  				<td>복용관리</td>
+							  				<td><a href="<c:url value='/boardDetailView/${board.boardNo}'/>">복용관리</td>
 							  				<td style="width: 70%;"><a href="<c:url value='/boardDetailView/${board.boardNo}'/>">${board.boardTitle }</a></td>
 <%-- 											<td>${board.boardWriteDate}</td>
  --%>										</tr>
@@ -393,7 +399,7 @@
 								<c:forEach items="${boardMemberList}" var="board">
 							  		<c:if test="${board.boardCtgNo eq '5'}">
 							  			<tr class="drugBox3">
-							  				<td>회원</td>
+							  				<td><a href="<c:url value='/boardDetailView/${board.boardNo}'/>">회원</td>
 							  				<td style="width: 70%;"><a href="<c:url value='/boardDetailView/${board.boardNo}'/>">${board.boardTitle }</a></td>
 <%-- 											<td>${board.boardWriteDate}</td>
  --%>										</tr>
@@ -402,8 +408,18 @@
 					   		</tbody>
 						</table><br><br>
 			   		</div>
-				
+				 <c:if test="${sessionScope.admin != board.userId or sessionScope.sid == ''}">
 					<a href="<c:url value = '/boardForm'/>"><button>글쓰기</button></a>
+				</c:if>
+				
+				
+				
+				<%-- <c:if test="${sessionScope.sid != board.userId and  board.boardCtgNo == 2}">
+					<a href="<c:url value = '/boardForm'/>"><button>글쓰기</button></a>
+				</c:if> --%>
+				<%-- <c:if test="${sessionScope.sid == board.userId }">
+					<a href="<c:url value = '/boardForm'/>"><button>글쓰기</button></a>
+				</c:if> --%>
 					<!-- <div id="more-Btn" class="low" onclick="more()"><h3>더보기</h3><br></div> -->
 			</div>
 		</section>
@@ -549,7 +565,17 @@
 				$(boardMemberContent).css('display', 'block');
 				$("#more-Btn").css('display', 'none');
 				$("#more-Btn2").css('display', 'none');
-			}
+			} 
 	});
+</script>
+	<script>
+	console.log('${board.userId}');
+	console.log('${board.writer}');
+	console.log('${sessionScope.sid}');
+	console.log('${sessionScope.admin}');
+	console.log('${sessionScope.AdminId}');
+	console.log('${AdminVO.adminId}');
+	console.log('${board.boardCtgNo}');
+	
 </script>
 </html>
