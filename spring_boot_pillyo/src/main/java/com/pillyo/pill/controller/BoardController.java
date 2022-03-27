@@ -7,6 +7,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -111,8 +112,12 @@ public class BoardController {
 
 	
 	@RequestMapping("/listAllBoard")
-	public String listAllBoard(Model model) {
-
+	public String listAllBoard(Model model, HttpSession session) {
+//		
+//		BoardVO board = service.boardListlView(boardNo);
+//		model.addAttribute("board", board);
+		
+		String userId = (String)session.getAttribute("sid");
 		// Model은 하나의 객체로 컨트롤러에서 페이지로 넘길 값을 저장하는데 사용
 		// 소식
 		ArrayList<BoardVO> boardNewsList = service.listAllBoard();
@@ -149,13 +154,15 @@ public class BoardController {
 	
 	// 상세 정보 조회
 	@RequestMapping("/boardDetailView/{boardNo}")
-	public String boardDetailView(@PathVariable int boardNo, Model model) {
+	public String boardDetailView(@PathVariable int boardNo, Model model, HttpSession session) {
 		BoardVO board = service.boardDetailView(boardNo);
 		model.addAttribute("board", board);
 		
 		ArrayList<CommentVO> commentList = commentservice.listAllComment(boardNo);
 		model.addAttribute("commentList", commentList);
 		
+		String userId = (String)session.getAttribute("sid");
+
 		return "/board/boardDetailView";
 	}
 	
@@ -170,7 +177,12 @@ public class BoardController {
 	
 	// 업데이트 폼 이동
 		@RequestMapping("/updateBoardForm/{boardNo}")
-		public String updateBoardForm(@PathVariable int boardNo, Model model) {
+		public String updateBoardForm(@PathVariable int boardNo, Model model, HttpSession session) {
+			// session에 저자아된 userId를 writer 에 저장
+//			String writer = (String) session.getAttribute("userId");
+
+			String userId = (String)session.getAttribute("sid");
+			
 			BoardVO board = service.boardDetailView(boardNo);
 			model.addAttribute("board", board);
 			return "board/updateBoardForm";

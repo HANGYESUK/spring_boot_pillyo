@@ -23,10 +23,10 @@
         color: #388a6b;
     border-color: #f2f9fb;
     height: 38px;
-    width: 70px;
+    width: 93px;
     border-radius: 10px;
     font-size: 14px;
-    
+        margin-left: 10px;
     float: right;
     /* margin-right: 127px; */
     
@@ -68,7 +68,7 @@
     border: 1px solid white;
     background: white;
     box-shadow: 1px 1px 2px #d3d3d3;
-    font-size: 17px;
+    font-size: 16px;
 }
 
 .form-control{
@@ -91,7 +91,10 @@ text-align:center;
 	<div class="layout">
 
 		<section>		
-			<form id="updateBoardForm" method="post" action="<c:url value='/updateBoard/${board.boardNo}'/>">					
+			<form id="updateBoardForm" method="post" action="<c:url value='/updateBoard/${board.boardNo}'/>" style="    box-shadow: 0px 0px 3px 2px #eeeeee;
+    padding: 98px;
+    background: #f6f5ef9c;
+    border-radius: 8px;">					
 				<div id="subTitle2"><h2>알약요
 		<c:if test="${board.boardCtgNo eq '0'}">소식</c:if>
 						<c:if test="${board.boardCtgNo eq '1'}">카드뉴스</c:if>
@@ -126,19 +129,29 @@ text-align:center;
 					</thead>
 					<tbody>
 						<tr>
-							<td><textarea rows="1" cols="50" placeholder="글 제목"  name="boardTitle" maxlength="50" style="      background: #ffffff;  resize: none; color:">${board.boardTitle}</textarea></td>
+							<td><textarea rows="1" cols="50" placeholder="글 제목"  name="boardTitle" maxlength="50" style="      background: #ffffff;  resize: none; border-radius: 7px; color:">${board.boardTitle}</textarea></td>
 						</tr>
 						<tr>
-							<td><textarea class="form-control" placeholder="글 내용" rows="10" cols="50" name="boardContent" maxlength="2048" style="height: 650px; text-align: left;      background: white;   resize: none;
+							<td><textarea class="form-control" placeholder="글 내용" rows="10" cols="50" name="boardContent" maxlength="2048" style="height: 650px; text-align: left;      background: white;   resize: none;border-radius: 7px;
 ">${board.boardContent}</textarea>
 							</td>
+							<%-- <td><textarea class="form-control" placeholder="글 내용" rows="10" cols="50" name="boardContent" maxlength="2048" style="height: 650px; text-align: left;      background: white;   resize: none;
+">${board.userId}</textarea>
+							</td> --%>
 						</tr>
 					</tbody>
-					
+				
 				</table>
+				<%-- <c:if test="${board.userId == sessionScope.userId}"> --%>
+			 <c:if test="${sessionScope.admin != board.userId or sessionScope.sid == board.userId }">
 				<!-- 글쓰기 버튼 생성 -->
-				<input type="submit" id="button2" class="btn btn-primary pull-right" value="글쓰기">
+				<input type="submit" id="button2" class="btn btn-primary pull-right" value="수정하기">
 				<a href="<c:url value='/boardDetailView/${board.boardNo}'/>"><button class="button3">돌아가기</button></a>
+			</c:if>
+<%-- 				<c:if test="${sessionScope.sid == board.userId }">
+					<button>수정</button>
+					<button>삭제</button>
+				</c:if> --%>
 			</form>		
 		</section>
 	</div>
@@ -149,4 +162,10 @@ text-align:center;
 		
       </div> <!-- wrap -->
 </body>
+<script>
+	console.log('${board.userId}');
+	console.log('${board.writer}');
+	console.log('${sessionScope.sid}');
+	console.log('${board.boardCtgNo}');
+</script>
 </html>
