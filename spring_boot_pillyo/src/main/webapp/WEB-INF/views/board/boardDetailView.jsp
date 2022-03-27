@@ -51,7 +51,7 @@
 	
     border-radius: 2px;
 	      height: 45px;
-    width: 271px;
+    width: 910px;
     float: left;
     /* border: none; */
     resize: none;
