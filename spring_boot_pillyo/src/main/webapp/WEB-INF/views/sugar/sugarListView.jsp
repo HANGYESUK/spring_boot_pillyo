@@ -6,28 +6,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>혈당 전체 정보 목록</title>
-		<style type="text/css">
-		
-		 #my_sugar{
-   			text-align: center;
-   			padding-top : 20px;
-		 }
-		 table {
-		    width: 80%;
-   			text-align: center;
-		    border-top: 1px solid #444444;
-		    border-collapse: collapse;
-		    margin-left:auto; 
-    		margin-right:auto;
-		 }
-		 th, td {
-		    border-bottom: 1px solid #444444;
-		    padding: 10px;
-		 }
-		 td{
-		  	background-color : #ffffff;
-		 }
-		</style>
+		<link rel="stylesheet" href="/css/member/myList.css" />
 	</head>
 	<body>
 		<div id="wrap">
@@ -38,7 +17,7 @@
 		<div id="navMargin"></div>
 			
 			<section id="section">
-			<div id="my_sugar">
+			<div id="my_List">
 			<h3>전체 혈당 관리 목록</h3>
 				 
 		 	<table>
@@ -53,9 +32,11 @@
 		 			 <td>${sugar.sugarMedication}</td>
 		 			 <td>${sugar.acpc}</td>
 		 			 <td>${sugar.sugarLevel}</td>
-		 			 <td>${sugar.acpcMemo}</td>
-		 			 <td><a href="<c:url value='/updateSugarForm/${sugar.sugarNo}'/>">혈당 정보 수정</a><br>
-		 				 <a href="javascript:deleteCheck();">혈당 정보 삭제</a></td></tr>
+		 			 <td id="acpcMemo">${sugar.acpcMemo}</td>
+		 			 <td><a href="<c:url value='/updateSugarForm/${sugar.sugarNo}'/>">
+		 			 		<button id="btn1">수정</button></a>
+		 				 <a href="javascript:deleteCheck();">
+		 				 	<button id="btn2">삭제</button></a></td></tr>
 				 </c:forEach>
 		 	</table>
 		 		

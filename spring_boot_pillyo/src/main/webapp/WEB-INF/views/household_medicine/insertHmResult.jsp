@@ -20,23 +20,14 @@
 		<section id="section">
 		<div class="main-Content-Body low">
 				<div class="basket-Item-Container colunm" style="width: 100%;">
-					<h2>우리집 약관리</h2>
+					<div id="hmcss">
+					<h3>우리집 약관리</h3>
 
-						<div class="colum">
-							<c:if test="${not empty sessionScope.sid}">
-								<div class="low">
-									<h4 id="UserName" style="color: #81B89A;">${sessionScope.sid} 님</h4>
-									<p>등록된 약 전체 리스트 입니다</p>
-								</div>
-								
-								<div style="margin-top: 20px" class="low">
-									<a href="/hmForm"><input type="button" class="btn" value="우리집 약관리 가기"></a>
-									<a href="/insertHmForm"><input type="button" class="btn" value="등록 하러 가기"></a>
-								</div>
-								<br><br>
-							</c:if>
-						</div>
-						
+					<a href="/hmForm"><input type="button" class="btn" value="증상별 약 목록"></a>
+					<a href="/insertHmForm"><input type="button" class="btn" value="등록 하러 가기"></a>
+					
+					<hr>
+					 
 					<div id="tab">
 					<!-- 등록 폼에서 등록버튼 누르면 방금 입력했던 폼이 나오는 것 -->
 					<c:forEach items="${hmList}" var="hm">
@@ -48,12 +39,14 @@
 							<tr> <th>메모</th> <td>${hm.hmMemo}</td></tr>
 							<tr> <tH>카테고리</th> <td>${hm.hmCtgNo}</td></tr>
 							<tr> <td><a style="    text-decoration-line: none;
-    color: #4f58c9;" href="<c:url value='/updateHmForm/${hm.hmNo}'/>">정보 수정</a></td>
+								    color: #4f58c9;" href="<c:url value='/updateHmForm/${hm.hmNo}'/>">정보 수정</a></td>
 								 <td><a style="    text-decoration-line: none;
-    color: #c94f5a;" href="javascript:deleteCheck(${hm.hmNo});">등록 삭제</a></td></tr>
+								    color: #c94f5a;" href="javascript:deleteCheck(${hm.hmNo});">등록 삭제</a></td></tr>
 						</table>
 						</div>
 					</c:forEach>
+					</div>
+						
 					</div>
 				</div>
 			</div>
