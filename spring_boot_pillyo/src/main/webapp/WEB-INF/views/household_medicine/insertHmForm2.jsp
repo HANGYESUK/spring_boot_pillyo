@@ -34,13 +34,13 @@
 		<jsp:include page="/WEB-INF/views/layout/top.jsp" flush='true' />
 		
 		<div id="navMargin"></div>
-		<section id="section">
+		<section id="section2">
 			<div class="main-Content-Body low">
 				<div class="basket-Item-Container colunm">
 
-						<h2>우리집 약관리</h2>
+						<h3>우리집 약관리</h3> <hr>
 
-						<div class="colum">
+						<%-- <div class="colum">
 							<c:if test="${not empty sessionScope.sid}">
 								<div class="low">
 									<h4 id="UserName" style="color: #81B89A;">${sessionScope.sid} 님</h4>
@@ -50,7 +50,7 @@
 
 							</c:if>
 						</div>
-						
+						 --%>
 						<!-- 상비약 등록 -->
 						
 						<form id="hmForm" name="hmForm" method="post" action="<c:url value ='/insertHm/'/>">
@@ -70,7 +70,9 @@
 												        	</datalist></td></tr>
 							<tr> <th id="hm">사용기한</th>	<td><input type="date" name="hmUseByDate" required ></td></tr>
 							<tr> <th id="hm">메모</th>	<td><textarea name="hmMemo" rows="10" cols="60" placeholder="내용을 입력하세요" style="resize: none;" required ></textarea></td></tr>
-							<tr> <th id="hm">사진</th>	<td>다시 한번 이미지를 올려주세요 >>  <input  id = "hmImg" type="file" name="hmImg" onchange="setThumbnail(event);" required ></td>
+							<tr> <th id="hm">사진</th>	<td>다시 한번 이미지를 올려주세요 >> 
+															<label class="input-file-button" for="hmImg"> Image Upload</label>
+															<input  id = "hmImg" type="file" name="hmImg" onchange="setThumbnail(event);" required ></td>
 							<tr> <th id="hm"></th>		<td id="img_box"><div id="image_container"><img id="image" src="#" alt="이미지 미리보기" /></div></td></tr>
 							</table>
 							<input type="hidden" name="userId" value="${sessionScope.sid}" />

@@ -39,7 +39,7 @@
             $('#check').remove()
             
             $('#ocrForm').append('<div id="ocrResult"></div>');
-            $('#ocrResult').append('<a id="check" href="/insertHmForm2/'+result+'">맞습니까?</a>');
+            $('#ocrResult').append('<a id="check" href="/insertHmForm2/'+result+'">NEXT</a>');
             // $('#image').append('<img src="/images/'+fileName+'"/>');
          },
          error:function(){

@@ -54,7 +54,7 @@ hr{
 }
 
 #txt{
-	margin-top:20px;
+	margin-top:40px;
 	margin-bottom:20px;
 }
 
@@ -75,62 +75,92 @@ h6{
 	text-align:center;
 	margin:auto;
 }
-#image{
-	width : 800px;
-	height : 400px;
-	background-color:#f5f5f5;
-	border: 3px solid #027042;
-	margin:auto;
-	text-align:center;
+
+#uploadFile{
+	display:none;
 }
 
-#ocrResult {
-	background-color: #7fb9fe;
-    width: 300px;
-    margin: 0 auto;
-    padding: 5px;
-    margin-top: 20px;
-    border-radius: 30px;
-}
-
-#check {
-	text-decoration: none;
-    color: white;
-    font-weight: bold;
-    font-size: 20px;
-}
-
-#ocr {
-	background-color: #84bcfd;
-    border: none;
-    padding: 10px;
-    padding-left: 20px;
-    padding-right: 20px;
-    border-radius: 20px;
+.input-file-button{
+    padding: 5px 206px;
+    background-color: #388a6b;
+    border-radius: 4px;
     color: white;
     cursor: pointer;
-    font-weight: bold;
-    transition: all 0.3s;
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+#ocr{
+    border: none;
+	padding: 6px 25px;
+	background-color:#4a392d;
+	border-radius: 4px;
+	color: white;
+	cursor: pointer;
+	font-size:12px;
+	letter-spacing: 2px;
 }
 
 #ocr:hover {
 	 transform: scale(1.05);
 }
 
-#reset {
-	background-color: #ff6c59;
+#reset{
     border: none;
-    padding: 10px;
-    padding-left: 20px;
-    padding-right: 20px;
-    border-radius: 20px;
-    color: white;
-    cursor: pointer;
-    font-weight: bold;
-    transition: all 0.3s;
+	padding: 6px 25px;
+	background-color:#324a40;
+	border-radius: 4px;
+	color: white;
+	cursor: pointer;
+	font-size:12px;
+	letter-spacing: 2px;
 }
+
+table{
+    width: 100%;
+    text-align:left;
+    margin-top : 20px;
+}
+th{
+	height : 30px;
+}
+
 
 #reset:hover {
 	 transform: scale(1.05);
 }
 		
+#image{
+	width : 800px;
+	height : 400px;
+	background-color:#f5f5f5;
+	border: 3px solid #267c58;
+	margin:auto;
+	text-align:center;
+    border-radius: 7px;
+}
+
+#ocrResult {
+	background-color: #b9a891;
+    width: 70px;
+	float: right;
+    padding: 5px;
+    margin-top: 20px;
+    border-radius: 7px;
+}
+
+#check {
+	text-decoration: none;
+    color: white;
+    font-size: 14px;
+}
+
+#hmName{
+	width: 99%;
+    height: 30px;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 7px;
+    border: none;
+    background-color: #efe9e1;
+}
