@@ -28,7 +28,6 @@
 
 .health-Container {
     width: 80%;
-    background-color: white;
     border-radius: 20px;
     padding-bottom: 5%;
 }
@@ -41,6 +40,7 @@
     margin: 10px;
         box-shadow: 0px 0px 6px #e3e3e3;
         border:0;
+    background-color: white;
 }
 
 .health-Content-Title {
@@ -189,14 +189,26 @@
 .fam-List {
 	position: fixed;
 	/* left: 5%; */
-    /* background-color: white; */
+	height: 280px;
+    background-color: white; 
     padding: 5px;
     border-radius: 10px;
     text-align: center;
     margin-top: 100px;
-	left:3%;
-	top:43%;
+	right: 50px;
+	top: 5%;
+	overflow: scroll;
 }
+
+.fam-List { 
+	-ms-overflow-style: none;
+} 
+
+.fam-List::-webkit-scrollbar { 
+	display:none;
+}
+
+
 
 .fam-List a {
 	text-decoration-line: none;
@@ -211,7 +223,7 @@
 }
 
 .active {
-	background-color: #508BFF;
+	background-color: #58e547;
     color: white;
    /*  box-shadow: 0 0 50px 0 rgb(92 160 255 / 37%); */
 }

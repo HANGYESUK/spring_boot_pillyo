@@ -16,15 +16,15 @@
 
 .chatBot-Text-Position {
     position: fixed;
-    bottom: 22%;
-    right: 10%;
+    bottom: 13%;
+    right: 3%;
     z-index: 15;
 }
 
 .chatBot-Position {
     position: fixed;
-    bottom: 10%;
-    right: 10%;
+    bottom: 1%;
+    right: 3%;
     z-index: 15;
 }
 
@@ -34,7 +34,7 @@
     border-radius: 50%;
     margin-left: 230px;
     box-shadow: 10px 10px 4px 0 rgba(0, 0, 0, 0.25);
-    background-color: #3988fe;
+    background-color: #388a6b;
     margin-top: 50px;
     z-index: 2;
     transition: all 0.4s;
@@ -90,7 +90,7 @@ body {
     width: 85%;
     max-width: 90%;
     height: 100%;
-    background-color: #091534;
+    background-color: #102a20;
     color: white;
 }
 .icon-box {
@@ -110,7 +110,7 @@ body {
     justify-content: space-between;
     flex-direction: row;
     align-items: center;
-    background-color: #3988FE;
+    background-color: #388a6b;
     padding: 15px;
 }
 
@@ -156,7 +156,7 @@ img {
     width: 100%;
     height: 150px;
     min-height: 150px;
-    background-color: #091534;
+    background-color: #102a20;
     bottom: 0px;
     z-index: 3;
     display: flex;
@@ -204,7 +204,7 @@ img {
 }
 
 .text-box {
-    background-color: #3988FE;
+    background-color: #388a6b;
     color: white;
     font-weight: 500;
     margin-top: 10px;
