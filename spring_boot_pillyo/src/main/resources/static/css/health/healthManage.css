@@ -190,7 +190,6 @@
 	/* position: fixed;
 	left: 5%;
 	height: 280px;
-    background-color: white; 
     padding: 5px;
     border-radius: 10px;
     text-align: center;
@@ -209,6 +208,7 @@
     right: 1px;
     top: 5%;
     overflow: scroll;
+    background-color: white; 
 }
 
 .fam-List { 
@@ -230,7 +230,6 @@
 	font-size: 35px;
     font-weight: bold;
     color: #746f6f;
-    margin-top: 28px;
 }
 
 .active {

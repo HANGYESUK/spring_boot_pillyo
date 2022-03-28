@@ -87,8 +87,8 @@
 			    width: 637px;
 			    margin-top: 130px;
 			    height: 585px;
-			    margin: 15px;
-			    padding: 10px;
+/* 			    margin: 15px;
+			    padding: 10px; */
 			    display: flex;
 			    color: black;
 			    background-color: #ffffffcf;
@@ -105,7 +105,7 @@
 			
 			.content-Img img {
 			    width: 100%;
-			    height: 70%;
+			    height: 90%;
 			}
 			
 		</style>
@@ -146,7 +146,7 @@
 				</div>
 				
 				<div class="content-Img">
-					<%-- <img src="<c:url value='/img/MainHealth.gif'/>"/> --%>
+					<img src="<c:url value='/img/health.jpg'/>"/>
 				</div>
 			</div>
 		</div>
@@ -156,7 +156,7 @@
 		<div class="container3 row" style="    background: #fdfaf8;">
 		
 			<div class="content-Img">
-				<%-- <img src="<c:url value='/img/MainHm.gif'/>"/> --%>
+				<img src="<c:url value='/img/homeM.jpg'/>"/> 
 			</div>
 			
 			<div class="main-Content calum">
@@ -190,7 +190,7 @@
 				</div>
 				
 				<div class="content-Img">
-					<%-- <img src="<c:url value='/img/MainDoes.gif'/>"/> --%>
+					<img src="<c:url value='/img/drug.jpg'/>"/>
 				</div>
 				
 			</div> 
