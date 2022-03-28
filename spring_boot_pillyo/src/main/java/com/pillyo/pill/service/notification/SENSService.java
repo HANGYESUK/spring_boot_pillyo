@@ -23,9 +23,11 @@ import org.springframework.stereotype.Service;
 public class SENSService {
 	// SMS 전송 : 기상 직후
 	//public static void sendSMS_getup(String notiMemHp) {
-		public static void sendSMS_getup(HashMap<String, String> memInfo) {
-			String notiMemHp = memInfo.get("notiMemHp");
-			String reserveTime = memInfo.get("reserveTime");
+		public static void sendSMS(HashMap<String, String> memInfo) {
+			String doseFamName = memInfo.get("name");
+			String notiMemHp = memInfo.get("hp");
+			String reserveTime = memInfo.get("rTime");
+			String msgContent = "[Pill-Yo 복용 알림 서비스] " + doseFamName + "님, 까먹지 말고 약 복용하세요!!!";
 			
 		String hostNameUrl = "https://sens.apigw.ntruss.com"; // 호스트 URL
 		String requestUrl = "/sms/v2/services/"; // 요청 URL
@@ -46,19 +48,18 @@ public class SENSService {
 		
 		// ------ messages ------
 //			toJson.put("subject", ""); // 메시지 제목 (LMS에서만 사용 가능)
-		toJson.put("content", "[Pill-Yo 복용 알림 서비스] 상쾌한 아침입니다! 잊은 약은 없는지 확인하세요 : )"); // 실제 전송되는 메시지 내용 (SMS 80 byte 제한)
+		toJson.put("content", msgContent); // 실제 전송되는 메시지 내용 (SMS 80 byte 제한)
 		toJson.put("to", notiMemHp); // 수신번호 목록 (필수, 최대 50개까지 한번에 전송 가능)
 		toArr.add(toJson);
 		// ------ messages ------
 		
 		
-		bodyJson.put("scheduleCode", "getup"); // 기본 메시지 내용 (필수) (SMS 80 byte 제한)
 		bodyJson.put("type", "SMS"); // 메시지 타입 (sms, lms)
 //			bodyJson.put("contentType", ""); // 메시지 내용 타입 (COMM: 일반메시지 | AD: 광고메시지 | (default: COMM))
 		bodyJson.put("countryCode", "82"); // 국가 번호 (default: 82))
 		bodyJson.put("from", "01054673724"); // 발신번호 (사전에 등록된 발신번호만 사용 가능)
 //			bodyJson.put("subject", ""); // 기본 메시지 제목 (lms)
-		bodyJson.put("content", "[Pill-Yo 복용 알림 서비스] 상쾌한 아침입니다! 잊은 약은 없는지 확인하세요 : )"); // 기본 메시지 내용 (필수) (SMS 80 byte 제한)
+		bodyJson.put("content", msgContent); // 기본 메시지 내용 (필수) (SMS 80 byte 제한)
 		bodyJson.put("messages", toArr); // 메시지 정보 (필수)
 		bodyJson.put("reserveTime", reserveTime); // 예약시간 , "yyyy-MM-dd HH:mm" 형식
 		
@@ -115,6 +116,8 @@ public class SENSService {
         }
 	}
 	
+		
+// ---------------------------------------------------------------------------------------------
 	// SMS 전송 : 아침
 	public static void sendSMS_morning(String notiMemHp) {
 		String hostNameUrl = "https://sens.apigw.ntruss.com"; // 호스트 URL
