@@ -28,14 +28,13 @@
 			<ul id="myPageItemBox">
 				<li><a href="<c:url value='/updateMemberForm'/>">개인정보 수정</a></li>
 				<li><a href="<c:url value='/MyPage/MyHealthList'/>">나의 건강정보</a></li>
-				<li><a href="">나의 게시글</a></li>
 				<li><a href="javascript:deleteCheck();">회원탈퇴</a></li>
 				<li><a href="<c:url value='/logout'/>">로그아웃</a></li>
 			</ul>
 			</div>
 			
 			<script type="text/javascript">
-				function deleteCheck(){
+				 function deleteCheck(){
 					var answer = confirm("정말로 회원을 탈퇴하시겠습니까?");
 					if(answer == true){
 						location.href="<c:url value='/deleteUser/${sessionScope.sid}' />";
