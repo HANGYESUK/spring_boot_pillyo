@@ -73,35 +73,35 @@
 				
 				
 				<!-- 모달 내용 -->
-			<div id="doseNotiBox">
-				<form id="notiForm">
-					<div id="notiLineBox">
-						<h3>복용 알림 서비스 신청</h3>
-						<div class="doseNotiItem" id="notiNameBox">
-							<input id="notiUserName" name="notiUserName" type="text" value=${doseVo.doseFamName } /><span>님</span>
-							<p>클릭하여 수신자명 변경 가능</p>
+				<div id="doseNotiBox">
+					<form id="notiForm">
+						<div id="notiLineBox">
+							<h3>복용 알림 서비스 신청</h3>
+							<div class="doseNotiItem" id="notiNameBox">
+								<input id="notiUserName" name="notiUserName" type="text" value=${doseVo.doseFamName } /><span>님</span>
+								<p>클릭하여 수신자명 변경 가능</p>
+							</div>
+							<div class="doseNotiItem" id="notiDateBox">
+								<span>복용기간</span>
+								<input id="notiStartDate" name="notiStartDate" type="text" value=${doseVo.ddStartDate } readonly/>
+								<span>~</span>
+								<input id="notiEndDate" name="notiEndDate" type="text" value=${doseVo.ddEndDate } readonly/>
+							</div>
+							<div class="doseNotiItem" id="notiCycleBox">
+								<span>주기</span>
+								<input id="notiCycle" name="notiCycle" type="text" value=${doseVo.ddCycle } readonly/><span>일</span>
+							</div>
+							<div class="doseNotiItem" id="notiTimeBox">
+								<span>알림 수신 시간</span>
+								<input id="notiTime" name="notiTime" type="text" value=${doseVo.ddTime } readonly/>
+							</div>
+							<div id="notiHpBox">
+								<span>알림 수신 번호</span>
+								<input id="notiHp" name="notiHp" type="text" placeholder="- 제외하고 입력해주세요." />
+							</div>
+							<input id="notiApplyBtn" type="submit" value="신청하기" />
 						</div>
-						<div class="doseNotiItem" id="notiDateBox">
-							<span>복용기간</span>
-							<input id="notiStartDate" name="notiStartDate" type="text" value=${doseVo.ddStartDate } readonly/>
-							<span>~</span>
-							<input id="notiEndDate" name="notiEndDate" type="text" value=${doseVo.ddEndDate } readonly/>
-						</div>
-						<div class="doseNotiItem" id="notiCycleBox">
-							<span>주기</span>
-							<input id="notiCycle" name="notiCycle" type="text" value=${doseVo.ddCycle } readonly/><span>일</span>
-						</div>
-						<div class="doseNotiItem" id="notiTimeBox">
-							<span>알림 수신 시간</span>
-							<input id="notiTime" name="notiTime" type="text" value=${doseVo.ddTime } readonly/>
-						</div>
-						<div id="notiHpBox">
-							<span>알림 수신 번호</span>
-							<input id="notiHp" name="notiHp" type="text" placeholder="- 제외하고 입력해주세요." />
-						</div>
-						<input id="notiApplyBtn" type="submit" value="신청하기" />
-					</div>
-				</form>
+					</form>
 				</div>
 							
 							
