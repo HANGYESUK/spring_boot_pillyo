@@ -119,7 +119,8 @@ public class DrugController {
 		  		  
 		  //{keyWord=베아제, DRUG_SHAPE=타원형, FORM_CODE_NAME=경질} 이렇게 폼 결과 받아옴.
 		 System.out.println(map);
-		 model.addAttribute("param", map);
+		 
+		 model.addAttribute("map", map);
 		  List<DrugShapeVO> shapeList = shapeService.drugShapeSearch(map);
 		 model.addAttribute("shapeList", shapeList);
 		 

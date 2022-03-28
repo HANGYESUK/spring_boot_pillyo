@@ -43,6 +43,19 @@
 		<div id="search_result_container">
 			
 				<h3 style="color: #388a6b;">약모양 검색 결과 </h3>
+					<h5>
+					<c:set var="comma" value=","/>
+							<c:forEach items="${map}" var="map" varStatus="status">
+					           <c:if test="${!status.last}">
+						           ${map.value}
+						            ${comma}
+							   </c:if>  
+							   <c:if test="${status.last}">
+							        ${map.value}
+								</c:if>
+							</c:forEach>
+							에 대한 결과 입니다.
+					</h5>
 				<c:choose>
 					<c:when test="${fn:length(shapeList) >=  100}">
 						<small>100건 이상이 검색되었습니다.</small>
