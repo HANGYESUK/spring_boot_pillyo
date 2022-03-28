@@ -15,7 +15,7 @@
 
             <div class="header">
                 <div class="header-profile flex-row">
-                    <img id="logo" src="<c:url value='/img/Group66.png'/>">
+                    <img id="logo" src="<c:url value='/img/chatBot.png'/>">
                     <div class="flex-colunm icon-box">
                         <div id="chatBot-Title"><h2>Pill-Yo</h2></div>
                     </div>
@@ -56,7 +56,7 @@
             </div>
         </div>
         <div class="chatBot-Icon flex-row chatBot-Position" onclick="toggleChatBot()">
-            <img id="icon" src="/img/Group66.png">
+            <img id="icon" src="/img/chatBot.png">
         </div>
     </div>
 

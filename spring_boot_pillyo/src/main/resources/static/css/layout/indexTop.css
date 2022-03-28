@@ -25,12 +25,12 @@ font-family: 'Nanum Gothic', sans-serif;
 	display: inline-block;
     position: absolute;
     top: 10%;
-    left: 13%;
+   	left: 4%;
 }
 
 #topMenu {
   height: 30px;
-  width: 550px;
+  width: 700px;
   position: relative;
   background: #388a6b;
 }
@@ -104,7 +104,7 @@ font-family: 'Nanum Gothic', sans-serif;
 .submenuLink {
   font-size: 15px;
   margin: 0 10px;
-  color: #e8e8e8;
+  color: #f8f8f8;
   font-weight: normal;
 }
 
@@ -190,4 +190,8 @@ input::-webkit-search-cancel-button,
 input::-webkit-search-results-button,
 input::-webkit-search-results-decoration{
 	display:none;
+}
+
+#pillyomainlogo {
+	float:left;
 }
