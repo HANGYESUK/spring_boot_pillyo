@@ -47,7 +47,13 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
-			
+			<!-- 배포 충돌로 사용하지 않는 클래스 속한 패키지 제외시킴  -->
+			<exclusions>
+		        <exclusion>
+		            <groupId>com.vaadin.external.google</groupId>
+		            <artifactId>android-json</artifactId>
+		        </exclusion>
+		    </exclusions>
 		</dependency>
 		
 		<!--  JSP 뷰 사용하기 위한 의존성 추가 -->
