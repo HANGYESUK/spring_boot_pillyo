@@ -67,7 +67,7 @@
 			    cursor: pointer;
 			    text-align: center;
 			}
-			
+			 
 			.main-Text {
 			    font-size: 25px;
 			    text-align: left;
