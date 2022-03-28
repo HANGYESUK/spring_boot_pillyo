@@ -73,7 +73,7 @@
 				
 				
 				<!-- 모달 내용 -->
-				<div id="doseNotiBox">
+<%-- 				<div id="doseNotiBox">
 					<form id="notiForm">
 						<div id="notiLineBox">
 							<h3>복용 알림 서비스 신청</h3>
@@ -102,7 +102,7 @@
 							<input id="notiApplyBtn" type="submit" value="신청하기" />
 						</div>
 					</form>
-				</div>
+				</div> --%>
 							
 							
 							
