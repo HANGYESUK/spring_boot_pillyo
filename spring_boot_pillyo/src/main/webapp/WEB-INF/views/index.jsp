@@ -76,11 +76,11 @@
 			}
 			
 			.main-Text h3 {
-				    font-size: 40px;
-    text-align: left;
-    font-weight: 500;
-    line-height: 75px;
-    color: #333;
+				font-size: 40px;
+			    text-align: left;
+			    font-weight: 500;
+			    line-height: 75px;
+			    color: #333;
 			}
 			
 			.content-Img {
@@ -108,6 +108,10 @@
 			    height: 90%;
 			}
 			
+			.mainTitle {
+				color: white;
+    			font-size: 100px;
+			}
 		</style>
 	
 	</head>
@@ -118,7 +122,7 @@
 	<div class="section active" id="section0">
 		<div class="container1 row">
 			<div class="Main">
-	 		 	
+	 		 	<h2 class="mainTitle">건강의 모든것<br>'PillYo'에서 쉽고 간편하게</h2>
 	 		 </div>
 		</div>
 	</div>
