@@ -28,7 +28,6 @@
 			<ul id="myPageItemBox">
 				<li><a href="<c:url value='/updateMemberForm'/>">개인정보 수정</a></li>
 				<li><a href="<c:url value='/MyPage/MyHealthList'/>">나의 건강정보</a></li>
-				<li><a href="">나의 게시글</a></li>
 				<li><a href="javascript:deleteCheck();">회원탈퇴</a></li>
 				<li><a href="<c:url value='/logout'/>">로그아웃</a></li>
 			</ul>

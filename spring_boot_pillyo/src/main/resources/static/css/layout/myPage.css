@@ -6,7 +6,7 @@
     /* background-color: #f6f9ff; */
     width: 143px;
     border-radius: 42px 42px 42px 42px;
-    height: 242px;
+    height: 200px;
     padding-top: 20px;
     /* margin: 0 auto; */
     float: left;
@@ -46,7 +46,7 @@ text-decoration:none;
 
 
 
-/* 회원정보수정 */
+/* �쉶�썝�젙蹂댁닔�젙 */
 #updateUserBox{
  margin: 0 auto;
  width:70%;
