@@ -163,8 +163,8 @@
                 			data: { "k_email": $('#k_email').val() },
                 			dataType:'text',
                 			success:function(result){
-                				alert("로그인체크ajax : success");
-                				alert("ㅁㅁㅁ" + result);
+                				/* alert("로그인체크ajax : success");
+                				alert("ㅁㅁㅁ" + result); */
                 			},
                 			error:function(data, textStatus){
                 				alert("전송 실패");

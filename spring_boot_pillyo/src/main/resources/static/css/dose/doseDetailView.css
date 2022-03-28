@@ -62,20 +62,20 @@
     background: #ffffff;
 }
 
-#doseShareBtn  {
+#doseShareBtn, #doseNotiBtn {
 	display: none;
 }
 
-#updateBtn, #removeBtn, #shareBtn {
-    width: 133px;
-    height: 50px;
-    line-height: 50px;
+#updateBtn, #removeBtn, #shareBtn, #notiBtn {
+    width: 200px;
+    height: 55px;
+    line-height: 55px;
     text-align: center;
     background: white;
-    margin: 10px;
+    margin: 7px 7px 10px 7px;
     box-shadow: 1px 1px 5px 1px lightgrey;
     border-radius: 17px;
-    font-size: 17px;
+    font-size: 16px;
     display: inline-block;
 }
 
@@ -109,7 +109,7 @@
 #doseLineBox {
 	margin: 20px;
     border: solid 3px #449173;
-    min-height: 700px;
+    min-height: 730px;
 }
 
 #doseMemBox > h3 {
@@ -125,4 +125,101 @@
 #doseTbl>tbody>tr:nth-child(5)>td {
 	border-bottom-left-radius: 17px;
     border-bottom-right-radius: 17px;
+}
+
+.doseNotiItem, #notiHpBox {
+    border-bottom: 2.3px solid #388a6b;
+    max-width: 400px;
+    font-size: 18px;
+    margin: 22px 0;
+    text-align: right;
+    padding-bottom: 5px;
+    position: relative;
+}
+
+.doseNotiItem input {
+	background: none;
+    border: none;
+    width: 120px;
+    font-size: 20px;
+}
+
+#notiDateBox input {
+    text-align: center;
+}
+
+#notiCycleBox input {
+	width: 20px;
+}
+
+#notiNameBox {
+	text-align: center;
+}
+
+#notiNameBox input {
+	width: 80px;
+}
+
+#notiDateBox span:nth-child(1), #notiCycleBox span:nth-child(1), #notiTimeBox span:nth-child(1), #notiHpBox span:nth-child(1) {
+	float: left;
+}
+
+#notiTimeBox input {
+	width: 65px;
+    text-align: right;
+}
+
+#doseNotiBox {
+    background: white;
+    max-width: 500px;
+    display: flex;
+    justify-content: center;
+    border: solid 2px #e7e7e7;
+    margin: 10px auto;
+}
+
+#notiLineBox {
+	margin: 20px;
+    border: solid 3px #449173;
+    min-height: 300px;
+    padding: 45px;
+}
+
+#notiHpBox span {
+    line-height: 32px;
+}
+
+#notiHp {
+    padding: 9px;
+    width: 160px;
+    margin-bottom: 5px;
+    border-radius: 7px;
+    border: 1px solid gray;
+}
+
+#notiHp:focus {
+    border: 1px solid #d6d6d6;
+}
+
+#notiApplyBtn {
+    border: 1px solid #e9e9e9;
+    background: #388a6b;
+    color: white;
+    margin: 0 72px;
+    width: 200px;
+    height: 55px;
+    border-radius: 17px;
+    font-size: 16px;
+}
+
+#notiNameBox p {
+    font-size: 8px;
+    color: #bdbdbd;
+}
+
+#notiLineBox h3 {
+	text-align: center;
+    font-size: 23px;
+    margin: 6px 0 30px 0;
+    color: #388a6b;
 }
