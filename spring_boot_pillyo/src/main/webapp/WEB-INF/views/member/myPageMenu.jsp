@@ -34,7 +34,7 @@
 			</div>
 			
 			<script type="text/javascript">
-				function deleteCheck(){
+				 function deleteCheck(){
 					var answer = confirm("정말로 회원을 탈퇴하시겠습니까?");
 					if(answer == true){
 						location.href="<c:url value='/deleteUser/${sessionScope.sid}' />";
